@@ -1,0 +1,112 @@
+[
+  {
+    "id": "P01",
+    "notebook": "notebooks/pilot/P01.ipynb",
+    "solution": "solutions/pilot/P01.ipynb",
+    "requires": [
+      "CPU",
+      "Python3.11"
+    ],
+    "status": "authored",
+    "source": "https://developers.google.com/machine-learning/crash-course/linear-regression"
+  },
+  {
+    "id": "P02",
+    "notebook": "notebooks/pilot/P02.ipynb",
+    "solution": "solutions/pilot/P02.ipynb",
+    "requires": [
+      "CPU",
+      "Python3.11"
+    ],
+    "status": "authored",
+    "source": "https://developers.google.com/machine-learning/crash-course/linear-regression/loss"
+  },
+  {
+    "id": "P03",
+    "notebook": "notebooks/pilot/P03.ipynb",
+    "solution": "solutions/pilot/P03.ipynb",
+    "requires": [
+      "CPU",
+      "Python3.11"
+    ],
+    "status": "authored",
+    "source": "https://scikit-learn.org/stable/common_pitfalls.html"
+  },
+  {
+    "id": "P04",
+    "notebook": "notebooks/pilot/P04.ipynb",
+    "solution": "solutions/pilot/P04.ipynb",
+    "requires": [
+      "CPU",
+      "Python3.11"
+    ],
+    "status": "authored",
+    "source": "https://numpy.org/doc/stable/user/absolute_beginners.html"
+  },
+  {
+    "id": "P05",
+    "notebook": "notebooks/pilot/P05.ipynb",
+    "solution": "solutions/pilot/P05.ipynb",
+    "requires": [
+      "CPU",
+      "Python3.11"
+    ],
+    "status": "authored",
+    "source": "https://docs.python.org/3/library/http.server.html"
+  },
+  {
+    "id": "P06",
+    "notebook": "notebooks/pilot/P06.ipynb",
+    "solution": "solutions/pilot/P06.ipynb",
+    "requires": [
+      "CPU",
+      "Python3.11"
+    ],
+    "status": "authored",
+    "source": "https://developers.google.com/machine-learning/glossary"
+  },
+  {
+    "id": "P07",
+    "notebook": "notebooks/pilot/P07.ipynb",
+    "solution": "solutions/pilot/P07.ipynb",
+    "requires": [
+      "CPU",
+      "Python3.11"
+    ],
+    "status": "authored",
+    "source": "https://developers.google.com/machine-learning/crash-course/linear-regression/gradient-descent"
+  },
+  {
+    "id": "P08",
+    "notebook": "notebooks/pilot/P08.ipynb",
+    "solution": "solutions/pilot/P08.ipynb",
+    "requires": [
+      "CPU",
+      "Python3.11"
+    ],
+    "status": "authored",
+    "source": "https://developers.google.com/machine-learning/crash-course/linear-regression/hyperparameters"
+  },
+  {
+    "id": "P09",
+    "notebook": "notebooks/pilot/P09.ipynb",
+    "solution": "solutions/pilot/P09.ipynb",
+    "requires": [
+      "CPU",
+      "Python3.11"
+    ],
+    "status": "authored",
+    "source": "https://scikit-learn.org/stable/common_pitfalls.html"
+  },
+  {
+    "id": "P10",
+    "notebook": "notebooks/pilot/P10.ipynb",
+    "solution": "solutions/pilot/P10.ipynb",
+    "requires": [
+      "CPU",
+      "Python3.11"
+    ],
+    "status": "authored",
+    "source": "https://scikit-learn.org/stable/model_selection.html"
+  }
+]

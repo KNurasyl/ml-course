@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "pilot_status": "awaiting_learner",
+  "learner_attempts": [],
+  "completed_sessions": [],
+  "skill_states": {},
+  "career_readiness": "not_assessed",
+  "note": "Initial handoff snapshot only. Canonical learner progress is in Pages. Do not treat reference runs as learner attempts."
+}

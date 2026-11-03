@@ -1,0 +1,234 @@
+{
+  "version": "0.1.0",
+  "recorded_at_utc": "2026-11-03T06:17:02.677170+00:00",
+  "release_scope": "curriculum_design_and_ten_session_pilot",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2",
+    "scikit-learn": "1.9.1",
+    "nbclient": "0.11.0",
+    "jupyterlab": "4.6.5",
+    "pytest": "8.4.2"
+  },
+  "verification": {
+    "main_environment": ".venv",
+    "clean_environment": ".venv-verify",
+    "clean_install_command": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/bootstrap.ps1 -Environment .venv-verify",
+    "clean_install_observed_exit_code": 0,
+    "pip_check_observed_output": "No broken requirements found.",
+    "pytest_observed_passed": 36,
+    "pytest_observed_failed": 0,
+    "pytest_run_in_both_environments": true,
+    "notebooks_executed_in_both_environments": 20,
+    "clean_notebook_command": ".venv-verify/Scripts/python.exe tools/run_notebooks.py --kind all --html",
+    "final_command": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/verify.ps1",
+    "final_command_observed_exit_code": 0,
+    "curriculum_validation_errors": [],
+    "pages_created_and_read_back": 34,
+    "source_starters_have_no_saved_outputs": true,
+    "submissions_working_directory_checked_with": "P01",
+    "figure_inspection": [
+      "P08_learning_rate.png",
+      "P09_experiment.png"
+    ],
+    "page_visual_preview": "not_verified; saved content and navigation were read back",
+    "html_preview": "20 exports created; browser layout not separately reviewed"
+  },
+  "notebook_records": [
+    {
+      "lesson": "P01",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P01.ipynb",
+      "output": "artifacts\\executed\\starter\\P01.ipynb"
+    },
+    {
+      "lesson": "P02",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P02.ipynb",
+      "output": "artifacts\\executed\\starter\\P02.ipynb"
+    },
+    {
+      "lesson": "P03",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P03.ipynb",
+      "output": "artifacts\\executed\\starter\\P03.ipynb"
+    },
+    {
+      "lesson": "P04",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P04.ipynb",
+      "output": "artifacts\\executed\\starter\\P04.ipynb"
+    },
+    {
+      "lesson": "P05",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P05.ipynb",
+      "output": "artifacts\\executed\\starter\\P05.ipynb"
+    },
+    {
+      "lesson": "P06",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P06.ipynb",
+      "output": "artifacts\\executed\\starter\\P06.ipynb"
+    },
+    {
+      "lesson": "P07",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P07.ipynb",
+      "output": "artifacts\\executed\\starter\\P07.ipynb"
+    },
+    {
+      "lesson": "P08",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P08.ipynb",
+      "output": "artifacts\\executed\\starter\\P08.ipynb"
+    },
+    {
+      "lesson": "P09",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P09.ipynb",
+      "output": "artifacts\\executed\\starter\\P09.ipynb"
+    },
+    {
+      "lesson": "P10",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P10.ipynb",
+      "output": "artifacts\\executed\\starter\\P10.ipynb"
+    },
+    {
+      "lesson": "P01",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P01.ipynb",
+      "output": "artifacts\\executed\\solutions\\P01.ipynb"
+    },
+    {
+      "lesson": "P02",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P02.ipynb",
+      "output": "artifacts\\executed\\solutions\\P02.ipynb"
+    },
+    {
+      "lesson": "P03",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P03.ipynb",
+      "output": "artifacts\\executed\\solutions\\P03.ipynb"
+    },
+    {
+      "lesson": "P04",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P04.ipynb",
+      "output": "artifacts\\executed\\solutions\\P04.ipynb"
+    },
+    {
+      "lesson": "P05",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P05.ipynb",
+      "output": "artifacts\\executed\\solutions\\P05.ipynb"
+    },
+    {
+      "lesson": "P06",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P06.ipynb",
+      "output": "artifacts\\executed\\solutions\\P06.ipynb"
+    },
+    {
+      "lesson": "P07",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P07.ipynb",
+      "output": "artifacts\\executed\\solutions\\P07.ipynb"
+    },
+    {
+      "lesson": "P08",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P08.ipynb",
+      "output": "artifacts\\executed\\solutions\\P08.ipynb"
+    },
+    {
+      "lesson": "P09",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P09.ipynb",
+      "output": "artifacts\\executed\\solutions\\P09.ipynb"
+    },
+    {
+      "lesson": "P10",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P10.ipynb",
+      "output": "artifacts\\executed\\solutions\\P10.ipynb"
+    }
+  ],
+  "content_audit_repairs": [
+    "Removed numeric homework answers from starter rubrics P01/P04/P08.",
+    "Aligned P09 homework and mentor keys with seed=2026, noise=0.7.",
+    "Assigned distinct retry and delayed-check conditions.",
+    "Kept 85 designed lessons separate from 10 ready pilot sessions."
+  ],
+  "limitations": {
+    "full_course_ready": false,
+    "learner_pilot": "awaiting_learner",
+    "learner_mastery": "not_assessed",
+    "career_readiness": "not_assessed",
+    "voice_product": "requirements_only",
+    "interview_data": "synthetic_development_examples_not_independently_human_validated",
+    "later_module_labs": "not_yet_authored_or_verified"
+  },
+  "sha256": {
+    "course-manifest.json": "ac218ed5ac4c67c5bdd255fceccbebb5c173656f6c3470953236441c716c6d57",
+    "curriculum.json": "d0f4e61e4084bb18f447d6ea2ffbf8aab688e1c5f3b8ef2b003714e3e38cad07",
+    "notebooks/pilot/P01.ipynb": "24f93c24913cfcb7a98aca94f0efa2966b122769b375e39c0f9e4640509f096d",
+    "notebooks/pilot/P02.ipynb": "137bc3757806439c49cc658c64f07de19ce935845ff627826e8284d5b09eac04",
+    "notebooks/pilot/P03.ipynb": "ab686d3b02c32ecffd404e5500c238c9a6078c9bfbf64d78b51e9126f9aad266",
+    "notebooks/pilot/P04.ipynb": "04777ae6ee1600bbdfca907be1c9bc322b54a2a0b676c247f447467e4a7f42e7",
+    "notebooks/pilot/P05.ipynb": "8c0c40c0ea5279782c579d644a47243c4a3b8418f5dc7ab96243d3123f0ecbd5",
+    "notebooks/pilot/P06.ipynb": "8db696dabacfa3f63437c659dd5f33e39ae9c598466216c91ed17ac9e6fc725b",
+    "notebooks/pilot/P07.ipynb": "a7a9ed962101f01c1176a8033efefbedf96057df5433c2237b476064102da87d",
+    "notebooks/pilot/P08.ipynb": "4348fcf2d821e3cfabfe943f2cfff727e6c29e652f3880f47a695320d3c56979",
+    "notebooks/pilot/P09.ipynb": "4704e00f743a03b2541c2cf82f9ffdc1065246f71b64a7923b14220b87014747",
+    "notebooks/pilot/P10.ipynb": "b595d11b9463f978357e82ac0a48cc217286c7829b13bd02a05c8382be3ab86c",
+    "requirements.lock.txt": "19801ff10710392014d45039b8974d832d442b2032972e383500fde4ccab55d2",
+    "solutions/pilot/P01.ipynb": "b8490fae92a936aa3e262b3ee1cff051cfa382e9d084197421877901bdb6b4cc",
+    "solutions/pilot/P02.ipynb": "d1fa3c07b25b6fd8ef5508cb03d80bf78dbe0bcb1492dffb7a49f8a454312db8",
+    "solutions/pilot/P03.ipynb": "1c3a7ba4bd0b3f6b0e5762f1b3f406aa56d4c5c44569cfb56c324c6fe9c84562",
+    "solutions/pilot/P04.ipynb": "204b5f8d42e8e5f7056541a92d8389e284daabd62e0e3b9e0dfd43769b6c4e34",
+    "solutions/pilot/P05.ipynb": "71bead283141ef3849c17fc544a3059edeb92e5cec818dd64318d135a23ad16e",
+    "solutions/pilot/P06.ipynb": "0d46adcdf6f8325a4b72243d702f1cd82e9649edd525ab38630e9bdb462aadaa",
+    "solutions/pilot/P07.ipynb": "8d6ab49d66db90f53e08415f3e91c7215485b1843772ddf946fbd80cf68eae19",
+    "solutions/pilot/P08.ipynb": "b39af89ad7653b408460617e79da3b51e5231c2a68da9986cf3322e6506f6ee3",
+    "solutions/pilot/P09.ipynb": "147244709bc08a1243ca4780158a19b8760b9acccd36c9d06d9289dac2e7f2a6",
+    "solutions/pilot/P10.ipynb": "ad539d25b0bff0f525724f5741e55a79555f0c73bbe295eca3d172ca78e9d9e3",
+    "src/mlcourse/__init__.py": "10de9c7cd46a036a776927c79bd20e9c12c8476697112cea28dfe726f0540696",
+    "src/mlcourse/assessment.py": "6001dc3e67b9d85074772a7ccbb97231a579e6a858f7777757e33fd7624a9d10",
+    "src/mlcourse/pilot.py": "356178807531772a7caf9529d77dff766d31ef9213267e149e5ca5a4d0785f1f",
+    "tests/test_assessment.py": "c36fb50160423fea13e27f4b688bce53cfbf0739f02ce3ae35fc9d8ffeb1a182",
+    "tests/test_interview_data.py": "bc36546e3dfce3c1350d4da4b5583d0e90c99c3971d1a602984c9725f2d4a7ff",
+    "tests/test_pilot.py": "530ea728e22e911b288486b22f8e1bc46b068cebea80e53bd29f9b0487f9f898",
+    "tools/bootstrap.ps1": "fddf76efe2c9b2b3f6db65e6524fd12159029c3d8799b769bd3a09ef29ac6348",
+    "tools/build_manifest.py": "76e19752b90030c7e160b1d2e850430ed35c7a917b0c4f1d0d8562c2460b6ff3",
+    "tools/check_submission.py": "9a36bb905a69fb150e22b4d1702d73102b35318bf5afd87138592fc08d819e2e",
+    "tools/run_notebooks.py": "1709241d6e9c0112edf0499f59122bd72e06886390c26583729ce8cbd44b4405",
+    "tools/validate_course.py": "ab7339d69fdfb3437b2dfa7134ae5e5fb42d0c2759c14d52406c6a1054f35e8a",
+    "tools/verify.ps1": "da11a49cedf825b2668c40479264de1f5acc6a4655b258d26723a297d3db6513"
+  }
+}

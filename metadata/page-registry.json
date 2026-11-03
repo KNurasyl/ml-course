@@ -1,0 +1,206 @@
+{
+  "MENTOR": {
+    "id": "page_096411cdf888819181b2b1ffd15e2a72",
+    "url": "https://chatgpt.com/space/page_096411cdf888819181b2b1ffd15e2a72",
+    "title": "Наставник и порядок работы на курсе ML и LLM",
+    "readback_verified": true
+  },
+  "PROGRESS": {
+    "id": "page_8216aadf28ec8191be320051183cf8b2",
+    "url": "https://chatgpt.com/space/page_8216aadf28ec8191be320051183cf8b2",
+    "title": "Прогресс обучения ML и LLM",
+    "readback_verified": true
+  },
+  "M00": {
+    "id": "page_d7f07426da4481919b1bfb7f31d6730a",
+    "url": "https://chatgpt.com/space/page_d7f07426da4481919b1bfb7f31d6730a",
+    "title": "M00 Модель и обучение",
+    "readback_verified": true
+  },
+  "M01": {
+    "id": "page_cf011ed273748191b0a19cafff25dcdd",
+    "url": "https://chatgpt.com/space/page_cf011ed273748191b0a19cafff25dcdd",
+    "title": "M01 Данные и численный Python",
+    "readback_verified": true
+  },
+  "M02": {
+    "id": "page_986c5d945418819192ca494caa621521",
+    "url": "https://chatgpt.com/space/page_986c5d945418819192ca494caa621521",
+    "title": "M02 Линейная алгебра",
+    "readback_verified": true
+  },
+  "M03": {
+    "id": "page_a5979770ba9881918106aa66dfebe0b8",
+    "url": "https://chatgpt.com/space/page_a5979770ba9881918106aa66dfebe0b8",
+    "title": "M03 Производные и оптимизация",
+    "readback_verified": true
+  },
+  "M04": {
+    "id": "page_70eb85e1ccac8191bc48018aeb41aa9e",
+    "url": "https://chatgpt.com/space/page_70eb85e1ccac8191bc48018aeb41aa9e",
+    "title": "M04 Вероятность и статистика",
+    "readback_verified": true
+  },
+  "M05": {
+    "id": "page_722a94f5021c8191bf0eeaa5bf7a6369",
+    "url": "https://chatgpt.com/space/page_722a94f5021c8191bf0eeaa5bf7a6369",
+    "title": "M05 Классический ML",
+    "readback_verified": true
+  },
+  "M06": {
+    "id": "page_a343becc267c81918fa77fc59a51dad9",
+    "url": "https://chatgpt.com/space/page_a343becc267c81918fa77fc59a51dad9",
+    "title": "M06 Проектирование ML-систем",
+    "readback_verified": true
+  },
+  "M07": {
+    "id": "page_07f5bd8094d0819189148ddb7a6d7613",
+    "url": "https://chatgpt.com/space/page_07f5bd8094d0819189148ddb7a6d7613",
+    "title": "M07 Нейросети и PyTorch",
+    "readback_verified": true
+  },
+  "M08": {
+    "id": "page_85dfecfa1bc08191b6513a15c179b25d",
+    "url": "https://chatgpt.com/space/page_85dfecfa1bc08191b6513a15c179b25d",
+    "title": "M08 NLP и Transformer",
+    "readback_verified": true
+  },
+  "M09": {
+    "id": "page_1e7f81ba1b0881918c7e47e7b964402b",
+    "url": "https://chatgpt.com/space/page_1e7f81ba1b0881918c7e47e7b964402b",
+    "title": "M09 Применение и запуск LLM",
+    "readback_verified": true
+  },
+  "M10": {
+    "id": "page_b99eec77282c8191b6947aecc685790e",
+    "url": "https://chatgpt.com/space/page_b99eec77282c8191b6947aecc685790e",
+    "title": "M10 RAG и поиск",
+    "readback_verified": true
+  },
+  "M11": {
+    "id": "page_3f2d4bb1eb3881919375695c0b73c63a",
+    "url": "https://chatgpt.com/space/page_3f2d4bb1eb3881919375695c0b73c63a",
+    "title": "M11 Оценивание LLM-систем",
+    "readback_verified": true
+  },
+  "M12": {
+    "id": "page_63f033ce7d248191865468c0467cfaba",
+    "url": "https://chatgpt.com/space/page_63f033ce7d248191865468c0467cfaba",
+    "title": "M12 Обучение и адаптация моделей",
+    "readback_verified": true
+  },
+  "M13": {
+    "id": "page_1ec7a87ce4fc819181dd0bedc64ca47b",
+    "url": "https://chatgpt.com/space/page_1ec7a87ce4fc819181dd0bedc64ca47b",
+    "title": "M13 MLOps и LLMOps",
+    "readback_verified": true
+  },
+  "M14": {
+    "id": "page_1f8b0a99815c81919d0b00fddbca9304",
+    "url": "https://chatgpt.com/space/page_1f8b0a99815c81919d0b00fddbca9304",
+    "title": "M14 Агенты и инструменты",
+    "readback_verified": true
+  },
+  "M15": {
+    "id": "page_a996d7fe78f4819185cfcdb9c7071e17",
+    "url": "https://chatgpt.com/space/page_a996d7fe78f4819185cfcdb9c7071e17",
+    "title": "M15 Речь и голосовой диалог",
+    "readback_verified": true
+  },
+  "M16": {
+    "id": "page_adaa363442c08191abfee4bd2bd685d1",
+    "url": "https://chatgpt.com/space/page_adaa363442c08191abfee4bd2bd685d1",
+    "title": "M16 Итоговый продукт и защита",
+    "readback_verified": true
+  },
+  "DIAGNOSTIC": {
+    "id": "page_2cd08dbb505c8191881da74e47eed53d",
+    "url": "https://chatgpt.com/space/page_2cd08dbb505c8191881da74e47eed53d",
+    "title": "Входная диагностика персонального курса",
+    "readback_verified": true
+  },
+  "MENTOR-KEYS": {
+    "id": "page_a37fd3e687908191a0206a367477967a",
+    "url": "https://chatgpt.com/space/page_a37fd3e687908191a0206a367477967a",
+    "title": "Ключи диагностики и пилотных занятий",
+    "readback_verified": true
+  },
+  "P01": {
+    "id": "page_970b6d8bf8488191835791902181d8e2",
+    "url": "https://chatgpt.com/space/page_970b6d8bf8488191835791902181d8e2",
+    "title": "P01 Диагностика и первая модель",
+    "readback_verified": true
+  },
+  "P02": {
+    "id": "page_b54f968be2c88191a812fcb7d57d0b3d",
+    "url": "https://chatgpt.com/space/page_b54f968be2c88191a812fcb7d57d0b3d",
+    "title": "P02 Как измерять ошибку модели",
+    "readback_verified": true
+  },
+  "P03": {
+    "id": "page_788a71e81994819197aa4edc27322ade",
+    "url": "https://chatgpt.com/space/page_788a71e81994819197aa4edc27322ade",
+    "title": "P03 Как проверять модель на новых данных",
+    "readback_verified": true
+  },
+  "P04": {
+    "id": "page_49e313d63c208191b0ba0a69207d99a0",
+    "url": "https://chatgpt.com/space/page_49e313d63c208191b0ba0a69207d99a0",
+    "title": "P04 Векторы матрицы и формы массивов",
+    "readback_verified": true
+  },
+  "P05": {
+    "id": "page_6aa170d304e48191800f3a950cbff129",
+    "url": "https://chatgpt.com/space/page_6aa170d304e48191800f3a950cbff129",
+    "title": "P05 Первая архитектура ML сервиса",
+    "readback_verified": true
+  },
+  "P06": {
+    "id": "page_00b40fc02d348191bc68b0b6df5b9f0e",
+    "url": "https://chatgpt.com/space/page_00b40fc02d348191bc68b0b6df5b9f0e",
+    "title": "P06 Параметры контекст и внешние знания",
+    "readback_verified": true
+  },
+  "P07": {
+    "id": "page_c56ba04cf5488191ba3f1073ed9c1342",
+    "url": "https://chatgpt.com/space/page_c56ba04cf5488191ba3f1073ed9c1342",
+    "title": "P07 Производная как скорость изменения",
+    "readback_verified": true
+  },
+  "P08": {
+    "id": "page_a2ce56396b2c819198df61829dd9c285",
+    "url": "https://chatgpt.com/space/page_a2ce56396b2c819198df61829dd9c285",
+    "title": "P08 Обучение через обновление параметров",
+    "readback_verified": true
+  },
+  "P09": {
+    "id": "page_c4935a1e37d08191abdf666ec1fd89ba",
+    "url": "https://chatgpt.com/space/page_c4935a1e37d08191abdf666ec1fd89ba",
+    "title": "P09 Воспроизводимое сравнение моделей",
+    "readback_verified": true
+  },
+  "P10": {
+    "id": "page_da3578d62b988191ac04011710866313",
+    "url": "https://chatgpt.com/space/page_da3578d62b988191ac04011710866313",
+    "title": "P10 Защита эксперимента и настройка маршрута",
+    "readback_verified": true
+  },
+  "GLOSSARY": {
+    "id": "page_d3f1114e9c54819189fb7ea48f291ea9",
+    "url": "https://chatgpt.com/space/page_d3f1114e9c54819189fb7ea48f291ea9",
+    "title": "Словарь курса: от модели до голосового диалога",
+    "readback_verified": true
+  },
+  "PROJECT": {
+    "id": "page_d718cdd69f788191928235c74a5bccba",
+    "url": "https://chatgpt.com/space/page_d718cdd69f788191928235c74a5bccba",
+    "title": "Сквозной проект: голосовой тренажёр собеседований",
+    "readback_verified": true
+  },
+  "HOME": {
+    "id": "page_490c579aa2388191be5ce4e3ef598a23",
+    "url": "https://chatgpt.com/space/page_490c579aa2388191be5ce4e3ef598a23",
+    "title": "Персональный курс ML и LLM — старт и маршрут",
+    "readback_verified": true
+  }
+}

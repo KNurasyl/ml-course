@@ -1,0 +1,14 @@
+.venv/
+.venv-verify/
+.authoring/
+artifacts/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+submissions/*
+!submissions/.gitkeep
+.env
+models/
+recordings/

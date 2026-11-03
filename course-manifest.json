@@ -1,0 +1,2563 @@
+{
+  "schema_version": 1,
+  "course_version": "0.1.0",
+  "created": "2026-11-03",
+  "language": "ru",
+  "course_status": "pilot_release",
+  "full_course_ready": false,
+  "learner_mastery": "not_assessed",
+  "career_readiness": "not_assessed",
+  "inputs": {
+    "curriculum": "curriculum.json",
+    "page_registry": "metadata/page-registry.json",
+    "pilot_inventory": "metadata/pilot-lab-inventory.json"
+  },
+  "pages": {
+    "MENTOR": {
+      "id": "page_096411cdf888819181b2b1ffd15e2a72",
+      "url": "https://chatgpt.com/space/page_096411cdf888819181b2b1ffd15e2a72",
+      "title": "Наставник и порядок работы на курсе ML и LLM",
+      "readback_verified": true
+    },
+    "PROGRESS": {
+      "id": "page_8216aadf28ec8191be320051183cf8b2",
+      "url": "https://chatgpt.com/space/page_8216aadf28ec8191be320051183cf8b2",
+      "title": "Прогресс обучения ML и LLM",
+      "readback_verified": true
+    },
+    "M00": {
+      "id": "page_d7f07426da4481919b1bfb7f31d6730a",
+      "url": "https://chatgpt.com/space/page_d7f07426da4481919b1bfb7f31d6730a",
+      "title": "M00 Модель и обучение",
+      "readback_verified": true
+    },
+    "M01": {
+      "id": "page_cf011ed273748191b0a19cafff25dcdd",
+      "url": "https://chatgpt.com/space/page_cf011ed273748191b0a19cafff25dcdd",
+      "title": "M01 Данные и численный Python",
+      "readback_verified": true
+    },
+    "M02": {
+      "id": "page_986c5d945418819192ca494caa621521",
+      "url": "https://chatgpt.com/space/page_986c5d945418819192ca494caa621521",
+      "title": "M02 Линейная алгебра",
+      "readback_verified": true
+    },
+    "M03": {
+      "id": "page_a5979770ba9881918106aa66dfebe0b8",
+      "url": "https://chatgpt.com/space/page_a5979770ba9881918106aa66dfebe0b8",
+      "title": "M03 Производные и оптимизация",
+      "readback_verified": true
+    },
+    "M04": {
+      "id": "page_70eb85e1ccac8191bc48018aeb41aa9e",
+      "url": "https://chatgpt.com/space/page_70eb85e1ccac8191bc48018aeb41aa9e",
+      "title": "M04 Вероятность и статистика",
+      "readback_verified": true
+    },
+    "M05": {
+      "id": "page_722a94f5021c8191bf0eeaa5bf7a6369",
+      "url": "https://chatgpt.com/space/page_722a94f5021c8191bf0eeaa5bf7a6369",
+      "title": "M05 Классический ML",
+      "readback_verified": true
+    },
+    "M06": {
+      "id": "page_a343becc267c81918fa77fc59a51dad9",
+      "url": "https://chatgpt.com/space/page_a343becc267c81918fa77fc59a51dad9",
+      "title": "M06 Проектирование ML-систем",
+      "readback_verified": true
+    },
+    "M07": {
+      "id": "page_07f5bd8094d0819189148ddb7a6d7613",
+      "url": "https://chatgpt.com/space/page_07f5bd8094d0819189148ddb7a6d7613",
+      "title": "M07 Нейросети и PyTorch",
+      "readback_verified": true
+    },
+    "M08": {
+      "id": "page_85dfecfa1bc08191b6513a15c179b25d",
+      "url": "https://chatgpt.com/space/page_85dfecfa1bc08191b6513a15c179b25d",
+      "title": "M08 NLP и Transformer",
+      "readback_verified": true
+    },
+    "M09": {
+      "id": "page_1e7f81ba1b0881918c7e47e7b964402b",
+      "url": "https://chatgpt.com/space/page_1e7f81ba1b0881918c7e47e7b964402b",
+      "title": "M09 Применение и запуск LLM",
+      "readback_verified": true
+    },
+    "M10": {
+      "id": "page_b99eec77282c8191b6947aecc685790e",
+      "url": "https://chatgpt.com/space/page_b99eec77282c8191b6947aecc685790e",
+      "title": "M10 RAG и поиск",
+      "readback_verified": true
+    },
+    "M11": {
+      "id": "page_3f2d4bb1eb3881919375695c0b73c63a",
+      "url": "https://chatgpt.com/space/page_3f2d4bb1eb3881919375695c0b73c63a",
+      "title": "M11 Оценивание LLM-систем",
+      "readback_verified": true
+    },
+    "M12": {
+      "id": "page_63f033ce7d248191865468c0467cfaba",
+      "url": "https://chatgpt.com/space/page_63f033ce7d248191865468c0467cfaba",
+      "title": "M12 Обучение и адаптация моделей",
+      "readback_verified": true
+    },
+    "M13": {
+      "id": "page_1ec7a87ce4fc819181dd0bedc64ca47b",
+      "url": "https://chatgpt.com/space/page_1ec7a87ce4fc819181dd0bedc64ca47b",
+      "title": "M13 MLOps и LLMOps",
+      "readback_verified": true
+    },
+    "M14": {
+      "id": "page_1f8b0a99815c81919d0b00fddbca9304",
+      "url": "https://chatgpt.com/space/page_1f8b0a99815c81919d0b00fddbca9304",
+      "title": "M14 Агенты и инструменты",
+      "readback_verified": true
+    },
+    "M15": {
+      "id": "page_a996d7fe78f4819185cfcdb9c7071e17",
+      "url": "https://chatgpt.com/space/page_a996d7fe78f4819185cfcdb9c7071e17",
+      "title": "M15 Речь и голосовой диалог",
+      "readback_verified": true
+    },
+    "M16": {
+      "id": "page_adaa363442c08191abfee4bd2bd685d1",
+      "url": "https://chatgpt.com/space/page_adaa363442c08191abfee4bd2bd685d1",
+      "title": "M16 Итоговый продукт и защита",
+      "readback_verified": true
+    },
+    "DIAGNOSTIC": {
+      "id": "page_2cd08dbb505c8191881da74e47eed53d",
+      "url": "https://chatgpt.com/space/page_2cd08dbb505c8191881da74e47eed53d",
+      "title": "Входная диагностика персонального курса",
+      "readback_verified": true
+    },
+    "MENTOR-KEYS": {
+      "id": "page_a37fd3e687908191a0206a367477967a",
+      "url": "https://chatgpt.com/space/page_a37fd3e687908191a0206a367477967a",
+      "title": "Ключи диагностики и пилотных занятий",
+      "readback_verified": true
+    },
+    "P01": {
+      "id": "page_970b6d8bf8488191835791902181d8e2",
+      "url": "https://chatgpt.com/space/page_970b6d8bf8488191835791902181d8e2",
+      "title": "P01 Диагностика и первая модель",
+      "readback_verified": true
+    },
+    "P02": {
+      "id": "page_b54f968be2c88191a812fcb7d57d0b3d",
+      "url": "https://chatgpt.com/space/page_b54f968be2c88191a812fcb7d57d0b3d",
+      "title": "P02 Как измерять ошибку модели",
+      "readback_verified": true
+    },
+    "P03": {
+      "id": "page_788a71e81994819197aa4edc27322ade",
+      "url": "https://chatgpt.com/space/page_788a71e81994819197aa4edc27322ade",
+      "title": "P03 Как проверять модель на новых данных",
+      "readback_verified": true
+    },
+    "P04": {
+      "id": "page_49e313d63c208191b0ba0a69207d99a0",
+      "url": "https://chatgpt.com/space/page_49e313d63c208191b0ba0a69207d99a0",
+      "title": "P04 Векторы матрицы и формы массивов",
+      "readback_verified": true
+    },
+    "P05": {
+      "id": "page_6aa170d304e48191800f3a950cbff129",
+      "url": "https://chatgpt.com/space/page_6aa170d304e48191800f3a950cbff129",
+      "title": "P05 Первая архитектура ML сервиса",
+      "readback_verified": true
+    },
+    "P06": {
+      "id": "page_00b40fc02d348191bc68b0b6df5b9f0e",
+      "url": "https://chatgpt.com/space/page_00b40fc02d348191bc68b0b6df5b9f0e",
+      "title": "P06 Параметры контекст и внешние знания",
+      "readback_verified": true
+    },
+    "P07": {
+      "id": "page_c56ba04cf5488191ba3f1073ed9c1342",
+      "url": "https://chatgpt.com/space/page_c56ba04cf5488191ba3f1073ed9c1342",
+      "title": "P07 Производная как скорость изменения",
+      "readback_verified": true
+    },
+    "P08": {
+      "id": "page_a2ce56396b2c819198df61829dd9c285",
+      "url": "https://chatgpt.com/space/page_a2ce56396b2c819198df61829dd9c285",
+      "title": "P08 Обучение через обновление параметров",
+      "readback_verified": true
+    },
+    "P09": {
+      "id": "page_c4935a1e37d08191abdf666ec1fd89ba",
+      "url": "https://chatgpt.com/space/page_c4935a1e37d08191abdf666ec1fd89ba",
+      "title": "P09 Воспроизводимое сравнение моделей",
+      "readback_verified": true
+    },
+    "P10": {
+      "id": "page_da3578d62b988191ac04011710866313",
+      "url": "https://chatgpt.com/space/page_da3578d62b988191ac04011710866313",
+      "title": "P10 Защита эксперимента и настройка маршрута",
+      "readback_verified": true
+    },
+    "GLOSSARY": {
+      "id": "page_d3f1114e9c54819189fb7ea48f291ea9",
+      "url": "https://chatgpt.com/space/page_d3f1114e9c54819189fb7ea48f291ea9",
+      "title": "Словарь курса: от модели до голосового диалога",
+      "readback_verified": true
+    },
+    "PROJECT": {
+      "id": "page_d718cdd69f788191928235c74a5bccba",
+      "url": "https://chatgpt.com/space/page_d718cdd69f788191928235c74a5bccba",
+      "title": "Сквозной проект: голосовой тренажёр собеседований",
+      "readback_verified": true
+    },
+    "HOME": {
+      "id": "page_490c579aa2388191be5ce4e3ef598a23",
+      "url": "https://chatgpt.com/space/page_490c579aa2388191be5ce4e3ef598a23",
+      "title": "Персональный курс ML и LLM — старт и маршрут",
+      "readback_verified": true
+    }
+  },
+  "publication": {
+    "status": "verified",
+    "required_page_keys": [
+      "HOME",
+      "PROGRESS",
+      "DIAGNOSTIC",
+      "MENTOR",
+      "MENTOR-KEYS",
+      "GLOSSARY",
+      "PROJECT",
+      "M00",
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06",
+      "M07",
+      "M08",
+      "M09",
+      "M10",
+      "M11",
+      "M12",
+      "M13",
+      "M14",
+      "M15",
+      "M16",
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10"
+    ],
+    "missing_pages": [],
+    "awaiting_readback": []
+  },
+  "stages": [
+    {
+      "id": 1,
+      "name": "Competency map",
+      "status": "ready"
+    },
+    {
+      "id": 2,
+      "name": "Full curriculum design",
+      "status": "ready"
+    },
+    {
+      "id": 3,
+      "name": "Course infrastructure",
+      "status": "ready"
+    },
+    {
+      "id": 4,
+      "name": "Diagnostics and pilot materials",
+      "status": "ready"
+    },
+    {
+      "id": 5,
+      "name": "Learner pilot",
+      "status": "awaiting_learner"
+    },
+    {
+      "id": 6,
+      "name": "Personal calibration",
+      "status": "pending"
+    },
+    {
+      "id": 7,
+      "name": "Remaining mandatory materials",
+      "status": "pending"
+    },
+    {
+      "id": 8,
+      "name": "Full course release",
+      "status": "pending"
+    }
+  ],
+  "modules": [
+    {
+      "id": "M00",
+      "title": "Модель и обучение",
+      "version": "0.1.0",
+      "page_key": "M00",
+      "page_url": "https://chatgpt.com/space/page_d7f07426da4481919b1bfb7f31d6730a",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M00-L01",
+        "M00-L02",
+        "M00-L03",
+        "M00-L04",
+        "M00-L05"
+      ],
+      "homework_id": "M00-HW01"
+    },
+    {
+      "id": "M01",
+      "title": "Данные и численный Python",
+      "version": "0.1.0",
+      "page_key": "M01",
+      "page_url": "https://chatgpt.com/space/page_cf011ed273748191b0a19cafff25dcdd",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M01-L01",
+        "M01-L02",
+        "M01-L03",
+        "M01-L04",
+        "M01-L05"
+      ],
+      "homework_id": "M01-HW01"
+    },
+    {
+      "id": "M02",
+      "title": "Линейная алгебра",
+      "version": "0.1.0",
+      "page_key": "M02",
+      "page_url": "https://chatgpt.com/space/page_986c5d945418819192ca494caa621521",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M02-L01",
+        "M02-L02",
+        "M02-L03",
+        "M02-L04",
+        "M02-L05"
+      ],
+      "homework_id": "M02-HW01"
+    },
+    {
+      "id": "M03",
+      "title": "Производные и оптимизация",
+      "version": "0.1.0",
+      "page_key": "M03",
+      "page_url": "https://chatgpt.com/space/page_a5979770ba9881918106aa66dfebe0b8",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M03-L01",
+        "M03-L02",
+        "M03-L03",
+        "M03-L04",
+        "M03-L05"
+      ],
+      "homework_id": "M03-HW01"
+    },
+    {
+      "id": "M04",
+      "title": "Вероятность и статистика",
+      "version": "0.1.0",
+      "page_key": "M04",
+      "page_url": "https://chatgpt.com/space/page_70eb85e1ccac8191bc48018aeb41aa9e",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M04-L01",
+        "M04-L02",
+        "M04-L03",
+        "M04-L04",
+        "M04-L05"
+      ],
+      "homework_id": "M04-HW01"
+    },
+    {
+      "id": "M05",
+      "title": "Классический ML",
+      "version": "0.1.0",
+      "page_key": "M05",
+      "page_url": "https://chatgpt.com/space/page_722a94f5021c8191bf0eeaa5bf7a6369",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M05-L01",
+        "M05-L02",
+        "M05-L03",
+        "M05-L04",
+        "M05-L05"
+      ],
+      "homework_id": "M05-HW01"
+    },
+    {
+      "id": "M06",
+      "title": "Проектирование ML-систем",
+      "version": "0.1.0",
+      "page_key": "M06",
+      "page_url": "https://chatgpt.com/space/page_a343becc267c81918fa77fc59a51dad9",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M06-L01",
+        "M06-L02",
+        "M06-L03",
+        "M06-L04",
+        "M06-L05"
+      ],
+      "homework_id": "M06-HW01"
+    },
+    {
+      "id": "M07",
+      "title": "Нейросети и PyTorch",
+      "version": "0.1.0",
+      "page_key": "M07",
+      "page_url": "https://chatgpt.com/space/page_07f5bd8094d0819189148ddb7a6d7613",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M07-L01",
+        "M07-L02",
+        "M07-L03",
+        "M07-L04",
+        "M07-L05"
+      ],
+      "homework_id": "M07-HW01"
+    },
+    {
+      "id": "M08",
+      "title": "NLP и Transformer",
+      "version": "0.1.0",
+      "page_key": "M08",
+      "page_url": "https://chatgpt.com/space/page_85dfecfa1bc08191b6513a15c179b25d",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M08-L01",
+        "M08-L02",
+        "M08-L03",
+        "M08-L04",
+        "M08-L05"
+      ],
+      "homework_id": "M08-HW01"
+    },
+    {
+      "id": "M09",
+      "title": "Применение и запуск LLM",
+      "version": "0.1.0",
+      "page_key": "M09",
+      "page_url": "https://chatgpt.com/space/page_1e7f81ba1b0881918c7e47e7b964402b",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M09-L01",
+        "M09-L02",
+        "M09-L03",
+        "M09-L04",
+        "M09-L05"
+      ],
+      "homework_id": "M09-HW01"
+    },
+    {
+      "id": "M10",
+      "title": "RAG и поиск",
+      "version": "0.1.0",
+      "page_key": "M10",
+      "page_url": "https://chatgpt.com/space/page_b99eec77282c8191b6947aecc685790e",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M10-L01",
+        "M10-L02",
+        "M10-L03",
+        "M10-L04",
+        "M10-L05"
+      ],
+      "homework_id": "M10-HW01"
+    },
+    {
+      "id": "M11",
+      "title": "Оценивание LLM-систем",
+      "version": "0.1.0",
+      "page_key": "M11",
+      "page_url": "https://chatgpt.com/space/page_3f2d4bb1eb3881919375695c0b73c63a",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M11-L01",
+        "M11-L02",
+        "M11-L03",
+        "M11-L04",
+        "M11-L05"
+      ],
+      "homework_id": "M11-HW01"
+    },
+    {
+      "id": "M12",
+      "title": "Обучение и адаптация моделей",
+      "version": "0.1.0",
+      "page_key": "M12",
+      "page_url": "https://chatgpt.com/space/page_63f033ce7d248191865468c0467cfaba",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M12-L01",
+        "M12-L02",
+        "M12-L03",
+        "M12-L04",
+        "M12-L05"
+      ],
+      "homework_id": "M12-HW01"
+    },
+    {
+      "id": "M13",
+      "title": "MLOps и LLMOps",
+      "version": "0.1.0",
+      "page_key": "M13",
+      "page_url": "https://chatgpt.com/space/page_1ec7a87ce4fc819181dd0bedc64ca47b",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M13-L01",
+        "M13-L02",
+        "M13-L03",
+        "M13-L04",
+        "M13-L05"
+      ],
+      "homework_id": "M13-HW01"
+    },
+    {
+      "id": "M14",
+      "title": "Агенты и инструменты",
+      "version": "0.1.0",
+      "page_key": "M14",
+      "page_url": "https://chatgpt.com/space/page_1f8b0a99815c81919d0b00fddbca9304",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M14-L01",
+        "M14-L02",
+        "M14-L03",
+        "M14-L04",
+        "M14-L05"
+      ],
+      "homework_id": "M14-HW01"
+    },
+    {
+      "id": "M15",
+      "title": "Речь и голосовой диалог",
+      "version": "0.1.0",
+      "page_key": "M15",
+      "page_url": "https://chatgpt.com/space/page_a996d7fe78f4819185cfcdb9c7071e17",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M15-L01",
+        "M15-L02",
+        "M15-L03",
+        "M15-L04",
+        "M15-L05"
+      ],
+      "homework_id": "M15-HW01"
+    },
+    {
+      "id": "M16",
+      "title": "Итоговый продукт и защита",
+      "version": "0.1.0",
+      "page_key": "M16",
+      "page_url": "https://chatgpt.com/space/page_adaa363442c08191abfee4bd2bd685d1",
+      "delivery_status": "verified",
+      "design_status": "ready",
+      "material_status": "introductory_draft",
+      "full_module_ready": false,
+      "learner_status": "not_assessed",
+      "lesson_ids": [
+        "M16-L01",
+        "M16-L02",
+        "M16-L03",
+        "M16-L04",
+        "M16-L05"
+      ],
+      "homework_id": "M16-HW01"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "M00-L01",
+      "title": "От входа к предсказанию",
+      "version": "0.1.0",
+      "module_id": "M00",
+      "page_key": "M00",
+      "page_url": "https://chatgpt.com/space/page_d7f07426da4481919b1bfb7f31d6730a",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [],
+      "outcome_ids": [
+        "M00-C01"
+      ],
+      "pilot_sessions": [
+        "P01"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M00-L02",
+      "title": "Параметры и устройство модели",
+      "version": "0.1.0",
+      "module_id": "M00",
+      "page_key": "M00",
+      "page_url": "https://chatgpt.com/space/page_d7f07426da4481919b1bfb7f31d6730a",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M00-L01"
+      ],
+      "outcome_ids": [
+        "M00-C01"
+      ],
+      "pilot_sessions": [
+        "P02"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M00-L03",
+      "title": "Ошибка и подбор параметров",
+      "version": "0.1.0",
+      "module_id": "M00",
+      "page_key": "M00",
+      "page_url": "https://chatgpt.com/space/page_d7f07426da4481919b1bfb7f31d6730a",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M00-L02"
+      ],
+      "outcome_ids": [
+        "M00-C02"
+      ],
+      "pilot_sessions": [
+        "P02"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M00-L04",
+      "title": "Обучение и применение",
+      "version": "0.1.0",
+      "module_id": "M00",
+      "page_key": "M00",
+      "page_url": "https://chatgpt.com/space/page_d7f07426da4481919b1bfb7f31d6730a",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M00-L03"
+      ],
+      "outcome_ids": [
+        "M00-C02"
+      ],
+      "pilot_sessions": [
+        "P06"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M00-L05",
+      "title": "Первая схема ML-сервиса",
+      "version": "0.1.0",
+      "module_id": "M00",
+      "page_key": "M00",
+      "page_url": "https://chatgpt.com/space/page_d7f07426da4481919b1bfb7f31d6730a",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M00-L03"
+      ],
+      "outcome_ids": [
+        "M00-C01",
+        "M00-C02",
+        "M00-C03"
+      ],
+      "pilot_sessions": [
+        "P05"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M01-L01",
+      "title": "Массивы и формы",
+      "version": "0.1.0",
+      "module_id": "M01",
+      "page_key": "M01",
+      "page_url": "https://chatgpt.com/space/page_cf011ed273748191b0a19cafff25dcdd",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M00-L01"
+      ],
+      "outcome_ids": [
+        "M01-C01"
+      ],
+      "pilot_sessions": [
+        "P04"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M01-L02",
+      "title": "Качество таблицы",
+      "version": "0.1.0",
+      "module_id": "M01",
+      "page_key": "M01",
+      "page_url": "https://chatgpt.com/space/page_cf011ed273748191b0a19cafff25dcdd",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M00-L01"
+      ],
+      "outcome_ids": [
+        "M01-C01"
+      ],
+      "pilot_sessions": [
+        "P03"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M01-L03",
+      "title": "Разделение данных",
+      "version": "0.1.0",
+      "module_id": "M01",
+      "page_key": "M01",
+      "page_url": "https://chatgpt.com/space/page_cf011ed273748191b0a19cafff25dcdd",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M00-L03"
+      ],
+      "outcome_ids": [
+        "M01-C02"
+      ],
+      "pilot_sessions": [
+        "P03"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M01-L04",
+      "title": "SQL и происхождение данных",
+      "version": "0.1.0",
+      "module_id": "M01",
+      "page_key": "M01",
+      "page_url": "https://chatgpt.com/space/page_cf011ed273748191b0a19cafff25dcdd",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M01-L03"
+      ],
+      "outcome_ids": [
+        "M01-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M01-L05",
+      "title": "Воспроизводимый конвейер",
+      "version": "0.1.0",
+      "module_id": "M01",
+      "page_key": "M01",
+      "page_url": "https://chatgpt.com/space/page_cf011ed273748191b0a19cafff25dcdd",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M01-L02",
+        "M01-L03"
+      ],
+      "outcome_ids": [
+        "M01-C01",
+        "M01-C02",
+        "M01-C03"
+      ],
+      "pilot_sessions": [
+        "P09"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M02-L01",
+      "title": "Векторы как признаки",
+      "version": "0.1.0",
+      "module_id": "M02",
+      "page_key": "M02",
+      "page_url": "https://chatgpt.com/space/page_986c5d945418819192ca494caa621521",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M01-L01"
+      ],
+      "outcome_ids": [
+        "M02-C01"
+      ],
+      "pilot_sessions": [
+        "P04"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M02-L02",
+      "title": "Скалярное произведение и нормы",
+      "version": "0.1.0",
+      "module_id": "M02",
+      "page_key": "M02",
+      "page_url": "https://chatgpt.com/space/page_986c5d945418819192ca494caa621521",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M02-L01"
+      ],
+      "outcome_ids": [
+        "M02-C01"
+      ],
+      "pilot_sessions": [
+        "P04"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M02-L03",
+      "title": "Матрицы и композиция",
+      "version": "0.1.0",
+      "module_id": "M02",
+      "page_key": "M02",
+      "page_url": "https://chatgpt.com/space/page_986c5d945418819192ca494caa621521",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M02-L02"
+      ],
+      "outcome_ids": [
+        "M02-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M02-L04",
+      "title": "Сходство и масштаб",
+      "version": "0.1.0",
+      "module_id": "M02",
+      "page_key": "M02",
+      "page_url": "https://chatgpt.com/space/page_986c5d945418819192ca494caa621521",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M02-L03"
+      ],
+      "outcome_ids": [
+        "M02-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M02-L05",
+      "title": "Маленький векторный поиск",
+      "version": "0.1.0",
+      "module_id": "M02",
+      "page_key": "M02",
+      "page_url": "https://chatgpt.com/space/page_986c5d945418819192ca494caa621521",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M02-L04"
+      ],
+      "outcome_ids": [
+        "M02-C01",
+        "M02-C02",
+        "M02-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M03-L01",
+      "title": "Изменение функции",
+      "version": "0.1.0",
+      "module_id": "M03",
+      "page_key": "M03",
+      "page_url": "https://chatgpt.com/space/page_a5979770ba9881918106aa66dfebe0b8",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M00-L03"
+      ],
+      "outcome_ids": [
+        "M03-C01"
+      ],
+      "pilot_sessions": [
+        "P07"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M03-L02",
+      "title": "Производная и цепное правило",
+      "version": "0.1.0",
+      "module_id": "M03",
+      "page_key": "M03",
+      "page_url": "https://chatgpt.com/space/page_a5979770ba9881918106aa66dfebe0b8",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M03-L01"
+      ],
+      "outcome_ids": [
+        "M03-C01"
+      ],
+      "pilot_sessions": [
+        "P07"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M03-L03",
+      "title": "Градиент на наборе",
+      "version": "0.1.0",
+      "module_id": "M03",
+      "page_key": "M03",
+      "page_url": "https://chatgpt.com/space/page_a5979770ba9881918106aa66dfebe0b8",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M03-L02",
+        "M02-L01"
+      ],
+      "outcome_ids": [
+        "M03-C02"
+      ],
+      "pilot_sessions": [
+        "P08"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M03-L04",
+      "title": "Шаг обучения",
+      "version": "0.1.0",
+      "module_id": "M03",
+      "page_key": "M03",
+      "page_url": "https://chatgpt.com/space/page_a5979770ba9881918106aa66dfebe0b8",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M03-L03"
+      ],
+      "outcome_ids": [
+        "M03-C02"
+      ],
+      "pilot_sessions": [
+        "P08"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M03-L05",
+      "title": "Регуляризация и масштаб",
+      "version": "0.1.0",
+      "module_id": "M03",
+      "page_key": "M03",
+      "page_url": "https://chatgpt.com/space/page_a5979770ba9881918106aa66dfebe0b8",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M03-L04"
+      ],
+      "outcome_ids": [
+        "M03-C01",
+        "M03-C02",
+        "M03-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M04-L01",
+      "title": "Случайность и условие",
+      "version": "0.1.0",
+      "module_id": "M04",
+      "page_key": "M04",
+      "page_url": "https://chatgpt.com/space/page_70eb85e1ccac8191bc48018aeb41aa9e",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M01-L02"
+      ],
+      "outcome_ids": [
+        "M04-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M04-L02",
+      "title": "Среднее, дисперсия и выборка",
+      "version": "0.1.0",
+      "module_id": "M04",
+      "page_key": "M04",
+      "page_url": "https://chatgpt.com/space/page_70eb85e1ccac8191bc48018aeb41aa9e",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M04-L01"
+      ],
+      "outcome_ids": [
+        "M04-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M04-L03",
+      "title": "Неопределённость метрики",
+      "version": "0.1.0",
+      "module_id": "M04",
+      "page_key": "M04",
+      "page_url": "https://chatgpt.com/space/page_70eb85e1ccac8191bc48018aeb41aa9e",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M04-L02"
+      ],
+      "outcome_ids": [
+        "M04-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M04-L04",
+      "title": "Bootstrap и интервалы",
+      "version": "0.1.0",
+      "module_id": "M04",
+      "page_key": "M04",
+      "page_url": "https://chatgpt.com/space/page_70eb85e1ccac8191bc48018aeb41aa9e",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M04-L03",
+        "M01-L03"
+      ],
+      "outcome_ids": [
+        "M04-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M04-L05",
+      "title": "Гипотезы и эксперимент",
+      "version": "0.1.0",
+      "module_id": "M04",
+      "page_key": "M04",
+      "page_url": "https://chatgpt.com/space/page_70eb85e1ccac8191bc48018aeb41aa9e",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M04-L04"
+      ],
+      "outcome_ids": [
+        "M04-C01",
+        "M04-C02",
+        "M04-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M05-L01",
+      "title": "Задача и исходное решение",
+      "version": "0.1.0",
+      "module_id": "M05",
+      "page_key": "M05",
+      "page_url": "https://chatgpt.com/space/page_722a94f5021c8191bf0eeaa5bf7a6369",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M01-L03",
+        "M00-L03"
+      ],
+      "outcome_ids": [
+        "M05-C01"
+      ],
+      "pilot_sessions": [
+        "P09"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M05-L02",
+      "title": "Линейные модели",
+      "version": "0.1.0",
+      "module_id": "M05",
+      "page_key": "M05",
+      "page_url": "https://chatgpt.com/space/page_722a94f5021c8191bf0eeaa5bf7a6369",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M05-L01",
+        "M03-L04"
+      ],
+      "outcome_ids": [
+        "M05-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M05-L03",
+      "title": "Деревья и бустинг",
+      "version": "0.1.0",
+      "module_id": "M05",
+      "page_key": "M05",
+      "page_url": "https://chatgpt.com/space/page_722a94f5021c8191bf0eeaa5bf7a6369",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M05-L02"
+      ],
+      "outcome_ids": [
+        "M05-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M05-L04",
+      "title": "Валидация и утечки",
+      "version": "0.1.0",
+      "module_id": "M05",
+      "page_key": "M05",
+      "page_url": "https://chatgpt.com/space/page_722a94f5021c8191bf0eeaa5bf7a6369",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M05-L03",
+        "M04-L04"
+      ],
+      "outcome_ids": [
+        "M05-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M05-L05",
+      "title": "Анализ ошибок",
+      "version": "0.1.0",
+      "module_id": "M05",
+      "page_key": "M05",
+      "page_url": "https://chatgpt.com/space/page_722a94f5021c8191bf0eeaa5bf7a6369",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M05-L04"
+      ],
+      "outcome_ids": [
+        "M05-C01",
+        "M05-C02",
+        "M05-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M06-L01",
+      "title": "Цель и ограничения",
+      "version": "0.1.0",
+      "module_id": "M06",
+      "page_key": "M06",
+      "page_url": "https://chatgpt.com/space/page_a343becc267c81918fa77fc59a51dad9",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M00-L05"
+      ],
+      "outcome_ids": [
+        "M06-C01"
+      ],
+      "pilot_sessions": [
+        "P10"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M06-L02",
+      "title": "Контуры данных и модели",
+      "version": "0.1.0",
+      "module_id": "M06",
+      "page_key": "M06",
+      "page_url": "https://chatgpt.com/space/page_a343becc267c81918fa77fc59a51dad9",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M06-L01"
+      ],
+      "outcome_ids": [
+        "M06-C01"
+      ],
+      "pilot_sessions": [
+        "P10"
+      ],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M06-L03",
+      "title": "Batch и online",
+      "version": "0.1.0",
+      "module_id": "M06",
+      "page_key": "M06",
+      "page_url": "https://chatgpt.com/space/page_a343becc267c81918fa77fc59a51dad9",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M06-L02",
+        "M05-L05"
+      ],
+      "outcome_ids": [
+        "M06-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M06-L04",
+      "title": "Наблюдение и изменение качества",
+      "version": "0.1.0",
+      "module_id": "M06",
+      "page_key": "M06",
+      "page_url": "https://chatgpt.com/space/page_a343becc267c81918fa77fc59a51dad9",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M06-L03"
+      ],
+      "outcome_ids": [
+        "M06-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M06-L05",
+      "title": "Отказы и откат",
+      "version": "0.1.0",
+      "module_id": "M06",
+      "page_key": "M06",
+      "page_url": "https://chatgpt.com/space/page_a343becc267c81918fa77fc59a51dad9",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M06-L04"
+      ],
+      "outcome_ids": [
+        "M06-C01",
+        "M06-C02",
+        "M06-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M07-L01",
+      "title": "Линейный слой и нелинейность",
+      "version": "0.1.0",
+      "module_id": "M07",
+      "page_key": "M07",
+      "page_url": "https://chatgpt.com/space/page_07f5bd8094d0819189148ddb7a6d7613",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M02-L03",
+        "M03-L04",
+        "M05-L04"
+      ],
+      "outcome_ids": [
+        "M07-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M07-L02",
+      "title": "Autograd и обратный проход",
+      "version": "0.1.0",
+      "module_id": "M07",
+      "page_key": "M07",
+      "page_url": "https://chatgpt.com/space/page_07f5bd8094d0819189148ddb7a6d7613",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M07-L01"
+      ],
+      "outcome_ids": [
+        "M07-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M07-L03",
+      "title": "Цикл обучения",
+      "version": "0.1.0",
+      "module_id": "M07",
+      "page_key": "M07",
+      "page_url": "https://chatgpt.com/space/page_07f5bd8094d0819189148ddb7a6d7613",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M07-L02"
+      ],
+      "outcome_ids": [
+        "M07-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M07-L04",
+      "title": "Проверка и диагностика",
+      "version": "0.1.0",
+      "module_id": "M07",
+      "page_key": "M07",
+      "page_url": "https://chatgpt.com/space/page_07f5bd8094d0819189148ddb7a6d7613",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M07-L03"
+      ],
+      "outcome_ids": [
+        "M07-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M07-L05",
+      "title": "Сохранение и воспроизведение",
+      "version": "0.1.0",
+      "module_id": "M07",
+      "page_key": "M07",
+      "page_url": "https://chatgpt.com/space/page_07f5bd8094d0819189148ddb7a6d7613",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M07-L04"
+      ],
+      "outcome_ids": [
+        "M07-C01",
+        "M07-C02",
+        "M07-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M08-L01",
+      "title": "Текст и токены",
+      "version": "0.1.0",
+      "module_id": "M08",
+      "page_key": "M08",
+      "page_url": "https://chatgpt.com/space/page_85dfecfa1bc08191b6513a15c179b25d",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M07-L03"
+      ],
+      "outcome_ids": [
+        "M08-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M08-L02",
+      "title": "Embeddings",
+      "version": "0.1.0",
+      "module_id": "M08",
+      "page_key": "M08",
+      "page_url": "https://chatgpt.com/space/page_85dfecfa1bc08191b6513a15c179b25d",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M08-L01"
+      ],
+      "outcome_ids": [
+        "M08-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M08-L03",
+      "title": "Attention",
+      "version": "0.1.0",
+      "module_id": "M08",
+      "page_key": "M08",
+      "page_url": "https://chatgpt.com/space/page_85dfecfa1bc08191b6513a15c179b25d",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M08-L02"
+      ],
+      "outcome_ids": [
+        "M08-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M08-L04",
+      "title": "Позиции и causal mask",
+      "version": "0.1.0",
+      "module_id": "M08",
+      "page_key": "M08",
+      "page_url": "https://chatgpt.com/space/page_85dfecfa1bc08191b6513a15c179b25d",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M08-L03"
+      ],
+      "outcome_ids": [
+        "M08-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M08-L05",
+      "title": "Мини-языковая модель",
+      "version": "0.1.0",
+      "module_id": "M08",
+      "page_key": "M08",
+      "page_url": "https://chatgpt.com/space/page_85dfecfa1bc08191b6513a15c179b25d",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M08-L04"
+      ],
+      "outcome_ids": [
+        "M08-C01",
+        "M08-C02",
+        "M08-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M09-L01",
+      "title": "Сообщения и шаблон диалога",
+      "version": "0.1.0",
+      "module_id": "M09",
+      "page_key": "M09",
+      "page_url": "https://chatgpt.com/space/page_1e7f81ba1b0881918c7e47e7b964402b",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M08-L04"
+      ],
+      "outcome_ids": [
+        "M09-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M09-L02",
+      "title": "Контекст и история",
+      "version": "0.1.0",
+      "module_id": "M09",
+      "page_key": "M09",
+      "page_url": "https://chatgpt.com/space/page_1e7f81ba1b0881918c7e47e7b964402b",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M09-L01"
+      ],
+      "outcome_ids": [
+        "M09-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M09-L03",
+      "title": "Генерация и ограничения",
+      "version": "0.1.0",
+      "module_id": "M09",
+      "page_key": "M09",
+      "page_url": "https://chatgpt.com/space/page_1e7f81ba1b0881918c7e47e7b964402b",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M09-L02"
+      ],
+      "outcome_ids": [
+        "M09-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M09-L04",
+      "title": "Локальный инференс и память",
+      "version": "0.1.0",
+      "module_id": "M09",
+      "page_key": "M09",
+      "page_url": "https://chatgpt.com/space/page_1e7f81ba1b0881918c7e47e7b964402b",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M09-L03"
+      ],
+      "outcome_ids": [
+        "M09-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M09-L05",
+      "title": "Контракт ответа",
+      "version": "0.1.0",
+      "module_id": "M09",
+      "page_key": "M09",
+      "page_url": "https://chatgpt.com/space/page_1e7f81ba1b0881918c7e47e7b964402b",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M09-L04"
+      ],
+      "outcome_ids": [
+        "M09-C01",
+        "M09-C02",
+        "M09-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M10-L01",
+      "title": "Документ и фрагмент",
+      "version": "0.1.0",
+      "module_id": "M10",
+      "page_key": "M10",
+      "page_url": "https://chatgpt.com/space/page_b99eec77282c8191b6947aecc685790e",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M09-L02",
+        "M02-L05",
+        "M01-L05"
+      ],
+      "outcome_ids": [
+        "M10-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M10-L02",
+      "title": "Лексический и векторный поиск",
+      "version": "0.1.0",
+      "module_id": "M10",
+      "page_key": "M10",
+      "page_url": "https://chatgpt.com/space/page_b99eec77282c8191b6947aecc685790e",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M10-L01"
+      ],
+      "outcome_ids": [
+        "M10-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M10-L03",
+      "title": "Гибридный поиск и reranking",
+      "version": "0.1.0",
+      "module_id": "M10",
+      "page_key": "M10",
+      "page_url": "https://chatgpt.com/space/page_b99eec77282c8191b6947aecc685790e",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M10-L02"
+      ],
+      "outcome_ids": [
+        "M10-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M10-L04",
+      "title": "Контекст и подтверждение ответа",
+      "version": "0.1.0",
+      "module_id": "M10",
+      "page_key": "M10",
+      "page_url": "https://chatgpt.com/space/page_b99eec77282c8191b6947aecc685790e",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M10-L03"
+      ],
+      "outcome_ids": [
+        "M10-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M10-L05",
+      "title": "Диагностика и обновления",
+      "version": "0.1.0",
+      "module_id": "M10",
+      "page_key": "M10",
+      "page_url": "https://chatgpt.com/space/page_b99eec77282c8191b6947aecc685790e",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M10-L04"
+      ],
+      "outcome_ids": [
+        "M10-C01",
+        "M10-C02",
+        "M10-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M11-L01",
+      "title": "Что именно оцениваем",
+      "version": "0.1.0",
+      "module_id": "M11",
+      "page_key": "M11",
+      "page_url": "https://chatgpt.com/space/page_3f2d4bb1eb3881919375695c0b73c63a",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M10-L05",
+        "M04-L04"
+      ],
+      "outcome_ids": [
+        "M11-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M11-L02",
+      "title": "Набор примеров и разметка",
+      "version": "0.1.0",
+      "module_id": "M11",
+      "page_key": "M11",
+      "page_url": "https://chatgpt.com/space/page_3f2d4bb1eb3881919375695c0b73c63a",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M11-L01"
+      ],
+      "outcome_ids": [
+        "M11-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M11-L03",
+      "title": "HR и технические рубрики",
+      "version": "0.1.0",
+      "module_id": "M11",
+      "page_key": "M11",
+      "page_url": "https://chatgpt.com/space/page_3f2d4bb1eb3881919375695c0b73c63a",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M11-L02"
+      ],
+      "outcome_ids": [
+        "M11-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M11-L04",
+      "title": "Модель как оценщик",
+      "version": "0.1.0",
+      "module_id": "M11",
+      "page_key": "M11",
+      "page_url": "https://chatgpt.com/space/page_3f2d4bb1eb3881919375695c0b73c63a",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M11-L03"
+      ],
+      "outcome_ids": [
+        "M11-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M11-L05",
+      "title": "Регрессии и отчёт",
+      "version": "0.1.0",
+      "module_id": "M11",
+      "page_key": "M11",
+      "page_url": "https://chatgpt.com/space/page_3f2d4bb1eb3881919375695c0b73c63a",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M11-L04"
+      ],
+      "outcome_ids": [
+        "M11-C01",
+        "M11-C02",
+        "M11-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M12-L01",
+      "title": "Выбор вмешательства",
+      "version": "0.1.0",
+      "module_id": "M12",
+      "page_key": "M12",
+      "page_url": "https://chatgpt.com/space/page_63f033ce7d248191865468c0467cfaba",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M07-L05",
+        "M09-L05",
+        "M11-L05"
+      ],
+      "outcome_ids": [
+        "M12-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M12-L02",
+      "title": "Данные для адаптации",
+      "version": "0.1.0",
+      "module_id": "M12",
+      "page_key": "M12",
+      "page_url": "https://chatgpt.com/space/page_63f033ce7d248191865468c0467cfaba",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M12-L01"
+      ],
+      "outcome_ids": [
+        "M12-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M12-L03",
+      "title": "Малое обучение с нуля",
+      "version": "0.1.0",
+      "module_id": "M12",
+      "page_key": "M12",
+      "page_url": "https://chatgpt.com/space/page_63f033ce7d248191865468c0467cfaba",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M12-L02"
+      ],
+      "outcome_ids": [
+        "M12-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M12-L04",
+      "title": "Дообучение и адаптеры",
+      "version": "0.1.0",
+      "module_id": "M12",
+      "page_key": "M12",
+      "page_url": "https://chatgpt.com/space/page_63f033ce7d248191865468c0467cfaba",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M12-L03"
+      ],
+      "outcome_ids": [
+        "M12-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M12-L05",
+      "title": "Сравнение до и после",
+      "version": "0.1.0",
+      "module_id": "M12",
+      "page_key": "M12",
+      "page_url": "https://chatgpt.com/space/page_63f033ce7d248191865468c0467cfaba",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M12-L04"
+      ],
+      "outcome_ids": [
+        "M12-C01",
+        "M12-C02",
+        "M12-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M13-L01",
+      "title": "Версия эксперимента и релиза",
+      "version": "0.1.0",
+      "module_id": "M13",
+      "page_key": "M13",
+      "page_url": "https://chatgpt.com/space/page_1ec7a87ce4fc819181dd0bedc64ca47b",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M06-L05",
+        "M09-L05",
+        "M11-L05"
+      ],
+      "outcome_ids": [
+        "M13-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M13-L02",
+      "title": "Упаковка и контракт",
+      "version": "0.1.0",
+      "module_id": "M13",
+      "page_key": "M13",
+      "page_url": "https://chatgpt.com/space/page_1ec7a87ce4fc819181dd0bedc64ca47b",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M13-L01"
+      ],
+      "outcome_ids": [
+        "M13-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M13-L03",
+      "title": "Регрессионные проверки",
+      "version": "0.1.0",
+      "module_id": "M13",
+      "page_key": "M13",
+      "page_url": "https://chatgpt.com/space/page_1ec7a87ce4fc819181dd0bedc64ca47b",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M13-L02"
+      ],
+      "outcome_ids": [
+        "M13-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M13-L04",
+      "title": "Наблюдаемость и нагрузка",
+      "version": "0.1.0",
+      "module_id": "M13",
+      "page_key": "M13",
+      "page_url": "https://chatgpt.com/space/page_1ec7a87ce4fc819181dd0bedc64ca47b",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M13-L03"
+      ],
+      "outcome_ids": [
+        "M13-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M13-L05",
+      "title": "Неудачный релиз и восстановление",
+      "version": "0.1.0",
+      "module_id": "M13",
+      "page_key": "M13",
+      "page_url": "https://chatgpt.com/space/page_1ec7a87ce4fc819181dd0bedc64ca47b",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M13-L04"
+      ],
+      "outcome_ids": [
+        "M13-C01",
+        "M13-C02",
+        "M13-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M14-L01",
+      "title": "Сценарий и агентный цикл",
+      "version": "0.1.0",
+      "module_id": "M14",
+      "page_key": "M14",
+      "page_url": "https://chatgpt.com/space/page_1f8b0a99815c81919d0b00fddbca9304",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M10-L05",
+        "M11-L05",
+        "M13-L05"
+      ],
+      "outcome_ids": [
+        "M14-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M14-L02",
+      "title": "Контракт инструмента",
+      "version": "0.1.0",
+      "module_id": "M14",
+      "page_key": "M14",
+      "page_url": "https://chatgpt.com/space/page_1f8b0a99815c81919d0b00fddbca9304",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M14-L01"
+      ],
+      "outcome_ids": [
+        "M14-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M14-L03",
+      "title": "Состояние и границы доступа",
+      "version": "0.1.0",
+      "module_id": "M14",
+      "page_key": "M14",
+      "page_url": "https://chatgpt.com/space/page_1f8b0a99815c81919d0b00fddbca9304",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M14-L02"
+      ],
+      "outcome_ids": [
+        "M14-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M14-L04",
+      "title": "Ошибки и остановка",
+      "version": "0.1.0",
+      "module_id": "M14",
+      "page_key": "M14",
+      "page_url": "https://chatgpt.com/space/page_1f8b0a99815c81919d0b00fddbca9304",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M14-L03"
+      ],
+      "outcome_ids": [
+        "M14-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M14-L05",
+      "title": "Проверка агента",
+      "version": "0.1.0",
+      "module_id": "M14",
+      "page_key": "M14",
+      "page_url": "https://chatgpt.com/space/page_1f8b0a99815c81919d0b00fddbca9304",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M14-L04"
+      ],
+      "outcome_ids": [
+        "M14-C01",
+        "M14-C02",
+        "M14-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M15-L01",
+      "title": "Аудио и речь",
+      "version": "0.1.0",
+      "module_id": "M15",
+      "page_key": "M15",
+      "page_url": "https://chatgpt.com/space/page_a996d7fe78f4819185cfcdb9c7071e17",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M09-L05",
+        "M13-L04"
+      ],
+      "outcome_ids": [
+        "M15-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M15-L02",
+      "title": "Распознавание и сегменты",
+      "version": "0.1.0",
+      "module_id": "M15",
+      "page_key": "M15",
+      "page_url": "https://chatgpt.com/space/page_a996d7fe78f4819185cfcdb9c7071e17",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M15-L01"
+      ],
+      "outcome_ids": [
+        "M15-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M15-L03",
+      "title": "Синтез и доставка",
+      "version": "0.1.0",
+      "module_id": "M15",
+      "page_key": "M15",
+      "page_url": "https://chatgpt.com/space/page_a996d7fe78f4819185cfcdb9c7071e17",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M15-L02"
+      ],
+      "outcome_ids": [
+        "M15-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M15-L04",
+      "title": "Поток и перебивание",
+      "version": "0.1.0",
+      "module_id": "M15",
+      "page_key": "M15",
+      "page_url": "https://chatgpt.com/space/page_a996d7fe78f4819185cfcdb9c7071e17",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M15-L03"
+      ],
+      "outcome_ids": [
+        "M15-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M15-L05",
+      "title": "Речевое оценивание",
+      "version": "0.1.0",
+      "module_id": "M15",
+      "page_key": "M15",
+      "page_url": "https://chatgpt.com/space/page_a996d7fe78f4819185cfcdb9c7071e17",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M15-L04"
+      ],
+      "outcome_ids": [
+        "M15-C01",
+        "M15-C02",
+        "M15-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M16-L01",
+      "title": "Требования и две рубрики",
+      "version": "0.1.0",
+      "module_id": "M16",
+      "page_key": "M16",
+      "page_url": "https://chatgpt.com/space/page_adaa363442c08191abfee4bd2bd685d1",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M12-L05",
+        "M14-L05",
+        "M15-L05"
+      ],
+      "outcome_ids": [
+        "M16-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M16-L02",
+      "title": "Интеграция и независимая проверка",
+      "version": "0.1.0",
+      "module_id": "M16",
+      "page_key": "M16",
+      "page_url": "https://chatgpt.com/space/page_adaa363442c08191abfee4bd2bd685d1",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M16-L01"
+      ],
+      "outcome_ids": [
+        "M16-C01"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M16-L03",
+      "title": "Пилот продукта",
+      "version": "0.1.0",
+      "module_id": "M16",
+      "page_key": "M16",
+      "page_url": "https://chatgpt.com/space/page_adaa363442c08191abfee4bd2bd685d1",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M16-L02"
+      ],
+      "outcome_ids": [
+        "M16-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M16-L04",
+      "title": "Защита архитектуры и отказа",
+      "version": "0.1.0",
+      "module_id": "M16",
+      "page_key": "M16",
+      "page_url": "https://chatgpt.com/space/page_adaa363442c08191abfee4bd2bd685d1",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M16-L03"
+      ],
+      "outcome_ids": [
+        "M16-C02"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    },
+    {
+      "id": "M16-L05",
+      "title": "Портфолио и профессиональная проверка",
+      "version": "0.1.0",
+      "module_id": "M16",
+      "page_key": "M16",
+      "page_url": "https://chatgpt.com/space/page_adaa363442c08191abfee4bd2bd685d1",
+      "page_scope": "module_design",
+      "material_status": "designed",
+      "prerequisites": [
+        "M16-L04"
+      ],
+      "outcome_ids": [
+        "M16-C01",
+        "M16-C02",
+        "M16-C03"
+      ],
+      "pilot_sessions": [],
+      "learner_status": "not_assessed"
+    }
+  ],
+  "pilot": {
+    "material_status": "ready",
+    "learner_status": "awaiting_learner",
+    "session_count": 10,
+    "sessions": [
+      {
+        "id": "P01",
+        "version": "0.1.0",
+        "material_status": "ready",
+        "learner_status": "not_assessed",
+        "page_key": "P01",
+        "page_url": "https://chatgpt.com/space/page_970b6d8bf8488191835791902181d8e2",
+        "delivery_status": "verified",
+        "starter": "notebooks/pilot/P01.ipynb",
+        "solution": "solutions/pilot/P01.ipynb",
+        "curriculum_lesson_ids": [
+          "M00-L01"
+        ],
+        "prerequisites": [],
+        "hardware": {
+          "execution": "CPU",
+          "python": "3.11",
+          "gpu_required": false
+        },
+        "paid_dependency": false,
+        "network_after_setup_required": false,
+        "source": "https://developers.google.com/machine-learning/crash-course/linear-regression"
+      },
+      {
+        "id": "P02",
+        "version": "0.1.0",
+        "material_status": "ready",
+        "learner_status": "not_assessed",
+        "page_key": "P02",
+        "page_url": "https://chatgpt.com/space/page_b54f968be2c88191a812fcb7d57d0b3d",
+        "delivery_status": "verified",
+        "starter": "notebooks/pilot/P02.ipynb",
+        "solution": "solutions/pilot/P02.ipynb",
+        "curriculum_lesson_ids": [
+          "M00-L02",
+          "M00-L03"
+        ],
+        "prerequisites": [
+          "P01"
+        ],
+        "hardware": {
+          "execution": "CPU",
+          "python": "3.11",
+          "gpu_required": false
+        },
+        "paid_dependency": false,
+        "network_after_setup_required": false,
+        "source": "https://developers.google.com/machine-learning/crash-course/linear-regression/loss"
+      },
+      {
+        "id": "P03",
+        "version": "0.1.0",
+        "material_status": "ready",
+        "learner_status": "not_assessed",
+        "page_key": "P03",
+        "page_url": "https://chatgpt.com/space/page_788a71e81994819197aa4edc27322ade",
+        "delivery_status": "verified",
+        "starter": "notebooks/pilot/P03.ipynb",
+        "solution": "solutions/pilot/P03.ipynb",
+        "curriculum_lesson_ids": [
+          "M01-L02",
+          "M01-L03"
+        ],
+        "prerequisites": [
+          "P02"
+        ],
+        "hardware": {
+          "execution": "CPU",
+          "python": "3.11",
+          "gpu_required": false
+        },
+        "paid_dependency": false,
+        "network_after_setup_required": false,
+        "source": "https://scikit-learn.org/stable/common_pitfalls.html"
+      },
+      {
+        "id": "P04",
+        "version": "0.1.0",
+        "material_status": "ready",
+        "learner_status": "not_assessed",
+        "page_key": "P04",
+        "page_url": "https://chatgpt.com/space/page_49e313d63c208191b0ba0a69207d99a0",
+        "delivery_status": "verified",
+        "starter": "notebooks/pilot/P04.ipynb",
+        "solution": "solutions/pilot/P04.ipynb",
+        "curriculum_lesson_ids": [
+          "M01-L01",
+          "M02-L01",
+          "M02-L02"
+        ],
+        "prerequisites": [
+          "P03"
+        ],
+        "hardware": {
+          "execution": "CPU",
+          "python": "3.11",
+          "gpu_required": false
+        },
+        "paid_dependency": false,
+        "network_after_setup_required": false,
+        "source": "https://numpy.org/doc/stable/user/absolute_beginners.html"
+      },
+      {
+        "id": "P05",
+        "version": "0.1.0",
+        "material_status": "ready",
+        "learner_status": "not_assessed",
+        "page_key": "P05",
+        "page_url": "https://chatgpt.com/space/page_6aa170d304e48191800f3a950cbff129",
+        "delivery_status": "verified",
+        "starter": "notebooks/pilot/P05.ipynb",
+        "solution": "solutions/pilot/P05.ipynb",
+        "curriculum_lesson_ids": [
+          "M00-L05"
+        ],
+        "prerequisites": [
+          "P04"
+        ],
+        "hardware": {
+          "execution": "CPU",
+          "python": "3.11",
+          "gpu_required": false
+        },
+        "paid_dependency": false,
+        "network_after_setup_required": false,
+        "source": "https://docs.python.org/3/library/http.server.html"
+      },
+      {
+        "id": "P06",
+        "version": "0.1.0",
+        "material_status": "ready",
+        "learner_status": "not_assessed",
+        "page_key": "P06",
+        "page_url": "https://chatgpt.com/space/page_00b40fc02d348191bc68b0b6df5b9f0e",
+        "delivery_status": "verified",
+        "starter": "notebooks/pilot/P06.ipynb",
+        "solution": "solutions/pilot/P06.ipynb",
+        "curriculum_lesson_ids": [
+          "M00-L04"
+        ],
+        "prerequisites": [
+          "P05"
+        ],
+        "hardware": {
+          "execution": "CPU",
+          "python": "3.11",
+          "gpu_required": false
+        },
+        "paid_dependency": false,
+        "network_after_setup_required": false,
+        "source": "https://developers.google.com/machine-learning/glossary"
+      },
+      {
+        "id": "P07",
+        "version": "0.1.0",
+        "material_status": "ready",
+        "learner_status": "not_assessed",
+        "page_key": "P07",
+        "page_url": "https://chatgpt.com/space/page_c56ba04cf5488191ba3f1073ed9c1342",
+        "delivery_status": "verified",
+        "starter": "notebooks/pilot/P07.ipynb",
+        "solution": "solutions/pilot/P07.ipynb",
+        "curriculum_lesson_ids": [
+          "M03-L01",
+          "M03-L02"
+        ],
+        "prerequisites": [
+          "P06"
+        ],
+        "hardware": {
+          "execution": "CPU",
+          "python": "3.11",
+          "gpu_required": false
+        },
+        "paid_dependency": false,
+        "network_after_setup_required": false,
+        "source": "https://developers.google.com/machine-learning/crash-course/linear-regression/gradient-descent"
+      },
+      {
+        "id": "P08",
+        "version": "0.1.0",
+        "material_status": "ready",
+        "learner_status": "not_assessed",
+        "page_key": "P08",
+        "page_url": "https://chatgpt.com/space/page_a2ce56396b2c819198df61829dd9c285",
+        "delivery_status": "verified",
+        "starter": "notebooks/pilot/P08.ipynb",
+        "solution": "solutions/pilot/P08.ipynb",
+        "curriculum_lesson_ids": [
+          "M03-L03",
+          "M03-L04"
+        ],
+        "prerequisites": [
+          "P07"
+        ],
+        "hardware": {
+          "execution": "CPU",
+          "python": "3.11",
+          "gpu_required": false
+        },
+        "paid_dependency": false,
+        "network_after_setup_required": false,
+        "source": "https://developers.google.com/machine-learning/crash-course/linear-regression/hyperparameters"
+      },
+      {
+        "id": "P09",
+        "version": "0.1.0",
+        "material_status": "ready",
+        "learner_status": "not_assessed",
+        "page_key": "P09",
+        "page_url": "https://chatgpt.com/space/page_c4935a1e37d08191abdf666ec1fd89ba",
+        "delivery_status": "verified",
+        "starter": "notebooks/pilot/P09.ipynb",
+        "solution": "solutions/pilot/P09.ipynb",
+        "curriculum_lesson_ids": [
+          "M01-L05",
+          "M05-L01"
+        ],
+        "prerequisites": [
+          "P08"
+        ],
+        "hardware": {
+          "execution": "CPU",
+          "python": "3.11",
+          "gpu_required": false
+        },
+        "paid_dependency": false,
+        "network_after_setup_required": false,
+        "source": "https://scikit-learn.org/stable/common_pitfalls.html"
+      },
+      {
+        "id": "P10",
+        "version": "0.1.0",
+        "material_status": "ready",
+        "learner_status": "not_assessed",
+        "page_key": "P10",
+        "page_url": "https://chatgpt.com/space/page_da3578d62b988191ac04011710866313",
+        "delivery_status": "verified",
+        "starter": "notebooks/pilot/P10.ipynb",
+        "solution": "solutions/pilot/P10.ipynb",
+        "curriculum_lesson_ids": [
+          "M06-L01",
+          "M06-L02"
+        ],
+        "prerequisites": [
+          "P09"
+        ],
+        "hardware": {
+          "execution": "CPU",
+          "python": "3.11",
+          "gpu_required": false
+        },
+        "paid_dependency": false,
+        "network_after_setup_required": false,
+        "source": "https://scikit-learn.org/stable/model_selection.html"
+      }
+    ],
+    "mapping_policy": "pilot_lesson_map links introductory or repeated topic subsets only. A pilot session does not complete the linked full lessons, satisfy all their prerequisites, or award their outcomes automatically. Pilot sessions have their own prerequisite chain; P09 and P10 do not require completion of M04 or M05. Any required concept must be introduced inside the pilot before assessment.",
+    "technical_validation_report": "artifacts/notebook-validation.json"
+  },
+  "environment": {
+    "profile": {
+      "programming": [
+        "JS",
+        "TS",
+        "Python",
+        "Go"
+      ],
+      "mathematics": "Школьная знакома; вузовская требует восстановления.",
+      "daily_hours": [
+        4,
+        5
+      ],
+      "planned_days_per_week": 5,
+      "required_paid_services": false,
+      "hardware": {
+        "os": "Windows",
+        "ram_gb": 32,
+        "vram_gb": 4
+      }
+    },
+    "pilot_execution": "CPU",
+    "required_paid_services": false,
+    "dependency_lock": "requirements.lock.txt"
+  },
+  "status_policy": {
+    "module_pages": "Module Pages contain curriculum design and introductions, not complete lesson packages.",
+    "pilot_mapping": "A ready pilot session does not mark its linked full curriculum lessons or outcomes complete.",
+    "publication": "Page delivery is verified only when every required URL is present and readback_verified is true.",
+    "mastery": "Technical execution does not assess learner mastery or professional grade."
+  }
+}

@@ -1,0 +1,10 @@
+[
+  {"id":"R01","description":"Правильное самостоятельное решение и объяснение","criteria":{"calculation":true,"reasoning":true},"critical_errors":[],"assistance":"none","explanation_checked":true,"expected":"independent"},
+  {"id":"R02","description":"Правильное решение после содержательной подсказки","criteria":{"calculation":true,"reasoning":true},"critical_errors":[],"assistance":"hint","explanation_checked":true,"expected":"with_support"},
+  {"id":"R03","description":"Код работает, механизм обучения объяснён неверно","criteria":{"execution":true,"reasoning":false},"critical_errors":["parameters_vs_input"],"assistance":"none","explanation_checked":true,"expected":"needs_review"},
+  {"id":"R04","description":"Высокая метрика получена с утечкой тестовых данных","criteria":{"execution":true,"reported_metric":true,"valid_split":false},"critical_errors":["test_leakage"],"assistance":"none","explanation_checked":true,"expected":"needs_review"},
+  {"id":"R05","description":"Красивый отчёт без подтверждения вывода","criteria":{"presentation":true,"evidence":false},"critical_errors":[],"assistance":"none","explanation_checked":true,"expected":"needs_review"},
+  {"id":"R06","description":"Ограничение оборудования доказано измерением и объяснено","criteria":{"measurement":true,"bounded_claim":true,"feasible_alternative":true},"critical_errors":[],"assistance":"none","explanation_checked":true,"expected":"independent"},
+  {"id":"R07","description":"Ученик заметил, что прежний метод не подходит к новому случаю","criteria":{"changed_assumption":true,"new_test":true},"critical_errors":[],"assistance":"none","explanation_checked":true,"delayed":true,"expected":"retained"},
+  {"id":"R08","description":"Только запуск готового ноутбука без проверки рассуждения","criteria":{"execution":true},"critical_errors":[],"assistance":"none","explanation_checked":false,"expected":"not_assessed"}
+]

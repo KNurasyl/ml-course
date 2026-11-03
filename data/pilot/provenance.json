@@ -1,0 +1,12 @@
+{
+  "dataset_id": "synthetic_regression_v1",
+  "created_for": "ML/LLM course pilot",
+  "seed": 2026,
+  "generator": "mlcourse.pilot.make_dataset",
+  "rows": 100,
+  "formula": "rng=default_rng(2026); x=uniform(-2,2,100); y=2*x+1+normal(0,.35,100); order=rng.permutation(100)",
+  "split": "first60 shuffled ids train, next20 validation, final20 test",
+  "license": "CC0-1.0 for these author-generated synthetic rows",
+  "real_person_data": false,
+  "limitation": "Teaching illustration only; no evidence about interview performance or hiring."
+}
