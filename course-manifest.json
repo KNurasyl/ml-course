@@ -1,6 +1,7 @@
 {
   "schema_version": 3,
   "course_version": "1.1.0",
+  "reader_design_version": "2.0",
   "created": "2026-11-03",
   "language": "ru",
   "course_status": "complete_self_study_materials",
@@ -9,6 +10,7 @@
   "technical_evidence": {
     "release": "quality/release-1.1.0.json",
     "audit_resolution": "quality/audit-resolution-1.1.0.md",
+    "design_revision": "quality/design-v2/report.json",
     "policy": "File completeness alone is not verification or learner mastery; inspect the release evidence and its scope."
   },
   "entrypoint": "START_HERE.html",

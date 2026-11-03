@@ -46,7 +46,8 @@ def source_fingerprint(root: Path) -> str:
     registry = json.loads((root / "metadata/material-registry.json").read_text(encoding="utf-8"))
     paths = {item["path"] for item in registry.values()}
     paths.update({"metadata/material-registry.json", "tools/build_reader.py"})
-    for relative in ("curriculum.json", "metadata/lesson-visuals.json"):
+    for relative in ("curriculum.json", "metadata/lesson-visuals.json", "metadata/responsive-figures.json",
+                     "tools/reader.css", "tools/reader.js"):
         if (root / relative).is_file():
             paths.add(relative)
     for folder in ("course/assets", "course/visuals"):
@@ -96,6 +97,17 @@ class CourseRenderer(mistune.HTMLRenderer):
 
     def link(self, text: str, url: str, title: str | None = None) -> str:
         target, external = self.destination(url)
+        # A retry link must not silently return to answer A when the source has
+        # a distinct B/C key. Explicit fragments remain authoritative.
+        parsed = urlsplit(url)
+        if (target and '-SOLUTIONS--' in target and not parsed.fragment
+                and re.search(r'B\s*(?:/|и)\s*C', text_only(text), re.I)):
+            local = (self.source.parent / unquote(parsed.path)).resolve()
+            heading = next((line[3:].strip() for line in local.read_text(encoding='utf-8').splitlines()
+                            if line.startswith('## ') and self.material_id in line
+                            and re.search(r'B.*C', line)), None)
+            if heading:
+                target = target.split('--')[0] + '--' + slug(heading)
         if target is None:
             return f'<span class="unsupported-link">{text}</span>'
         attrs = f' href="{escape(target, quote=True)}"'
@@ -113,11 +125,21 @@ class CourseRenderer(mistune.HTMLRenderer):
             return f"<span>{escape(text)}</span>"
         if external:
             return self.link(f"Изображение: {escape(text)}", url, title)
-        url = escape(target, quote=True)
+        mapping_path = self.root / "metadata/responsive-figures.json"
+        mapping = json.loads(mapping_path.read_text(encoding="utf-8")) if mapping_path.exists() else {}
+        alternatives = mapping.get(unquote(target), {})
+        desktop = alternatives.get("desktop", target)
+        mobile = alternatives.get("mobile")
+        checked_file(self.root, unquote(desktop))
+        picture = ''
+        if mobile:
+            checked_file(self.root, mobile)
+            picture = f'<source media="(max-width: 600px)" srcset="{escape(mobile, quote=True)}">'
+        url = escape(desktop, quote=True)
         return (f'<a class="figure-expand" href="{url}" target="_blank" data-figure="{url}" '
                 f'aria-label="Увеличить рисунок: {escape(text, quote=True)}">'
-                f'<img src="{url}" alt="{escape(text, quote=True)}" loading="lazy"></a>'
-                '<span class="figure-hint">Нажми на рисунок, чтобы увеличить. Числа и подписи можно рассмотреть отдельно.</span>')
+                f'<picture>{picture}<img src="{url}" alt="{escape(text, quote=True)}" loading="lazy"></picture></a>'
+                f'<span class="figure-hint">{escape(alternatives.get("caption", text))} · Открыть крупнее ↗</span>')
 
     def heading(self, text: str, level: int, **attrs) -> str:
         base = slug(text)
@@ -172,9 +194,40 @@ def fold_answers(content: str) -> str:
     def replace(match):
         identifier = re.search(r'\bid="([^"]+)"', match.group(1))
         anchor = f' id="{identifier.group(1)}"' if identifier else ""
+        if not text_only(match.group(3)).strip():
+            return f'<h2{anchor}>{match.group(2)}</h2>'
+        task = re.search(r'M\d{2}-L\d{2}|M\d{2}-HW\d{2}|P\d{2}(?:-HW\d{2})?|D00', text_only(match.group(2)))
+        actions = ''
+        if task:
+            key = task.group(0)
+            key = key.split('-HW')[0]
+            key = 'DIAGNOSTIC' if key == 'D00' else key
+            actions = (f'<nav class="answer-actions" aria-label="После самопроверки">'
+                       f'<a href="#{key}" data-return-task="{key}">← Вернуться к задаче</a>'
+                       f'<a href="#{key}" data-return-retry="{key}">Новый вариант B / C →</a></nav>')
         return (f'<details class="answer-key"{anchor}><summary>Ответ: {escape(text_only(match.group(2)))}</summary>'
-                f'<div>{match.group(3)}</div></details>')
+                f'<div>{actions}{match.group(3)}{actions}</div></details>')
     return pattern.sub(replace, content)
+
+
+def experiment_frame(root: Path, relative: str, title: str) -> str:
+    """Bundle local frame dependencies; opaque file:// sandboxes block sidecar files."""
+    source = checked_file(root, relative)
+    content = source.read_text(encoding="utf-8")
+    def dependency(url: str) -> str:
+        parsed = urlsplit(url)
+        if parsed.scheme or parsed.netloc:
+            raise ValueError(f'Online dependency in offline experiment: {url}')
+        path = (source.parent / unquote(parsed.path)).resolve()
+        if not path.is_relative_to(root.resolve()):
+            raise ValueError(f'Experiment dependency leaves repository: {url}')
+        return checked_file(root, path.relative_to(root).as_posix()).read_text(encoding='utf-8')
+    content = re.sub(r'<link\b[^>]*rel="stylesheet"[^>]*href="([^"]+)"[^>]*>',
+                     lambda m: '<style>' + dependency(m.group(1)) + '</style>', content)
+    content = re.sub(r'<script\b[^>]*src="([^"]+)"[^>]*>\s*</script>',
+                     lambda m: '<script>' + dependency(m.group(1)) + '</script>', content)
+    return (f'<iframe class="experiment" src="{escape(relative)}" title="{escape(title)}" '
+            f'loading="lazy" sandbox="allow-scripts" srcdoc="{escape(content, quote=True)}"></iframe>')
 
 
 def inline_experiment(root: Path, key: str, body: str) -> str:
@@ -188,7 +241,7 @@ def inline_experiment(root: Path, key: str, body: str) -> str:
     checked_file(root, relative)
     block = (f'<section class="lesson-experiment"><h2>Предскажи и проверь</h2>'
              '<p>Перед изменением параметра запиши прогноз. Затем объясни, почему результат совпал или разошёлся с ним.</p>'
-             f'<iframe class="experiment" src="{escape(relative)}" title="Численный опыт {key}" loading="lazy" sandbox="allow-scripts"></iframe>'
+             + experiment_frame(root, relative, f'Численный опыт {key}') +
              f'<p><a href="{escape(relative)}" target="_blank">Открыть опыт отдельно на весь экран</a></p></section>')
     # Place at the first mechanism illustration, before the worked example.
     marker = '</span>'
@@ -224,124 +277,77 @@ def display_id(key: str) -> str:
 
 def nav_item(key: str, item: dict) -> str:
     short = re.sub(rf"^{re.escape(key)}\s*[:.·—–-]?\s*", "", item["title"]).strip()
-    marker = key if key in PILOT_IDS or key in MODULE_IDS else {"HOME": "01", "DIAGNOSTIC": "02"}.get(key, "•")
+    marker = key if key in PILOT_IDS or key in MODULE_IDS else (key.split('-')[-1] if re.fullmatch(r'M\d{2}-L\d{2}', key) else {"HOME": "01", "DIAGNOSTIC": "02"}.get(key, "•"))
     return f'<li data-key="{escape(key)}"><a href="#{escape(key)}" data-material="{escape(key)}"><span class="nav-marker">{escape(marker)}</span><span>{escape(short)}</span></a></li>'
 
 
-CSS = r"""
-:root{color-scheme:light;--ink:#23312e;--muted:#62716c;--paper:#f5f4ef;--white:#fffefa;--line:#dddeda;--accent:#236653;--soft:#e7f0e8;--blue:#285b83;--sidebar:292px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:96px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--blue);text-underline-offset:3px}a:hover{color:var(--accent)}button,input{font:inherit}button,a,input,summary{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #d59f43;outline-offset:4px}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}[hidden]{display:none!important}
-.sidebar{position:fixed;inset:0 auto 0 0;width:var(--sidebar);background:#eceee7;border-right:1px solid var(--line);overflow:auto;z-index:30;padding:28px 21px 36px}.brand{display:block;text-decoration:none;color:var(--ink);margin-bottom:20px}.brand-symbol{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;width:38px;height:38px;background:var(--accent);color:white;border-radius:11px;font-weight:700;letter-spacing:-1px;margin-right:9px}.brand-name{font-size:18px;font-weight:700}.brand-caption{display:block;color:var(--muted);font-size:12px;line-height:1.45;letter-spacing:.02em;margin:10px 0 0 1px}.search{display:block;margin:18px 0 7px}.search span{font-size:12px;color:var(--muted);font-weight:600}.search input{display:block;width:100%;border:1px solid #cdd3cb;border-radius:8px;background:var(--white);padding:9px 11px;margin-top:5px;line-height:1.4;min-width:0}.search-status{font-size:12px;line-height:1.4;color:var(--muted);min-height:18px;margin:6px 0 19px}.nav-group{margin:20px 0}.nav-module>summary{cursor:pointer;font-size:12px;font-weight:600;line-height:1.5;color:#42604a;padding:7px 10px}.nav-module[open]>summary{margin-bottom:5px}.nav-group h2{font-size:10px;text-transform:uppercase;letter-spacing:.13em;line-height:1.5;color:#6b786e;margin:0 10px 9px}.nav-group ul{list-style:none;padding:0;margin:0}.nav-group a{display:flex;gap:10px;align-items:flex-start;text-decoration:none;color:#43524a;font-size:13px;line-height:1.45;padding:8px 10px;border-radius:7px}.nav-group a:hover{background:#e1e7dd}.nav-group a[aria-current="page"]{background:var(--white);color:var(--accent);box-shadow:0 1px 5px #23312e0a;font-weight:600}.nav-marker{font-size:10px;font-weight:700;color:#7a897d;flex:0 0 27px;padding-top:2px}.nav-group a[aria-current="page"] .nav-marker{color:var(--accent)}.nav-foot{font-size:11px;color:var(--muted);line-height:1.6;padding:17px 10px 0;border-top:1px solid #d8ddd3}
-.layout{margin-left:var(--sidebar)}.topbar{position:sticky;top:0;z-index:20;background:#f5f4eff2;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);min-height:68px;padding:14px 44px;display:flex;justify-content:space-between;gap:18px;align-items:center}.top-label{font-size:12px;color:var(--muted);letter-spacing:.02em}.top-actions{display:flex;gap:9px;align-items:center}.small-button{border:1px solid #d4d9d0;background:var(--white);border-radius:7px;padding:6px 12px;color:#43524a;font-size:12px;line-height:1.5}.small-button:hover{background:var(--soft)}.menu-toggle{display:none}.reader{max-width:1090px;margin:0 auto;padding:42px 54px 80px}.book-label{display:flex;align-items:center;gap:8px;margin-bottom:21px;font-size:11px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--accent)}.book-label:before{content:"";width:7px;height:7px;border-radius:50%;background:#70a37f}.material{background:var(--white);border:1px solid var(--line);border-radius:13px;box-shadow:0 3px 18px #23312e03;margin:0 0 34px;padding:37px 43px 28px;overflow-wrap:anywhere;scroll-margin-top:90px}.material-head{padding-bottom:24px;border-bottom:1px solid #e7e8e1;margin-bottom:25px}.eyebrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-bottom:12px;letter-spacing:.025em}.material-id{font-weight:700;letter-spacing:.08em}.badge{border:1px solid #d9dfd2;padding:2px 8px;border-radius:100px;font-size:10px;background:#f4f6f0;line-height:1.6}.badge.ready{background:#e9f4e9;border-color:#d4e6d4;color:#316b46}.badge.draft{background:#f7f1df;border-color:#eadfbb;color:#76672c}.badge.answer{background:#f1ecf5;border-color:#ded4e7;color:#715b7d}h1{font-size:clamp(27px,3.1vw,38px);line-height:1.2;letter-spacing:-.025em;margin:0;font-weight:650;max-width:780px}.body-content{font-size:16px}.body-content>p:first-child{color:#4b5d53}.body-content p{margin:0 0 19px}.body-content h2{font-size:23px;line-height:1.4;letter-spacing:-.015em;margin:35px 0 16px;padding-top:4px}.body-content h3{font-size:19px;line-height:1.45;margin:28px 0 13px}.body-content h4{font-size:17px;margin:23px 0 12px}.body-content ul,.body-content ol{padding-left:25px;margin:12px 0 22px}.body-content li{padding-left:3px;margin:7px 0}.body-content li>p{margin-bottom:7px}.body-content blockquote{margin:23px 0;background:#f2f6ed;border-left:3px solid #7a9c78;padding:16px 20px;color:#456048}.body-content blockquote p:last-child{margin-bottom:0}.body-content code{font-family:Consolas,'Cascadia Code',monospace;background:#f1f2eb;padding:2px 5px;border-radius:4px;font-size:.88em;overflow-wrap:anywhere}.body-content pre{background:#263731;color:#f3f5ed;border:1px solid #263731;border-radius:9px;padding:18px 21px;line-height:1.65;overflow:auto;max-width:100%;font-size:14px;margin:23px 0}.body-content pre code{background:none;color:inherit;padding:0;font-size:inherit;white-space:pre;overflow-wrap:normal}.table-wrap{overflow:auto;max-width:100%;border:1px solid #dfe3d8;border-radius:8px;margin:21px 0 25px}.body-content table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.6;min-width:400px}.body-content th{text-align:left;background:#f0f3ea;font-weight:600;color:#40553e}.body-content th,.body-content td{padding:12px 15px;border-bottom:1px solid #e5e8df;vertical-align:top}.body-content tbody tr:last-child td{border-bottom:0}.body-content tr:nth-child(even) td{background:#fafbf6}.body-content img{max-width:100%;height:auto}.experiment{width:100%;height:660px;border:1px solid #d8e2d0;border-radius:10px;background:#f5f7ee}.body-content hr{border:0;border-top:1px solid var(--line);margin:30px 0}.hints,.answer-key{border:1px solid #dce3d7;border-radius:9px;background:#f5f7f0;margin:25px 0;overflow:hidden}.hints summary,.answer-key>summary{font-weight:600;color:#43613f;cursor:pointer;padding:16px 19px;font-size:15px}.hints>div,.answer-key>div{padding:6px 20px 8px}.answer-key{background:#faf7fb;border-color:#e4dce8}.answer-key>summary{color:#70597c}.answer-note{color:#715d78;font-size:14px;line-height:1.7}.practice-note{padding:13px 16px;background:#f4f6ee;border-radius:7px;font-size:13px;line-height:1.65;color:#596e50;margin:0 0 24px}.source-note{font-size:11px;color:#7b897e;border-top:1px solid #e7e8e1;margin-top:30px;padding-top:14px}.source-note code{font-size:11px}.reading-nav{display:flex;gap:16px;justify-content:space-between;margin:22px 0 0}.reading-nav a{text-decoration:none;color:var(--accent);font-size:13px;line-height:1.6;background:#eef3e8;border:1px solid #dce5d2;border-radius:7px;padding:11px 16px;max-width:48%}.reading-nav a:last-child{margin-left:auto;text-align:right}.reading-nav small{display:block;font-size:10px;color:#7a8871;text-transform:uppercase;letter-spacing:.06em}.empty-search{display:none;color:#6d7768;font-size:13px;padding:9px 10px}.empty-search.is-visible{display:block}.no-script{background:#fff4d8;padding:12px 18px;color:#5e4b24;border-radius:6px}.backdrop{display:none}.screen-reader-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-@media(min-width:1500px){.reader{max-width:1140px;padding-top:52px}.material{padding:42px 55px}}
-@media(max-width:1120px){:root{--sidebar:255px}.sidebar{padding:24px 14px}.reader{padding:31px 27px 60px}.material{padding:30px}.topbar{padding:14px 27px}.body-content{font-size:15px}}
-@media(max-width:800px){.layout{margin-left:0}.sidebar{transform:translateX(-101%);width:290px;transition:transform .15s ease}.nav-open .sidebar{transform:translateX(0)}.nav-open .backdrop{display:block;position:fixed;inset:0;background:#12201966;z-index:25;border:0}.menu-toggle{display:inline-block}.topbar{padding:12px 18px;min-height:62px}.top-label{font-size:11px}.reader{padding:24px 17px 42px}.material{padding:26px 22px;border-radius:10px}.book-label{margin-left:4px;font-size:10px}.material-head{padding-bottom:19px}.body-content h2{font-size:21px}.reading-nav a{padding:10px 11px;font-size:12px}.body-content pre{padding:15px;font-size:12px}.body-content table{font-size:12px}.body-content th,.body-content td{padding:10px 12px}.source-note{font-size:10px}}
-@media(max-width:430px){.top-label{max-width:142px;line-height:1.4}.print-button{padding:6px 9px;font-size:11px}.material{padding:23px 18px}.reader{padding:21px 11px 35px}.body-content{font-size:15px}.body-content h2{font-size:20px}.reading-nav{gap:9px}.practice-note{padding:12px;font-size:12px}h1{font-size:27px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sidebar{transition:none}}
-@media print{body{background:white;font-size:11pt}.sidebar,.topbar,.book-label,.reading-nav,.source-note,.backdrop,.no-script{display:none!important}.layout{margin:0}.reader{max-width:none;margin:0;padding:0}.material{border:0;box-shadow:none;margin:0;padding:0;background:white}.material-head{break-after:avoid}.body-content{font-size:11pt}.body-content h2{break-after:avoid;font-size:15pt}.body-content h3{break-after:avoid;font-size:13pt}.body-content pre{white-space:pre-wrap;overflow-wrap:anywhere;color:black;background:#f3f3f3;border:1px solid #ddd;break-inside:avoid}.body-content pre code{white-space:pre-wrap}.body-content table{font-size:9pt;min-width:0}.table-wrap{overflow:visible}.body-content a{color:#194b6f}.hints,.answer-key{break-inside:avoid}.practice-note{font-size:10pt}@page{size:A4;margin:18mm}}
-"""
+def lesson_presentation(body: str, key: str) -> tuple[str, str, str]:
+    """Separate the outcome, local map and task roles without rewriting source prose."""
+    outcome = ''
+    for label, class_name in (("Результат", "outcome"), ("До урока", "prerequisites")):
+        pattern = rf'<p><strong>{label}:?</strong>(.*?)</p>'
+        found = re.search(pattern, body, re.S)
+        if not found:
+            continue
+        if class_name == 'outcome':
+            outcome += f'<p class="outcome"><strong>После урока:</strong>{found.group(1)}</p>'
+        else:
+            outcome += f'<details class="prerequisites"><summary>До урока и ориентир времени</summary><div>{found.group(1)}</div></details>'
+        body = body[:found.start()] + body[found.end():]
+    headings = re.findall(r'<h2\b[^>]*id="([^"]+)"[^>]*>(.*?)</h2>', body, re.S)
+    outline = ''
+    if headings:
+        items = ''.join(f'<li><a href="#{escape(anchor)}">{escape(text_only(title))}</a></li>' for anchor, title in headings)
+        outline = f'<aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol>{items}</ol></details></aside>'
+    body = fold_hints(body)
+    pattern = re.compile(r'(<h2\b[^>]*>)(.*?)(</h2>)(.*?)(?=<h2\b|<details class="hints"|\Z)', re.S)
+    def stage(match):
+        title = text_only(match.group(2)).lower()
+        role = next((role for terms, role in [
+            (("разобран", "численный пример"), 'example'),
+            (("практика с поддержкой", "упражнение с поддержкой"), 'practice'),
+            (("самостоятельн",), 'task'),
+            (("повтор", "перенос", "отложенн"), 'retry'),
+        ] if any(term in title for term in terms)), None)
+        if not role:
+            return match.group(0)
+        label = {'example':'Разбираем вместе', 'practice':'Пробуем с поддержкой', 'task':'Твоя попытка', 'retry':'Проверяем перенос'}[role]
+        return f'<section class="lesson-stage" data-stage="{role}"><span class="stage-label">{label}</span>{match.group(0)}</section>'
+    body = pattern.sub(stage, body)
+    body = re.sub(r'<p><code>([^<]+)</code></p>', r'<p class="formula"><code>\1</code></p>', body)
+    return body, outcome, outline
 
 
-CSS += r"""
-.figure-expand{display:block;border-radius:9px;cursor:zoom-in}.figure-expand:focus-visible{outline:3px solid #aa792f;outline-offset:4px}.figure-hint{display:block;font-size:12px;color:#62716c;margin:6px 0 18px}.lesson-experiment{margin:26px 0;padding:15px;background:#f4f7ee;border:1px solid #d8e2d0;border-radius:12px}.lesson-experiment h2{margin-top:0}.lesson-experiment .experiment{height:730px}.lesson-experiment p{font-size:14px}.answer-key summary{scroll-margin-top:95px}#figure-dialog{width:min(96vw,1400px);max-width:96vw;max-height:94vh;border:1px solid #d5dfd0;border-radius:12px;padding:15px;background:#fffefa;color:#23312e}#figure-dialog::backdrop{background:#162c22c9}.figure-toolbar{display:flex;align-items:center;gap:10px;margin-bottom:14px}.figure-toolbar strong{flex:1;font-size:15px}.figure-scroll{overflow:auto;max-height:72vh;background:#f7f8f3;border-radius:8px}.figure-scroll img{display:block;width:100%;height:auto;max-width:100%}.figure-scroll img.native{width:auto;max-width:none}.figure-scroll+ a{display:inline-block;margin-top:12px;font-size:13px}@media(max-width:500px){.figure-toolbar{flex-wrap:wrap}.figure-toolbar strong{flex-basis:100%}.lesson-experiment{margin:20px -6px;padding:9px}.lesson-experiment .experiment{height:850px}}@media print{#figure-dialog,.figure-hint,.lesson-experiment{display:none!important}.answer-key:not([open]){display:none}}
-"""
+def home_presentation(body: str, registry: dict) -> str:
+    """Navigation only; the editable introduction still comes from course/README.md."""
+    routes = [
+        ('P01', '01 / ПЕРВЫЕ ШАГИ', 'Модель, ошибка, обучение', 'Десять занятий: от первого предсказания до своего эксперимента.'),
+        ('M00', '02 / ФУНДАМЕНТ · M00–M06', 'Математика и ML-системы', 'Данные, оптимизация, статистика и честное сравнение моделей.'),
+        ('M07', '03 / НЕЙРОСЕТИ · M07–M12', 'От PyTorch к LLM и RAG', 'Пойми вычисления, запусти модель, собери поиск и проверь качество.'),
+        ('M13', '04 / ПРОДУКТ · M13–M16', 'Голосовой AI-интервьюер', 'Эксплуатация, инструменты, голосовой диалог и защита проекта.'),
+    ]
+    cards = ''.join(f'<a class="route-step" href="#{key}"><small>{eyebrow}</small><strong>{title}</strong><span>{text}</span></a>'
+                    for key, eyebrow, title, text in routes if key in registry)
+    # The source introduction contains its own quick-start links. Place those after
+    # the compact route; keep environment instructions in an explicit disclosure.
+    body = re.sub(r'(<h2\b[^>]*>Чтение и практика</h2>)(.*?)(?=<h2\b|\Z)',
+                  r'<details class="setup-details"><summary>Как открыть Python и выполнять задания</summary><div>\2</div></details>', body, flags=re.S)
+    intro = re.search(r'<p>(.*?)</p>', body, re.S)
+    start = ''
+    if intro:
+        start = '<p class="home-intro">' + intro.group(1) + '</p>'
+        body = body[:intro.start()] + body[intro.end():]
+    start += '<div class="home-actions">'
+    if 'DIAGNOSTIC' in registry:
+        start += '<a class="primary-action" href="#DIAGNOSTIC">Начать диагностику →</a>'
+    if 'MENTOR' in registry:
+        start += '<a class="secondary-action" href="#MENTOR">Как устроено обучение</a>'
+    start += '</div><p class="home-caption">Сначала сохрани свою попытку, затем открывай решение. Освоение проверяется новой задачей.</p>'
+    return start + '<h2 id="HOME--course-route">Твой маршрут</h2><div class="course-route">' + cards + '</div>' + body
 
-SCRIPT = r"""
-(() => {
-  'use strict';
-  const articles = Array.from(document.querySelectorAll('.material'));
-  const links = Array.from(document.querySelectorAll('[data-material]'));
-  const search = document.getElementById('course-search');
-  const status = document.getElementById('search-status');
-  const menu = document.getElementById('menu-toggle');
-  const groups = Array.from(document.querySelectorAll('.nav-group'));
-  const byId = new Map(articles.map(article => [article.id, article]));
-  const normalized = text => text.toLocaleLowerCase('ru').replace(/ё/g, 'е');
-  const corpus = new Map(articles.map(article => [article.id, normalized(article.textContent)]));
-  document.body.classList.add('js');
 
-  function closeMenu() {
-    document.body.classList.remove('nav-open');
-    menu.setAttribute('aria-expanded', 'false');
-  }
-  function select() {
-    let fragment;
-    try { fragment = decodeURIComponent(location.hash.slice(1)); } catch (_) { fragment = 'HOME'; }
-    const id = fragment.split('--')[0] || 'HOME';
-    const current = byId.get(id) || byId.get('HOME') || articles[0];
-    articles.forEach(article => { article.hidden = article !== current; });
-    links.forEach(link => {
-      if (link.dataset.material === current.id) { link.setAttribute('aria-current', 'page'); const parent = link.closest('details.nav-module'); if(parent) parent.open = true; }
-      else link.removeAttribute('aria-current');
-    });
-    document.title = current.dataset.title + ' · Курс ML и LLM';
-    closeMenu();
-    const heading = fragment.includes('--') ? document.getElementById(fragment) : null;
-    requestAnimationFrame(() => {
-      if (heading) {
-        if (heading.tagName === 'DETAILS') heading.open = true;
-        let parent = heading.parentElement;
-        while (parent) { if(parent.tagName === 'DETAILS') parent.open = true; parent=parent.parentElement; }
-        heading.scrollIntoView({block:'start'});
-      }
-      else window.scrollTo({top:0, behavior:'instant'});
-    });
-  }
-  function filter() {
-    const terms = normalized(search.value.trim()).split(/\s+/).filter(Boolean);
-    let found = 0;
-    document.querySelectorAll('.nav-group li[data-key]').forEach(item => {
-      const text = corpus.get(item.dataset.key) || '';
-      const match = terms.every(term => text.includes(term));
-      item.hidden = !match;
-      if (match) found += 1;
-    });
-    groups.forEach(group => { group.hidden = !Array.from(group.querySelectorAll('li')).some(item => !item.hidden); });
-    if(terms.length) document.querySelectorAll('details.nav-module').forEach(group => { group.open = !group.parentElement.hidden; });
-    status.textContent = terms.length ? `Найдено разделов: ${found}` : 'Поиск по названиям и тексту';
-    document.getElementById('empty-search').classList.toggle('is-visible', found === 0);
-  }
-  menu.addEventListener('click', () => {
-    const open = document.body.classList.toggle('nav-open');
-    menu.setAttribute('aria-expanded', String(open));
-  });
-  document.getElementById('backdrop').addEventListener('click', closeMenu);
-  document.getElementById('print-section').addEventListener('click', () => window.print());
-  search.addEventListener('input', filter);
-  window.addEventListener('hashchange', select);
-  document.addEventListener('keydown', event => {
-    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
-      event.preventDefault(); document.body.classList.add('nav-open');
-      menu.setAttribute('aria-expanded','true'); search.focus();
-    }
-    if (event.key === 'Escape') closeMenu();
-  });
-  document.addEventListener('click', event => {
-    const figure = event.target.closest('a[data-figure]');
-    if(figure) {
-      const dialog=document.getElementById('figure-dialog');
-      if(dialog && typeof dialog.showModal === 'function') {
-        event.preventDefault();
-        const large=document.getElementById('figure-large');
-        large.src=figure.dataset.figure;large.alt=figure.querySelector('img').alt;large.classList.remove('native');
-        document.getElementById('figure-title').textContent=large.alt;
-        document.getElementById('figure-original').href=figure.href;
-        document.getElementById('figure-zoom').textContent='Исходный размер';
-        dialog.showModal();
-      }
-      return;
-    }
-    const link = event.target.closest('a[data-material]');
-    if (link && link.hash === location.hash) { closeMenu(); window.scrollTo({top:0, behavior:'instant'}); }
-  });
-  document.getElementById('figure-close')?.addEventListener('click',()=>document.getElementById('figure-dialog').close());
-  document.getElementById('figure-zoom')?.addEventListener('click',event=>{
-    const large=document.getElementById('figure-large');
-    const native=large.classList.toggle('native');event.target.textContent=native?'Уместить на экране':'Исходный размер';
-  });
-  filter(); select();
-})();
-"""
+CSS = Path(__file__).with_name("reader.css").read_text(encoding="utf-8")
+SCRIPT = Path(__file__).with_name("reader.js").read_text(encoding="utf-8")
 
 
 def build(root: Path) -> tuple[str, int]:
@@ -365,16 +371,24 @@ def build(root: Path) -> tuple[str, int]:
         renderer = CourseRenderer(root, source, key, path_ids)
         markdown = mistune.create_markdown(renderer=renderer, plugins=["table", "strikethrough", "task_lists"])
         body = markdown(without_repeated_title(raw, title))
+        body = re.sub(r'<p><code>([^<]+)</code></p>', r'<p class="formula"><code>\1</code></p>', body)
         body = body.replace("<table>", '<div class="table-wrap"><table>').replace("</table>", "</table></div>")
-        body = fold_hints(body)
+        intro, outline = '', ''
+        is_lesson = bool(re.fullmatch(r"M\d{2}-L\d{2}", key))
+        if is_lesson or key in PILOT_IDS:
+            body, intro, outline = lesson_presentation(body, key)
+        else:
+            body = fold_hints(body)
         label, kind = display_status(key)
         if key == "MENTOR-KEYS" or key.endswith("-SOLUTIONS"):
             body = '<p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p>' + fold_answers(body)
+        if key == "HOME":
+            body = home_presentation(body, registry)
         if key in PILOT_IDS:
             body = '<div class="practice-note">Практика: открой <strong>START_PRACTICE.cmd</strong> в папке курса, затем файл <code>notebooks/pilot/' + key + '.ipynb</code> в Jupyter. Для своих ответов используй копию в <code>submissions</code>.</div>' + body
         module_id = key.split("-")[0]
         if key in MODULE_IDS and (root / f"course/visuals/{key}.html").exists():
-            body += f'<h2>Попробуй изменить параметры</h2><iframe class="experiment" src="course/visuals/{key}.html" title="Интерактивная демонстрация {key}" loading="lazy" sandbox="allow-scripts"></iframe><p><a href="course/visuals/{key}.html" target="_blank">Открыть демонстрацию отдельно</a></p>'
+            body += f'<h2>Попробуй изменить параметры</h2>' + experiment_frame(root, f'course/visuals/{key}.html', f'Интерактивная демонстрация {key}') + f'<p><a href="course/visuals/{key}.html" target="_blank">Открыть демонстрацию отдельно</a></p>'
         if re.fullmatch(r"M\d{2}-L\d{2}", key):
             body = inline_experiment(root, key, body)
             solution_target, _ = renderer.destination(f"../../solutions/modules/{module_id}.md")
@@ -388,7 +402,14 @@ def build(root: Path) -> tuple[str, int]:
         if following:
             neighbors += f'<a href="#{following}"><small>Следующий раздел</small>{escape(registry[following]["title"])} →</a>'
         neighbors += '</nav>'
-        sections.append(f'<article class="material" id="{escape(key)}" data-title="{escape(title, quote=True)}"><header class="material-head"><div class="eyebrow"><span class="material-id">{escape(display_id(key))}</span><span class="badge {kind}">{label}</span></div><h1>{escape(title)}</h1></header><div class="body-content">{body}</div><footer class="source-note">Редактируемый текст: <code>{escape(item["path"])}</code>. Локальная версия {VERSION}.</footer>{neighbors}</article>')
+        if kind == 'answer':
+            back = module_id if module_id in registry else 'DIAGNOSTIC'
+            neighbors = (f'<nav class="reading-nav" aria-label="После самопроверки"><a href="#{back}"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav>')
+        short_title = re.sub(rf'^{re.escape(key)}\s*[:.·—–-]?\s*', '', title).strip()
+        if key == 'HOME':
+            short_title = 'ML и LLM. От модели к своему продукту'
+        context = module_id if module_id in MODULE_IDS else ''
+        sections.append(f'<article class="material" id="{escape(key)}" data-title="{escape(title, quote=True)}" data-short-title="{escape(short_title, quote=True)}" data-kind="{kind}" data-module="{context}"><header class="material-head"><div class="eyebrow"><span class="material-id">{escape(display_id(key))}</span><span class="badge {kind}">{label}</span></div><h1>{escape(short_title)}</h1>{intro}</header><div class="article-layout{" has-outline" if outline else ""}">{outline}<div class="body-content{" home-content" if key == "HOME" else ""}">{body}</div></div><footer class="source-note">Исходный текст: <code>{escape(item["path"])}</code> · Материалы {VERSION} · Оформление 2.0</footer>{neighbors}</article>')
     groups = [("Начать и ориентироваться", FOUNDATION_IDS), ("Первые десять занятий", PILOT_IDS)]
     groups.extend((registry[m]["title"], [m, *lessons.get(m, [])]) for m in MODULE_IDS if m in registry)
     groups.append(("Ответы и самопроверка", ["MENTOR-KEYS", *[f"{m}-SOLUTIONS" for m in MODULE_IDS]]))
@@ -408,10 +429,10 @@ def build(root: Path) -> tuple[str, int]:
     html = f'''<!doctype html>
 <html lang="ru">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="{source_fingerprint(root)}"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>{CSS}</style></head>
-<body>
-<aside class="sidebar" id="course-menu" aria-label="Оглавление курса"><a class="brand" href="#HOME"><span class="brand-symbol">ML</span><span class="brand-name">ML и LLM</span><span class="brand-caption">Локальный самоучитель<br>Читай · Выполняй · Проверяй</span></a><label class="search"><span>Найти тему</span><input id="course-search" type="search" placeholder="Например, градиент" autocomplete="off" spellcheck="false" aria-describedby="search-status"></label><p class="search-status" id="search-status" role="status">Поиск по названиям и тексту</p><nav aria-label="Разделы учебника">{navigation}</nav><p class="empty-search" id="empty-search">Совпадений нет. Попробуй другое слово.</p><p class="nav-foot">Версия {VERSION} · Самостоятельное обучение<br>Прогресс записывай в progress/progress.md.<br>Чтение и примеры доступны локально.</p></aside>
+<body><a class="skip-link" href="#main-content">К материалу</a>
+<aside class="sidebar" id="course-menu" aria-label="Оглавление курса"><div class="sidebar-head"><a class="brand" href="#HOME"><span class="brand-symbol">ML</span><span class="brand-name">ML и LLM</span><span class="brand-caption">Технический учебник · Практика</span></a><button id="menu-close" class="small-button menu-close" aria-label="Закрыть оглавление">×</button><label class="search"><span class="screen-reader-only">Найти тему</span><span class="search-row"><input id="course-search" type="search" placeholder="Найти тему…" autocomplete="off" spellcheck="false" aria-describedby="search-status"><button id="search-clear" class="small-button search-clear" type="button" aria-label="Очистить поиск" hidden>×</button></span></label><p class="search-status" id="search-status" role="status">Поиск по тексту · Ctrl K</p></div><div class="sidebar-scroll"><nav id="book-navigation" aria-label="Разделы учебника">{navigation}</nav><ol class="search-results" id="search-results" aria-label="Результаты поиска"></ol><p class="empty-search" id="empty-search" hidden>Попробуй другое слово или его основу.</p><p class="nav-foot">Материалы {VERSION} · Чтение без интернета<br><a href="#PROGRESS">Журнал самостоятельной работы</a></p></div></aside>
 <button class="backdrop" id="backdrop" aria-label="Закрыть оглавление" tabindex="-1"></button>
-<div class="layout"><header class="topbar"><span class="top-label">От основ моделей к ML и LLM-системам</span><div class="top-actions"><button class="small-button menu-toggle" id="menu-toggle" aria-controls="course-menu" aria-expanded="false">Оглавление</button><button class="small-button print-button" id="print-section">Печать раздела</button></div></header><main class="reader"><div class="book-label">Учебные материалы и практика</div><noscript><p class="no-script">JavaScript выключен: все разделы показаны ниже подряд. Ссылки оглавления продолжают работать.</p></noscript>{''.join(sections)}</main></div>
+<div class="layout"><header class="topbar"><nav class="breadcrumbs" id="breadcrumbs" aria-label="Текущее место"><a href="#HOME">Учебник</a></nav><div class="top-actions"><button class="small-button menu-toggle" id="menu-toggle" aria-controls="course-menu" aria-expanded="false">☰ Содержание</button><button class="small-button print-button" id="print-section">Печать</button></div></header><main class="reader" id="main-content" tabindex="-1"><noscript><p class="no-script">JavaScript выключен: все разделы показаны ниже подряд. Ссылки оглавления продолжают работать.</p></noscript>{''.join(sections)}</main></div>
 <dialog id="figure-dialog" aria-labelledby="figure-title"><div class="figure-toolbar"><strong id="figure-title">Рисунок</strong><button id="figure-zoom" class="small-button">Исходный размер</button><button id="figure-close" class="small-button">Закрыть</button></div><div class="figure-scroll"><img id="figure-large" alt=""></div><a id="figure-original" target="_blank">Открыть исходный файл отдельно</a></dialog>
 <script>{SCRIPT}</script>
 </body></html>'''

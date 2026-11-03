@@ -1,0 +1,303 @@
+{
+  "date": "2026-11-03T10:41:37.946Z",
+  "reader_sha256": "54e0c76546749c355f9637e4265fcda325b802d851eaa7a3657aeb432f1f96d3",
+  "kind": "browser_design_verification_not_learner_study",
+  "checks": [
+    {
+      "name": "D01 prominent start action in first desktop viewport",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D01 start action opens diagnostic",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D02 active lesson visible and module in breadcrumb",
+      "pass": true,
+      "detail": {
+        "active": "page",
+        "top": 508.125,
+        "bottom": 565.8125,
+        "scrollTop": 186.25,
+        "scrollBottom": 1000,
+        "breadcrumb": "Учебник/M10/Диагностировать русский RAG по трассе ошибки"
+      }
+    },
+    {
+      "name": "D07 prose has bounded measure",
+      "pass": true,
+      "detail": {
+        "width": 678.140625
+      }
+    },
+    {
+      "name": "D06 distinct task roles and local map",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D07 formula blocks and shape table",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D06 local map moves to task",
+      "pass": true,
+      "detail": {
+        "top": 178.234375
+      }
+    },
+    {
+      "name": "D11 lesson opens its own answer",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D11 neighboring answers remain closed",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D11 return lands on assignment",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D11 new attempt lands on B/C",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D10 result explains hidden answer context",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D10 exact match visible inside opened answer",
+      "pass": true,
+      "detail": {
+        "top": 122.28125
+      }
+    },
+    {
+      "name": "Search empty state is explicit",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Clear restores navigation",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Keyboard shortcut focuses search",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Figure zoom opens dialog",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Native size control works",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Dialog closes by Escape",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D12 six audited utility roles meet 4.5 contrast",
+      "pass": true,
+      "detail": [
+        {
+          "selector": ".brand-caption",
+          "ratio": 5.687924895433198,
+          "font": "12px"
+        },
+        {
+          "selector": ".search-status",
+          "ratio": 5.687924895433198,
+          "font": "12px"
+        },
+        {
+          "selector": ".nav-group h2",
+          "ratio": 5.687924895433198,
+          "font": "12px"
+        },
+        {
+          "selector": ".nav-marker",
+          "ratio": 5.687924895433198,
+          "font": "12px"
+        },
+        {
+          "selector": ".nav-foot",
+          "ratio": 5.687924895433198,
+          "font": "12px"
+        },
+        {
+          "selector": ".source-note",
+          "ratio": 6.115625362160427,
+          "font": "12px"
+        }
+      ]
+    },
+    {
+      "name": "D01 mobile start action in first viewport",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D13 first theory starts before 500px at390",
+      "pass": true,
+      "detail": {
+        "top": 462.453125,
+        "previousAudit": 622
+      }
+    },
+    {
+      "name": "D02 mobile menu exposes active lesson",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D02 current mobile link within screen",
+      "pass": true,
+      "detail": {
+        "rect": {
+          "x": -102.333984375,
+          "y": 470.40625,
+          "width": 315,
+          "height": 57.6875
+        }
+      }
+    },
+    {
+      "name": "Mobile escape restores menu button focus",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D06 mobile map closes after selection",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D03 mobile-specific figure selected",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D03 tablet selects figure by actual column width",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "All161 sections reflow at320 without page overflow",
+      "pass": true,
+      "detail": {
+        "sections": 161,
+        "overflows": []
+      }
+    },
+    {
+      "name": "Unknown fragment recovers",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Malformed encoded fragment recovers",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Mobile keyboard search opens menu",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "D11 B/C link opens B/C instead of A",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Print excludes navigation and unopened answers",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "All generated fragment links resolve",
+      "pass": true,
+      "detail": {
+        "issues": []
+      }
+    },
+    {
+      "name": "No browser JavaScript errors",
+      "pass": true,
+      "detail": {
+        "errors": []
+      }
+    }
+  ],
+  "errors": [],
+  "measurements": {
+    "utilityContrast": [
+      {
+        "selector": ".brand-caption",
+        "ratio": 5.687924895433198,
+        "font": "12px"
+      },
+      {
+        "selector": ".search-status",
+        "ratio": 5.687924895433198,
+        "font": "12px"
+      },
+      {
+        "selector": ".nav-group h2",
+        "ratio": 5.687924895433198,
+        "font": "12px"
+      },
+      {
+        "selector": ".nav-marker",
+        "ratio": 5.687924895433198,
+        "font": "12px"
+      },
+      {
+        "selector": ".nav-foot",
+        "ratio": 5.687924895433198,
+        "font": "12px"
+      },
+      {
+        "selector": ".source-note",
+        "ratio": 6.115625362160427,
+        "font": "12px"
+      }
+    ]
+  },
+  "screenshots": [
+    "home-desktop.png",
+    "lesson-desktop.png",
+    "attention-desktop.png",
+    "assignment-desktop.png",
+    "answer-return.png",
+    "search-answer.png",
+    "home-mobile.png",
+    "lesson-mobile.png",
+    "menu-mobile.png",
+    "assignment-mobile.png",
+    "log-figure-mobile.png",
+    "log-figure-tablet.png",
+    "M08-L03-figure-mobile.png",
+    "M08-L07-figure-mobile.png",
+    "M15-L06-figure-mobile.png",
+    "search-mobile320.png"
+  ],
+  "passed": 36,
+  "failed": 0
+}

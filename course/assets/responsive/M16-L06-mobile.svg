@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="546" viewBox="0 0 360 546" role="img" aria-labelledby="title desc"><title id="title">Основание и смысл — разные проверки</title><desc id="desc">Основание и смысл — разные проверки. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="546" fill="white"/>
+<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Основание и смысл — разные</text>
+<text x="16" y="55" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">проверки</text>
+<path d="M16,160 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="90" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="106" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">JSON: quote + criterion</text>
+<text x="30" y="134" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">есть ли поля нужного типа?</text>
+<path d="M16,270 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="176" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="192" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">quote присутствует в answer</text>
+<text x="30" y="220" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">автоматическая проверка</text>
+<text x="30" y="244" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">основания</text>
+<path d="M16,356 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="286" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="302" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">criterion подходит к цитате</text>
+<text x="30" y="330" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">ручная смысловая проверка</text>
+<path d="M16,466 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="372" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="388" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">schema/quote не прошли</text>
+<text x="30" y="416" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">явный отказ + вопрос по</text>
+<text x="30" y="440" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">правилу</text>
+<text x="16" y="494" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Сопоставление понятий; строки</text>
+<text x="16" y="516" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">не означают поток выполнения.</text>
+</svg>

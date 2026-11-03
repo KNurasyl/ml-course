@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="737.03952pt" height="362.63952pt" viewBox="0 0 737.03952 362.63952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>M10-L03</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>M10-L03</dc:title>
+    <dc:description>Responsive layout; source numbers unchanged.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 362.63952 
+L 737.03952 362.63952 
+L 737.03952 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 27.63625 305.958973 
+L 725.51952 305.958973 
+L 725.51952 60.235753 
+L 27.63625 60.235753 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 27.63625 71.404991 
+L 534.306553 71.404991 
+L 534.306553 118.433358 
+L 27.63625 118.433358 
+z
+" clip-path="url(#p421f706a11)" style="fill: #245bba"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 27.63625 130.19045 
+L 515.666509 130.19045 
+L 515.666509 177.218817 
+L 27.63625 177.218817 
+z
+" clip-path="url(#p421f706a11)" style="fill: #245bba"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 27.63625 188.975909 
+L 269.95683 188.975909 
+L 269.95683 236.004277 
+L 27.63625 236.004277 
+z
+" clip-path="url(#p421f706a11)" style="fill: #526474"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 27.63625 247.761368 
+L 251.316785 247.761368 
+L 251.316785 294.789736 
+L 27.63625 294.789736 
+z
+" clip-path="url(#p421f706a11)" style="fill: #526474"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m7832283b4e" d="M 0 0 
+L 0 3.5 
+" style="stroke: #526474; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m7832283b4e" x="27.63625" y="305.958973" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #526474" x="27.63625" y="326.047079" transform="rotate(-0 27.63625 326.047079)">0.00</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m7832283b4e" x="173.028598" y="305.958973" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #526474" x="173.028598" y="326.047079" transform="rotate(-0 173.028598 326.047079)">0.05</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m7832283b4e" x="318.420946" y="305.958973" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #526474" x="318.420946" y="326.072469" transform="rotate(-0 318.420946 326.072469)">0.10</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m7832283b4e" x="463.813294" y="305.958973" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #526474" x="463.813294" y="326.072469" transform="rotate(-0 463.813294 326.072469)">0.15</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m7832283b4e" x="609.205642" y="305.958973" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #526474" x="609.205642" y="326.047079" transform="rotate(-0 609.205642 326.047079)">0.20</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="376.577885" y="347.152743" transform="rotate(-0 376.577885 347.152743)">RRF score · c=10</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_6">
+      <path d="M 27.63625 94.919174 
+L 725.51952 94.919174 
+" clip-path="url(#p421f706a11)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_7">
+      <defs>
+       <path id="m761e17c5ce" d="M 0 0 
+L -3.5 0 
+" style="stroke: #526474; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m761e17c5ce" x="27.63625" y="94.919174" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #526474" x="20.63625" y="101.464751" transform="rotate(-0 20.63625 101.464751)">B</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8">
+      <path d="M 27.63625 153.704634 
+L 725.51952 153.704634 
+" clip-path="url(#p421f706a11)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m761e17c5ce" x="27.63625" y="153.704634" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #526474" x="20.63625" y="160.25021" transform="rotate(-0 20.63625 160.25021)">A</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_10">
+      <path d="M 27.63625 212.490093 
+L 725.51952 212.490093 
+" clip-path="url(#p421f706a11)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m761e17c5ce" x="27.63625" y="212.490093" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #526474" x="20.63625" y="219.035669" transform="rotate(-0 20.63625 219.035669)">D</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_12">
+      <path d="M 27.63625 271.275552 
+L 725.51952 271.275552 
+" clip-path="url(#p421f706a11)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m761e17c5ce" x="27.63625" y="271.275552" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #526474" x="20.63625" y="277.821128" transform="rotate(-0 20.63625 277.821128)">C</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_7">
+    <path d="M 27.63625 305.958973 
+L 27.63625 60.235753 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 27.63625 305.958973 
+L 725.51952 305.958973 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: start; fill: #182b3a" x="539.306553" y="99.492534" transform="rotate(-0 539.306553 99.492534)">0.17424</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: start; fill: #182b3a" x="520.666509" y="158.277993" transform="rotate(-0 520.666509 158.277993)">0.16783</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: start; fill: #182b3a" x="274.95683" y="217.038062" transform="rotate(-0 274.95683 217.038062)">0.08333</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: start; fill: #182b3a" x="256.316785" y="275.823521" transform="rotate(-0 256.316785 275.823521)">0.07692</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 14px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="376.577885" y="54.235753" transform="rotate(-0 376.577885 54.235753)">Слияние [A,B,C] и [B,D,A]</text>
+   </g>
+  </g>
+  <g id="text_16">
+   <text style="font-weight: 700; font-size: 18px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="368.51976" y="27.532617" transform="rotate(-0 368.51976 27.532617)">RRF: B получает два высоких ранга</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p421f706a11">
+   <rect x="27.63625" y="60.235753" width="697.88327" height="245.72322"/>
+  </clipPath>
+ </defs>
+</svg>

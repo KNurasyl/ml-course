@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="267" viewBox="0 0 760 267" role="img" aria-labelledby="title desc"><title id="title">Цепное правило: идём от потери назад</title><desc id="desc">Цепное правило: идём от потери назад. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="760" height="267" fill="white"/>
+<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">Цепное правило: идём от потери назад</text>
+<path d="M16,101 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<text x="18" y="79" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Прямой расчёт</text>
+<text x="280" y="79" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">w=1 → ŷ=wx+b=2 → e=ŷ−y=−3 → L=e²=9</text>
+<path d="M16,155 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<text x="18" y="133" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Локальные производные</text>
+<text x="280" y="133" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">dL/de=2e=−6; de/dŷ=1; dŷ/dw=x=2</text>
+<path d="M16,209 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<text x="18" y="187" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Обратный расчёт</text>
+<text x="280" y="187" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">dL/dw = (−6) × 1 × 2 = −12</text>
+<text x="16" y="237" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Задано x=2, y=5, b=0.</text>
+</svg>

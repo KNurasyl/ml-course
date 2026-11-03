@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="690" viewBox="0 0 360 690" role="img" aria-labelledby="title desc"><title id="title">Две рубрики проверяют разные свойства</title><desc id="desc">Две рубрики проверяют разные свойства. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="690" fill="white"/>
+<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Две рубрики проверяют</text>
+<text x="16" y="55" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">разные свойства</text>
+<path d="M16,208 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="90" width="3" height="110" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="106" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Содержание</text>
+<text x="30" y="134" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">HR: конкретное личное</text>
+<text x="30" y="158" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">действие. Техническое:</text>
+<text x="30" y="182" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">корректный факт.</text>
+<path d="M16,342 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="224" width="3" height="110" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="240" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Обоснование</text>
+<text x="30" y="268" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">HR: почему выбрано действие.</text>
+<text x="30" y="292" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Техническое: компромиссы и</text>
+<text x="30" y="316" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">ограничения.</text>
+<path d="M16,476 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="358" width="3" height="110" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="374" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Проверка</text>
+<text x="30" y="402" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">HR: подтверждённый результат.</text>
+<text x="30" y="426" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Техническое: план измерения /</text>
+<text x="30" y="450" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">тест.</text>
+<path d="M16,610 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="492" width="3" height="110" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="508" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Критическая ошибка</text>
+<text x="30" y="536" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">HR: приписанный опыт.</text>
+<text x="30" y="560" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Техническое: ложный факт или</text>
+<text x="30" y="584" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">вывод.</text>
+<text x="16" y="638" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Оценка относится к ответу по</text>
+<text x="16" y="660" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">явной рубрике, не к личности.</text>
+</svg>

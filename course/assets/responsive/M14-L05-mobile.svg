@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="385" viewBox="0 0 360 385" role="img" aria-labelledby="title desc"><title id="title">M14-L05 · Проверка агента</title><desc id="desc">M14-L05 · Проверка агента. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="385" fill="white"/>
+<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">M14-L05 · Проверка агента</text>
+<path d="M16,133 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="63" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="79" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Задача выполнена?</text>
+<text x="30" y="107" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Права соблюдены?</text>
+<path d="M16,219 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="149" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="165" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Бюджет соблюдён?</text>
+<text x="30" y="193" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Трасса объяснима?</text>
+<path d="M16,305 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="235" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="251" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">8 ожидаемых исходов</text>
+<text x="30" y="279" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">LLM оценивается отдельно</text>
+<text x="16" y="333" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Сопоставление понятий; строки</text>
+<text x="16" y="355" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">не означают поток выполнения.</text>
+</svg>

@@ -1,0 +1,806 @@
+{
+  "checks": [
+    {
+      "name": "M15 initial one segment",
+      "passed": true
+    },
+    {
+      "name": "M15 threshold100 two segments",
+      "passed": true
+    },
+    {
+      "name": "M15 endpoints500,1450",
+      "passed": true
+    },
+    {
+      "name": "M15 equality350 still split",
+      "passed": true
+    },
+    {
+      "name": "M15 threshold400 merges",
+      "passed": true
+    },
+    {
+      "name": "M15 maximum900 endpoint2250",
+      "passed": true
+    },
+    {
+      "name": "M13 cap3 wait90 statuses",
+      "passed": true
+    },
+    {
+      "name": "M13 all four success",
+      "passed": true
+    },
+    {
+      "name": "M13 only one admitted",
+      "passed": true
+    },
+    {
+      "name": "M14 allowed",
+      "passed": true
+    },
+    {
+      "name": "M14 foreign",
+      "passed": true
+    },
+    {
+      "name": "M14 extra",
+      "passed": true
+    },
+    {
+      "name": "M14 repeat",
+      "passed": true
+    },
+    {
+      "name": "M16 citation personal action accepted",
+      "passed": true
+    },
+    {
+      "name": "M16 criterion changes result",
+      "passed": true
+    },
+    {
+      "name": "M16 fabricated rejected",
+      "passed": true
+    },
+    {
+      "name": "M16 finished after4 defaultshort",
+      "passed": true
+    },
+    {
+      "name": "M16 refusal advances topic",
+      "passed": true
+    },
+    {
+      "name": "M16 changing limit resets",
+      "passed": true
+    },
+    {
+      "name": "M16 limit0 finished in2",
+      "passed": true
+    },
+    {
+      "name": "M16 limit2 finished in6",
+      "passed": true
+    },
+    {
+      "name": "M16 long finished in2",
+      "passed": true
+    },
+    {
+      "name": "M16 acceptance initial",
+      "passed": true
+    },
+    {
+      "name": "M16 critical veto",
+      "passed": true
+    },
+    {
+      "name": "M16 missing run",
+      "passed": true
+    },
+    {
+      "name": "M16 missing explain",
+      "passed": true
+    },
+    {
+      "name": "M16 missing new",
+      "passed": true
+    },
+    {
+      "name": "M13-L06 final layout width 820",
+      "passed": true
+    },
+    {
+      "name": "M13-L06 feedback adjacent to controls region 820",
+      "passed": true,
+      "data": 18
+    },
+    {
+      "name": "M14-L06 final layout width 820",
+      "passed": true
+    },
+    {
+      "name": "M14-L06 feedback adjacent to controls region 820",
+      "passed": true,
+      "data": 18
+    },
+    {
+      "name": "M15-L06 final layout width 820",
+      "passed": true
+    },
+    {
+      "name": "M16-L06 final layout width 820",
+      "passed": true
+    },
+    {
+      "name": "M16-L06 feedback adjacent to controls region 820",
+      "passed": true,
+      "data": 18
+    },
+    {
+      "name": "M16-L07 final layout width 820",
+      "passed": true
+    },
+    {
+      "name": "M16-L07 feedback adjacent to controls region 820",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "M16-L08 final layout width 820",
+      "passed": true
+    },
+    {
+      "name": "M16-L08 feedback adjacent to controls region 820",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "M13-L06 final layout width 390",
+      "passed": true
+    },
+    {
+      "name": "M13-L06 feedback adjacent to controls region 390",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "M14-L06 final layout width 390",
+      "passed": true
+    },
+    {
+      "name": "M14-L06 feedback adjacent to controls region 390",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "M15-L06 final layout width 390",
+      "passed": true
+    },
+    {
+      "name": "M16-L06 final layout width 390",
+      "passed": true
+    },
+    {
+      "name": "M16-L06 feedback adjacent to controls region 390",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "M16-L07 final layout width 390",
+      "passed": true
+    },
+    {
+      "name": "M16-L07 feedback adjacent to controls region 390",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "M16-L08 final layout width 390",
+      "passed": true
+    },
+    {
+      "name": "M16-L08 feedback adjacent to controls region 390",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "M13-L06 final layout width 260",
+      "passed": true
+    },
+    {
+      "name": "M13-L06 feedback adjacent to controls region 260",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "M14-L06 final layout width 260",
+      "passed": true
+    },
+    {
+      "name": "M14-L06 feedback adjacent to controls region 260",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "M15-L06 final layout width 260",
+      "passed": true
+    },
+    {
+      "name": "M16-L06 final layout width 260",
+      "passed": true
+    },
+    {
+      "name": "M16-L06 feedback adjacent to controls region 260",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "M16-L07 final layout width 260",
+      "passed": true
+    },
+    {
+      "name": "M16-L07 feedback adjacent to controls region 260",
+      "passed": true,
+      "data": 16
+    },
+    {
+      "name": "M16-L08 final layout width 260",
+      "passed": true
+    },
+    {
+      "name": "M16-L08 feedback adjacent to controls region 260",
+      "passed": true,
+      "data": 16
+    }
+  ],
+  "metrics": [
+    {
+      "key": "M13-L06",
+      "width": 820,
+      "scrollWidth": 820,
+      "height": 979.375,
+      "resultY": 263.78125,
+      "controlsRegionBottom": 245.78125,
+      "controls": [
+        {
+          "id": "capacity",
+          "x": 34,
+          "right": 390,
+          "width": 356
+        },
+        {
+          "id": "wait",
+          "x": 430,
+          "right": 786,
+          "width": 356
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 527.8125,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M14-L06",
+      "width": 820,
+      "scrollWidth": 820,
+      "height": 680.203125,
+      "resultY": 255.53125,
+      "controlsRegionBottom": 237.53125,
+      "controls": [
+        {
+          "id": "action",
+          "x": 34,
+          "right": 786,
+          "width": 752
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 224.15625,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M15-L06",
+      "width": 820,
+      "scrollWidth": 820,
+      "height": 723.109375,
+      "resultY": 533.1875,
+      "controlsRegionBottom": 222.53125,
+      "controls": [
+        {
+          "id": "pause",
+          "x": 34,
+          "right": 786,
+          "width": 752
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 276.65625,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M16-L06",
+      "width": 820,
+      "scrollWidth": 820,
+      "height": 719.34375,
+      "resultY": 320.78125,
+      "controlsRegionBottom": 302.78125,
+      "controls": [
+        {
+          "id": "fragment",
+          "x": 34,
+          "right": 390,
+          "width": 356
+        },
+        {
+          "id": "criterion",
+          "x": 430,
+          "right": 786,
+          "width": 356
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 210.78125,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M16-L07",
+      "width": 820,
+      "scrollWidth": 820,
+      "height": 695.390625,
+      "resultY": 321.78125,
+      "controlsRegionBottom": 305.78125,
+      "controls": [
+        {
+          "id": "limit",
+          "x": 34,
+          "right": 390,
+          "width": 356
+        },
+        {
+          "id": "answer",
+          "x": 430,
+          "right": 786,
+          "width": 356
+        },
+        {
+          "id": "step",
+          "x": 20,
+          "right": 152.375,
+          "width": 132.375
+        },
+        {
+          "id": "reset",
+          "x": 160.375,
+          "right": 293.96875,
+          "width": 133.59375
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 171.078125,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M16-L08",
+      "width": 820,
+      "scrollWidth": 820,
+      "height": 721.296875,
+      "resultY": 300.4375,
+      "controlsRegionBottom": 284.4375,
+      "controls": [
+        {
+          "id": "run",
+          "x": 37,
+          "right": 56,
+          "width": 19
+        },
+        {
+          "id": "explain",
+          "x": 432,
+          "right": 451,
+          "width": 19
+        },
+        {
+          "id": "new",
+          "x": 37,
+          "right": 56,
+          "width": 19
+        },
+        {
+          "id": "critical",
+          "x": 432,
+          "right": 451,
+          "width": 19
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 255.578125,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M13-L06",
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 1141.84375,
+      "resultY": 373.46875,
+      "controlsRegionBottom": 357.46875,
+      "controls": [
+        {
+          "id": "capacity",
+          "x": 26,
+          "right": 364,
+          "width": 338
+        },
+        {
+          "id": "wait",
+          "x": 26,
+          "right": 364,
+          "width": 338
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 547.953125,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M14-L06",
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 1130.96875,
+      "resultY": 309.78125,
+      "controlsRegionBottom": 293.78125,
+      "controls": [
+        {
+          "id": "action",
+          "x": 26,
+          "right": 364,
+          "width": 338
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 545.390625,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M15-L06",
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 806.890625,
+      "resultY": 564.1875,
+      "controlsRegionBottom": 255.53125,
+      "controls": [
+        {
+          "id": "pause",
+          "x": 26,
+          "right": 364,
+          "width": 338
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 276.65625,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M16-L06",
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 963.34375,
+      "resultY": 471.71875,
+      "controlsRegionBottom": 455.71875,
+      "controls": [
+        {
+          "id": "fragment",
+          "x": 26,
+          "right": 364,
+          "width": 338
+        },
+        {
+          "id": "criterion",
+          "x": 26,
+          "right": 364,
+          "width": 338
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 251.0625,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M16-L07",
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 867.875,
+      "resultY": 470.71875,
+      "controlsRegionBottom": 454.71875,
+      "controls": [
+        {
+          "id": "limit",
+          "x": 26,
+          "right": 364,
+          "width": 338
+        },
+        {
+          "id": "answer",
+          "x": 26,
+          "right": 364,
+          "width": 338
+        },
+        {
+          "id": "step",
+          "x": 14,
+          "right": 146.375,
+          "width": 132.375
+        },
+        {
+          "id": "reset",
+          "x": 154.375,
+          "right": 287.96875,
+          "width": 133.59375
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 161.984375,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M16-L08",
+      "width": 390,
+      "scrollWidth": 390,
+      "height": 988.8125,
+      "resultY": 495.03125,
+      "controlsRegionBottom": 479.03125,
+      "controls": [
+        {
+          "id": "run",
+          "x": 31,
+          "right": 50,
+          "width": 19
+        },
+        {
+          "id": "explain",
+          "x": 31,
+          "right": 50,
+          "width": 19
+        },
+        {
+          "id": "new",
+          "x": 31,
+          "right": 50,
+          "width": 19
+        },
+        {
+          "id": "critical",
+          "x": 31,
+          "right": 50,
+          "width": 19
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 275.71875,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M13-L06",
+      "width": 260,
+      "scrollWidth": 260,
+      "height": 1412.859375,
+      "resultY": 469.46875,
+      "controlsRegionBottom": 453.46875,
+      "controls": [
+        {
+          "id": "capacity",
+          "x": 26,
+          "right": 234,
+          "width": 208
+        },
+        {
+          "id": "wait",
+          "x": 26,
+          "right": 234,
+          "width": 208
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 592.6875,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M14-L06",
+      "width": 260,
+      "scrollWidth": 260,
+      "height": 1332.8125,
+      "resultY": 382.53125,
+      "controlsRegionBottom": 366.53125,
+      "controls": [
+        {
+          "id": "action",
+          "x": 26,
+          "right": 234,
+          "width": 208
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 590.328125,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M15-L06",
+      "width": 260,
+      "scrollWidth": 260,
+      "height": 1008,
+      "resultY": 659.875,
+      "controlsRegionBottom": 302.03125,
+      "controls": [
+        {
+          "id": "pause",
+          "x": 26,
+          "right": 234,
+          "width": 208
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 325.84375,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M16-L06",
+      "width": 260,
+      "scrollWidth": 260,
+      "height": 1227.65625,
+      "resultY": 541.46875,
+      "controlsRegionBottom": 525.46875,
+      "controls": [
+        {
+          "id": "fragment",
+          "x": 26,
+          "right": 234,
+          "width": 208
+        },
+        {
+          "id": "criterion",
+          "x": 26,
+          "right": 234,
+          "width": 208
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 337.84375,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M16-L07",
+      "width": 260,
+      "scrollWidth": 260,
+      "height": 1136.296875,
+      "resultY": 613.71875,
+      "controlsRegionBottom": 597.71875,
+      "controls": [
+        {
+          "id": "limit",
+          "x": 26,
+          "right": 234,
+          "width": 208
+        },
+        {
+          "id": "answer",
+          "x": 26,
+          "right": 234,
+          "width": 208
+        },
+        {
+          "id": "step",
+          "x": 14,
+          "right": 146.375,
+          "width": 132.375
+        },
+        {
+          "id": "reset",
+          "x": 14,
+          "right": 147.59375,
+          "width": 133.59375
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 202.125,
+          "display": "block"
+        }
+      ]
+    },
+    {
+      "key": "M16-L08",
+      "width": 260,
+      "scrollWidth": 260,
+      "height": 1179.28125,
+      "resultY": 579.328125,
+      "controlsRegionBottom": 563.328125,
+      "controls": [
+        {
+          "id": "run",
+          "x": 31,
+          "right": 50,
+          "width": 19
+        },
+        {
+          "id": "explain",
+          "x": 31,
+          "right": 50,
+          "width": 19
+        },
+        {
+          "id": "new",
+          "x": 31,
+          "right": 50,
+          "width": 19
+        },
+        {
+          "id": "critical",
+          "x": 31,
+          "right": 50,
+          "width": 19
+        }
+      ],
+      "diagrams": [
+        {
+          "height": 319.109375,
+          "display": "block"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "iterationNotes": [
+    "Moved summary before request preview in M14 to keep it adjacent to selection.",
+    "Proximity measured from full control region including its explanatory caption, not only input slider bounds."
+  ]
+}

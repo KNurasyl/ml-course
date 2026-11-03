@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="659" viewBox="0 0 360 659" role="img" aria-labelledby="title desc"><title id="title">Assistant-only loss: контекст виден, loss избирателен</title><desc id="desc">Assistant-only loss: контекст виден, loss избирателен. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="659" fill="white"/>
+<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Assistant-only loss:</text>
+<text x="16" y="55" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">контекст виден, loss</text>
+<text x="16" y="82" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">избирателен</text>
+<path d="M16,187 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="117" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="133" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">input_ids</text>
+<text x="30" y="161" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">[11, 12, 13, 21, 22, 2]</text>
+<path d="M16,273 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="203" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="219" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">labels</text>
+<text x="30" y="247" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">[−100, −100, −100, 21, 22, 2]</text>
+<path d="M16,359 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="289" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="305" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">attention mask</text>
+<text x="30" y="333" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">[1, 1, 1, 1, 1, 1]</text>
+<path d="M16,469 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="375" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="391" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Роли токенов</text>
+<text x="30" y="419" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">11–13: system/user. 21,22,2:</text>
+<text x="30" y="443" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">assistant + EOS.</text>
+<path d="M16,579 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="485" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="501" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Внутренний сдвиг loss</text>
+<text x="30" y="529" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Logits позиции 2 (индекс с</text>
+<text x="30" y="553" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">нуля) предсказывают token 21.</text>
+<text x="16" y="607" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Prefix доступен attention; −100</text>
+<text x="16" y="629" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">исключает его из objective.</text>
+</svg>

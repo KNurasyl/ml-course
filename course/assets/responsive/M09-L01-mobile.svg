@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="653" viewBox="0 0 360 653" role="img" aria-labelledby="title desc"><title id="title">Сообщения и шаблон диалога</title><desc id="desc">Сообщения и шаблон диалога. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="653" fill="white"/>
+<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Сообщения и шаблон диалога</text>
+<path d="M16,157 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="63" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="79" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">messages</text>
+<text x="30" y="107" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">system → assistant question →</text>
+<text x="30" y="131" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">user answer</text>
+<path d="M16,267 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="173" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="189" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">chat_template</text>
+<text x="30" y="217" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Роли + границы + начало</text>
+<text x="30" y="241" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">нового assistant</text>
+<path d="M16,353 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="283" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="299" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">tokenizer</text>
+<text x="30" y="327" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Фактические ID и длина входа</text>
+<path d="M16,463 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="369" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="385" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">causal model</text>
+<text x="30" y="413" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Продолжает полученную</text>
+<text x="30" y="437" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">последовательность</text>
+<path d="M16,573 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="479" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="495" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Приложение</text>
+<text x="30" y="523" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Проверяет ответ и обновляет</text>
+<text x="30" y="547" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">состояние</text>
+<text x="16" y="601" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Учебные числа и условия — в</text>
+<text x="16" y="623" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">пояснении урока.</text>
+</svg>

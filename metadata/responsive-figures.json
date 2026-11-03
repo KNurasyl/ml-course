@@ -1,0 +1,486 @@
+{
+  "course/assets/M00-L01.png": {
+    "desktop": "course/assets/responsive/M00-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M00-L01-mobile.svg"
+  },
+  "course/assets/M00-L02.png": {
+    "desktop": "course/assets/responsive/M00-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M00-L02-mobile.svg"
+  },
+  "course/assets/M00-L03.png": {
+    "desktop": "course/assets/responsive/M00-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M00-L03-mobile.svg"
+  },
+  "course/assets/M00-L04.png": {
+    "desktop": "course/assets/responsive/M00-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M00-L04-mobile.svg",
+    "caption": "Запись диалога сама по себе не выполняет шаг обучения."
+  },
+  "course/assets/M00-L05.png": {
+    "desktop": "course/assets/responsive/M00-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M00-L05-mobile.svg",
+    "caption": "Артефакт связывает обучение и обслуживание запроса."
+  },
+  "course/assets/M01-L01.png": {
+    "desktop": "course/assets/responsive/M01-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M01-L01-mobile.svg",
+    "caption": "Исходная форма [3,2] → результат [2]."
+  },
+  "course/assets/M01-L02.png": {
+    "desktop": "course/assets/responsive/M01-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M01-L02-mobile.svg",
+    "caption": "NULL, дубликат и неверное значение не взаимозаменяемы."
+  },
+  "course/assets/M01-L03.png": {
+    "desktop": "course/assets/responsive/M01-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M01-L03-mobile.svg"
+  },
+  "course/assets/M01-L04.png": {
+    "desktop": "course/assets/responsive/M01-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M01-L04-mobile.svg"
+  },
+  "course/assets/M01-L05.png": {
+    "desktop": "course/assets/responsive/M01-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M01-L05-mobile.svg"
+  },
+  "course/assets/M02-L01.png": {
+    "desktop": "course/assets/responsive/M02-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M02-L01-mobile.svg"
+  },
+  "course/assets/M02-L02.png": {
+    "desktop": "course/assets/responsive/M02-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M02-L02-mobile.svg"
+  },
+  "course/assets/M02-L03.png": {
+    "desktop": "course/assets/responsive/M02-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M02-L03-mobile.svg"
+  },
+  "course/assets/M02-L04.png": {
+    "desktop": "course/assets/responsive/M02-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M02-L04-mobile.svg"
+  },
+  "course/assets/M02-L05.png": {
+    "desktop": "course/assets/responsive/M02-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M02-L05-mobile.svg"
+  },
+  "course/assets/M03-L01.png": {
+    "desktop": "course/assets/responsive/M03-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M03-L01-mobile.svg"
+  },
+  "course/assets/M03-L02.png": {
+    "desktop": "course/assets/responsive/M03-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M03-L02-mobile.svg",
+    "caption": "Задано x=2, y=5, b=0."
+  },
+  "course/assets/M03-L03.png": {
+    "desktop": "course/assets/responsive/M03-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M03-L03-mobile.svg"
+  },
+  "course/assets/M03-L04.png": {
+    "desktop": "course/assets/responsive/M03-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M03-L04-mobile.svg"
+  },
+  "course/assets/M03-L05.png": {
+    "desktop": "course/assets/responsive/M03-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M03-L05-mobile.svg"
+  },
+  "course/assets/M04-L01.png": {
+    "desktop": "course/assets/responsive/M04-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L01-mobile.svg",
+    "caption": "Например: P(корректно | длинный) = 30 / 50."
+  },
+  "course/assets/M04-L02.png": {
+    "desktop": "course/assets/responsive/M04-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L02-mobile.svg"
+  },
+  "course/assets/M04-L03.png": {
+    "desktop": "course/assets/responsive/M04-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L03-mobile.svg"
+  },
+  "course/assets/M04-L04.png": {
+    "desktop": "course/assets/responsive/M04-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L04-mobile.svg"
+  },
+  "course/assets/M04-L05.png": {
+    "desktop": "course/assets/responsive/M04-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L05-mobile.svg"
+  },
+  "course/assets/M05-L01.png": {
+    "desktop": "course/assets/responsive/M05-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M05-L01-mobile.svg"
+  },
+  "course/assets/M05-L02.png": {
+    "desktop": "course/assets/responsive/M05-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M05-L02-mobile.svg"
+  },
+  "course/assets/M05-L03.png": {
+    "desktop": "course/assets/responsive/M05-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M05-L03-mobile.svg"
+  },
+  "course/assets/M05-L04.png": {
+    "desktop": "course/assets/responsive/M05-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M05-L04-mobile.svg",
+    "caption": "fit(preprocessing + model) выполняется только на train данного fold."
+  },
+  "course/assets/M05-L05.png": {
+    "desktop": "course/assets/responsive/M05-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M05-L05-mobile.svg"
+  },
+  "course/assets/M04-L07.png": {
+    "desktop": "course/assets/responsive/M04-L07-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L07-mobile.svg"
+  },
+  "course/assets/M04-L08.png": {
+    "desktop": "course/assets/responsive/M04-L08-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L08-mobile.svg"
+  },
+  "course/assets/M06-L03.svg": {
+    "desktop": "course/assets/responsive/M06-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M06-L03-mobile.svg"
+  },
+  "course/assets/M07-L04.svg": {
+    "desktop": "course/assets/responsive/M07-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M07-L04-mobile.svg"
+  },
+  "course/assets/M08-L04.svg": {
+    "desktop": "course/assets/responsive/M08-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M08-L04-mobile.svg"
+  },
+  "course/assets/M09-L02.svg": {
+    "desktop": "course/assets/responsive/M09-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M09-L02-mobile.svg"
+  },
+  "course/assets/M09-L04.svg": {
+    "desktop": "course/assets/responsive/M09-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M09-L04-mobile.svg"
+  },
+  "course/assets/M10-L03.svg": {
+    "desktop": "course/assets/responsive/M10-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M10-L03-mobile.svg"
+  },
+  "course/assets/M11-L04.svg": {
+    "desktop": "course/assets/responsive/M11-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M11-L04-mobile.svg"
+  },
+  "course/assets/M12-L04.svg": {
+    "desktop": "course/assets/responsive/M12-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M12-L04-mobile.svg",
+    "caption": "Одинаковый размер ячейки сохраняет смысл формы матриц. Содержимое ΔW вычислено из показанных A и B."
+  },
+  "course/assets/M12-L05.svg": {
+    "desktop": "course/assets/responsive/M12-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M12-L05-mobile.svg"
+  },
+  "course/assets/M13-L04.svg": {
+    "desktop": "course/assets/responsive/M13-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M13-L04-mobile.svg"
+  },
+  "course/assets/M15-L01.svg": {
+    "desktop": "course/assets/responsive/M15-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M15-L01-mobile.svg"
+  },
+  "course/assets/M07-HW01.png": {
+    "desktop": "course/assets/responsive/M07-HW01-desktop.svg",
+    "mobile": "course/assets/responsive/M07-HW01-mobile.svg"
+  },
+  "course/assets/M06-L01.svg": {
+    "desktop": "course/assets/responsive/M06-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M06-L01-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M06-L02.svg": {
+    "desktop": "course/assets/responsive/M06-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M06-L02-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M06-L04.svg": {
+    "desktop": "course/assets/responsive/M06-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M06-L04-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M06-L05.svg": {
+    "desktop": "course/assets/responsive/M06-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M06-L05-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M07-L01.svg": {
+    "desktop": "course/assets/responsive/M07-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M07-L01-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M07-L02.svg": {
+    "desktop": "course/assets/responsive/M07-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M07-L02-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M07-L03.svg": {
+    "desktop": "course/assets/responsive/M07-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M07-L03-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M07-L05.svg": {
+    "desktop": "course/assets/responsive/M07-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M07-L05-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M08-L01.svg": {
+    "desktop": "course/assets/responsive/M08-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M08-L01-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M08-L02.svg": {
+    "desktop": "course/assets/responsive/M08-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M08-L02-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M08-L05.svg": {
+    "desktop": "course/assets/responsive/M08-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M08-L05-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M09-L01.svg": {
+    "desktop": "course/assets/responsive/M09-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M09-L01-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M09-L03.svg": {
+    "desktop": "course/assets/responsive/M09-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M09-L03-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M09-L05.svg": {
+    "desktop": "course/assets/responsive/M09-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M09-L05-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M10-L01.svg": {
+    "desktop": "course/assets/responsive/M10-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M10-L01-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M10-L02.svg": {
+    "desktop": "course/assets/responsive/M10-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M10-L02-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M10-L04.svg": {
+    "desktop": "course/assets/responsive/M10-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M10-L04-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M10-L05.svg": {
+    "desktop": "course/assets/responsive/M10-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M10-L05-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M11-L01.svg": {
+    "desktop": "course/assets/responsive/M11-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M11-L01-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M11-L02.svg": {
+    "desktop": "course/assets/responsive/M11-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M11-L02-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M11-L03.svg": {
+    "desktop": "course/assets/responsive/M11-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M11-L03-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M11-L05.svg": {
+    "desktop": "course/assets/responsive/M11-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M11-L05-mobile.svg",
+    "caption": "Учебные числа и условия — в пояснении урока."
+  },
+  "course/assets/M13-L01.svg": {
+    "desktop": "course/assets/responsive/M13-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M13-L01-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M13-L02.svg": {
+    "desktop": "course/assets/responsive/M13-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M13-L02-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M13-L03.svg": {
+    "desktop": "course/assets/responsive/M13-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M13-L03-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M13-L05.svg": {
+    "desktop": "course/assets/responsive/M13-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M13-L05-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M13-L06.svg": {
+    "desktop": "course/assets/responsive/M13-L06-desktop.svg",
+    "mobile": "course/assets/responsive/M13-L06-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M14-L01.svg": {
+    "desktop": "course/assets/responsive/M14-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M14-L01-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M14-L02.svg": {
+    "desktop": "course/assets/responsive/M14-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M14-L02-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M14-L03.svg": {
+    "desktop": "course/assets/responsive/M14-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M14-L03-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M14-L04.svg": {
+    "desktop": "course/assets/responsive/M14-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M14-L04-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M14-L05.svg": {
+    "desktop": "course/assets/responsive/M14-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M14-L05-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M14-L06.svg": {
+    "desktop": "course/assets/responsive/M14-L06-desktop.svg",
+    "mobile": "course/assets/responsive/M14-L06-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M15-L02.svg": {
+    "desktop": "course/assets/responsive/M15-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M15-L02-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M15-L03.svg": {
+    "desktop": "course/assets/responsive/M15-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M15-L03-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M15-L06.svg": {
+    "desktop": "course/assets/responsive/M15-L06-desktop.svg",
+    "mobile": "course/assets/responsive/M15-L06-mobile.svg",
+    "caption": "Верхняя шкала — миллисекунды аудио. Нижняя — порядок событий очереди; расстояния между событиями не означают задержку."
+  },
+  "course/assets/M16-L02.svg": {
+    "desktop": "course/assets/responsive/M16-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M16-L02-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M16-L03.svg": {
+    "desktop": "course/assets/responsive/M16-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M16-L03-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M16-L04.svg": {
+    "desktop": "course/assets/responsive/M16-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M16-L04-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M16-L05.svg": {
+    "desktop": "course/assets/responsive/M16-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M16-L05-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M16-L06.svg": {
+    "desktop": "course/assets/responsive/M16-L06-desktop.svg",
+    "mobile": "course/assets/responsive/M16-L06-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M16-L07.svg": {
+    "desktop": "course/assets/responsive/M16-L07-desktop.svg",
+    "mobile": "course/assets/responsive/M16-L07-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M16-L08.svg": {
+    "desktop": "course/assets/responsive/M16-L08-desktop.svg",
+    "mobile": "course/assets/responsive/M16-L08-mobile.svg",
+    "caption": "Сопоставление понятий; строки не означают поток выполнения."
+  },
+  "course/assets/M05-L06.svg": {
+    "desktop": "course/assets/responsive/M05-L06-desktop.svg",
+    "mobile": "course/assets/responsive/M05-L06-mobile.svg",
+    "caption": "Порог и модель зафиксированы перед независимой оценкой."
+  },
+  "course/assets/M05-L07.svg": {
+    "desktop": "course/assets/responsive/M05-L07-desktop.svg",
+    "mobile": "course/assets/responsive/M05-L07-mobile.svg",
+    "caption": "Validation: дни 5…7. Политика исключения фиксируется до обучения."
+  },
+  "course/assets/M08-L06.svg": {
+    "desktop": "course/assets/responsive/M08-L06-desktop.svg",
+    "mobile": "course/assets/responsive/M08-L06-mobile.svg",
+    "caption": "Нормируются признаки D; позиции T не смешиваются."
+  },
+  "course/assets/M09-L06.svg": {
+    "desktop": "course/assets/responsive/M09-L06-desktop.svg",
+    "mobile": "course/assets/responsive/M09-L06-mobile.svg",
+    "caption": "Не складывай и не подменяй эти измерения."
+  },
+  "course/assets/M10-L06.svg": {
+    "desktop": "course/assets/responsive/M10-L06-desktop.svg",
+    "mobile": "course/assets/responsive/M10-L06-mobile.svg",
+    "caption": "Трасса: версия → chunk → кандидаты → контекст → claim."
+  },
+  "course/assets/M12-L01.svg": {
+    "desktop": "course/assets/responsive/M12-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M12-L01-mobile.svg",
+    "caption": "После изменения — тот же независимый набор и анализ новых ошибок."
+  },
+  "course/assets/M12-L06.svg": {
+    "desktop": "course/assets/responsive/M12-L06-desktop.svg",
+    "mobile": "course/assets/responsive/M12-L06-mobile.svg",
+    "caption": "Prefix доступен attention; −100 исключает его из objective."
+  },
+  "course/assets/M12-L07.svg": {
+    "desktop": "course/assets/responsive/M12-L07-desktop.svg",
+    "mobile": "course/assets/responsive/M12-L07-mobile.svg",
+    "caption": "Base hash неизменен; ответы могут измениться и ухудшиться."
+  },
+  "course/assets/M16-L01.svg": {
+    "desktop": "course/assets/responsive/M16-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M16-L01-mobile.svg",
+    "caption": "Оценка относится к ответу по явной рубрике, не к личности."
+  },
+  "course/assets/M11-L06.svg": {
+    "desktop": "course/assets/responsive/M11-L06-desktop.svg",
+    "mobile": "course/assets/responsive/M11-L06-mobile.svg",
+    "caption": "Новая критическая ошибка блокирует выпуск независимо от среднего."
+  },
+  "course/assets/M12-L02.svg": {
+    "desktop": "course/assets/responsive/M12-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M12-L02-mobile.svg",
+    "caption": "Строки одной сессии нельзя распределять по разным частям."
+  },
+  "course/assets/M12-L03.svg": {
+    "desktop": "course/assets/responsive/M12-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M12-L03-mobile.svg",
+    "caption": "Transformer получает доступный контекст через attention; биграмма его не видит."
+  },
+  "course/assets/M15-L04.svg": {
+    "desktop": "course/assets/responsive/M15-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M15-L04-mobile.svg",
+    "caption": "t0…t4 — порядок событий, не равные интервалы времени."
+  },
+  "course/assets/M15-L05.svg": {
+    "desktop": "course/assets/responsive/M15-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M15-L05-mobile.svg",
+    "caption": "WER = 1/4 = 0.25. Пропуск отрицания — отдельная критическая ошибка."
+  },
+  "course/assets/M08-L03.svg": {
+    "desktop": "course/assets/responsive/M08-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M08-L03-mobile.svg",
+    "caption": "Строки Q1, Q2, Q3 и соответствующие выходы O1, O2, O3 идут в одном порядке. Числа округлены только для подписи."
+  },
+  "course/assets/M08-L07.svg": {
+    "desktop": "course/assets/responsive/M08-L07-desktop.svg",
+    "mobile": "course/assets/responsive/M08-L07-mobile.svg",
+    "caption": "Синий обозначает данные и residual; бирюзовый — преобразование и сложение. Учебная схема одной головы, pre-norm."
+  },
+  "course/assets/M04-L06.png": {
+    "desktop": "course/assets/responsive/M04-L06-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L06-mobile.svg",
+    "caption": "На телефоне графики идут последовательно: экспонента, обратная функция ln и потеря вероятностного ответа. Точки сохраняют исходные значения."
+  }
+}

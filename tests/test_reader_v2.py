@@ -195,6 +195,35 @@ def test_missing_mapped_visual_fails_instead_of_silently_shipping_a_broken_exper
         reader.build(root)
 
 
+def test_sandbox_experiment_bundles_local_dependencies_and_rejects_external_paths(small_course):
+    root, _ = small_course
+    write(root, 'course/visuals/frame.css', 'body{color:#182b3a}')
+    write(root, 'course/visuals/frame.js', 'parent.postMessage({type:"course:resize",height:100},"*");')
+    write(root, 'course/visuals/example.html', '<link rel="stylesheet" href="frame.css"><p>Опыт</p><script src="frame.js"></script>')
+    frame = reader.experiment_frame(root, 'course/visuals/example.html', 'Опыт')
+    from html import unescape
+    content = unescape(re.search(r'srcdoc="(.*?)"></iframe>', frame, re.S).group(1))
+    assert '<style>body{color:#182b3a}</style>' in content
+    assert 'parent.postMessage' in content and '<script src=' not in content
+    assert 'sandbox="allow-scripts"' in frame
+    write(root, 'course/visuals/example.html', '<script src="https://example.org/remote.js"></script>')
+    with pytest.raises(ValueError, match='Online dependency'):
+        reader.experiment_frame(root, 'course/visuals/example.html', 'Опыт')
+    write(root, 'course/visuals/example.html', '<script src="../../../outside.js"></script>')
+    with pytest.raises(ValueError, match='leaves repository'):
+        reader.experiment_frame(root, 'course/visuals/example.html', 'Опыт')
+
+
+def test_retry_link_opens_bc_key_while_first_attempt_keeps_a(small_course):
+    root, registry = small_course
+    with (root/'solutions/modules/M04.md').open('a', encoding='utf-8') as stream:
+        stream.write('\n## M04-L06: B и C\n\nДругие условия.\n')
+    paths = {(root/item['path']).resolve():key for key,item in registry.items()}
+    renderer = reader.CourseRenderer(root, root/'course/lessons/M04-L06.md', 'M04-L06', paths)
+    assert '#M04-SOLUTIONS--m04-l06-b-и-c' in renderer.link('ключи B/C', '../../solutions/modules/M04.md')
+    assert '#M04-SOLUTIONS--m04-l06-a' in renderer.link('Решение A', '../../solutions/modules/M04.md')
+
+
 def test_production_hash_navigation_opens_target_without_revealing_adjacent_answers():
     node = shutil.which("node")
     if node is None:
@@ -211,10 +240,14 @@ const answers={id:'M04-SOLUTIONS',dataset:{title:'Answers'},hidden:true};
 const articles=[home,lesson,answers];
 const byId=new Map(articles.map(x=>[x.id,x]));
 const links=[];
+let lastMaterial='';
+const updateContext=()=>{};
+const revealActive=()=>{};
+for(const a of articles){a.contains=node=>node===target;a.querySelector=()=>({setAttribute(){},focus(){}});}
 const previous={tagName:'DETAILS',open:false,parentElement:answers};
 const next={tagName:'DETAILS',open:false,parentElement:answers};
 const target={tagName:'DETAILS',open:false,parentElement:answers,scrolled:false,
-  scrollIntoView(){this.scrolled=true;}};
+  scrollIntoView(){this.scrolled=true;},setAttribute(){},focus(){}};
 const document={title:'',getElementById(id){return id==='M04-SOLUTIONS--m04-l06-a'?target:null;}};
 let closed=0,topScroll=0;
 const closeMenu=()=>closed++;

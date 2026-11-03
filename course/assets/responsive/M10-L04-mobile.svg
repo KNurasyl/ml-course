@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="656" viewBox="0 0 360 656" role="img" aria-labelledby="title desc"><title id="title">Контекст и подтверждение ответа</title><desc id="desc">Контекст и подтверждение ответа. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="656" fill="white"/>
+<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Контекст и подтверждение</text>
+<text x="16" y="55" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">ответа</text>
+<path d="M16,160 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="90" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="106" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Существование</text>
+<text x="30" y="134" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">ID найден в manifest</text>
+<path d="M16,246 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="176" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="192" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Релевантность</text>
+<text x="30" y="220" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Документ относится к вопросу</text>
+<path d="M16,356 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="262" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="278" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Подтверждение</text>
+<text x="30" y="306" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Фрагмент поддерживает</text>
+<text x="30" y="330" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">утверждение</text>
+<path d="M16,466 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="372" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="388" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Усиление вывода</text>
+<text x="30" y="416" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">«Может» не доказывает</text>
+<text x="30" y="440" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">«всегда»</text>
+<path d="M16,576 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="482" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="498" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Оснований мало</text>
+<text x="30" y="526" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Ограничить ответ или уточнить</text>
+<text x="30" y="550" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">вопрос</text>
+<text x="16" y="604" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Учебные числа и условия — в</text>
+<text x="16" y="626" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">пояснении урока.</text>
+</svg>

@@ -1,0 +1,1393 @@
+{
+  "date": "2026-11-03T10:41:47.887Z",
+  "reader_sha256": "54e0c76546749c355f9637e4265fcda325b802d851eaa7a3657aeb432f1f96d3",
+  "cases": [
+    {
+      "width": 1366,
+      "src": "course/visuals/M00.html",
+      "id": "M00-L02",
+      "innerWidth": 678,
+      "innerHeight": 688,
+      "scrollWidth": 678,
+      "scrollHeight": 688,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M01.html",
+      "id": "M01-L01",
+      "innerWidth": 678,
+      "innerHeight": 653,
+      "scrollWidth": 678,
+      "scrollHeight": 653,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M02.html",
+      "id": "M02-L02",
+      "innerWidth": 678,
+      "innerHeight": 703,
+      "scrollWidth": 678,
+      "scrollHeight": 703,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M03.html",
+      "id": "M03-L04",
+      "innerWidth": 678,
+      "innerHeight": 716,
+      "scrollWidth": 678,
+      "scrollHeight": 716,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M04.html",
+      "id": "M04-L03",
+      "innerWidth": 678,
+      "innerHeight": 658,
+      "scrollWidth": 678,
+      "scrollHeight": 658,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M04-L06.html",
+      "id": "M04-L06",
+      "innerWidth": 678,
+      "innerHeight": 665,
+      "scrollWidth": 678,
+      "scrollHeight": 665,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "p",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "y",
+          "left": 138.96875,
+          "right": 191.96875
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M05.html",
+      "id": "M05-L02",
+      "innerWidth": 678,
+      "innerHeight": 632,
+      "scrollWidth": 678,
+      "scrollHeight": 632,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M05-L06.html",
+      "id": "M05-L06",
+      "innerWidth": 678,
+      "innerHeight": 632,
+      "scrollWidth": 678,
+      "scrollHeight": 632,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "t",
+          "left": 35,
+          "right": 319
+        },
+        {
+          "id": "cost",
+          "left": 359,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M06.html",
+      "id": "M06-L03",
+      "innerWidth": 678,
+      "innerHeight": 704,
+      "scrollWidth": 678,
+      "scrollHeight": 704,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M07.html",
+      "id": "M07-L01",
+      "innerWidth": 678,
+      "innerHeight": 688,
+      "scrollWidth": 678,
+      "scrollHeight": 688,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M08.html",
+      "id": "M08",
+      "innerWidth": 678,
+      "innerHeight": 615,
+      "scrollWidth": 678,
+      "scrollHeight": 615,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/attention-lab.html",
+      "id": "M08-L03",
+      "innerWidth": 678,
+      "innerHeight": 959,
+      "scrollWidth": 678,
+      "scrollHeight": 959,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "variable",
+          "left": 492,
+          "right": 643
+        },
+        {
+          "id": "q",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "causal",
+          "left": 24,
+          "right": 37
+        },
+        {
+          "id": "axis",
+          "left": 20,
+          "right": 658
+        },
+        {
+          "id": "prev",
+          "left": 20,
+          "right": 62
+        },
+        {
+          "id": "step",
+          "left": 68,
+          "right": 610
+        },
+        {
+          "id": "next",
+          "left": 616,
+          "right": 658
+        },
+        {
+          "id": "guess",
+          "left": 20,
+          "right": 241
+        },
+        {
+          "id": "check",
+          "left": 249,
+          "right": 470
+        },
+        {
+          "id": "",
+          "left": 20,
+          "right": 55.8125
+        },
+        {
+          "id": "",
+          "left": 61.8125,
+          "right": 95.359375
+        },
+        {
+          "id": "",
+          "left": 101.359375,
+          "right": 135.4375
+        },
+        {
+          "id": "reset",
+          "left": 569.0625,
+          "right": 658
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M09.html",
+      "id": "M09-L02",
+      "innerWidth": 678,
+      "innerHeight": 593,
+      "scrollWidth": 678,
+      "scrollHeight": 593,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M10.html",
+      "id": "M10-L02",
+      "innerWidth": 678,
+      "innerHeight": 613,
+      "scrollWidth": 678,
+      "scrollHeight": 613,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M11.html",
+      "id": "M11-L02",
+      "innerWidth": 678,
+      "innerHeight": 680,
+      "scrollWidth": 678,
+      "scrollHeight": 680,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M12.html",
+      "id": "M12-L04",
+      "innerWidth": 678,
+      "innerHeight": 652,
+      "scrollWidth": 678,
+      "scrollHeight": 652,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M13.html",
+      "id": "M13-L05",
+      "innerWidth": 678,
+      "innerHeight": 691,
+      "scrollWidth": 678,
+      "scrollHeight": 691,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M13-L06.html",
+      "id": "M13-L06",
+      "innerWidth": 678,
+      "innerHeight": 982,
+      "scrollWidth": 678,
+      "scrollHeight": 982,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "capacity",
+          "left": 34,
+          "right": 319
+        },
+        {
+          "id": "wait",
+          "left": 359,
+          "right": 644
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M14.html",
+      "id": "M14-L04",
+      "innerWidth": 678,
+      "innerHeight": 764,
+      "scrollWidth": 678,
+      "scrollHeight": 764,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M14-L06.html",
+      "id": "M14-L06",
+      "innerWidth": 678,
+      "innerHeight": 725,
+      "scrollWidth": 678,
+      "scrollHeight": 725,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "action",
+          "left": 34,
+          "right": 644
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M15.html",
+      "id": "M15-L04",
+      "innerWidth": 678,
+      "innerHeight": 638,
+      "scrollWidth": 678,
+      "scrollHeight": 638,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M15-L06.html",
+      "id": "M15-L06",
+      "innerWidth": 678,
+      "innerHeight": 726,
+      "scrollWidth": 678,
+      "scrollHeight": 726,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "pause",
+          "left": 34,
+          "right": 644
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M16.html",
+      "id": "M16-L01",
+      "innerWidth": 678,
+      "innerHeight": 691,
+      "scrollWidth": 678,
+      "scrollHeight": 691,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 35,
+          "right": 643
+        },
+        {
+          "id": "reset",
+          "left": 20,
+          "right": 179.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M16-L06.html",
+      "id": "M16-L06",
+      "innerWidth": 678,
+      "innerHeight": 742,
+      "scrollWidth": 678,
+      "scrollHeight": 742,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "fragment",
+          "left": 34,
+          "right": 319
+        },
+        {
+          "id": "criterion",
+          "left": 359,
+          "right": 644
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M16-L07.html",
+      "id": "M16-L07",
+      "innerWidth": 678,
+      "innerHeight": 721,
+      "scrollWidth": 678,
+      "scrollHeight": 721,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "limit",
+          "left": 34,
+          "right": 319
+        },
+        {
+          "id": "answer",
+          "left": 359,
+          "right": 644
+        },
+        {
+          "id": "step",
+          "left": 20,
+          "right": 152.375
+        },
+        {
+          "id": "reset",
+          "left": 160.375,
+          "right": 293.96875
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "src": "course/visuals/M16-L08.html",
+      "id": "M16-L08",
+      "innerWidth": 678,
+      "innerHeight": 724,
+      "scrollWidth": 678,
+      "scrollHeight": 724,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "run",
+          "left": 37,
+          "right": 56
+        },
+        {
+          "id": "explain",
+          "left": 361,
+          "right": 380
+        },
+        {
+          "id": "new",
+          "left": 37,
+          "right": 56
+        },
+        {
+          "id": "critical",
+          "left": 361,
+          "right": 380
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M00.html",
+      "id": "M00-L02",
+      "innerWidth": 288,
+      "innerHeight": 801,
+      "scrollWidth": 288,
+      "scrollHeight": 801,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M01.html",
+      "id": "M01-L01",
+      "innerWidth": 288,
+      "innerHeight": 778,
+      "scrollWidth": 288,
+      "scrollHeight": 778,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M02.html",
+      "id": "M02-L02",
+      "innerWidth": 288,
+      "innerHeight": 843,
+      "scrollWidth": 288,
+      "scrollHeight": 843,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M03.html",
+      "id": "M03-L04",
+      "innerWidth": 288,
+      "innerHeight": 869,
+      "scrollWidth": 288,
+      "scrollHeight": 869,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M04.html",
+      "id": "M04-L03",
+      "innerWidth": 288,
+      "innerHeight": 751,
+      "scrollWidth": 288,
+      "scrollHeight": 751,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M04-L06.html",
+      "id": "M04-L06",
+      "innerWidth": 288,
+      "innerHeight": 842,
+      "scrollWidth": 288,
+      "scrollHeight": 842,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "p",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "y",
+          "left": 130.96875,
+          "right": 183.96875
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M05.html",
+      "id": "M05-L02",
+      "innerWidth": 288,
+      "innerHeight": 1075,
+      "scrollWidth": 288,
+      "scrollHeight": 1075,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M05-L06.html",
+      "id": "M05-L06",
+      "innerWidth": 288,
+      "innerHeight": 981,
+      "scrollWidth": 288,
+      "scrollHeight": 981,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "t",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "cost",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M06.html",
+      "id": "M06-L03",
+      "innerWidth": 288,
+      "innerHeight": 861,
+      "scrollWidth": 288,
+      "scrollHeight": 861,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M07.html",
+      "id": "M07-L01",
+      "innerWidth": 288,
+      "innerHeight": 824,
+      "scrollWidth": 288,
+      "scrollHeight": 824,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M08.html",
+      "id": "M08",
+      "innerWidth": 288,
+      "innerHeight": 732,
+      "scrollWidth": 288,
+      "scrollHeight": 732,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/attention-lab.html",
+      "id": "M08-L03",
+      "innerWidth": 288,
+      "innerHeight": 1044,
+      "scrollWidth": 288,
+      "scrollHeight": 1044,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "variable",
+          "left": 122,
+          "right": 263
+        },
+        {
+          "id": "q",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "causal",
+          "left": 16,
+          "right": 29
+        },
+        {
+          "id": "axis",
+          "left": 12,
+          "right": 276
+        },
+        {
+          "id": "prev",
+          "left": 12,
+          "right": 54
+        },
+        {
+          "id": "step",
+          "left": 60,
+          "right": 228
+        },
+        {
+          "id": "next",
+          "left": 234,
+          "right": 276
+        },
+        {
+          "id": "guess",
+          "left": 12,
+          "right": 143
+        },
+        {
+          "id": "check",
+          "left": 151,
+          "right": 276
+        },
+        {
+          "id": "",
+          "left": 12,
+          "right": 47.8125
+        },
+        {
+          "id": "",
+          "left": 53.8125,
+          "right": 87.359375
+        },
+        {
+          "id": "",
+          "left": 93.359375,
+          "right": 127.4375
+        },
+        {
+          "id": "reset",
+          "left": 187.0625,
+          "right": 276
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M09.html",
+      "id": "M09-L02",
+      "innerWidth": 288,
+      "innerHeight": 827,
+      "scrollWidth": 288,
+      "scrollHeight": 827,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M10.html",
+      "id": "M10-L02",
+      "innerWidth": 288,
+      "innerHeight": 825,
+      "scrollWidth": 288,
+      "scrollHeight": 825,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M11.html",
+      "id": "M11-L02",
+      "innerWidth": 288,
+      "innerHeight": 989,
+      "scrollWidth": 288,
+      "scrollHeight": 989,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M12.html",
+      "id": "M12-L04",
+      "innerWidth": 288,
+      "innerHeight": 742,
+      "scrollWidth": 288,
+      "scrollHeight": 742,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M13.html",
+      "id": "M13-L05",
+      "innerWidth": 288,
+      "innerHeight": 804,
+      "scrollWidth": 288,
+      "scrollHeight": 804,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M13-L06.html",
+      "id": "M13-L06",
+      "innerWidth": 288,
+      "innerHeight": 1303,
+      "scrollWidth": 288,
+      "scrollHeight": 1303,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "capacity",
+          "left": 26,
+          "right": 262
+        },
+        {
+          "id": "wait",
+          "left": 26,
+          "right": 262
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M14.html",
+      "id": "M14-L04",
+      "innerWidth": 288,
+      "innerHeight": 924,
+      "scrollWidth": 288,
+      "scrollHeight": 924,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M14-L06.html",
+      "id": "M14-L06",
+      "innerWidth": 288,
+      "innerHeight": 1292,
+      "scrollWidth": 288,
+      "scrollHeight": 1292,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "action",
+          "left": 26,
+          "right": 262
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M15.html",
+      "id": "M15-L04",
+      "innerWidth": 288,
+      "innerHeight": 846,
+      "scrollWidth": 288,
+      "scrollHeight": 846,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M15-L06.html",
+      "id": "M15-L06",
+      "innerWidth": 288,
+      "innerHeight": 943,
+      "scrollWidth": 288,
+      "scrollHeight": 943,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "pause",
+          "left": 26,
+          "right": 262
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M16.html",
+      "id": "M16-L01",
+      "innerWidth": 288,
+      "innerHeight": 931,
+      "scrollWidth": 288,
+      "scrollHeight": 931,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "parameter",
+          "left": 25,
+          "right": 263
+        },
+        {
+          "id": "reset",
+          "left": 12,
+          "right": 171.953125
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M16-L06.html",
+      "id": "M16-L06",
+      "innerWidth": 288,
+      "innerHeight": 1141,
+      "scrollWidth": 288,
+      "scrollHeight": 1141,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "fragment",
+          "left": 26,
+          "right": 262
+        },
+        {
+          "id": "criterion",
+          "left": 26,
+          "right": 262
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M16-L07.html",
+      "id": "M16-L07",
+      "innerWidth": 288,
+      "innerHeight": 1072,
+      "scrollWidth": 288,
+      "scrollHeight": 1072,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "limit",
+          "left": 26,
+          "right": 262
+        },
+        {
+          "id": "answer",
+          "left": 26,
+          "right": 262
+        },
+        {
+          "id": "step",
+          "left": 14,
+          "right": 146.375
+        },
+        {
+          "id": "reset",
+          "left": 14,
+          "right": 147.59375
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "src": "course/visuals/M16-L08.html",
+      "id": "M16-L08",
+      "innerWidth": 288,
+      "innerHeight": 1121,
+      "scrollWidth": 288,
+      "scrollHeight": 1121,
+      "font": "\"Segoe UI\", Arial, sans-serif",
+      "controls": [
+        {
+          "id": "run",
+          "left": 31,
+          "right": 50
+        },
+        {
+          "id": "explain",
+          "left": 31,
+          "right": 50
+        },
+        {
+          "id": "new",
+          "left": 31,
+          "right": 50
+        },
+        {
+          "id": "critical",
+          "left": 31,
+          "right": 50
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "behavior": [
+    {
+      "name": "iframe expands and shrinks",
+      "width": 1366,
+      "initial": 959,
+      "expanded": 1066,
+      "collapsed": 959,
+      "pass": true
+    },
+    {
+      "name": "wrong axis diagnostic inside iframe",
+      "width": 1366,
+      "pass": true
+    },
+    {
+      "name": "voice threshold changes segmentation in embedded experiment",
+      "width": 1366,
+      "pass": true
+    },
+    {
+      "name": "iframe expands and shrinks",
+      "width": 320,
+      "initial": 1044,
+      "expanded": 1151,
+      "collapsed": 1044,
+      "pass": true
+    },
+    {
+      "name": "wrong axis diagnostic inside iframe",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "voice threshold changes segmentation in embedded experiment",
+      "width": 320,
+      "pass": true
+    }
+  ],
+  "passed": 58,
+  "failed": 0
+}

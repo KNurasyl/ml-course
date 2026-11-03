@@ -1,0 +1,122 @@
+{
+  "course/assets/M00-L01.png": {
+    "desktop": "course/assets/responsive/M00-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M00-L01-mobile.svg"
+  },
+  "course/assets/M00-L02.png": {
+    "desktop": "course/assets/responsive/M00-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M00-L02-mobile.svg"
+  },
+  "course/assets/M00-L03.png": {
+    "desktop": "course/assets/responsive/M00-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M00-L03-mobile.svg"
+  },
+  "course/assets/M00-L04.png": {
+    "desktop": "course/assets/responsive/M00-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M00-L04-mobile.svg"
+  },
+  "course/assets/M00-L05.png": {
+    "desktop": "course/assets/responsive/M00-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M00-L05-mobile.svg"
+  },
+  "course/assets/M01-L01.png": {
+    "desktop": "course/assets/responsive/M01-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M01-L01-mobile.svg"
+  },
+  "course/assets/M01-L02.png": {
+    "desktop": "course/assets/responsive/M01-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M01-L02-mobile.svg"
+  },
+  "course/assets/M01-L03.png": {
+    "desktop": "course/assets/responsive/M01-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M01-L03-mobile.svg"
+  },
+  "course/assets/M01-L04.png": {
+    "desktop": "course/assets/responsive/M01-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M01-L04-mobile.svg"
+  },
+  "course/assets/M01-L05.png": {
+    "desktop": "course/assets/responsive/M01-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M01-L05-mobile.svg"
+  },
+  "course/assets/M02-L01.png": {
+    "desktop": "course/assets/responsive/M02-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M02-L01-mobile.svg"
+  },
+  "course/assets/M02-L02.png": {
+    "desktop": "course/assets/responsive/M02-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M02-L02-mobile.svg"
+  },
+  "course/assets/M02-L03.png": {
+    "desktop": "course/assets/responsive/M02-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M02-L03-mobile.svg"
+  },
+  "course/assets/M02-L04.png": {
+    "desktop": "course/assets/responsive/M02-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M02-L04-mobile.svg"
+  },
+  "course/assets/M02-L05.png": {
+    "desktop": "course/assets/responsive/M02-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M02-L05-mobile.svg"
+  },
+  "course/assets/M03-L01.png": {
+    "desktop": "course/assets/responsive/M03-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M03-L01-mobile.svg"
+  },
+  "course/assets/M03-L02.png": {
+    "desktop": "course/assets/responsive/M03-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M03-L02-mobile.svg"
+  },
+  "course/assets/M03-L03.png": {
+    "desktop": "course/assets/responsive/M03-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M03-L03-mobile.svg"
+  },
+  "course/assets/M03-L04.png": {
+    "desktop": "course/assets/responsive/M03-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M03-L04-mobile.svg"
+  },
+  "course/assets/M03-L05.png": {
+    "desktop": "course/assets/responsive/M03-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M03-L05-mobile.svg"
+  },
+  "course/assets/M04-L01.png": {
+    "desktop": "course/assets/responsive/M04-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L01-mobile.svg"
+  },
+  "course/assets/M04-L02.png": {
+    "desktop": "course/assets/responsive/M04-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L02-mobile.svg"
+  },
+  "course/assets/M04-L03.png": {
+    "desktop": "course/assets/responsive/M04-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L03-mobile.svg"
+  },
+  "course/assets/M04-L04.png": {
+    "desktop": "course/assets/responsive/M04-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L04-mobile.svg"
+  },
+  "course/assets/M04-L05.png": {
+    "desktop": "course/assets/responsive/M04-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L05-mobile.svg"
+  },
+  "course/assets/M05-L01.png": {
+    "desktop": "course/assets/responsive/M05-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M05-L01-mobile.svg"
+  },
+  "course/assets/M05-L02.png": {
+    "desktop": "course/assets/responsive/M05-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M05-L02-mobile.svg"
+  },
+  "course/assets/M05-L03.png": {
+    "desktop": "course/assets/responsive/M05-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M05-L03-mobile.svg"
+  },
+  "course/assets/M05-L04.png": {
+    "desktop": "course/assets/responsive/M05-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M05-L04-mobile.svg"
+  },
+  "course/assets/M05-L05.png": {
+    "desktop": "course/assets/responsive/M05-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M05-L05-mobile.svg"
+  }
+}

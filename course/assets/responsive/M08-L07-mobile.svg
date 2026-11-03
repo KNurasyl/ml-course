@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1120" viewBox="0 0 360 1120" role="img" aria-labelledby="title desc"><title id="title">Pre-norm Transformer: вход, операции, residual и выход</title><desc id="desc">Pre-norm Transformer: вход, операции, residual и выход. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="1120" fill="white"/>
+<text x="16" y="30" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="650" text-anchor="start">Pre-norm Transformer</text>
+<text x="16" y="58" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Одна учебная attention-head</text>
+<rect x="42" y="84" width="230" height="64" rx="6" fill="#eef4fc" stroke="#245bba"/>
+<text x="57" y="111" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="start">X</text>
+<text x="57" y="134" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">[B, T, D]</text>
+<rect x="42" y="185" width="230" height="64" rx="6" fill="#edf8f7" stroke="#087e82"/>
+<text x="57" y="212" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="start">LayerNorm₁</text>
+<text x="57" y="235" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">форма сохраняется</text>
+<rect x="42" y="286" width="230" height="64" rx="6" fill="#edf8f7" stroke="#087e82"/>
+<text x="57" y="313" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="start">Causal attention</text>
+<text x="57" y="336" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">[B,T,T] @ [B,T,D]</text>
+<path d="M157,148 V180" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M157,249 V281" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M157,350 V385" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M157,430 V463" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M157,532 V565" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M157,634 V667" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M157,736 V769" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M157,814 V847" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M272,116 H320 V410 H181" fill="none" stroke="#245bba" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#blue)"/>
+<text x="290" y="275" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">X</text>
+<circle cx="157" cy="410" r="21" fill="#edf8f7"/>
+<text x="157" y="417" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="27" font-weight="600" text-anchor="middle">+</text>
+<rect x="42" y="468" width="230" height="64" rx="6" fill="#eef4fc" stroke="#245bba"/>
+<text x="57" y="495" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="start">U = X + Attention(…)</text>
+<text x="57" y="518" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">[B, T, D]</text>
+<rect x="42" y="570" width="230" height="64" rx="6" fill="#edf8f7" stroke="#087e82"/>
+<text x="57" y="597" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="start">LayerNorm₂</text>
+<text x="57" y="620" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">форма сохраняется</text>
+<rect x="42" y="672" width="230" height="64" rx="6" fill="#edf8f7" stroke="#087e82"/>
+<text x="57" y="699" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="start">MLP: Linear → GELU</text>
+<text x="57" y="722" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">D → H → D</text>
+<path d="M272,500 H320 V794 H181" fill="none" stroke="#245bba" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#blue)"/>
+<text x="290" y="660" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">U</text>
+<circle cx="157" cy="794" r="21" fill="#edf8f7"/>
+<text x="157" y="801" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="27" font-weight="600" text-anchor="middle">+</text>
+<rect x="42" y="852" width="230" height="64" rx="6" fill="#eef4fc" stroke="#245bba"/>
+<text x="57" y="879" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="start">Y = U + MLP(…)</text>
+<text x="57" y="902" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">[B, T, D]</text>
+<text x="16" y="957" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Attention смешивает позиции.</text>
+<text x="16" y="981" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">MLP меняет признаки каждой</text>
+<text x="16" y="1005" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">позиции.</text>
+<path d="M16,1030 H54" fill="none" stroke="#245bba" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="65" y="1036" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Residual: исходные данные</text>
+<text x="16" y="1074" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Y поступает в следующий блок.</text>
+</svg>

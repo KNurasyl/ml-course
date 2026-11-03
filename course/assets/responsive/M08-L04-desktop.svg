@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="386.288437pt" height="362.63952pt" viewBox="0 0 386.288437 362.63952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>M08-L04</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>M08-L04</dc:title>
+    <dc:description>Responsive layout; source numbers unchanged.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 362.63952 
+L 386.288437 362.63952 
+L 386.288437 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 60.749777 305.958973 
+L 325.538661 305.958973 
+L 325.538661 41.170089 
+L 60.749777 41.170089 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g clip-path="url(#padddd6eff2)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAXAAAAFvCAYAAABTmZBxAAAFZUlEQVR4nO3WsU3DYBRG0Ri5yAyMgCgYBGURZqFjH6pUbEBBSUnSRCnNDpGiX9c+Z4JPr7h60/H7b9kBkPMwegAAtxFwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiJp/L9fRG4CVeH1+HD1hU3zgAFECDhAl4ABRAg4QJeAAUQIOECXgAFECDhAl4ABRAg4QJeAAUQIOECXgAFECDhAl4ABRAg4QJeAAUQIOECXgAFECDhAl4ABRAg4QJeAAUQIOECXgAFECDhAl4ABRAg4QJeAAUQIOECXgAFECDhAl4ABRAg4QJeAAUQIOECXgAFECDhAl4ABRAg4QJeAAUQIOECXgAFECDhAl4ABRAg4QJeAAUQIOECXgAFECDhAl4ABRAg4QJeAAUQIOECXgAFECDhAl4ABRAg4QJeAAUQIOECXgAFECDhAl4ABRAg4QJeAAUQIOECXgAFECDhAl4ABRAg4QJeAAUQIOECXgAFECDhAl4ABRAg4QJeAAUQIOECXgAFECDhAl4ABRAg4QJeAAUQIOECXgAFECDhAl4ABRAg4QJeAAUQIOECXgAFHz58959Aa4m/fDk+uyWj5wgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgCgBB4gScIAoAQeIEnCAKAEHiBJwgKhp//K2jB6xJaevj9ETgJXwgQNECThAlIADRAk4QJSAA0QJOECUgANECThAlIADRAk4QJSAA0QJOECUgANECThAlIADRAk4QJSAA0QJOECUgANECThAlIADRAk4QJSAA0QJOECUgANECThAlIADRAk4QJSAA0QJOECUgANECThAlIADRAk4QJSAA0QJOECUgANECThAlIADRAk4QJSAA0QJOECUgANECThAlIADRAk4QJSAA0QJOECUgANECThAlIADRAk4QJSAA0QJOECUgANECThAlIADRAk4QJSAA0QJOECUgANECThAlIADRAk4QJSAA0QJOECUgANECThAlIADRAk4QJSAA0QJOECUgANECThAlIADRAk4QJSAA0QJOECUgANECThAlIADRAk4QJSAA0QJOECUgANECThAlIADRAk4QJSAA0QJOMCu6R9I+xFT/KWTNAAAAABJRU5ErkJggg==" id="image0936a4f7d5" transform="scale(1 -1) translate(0 -264.24)" x="60.48" y="-41.51952" width="264.96" height="264.24"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m7832283b4e" d="M 0 0 
+L 0 3.5 
+" style="stroke: #526474; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m7832283b4e" x="93.848387" y="305.958973" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #526474" x="93.848387" y="326.151688" transform="rotate(-0 93.848387 326.151688)">K1</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m7832283b4e" x="160.045608" y="305.958973" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #526474" x="160.045608" y="326.126297" transform="rotate(-0 160.045608 326.126297)">K2</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m7832283b4e" x="226.242829" y="305.958973" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #526474" x="226.242829" y="326.047079" transform="rotate(-0 226.242829 326.047079)">K3</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m7832283b4e" x="292.44005" y="305.958973" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #526474" x="292.44005" y="326.050125" transform="rotate(-0 292.44005 326.050125)">K4</text>
+     </g>
+    </g>
+    <g id="text_5">
+     <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="193.144219" y="347.127352" transform="rotate(-0 193.144219 347.127352)">Ключи · × означает вес 0</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_5">
+      <path d="M 60.749777 74.2687 
+L 325.538661 74.2687 
+" clip-path="url(#padddd6eff2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <defs>
+       <path id="m761e17c5ce" d="M 0 0 
+L -3.5 0 
+" style="stroke: #526474; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m761e17c5ce" x="60.749777" y="74.2687" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #526474" x="53.749777" y="80.558846" transform="rotate(-0 53.749777 80.558846)">Q1</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_7">
+      <path d="M 60.749777 140.465921 
+L 325.538661 140.465921 
+" clip-path="url(#padddd6eff2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m761e17c5ce" x="60.749777" y="140.465921" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #526474" x="53.749777" y="146.743372" transform="rotate(-0 53.749777 146.743372)">Q2</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <path d="M 60.749777 206.663142 
+L 325.538661 206.663142 
+" clip-path="url(#padddd6eff2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m761e17c5ce" x="60.749777" y="206.663142" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #526474" x="53.749777" y="212.940593" transform="rotate(-0 53.749777 212.940593)">Q3</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_11">
+      <path d="M 60.749777 272.860363 
+L 325.538661 272.860363 
+" clip-path="url(#padddd6eff2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m761e17c5ce" x="60.749777" y="272.860363" style="fill: #526474; stroke: #526474; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #526474" x="53.749777" y="279.137814" transform="rotate(-0 53.749777 279.137814)">Q4</text>
+     </g>
+    </g>
+    <g id="text_10">
+     <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="27.533234" y="173.564531" transform="rotate(-90 27.533234 173.564531)">Запросы</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 60.749777 305.958973 
+L 60.749777 41.170089 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 60.749777 305.958973 
+L 325.538661 305.958973 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #ffffff" x="93.848387" y="79.545653" transform="rotate(-0 93.848387 79.545653)">1.00</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="160.045608" y="78.642137" transform="rotate(-0 160.045608 78.642137)">×</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="226.242829" y="78.642137" transform="rotate(-0 226.242829 78.642137)">×</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="292.44005" y="78.642137" transform="rotate(-0 292.44005 78.642137)">×</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="93.848387" y="145.713577" transform="rotate(-0 93.848387 145.713577)">0.50</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="160.045608" y="145.713577" transform="rotate(-0 160.045608 145.713577)">0.50</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="226.242829" y="144.839358" transform="rotate(-0 226.242829 144.839358)">×</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="292.44005" y="144.839358" transform="rotate(-0 292.44005 144.839358)">×</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="93.848387" y="211.910798" transform="rotate(-0 93.848387 211.910798)">0.33</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="160.045608" y="211.910798" transform="rotate(-0 160.045608 211.910798)">0.33</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="226.242829" y="211.910798" transform="rotate(-0 226.242829 211.910798)">0.33</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="292.44005" y="211.036579" transform="rotate(-0 292.44005 211.036579)">×</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="93.848387" y="278.108019" transform="rotate(-0 93.848387 278.108019)">0.25</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="160.045608" y="278.108019" transform="rotate(-0 160.045608 278.108019)">0.25</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="226.242829" y="278.108019" transform="rotate(-0 226.242829 278.108019)">0.25</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="292.44005" y="278.108019" transform="rotate(-0 292.44005 278.108019)">0.25</text>
+   </g>
+  </g>
+  <g id="text_27">
+   <text style="font-weight: 700; font-size: 18px; font-family: 'Segoe UI'; text-anchor: middle; fill: #182b3a" x="193.144219" y="27.999492" transform="rotate(-0 193.144219 27.999492)">Causal mask: будущие ключи запрещены</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="padddd6eff2">
+   <rect x="60.749777" y="41.170089" width="264.788884" height="264.788884"/>
+  </clipPath>
+ </defs>
+</svg>

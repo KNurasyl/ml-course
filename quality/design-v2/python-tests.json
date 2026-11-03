@@ -1,0 +1,12 @@
+{
+  "command": ".\\.venv\\Scripts\\python.exe -m pytest -q",
+  "environment": "Windows, repository .venv, Python 3.11.9",
+  "observed_result": "214 passed in 41.42s",
+  "passed": 214,
+  "failed": 0,
+  "skipped": 0,
+  "exit_code": 0,
+  "duration_seconds": 41.42,
+  "recorded_from": "Completed exec session 42519, output d9ee36",
+  "scope": "Entire Python test suite; browser evidence is recorded separately"
+}

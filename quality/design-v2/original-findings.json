@@ -1,0 +1,149 @@
+{
+  "version_reviewed": "1.1.0",
+  "base_commit": "305e9a4",
+  "kind": "expert_design_review_not_learner_study",
+  "findings": [
+    {
+      "id": "D01",
+      "priority": "P1",
+      "area": "start",
+      "finding": "Primary learning action has no visual emphasis; print button is the prominent header action",
+      "evidence": [
+        "desktop-home.png",
+        "navigation/home-desktop.png"
+      ]
+    },
+    {
+      "id": "D02",
+      "priority": "P1",
+      "area": "orientation",
+      "finding": "Active module lies outside sidebar viewport; persistent header lacks current module context",
+      "evidence": [
+        "navigation/lesson-start.png",
+        "navigation/menu-mobile.png"
+      ]
+    },
+    {
+      "id": "D03",
+      "priority": "P1",
+      "area": "figures_mobile",
+      "finding": "Multi-panel figures shrink into unreadable thumbnails; M04-L06 displayed330x102 at390 viewport",
+      "evidence": [
+        "figures/M04-L06-mobile-context.png"
+      ]
+    },
+    {
+      "id": "D04",
+      "priority": "P1",
+      "area": "interactive_mobile",
+      "finding": "Six new interactives hide SVG below500px; M15 verified visually, remaining5confirmedinCSS",
+      "files": [
+        "course/visuals/M13-L06.html",
+        "course/visuals/M14-L06.html",
+        "course/visuals/M15-L06.html",
+        "course/visuals/M16-L06.html",
+        "course/visuals/M16-L07.html",
+        "course/visuals/M16-L08.html"
+      ],
+      "evidence": [
+        "figures/M15-L06-interactive-mobile.png"
+      ]
+    },
+    {
+      "id": "D05",
+      "priority": "P1",
+      "area": "visual_feedback",
+      "finding": "M15 slider changes text but SVG unchanged for500→100; changed endpoint is not visualized",
+      "evidence": [
+        "figures/M15-L06-interactive-initial.png",
+        "figures/M15-L06-interactive-low-threshold.png"
+      ]
+    },
+    {
+      "id": "D06",
+      "priority": "P2",
+      "area": "lesson_layout",
+      "finding": "Long uniform lesson blocks lack local map and distinct task/computation hierarchy",
+      "evidence": [
+        "laptop-lesson-start.png",
+        "navigation/assignment.png"
+      ]
+    },
+    {
+      "id": "D07",
+      "priority": "P2",
+      "area": "typography",
+      "finding": "Approx878–894px text column at16px; sampled lines104–106characters; formulas mixed into prose",
+      "evidence": [
+        "laptop-math-prose.png",
+        "navigation/answer-context.png"
+      ]
+    },
+    {
+      "id": "D08",
+      "priority": "P2",
+      "area": "diagram_language",
+      "finding": "Figures use different visual grammars; attention Q rows and O outputs ordered oppositely without explicit correspondence",
+      "evidence": [
+        "figures/M08-L03.png",
+        "figures/M08-L07.png",
+        "figures/M15-L06.png"
+      ]
+    },
+    {
+      "id": "D09",
+      "priority": "P1",
+      "area": "nested_scroll",
+      "finding": "Attention mobile frame848px contains1819px document; Check starts1604px down. At320 outer width axis control284px overflows250px frame",
+      "evidence": [
+        "mobile-attention.png",
+        "mobile-320-attention.png",
+        "measurements.json"
+      ]
+    },
+    {
+      "id": "D10",
+      "priority": "P2",
+      "area": "search",
+      "finding": "Search results lack excerpts and anchors; matched answer can remain hidden in closed disclosure",
+      "evidence": [
+        "navigation/search-context.png",
+        "navigation/search-result-folded.png"
+      ]
+    },
+    {
+      "id": "D11",
+      "priority": "P2",
+      "area": "answer_flow",
+      "finding": "Answer opens correctly but lacks explicit return to task; next section leads to next module answer collection",
+      "evidence": [
+        "navigation/answer-context.png"
+      ]
+    },
+    {
+      "id": "D12",
+      "priority": "P2",
+      "area": "contrast",
+      "finding": "Several small utility text samples below4.5:1: nav section3.96, marker3.15, searchstatus4.38; main text sample6.96",
+      "evidence": [
+        "measurements.json"
+      ],
+      "standard": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+    },
+    {
+      "id": "D13",
+      "priority": "P2",
+      "area": "mobile_hierarchy",
+      "finding": "Repeated metadata and nested containers consume much of first viewport; M10 theoryheadingstartsabout622px",
+      "evidence": [
+        "navigation/lesson-mobile.png",
+        "mobile-lesson-start.png"
+      ]
+    }
+  ],
+  "limits": [
+    "Representative sample; not visual inspection of all103lessons",
+    "Not a complete WCAG conformance assessment",
+    "No source or learner progress edits"
+  ]
+}

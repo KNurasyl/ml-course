@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="532" viewBox="0 0 360 532" role="img" aria-labelledby="title desc"><title id="title">Обучение, выбор и оценка разделены</title><desc id="desc">Обучение, выбор и оценка разделены. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="532" fill="white"/>
+<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Обучение, выбор и оценка</text>
+<text x="16" y="55" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">разделены</text>
+<path d="M16,208 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="90" width="3" height="110" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="106" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Train: только fit</text>
+<text x="30" y="134" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Медианы → масштаб → категории</text>
+<text x="30" y="158" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">→ веса. Один Pipeline для</text>
+<text x="30" y="182" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">каждого C.</text>
+<path d="M16,318 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="224" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="240" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Validation: выбор</text>
+<text x="30" y="268" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Стоимость (2FN + FP) / N.</text>
+<text x="30" y="292" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Фиксируем C и порог до test.</text>
+<path d="M16,452 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="334" width="3" height="110" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="350" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Test: только predict</text>
+<text x="30" y="378" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Ошибки и ограничения</text>
+<text x="30" y="402" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">выбранного решения. Обратной</text>
+<text x="30" y="426" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">стрелки к выбору нет.</text>
+<text x="16" y="480" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Порог и модель зафиксированы</text>
+<text x="16" y="502" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">перед независимой оценкой.</text>
+</svg>

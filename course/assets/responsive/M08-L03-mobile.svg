@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="695" viewBox="0 0 360 695" role="img" aria-labelledby="title desc"><title id="title">Attention: каждая строка Q даёт свой выход O</title><desc id="desc">Attention: каждая строка Q даёт свой выход O. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="695" fill="white"/>
+<text x="16" y="30" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Attention: от весов к выходу</text>
+<text x="16" y="60" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Q = K = [1, 0, −1]; dₖ = 1</text>
+<text x="16" y="86" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">V = [10, 20, 30]</text>
+<text x="16" y="125" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Q1 → строка весов A1</text>
+<rect x="16" y="159" width="104" height="46" rx="6" fill="#245bba" stroke="none"/>
+<text x="68" y="150" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="middle">K1</text>
+<text x="68" y="189" fill="white" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.665</text>
+<rect x="127" y="159" width="104" height="46" rx="6" fill="#eef4fc" stroke="none"/>
+<text x="179" y="150" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="middle">K2</text>
+<text x="179" y="189" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.245</text>
+<rect x="238" y="159" width="104" height="46" rx="6" fill="#eef4fc" stroke="none"/>
+<text x="290" y="150" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="middle">K3</text>
+<text x="290" y="189" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.090</text>
+<text x="16" y="236" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">O1 = 14.248</text>
+<text x="16" y="264" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Сумма весов = 1 (до округления)</text>
+<text x="16" y="305" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Q2 → строка весов A2</text>
+<rect x="16" y="339" width="104" height="46" rx="6" fill="#eef4fc" stroke="none"/>
+<text x="68" y="330" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="middle">K1</text>
+<text x="68" y="369" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.333</text>
+<rect x="127" y="339" width="104" height="46" rx="6" fill="#eef4fc" stroke="none"/>
+<text x="179" y="330" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="middle">K2</text>
+<text x="179" y="369" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.333</text>
+<rect x="238" y="339" width="104" height="46" rx="6" fill="#eef4fc" stroke="none"/>
+<text x="290" y="330" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="middle">K3</text>
+<text x="290" y="369" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.333</text>
+<text x="16" y="416" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">O2 = 20.000</text>
+<text x="16" y="444" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Сумма весов = 1 (до округления)</text>
+<text x="16" y="485" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Q3 → строка весов A3</text>
+<rect x="16" y="519" width="104" height="46" rx="6" fill="#eef4fc" stroke="none"/>
+<text x="68" y="510" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="middle">K1</text>
+<text x="68" y="549" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.090</text>
+<rect x="127" y="519" width="104" height="46" rx="6" fill="#eef4fc" stroke="none"/>
+<text x="179" y="510" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="middle">K2</text>
+<text x="179" y="549" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.245</text>
+<rect x="238" y="519" width="104" height="46" rx="6" fill="#245bba" stroke="none"/>
+<text x="290" y="510" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="middle">K3</text>
+<text x="290" y="549" fill="white" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.665</text>
+<text x="16" y="596" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">O3 = 25.752</text>
+<text x="16" y="624" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Сумма весов = 1 (до округления)</text>
+<text x="16" y="677" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Softmax нормирует ключи, не запросы.</text>
+</svg>

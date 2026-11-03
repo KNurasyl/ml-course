@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="350" viewBox="0 0 760 350" role="img" aria-labelledby="title desc"><title id="title">Attention: каждая строка Q даёт свой выход O</title><desc id="desc">Attention: каждая строка Q даёт свой выход O. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="760" height="350" fill="white"/>
+<text x="16" y="30" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="25" font-weight="650" text-anchor="start">Attention: от весов к выходу</text>
+<text x="16" y="60" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Q = K = [1, 0, −1]; dₖ = 1</text>
+<text x="16" y="86" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">V = [10, 20, 30]</text>
+<text x="20" y="125" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Запрос</text>
+<text x="160" y="125" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="middle">K1</text>
+<text x="252" y="125" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="middle">K2</text>
+<text x="344" y="125" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="middle">K3</text>
+<text x="445" y="125" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="600" text-anchor="start">O = Σ A · V</text>
+<text x="20" y="172" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="start">Q1</text>
+<rect x="118" y="145" width="84" height="42" rx="6" fill="#245bba" stroke="none"/>
+<text x="160" y="172" fill="white" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.665</text>
+<rect x="210" y="145" width="84" height="42" rx="6" fill="#eef4fc" stroke="none"/>
+<text x="252" y="172" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.245</text>
+<rect x="302" y="145" width="84" height="42" rx="6" fill="#eef4fc" stroke="none"/>
+<text x="344" y="172" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.090</text>
+<path d="M400,166 H430" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="445" y="145" width="123.48176684094842" height="42" rx="6" fill="#edf8f7" stroke="none"/>
+<text x="456" y="172" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="start">O1 = 14.248</text>
+<text x="20" y="229" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="start">Q2</text>
+<rect x="118" y="202" width="84" height="42" rx="6" fill="#eef4fc" stroke="none"/>
+<text x="160" y="229" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.333</text>
+<rect x="210" y="202" width="84" height="42" rx="6" fill="#eef4fc" stroke="none"/>
+<text x="252" y="229" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.333</text>
+<rect x="302" y="202" width="84" height="42" rx="6" fill="#eef4fc" stroke="none"/>
+<text x="344" y="229" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.333</text>
+<path d="M400,223 H430" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="445" y="202" width="173.33333333333334" height="42" rx="6" fill="#edf8f7" stroke="none"/>
+<text x="456" y="229" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="start">O2 = 20.000</text>
+<text x="20" y="286" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="start">Q3</text>
+<rect x="118" y="259" width="84" height="42" rx="6" fill="#eef4fc" stroke="none"/>
+<text x="160" y="286" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.090</text>
+<rect x="210" y="259" width="84" height="42" rx="6" fill="#eef4fc" stroke="none"/>
+<text x="252" y="286" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.245</text>
+<rect x="302" y="259" width="84" height="42" rx="6" fill="#245bba" stroke="none"/>
+<text x="344" y="286" fill="white" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="middle">0.665</text>
+<path d="M400,280 H430" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="445" y="259" width="223.18489982571828" height="42" rx="6" fill="#edf8f7" stroke="none"/>
+<text x="456" y="286" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="600" text-anchor="start">O3 = 25.752</text>
+<text x="16" y="335" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Softmax нормирует ключи, не запросы.</text>
+</svg>

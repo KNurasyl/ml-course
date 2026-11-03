@@ -132,12 +132,13 @@ def build_manifest(root: Path = ROOT) -> dict:
     full_materials = all(m["full_module_ready"] for m in module_entries)
     delivery_ready = delivery_ready and (full_materials or not full_route)
     return {
-        "schema_version": 3, "course_version": VERSION, "created": CREATED,
+        "schema_version": 3, "course_version": VERSION, "reader_design_version": "2.0", "created": CREATED,
         "language": "ru", "course_status": "complete_self_study_materials" if full_materials else "incomplete_materials",
         "full_materials_ready": full_materials,
         "full_course_ready": False,
         "technical_evidence": {"release": "quality/release-1.1.0.json",
                                "audit_resolution": "quality/audit-resolution-1.1.0.md",
+                               "design_revision": "quality/design-v2/report.json",
                                "policy": "File completeness alone is not verification or learner mastery; inspect the release evidence and its scope."},
         "entrypoint": "START_HERE.html", "canonical_content": "local_markdown",
         "learning_mode": "self_study_with_optional_mentor",

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="580" viewBox="0 0 360 580" role="img" aria-labelledby="title desc"><title id="title">Найденный документ ≠ полный контекст</title><desc id="desc">Найденный документ ≠ полный контекст. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="580" fill="white"/>
+<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Найденный документ ≠ полный</text>
+<text x="16" y="55" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">контекст</text>
+<path d="M16,232 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="90" width="3" height="134" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="106" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Исходное утверждение</text>
+<text x="30" y="134" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Индекс ускоряет подходящие</text>
+<text x="30" y="158" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">запросы, но не гарантирует</text>
+<text x="30" y="182" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">ускорения выборки большей</text>
+<text x="30" y="206" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">части таблицы.</text>
+<path d="M16,366 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="248" width="3" height="110" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="264" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Окно отрезало условие</text>
+<text x="30" y="292" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">«Индекс ускоряет подходящие</text>
+<text x="30" y="316" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">запросы». Document Recall =</text>
+<text x="30" y="340" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">1, но оговорка потеряна.</text>
+<path d="M16,500 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="382" width="3" height="110" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="398" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Абзац сохранил условие</text>
+<text x="30" y="426" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">«… но не гарантирует …».</text>
+<text x="30" y="450" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Теперь проверяем утверждение</text>
+<text x="30" y="474" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">ответа.</text>
+<text x="16" y="528" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Трасса: версия → chunk →</text>
+<text x="16" y="550" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">кандидаты → контекст → claim.</text>
+</svg>

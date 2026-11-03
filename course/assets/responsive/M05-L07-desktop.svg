@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="339" viewBox="0 0 760 339" role="img" aria-labelledby="title desc"><title id="title">Группа и время ограничивают split</title><desc id="desc">Группа и время ограничивают split. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="760" height="339" fill="white"/>
+<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">Группа и время ограничивают split</text>
+<path d="M16,125 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<text x="18" y="79" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Пользователь a: дни 1,</text>
+<text x="18" y="103" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">2</text>
+<text x="280" y="79" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Train (day &lt; 5)</text>
+<path d="M16,203 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<text x="18" y="157" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Пользователь b: дни 3,</text>
+<text x="18" y="181" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">6</text>
+<text x="280" y="157" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Пересекает train и validation → обе строки</text>
+<text x="280" y="181" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">excluded</text>
+<path d="M16,281 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<text x="18" y="235" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Пользователь c: дни 8,</text>
+<text x="18" y="259" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">9</text>
+<text x="280" y="235" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Test (day ≥ 8)</text>
+<text x="16" y="309" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Validation: дни 5…7. Политика исключения фиксируется до обучения.</text>
+</svg>

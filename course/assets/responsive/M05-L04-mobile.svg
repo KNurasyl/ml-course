@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="616" viewBox="0 0 360 616" role="img" aria-labelledby="title desc"><title id="title">Каждый fold заново учит подготовку</title><desc id="desc">Каждый fold заново учит подготовку. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="616" fill="white"/>
+<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Каждый fold заново учит</text>
+<text x="16" y="55" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">подготовку</text>
+<path d="M16,184 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="90" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="106" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Fold 1</text>
+<text x="30" y="134" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Validation: часть 1. Train:</text>
+<text x="30" y="158" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">части 2 и 3.</text>
+<path d="M16,294 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="200" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="216" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Fold 2</text>
+<text x="30" y="244" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Validation: часть 2. Train:</text>
+<text x="30" y="268" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">части 1 и 3.</text>
+<path d="M16,404 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="310" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="326" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Fold 3</text>
+<text x="30" y="354" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Validation: часть 3. Train:</text>
+<text x="30" y="378" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">части 1 и 2.</text>
+<path d="M16,514 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="420" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="436" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Test хранится отдельно</text>
+<text x="30" y="464" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Не используется ни для fit,</text>
+<text x="30" y="488" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">ни для выбора настроек.</text>
+<text x="16" y="542" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">fit(preprocessing + model)</text>
+<text x="16" y="564" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">выполняется только на train</text>
+<text x="16" y="586" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">данного fold.</text>
+</svg>

@@ -1,0 +1,58 @@
+{
+  "course/assets/M04-L07.png": {
+    "desktop": "course/assets/responsive/M04-L07-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L07-mobile.svg"
+  },
+  "course/assets/M04-L08.png": {
+    "desktop": "course/assets/responsive/M04-L08-desktop.svg",
+    "mobile": "course/assets/responsive/M04-L08-mobile.svg"
+  },
+  "course/assets/M06-L03.svg": {
+    "desktop": "course/assets/responsive/M06-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M06-L03-mobile.svg"
+  },
+  "course/assets/M07-L04.svg": {
+    "desktop": "course/assets/responsive/M07-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M07-L04-mobile.svg"
+  },
+  "course/assets/M08-L04.svg": {
+    "desktop": "course/assets/responsive/M08-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M08-L04-mobile.svg"
+  },
+  "course/assets/M09-L02.svg": {
+    "desktop": "course/assets/responsive/M09-L02-desktop.svg",
+    "mobile": "course/assets/responsive/M09-L02-mobile.svg"
+  },
+  "course/assets/M09-L04.svg": {
+    "desktop": "course/assets/responsive/M09-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M09-L04-mobile.svg"
+  },
+  "course/assets/M10-L03.svg": {
+    "desktop": "course/assets/responsive/M10-L03-desktop.svg",
+    "mobile": "course/assets/responsive/M10-L03-mobile.svg"
+  },
+  "course/assets/M11-L04.svg": {
+    "desktop": "course/assets/responsive/M11-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M11-L04-mobile.svg"
+  },
+  "course/assets/M12-L04.svg": {
+    "desktop": "course/assets/responsive/M12-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M12-L04-mobile.svg"
+  },
+  "course/assets/M12-L05.svg": {
+    "desktop": "course/assets/responsive/M12-L05-desktop.svg",
+    "mobile": "course/assets/responsive/M12-L05-mobile.svg"
+  },
+  "course/assets/M13-L04.svg": {
+    "desktop": "course/assets/responsive/M13-L04-desktop.svg",
+    "mobile": "course/assets/responsive/M13-L04-mobile.svg"
+  },
+  "course/assets/M15-L01.svg": {
+    "desktop": "course/assets/responsive/M15-L01-desktop.svg",
+    "mobile": "course/assets/responsive/M15-L01-mobile.svg"
+  },
+  "course/assets/M07-HW01.png": {
+    "desktop": "course/assets/responsive/M07-HW01-desktop.svg",
+    "mobile": "course/assets/responsive/M07-HW01-mobile.svg"
+  }
+}

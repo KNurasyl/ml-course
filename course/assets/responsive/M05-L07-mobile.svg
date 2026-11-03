@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="458" viewBox="0 0 360 458" role="img" aria-labelledby="title desc"><title id="title">Группа и время ограничивают split</title><desc id="desc">Группа и время ограничивают split. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="458" fill="white"/>
+<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Группа и время ограничивают</text>
+<text x="16" y="55" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">split</text>
+<path d="M16,160 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="90" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="106" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Пользователь a: дни 1, 2</text>
+<text x="30" y="134" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Train (day &lt; 5)</text>
+<path d="M16,270 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="176" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="192" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Пользователь b: дни 3, 6</text>
+<text x="30" y="220" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Пересекает train и validation</text>
+<text x="30" y="244" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">→ обе строки excluded</text>
+<path d="M16,356 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="286" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="302" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Пользователь c: дни 8, 9</text>
+<text x="30" y="330" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Test (day ≥ 8)</text>
+<text x="16" y="384" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Validation: дни 5…7. Политика</text>
+<text x="16" y="406" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">исключения фиксируется до</text>
+<text x="16" y="428" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">обучения.</text>
+</svg>

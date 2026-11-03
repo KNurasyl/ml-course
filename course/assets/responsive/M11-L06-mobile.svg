@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="640" viewBox="0 0 360 640" role="img" aria-labelledby="title desc"><title id="title">Один случай, две версии, общая рубрика</title><desc id="desc">Один случай, две версии, общая рубрика. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="640" fill="white"/>
+<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Один случай, две версии,</text>
+<text x="16" y="55" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">общая рубрика</text>
+<path d="M16,184 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="90" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="106" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Общий вход: case_id=p</text>
+<text x="30" y="134" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Один вопрос и один ответ</text>
+<text x="30" y="158" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">подаются версиям A и B.</text>
+<path d="M16,294 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="200" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="216" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Два сохранённых результата</text>
+<text x="30" y="244" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Отдельно для A и B: raw +</text>
+<text x="30" y="268" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">display + hash.</text>
+<path d="M16,404 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="310" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="326" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Общая разметка</text>
+<text x="30" y="354" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Для каждого результата: балл</text>
+<text x="30" y="378" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">+ основание.</text>
+<path d="M16,538 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
+<rect x="16" y="420" width="3" height="110" rx="0" fill="#245bba" stroke="none"/>
+<text x="30" y="436" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">JOIN по case_id</text>
+<text x="30" y="464" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Парная разность B − A.</text>
+<text x="30" y="488" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Отсутствующая оценка не равна</text>
+<text x="30" y="512" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">0.</text>
+<text x="16" y="566" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Новая критическая ошибка</text>
+<text x="16" y="588" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">блокирует выпуск независимо от</text>
+<text x="16" y="610" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">среднего.</text>
+</svg>

@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-03",
+  "figures": 104,
+  "layouts": 208,
+  "browser": "Microsoft Edge headless offline",
+  "textBounds": {
+    "mobileWidth": 288,
+    "desktopWidth": 760,
+    "overflow": 0,
+    "substantialTextOverlap": 0
+  },
+  "manualVisualSample": [
+    "M00-L01",
+    "M00-L02",
+    "M01-L03",
+    "M02-L02",
+    "M02-L03",
+    "M02-L04",
+    "M03-L01",
+    "M03-L03",
+    "M03-L04",
+    "M03-L05",
+    "M04-L02",
+    "M04-L03",
+    "M04-L04",
+    "M04-L05",
+    "M05-L01",
+    "M05-L02",
+    "M05-L03",
+    "M05-L05",
+    "M04-L07",
+    "M04-L08",
+    "M07-HW01",
+    "M12-L04",
+    "M12-L05",
+    "M15-L01",
+    "M06-L01",
+    "M08-L06",
+    "M10-L06",
+    "M11-L06",
+    "M12-L06",
+    "M16-L01",
+    "M04-L06",
+    "M08-L03",
+    "M08-L07",
+    "M15-L06"
+  ],
+  "limits": [
+    "Bounds checks do not replace visual review; manual review sampled34 figures.",
+    "Not a learner usability study or WCAG certification."
+  ]
+}
