@@ -5,7 +5,7 @@ $coursePython = Join-Path (Get-Location).Path '.venv\Scripts\python.exe'
 if ($LASTEXITCODE -ne 0) { throw 'Dependency check failed' }
 & $coursePython -m pytest -q
 if ($LASTEXITCODE -ne 0) { throw 'Tests failed' }
-& $coursePython tools/validate_course.py --require-pages
+& $coursePython tools/validate_course.py --require-local
 if ($LASTEXITCODE -ne 0) { throw 'Course integrity check failed' }
 & $coursePython tools/run_notebooks.py --kind all
 if ($LASTEXITCODE -ne 0) { throw 'Notebook execution failed' }

@@ -1,0 +1,254 @@
+{
+  "HOME": {
+    "id": "HOME",
+    "title": "ML и LLM: локальный самоучитель",
+    "path": "course/README.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "DIAGNOSTIC": {
+    "id": "DIAGNOSTIC",
+    "title": "Входная диагностика персонального курса",
+    "path": "course/diagnostic.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "GLOSSARY": {
+    "id": "GLOSSARY",
+    "title": "Словарь курса: от модели до голосового диалога",
+    "path": "course/glossary.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "PROJECT": {
+    "id": "PROJECT",
+    "title": "Сквозной проект: голосовой тренажёр собеседований",
+    "path": "course/project.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "MENTOR": {
+    "id": "MENTOR",
+    "title": "Как учиться самостоятельно",
+    "path": "course/self-study.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "MENTOR-KEYS": {
+    "id": "MENTOR-KEYS",
+    "title": "Ключи решений для самопроверки",
+    "path": "solutions/pilot/answer-key.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "PROGRESS": {
+    "id": "PROGRESS",
+    "title": "Прогресс обучения ML и LLM",
+    "path": "progress/progress.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "REF-CATALOG": {
+    "id": "REF-CATALOG",
+    "title": "Обучение ML и LLM инженерии с основ до голосового проекта",
+    "path": "course/references/catalog.md",
+    "version": "0.2.0",
+    "status": "reference_snapshot"
+  },
+  "REF-METHOD": {
+    "id": "REF-METHOD",
+    "title": "Методика персонального курса ML и LLM",
+    "path": "course/references/methodology.md",
+    "version": "0.2.0",
+    "status": "reference_snapshot"
+  },
+  "M00": {
+    "id": "M00",
+    "title": "M00 Модель и обучение",
+    "path": "course/modules/M00.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M01": {
+    "id": "M01",
+    "title": "M01 Данные и численный Python",
+    "path": "course/modules/M01.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M02": {
+    "id": "M02",
+    "title": "M02 Линейная алгебра",
+    "path": "course/modules/M02.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M03": {
+    "id": "M03",
+    "title": "M03 Производные и оптимизация",
+    "path": "course/modules/M03.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M04": {
+    "id": "M04",
+    "title": "M04 Вероятность и статистика",
+    "path": "course/modules/M04.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M05": {
+    "id": "M05",
+    "title": "M05 Классический ML",
+    "path": "course/modules/M05.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M06": {
+    "id": "M06",
+    "title": "M06 Проектирование ML-систем",
+    "path": "course/modules/M06.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M07": {
+    "id": "M07",
+    "title": "M07 Нейросети и PyTorch",
+    "path": "course/modules/M07.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M08": {
+    "id": "M08",
+    "title": "M08 NLP и Transformer",
+    "path": "course/modules/M08.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M09": {
+    "id": "M09",
+    "title": "M09 Применение и запуск LLM",
+    "path": "course/modules/M09.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M10": {
+    "id": "M10",
+    "title": "M10 RAG и поиск",
+    "path": "course/modules/M10.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M11": {
+    "id": "M11",
+    "title": "M11 Оценивание LLM-систем",
+    "path": "course/modules/M11.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M12": {
+    "id": "M12",
+    "title": "M12 Обучение и адаптация моделей",
+    "path": "course/modules/M12.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M13": {
+    "id": "M13",
+    "title": "M13 MLOps и LLMOps",
+    "path": "course/modules/M13.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M14": {
+    "id": "M14",
+    "title": "M14 Агенты и инструменты",
+    "path": "course/modules/M14.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M15": {
+    "id": "M15",
+    "title": "M15 Речь и голосовой диалог",
+    "path": "course/modules/M15.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "M16": {
+    "id": "M16",
+    "title": "M16 Итоговый продукт и защита",
+    "path": "course/modules/M16.md",
+    "version": "0.2.0",
+    "status": "introductory_draft"
+  },
+  "P01": {
+    "id": "P01",
+    "title": "P01 Диагностика и первая модель",
+    "path": "course/pilot/P01.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "P02": {
+    "id": "P02",
+    "title": "P02 Как измерять ошибку модели",
+    "path": "course/pilot/P02.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "P03": {
+    "id": "P03",
+    "title": "P03 Как проверять модель на новых данных",
+    "path": "course/pilot/P03.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "P04": {
+    "id": "P04",
+    "title": "P04 Векторы матрицы и формы массивов",
+    "path": "course/pilot/P04.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "P05": {
+    "id": "P05",
+    "title": "P05 Первая архитектура ML сервиса",
+    "path": "course/pilot/P05.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "P06": {
+    "id": "P06",
+    "title": "P06 Параметры контекст и внешние знания",
+    "path": "course/pilot/P06.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "P07": {
+    "id": "P07",
+    "title": "P07 Производная как скорость изменения",
+    "path": "course/pilot/P07.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "P08": {
+    "id": "P08",
+    "title": "P08 Обучение через обновление параметров",
+    "path": "course/pilot/P08.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "P09": {
+    "id": "P09",
+    "title": "P09 Воспроизводимое сравнение моделей",
+    "path": "course/pilot/P09.md",
+    "version": "0.2.0",
+    "status": "ready"
+  },
+  "P10": {
+    "id": "P10",
+    "title": "P10 Защита эксперимента и настройка маршрута",
+    "path": "course/pilot/P10.md",
+    "version": "0.2.0",
+    "status": "ready"
+  }
+}

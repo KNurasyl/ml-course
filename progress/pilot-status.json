@@ -5,5 +5,5 @@
   "completed_sessions": [],
   "skill_states": {},
   "career_readiness": "not_assessed",
-  "note": "Initial handoff snapshot only. Canonical learner progress is in Pages. Do not treat reference runs as learner attempts."
+  "note": "Initial handoff snapshot only. Canonical learner progress is in progress/progress.md. Self-assessment and independent review are separate. Do not treat reference runs as learner attempts."
 }

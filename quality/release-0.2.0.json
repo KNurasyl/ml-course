@@ -1,0 +1,113 @@
+{
+  "version": "0.2.0",
+  "recorded_at_utc": "2026-11-03T07:37:42.228879+00:00",
+  "scope": "Local self-study delivery of existing curriculum and ten ready sessions",
+  "python": "3.11.9",
+  "checks": {
+    "pytest": {
+      "passed": 49,
+      "failed": 0,
+      "command": ".venv/Scripts/python.exe -m pytest -q"
+    },
+    "notebooks": {
+      "executed": 20,
+      "failed": 0,
+      "report": "artifacts/notebook-validation.json"
+    },
+    "manifest_delivery": "local_ready",
+    "local_materials": 36,
+    "curriculum_modules": 17,
+    "curriculum_lessons": 85,
+    "reader_freshness": "passed",
+    "local_links_and_anchors": "passed",
+    "notebook_code_changed": false,
+    "starter_outputs_saved": false,
+    "launcher": "START_PRACTICE.cmd --check passed from another working directory",
+    "browser": {
+      "engine": "Microsoft Edge via Playwright",
+      "transport": "file URL with offline context",
+      "desktop_viewport": [
+        1440,
+        1000
+      ],
+      "mobile_viewport": [
+        390,
+        844
+      ],
+      "checked": [
+        "Home to diagnostics to P01 navigation",
+        "Full-text search and reset",
+        "No search results",
+        "Hints closed then opened and closed",
+        "Answer key closed then opened and closed",
+        "Mobile menu and navigation",
+        "Readable mobile heading and body",
+        "Print button beforeprint event",
+        "Print CSS hides navigation and shows one current material",
+        "Unknown hash falls back to home"
+      ],
+      "page_errors": [],
+      "external_asset_requests": [],
+      "visual_review": "Desktop and mobile screenshots inspected; no stable clipping or horizontal document overflow",
+      "artifacts": [
+        "artifacts/reader-desktop.jpg",
+        "artifacts/reader-mobile-stable.png",
+        "artifacts/reader-hints.png"
+      ],
+      "print_limit": "Print UI event and CSS checked; no physical print job or PDF exported"
+    }
+  },
+  "repairs": [
+    "Local Markdown became canonical; old remote addresses are provenance only",
+    "Removed required mentor submission and added self-check progression",
+    "Rebased relative links in executed notebook copies",
+    "Fixed heading level so hints collapse without hiding the next assessment",
+    "Normalized canonical Markdown and registry to LF for Git-stable fingerprints"
+  ],
+  "states": {
+    "full_course_ready": false,
+    "learner_mastery": "not_assessed",
+    "career_readiness": "not_assessed",
+    "learner_progress": "progress/progress.md",
+    "voice_product": "requirements_only"
+  },
+  "sha256": {
+    "course/README.md": "b191a0a88204e72dacaf045300dd75b68290de91f60b85844023b1ce7179fd74",
+    "course/diagnostic.md": "5240b4fb1dcca3aac396fac0ce41141b6df0d0ea6af25d8900db4019fe026fbd",
+    "course/glossary.md": "6d5ad33d50c9aedc988468d27723dda133da5c345b9078ed5a21ea7ad3b12d18",
+    "course/project.md": "5f578c776b7a8fba1fe731d9e1e0f5f3a0ca1830e65003d5ff24a7dfb6608953",
+    "course/self-study.md": "02d2bd1e13842f104725435f385313ed9ca7726b53603f3b53d507a28959e9af",
+    "solutions/pilot/answer-key.md": "36fc0dbd2a7fe2a858ac2b66dafa3f5b531fd1df1dd74959895fd175f34884df",
+    "progress/progress.md": "8683a4d70b2db9a9b08f756414642595268b353adf42182210fe15598f2bef73",
+    "course/references/catalog.md": "44bf07ee000784231fe8efd34f7dd878a6d78e4b42861f83675991dc73a0dd8e",
+    "course/references/methodology.md": "c3cf7590b15ea22c648c9c9fe5a2ad723f796ca54cc88d14a7b8698459f99eee",
+    "course/modules/M00.md": "dcad563a363fe9ef782eba7271d2676012015d28615104fe43f7a8c25863948f",
+    "course/modules/M01.md": "b3cfb066c375a4e3992e5194d65cc2d2149dc6e6bd666ca9f9b0ce44b380811c",
+    "course/modules/M02.md": "19fb3814d4cb9c93c91f704590e0ca6c92f2c8a2cb263cb3c254972842dd21c5",
+    "course/modules/M03.md": "a1ae177686ca1fe225a8bc289bf0ad9f7fc2c31e9beaf3e8125f6bd4d78d924b",
+    "course/modules/M04.md": "d331d45bb7b651f04189e810897433fe0ba5b56e8c63e9812514e38d844ac216",
+    "course/modules/M05.md": "f08911337d27e0d8aaa409dae697be9f497a26195ebe00eda2d3fff15795ba20",
+    "course/modules/M06.md": "30af0789338313c07558e3315ad967b37c071c033ed7dbfd60e054ecbd46e75c",
+    "course/modules/M07.md": "e9c113b630d7b9298619a6dd122aa104c502e394c3d7febf3dbe9642b6f221e2",
+    "course/modules/M08.md": "14f8e8bbd13d57302193483141ff12fc86d01cca85befb46dbda34a1c8ab2195",
+    "course/modules/M09.md": "277a62d625c56c0599e22d22022874d199342f77ca9d11e3aad4e129cc097033",
+    "course/modules/M10.md": "677ee9272337e1b693d2277ca3da84a01c966fe18853f1394641fada3215ee36",
+    "course/modules/M11.md": "4b909544be7c521302a906779837a6ca01a75f4875c23f07f5e1eb65490fa777",
+    "course/modules/M12.md": "ed8bf7cc6ac2d98e3995ff3b08643dba701b1701d8a3d0b9c71171780b30c33d",
+    "course/modules/M13.md": "90dec9ee7ef47db8fbbcb80b60e1f7eea0464444af7aeb717754dd8a4fde974d",
+    "course/modules/M14.md": "1769dd14b4d914a2cb7d20f2d30e6daca57315afc03694fdecc74d3c3fa17827",
+    "course/modules/M15.md": "7825fe4f1ea0018e4a15058c7ae098375bc441fbd01059c64edefef5a9328b25",
+    "course/modules/M16.md": "bfa970d5b0b2d00f5cec5438495d1eb9820ac06368d6c5ee5e03662f691ac698",
+    "course/pilot/P01.md": "51c7f6d7e4bd0cec777c4e1f777775b4b17d4e085a41dc64a754aa67780cf2f2",
+    "course/pilot/P02.md": "d9e8eb342065ca8569596ad20a071cf9f43a23e53c1ef0bad63d1d118f94098c",
+    "course/pilot/P03.md": "faf20001e02dd57a4e8b3af39d17f6f31735d4a705efe69fa6e7009c692a6f0e",
+    "course/pilot/P04.md": "cca821c6bcd68d115b99e36f700e1386063408d8eecc67de8312951e4315c6cc",
+    "course/pilot/P05.md": "b8f1d97739099cfc65bdda6d89fee0429ac01e48e76df12a6b0c3f3040d57d75",
+    "course/pilot/P06.md": "6e555005df9d20dc8b4e3343d0925ff0db2df861f3a69fad6fc674a6cfa6c402",
+    "course/pilot/P07.md": "629847cd3c821ea8a2b057599507fe3cb5a904170d9afa12b7766657928a2369",
+    "course/pilot/P08.md": "b3da233df2b6f716021aecb19929d23604fd4ad3ea2c14616d5480b0b5166ca4",
+    "course/pilot/P09.md": "38f30deea1e7612fea4cf40187fab0e2b11f2a8bfff0afaaf5e7fe57bf979337",
+    "course/pilot/P10.md": "000d16beb45777b25045cb3f9a672a28485ca1bf98a8ce87197e8bb96ddc051a",
+    "START_HERE.html": "db84dab00b4c4a017a4d1b91936847b2ec040665a7d2d3e8228e902460b4932b"
+  }
+}

@@ -9,3 +9,4 @@ nbconvert>=7.16,<8
 ipykernel>=6.29,<7
 jupyterlab>=4.3,<5
 pytest>=8.3,<9
+mistune>=3.4,<4

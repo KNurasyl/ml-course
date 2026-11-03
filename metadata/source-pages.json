@@ -1,0 +1,290 @@
+{
+  "MENTOR": {
+    "source_id": "page_096411cdf888819181b2b1ffd15e2a72",
+    "source_url": "https://chatgpt.com/space/page_096411cdf888819181b2b1ffd15e2a72",
+    "source_title": "Наставник и порядок работы на курсе ML и LLM",
+    "imported_sha256": "ba070d8960344e80ae0c89efb6bbede97affe25d906d8c3e4f4b22ce6009c775",
+    "local_path": "course/self-study.md",
+    "role": "historical_source_only"
+  },
+  "PROGRESS": {
+    "source_id": "page_8216aadf28ec8191be320051183cf8b2",
+    "source_url": "https://chatgpt.com/space/page_8216aadf28ec8191be320051183cf8b2",
+    "source_title": "Прогресс обучения ML и LLM",
+    "imported_sha256": "1ce0672cacba99c4df48087f97455411add433a96066fcd9fd49d2397ba64858",
+    "local_path": "progress/progress.md",
+    "role": "historical_source_only"
+  },
+  "M00": {
+    "source_id": "page_d7f07426da4481919b1bfb7f31d6730a",
+    "source_url": "https://chatgpt.com/space/page_d7f07426da4481919b1bfb7f31d6730a",
+    "source_title": "M00 Модель и обучение",
+    "imported_sha256": "1c217426d1da9349ec3a947936b5da7ed25c015e0f1b38da34c004f1e27e1e57",
+    "local_path": "course/modules/M00.md",
+    "role": "historical_source_only"
+  },
+  "M01": {
+    "source_id": "page_cf011ed273748191b0a19cafff25dcdd",
+    "source_url": "https://chatgpt.com/space/page_cf011ed273748191b0a19cafff25dcdd",
+    "source_title": "M01 Данные и численный Python",
+    "imported_sha256": "b3dc5d2e2068282cacebf3531bf8c4ab173382432a1323422d5eec1c87c83284",
+    "local_path": "course/modules/M01.md",
+    "role": "historical_source_only"
+  },
+  "M02": {
+    "source_id": "page_986c5d945418819192ca494caa621521",
+    "source_url": "https://chatgpt.com/space/page_986c5d945418819192ca494caa621521",
+    "source_title": "M02 Линейная алгебра",
+    "imported_sha256": "bdcbada1ffe1d134f53dc5bb2c4b8221a40514031bd48914b8808c48066e0404",
+    "local_path": "course/modules/M02.md",
+    "role": "historical_source_only"
+  },
+  "M03": {
+    "source_id": "page_a5979770ba9881918106aa66dfebe0b8",
+    "source_url": "https://chatgpt.com/space/page_a5979770ba9881918106aa66dfebe0b8",
+    "source_title": "M03 Производные и оптимизация",
+    "imported_sha256": "43dfc0f08e25b24de2908d054be39a12bc06db899c0156bb759163583d89caf0",
+    "local_path": "course/modules/M03.md",
+    "role": "historical_source_only"
+  },
+  "M04": {
+    "source_id": "page_70eb85e1ccac8191bc48018aeb41aa9e",
+    "source_url": "https://chatgpt.com/space/page_70eb85e1ccac8191bc48018aeb41aa9e",
+    "source_title": "M04 Вероятность и статистика",
+    "imported_sha256": "21a0c5ebe4f5a34141c748de442bdad00f9725b81df2a615c13d2cde9190f430",
+    "local_path": "course/modules/M04.md",
+    "role": "historical_source_only"
+  },
+  "M05": {
+    "source_id": "page_722a94f5021c8191bf0eeaa5bf7a6369",
+    "source_url": "https://chatgpt.com/space/page_722a94f5021c8191bf0eeaa5bf7a6369",
+    "source_title": "M05 Классический ML",
+    "imported_sha256": "dc6659d44e30439988b0831e860e3936263303d59a0fdc929cda345e1f12f2f7",
+    "local_path": "course/modules/M05.md",
+    "role": "historical_source_only"
+  },
+  "M07": {
+    "source_id": "page_07f5bd8094d0819189148ddb7a6d7613",
+    "source_url": "https://chatgpt.com/space/page_07f5bd8094d0819189148ddb7a6d7613",
+    "source_title": "M07 Нейросети и PyTorch",
+    "imported_sha256": "2f295b5bce4c5a85a13061eb03c92d81f05eb335bb1cf9cbebf9f615ef5a4072",
+    "local_path": "course/modules/M07.md",
+    "role": "historical_source_only"
+  },
+  "M08": {
+    "source_id": "page_85dfecfa1bc08191b6513a15c179b25d",
+    "source_url": "https://chatgpt.com/space/page_85dfecfa1bc08191b6513a15c179b25d",
+    "source_title": "M08 NLP и Transformer",
+    "imported_sha256": "b7709997fe0b89b23274919c9cd228f4319e77f6b30569963068e82ce39ae587",
+    "local_path": "course/modules/M08.md",
+    "role": "historical_source_only"
+  },
+  "M09": {
+    "source_id": "page_1e7f81ba1b0881918c7e47e7b964402b",
+    "source_url": "https://chatgpt.com/space/page_1e7f81ba1b0881918c7e47e7b964402b",
+    "source_title": "M09 Применение и запуск LLM",
+    "imported_sha256": "811b68b7f3f78b68c22721fff7c77a8568fd31f51f857c593d12f7ad7569e551",
+    "local_path": "course/modules/M09.md",
+    "role": "historical_source_only"
+  },
+  "M10": {
+    "source_id": "page_b99eec77282c8191b6947aecc685790e",
+    "source_url": "https://chatgpt.com/space/page_b99eec77282c8191b6947aecc685790e",
+    "source_title": "M10 RAG и поиск",
+    "imported_sha256": "ef866dadf86b0fb27415e82ccc7d50ac296612f61bf5a69d83c8ed53b7291207",
+    "local_path": "course/modules/M10.md",
+    "role": "historical_source_only"
+  },
+  "M11": {
+    "source_id": "page_3f2d4bb1eb3881919375695c0b73c63a",
+    "source_url": "https://chatgpt.com/space/page_3f2d4bb1eb3881919375695c0b73c63a",
+    "source_title": "M11 Оценивание LLM-систем",
+    "imported_sha256": "f855bdccfd2b5158c9017b75e21e4774866b3da19a10119e90c2494600cdbf95",
+    "local_path": "course/modules/M11.md",
+    "role": "historical_source_only"
+  },
+  "M12": {
+    "source_id": "page_63f033ce7d248191865468c0467cfaba",
+    "source_url": "https://chatgpt.com/space/page_63f033ce7d248191865468c0467cfaba",
+    "source_title": "M12 Обучение и адаптация моделей",
+    "imported_sha256": "7c451e73f469cd29c5ab40f338113c00ee8f2fcf0f982eabdb1d1ad234e6b9a8",
+    "local_path": "course/modules/M12.md",
+    "role": "historical_source_only"
+  },
+  "M13": {
+    "source_id": "page_1ec7a87ce4fc819181dd0bedc64ca47b",
+    "source_url": "https://chatgpt.com/space/page_1ec7a87ce4fc819181dd0bedc64ca47b",
+    "source_title": "M13 MLOps и LLMOps",
+    "imported_sha256": "13769cabe228d8b2a394a8f21312015f790fd7b7336d49b1ac47acf07e34906a",
+    "local_path": "course/modules/M13.md",
+    "role": "historical_source_only"
+  },
+  "M14": {
+    "source_id": "page_1f8b0a99815c81919d0b00fddbca9304",
+    "source_url": "https://chatgpt.com/space/page_1f8b0a99815c81919d0b00fddbca9304",
+    "source_title": "M14 Агенты и инструменты",
+    "imported_sha256": "9de07646e71c134cc86caf2c7f30377e2dbf8dbeee266565b83d7aa2b4b03b1a",
+    "local_path": "course/modules/M14.md",
+    "role": "historical_source_only"
+  },
+  "M15": {
+    "source_id": "page_a996d7fe78f4819185cfcdb9c7071e17",
+    "source_url": "https://chatgpt.com/space/page_a996d7fe78f4819185cfcdb9c7071e17",
+    "source_title": "M15 Речь и голосовой диалог",
+    "imported_sha256": "c0bdb6a506f79eaacfdd3477cd280064ce551c9364b6300cd21dbe99b732206f",
+    "local_path": "course/modules/M15.md",
+    "role": "historical_source_only"
+  },
+  "M16": {
+    "source_id": "page_adaa363442c08191abfee4bd2bd685d1",
+    "source_url": "https://chatgpt.com/space/page_adaa363442c08191abfee4bd2bd685d1",
+    "source_title": "M16 Итоговый продукт и защита",
+    "imported_sha256": "97ea32546a0be4123f02f0c7477fcce2ed7681bd6ddd94503d57f04f262c8916",
+    "local_path": "course/modules/M16.md",
+    "role": "historical_source_only"
+  },
+  "DIAGNOSTIC": {
+    "source_id": "page_2cd08dbb505c8191881da74e47eed53d",
+    "source_url": "https://chatgpt.com/space/page_2cd08dbb505c8191881da74e47eed53d",
+    "source_title": "Входная диагностика персонального курса",
+    "imported_sha256": "0b2a9ee2bc758063564ebbc15665d22b2dc10d14fc88bf959f16778e509489c2",
+    "local_path": "course/diagnostic.md",
+    "role": "historical_source_only"
+  },
+  "MENTOR-KEYS": {
+    "source_id": "page_a37fd3e687908191a0206a367477967a",
+    "source_url": "https://chatgpt.com/space/page_a37fd3e687908191a0206a367477967a",
+    "source_title": "Ключи диагностики и пилотных занятий",
+    "imported_sha256": "0504f17352a1663d5b15e66b4737c7d6b9cc4cea20c31fa1c29739a0caec2ffb",
+    "local_path": "solutions/pilot/answer-key.md",
+    "role": "historical_source_only"
+  },
+  "P01": {
+    "source_id": "page_970b6d8bf8488191835791902181d8e2",
+    "source_url": "https://chatgpt.com/space/page_970b6d8bf8488191835791902181d8e2",
+    "source_title": "P01 Диагностика и первая модель",
+    "imported_sha256": "38b06651ead6e54a8466a86e66954848ec0654eed700497b3fb6397cae2ab326",
+    "local_path": "course/pilot/P01.md",
+    "role": "historical_source_only"
+  },
+  "P02": {
+    "source_id": "page_b54f968be2c88191a812fcb7d57d0b3d",
+    "source_url": "https://chatgpt.com/space/page_b54f968be2c88191a812fcb7d57d0b3d",
+    "source_title": "P02 Как измерять ошибку модели",
+    "imported_sha256": "d2c2ae63d78823fb46354d2d468618cf8cd837e4dbea91c93de0f547ef8f5706",
+    "local_path": "course/pilot/P02.md",
+    "role": "historical_source_only"
+  },
+  "P03": {
+    "source_id": "page_788a71e81994819197aa4edc27322ade",
+    "source_url": "https://chatgpt.com/space/page_788a71e81994819197aa4edc27322ade",
+    "source_title": "P03 Как проверять модель на новых данных",
+    "imported_sha256": "6a90e1235ec591d11303c653b2c6d0799b0b46c3d4f75ee88425f5a4bbef5e3c",
+    "local_path": "course/pilot/P03.md",
+    "role": "historical_source_only"
+  },
+  "P04": {
+    "source_id": "page_49e313d63c208191b0ba0a69207d99a0",
+    "source_url": "https://chatgpt.com/space/page_49e313d63c208191b0ba0a69207d99a0",
+    "source_title": "P04 Векторы матрицы и формы массивов",
+    "imported_sha256": "cf55493b45a0f0913e0ebeb2ed23857071208b827567cc7449e330230ad159cb",
+    "local_path": "course/pilot/P04.md",
+    "role": "historical_source_only"
+  },
+  "P05": {
+    "source_id": "page_6aa170d304e48191800f3a950cbff129",
+    "source_url": "https://chatgpt.com/space/page_6aa170d304e48191800f3a950cbff129",
+    "source_title": "P05 Первая архитектура ML сервиса",
+    "imported_sha256": "6c3abb1af22e476ad0ee422b571acaec6b606b55075909306e21eb5f14645293",
+    "local_path": "course/pilot/P05.md",
+    "role": "historical_source_only"
+  },
+  "P06": {
+    "source_id": "page_00b40fc02d348191bc68b0b6df5b9f0e",
+    "source_url": "https://chatgpt.com/space/page_00b40fc02d348191bc68b0b6df5b9f0e",
+    "source_title": "P06 Параметры контекст и внешние знания",
+    "imported_sha256": "324fe9e5222841bb256adc54fd434d922b3c1ed0645e2e4f5ae934c429920512",
+    "local_path": "course/pilot/P06.md",
+    "role": "historical_source_only"
+  },
+  "P07": {
+    "source_id": "page_c56ba04cf5488191ba3f1073ed9c1342",
+    "source_url": "https://chatgpt.com/space/page_c56ba04cf5488191ba3f1073ed9c1342",
+    "source_title": "P07 Производная как скорость изменения",
+    "imported_sha256": "ad6ae29512f9c656e3294377308005fc6103110e4c04742385b56be18882d1d3",
+    "local_path": "course/pilot/P07.md",
+    "role": "historical_source_only"
+  },
+  "P08": {
+    "source_id": "page_a2ce56396b2c819198df61829dd9c285",
+    "source_url": "https://chatgpt.com/space/page_a2ce56396b2c819198df61829dd9c285",
+    "source_title": "P08 Обучение через обновление параметров",
+    "imported_sha256": "f3c661cabf578f8a3ded0db969809fc28abcb0c75700aad2ddb69cddd0df93fe",
+    "local_path": "course/pilot/P08.md",
+    "role": "historical_source_only"
+  },
+  "P09": {
+    "source_id": "page_c4935a1e37d08191abdf666ec1fd89ba",
+    "source_url": "https://chatgpt.com/space/page_c4935a1e37d08191abdf666ec1fd89ba",
+    "source_title": "P09 Воспроизводимое сравнение моделей",
+    "imported_sha256": "baca1cac4817a4937a59c1d18cfbe58aedfc9693eff050d1abac5605ad888227",
+    "local_path": "course/pilot/P09.md",
+    "role": "historical_source_only"
+  },
+  "P10": {
+    "source_id": "page_da3578d62b988191ac04011710866313",
+    "source_url": "https://chatgpt.com/space/page_da3578d62b988191ac04011710866313",
+    "source_title": "P10 Защита эксперимента и настройка маршрута",
+    "imported_sha256": "644cbf0f0dd478b8cafaa45210f3b948d71697d52160cbe5339296a6a71fde1f",
+    "local_path": "course/pilot/P10.md",
+    "role": "historical_source_only"
+  },
+  "GLOSSARY": {
+    "source_id": "page_d3f1114e9c54819189fb7ea48f291ea9",
+    "source_url": "https://chatgpt.com/space/page_d3f1114e9c54819189fb7ea48f291ea9",
+    "source_title": "Словарь курса: от модели до голосового диалога",
+    "imported_sha256": "435568f96b45c4f8019714ace382b3e2eae851cb8c7044cec0467949f744dee0",
+    "local_path": "course/glossary.md",
+    "role": "historical_source_only"
+  },
+  "PROJECT": {
+    "source_id": "page_d718cdd69f788191928235c74a5bccba",
+    "source_url": "https://chatgpt.com/space/page_d718cdd69f788191928235c74a5bccba",
+    "source_title": "Сквозной проект: голосовой тренажёр собеседований",
+    "imported_sha256": "40e0a9b6dc83be6f8b326bb11c8573fb48d7531420aa9f6398835af3067c99a7",
+    "local_path": "course/project.md",
+    "role": "historical_source_only"
+  },
+  "HOME": {
+    "source_id": "page_490c579aa2388191be5ce4e3ef598a23",
+    "source_url": "https://chatgpt.com/space/page_490c579aa2388191be5ce4e3ef598a23",
+    "source_title": "Персональный курс ML и LLM — старт и маршрут",
+    "imported_sha256": "8646394f8df8487bf396e7fcfd7c55f487fad5f85bc2c66f54eca427d3093b4b",
+    "local_path": "course/README.md",
+    "role": "historical_source_only"
+  },
+  "REF-CATALOG": {
+    "source_id": "page_ffb6ee1e971081919da0cbb084213111",
+    "source_url": "https://chatgpt.com/space/page_ffb6ee1e971081919da0cbb084213111",
+    "source_title": "Обучение ML и LLM инженерии с основ до голосового проекта",
+    "imported_sha256": "4515e34a84b0ea5fd256cc9fa832d9df10682ea3b652b050206ac9622cf5fdcd",
+    "local_path": "course/references/catalog.md",
+    "role": "historical_source_only"
+  },
+  "REF-METHOD": {
+    "source_id": "page_41fd856c0e608191bad1531b987d6471",
+    "source_url": "https://chatgpt.com/space/page_41fd856c0e608191bad1531b987d6471",
+    "source_title": "Методика персонального курса ML и LLM",
+    "imported_sha256": "802edd11b4092f5b8745ceb1b802df49ca2d0d760de89a4e788cd64ca5d7ed1f",
+    "local_path": "course/references/methodology.md",
+    "role": "historical_source_only"
+  },
+  "M06": {
+    "source_id": "page_a343becc267c81918fa77fc59a51dad9",
+    "source_url": "https://chatgpt.com/space/page_a343becc267c81918fa77fc59a51dad9",
+    "source_title": "M06 Проектирование ML-систем",
+    "imported_sha256": "e41a82721f4b91672bda4a61086f83a49d4c4580fb08f3d84f6de35105c9cb95",
+    "local_path": "course/modules/M06.md",
+    "role": "historical_source_only"
+  }
+}

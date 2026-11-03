@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "language": "ru",
   "status": "designed",
   "created_on": "2026-11-03",
@@ -26,7 +26,7 @@
     }
   },
   "prerequisite_policy": "Lesson prerequisites are authoritative gates; module prerequisites describe the broad route. Introductory lessons can be used in the pilot before completing a module.",
-  "development_note": "Полная структурная программа. Страницы модулей содержат паспорт и вводный черновик, а не заявляют готовность всех уроков. Пилот и освоение ученика ещё не проведены.",
+  "development_note": "Полная структурная программа; локальные файлы модулей содержат паспорт и вводный черновик. Готовый первый цикл P01–P10 проходится самостоятельно. Реальные результаты ещё не внесены.",
   "pilot_lesson_map": {
     "P01": [
       "M00-L01"
@@ -2407,5 +2407,6 @@
     "P10": [
       "P09"
     ]
-  }
+  },
+  "delivery_mode": "local_self_study"
 }
