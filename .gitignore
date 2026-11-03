@@ -1,7 +1,9 @@
 .venv/
 .venv-verify/
+.venv-full-verify/
 .authoring/
 artifacts/
+labs/*/output/
 __pycache__/
 .pytest_cache/
 *.pyc

@@ -3,252 +3,973 @@
     "id": "HOME",
     "title": "ML и LLM: локальный самоучитель",
     "path": "course/README.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "DIAGNOSTIC": {
     "id": "DIAGNOSTIC",
     "title": "Входная диагностика персонального курса",
     "path": "course/diagnostic.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "GLOSSARY": {
     "id": "GLOSSARY",
     "title": "Словарь курса: от модели до голосового диалога",
     "path": "course/glossary.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "PROJECT": {
     "id": "PROJECT",
     "title": "Сквозной проект: голосовой тренажёр собеседований",
     "path": "course/project.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "MENTOR": {
     "id": "MENTOR",
     "title": "Как учиться самостоятельно",
     "path": "course/self-study.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "MENTOR-KEYS": {
     "id": "MENTOR-KEYS",
     "title": "Ключи решений для самопроверки",
     "path": "solutions/pilot/answer-key.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "PROGRESS": {
     "id": "PROGRESS",
     "title": "Прогресс обучения ML и LLM",
     "path": "progress/progress.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "REF-CATALOG": {
     "id": "REF-CATALOG",
     "title": "Обучение ML и LLM инженерии с основ до голосового проекта",
     "path": "course/references/catalog.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "reference_snapshot"
   },
   "REF-METHOD": {
     "id": "REF-METHOD",
     "title": "Методика персонального курса ML и LLM",
     "path": "course/references/methodology.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "reference_snapshot"
   },
   "M00": {
     "id": "M00",
     "title": "M00 Модель и обучение",
     "path": "course/modules/M00.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M01": {
     "id": "M01",
     "title": "M01 Данные и численный Python",
     "path": "course/modules/M01.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M02": {
     "id": "M02",
     "title": "M02 Линейная алгебра",
     "path": "course/modules/M02.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M03": {
     "id": "M03",
     "title": "M03 Производные и оптимизация",
     "path": "course/modules/M03.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M04": {
     "id": "M04",
     "title": "M04 Вероятность и статистика",
     "path": "course/modules/M04.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M05": {
     "id": "M05",
     "title": "M05 Классический ML",
     "path": "course/modules/M05.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M06": {
     "id": "M06",
     "title": "M06 Проектирование ML-систем",
     "path": "course/modules/M06.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M07": {
     "id": "M07",
     "title": "M07 Нейросети и PyTorch",
     "path": "course/modules/M07.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M08": {
     "id": "M08",
     "title": "M08 NLP и Transformer",
     "path": "course/modules/M08.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M09": {
     "id": "M09",
     "title": "M09 Применение и запуск LLM",
     "path": "course/modules/M09.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M10": {
     "id": "M10",
     "title": "M10 RAG и поиск",
     "path": "course/modules/M10.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M11": {
     "id": "M11",
     "title": "M11 Оценивание LLM-систем",
     "path": "course/modules/M11.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M12": {
     "id": "M12",
     "title": "M12 Обучение и адаптация моделей",
     "path": "course/modules/M12.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M13": {
     "id": "M13",
     "title": "M13 MLOps и LLMOps",
     "path": "course/modules/M13.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M14": {
     "id": "M14",
     "title": "M14 Агенты и инструменты",
     "path": "course/modules/M14.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M15": {
     "id": "M15",
     "title": "M15 Речь и голосовой диалог",
     "path": "course/modules/M15.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "M16": {
     "id": "M16",
     "title": "M16 Итоговый продукт и защита",
     "path": "course/modules/M16.md",
-    "version": "0.2.0",
-    "status": "introductory_draft"
+    "version": "1.0.0",
+    "status": "ready"
   },
   "P01": {
     "id": "P01",
     "title": "P01 Диагностика и первая модель",
     "path": "course/pilot/P01.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "P02": {
     "id": "P02",
     "title": "P02 Как измерять ошибку модели",
     "path": "course/pilot/P02.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "P03": {
     "id": "P03",
     "title": "P03 Как проверять модель на новых данных",
     "path": "course/pilot/P03.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "P04": {
     "id": "P04",
     "title": "P04 Векторы матрицы и формы массивов",
     "path": "course/pilot/P04.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "P05": {
     "id": "P05",
     "title": "P05 Первая архитектура ML сервиса",
     "path": "course/pilot/P05.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "P06": {
     "id": "P06",
     "title": "P06 Параметры контекст и внешние знания",
     "path": "course/pilot/P06.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "P07": {
     "id": "P07",
     "title": "P07 Производная как скорость изменения",
     "path": "course/pilot/P07.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "P08": {
     "id": "P08",
     "title": "P08 Обучение через обновление параметров",
     "path": "course/pilot/P08.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "P09": {
     "id": "P09",
     "title": "P09 Воспроизводимое сравнение моделей",
     "path": "course/pilot/P09.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "status": "ready"
   },
   "P10": {
     "id": "P10",
     "title": "P10 Защита эксперимента и настройка маршрута",
     "path": "course/pilot/P10.md",
-    "version": "0.2.0",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M00-L01": {
+    "id": "M00-L01",
+    "title": "M00-L01. От входа к предсказанию",
+    "path": "course/lessons/M00-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M00-L02": {
+    "id": "M00-L02",
+    "title": "M00-L02. Параметры и устройство модели",
+    "path": "course/lessons/M00-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M00-L03": {
+    "id": "M00-L03",
+    "title": "M00-L03. Ошибка и подбор параметров",
+    "path": "course/lessons/M00-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M00-L04": {
+    "id": "M00-L04",
+    "title": "M00-L04. Обучение и применение",
+    "path": "course/lessons/M00-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M00-L05": {
+    "id": "M00-L05",
+    "title": "M00-L05. Первая схема ML-сервиса",
+    "path": "course/lessons/M00-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M00-SOLUTIONS": {
+    "id": "M00-SOLUTIONS",
+    "title": "M00. Решения для самопроверки",
+    "path": "solutions/modules/M00.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M01-L01": {
+    "id": "M01-L01",
+    "title": "M01-L01. Массивы и формы",
+    "path": "course/lessons/M01-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M01-L02": {
+    "id": "M01-L02",
+    "title": "M01-L02. Качество таблицы",
+    "path": "course/lessons/M01-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M01-L03": {
+    "id": "M01-L03",
+    "title": "M01-L03. Разделение данных",
+    "path": "course/lessons/M01-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M01-L04": {
+    "id": "M01-L04",
+    "title": "M01-L04. SQL и происхождение данных",
+    "path": "course/lessons/M01-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M01-L05": {
+    "id": "M01-L05",
+    "title": "M01-L05. Воспроизводимый конвейер",
+    "path": "course/lessons/M01-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M01-SOLUTIONS": {
+    "id": "M01-SOLUTIONS",
+    "title": "M01. Решения для самопроверки",
+    "path": "solutions/modules/M01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M02-L01": {
+    "id": "M02-L01",
+    "title": "M02-L01. Векторы как признаки",
+    "path": "course/lessons/M02-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M02-L02": {
+    "id": "M02-L02",
+    "title": "M02-L02. Скалярное произведение и нормы",
+    "path": "course/lessons/M02-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M02-L03": {
+    "id": "M02-L03",
+    "title": "M02-L03. Матрицы и композиция",
+    "path": "course/lessons/M02-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M02-L04": {
+    "id": "M02-L04",
+    "title": "M02-L04. Сходство и масштаб",
+    "path": "course/lessons/M02-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M02-L05": {
+    "id": "M02-L05",
+    "title": "M02-L05. Маленький векторный поиск",
+    "path": "course/lessons/M02-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M02-SOLUTIONS": {
+    "id": "M02-SOLUTIONS",
+    "title": "M02. Решения для самопроверки",
+    "path": "solutions/modules/M02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M03-L01": {
+    "id": "M03-L01",
+    "title": "M03-L01. Изменение функции",
+    "path": "course/lessons/M03-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M03-L02": {
+    "id": "M03-L02",
+    "title": "M03-L02. Производная и цепное правило",
+    "path": "course/lessons/M03-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M03-L03": {
+    "id": "M03-L03",
+    "title": "M03-L03. Градиент на наборе",
+    "path": "course/lessons/M03-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M03-L04": {
+    "id": "M03-L04",
+    "title": "M03-L04. Шаг обучения",
+    "path": "course/lessons/M03-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M03-L05": {
+    "id": "M03-L05",
+    "title": "M03-L05. Регуляризация и масштаб",
+    "path": "course/lessons/M03-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M03-SOLUTIONS": {
+    "id": "M03-SOLUTIONS",
+    "title": "M03. Решения для самопроверки",
+    "path": "solutions/modules/M03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M04-L01": {
+    "id": "M04-L01",
+    "title": "M04-L01. Случайность и условие",
+    "path": "course/lessons/M04-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M04-L02": {
+    "id": "M04-L02",
+    "title": "M04-L02. Среднее, дисперсия и выборка",
+    "path": "course/lessons/M04-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M04-L03": {
+    "id": "M04-L03",
+    "title": "M04-L03. Неопределённость метрики",
+    "path": "course/lessons/M04-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M04-L04": {
+    "id": "M04-L04",
+    "title": "M04-L04. Bootstrap и интервалы",
+    "path": "course/lessons/M04-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M04-L05": {
+    "id": "M04-L05",
+    "title": "M04-L05. Гипотезы и эксперимент",
+    "path": "course/lessons/M04-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M04-SOLUTIONS": {
+    "id": "M04-SOLUTIONS",
+    "title": "M04. Решения для самопроверки",
+    "path": "solutions/modules/M04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M05-L01": {
+    "id": "M05-L01",
+    "title": "M05-L01. Задача и исходное решение",
+    "path": "course/lessons/M05-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M05-L02": {
+    "id": "M05-L02",
+    "title": "M05-L02. Линейные модели",
+    "path": "course/lessons/M05-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M05-L03": {
+    "id": "M05-L03",
+    "title": "M05-L03. Деревья и бустинг",
+    "path": "course/lessons/M05-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M05-L04": {
+    "id": "M05-L04",
+    "title": "M05-L04. Валидация и утечки",
+    "path": "course/lessons/M05-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M05-L05": {
+    "id": "M05-L05",
+    "title": "M05-L05. Анализ ошибок",
+    "path": "course/lessons/M05-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M05-SOLUTIONS": {
+    "id": "M05-SOLUTIONS",
+    "title": "M05. Решения для самопроверки",
+    "path": "solutions/modules/M05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M06-L01": {
+    "id": "M06-L01",
+    "title": "M06-L01. Цель и ограничения",
+    "path": "course/lessons/M06-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M06-L02": {
+    "id": "M06-L02",
+    "title": "M06-L02. Контуры данных и модели",
+    "path": "course/lessons/M06-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M06-L03": {
+    "id": "M06-L03",
+    "title": "M06-L03. Batch и online",
+    "path": "course/lessons/M06-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M06-L04": {
+    "id": "M06-L04",
+    "title": "M06-L04. Наблюдение и изменение качества",
+    "path": "course/lessons/M06-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M06-L05": {
+    "id": "M06-L05",
+    "title": "M06-L05. Отказы и откат",
+    "path": "course/lessons/M06-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M06-SOLUTIONS": {
+    "id": "M06-SOLUTIONS",
+    "title": "M06. Решения для самопроверки",
+    "path": "solutions/modules/M06.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M07-L01": {
+    "id": "M07-L01",
+    "title": "M07-L01. Линейный слой и нелинейность",
+    "path": "course/lessons/M07-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M07-L02": {
+    "id": "M07-L02",
+    "title": "M07-L02. Autograd и обратный проход",
+    "path": "course/lessons/M07-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M07-L03": {
+    "id": "M07-L03",
+    "title": "M07-L03. Цикл обучения",
+    "path": "course/lessons/M07-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M07-L04": {
+    "id": "M07-L04",
+    "title": "M07-L04. Проверка и диагностика",
+    "path": "course/lessons/M07-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M07-L05": {
+    "id": "M07-L05",
+    "title": "M07-L05. Сохранение и воспроизведение",
+    "path": "course/lessons/M07-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M07-SOLUTIONS": {
+    "id": "M07-SOLUTIONS",
+    "title": "M07. Решения для самопроверки",
+    "path": "solutions/modules/M07.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M08-L01": {
+    "id": "M08-L01",
+    "title": "M08-L01. Текст и токены",
+    "path": "course/lessons/M08-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M08-L02": {
+    "id": "M08-L02",
+    "title": "M08-L02. Embeddings",
+    "path": "course/lessons/M08-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M08-L03": {
+    "id": "M08-L03",
+    "title": "M08-L03. Attention",
+    "path": "course/lessons/M08-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M08-L04": {
+    "id": "M08-L04",
+    "title": "M08-L04. Позиции и causal mask",
+    "path": "course/lessons/M08-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M08-L05": {
+    "id": "M08-L05",
+    "title": "M08-L05. Мини-языковая модель",
+    "path": "course/lessons/M08-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M08-SOLUTIONS": {
+    "id": "M08-SOLUTIONS",
+    "title": "M08. Решения для самопроверки",
+    "path": "solutions/modules/M08.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M09-L01": {
+    "id": "M09-L01",
+    "title": "M09-L01. Сообщения и шаблон диалога",
+    "path": "course/lessons/M09-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M09-L02": {
+    "id": "M09-L02",
+    "title": "M09-L02. Контекст и история",
+    "path": "course/lessons/M09-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M09-L03": {
+    "id": "M09-L03",
+    "title": "M09-L03. Генерация и ограничения",
+    "path": "course/lessons/M09-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M09-L04": {
+    "id": "M09-L04",
+    "title": "M09-L04. Локальный инференс и память",
+    "path": "course/lessons/M09-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M09-L05": {
+    "id": "M09-L05",
+    "title": "M09-L05. Контракт ответа",
+    "path": "course/lessons/M09-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M09-SOLUTIONS": {
+    "id": "M09-SOLUTIONS",
+    "title": "M09. Решения для самопроверки",
+    "path": "solutions/modules/M09.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M10-L01": {
+    "id": "M10-L01",
+    "title": "M10-L01. Документ и фрагмент",
+    "path": "course/lessons/M10-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M10-L02": {
+    "id": "M10-L02",
+    "title": "M10-L02. Лексический и векторный поиск",
+    "path": "course/lessons/M10-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M10-L03": {
+    "id": "M10-L03",
+    "title": "M10-L03. Гибридный поиск и reranking",
+    "path": "course/lessons/M10-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M10-L04": {
+    "id": "M10-L04",
+    "title": "M10-L04. Контекст и подтверждение ответа",
+    "path": "course/lessons/M10-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M10-L05": {
+    "id": "M10-L05",
+    "title": "M10-L05. Диагностика и обновления",
+    "path": "course/lessons/M10-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M10-SOLUTIONS": {
+    "id": "M10-SOLUTIONS",
+    "title": "M10. Решения для самопроверки",
+    "path": "solutions/modules/M10.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M11-L01": {
+    "id": "M11-L01",
+    "title": "M11-L01. Что именно оцениваем",
+    "path": "course/lessons/M11-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M11-L02": {
+    "id": "M11-L02",
+    "title": "M11-L02. Набор примеров и разметка",
+    "path": "course/lessons/M11-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M11-L03": {
+    "id": "M11-L03",
+    "title": "M11-L03. HR и технические рубрики",
+    "path": "course/lessons/M11-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M11-L04": {
+    "id": "M11-L04",
+    "title": "M11-L04. Модель как оценщик",
+    "path": "course/lessons/M11-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M11-L05": {
+    "id": "M11-L05",
+    "title": "M11-L05. Регрессии и отчёт",
+    "path": "course/lessons/M11-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M11-SOLUTIONS": {
+    "id": "M11-SOLUTIONS",
+    "title": "M11. Решения для самопроверки",
+    "path": "solutions/modules/M11.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M12-L01": {
+    "id": "M12-L01",
+    "title": "M12-L01. Выбор вмешательства",
+    "path": "course/lessons/M12-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M12-L02": {
+    "id": "M12-L02",
+    "title": "M12-L02. Данные для адаптации",
+    "path": "course/lessons/M12-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M12-L03": {
+    "id": "M12-L03",
+    "title": "M12-L03. Малое обучение с нуля",
+    "path": "course/lessons/M12-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M12-L04": {
+    "id": "M12-L04",
+    "title": "M12-L04. Дообучение и адаптеры",
+    "path": "course/lessons/M12-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M12-L05": {
+    "id": "M12-L05",
+    "title": "M12-L05. Сравнение до и после",
+    "path": "course/lessons/M12-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M12-SOLUTIONS": {
+    "id": "M12-SOLUTIONS",
+    "title": "M12. Решения для самопроверки",
+    "path": "solutions/modules/M12.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M13-L01": {
+    "id": "M13-L01",
+    "title": "M13-L01. Версия эксперимента и релиза",
+    "path": "course/lessons/M13-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M13-L02": {
+    "id": "M13-L02",
+    "title": "M13-L02. Упаковка и контракт",
+    "path": "course/lessons/M13-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M13-L03": {
+    "id": "M13-L03",
+    "title": "M13-L03. Регрессионные проверки",
+    "path": "course/lessons/M13-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M13-L04": {
+    "id": "M13-L04",
+    "title": "M13-L04. Наблюдаемость и нагрузка",
+    "path": "course/lessons/M13-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M13-L05": {
+    "id": "M13-L05",
+    "title": "M13-L05. Неудачный релиз и восстановление",
+    "path": "course/lessons/M13-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M13-SOLUTIONS": {
+    "id": "M13-SOLUTIONS",
+    "title": "M13. Решения для самопроверки",
+    "path": "solutions/modules/M13.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M14-L01": {
+    "id": "M14-L01",
+    "title": "M14-L01. Сценарий и агентный цикл",
+    "path": "course/lessons/M14-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M14-L02": {
+    "id": "M14-L02",
+    "title": "M14-L02. Контракт инструмента",
+    "path": "course/lessons/M14-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M14-L03": {
+    "id": "M14-L03",
+    "title": "M14-L03. Состояние и границы доступа",
+    "path": "course/lessons/M14-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M14-L04": {
+    "id": "M14-L04",
+    "title": "M14-L04. Ошибки и остановка",
+    "path": "course/lessons/M14-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M14-L05": {
+    "id": "M14-L05",
+    "title": "M14-L05. Проверка агента",
+    "path": "course/lessons/M14-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M14-SOLUTIONS": {
+    "id": "M14-SOLUTIONS",
+    "title": "M14. Решения для самопроверки",
+    "path": "solutions/modules/M14.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M15-L01": {
+    "id": "M15-L01",
+    "title": "M15-L01. Аудио и речь",
+    "path": "course/lessons/M15-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M15-L02": {
+    "id": "M15-L02",
+    "title": "M15-L02. Распознавание и сегменты",
+    "path": "course/lessons/M15-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M15-L03": {
+    "id": "M15-L03",
+    "title": "M15-L03. Синтез и доставка",
+    "path": "course/lessons/M15-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M15-L04": {
+    "id": "M15-L04",
+    "title": "M15-L04. Поток и перебивание",
+    "path": "course/lessons/M15-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M15-L05": {
+    "id": "M15-L05",
+    "title": "M15-L05. Речевое оценивание",
+    "path": "course/lessons/M15-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M15-SOLUTIONS": {
+    "id": "M15-SOLUTIONS",
+    "title": "M15. Решения для самопроверки",
+    "path": "solutions/modules/M15.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M16-L01": {
+    "id": "M16-L01",
+    "title": "M16-L01. Требования и две рубрики",
+    "path": "course/lessons/M16-L01.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M16-L02": {
+    "id": "M16-L02",
+    "title": "M16-L02. Интеграция и независимая проверка",
+    "path": "course/lessons/M16-L02.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M16-L03": {
+    "id": "M16-L03",
+    "title": "M16-L03. Пилот продукта",
+    "path": "course/lessons/M16-L03.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M16-L04": {
+    "id": "M16-L04",
+    "title": "M16-L04. Защита архитектуры и отказа",
+    "path": "course/lessons/M16-L04.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M16-L05": {
+    "id": "M16-L05",
+    "title": "M16-L05. Портфолио и профессиональная проверка",
+    "path": "course/lessons/M16-L05.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "M16-SOLUTIONS": {
+    "id": "M16-SOLUTIONS",
+    "title": "M16. Решения для самопроверки",
+    "path": "solutions/modules/M16.md",
+    "version": "1.0.0",
+    "status": "ready"
+  },
+  "REFERENCE-PROJECT": {
+    "id": "REFERENCE-PROJECT",
+    "title": "Эталон голосового тренажёра",
+    "path": "projects/interview_trainer/README.md",
+    "version": "1.0.0",
     "status": "ready"
   }
 }

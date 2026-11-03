@@ -1,0 +1,432 @@
+{
+  "results": [
+    {
+      "path": "course\\lessons\\M00-L01.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "[1, 5, 11]\n",
+      "seconds": 0.001
+    },
+    {
+      "path": "course\\lessons\\M00-L02.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "9.0 v1\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M00-L03.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "{'(2, 1)': 0.0, '(1, 1)': 4.666666666666667, '(2, 0)': 1.0}\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M00-L04.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "Объясни индекс SQL\nИндекс ускоряет некоторые чтения и требует обновления при записи.\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M00-L05.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "{'prediction': 9, 'model_version': 'v1'}\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M01-L01.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "(3, 2) [3.0, 30.0] [[-2.0, -20.0], [0.0, 0.0], [2.0, 20.0]]\n",
+      "seconds": 0.239
+    },
+    {
+      "path": "course\\lessons\\M01-L02.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "4 3 1 1\n",
+      "seconds": 0.711
+    },
+    {
+      "path": "course\\lessons\\M01-L03.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "4 2 set()\n",
+      "seconds": 0.002
+    },
+    {
+      "path": "course\\lessons\\M01-L04.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "20.0 15.0\n",
+      "seconds": 0.01
+    },
+    {
+      "path": "course\\lessons\\M01-L05.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "{'version': 'center-v1', 'feature': 'seconds', 'mean': 4.0} [6.0, 10.0]\n",
+      "seconds": 0.001
+    },
+    {
+      "path": "solutions\\modules\\M01.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.001
+    },
+    {
+      "path": "solutions\\modules\\M01.md",
+      "block": 2,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.001
+    },
+    {
+      "path": "solutions\\modules\\M01.md",
+      "block": 3,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M01.md",
+      "block": 4,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M02-L01.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "[2.0, 2.0] [3.0, 2.0]\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M02-L02.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "12.0 0.6 4.123\n",
+      "seconds": 0.001
+    },
+    {
+      "path": "course\\lessons\\M02-L03.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "[0.0, 2.0] [-2.0, 2.0] [-4.0, 1.0]\n",
+      "seconds": 0.001
+    },
+    {
+      "path": "course\\lessons\\M02-L04.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "[10.0, 2.0] [0.1, 2.0]\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M02-L05.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "[1.0, 0.8, 0.0] ['SQL', 'API']\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M02.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M02.md",
+      "block": 2,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M02.md",
+      "block": 3,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M02.md",
+      "block": 4,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M02.md",
+      "block": 5,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M03-L01.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "0.1 6.1 6.0\n0.01 6.01 6.0\n0.001 6.001 6.0\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M03-L02.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "-12.0 -6.0 -12.0\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M03-L03.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "1.0 0.6000000000000001 1.06\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M03-L04.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "0.1 [9.0, 5.76, 3.6864, 2.3593]\n0.5 [9.0, 0.0, 0.0, 0.0]\n1.1 [9.0, 12.96, 18.6624, 26.8739]\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M03-L05.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "2.0 8.0\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M03.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M03.md",
+      "block": 2,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M03.md",
+      "block": 3,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M03.md",
+      "block": 4,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M03.md",
+      "block": 5,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M04-L01.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "0.6 0.2727 0.7333\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M04-L02.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "2.5 1.6667 1.291 0.6455\n",
+      "seconds": 0.001
+    },
+    {
+      "path": "course\\lessons\\M04-L03.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "(0.596, 0.982) (0.88, 0.917)\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M04-L04.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "0.4 [0.0, 0.8]\n",
+      "seconds": 0.002
+    },
+    {
+      "path": "course\\lessons\\M04-L05.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "0.021484 0.109375\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M04.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M04.md",
+      "block": 2,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M04.md",
+      "block": 3,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M04.md",
+      "block": 4,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.002
+    },
+    {
+      "path": "solutions\\modules\\M04.md",
+      "block": 5,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M05-L01.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "[[4, 1], [2, 1]] 0.625 0.5 0.3333333333333333\n",
+      "seconds": 2.622
+    },
+    {
+      "path": "course\\lessons\\M05-L02.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "[0.1192, 0.5, 0.8808] [0, 1, 1] [0, 0, 1]\n",
+      "seconds": 0.0
+    },
+    {
+      "path": "course\\lessons\\M05-L03.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "[0.0, 0.0, 2.0, 2.0] 0.0 [2.0]\n",
+      "seconds": 0.212
+    },
+    {
+      "path": "course\\lessons\\M05-L04.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "[0.0, 0.0, 0.0]\n",
+      "seconds": 0.016
+    },
+    {
+      "path": "course\\lessons\\M05-L05.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "           n  mae  bias\ngroup                  \nHR         2  0.5   0.5\ntechnical  2  3.0  -3.0\n",
+      "seconds": 0.009
+    },
+    {
+      "path": "solutions\\modules\\M05.md",
+      "block": 1,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.001
+    },
+    {
+      "path": "solutions\\modules\\M05.md",
+      "block": 2,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M05.md",
+      "block": 3,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M05.md",
+      "block": 4,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "solutions\\modules\\M05.md",
+      "block": 5,
+      "status": "passed",
+      "stdout": "",
+      "seconds": 0.0
+    },
+    {
+      "path": "labs\\M00\\demo.py",
+      "status": "passed",
+      "stdout": "{\n  \"mse\": {\n    \"A\": 0.0,\n    \"B\": 1.5\n  },\n  \"selected\": \"A\",\n  \"new_input\": 4,\n  \"response\": {\n    \"prediction\": 13,\n    \"model_version\": \"M00-HW01-v1\"\n  },\n  \"invalid_inputs_rejected\": 5\n}\n",
+      "stderr": "",
+      "returncode": 0,
+      "seconds": 0.136
+    },
+    {
+      "path": "labs\\M01\\demo.py",
+      "status": "passed",
+      "stdout": "{\n  \"raw_rows\": 6,\n  \"clean_rows\": 5,\n  \"train_rows\": 3,\n  \"test_rows\": 2,\n  \"center\": 4.0,\n  \"test_transformed\": [\n    6.0,\n    10.0\n  ],\n  \"augmented_test\": [\n    6.0,\n    10.0,\n    96.0\n  ],\n  \"session_counts\": {\n    \"A\": 2,\n    \"B\": 1,\n    \"C\": 2\n  },\n  \"session_mean\": 20,\n  \"naive_join_mean\": 15\n}\n",
+      "stderr": "",
+      "returncode": 0,
+      "seconds": 1.148
+    },
+    {
+      "path": "labs\\M02\\demo.py",
+      "status": "passed",
+      "stdout": "{\n  \"queries\": [\n    {\n      \"query\": \"q1\",\n      \"top2\": [\n        [\n          \"A\",\n          1.0\n        ],\n        [\n          \"B\",\n          0.8\n        ]\n      ],\n      \"recall_at_1\": 1.0,\n      \"recall_at_2\": 1.0\n    },\n    {\n      \"query\": \"q2\",\n      \"top2\": [\n        [\n          \"C\",\n          1.0\n        ],\n        [\n          \"B\",\n          0.6\n        ]\n      ],\n      \"recall_at_1\": 0.5,\n      \"recall_at_2\": 1.0\n    }\n  ],\n  \"mean_recall_at_1\": 0.75,\n  \"mean_recall_at_2\": 1.0,\n  \"invalid_queries_rejected\": 5,\n  \"tie_rule\": \"identifier ascending\"\n}\n",
+      "stderr": "",
+      "returncode": 0,
+      "seconds": 0.434
+    },
+    {
+      "path": "labs\\M03\\demo.py",
+      "status": "passed",
+      "stdout": "{\n  \"gradient_analytic\": [\n    -8.5,\n    -2.6\n  ],\n  \"gradient_numeric\": [\n    -8.499999999855845,\n    -2.6000000000081513\n  ],\n  \"runs\": {\n    \"plain\": {\n      \"weights\": [\n        2.9999999999999996,\n        0.9999999999999997\n      ],\n      \"mse\": 4.955032560919481e-31,\n      \"penalty\": 0.0,\n      \"objective\": 4.955032560919481e-31\n    },\n    \"l2\": {\n      \"weights\": [\n        2.4,\n        0.9999999999999998\n      ],\n      \"mse\": 0.7200000000000003,\n      \"penalty\": 2.88,\n      \"objective\": 3.6\n    }\n  },\n  \"steps\": 200,\n  \"eta\": 0.1\n}\n",
+      "stderr": "",
+      "returncode": 0,
+      "seconds": 0.405
+    },
+    {
+      "path": "labs\\M04\\demo.py",
+      "status": "passed",
+      "stdout": "{\n  \"A_mean\": 0.5,\n  \"B_mean\": 0.75,\n  \"paired_effect\": 0.25,\n  \"bootstrap_95_percentile\": [\n    0.0,\n    0.625\n  ],\n  \"independent_sessions\": 8,\n  \"bootstrap_repeats\": 20000,\n  \"non_ties\": 2,\n  \"sign_test_p\": 0.5,\n  \"wilson_intervals\": {\n    \"9/10\": [\n      0.5958499732047615,\n      0.9821237869049271\n    ],\n    \"900/1000\": [\n      0.8798480368046516,\n      0.9170905564069044\n    ],\n    \"18/20\": [\n      0.6989663547715128,\n      0.9721335187862319\n    ],\n    \"180/200\": [\n      0.8505941875672826,\n      0.9343295513309041\n    ],\n    \"20/20\": [\n      0.8388748419471806,\n      1.0\n    ],\n    \"0/10\": [\n      0.0,\n      0.2775327998628892\n    ]\n  }\n}\n",
+      "stderr": "",
+      "returncode": 0,
+      "seconds": 1.983
+    },
+    {
+      "path": "labs\\M05\\demo.py",
+      "status": "passed",
+      "stdout": "{\n  \"dataset\": \"synthetic y=x^2+N(0,0.2)\",\n  \"seed\": 42,\n  \"data_sha256\": \"0a90bda142aeb57207bc6a473f7188ddeb7f2732eda710dd283cdab0049c9f79\",\n  \"numpy\": \"2.4.6\",\n  \"sklearn\": \"1.9.1\",\n  \"split_sizes\": {\n    \"train\": 180,\n    \"validation\": 60,\n    \"test\": 60\n  },\n  \"validation\": [\n    {\n      \"model\": \"mean\",\n      \"validation_mae\": 2.2377378819403706,\n      \"validation_mse\": 7.024134930300119\n    },\n    {\n      \"model\": \"linear\",\n      \"validation_mae\": 2.2173151971109197,\n      \"validation_mse\": 7.043298877252392\n    },\n    {\n      \"model\": \"tree_depth_2\",\n      \"validation_mae\": 0.92591066913724,\n      \"validation_mse\": 1.20478461699088\n    },\n    {\n      \"model\": \"tree_depth_4\",\n      \"validation_mae\": 0.4098234732414141,\n      \"validation_mse\": 0.2543211896490051\n    },\n    {\n      \"model\": \"boosting\",\n      \"validation_mae\": 0.21632787272172543,\n      \"validation_mse\": 0.07389822182444995\n    }\n  ],\n  \"selected_by_validation_only\": \"boosting\",\n  \"test_mae\": 0.2141565783682533,\n  \"test_mse\": 0.071618313099624,\n  \"slices\": {\n    \"x_negative\": {\n      \"n\": 32,\n      \"mae\": 0.18984017534109116,\n      \"bias\": 0.042206705155947426\n    },\n    \"x_nonnegative\": {\n      \"n\": 28,\n      \"mae\": 0.24194675325643863,\n      \"bias\": 0.003306630693742616\n    }\n  }\n}\n",
+      "stderr": "",
+      "returncode": 0,
+      "seconds": 3.411
+    }
+  ],
+  "passed": 60,
+  "failures": []
+}

@@ -1,0 +1,399 @@
+{
+  "version": "1.0.0",
+  "created_on": "2026-11-03",
+  "authoring_status": "materials_prepared",
+  "learner_pilot": "not inferred",
+  "modules": [
+    {
+      "id": "M12",
+      "module": "course/modules/M12.md",
+      "solutions": "solutions/modules/M12.md",
+      "lab": "labs/M12/demo.py"
+    },
+    {
+      "id": "M13",
+      "module": "course/modules/M13.md",
+      "solutions": "solutions/modules/M13.md",
+      "lab": "labs/M13/demo.py"
+    },
+    {
+      "id": "M14",
+      "module": "course/modules/M14.md",
+      "solutions": "solutions/modules/M14.md",
+      "lab": "labs/M14/demo.py"
+    },
+    {
+      "id": "M15",
+      "module": "course/modules/M15.md",
+      "solutions": "solutions/modules/M15.md",
+      "lab": "labs/M15/demo.py"
+    },
+    {
+      "id": "M16",
+      "module": "course/modules/M16.md",
+      "solutions": "solutions/modules/M16.md",
+      "lab": "labs/M16/demo.py"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "M12-L01",
+      "path": "course/lessons/M12-L01.md",
+      "figure": "course/assets/M12-L01.svg",
+      "words": 956,
+      "source": "https://huggingface.co/docs/peft/main/en/conceptual_guides/lora"
+    },
+    {
+      "id": "M12-L02",
+      "path": "course/lessons/M12-L02.md",
+      "figure": "course/assets/M12-L02.svg",
+      "words": 927,
+      "source": "https://docs.pytorch.org/docs/stable/data.html"
+    },
+    {
+      "id": "M12-L03",
+      "path": "course/lessons/M12-L03.md",
+      "figure": "course/assets/M12-L03.svg",
+      "words": 925,
+      "source": "https://docs.pytorch.org/tutorials/beginner/basics/optimization_tutorial.html"
+    },
+    {
+      "id": "M12-L04",
+      "path": "course/lessons/M12-L04.md",
+      "figure": "course/assets/M12-L04.svg",
+      "words": 903,
+      "source": "https://huggingface.co/docs/peft/main/en/conceptual_guides/lora"
+    },
+    {
+      "id": "M12-L05",
+      "path": "course/lessons/M12-L05.md",
+      "figure": "course/assets/M12-L05.svg",
+      "words": 924,
+      "source": "https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html"
+    },
+    {
+      "id": "M13-L01",
+      "path": "course/lessons/M13-L01.md",
+      "figure": "course/assets/M13-L01.svg",
+      "words": 879,
+      "source": "https://docs.python.org/3/library/hashlib.html"
+    },
+    {
+      "id": "M13-L02",
+      "path": "course/lessons/M13-L02.md",
+      "figure": "course/assets/M13-L02.svg",
+      "words": 884,
+      "source": "https://json-schema.org/understanding-json-schema/reference/object"
+    },
+    {
+      "id": "M13-L03",
+      "path": "course/lessons/M13-L03.md",
+      "figure": "course/assets/M13-L03.svg",
+      "words": 878,
+      "source": "https://docs.python.org/3/library/unittest.html"
+    },
+    {
+      "id": "M13-L04",
+      "path": "course/lessons/M13-L04.md",
+      "figure": "course/assets/M13-L04.svg",
+      "words": 849,
+      "source": "https://docs.python.org/3/library/time.html#time.perf_counter"
+    },
+    {
+      "id": "M13-L05",
+      "path": "course/lessons/M13-L05.md",
+      "figure": "course/assets/M13-L05.svg",
+      "words": 840,
+      "source": "https://docs.docker.com/build/building/best-practices/"
+    },
+    {
+      "id": "M14-L01",
+      "path": "course/lessons/M14-L01.md",
+      "figure": "course/assets/M14-L01.svg",
+      "words": 905,
+      "source": "https://json-schema.org/understanding-json-schema/reference/object"
+    },
+    {
+      "id": "M14-L02",
+      "path": "course/lessons/M14-L02.md",
+      "figure": "course/assets/M14-L02.svg",
+      "words": 851,
+      "source": "https://json-schema.org/understanding-json-schema/reference/object"
+    },
+    {
+      "id": "M14-L03",
+      "path": "course/lessons/M14-L03.md",
+      "figure": "course/assets/M14-L03.svg",
+      "words": 862,
+      "source": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+    },
+    {
+      "id": "M14-L04",
+      "path": "course/lessons/M14-L04.md",
+      "figure": "course/assets/M14-L04.svg",
+      "words": 878,
+      "source": "https://docs.python.org/3/library/time.html#time.monotonic"
+    },
+    {
+      "id": "M14-L05",
+      "path": "course/lessons/M14-L05.md",
+      "figure": "course/assets/M14-L05.svg",
+      "words": 861,
+      "source": "https://docs.python.org/3/library/unittest.html"
+    },
+    {
+      "id": "M15-L01",
+      "path": "course/lessons/M15-L01.md",
+      "figure": "course/assets/M15-L01.svg",
+      "words": 845,
+      "source": "https://docs.python.org/3/library/wave.html"
+    },
+    {
+      "id": "M15-L02",
+      "path": "course/lessons/M15-L02.md",
+      "figure": "course/assets/M15-L02.svg",
+      "words": 875,
+      "source": "https://alphacephei.com/vosk/install"
+    },
+    {
+      "id": "M15-L03",
+      "path": "course/lessons/M15-L03.md",
+      "figure": "course/assets/M15-L03.svg",
+      "words": 882,
+      "source": "https://learn.microsoft.com/en-us/dotnet/api/system.speech.synthesis.speechsynthesizer"
+    },
+    {
+      "id": "M15-L04",
+      "path": "course/lessons/M15-L04.md",
+      "figure": "course/assets/M15-L04.svg",
+      "words": 856,
+      "source": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController"
+    },
+    {
+      "id": "M15-L05",
+      "path": "course/lessons/M15-L05.md",
+      "figure": "course/assets/M15-L05.svg",
+      "words": 949,
+      "source": "https://alphacephei.com/vosk/models"
+    },
+    {
+      "id": "M16-L01",
+      "path": "course/lessons/M16-L01.md",
+      "figure": "course/assets/M16-L01.svg",
+      "words": 882,
+      "source": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "id": "M16-L02",
+      "path": "course/lessons/M16-L02.md",
+      "figure": "course/assets/M16-L02.svg",
+      "words": 847,
+      "source": "https://docs.python.org/3/library/unittest.html"
+    },
+    {
+      "id": "M16-L03",
+      "path": "course/lessons/M16-L03.md",
+      "figure": "course/assets/M16-L03.svg",
+      "words": 833,
+      "source": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "id": "M16-L04",
+      "path": "course/lessons/M16-L04.md",
+      "figure": "course/assets/M16-L04.svg",
+      "words": 855,
+      "source": "https://docs.docker.com/build/building/best-practices/"
+    },
+    {
+      "id": "M16-L05",
+      "path": "course/lessons/M16-L05.md",
+      "figure": "course/assets/M16-L05.svg",
+      "words": 930,
+      "source": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes"
+    }
+  ],
+  "checks": [
+    {
+      "lesson": "M12-L01",
+      "block": 1,
+      "status": "passed",
+      "stdout": "{'base': 0.6, 'prompt': 0.9, 'adapted': 0.95}\n"
+    },
+    {
+      "lesson": "M12-L02",
+      "block": 1,
+      "status": "passed",
+      "stdout": ""
+    },
+    {
+      "lesson": "M12-L03",
+      "block": 1,
+      "status": "passed",
+      "stdout": "1.609438 1.530254\n"
+    },
+    {
+      "lesson": "M12-L04",
+      "block": 1,
+      "status": "passed",
+      "stdout": "tensor([[ 0.,  1.,  2.],\n        [ 0.,  0.,  0.],\n        [-0., -1., -2.],\n        [ 0.,  2.,  4.]])\nfull: 12 adapter: 7\n"
+    },
+    {
+      "lesson": "M12-L05",
+      "block": 1,
+      "status": "passed",
+      "stdout": "0.848 72.1\n"
+    },
+    {
+      "lesson": "M13-L01",
+      "block": 1,
+      "status": "passed",
+      "stdout": "4c4141874ffb3ebba177958a30ba2bda283c20a2bf172a67fba09dcbe5c84065\n"
+    },
+    {
+      "lesson": "M13-L02",
+      "block": 1,
+      "status": "passed",
+      "stdout": "2\nrejected: True\nrejected: nan\nrejected: '2'\n"
+    },
+    {
+      "lesson": "M13-L03",
+      "block": 1,
+      "status": "passed",
+      "stdout": "2 True\n20 False\n"
+    },
+    {
+      "lesson": "M13-L04",
+      "block": 1,
+      "status": "passed",
+      "stdout": ""
+    },
+    {
+      "lesson": "M13-L05",
+      "block": 1,
+      "status": "passed",
+      "stdout": "1.0\n"
+    },
+    {
+      "lesson": "M14-L01",
+      "block": 1,
+      "status": "passed",
+      "stdout": "finished 1\n"
+    },
+    {
+      "lesson": "M14-L02",
+      "block": 1,
+      "status": "passed",
+      "stdout": "True\nFalse\nFalse\n"
+    },
+    {
+      "lesson": "M14-L03",
+      "block": 1,
+      "status": "passed",
+      "stdout": "{'status': 'ok', 'text': 'allowed'}\n{'status': 'not_available'}\n"
+    },
+    {
+      "lesson": "M14-L04",
+      "block": 1,
+      "status": "passed",
+      "stdout": "repeated_call\nbudget\n"
+    },
+    {
+      "lesson": "M14-L05",
+      "block": 1,
+      "status": "passed",
+      "stdout": "1.0\n"
+    },
+    {
+      "lesson": "M15-L01",
+      "block": 1,
+      "status": "passed",
+      "stdout": "1 2 4.505\n"
+    },
+    {
+      "lesson": "M15-L02",
+      "block": 1,
+      "status": "passed",
+      "stdout": "расскажите про вашего опыт разработке веб сервисов\n"
+    },
+    {
+      "lesson": "M15-L03",
+      "block": 1,
+      "status": "passed",
+      "stdout": ""
+    },
+    {
+      "lesson": "M15-L04",
+      "block": 1,
+      "status": "passed",
+      "stdout": ""
+    },
+    {
+      "lesson": "M15-L05",
+      "block": 1,
+      "status": "passed",
+      "stdout": "0.3333333333333333\n2.0\n"
+    },
+    {
+      "lesson": "M16-L01",
+      "block": 1,
+      "status": "passed",
+      "stdout": ""
+    }
+  ],
+  "actual_verification": {
+    "date": "2026-11-03",
+    "python": "3.11.9",
+    "torch": "2.15.0+cpu",
+    "vosk": "0.3.45",
+    "labs": [
+      "M12",
+      "M13",
+      "M14",
+      "M15",
+      "M16"
+    ],
+    "pytest": "tests/test_ops_voice.py: 11 passed",
+    "homework_solutions": [
+      "M12_hw.py: mixed old loss 0.5040496588, new 1.0053714514",
+      "M14_hw.py: 10 expected paths passed"
+    ],
+    "speech": "SAPI Microsoft Irina Desktop → mono PCM16 16kHz → Vosk small-ru-0.22; WER2/7; real run, one synthetic voice sample",
+    "docker": "optional; not executed",
+    "human_pilot": "not performed or inferred by author",
+    "python_lesson_blocks": 21,
+    "svg_xml_checked": 25,
+    "specialized_figures_visually_reviewed": [
+      "M12-L04",
+      "M12-L05",
+      "M13-L04",
+      "M15-L01",
+      "M15-L04",
+      "M15-L05",
+      "M16-L01"
+    ]
+  },
+  "source_review": {
+    "date": "2026-11-03",
+    "policy": "Official documentation and primary sources; independently authored course explanations",
+    "urls": [
+      "https://alphacephei.com/vosk/install",
+      "https://alphacephei.com/vosk/models",
+      "https://developer.mozilla.org/en-US/docs/Web/API/AbortController",
+      "https://docs.docker.com/build/building/best-practices/",
+      "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+      "https://docs.python.org/3/library/hashlib.html",
+      "https://docs.python.org/3/library/time.html#time.monotonic",
+      "https://docs.python.org/3/library/time.html#time.perf_counter",
+      "https://docs.python.org/3/library/unittest.html",
+      "https://docs.python.org/3/library/wave.html",
+      "https://docs.pytorch.org/docs/stable/data.html",
+      "https://docs.pytorch.org/tutorials/beginner/basics/optimization_tutorial.html",
+      "https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html",
+      "https://huggingface.co/docs/peft/main/en/conceptual_guides/lora",
+      "https://json-schema.org/understanding-json-schema/reference/object",
+      "https://learn.microsoft.com/en-us/dotnet/api/system.speech.synthesis.speechsynthesizer",
+      "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+      "https://www.nist.gov/itl/ai-risk-management-framework"
+    ]
+  }
+}

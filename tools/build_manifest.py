@@ -2,10 +2,11 @@
 from __future__ import annotations
 import argparse
 import json
+import importlib.util
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.2.0"
+VERSION = "1.0.0"
 CREATED = "2026-11-03"
 PILOT_IDS = [f"P{i:02}" for i in range(1, 11)]
 MODULE_IDS = [f"M{i:02}" for i in range(17)]
@@ -38,6 +39,8 @@ def build_manifest(root: Path = ROOT) -> dict:
     if [module["id"] for module in modules] != MODULE_IDS:
         raise ValueError("Expected ordered modules M00..M16")
     lesson_ids = [lesson["id"] for module in modules for lesson in module["lessons"]]
+    full_route = any(key in registry for key in lesson_ids)
+    required = [*REQUIRED_MATERIALS, *lesson_ids, *[f"{m}-SOLUTIONS" for m in MODULE_IDS]] if full_route else REQUIRED_MATERIALS
     if len(set(lesson_ids)) != len(lesson_ids):
         raise ValueError("Duplicate curriculum lesson IDs")
     if len(inventory) != 10 or {entry["id"] for entry in inventory} != set(PILOT_IDS):
@@ -50,7 +53,7 @@ def build_manifest(root: Path = ROOT) -> dict:
             raise ValueError(f"Unknown curriculum lesson in {session_id}")
 
     materials, missing = {}, []
-    for key in dict.fromkeys([*REQUIRED_MATERIALS, *registry]):
+    for key in dict.fromkeys([*required, *registry]):
         item = registry.get(key)
         if not isinstance(item, dict) or item.get("id") != key:
             missing.append(key)
@@ -65,26 +68,38 @@ def build_manifest(root: Path = ROOT) -> dict:
         materials[key] = {"id": key, "title": item["title"], "path": path,
                           "version": VERSION, "status": item["status"]}
     reader_exists = (root / "START_HERE.html").is_file()
-    delivery_ready = not missing and reader_exists
+    reader_current = False
+    if reader_exists and not missing:
+        spec = importlib.util.spec_from_file_location("manifest_reader", Path(__file__).with_name("build_reader.py"))
+        renderer = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(renderer)
+        fingerprint = renderer.source_fingerprint(root)
+        reader_current = f'name="course-source-sha256" content="{fingerprint}"' in (root / "START_HERE.html").read_text(encoding="utf-8")
+    delivery_ready = not missing and reader_exists and reader_current
 
     module_entries, lesson_entries = [], []
     for module in modules:
         module_id = module["id"]
         path = materials.get(module_id, {}).get("path")
+        lesson_paths = [materials.get(lesson["id"], {}).get("path") for lesson in module["lessons"]]
+        solution = materials.get(f"{module_id}-SOLUTIONS", {}).get("path")
+        lab = f"labs/{module_id}/demo.py"
+        visual = f"course/visuals/{module_id}.html"
+        module_ready = bool(path and all(lesson_paths) and solution and (root/lab).is_file() and (root/visual).is_file() and (root/f"labs/{module_id}/README.md").is_file())
         module_entries.append({
             "id": module_id, "title": module["title"], "version": VERSION,
             "material_key": module_id, "path": path,
             "delivery_status": "local" if path else "missing",
-            "design_status": "ready", "material_status": "introductory_draft",
-            "full_module_ready": False,
+            "design_status": "ready", "material_status": "ready" if module_ready else "incomplete",
+            "full_module_ready": module_ready, "solution": solution, "lab": lab, "visual": visual,
             "lesson_ids": [lesson["id"] for lesson in module["lessons"]],
             "homework_id": module["homework"]["id"],
         })
         for lesson in module["lessons"]:
             lesson_entries.append({
                 "id": lesson["id"], "title": lesson["title"], "version": VERSION,
-                "module_id": module_id, "material_key": module_id, "path": path,
-                "scope": "module_design", "material_status": "designed",
+                "module_id": module_id, "material_key": lesson["id"], "path": materials.get(lesson["id"], {}).get("path"),
+                "scope": "complete_lesson", "material_status": "ready" if materials.get(lesson["id"]) else "missing",
                 "prerequisites": lesson["prerequisites"], "outcome_ids": lesson["outcome_ids"],
                 "pilot_sessions": [key for key, value in pilot_map.items() if lesson["id"] in value],
             })
@@ -109,9 +124,12 @@ def build_manifest(root: Path = ROOT) -> dict:
     names = ["Competency map", "Full curriculum design", "Local course delivery",
              "Diagnostics and pilot materials", "Learner pilot", "Personal calibration",
              "Remaining mandatory materials", "Full course release"]
+    full_materials = all(m["full_module_ready"] for m in module_entries)
+    delivery_ready = delivery_ready and (full_materials or not full_route)
     return {
-        "schema_version": 2, "course_version": VERSION, "created": CREATED,
-        "language": "ru", "course_status": "local_self_study_pilot",
+        "schema_version": 3, "course_version": VERSION, "created": CREATED,
+        "language": "ru", "course_status": "complete_self_study_materials" if full_materials else "incomplete_materials",
+        "full_materials_ready": full_materials,
         "full_course_ready": False,
         "entrypoint": "START_HERE.html", "canonical_content": "local_markdown",
         "learning_mode": "self_study_with_optional_mentor",
@@ -120,11 +138,11 @@ def build_manifest(root: Path = ROOT) -> dict:
                    "pilot_inventory": "metadata/pilot-lab-inventory.json"},
         "materials": materials,
         "delivery": {"status": "local_ready" if delivery_ready else "incomplete",
-                     "required_material_keys": REQUIRED_MATERIALS, "missing_materials": missing,
-                     "reader_present": reader_exists, "required_online_accounts": False},
+                     "required_material_keys": required, "missing_materials": missing,
+                     "reader_present": reader_exists, "reader_current": reader_current, "required_online_accounts": False},
         "stages": [{"id": i, "name": name,
                     "status": ("ready" if i <= 2 or (i <= 4 and delivery_ready) else
-                               "awaiting_learner" if i == 5 else "pending")}
+                               "awaiting_learner" if i in (5,6) else "ready" if i == 7 and full_materials else "awaiting_learner_calibration")}
                    for i, name in enumerate(names, 1)],
         "modules": module_entries, "lessons": lesson_entries,
         "pilot": {"material_status": "ready" if delivery_ready else "incomplete",
@@ -135,7 +153,7 @@ def build_manifest(root: Path = ROOT) -> dict:
         "environment": {"profile": curriculum["profile"], "pilot_execution": "CPU",
                         "required_paid_services": False, "dependency_lock": "requirements.lock.txt"},
         "status_policy": {
-            "module_materials": "Module outlines and introductions are not complete lesson packages.",
+            "module_materials": "Full materials are tracked separately from a real learner pilot. full_course_ready includes learner calibration and remains false until evidence exists.",
             "pilot_mapping": "Ready pilot materials do not mark their linked curriculum lessons complete.",
             "progress": "This generated manifest does not change or certify learner progress; use the local log.",
             "mastery": "Self-checks and technical execution are evidence, not automatic professional grading.",
@@ -148,12 +166,15 @@ def main() -> int:
     parser.add_argument("--check", action="store_true", help="Inspect without replacing the manifest")
     args = parser.parse_args()
     manifest = build_manifest()
+    if args.check and (not (ROOT / "course-manifest.json").is_file() or read_json(ROOT / "course-manifest.json") != manifest):
+        raise SystemExit("Manifest is stale. Run: python tools/build_manifest.py")
     if not args.check:
         (ROOT / "course-manifest.json").write_text(
-            json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps({"written": not args.check, "modules": len(manifest["modules"]),
                       "lessons": len(manifest["lessons"]), "pilot_sessions": len(manifest["pilot"]["sessions"]),
-                      "delivery": manifest["delivery"], "full_course_ready": False}, ensure_ascii=True, indent=2))
+                      "delivery_status": manifest["delivery"]["status"], "missing": manifest["delivery"]["missing_materials"],
+                      "full_materials_ready": manifest["full_materials_ready"], "full_course_ready": False}, ensure_ascii=True, indent=2))
     return 0 if manifest["delivery"]["status"] == "local_ready" else 1
 
 

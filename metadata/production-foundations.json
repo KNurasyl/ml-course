@@ -1,0 +1,461 @@
+{
+  "scope": "M00-M05",
+  "material_status": "authored_and_locally_executed",
+  "learner_skill_status": "not_assessed",
+  "pilot_status": "not_substituted_by_author_checks",
+  "generated_at": "2026-11-03T08:22:25.151278+00:00",
+  "lesson_count": 30,
+  "russian_words": 21049,
+  "lessons": [
+    {
+      "id": "M00-L01",
+      "path": "course/lessons/M00-L01.md",
+      "figure": "course/assets/M00-L01.png",
+      "russian_words": 754,
+      "sha256": "38b8fef723a4326ae11da4012c52e3ebe894a82cb0cb14b616d966dbf981ce8b",
+      "solution": "solutions/modules/M00.md"
+    },
+    {
+      "id": "M00-L02",
+      "path": "course/lessons/M00-L02.md",
+      "figure": "course/assets/M00-L02.png",
+      "russian_words": 720,
+      "sha256": "8b5e35efbe09b2ead9f7813b29780d4fe1d27019ba3d8097f9a3eee92ae84ede",
+      "solution": "solutions/modules/M00.md"
+    },
+    {
+      "id": "M00-L03",
+      "path": "course/lessons/M00-L03.md",
+      "figure": "course/assets/M00-L03.png",
+      "russian_words": 679,
+      "sha256": "c208d6d351141282a7abca7d5a84c689ca8939a0d70bb1477ad81e02065dca29",
+      "solution": "solutions/modules/M00.md"
+    },
+    {
+      "id": "M00-L04",
+      "path": "course/lessons/M00-L04.md",
+      "figure": "course/assets/M00-L04.png",
+      "russian_words": 764,
+      "sha256": "78837d5430ef3d65be9667396e9a3040aacb989d14eb6ba9a1149f0dcf83975b",
+      "solution": "solutions/modules/M00.md"
+    },
+    {
+      "id": "M00-L05",
+      "path": "course/lessons/M00-L05.md",
+      "figure": "course/assets/M00-L05.png",
+      "russian_words": 735,
+      "sha256": "c04d2bd59bf6b1eb0fda2480fec17424a630d3be8455e1d8ba7243153cf374cb",
+      "solution": "solutions/modules/M00.md"
+    },
+    {
+      "id": "M01-L01",
+      "path": "course/lessons/M01-L01.md",
+      "figure": "course/assets/M01-L01.png",
+      "russian_words": 740,
+      "sha256": "9c534f0a295cb6460d1be149938827a93e29e1f6ef8fe35282fb11b6b9a4e4f2",
+      "solution": "solutions/modules/M01.md"
+    },
+    {
+      "id": "M01-L02",
+      "path": "course/lessons/M01-L02.md",
+      "figure": "course/assets/M01-L02.png",
+      "russian_words": 782,
+      "sha256": "4357f5c4675ba4224585ca07bde3b0123b96e8df052e2b5eaef978f3966989c0",
+      "solution": "solutions/modules/M01.md"
+    },
+    {
+      "id": "M01-L03",
+      "path": "course/lessons/M01-L03.md",
+      "figure": "course/assets/M01-L03.png",
+      "russian_words": 797,
+      "sha256": "05946323c9208edccf2a26c62b84117417c314f60d8bee33406178760630f10b",
+      "solution": "solutions/modules/M01.md"
+    },
+    {
+      "id": "M01-L04",
+      "path": "course/lessons/M01-L04.md",
+      "figure": "course/assets/M01-L04.png",
+      "russian_words": 723,
+      "sha256": "8ea154beab999e653e9ab22aca867564b9f11474d1720a1c9fe6c404904eebf2",
+      "solution": "solutions/modules/M01.md"
+    },
+    {
+      "id": "M01-L05",
+      "path": "course/lessons/M01-L05.md",
+      "figure": "course/assets/M01-L05.png",
+      "russian_words": 700,
+      "sha256": "4e1a615d22fa79e821957bd3aee5ada16c37461a809bea88ad0041fb67b9c388",
+      "solution": "solutions/modules/M01.md"
+    },
+    {
+      "id": "M02-L01",
+      "path": "course/lessons/M02-L01.md",
+      "figure": "course/assets/M02-L01.png",
+      "russian_words": 695,
+      "sha256": "9f51ab184afecdbc853da0e74601445e07b251f13d2597e6783bf3a001838c1e",
+      "solution": "solutions/modules/M02.md"
+    },
+    {
+      "id": "M02-L02",
+      "path": "course/lessons/M02-L02.md",
+      "figure": "course/assets/M02-L02.png",
+      "russian_words": 679,
+      "sha256": "dde29c13df4742ea8fd77b407484b657744040979b2ffb1df2f399a1b3a1fc73",
+      "solution": "solutions/modules/M02.md"
+    },
+    {
+      "id": "M02-L03",
+      "path": "course/lessons/M02-L03.md",
+      "figure": "course/assets/M02-L03.png",
+      "russian_words": 673,
+      "sha256": "5de0210fedf7ffa266f6288425a1f06730c597034519b31d01c54ffdd375f608",
+      "solution": "solutions/modules/M02.md"
+    },
+    {
+      "id": "M02-L04",
+      "path": "course/lessons/M02-L04.md",
+      "figure": "course/assets/M02-L04.png",
+      "russian_words": 672,
+      "sha256": "a20cb0d0971bf7f310df0b37cbd085924eade4674e838322d3a4de4ab1c0b32d",
+      "solution": "solutions/modules/M02.md"
+    },
+    {
+      "id": "M02-L05",
+      "path": "course/lessons/M02-L05.md",
+      "figure": "course/assets/M02-L05.png",
+      "russian_words": 669,
+      "sha256": "0c97795137df101742c096727eb383f4b69f0512abe848c5398450ec206b1428",
+      "solution": "solutions/modules/M02.md"
+    },
+    {
+      "id": "M03-L01",
+      "path": "course/lessons/M03-L01.md",
+      "figure": "course/assets/M03-L01.png",
+      "russian_words": 658,
+      "sha256": "403acd33649b8fb8315dd97d087b72d1b3797355c62071f1df72c217500120b8",
+      "solution": "solutions/modules/M03.md"
+    },
+    {
+      "id": "M03-L02",
+      "path": "course/lessons/M03-L02.md",
+      "figure": "course/assets/M03-L02.png",
+      "russian_words": 688,
+      "sha256": "01ecffe10f1684cd4ee10ef3997b7fc3d7c9deafb98beb24cac01747ec670e0b",
+      "solution": "solutions/modules/M03.md"
+    },
+    {
+      "id": "M03-L03",
+      "path": "course/lessons/M03-L03.md",
+      "figure": "course/assets/M03-L03.png",
+      "russian_words": 659,
+      "sha256": "dbec1a4dc4150ec3f21855b49ec455222a51501e53a9282105c23576f7aa5e64",
+      "solution": "solutions/modules/M03.md"
+    },
+    {
+      "id": "M03-L04",
+      "path": "course/lessons/M03-L04.md",
+      "figure": "course/assets/M03-L04.png",
+      "russian_words": 684,
+      "sha256": "bca7dfc8916edf585e7d7b27dcea7218326998e462fc14fb709f7954f3e6bc83",
+      "solution": "solutions/modules/M03.md"
+    },
+    {
+      "id": "M03-L05",
+      "path": "course/lessons/M03-L05.md",
+      "figure": "course/assets/M03-L05.png",
+      "russian_words": 662,
+      "sha256": "16bbed388147e007e1efc7d678139ba5e3c0e01e39042e510446f3458203b519",
+      "solution": "solutions/modules/M03.md"
+    },
+    {
+      "id": "M04-L01",
+      "path": "course/lessons/M04-L01.md",
+      "figure": "course/assets/M04-L01.png",
+      "russian_words": 716,
+      "sha256": "b938f2e4b56e31280fe9698d8b6c5459f087d54abad0792a64eacb998c8da2c3",
+      "solution": "solutions/modules/M04.md"
+    },
+    {
+      "id": "M04-L02",
+      "path": "course/lessons/M04-L02.md",
+      "figure": "course/assets/M04-L02.png",
+      "russian_words": 694,
+      "sha256": "bd92aa84c353cf3b71eb067abc9f4a46ab27e246dd1e5a29f4ca64b0873a653d",
+      "solution": "solutions/modules/M04.md"
+    },
+    {
+      "id": "M04-L03",
+      "path": "course/lessons/M04-L03.md",
+      "figure": "course/assets/M04-L03.png",
+      "russian_words": 681,
+      "sha256": "be33603213dc4e1dd53c053db986d57d14cd01a8117f40cca945125cfcd41924",
+      "solution": "solutions/modules/M04.md"
+    },
+    {
+      "id": "M04-L04",
+      "path": "course/lessons/M04-L04.md",
+      "figure": "course/assets/M04-L04.png",
+      "russian_words": 690,
+      "sha256": "4ea31eb65f3600c4dc87d3dd4fb46b199a395c03c201084399ba9d16f7e608ab",
+      "solution": "solutions/modules/M04.md"
+    },
+    {
+      "id": "M04-L05",
+      "path": "course/lessons/M04-L05.md",
+      "figure": "course/assets/M04-L05.png",
+      "russian_words": 713,
+      "sha256": "d76a930fec190b16af857f8c9527b35c0e8395d0b74deefe30e2901dcd186208",
+      "solution": "solutions/modules/M04.md"
+    },
+    {
+      "id": "M05-L01",
+      "path": "course/lessons/M05-L01.md",
+      "figure": "course/assets/M05-L01.png",
+      "russian_words": 657,
+      "sha256": "aa77e4e821e5243c974a488c1db5eea9cbbd3c3ba9814a10f4d347bd905efad6",
+      "solution": "solutions/modules/M05.md"
+    },
+    {
+      "id": "M05-L02",
+      "path": "course/lessons/M05-L02.md",
+      "figure": "course/assets/M05-L02.png",
+      "russian_words": 684,
+      "sha256": "e671bac39155e6be986d26f4160380ba1af2650314c6489126fdb4c71ce76091",
+      "solution": "solutions/modules/M05.md"
+    },
+    {
+      "id": "M05-L03",
+      "path": "course/lessons/M05-L03.md",
+      "figure": "course/assets/M05-L03.png",
+      "russian_words": 688,
+      "sha256": "6066dbb63f55459d52f12bd0caea0d0c742f5237db365388fcd7eccf77465ee0",
+      "solution": "solutions/modules/M05.md"
+    },
+    {
+      "id": "M05-L04",
+      "path": "course/lessons/M05-L04.md",
+      "figure": "course/assets/M05-L04.png",
+      "russian_words": 697,
+      "sha256": "ac896ba5c12639a033f92e156772457ff2566ba98e40321471287a5f71d7a942",
+      "solution": "solutions/modules/M05.md"
+    },
+    {
+      "id": "M05-L05",
+      "path": "course/lessons/M05-L05.md",
+      "figure": "course/assets/M05-L05.png",
+      "russian_words": 696,
+      "sha256": "35eb2834cf13ff8e8fa79199884e6077a3c29cbf6bdfdc5aa9eab700a7f304db",
+      "solution": "solutions/modules/M05.md"
+    }
+  ],
+  "labs": [
+    {
+      "module": "M00",
+      "path": "labs/M00/demo.py",
+      "readme": "labs/M00/README.md",
+      "result": "labs/M00/output/result.json",
+      "observed_seconds": 0.136,
+      "returncode": 0
+    },
+    {
+      "module": "M01",
+      "path": "labs/M01/demo.py",
+      "readme": "labs/M01/README.md",
+      "result": "labs/M01/output/result.json",
+      "observed_seconds": 1.148,
+      "returncode": 0
+    },
+    {
+      "module": "M02",
+      "path": "labs/M02/demo.py",
+      "readme": "labs/M02/README.md",
+      "result": "labs/M02/output/result.json",
+      "observed_seconds": 0.434,
+      "returncode": 0
+    },
+    {
+      "module": "M03",
+      "path": "labs/M03/demo.py",
+      "readme": "labs/M03/README.md",
+      "result": "labs/M03/output/result.json",
+      "observed_seconds": 0.405,
+      "returncode": 0
+    },
+    {
+      "module": "M04",
+      "path": "labs/M04/demo.py",
+      "readme": "labs/M04/README.md",
+      "result": "labs/M04/output/result.json",
+      "observed_seconds": 1.983,
+      "returncode": 0
+    },
+    {
+      "module": "M05",
+      "path": "labs/M05/demo.py",
+      "readme": "labs/M05/README.md",
+      "result": "labs/M05/output/result.json",
+      "observed_seconds": 3.411,
+      "returncode": 0
+    }
+  ],
+  "figure_count": 30,
+  "figure_generator": ".authoring/foundations_visuals.py",
+  "versions": {
+    "python": "3.11.9",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "sources": [
+    {
+      "url": "https://developers.google.com/machine-learning/crash-course/linear-regression",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://developers.google.com/machine-learning/crash-course/linear-regression/gradient-descent",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://developers.google.com/machine-learning/crash-course/linear-regression/hyperparameters",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://developers.google.com/machine-learning/crash-course/linear-regression/loss",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://developers.google.com/machine-learning/crash-course/llm",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://developers.google.com/machine-learning/crash-course/production-ml-systems",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://developers.google.com/machine-learning/intro-to-ml",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats._result_classes.BinomTestResult.proportion_ci.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binomtest.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://docs.scipy.org/doc/scipy/tutorial/stats/discrete.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.matmul.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.var.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://numpy.org/doc/stable/user/absolute_beginners.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://pandas.pydata.org/docs/user_guide/missing_data.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/modules/ensemble.html#gradient-boosting",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression-and-classification",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/modules/preprocessing.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    },
+    {
+      "url": "https://www.sqlite.org/lang_select.html",
+      "verification": "opened primary documentation with web tool",
+      "date": "2026-11-03"
+    }
+  ],
+  "observed_verification": {
+    "command": ".venv\\Scripts\\python.exe tools\\check_foundations.py",
+    "passed": 60,
+    "failures": [],
+    "log": "metadata/foundations-verification.json"
+  },
+  "visual_review": {
+    "method": "rendered PNGs and contact sheets; representative full-size plots inspected",
+    "contact_sheets": [
+      ".authoring/foundation-qa/contact-1.jpg",
+      ".authoring/foundation-qa/contact-2.jpg"
+    ]
+  },
+  "limits": [
+    "Synthetic toy experiments do not establish real interview quality.",
+    "Author execution does not certify learner independence.",
+    "No paid API, GPU, network download, or external dataset is required for M00-M05."
+  ]
+}

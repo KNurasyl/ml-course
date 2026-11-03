@@ -9,7 +9,7 @@
     ],
     "status": "authored",
     "source": "https://developers.google.com/machine-learning/crash-course/linear-regression",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "learning_mode": "self_study",
     "lesson": "course/pilot/P01.md"
   },
@@ -23,7 +23,7 @@
     ],
     "status": "authored",
     "source": "https://developers.google.com/machine-learning/crash-course/linear-regression/loss",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "learning_mode": "self_study",
     "lesson": "course/pilot/P02.md"
   },
@@ -37,7 +37,7 @@
     ],
     "status": "authored",
     "source": "https://scikit-learn.org/stable/common_pitfalls.html",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "learning_mode": "self_study",
     "lesson": "course/pilot/P03.md"
   },
@@ -51,7 +51,7 @@
     ],
     "status": "authored",
     "source": "https://numpy.org/doc/stable/user/absolute_beginners.html",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "learning_mode": "self_study",
     "lesson": "course/pilot/P04.md"
   },
@@ -65,7 +65,7 @@
     ],
     "status": "authored",
     "source": "https://docs.python.org/3/library/http.server.html",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "learning_mode": "self_study",
     "lesson": "course/pilot/P05.md"
   },
@@ -79,7 +79,7 @@
     ],
     "status": "authored",
     "source": "https://developers.google.com/machine-learning/glossary",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "learning_mode": "self_study",
     "lesson": "course/pilot/P06.md"
   },
@@ -93,7 +93,7 @@
     ],
     "status": "authored",
     "source": "https://developers.google.com/machine-learning/crash-course/linear-regression/gradient-descent",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "learning_mode": "self_study",
     "lesson": "course/pilot/P07.md"
   },
@@ -107,7 +107,7 @@
     ],
     "status": "authored",
     "source": "https://developers.google.com/machine-learning/crash-course/linear-regression/hyperparameters",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "learning_mode": "self_study",
     "lesson": "course/pilot/P08.md"
   },
@@ -121,7 +121,7 @@
     ],
     "status": "authored",
     "source": "https://scikit-learn.org/stable/common_pitfalls.html",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "learning_mode": "self_study",
     "lesson": "course/pilot/P09.md"
   },
@@ -135,7 +135,7 @@
     ],
     "status": "authored",
     "source": "https://scikit-learn.org/stable/model_selection.html",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "learning_mode": "self_study",
     "lesson": "course/pilot/P10.md"
   }

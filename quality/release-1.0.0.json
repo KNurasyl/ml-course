@@ -1,0 +1,377 @@
+{
+  "version": "1.0.0",
+  "verified_on": "2026-11-03",
+  "material_status": "complete_self_study_materials",
+  "counts": {
+    "modules": 17,
+    "lessons": 85,
+    "static_figures": 85,
+    "interactive_figures": 17,
+    "reader_sections": 139,
+    "module_homeworks": 17,
+    "pilot_sessions": 10,
+    "notebooks": 20
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "execution": "CPU",
+    "fresh_environment": ".venv-full-verify",
+    "dependency_lock": "requirements.lock.txt",
+    "clean_install": "passed",
+    "pip_check": "passed"
+  },
+  "checks": {
+    "pytest": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "99",
+      "time": "35.295",
+      "timestamp": "2026-11-03T13:29:10.584945+05:00",
+      "hostname": "Nurassyl",
+      "report": "artifacts/tests-1.0.xml"
+    },
+    "labs": {
+      "results": [
+        {
+          "module": "M00",
+          "exit_code": 0,
+          "seconds": 0.113,
+          "log": "artifacts/lab-runs/M00.log"
+        },
+        {
+          "module": "M01",
+          "exit_code": 0,
+          "seconds": 1.154,
+          "log": "artifacts/lab-runs/M01.log"
+        },
+        {
+          "module": "M02",
+          "exit_code": 0,
+          "seconds": 0.368,
+          "log": "artifacts/lab-runs/M02.log"
+        },
+        {
+          "module": "M03",
+          "exit_code": 0,
+          "seconds": 0.368,
+          "log": "artifacts/lab-runs/M03.log"
+        },
+        {
+          "module": "M04",
+          "exit_code": 0,
+          "seconds": 2.189,
+          "log": "artifacts/lab-runs/M04.log"
+        },
+        {
+          "module": "M05",
+          "exit_code": 0,
+          "seconds": 4.076,
+          "log": "artifacts/lab-runs/M05.log"
+        },
+        {
+          "module": "M06",
+          "exit_code": 0,
+          "seconds": 0.136,
+          "log": "artifacts/lab-runs/M06.log"
+        },
+        {
+          "module": "M07",
+          "exit_code": 0,
+          "seconds": 21.363,
+          "log": "artifacts/lab-runs/M07.log"
+        },
+        {
+          "module": "M08",
+          "exit_code": 0,
+          "seconds": 8.358,
+          "log": "artifacts/lab-runs/M08.log"
+        },
+        {
+          "module": "M09",
+          "exit_code": 0,
+          "seconds": 22.631,
+          "log": "artifacts/lab-runs/M09.log"
+        },
+        {
+          "module": "M10",
+          "exit_code": 0,
+          "seconds": 19.821,
+          "log": "artifacts/lab-runs/M10.log"
+        },
+        {
+          "module": "M11",
+          "exit_code": 0,
+          "seconds": 39.484,
+          "log": "artifacts/lab-runs/M11.log"
+        },
+        {
+          "module": "M12",
+          "exit_code": 0,
+          "seconds": 17.939,
+          "log": "artifacts/lab-runs/M12.log"
+        },
+        {
+          "module": "M13",
+          "exit_code": 0,
+          "seconds": 0.777,
+          "log": "artifacts/lab-runs/M13.log"
+        },
+        {
+          "module": "M14",
+          "exit_code": 0,
+          "seconds": 0.526,
+          "log": "artifacts/lab-runs/M14.log"
+        },
+        {
+          "module": "M15",
+          "exit_code": 0,
+          "seconds": 10.016,
+          "log": "artifacts/lab-runs/M15.log"
+        },
+        {
+          "module": "M16",
+          "exit_code": 0,
+          "seconds": 0.352,
+          "log": "artifacts/lab-runs/M16.log"
+        }
+      ],
+      "passed": true,
+      "learner_mastery": "not_assessed"
+    },
+    "notebooks": {
+      "executed": 20,
+      "report": "artifacts/notebook-validation.json"
+    },
+    "local_links_and_curriculum": "tools/validate_course.py --require-local: errors=[]",
+    "reader_source_sha256": "230ce57daea4db1ccffce8a4fa779a28e830c121c193b6ed58936d559f14e37b",
+    "ml_lesson_blocks": {
+      "count": 30,
+      "passed": true,
+      "report": "artifacts/ml-lesson-examples.json"
+    },
+    "foundation_examples_and_labs": "metadata/foundations-verification.json",
+    "ops_examples_and_labs": "metadata/production-ops-voice.json"
+  },
+  "browser": {
+    "reader_offline": true,
+    "desktop": "1440x1000",
+    "mobile": "390x844",
+    "navigation_search_solutions": "passed",
+    "embedded_visual_slider": "passed",
+    "visual_controls": [
+      {
+        "id": "M00",
+        "changes": true,
+        "svg": 110,
+        "overflow": false
+      },
+      {
+        "id": "M01",
+        "changes": true,
+        "svg": 73,
+        "overflow": false
+      },
+      {
+        "id": "M02",
+        "changes": true,
+        "svg": 5,
+        "overflow": false
+      },
+      {
+        "id": "M03",
+        "changes": true,
+        "svg": 23,
+        "overflow": false
+      },
+      {
+        "id": "M04",
+        "changes": true,
+        "svg": 5,
+        "overflow": false
+      },
+      {
+        "id": "M05",
+        "changes": true,
+        "svg": 25,
+        "overflow": false
+      },
+      {
+        "id": "M06",
+        "changes": true,
+        "svg": 8,
+        "overflow": false
+      },
+      {
+        "id": "M07",
+        "changes": true,
+        "svg": 8,
+        "overflow": false
+      },
+      {
+        "id": "M08",
+        "changes": true,
+        "svg": 9,
+        "overflow": false
+      },
+      {
+        "id": "M09",
+        "changes": true,
+        "svg": 9,
+        "overflow": false
+      },
+      {
+        "id": "M10",
+        "changes": true,
+        "svg": 12,
+        "overflow": false
+      },
+      {
+        "id": "M11",
+        "changes": true,
+        "svg": 24,
+        "overflow": false
+      },
+      {
+        "id": "M12",
+        "changes": true,
+        "svg": 8,
+        "overflow": false
+      },
+      {
+        "id": "M13",
+        "changes": true,
+        "svg": 9,
+        "overflow": false
+      },
+      {
+        "id": "M14",
+        "changes": true,
+        "svg": 11,
+        "overflow": false
+      },
+      {
+        "id": "M15",
+        "changes": true,
+        "svg": 5,
+        "overflow": false
+      },
+      {
+        "id": "M16",
+        "changes": true,
+        "svg": 9,
+        "overflow": false
+      }
+    ],
+    "numerical_checks": [
+      {
+        "id": "M03",
+        "value": 1,
+        "pass": true,
+        "text": "w10=0.0000, L(w10)=9.0000.\nГрадиент=2(w−3). Сходимость при 0<η<1; η=1 даёт колебания."
+      },
+      {
+        "id": "M02",
+        "value": 90,
+        "pass": true,
+        "text": "u·v = cos θ = 0.000.\nПри одинаковых единичных длинах меняется только направление."
+      },
+      {
+        "id": "M04",
+        "value": 144,
+        "pass": true,
+        "text": "SE = σ/√n = 0.167.\n95% интервал: [4.67, 5.33]. Повторные интервалы покрывают фиксированное μ в 95% выборок при допущениях."
+      },
+      {
+        "id": "M05",
+        "value": 1,
+        "pass": true,
+        "text": "TP=0, FP=0, FN=4, TN=4\nPrecision=не определено (нет + прогнозов), recall=0.00. Решение положительное при score ≥ порога."
+      },
+      {
+        "id": "M09",
+        "value": 2400,
+        "pass": true,
+        "text": "Всего зарезервировано 4112 / 4096 токенов.\nПревышение 16. Резерв ответа вычитается до отправки prompt."
+      },
+      {
+        "id": "M12",
+        "value": 32,
+        "pass": true,
+        "text": "Полная матрица: 4096 параметров. Адаптер: 4096.\nДоля обучаемых параметров от полной W: 100.0%. Базовые веса по-прежнему хранятся в памяти."
+      },
+      {
+        "id": "M13",
+        "value": 25,
+        "pass": true,
+        "text": "Общая доля ошибок: 3.00%.\nПравило: откат при >3%. Решение: порог не превышен. Среднее может скрыть плохую новую версию."
+      }
+    ],
+    "visual_bounds": [
+      {
+        "mid": "M00",
+        "value": -2,
+        "oob": []
+      },
+      {
+        "mid": "M00",
+        "value": 4,
+        "oob": []
+      },
+      {
+        "mid": "M02",
+        "value": 90,
+        "oob": []
+      },
+      {
+        "mid": "M07",
+        "value": 0.5,
+        "oob": []
+      }
+    ],
+    "reference_real_llm_and_speech": {
+      "backend": "artifacts/reference-backend-session.json",
+      "hr": "artifacts/reference-hr-session.json",
+      "speech": "artifacts/M15/report.json",
+      "microphone_scope": "Browser fake audio device supplied a real synthetic SAPI WAV; no participant microphone pilot"
+    },
+    "recovery_ui": {
+      "scope": "UI state tests with explicit FakeModel; actual LLM evidence is separate",
+      "recoveredFinished": true,
+      "history": 4,
+      "stopVisible": true,
+      "wavBytes": 3840044
+    }
+  },
+  "models": {
+    "llm": {
+      "repo_id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "path": "models/Qwen2.5-0.5B-Instruct",
+      "license": "Apache-2.0"
+    },
+    "speech": {
+      "name": "vosk-model-small-ru-0.22",
+      "license": "Apache-2.0",
+      "url": "https://alphacephei.com/vosk/models/vosk-model-small-ru-0.22.zip",
+      "archive_sha256": "961d5ff98a17f4aa6de69864d0aa71fa5bac682301d2b5d17a3f24c5c99a46d4"
+    },
+    "tts": {
+      "engine": "Windows System.Speech",
+      "voice": "Microsoft Irina Desktop"
+    }
+  },
+  "limitations": [
+    "Personal learner pilot not conducted; no mastery states or professional grade inferred.",
+    "Qwen feedback exhibited hallucinated details and truncation; latency depends on available RAM and concurrent load.",
+    "SmolLM JSON and citation failures are measured, not replaced with canned answers.",
+    "English MiniLM and SmolLM do not establish Russian interview quality.",
+    "Docker and streaming ASR/VAD are optional extensions; the reference uses whole-turn ASR and button cancellation.",
+    "Technical UI recovery tests use FakeModel; real local generation is checked separately."
+  ],
+  "learner_mastery": "not_assessed",
+  "personal_calibration": "awaiting_real_attempts",
+  "career_readiness": "not_assessed"
+}

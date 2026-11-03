@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "version": "0.2.0",
+  "version": "1.0.0",
   "language": "ru",
-  "status": "designed",
+  "status": "materials_authored",
   "created_on": "2026-11-03",
   "title": "Персональный курс ML и LLM инженерии",
   "profile": {
@@ -26,7 +26,7 @@
     }
   },
   "prerequisite_policy": "Lesson prerequisites are authoritative gates; module prerequisites describe the broad route. Introductory lessons can be used in the pilot before completing a module.",
-  "development_note": "Полная структурная программа; локальные файлы модулей содержат паспорт и вводный черновик. Готовый первый цикл P01–P10 проходится самостоятельно. Реальные результаты ещё не внесены.",
+  "development_note": "Все 85 уроков подготовлены для самостоятельного прохождения по новому запросу пользователя. Материалы, реальные результаты ученика и персональная калибровка учитываются отдельно.",
   "pilot_lesson_map": {
     "P01": [
       "M00-L01"
@@ -98,7 +98,7 @@
           "assessment": "Новый вход обработан правильно; названы вход и результат.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M00-L02",
@@ -113,7 +113,7 @@
           "assessment": "Объяснить, почему сохранение истории запросов само по себе не меняет параметры.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M00-L03",
@@ -128,7 +128,7 @@
           "assessment": "Расчёт ошибки проверяем; выбор кандидата основан на указанной мере.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M00-L04",
@@ -143,7 +143,7 @@
           "assessment": "На новом сценарии отделить новое сообщение, новый документ и изменение весов.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M00-L05",
@@ -160,7 +160,7 @@
           "assessment": "Для каждого блока назвать вход, выход и один сбой; предложить наблюдение, которое выявит сбой.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -191,7 +191,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -228,7 +228,7 @@
           "assessment": "Найти ошибку формы в новом примере, объяснив ожидаемое число объектов и признаков.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M01-L02",
@@ -243,7 +243,7 @@
           "assessment": "Предложить обоснованную обработку двух разных типов пропусков, сохранив исходные данные.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M01-L03",
@@ -258,7 +258,7 @@
           "assessment": "Найти случай, когда случайное разбиение даёт неподходящую проверку.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M01-L04",
@@ -273,7 +273,7 @@
           "assessment": "Обнаружить размножение строк из-за связи многие-ко-многим и объяснить его влияние на эксперимент.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M01-L05",
@@ -291,7 +291,7 @@
           "assessment": "Повторить запуск на чистой копии данных и получить тот же результат без ручных действий в ноутбуке.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -326,7 +326,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -363,7 +363,7 @@
           "assessment": "Объяснить, почему складывать несовместимые единицы без преобразования бессмысленно.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M02-L02",
@@ -378,7 +378,7 @@
           "assessment": "Объяснить отличие величины вектора от его направления на новом примере.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M02-L03",
@@ -393,7 +393,7 @@
           "assessment": "Проверить совместимость размеров и объяснить смысл каждой оси.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M02-L04",
@@ -408,7 +408,7 @@
           "assessment": "Обработать нулевой вектор и объяснить, почему косинусное сходство не определяет истинность текста.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M02-L05",
@@ -425,7 +425,7 @@
           "assessment": "Объяснить один неудачный результат через представление данных, а не через название алгоритма.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -460,7 +460,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -498,7 +498,7 @@
           "assessment": "Объяснить приближение и эффект слишком большого или слишком малого приращения.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M03-L02",
@@ -513,7 +513,7 @@
           "assessment": "Показать роль множителя x и проверить знак производной численно.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M03-L03",
@@ -529,7 +529,7 @@
           "assessment": "На новом наборе обнаружить пропущенный множитель или неверное усреднение.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M03-L04",
@@ -544,7 +544,7 @@
           "assessment": "Различить медленное уменьшение ошибки, устойчивый ход и расходимость по измерениям.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M03-L05",
@@ -561,7 +561,7 @@
           "assessment": "Объяснить, что именно изменилось в целевой функции и почему оптимум может сдвинуться.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -596,7 +596,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -633,7 +633,7 @@
           "assessment": "Объяснить различие знаменателей и роль базовой частоты.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M04-L02",
@@ -648,7 +648,7 @@
           "assessment": "Выбрать характеристику для конкретного вопроса и объяснить её ограничения.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M04-L03",
@@ -663,7 +663,7 @@
           "assessment": "Различить одинаковую точечную оценку и разную уверенность при разных объёмах данных.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M04-L04",
@@ -679,7 +679,7 @@
           "assessment": "Указать единицу повторной выборки и объяснить, почему зависимые записи нельзя свободно перемешивать.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M04-L05",
@@ -696,7 +696,7 @@
           "assessment": "Разобрать случай с малым p-value, но практически незначительным улучшением; назвать угрозу многократных проверок.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -731,7 +731,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -771,7 +771,7 @@
           "assessment": "Объяснить, почему выбранная метрика соответствует поставленной задаче.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M05-L02",
@@ -787,7 +787,7 @@
           "assessment": "Интерпретировать результат на примере с другим распределением признаков.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M05-L03",
@@ -802,7 +802,7 @@
           "assessment": "Показать, как ограничение сложности меняет train и validation результат.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M05-L04",
@@ -818,7 +818,7 @@
           "assessment": "Найти утечку в новом кейсе с повторными записями и устранить её.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M05-L05",
@@ -835,7 +835,7 @@
           "assessment": "Выбрать следующий эксперимент и описать результат, который опровергнет гипотезу.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -870,7 +870,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -908,7 +908,7 @@
           "assessment": "Отделить измеренное требование от предположения и предложить способ проверки.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M06-L02",
@@ -923,7 +923,7 @@
           "assessment": "Объяснить, как избежать смешивания версий преобразований и модели.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M06-L03",
@@ -939,7 +939,7 @@
           "assessment": "Защитить выбор через свежесть, задержку, цену вычислений и сложность эксплуатации.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M06-L04",
@@ -954,7 +954,7 @@
           "assessment": "Различить техническую доступность и полезность предсказаний.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M06-L05",
@@ -971,7 +971,7 @@
           "assessment": "Показать проверяемый план восстановления с известной рабочей версией.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -1006,7 +1006,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -1047,7 +1047,7 @@
           "assessment": "Объяснить, что меняется при добавлении нелинейной активации.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M07-L02",
@@ -1062,7 +1062,7 @@
           "assessment": "Объяснить накопление градиентов и момент их обнуления.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M07-L03",
@@ -1077,7 +1077,7 @@
           "assessment": "Исправить цикл с пропущенным обнулением или неправильным режимом работы.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M07-L04",
@@ -1092,7 +1092,7 @@
           "assessment": "Предложить проверку причины сбоя до случайной замены архитектуры.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M07-L05",
@@ -1109,7 +1109,7 @@
           "assessment": "Доказать согласованность модели и preprocessing на контрольных входах.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -1144,7 +1144,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -1181,7 +1181,7 @@
           "assessment": "Объяснить, почему длина строки в символах не равна числу токенов.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M08-L02",
@@ -1196,7 +1196,7 @@
           "assessment": "Различить индекс токена, обучаемое представление и значение сходства.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M08-L03",
@@ -1211,7 +1211,7 @@
           "assessment": "Проверить формы Q, K, V и объяснить нормализацию весов.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M08-L04",
@@ -1226,7 +1226,7 @@
           "assessment": "На новом примере показать, какую утечку создаёт доступ к будущему токену.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M08-L05",
@@ -1243,7 +1243,7 @@
           "assessment": "Объяснить выбор цели, разделение корпуса и ограничения сгенерированного текста.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -1278,7 +1278,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -1315,7 +1315,7 @@
           "assessment": "Объяснить, почему один и тот же текст при разных шаблонах может давать разные результаты.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M09-L02",
@@ -1330,7 +1330,7 @@
           "assessment": "Выбрать, что удалить или сжать при превышении бюджета, сохранив назначение диалога.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M09-L03",
@@ -1345,7 +1345,7 @@
           "assessment": "Отделить наблюдаемое изменение поведения от предположения об улучшении.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M09-L04",
@@ -1360,7 +1360,7 @@
           "assessment": "Объяснить различие памяти весов, промежуточных вычислений и контекста; предложить облегчённый запуск.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M09-L05",
@@ -1377,7 +1377,7 @@
           "assessment": "Показать поведение приложения при пустом ответе, таймауте и нарушении формата.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -1412,7 +1412,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -1452,7 +1452,7 @@
           "assessment": "Показать случай, когда граница фрагмента разрушает необходимый контекст.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M10-L02",
@@ -1467,7 +1467,7 @@
           "assessment": "Объяснить промах по словам и промах по смысловой близости на конкретных примерах.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M10-L03",
@@ -1482,7 +1482,7 @@
           "assessment": "Указать, на каких запросах этап помог, а на каких увеличил стоимость без пользы.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M10-L04",
@@ -1497,7 +1497,7 @@
           "assessment": "Обнаружить ссылку на существующий документ, который не подтверждает конкретный вывод.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M10-L05",
@@ -1514,7 +1514,7 @@
           "assessment": "Предложить изменение в правильном компоненте и способ проверить его эффект.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -1549,7 +1549,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -1588,7 +1588,7 @@
           "assessment": "Выбрать критерии для конкретной функции тренажёра и объяснить исключённые критерии.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M11-L02",
@@ -1603,7 +1603,7 @@
           "assessment": "Объяснить, как набор отделён от примеров настройки.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M11-L03",
@@ -1618,7 +1618,7 @@
           "assessment": "Оценить два разных хороших ответа без требования одной дословной формулировки.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M11-L04",
@@ -1633,7 +1633,7 @@
           "assessment": "Найти пример уверенной, но неправильной оценки и предложить ограничение автоматизации.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M11-L05",
@@ -1650,7 +1650,7 @@
           "assessment": "Сформулировать решение о выпуске с явными ограничениями данных.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -1685,7 +1685,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -1726,7 +1726,7 @@
           "assessment": "Обосновать, почему для конкретной проблемы подходит обучение, prompt или поиск.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M12-L02",
@@ -1741,7 +1741,7 @@
           "assessment": "Обнаружить утечку между обучением и оцениванием через почти одинаковые диалоги.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M12-L03",
@@ -1756,7 +1756,7 @@
           "assessment": "Объяснить objective, обновляемые параметры и пределы этого эксперимента.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M12-L04",
@@ -1771,7 +1771,7 @@
           "assessment": "Посчитать долю обучаемых параметров и проверить, какие веса действительно изменились.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M12-L05",
@@ -1788,7 +1788,7 @@
           "assessment": "Защитить вывод о пользе либо отказе от адаптации с учётом регрессий и стоимости.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -1823,7 +1823,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -1864,7 +1864,7 @@
           "assessment": "Воспроизвести известный результат по идентификатору версии.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M13-L02",
@@ -1879,7 +1879,7 @@
           "assessment": "Запустить сервис из чистого окружения без скрытых ручных зависимостей.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M13-L03",
@@ -1894,7 +1894,7 @@
           "assessment": "Различить поломку API, численный дефект и ухудшение качества ответа.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M13-L04",
@@ -1909,7 +1909,7 @@
           "assessment": "Найти узкий компонент по измерениям, а не по общей длительности запроса.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M13-L05",
@@ -1926,7 +1926,7 @@
           "assessment": "Подтвердить восстановление контрольными запросами и описать причину отказа.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -1961,7 +1961,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -2002,7 +2002,7 @@
           "assessment": "Обосновать пользу или отказ от автономного выбора через измерения.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M14-L02",
@@ -2017,7 +2017,7 @@
           "assessment": "Показать корректный отказ на неизвестной теме и неверном типе аргумента.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M14-L03",
@@ -2032,7 +2032,7 @@
           "assessment": "Найти случай смешивания двух сессий и доказать устранение.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M14-L04",
@@ -2047,7 +2047,7 @@
           "assessment": "Остановить цикл на новом сбойном сценарии с понятным итогом.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M14-L05",
@@ -2064,7 +2064,7 @@
           "assessment": "Разобрать инструкцию из найденного документа как недоверенные данные, а не разрешение на действие.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -2099,7 +2099,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -2138,7 +2138,7 @@
           "assessment": "Обнаружить несогласованность формата без подмены её ошибкой языковой модели.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M15-L02",
@@ -2153,7 +2153,7 @@
           "assessment": "Посчитать ошибки по явному правилу нормализации текста и разобрать потерянное отрицание.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M15-L03",
@@ -2168,7 +2168,7 @@
           "assessment": "Различить задержку до первого звука и общую длительность ответа.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M15-L04",
@@ -2183,7 +2183,7 @@
           "assessment": "Проверить, что после перебивания не звучит продолжение отменённого ответа.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M15-L05",
@@ -2200,7 +2200,7 @@
           "assessment": "Локализовать ошибку по этапу и предложить проверяемое улучшение.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -2235,7 +2235,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     },
     {
@@ -2276,7 +2276,7 @@
           "assessment": "Проверить два разных допустимых ответа и один уверенный, но неверный технический ответ.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M16-L02",
@@ -2291,7 +2291,7 @@
           "assessment": "Разобрать расхождения качества текста и голоса без усреднения важных ошибок.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M16-L03",
@@ -2306,7 +2306,7 @@
           "assessment": "Показать исправление хотя бы одного наблюдаемого дефекта; не выдавать искусственный прогон за пользовательский пилот.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M16-L04",
@@ -2321,7 +2321,7 @@
           "assessment": "Адаптировать решение и проверить гипотезу на новом сценарии.",
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         },
         {
           "id": "M16-L05",
@@ -2338,7 +2338,7 @@
           "assessment": "Решить новую небольшую задачу без готового решения и отделить учебный опыт от коммерческого.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "designed"
+          "status": "materials_ready"
         }
       ],
       "homework": {
@@ -2373,7 +2373,7 @@
         }
       ],
       "status": "designed",
-      "material_status": "introductory_draft",
+      "material_status": "ready",
       "learner_status": "not_assessed"
     }
   ],

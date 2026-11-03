@@ -1,0 +1,1177 @@
+{
+  "created_on": "2026-11-03",
+  "scope": "M06-M11",
+  "lessons": [
+    {
+      "id": "M06-L01",
+      "path": "course/lessons/M06-L01.md",
+      "words": 908
+    },
+    {
+      "id": "M06-L02",
+      "path": "course/lessons/M06-L02.md",
+      "words": 920
+    },
+    {
+      "id": "M06-L03",
+      "path": "course/lessons/M06-L03.md",
+      "words": 879
+    },
+    {
+      "id": "M06-L04",
+      "path": "course/lessons/M06-L04.md",
+      "words": 862
+    },
+    {
+      "id": "M06-L05",
+      "path": "course/lessons/M06-L05.md",
+      "words": 878
+    },
+    {
+      "id": "M07-L01",
+      "path": "course/lessons/M07-L01.md",
+      "words": 906
+    },
+    {
+      "id": "M07-L02",
+      "path": "course/lessons/M07-L02.md",
+      "words": 876
+    },
+    {
+      "id": "M07-L03",
+      "path": "course/lessons/M07-L03.md",
+      "words": 1139
+    },
+    {
+      "id": "M07-L04",
+      "path": "course/lessons/M07-L04.md",
+      "words": 880
+    },
+    {
+      "id": "M07-L05",
+      "path": "course/lessons/M07-L05.md",
+      "words": 1172
+    },
+    {
+      "id": "M08-L01",
+      "path": "course/lessons/M08-L01.md",
+      "words": 949
+    },
+    {
+      "id": "M08-L02",
+      "path": "course/lessons/M08-L02.md",
+      "words": 915
+    },
+    {
+      "id": "M08-L03",
+      "path": "course/lessons/M08-L03.md",
+      "words": 931
+    },
+    {
+      "id": "M08-L04",
+      "path": "course/lessons/M08-L04.md",
+      "words": 941
+    },
+    {
+      "id": "M08-L05",
+      "path": "course/lessons/M08-L05.md",
+      "words": 897
+    },
+    {
+      "id": "M09-L01",
+      "path": "course/lessons/M09-L01.md",
+      "words": 898
+    },
+    {
+      "id": "M09-L02",
+      "path": "course/lessons/M09-L02.md",
+      "words": 898
+    },
+    {
+      "id": "M09-L03",
+      "path": "course/lessons/M09-L03.md",
+      "words": 898
+    },
+    {
+      "id": "M09-L04",
+      "path": "course/lessons/M09-L04.md",
+      "words": 934
+    },
+    {
+      "id": "M09-L05",
+      "path": "course/lessons/M09-L05.md",
+      "words": 886
+    },
+    {
+      "id": "M10-L01",
+      "path": "course/lessons/M10-L01.md",
+      "words": 932
+    },
+    {
+      "id": "M10-L02",
+      "path": "course/lessons/M10-L02.md",
+      "words": 903
+    },
+    {
+      "id": "M10-L03",
+      "path": "course/lessons/M10-L03.md",
+      "words": 973
+    },
+    {
+      "id": "M10-L04",
+      "path": "course/lessons/M10-L04.md",
+      "words": 909
+    },
+    {
+      "id": "M10-L05",
+      "path": "course/lessons/M10-L05.md",
+      "words": 914
+    },
+    {
+      "id": "M11-L01",
+      "path": "course/lessons/M11-L01.md",
+      "words": 906
+    },
+    {
+      "id": "M11-L02",
+      "path": "course/lessons/M11-L02.md",
+      "words": 876
+    },
+    {
+      "id": "M11-L03",
+      "path": "course/lessons/M11-L03.md",
+      "words": 907
+    },
+    {
+      "id": "M11-L04",
+      "path": "course/lessons/M11-L04.md",
+      "words": 874
+    },
+    {
+      "id": "M11-L05",
+      "path": "course/lessons/M11-L05.md",
+      "words": 887
+    }
+  ],
+  "figures": [
+    "course/assets/M06-L01.svg",
+    "course/assets/M06-L02.svg",
+    "course/assets/M06-L03.svg",
+    "course/assets/M06-L04.svg",
+    "course/assets/M06-L05.svg",
+    "course/assets/M07-L01.svg",
+    "course/assets/M07-L02.svg",
+    "course/assets/M07-L03.svg",
+    "course/assets/M07-L04.svg",
+    "course/assets/M07-L05.svg",
+    "course/assets/M08-L01.svg",
+    "course/assets/M08-L02.svg",
+    "course/assets/M08-L03.svg",
+    "course/assets/M08-L04.svg",
+    "course/assets/M08-L05.svg",
+    "course/assets/M09-L01.svg",
+    "course/assets/M09-L02.svg",
+    "course/assets/M09-L03.svg",
+    "course/assets/M09-L04.svg",
+    "course/assets/M09-L05.svg",
+    "course/assets/M10-L01.svg",
+    "course/assets/M10-L02.svg",
+    "course/assets/M10-L03.svg",
+    "course/assets/M10-L04.svg",
+    "course/assets/M10-L05.svg",
+    "course/assets/M11-L01.svg",
+    "course/assets/M11-L02.svg",
+    "course/assets/M11-L03.svg",
+    "course/assets/M11-L04.svg",
+    "course/assets/M11-L05.svg"
+  ],
+  "labs": [
+    "labs/M06/demo.py",
+    "labs/M07/demo.py",
+    "labs/M08/demo.py",
+    "labs/M09/demo.py",
+    "labs/M10/demo.py",
+    "labs/M11/demo.py"
+  ],
+  "sources": [
+    "https://arxiv.org/abs/1706.03762",
+    "https://arxiv.org/abs/2005.11401",
+    "https://arxiv.org/abs/2306.05685",
+    "https://developers.google.com/machine-learning/guides/rules-of-ml",
+    "https://docs.pytorch.org/tutorials/beginner/basics/autogradqs_tutorial.html",
+    "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
+    "https://docs.pytorch.org/tutorials/beginner/basics/saveloadrun_tutorial.html",
+    "https://github.com/ggml-org/llama.cpp",
+    "https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct",
+    "https://huggingface.co/docs/transformers/chat_templating",
+    "https://huggingface.co/docs/transformers/main_classes/text_generation",
+    "https://huggingface.co/learn/llm-course/ru/chapter1/1",
+    "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+    "https://sbert.net/examples/sentence_transformer/applications/semantic-search/README.html",
+    "https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction",
+    "https://scikit-learn.org/stable/modules/model_evaluation.html",
+    "https://stanford-cs329s.github.io/"
+  ],
+  "actual_verification": [
+    {
+      "module": "M06",
+      "command": ".\\.venv\\Scripts\\python.exe labs\\M06\\demo.py",
+      "status": "executed_successfully",
+      "report": "artifacts/M06/report.json",
+      "observed": {
+        "stable_prediction": 7.0,
+        "broken_prediction": 4.0,
+        "restored_prediction": 7.0,
+        "queue_latencies": [
+          2.0,
+          3.0,
+          4.0,
+          5.0
+        ],
+        "logical_turns": 1,
+        "events": [
+          {
+            "event": "activated",
+            "release_id": "release-broken",
+            "control": 4.0
+          },
+          {
+            "event": "rolled_back",
+            "release_id": "release-A",
+            "control": 7.0
+          }
+        ]
+      }
+    },
+    {
+      "module": "M07",
+      "command": ".\\.venv\\Scripts\\python.exe labs\\M07\\demo.py",
+      "status": "executed_successfully",
+      "report": "artifacts/M07/report.json",
+      "observed": {
+        "train_n": 600,
+        "validation_n": 200,
+        "test_n": 200,
+        "best_epoch": 110,
+        "mlp_test_accuracy": 0.9750000238418579,
+        "logistic_test_accuracy": 0.835,
+        "first_train_loss": 0.5792699456214905,
+        "last_train_loss": 0.08725649118423462,
+        "fresh_process": {
+          "fresh_process_max_abs_error": 0.0
+        },
+        "gradient_w": -8.0,
+        "gradient_b": -4.0
+      }
+    },
+    {
+      "module": "M08",
+      "command": ".\\.venv\\Scripts\\python.exe labs\\M08\\demo.py",
+      "status": "executed_successfully",
+      "report": "artifacts/M08/report.json",
+      "observed": {
+        "train_sentences": 21,
+        "validation_sentences": 6,
+        "vocab_size": 23,
+        "initial_validation_nll": 3.503741502761841,
+        "final_validation_nll": 0.6119765043258667,
+        "train_nll": 0.13652096688747406,
+        "unigram_validation_nll": 2.8807919025421143,
+        "validation_perplexity": 1.844072616658844,
+        "causal_prefix_max_abs_error": 0.0,
+        "generations": [
+          "red fox sits.",
+          "blue dog sits.",
+          "green dog jumps."
+        ],
+        "scope": "synthetic combinations only; not general language or interview quality"
+      }
+    },
+    {
+      "module": "M09",
+      "command": ".\\.venv\\Scripts\\python.exe labs\\M09\\demo.py",
+      "status": "executed_successfully",
+      "report": "artifacts/M09/report.json",
+      "observed": {
+        "repo_id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+        "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+        "device": "cpu",
+        "dtype": "float32",
+        "torch": "2.15.0+cpu",
+        "load_seconds": 1.0053708000050392,
+        "parameter_count": 134515008,
+        "parameter_bytes": 538060032,
+        "rendered_prompt": "<|im_start|>system\nYou are a concise assistant.<|im_end|>\n<|im_start|>user\nWhat is a SQL transaction? Answer in one sentence.<|im_end|>\n<|im_start|>assistant\n",
+        "generation": {
+          "text": "A SQL transaction is a group of statements that execute a sequence of SQL statements in a single transaction.",
+          "prompt_tokens": 31,
+          "generated_tokens": 21,
+          "seconds": 1.7837801999994554,
+          "tokens_per_second": 11.772750925257727,
+          "context_limit": 8192,
+          "max_new_tokens": 24
+        },
+        "structured_generation": {
+          "text": "```python\nimport sqlite3\n\ndef get_json_with_keys(conn, query):\n    try:\n        cursor = conn.cursor()\n        cursor.execute(query)\n        result = cursor.fetchall()\n        return result",
+          "prompt_tokens": 67,
+          "generated_tokens": 48,
+          "seconds": 3.744752900005551,
+          "tokens_per_second": 12.817935196719882,
+          "context_limit": 8192,
+          "max_new_tokens": 48
+        },
+        "validation": {
+          "valid": false,
+          "reason": "invalid_json"
+        },
+        "fallback_used": true,
+        "scope": "English small model; no claim of Russian interview quality or guaranteed valid JSON"
+      }
+    },
+    {
+      "module": "M10",
+      "command": ".\\.venv\\Scripts\\python.exe labs\\M10\\demo.py",
+      "status": "executed_successfully",
+      "report": "artifacts/M10/report.json",
+      "observed": {
+        "corpus_version": "course-rag-v1",
+        "encoder_id": "sentence-transformers/all-MiniLM-L6-v2",
+        "encoder_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "encoder_language": "English; Russian quality not established",
+        "embedding_seconds": 0.7519785999902524,
+        "summary": {
+          "lexical": {
+            "recall_at_3": 1.0,
+            "mrr": 1.0
+          },
+          "lsa": {
+            "recall_at_3": 1.0,
+            "mrr": 0.9285714285714286
+          },
+          "minilm": {
+            "recall_at_3": 1.0,
+            "mrr": 1.0
+          },
+          "rrf": {
+            "recall_at_3": 1.0,
+            "mrr": 1.0
+          },
+          "heuristic_rerank": {
+            "recall_at_3": 1.0,
+            "mrr": 1.0
+          }
+        },
+        "traces": [
+          {
+            "query": {
+              "id": "q1",
+              "text": "What happens to transaction changes if one operation fails?",
+              "relevant": [
+                "sql-v1-atomic"
+              ]
+            },
+            "rankings": {
+              "lexical": [
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "http-v1-idempotent",
+                "cache-v1-version",
+                "index-v2-cost",
+                "python-v1-generator",
+                "api-v1-timeout",
+                "ml-v1-leakage"
+              ],
+              "lsa": [
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "http-v1-idempotent",
+                "api-v1-timeout",
+                "cache-v1-version",
+                "python-v1-generator",
+                "index-v2-cost",
+                "ml-v1-leakage"
+              ],
+              "minilm": [
+                "sql-v1-atomic",
+                "api-v1-timeout",
+                "sql-v1-isolation",
+                "cache-v1-version",
+                "http-v1-idempotent",
+                "ml-v1-leakage",
+                "index-v2-cost",
+                "python-v1-generator"
+              ],
+              "rrf": [
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "cache-v1-version",
+                "api-v1-timeout",
+                "http-v1-idempotent"
+              ],
+              "heuristic_rerank": [
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "cache-v1-version",
+                "http-v1-idempotent",
+                "api-v1-timeout"
+              ]
+            },
+            "metrics": {
+              "lexical": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "lsa": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "minilm": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "rrf": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "heuristic_rerank": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              }
+            }
+          },
+          {
+            "query": {
+              "id": "q2",
+              "text": "Why can a database index make writes more expensive?",
+              "relevant": [
+                "index-v2-cost"
+              ]
+            },
+            "rankings": {
+              "lexical": [
+                "index-v2-cost",
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "http-v1-idempotent",
+                "python-v1-generator",
+                "api-v1-timeout",
+                "cache-v1-version",
+                "ml-v1-leakage"
+              ],
+              "lsa": [
+                "index-v2-cost",
+                "python-v1-generator",
+                "ml-v1-leakage",
+                "sql-v1-isolation",
+                "sql-v1-atomic",
+                "cache-v1-version",
+                "http-v1-idempotent",
+                "api-v1-timeout"
+              ],
+              "minilm": [
+                "index-v2-cost",
+                "sql-v1-isolation",
+                "sql-v1-atomic",
+                "cache-v1-version",
+                "python-v1-generator",
+                "http-v1-idempotent",
+                "ml-v1-leakage",
+                "api-v1-timeout"
+              ],
+              "rrf": [
+                "index-v2-cost",
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "http-v1-idempotent",
+                "cache-v1-version"
+              ],
+              "heuristic_rerank": [
+                "index-v2-cost",
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "http-v1-idempotent",
+                "cache-v1-version"
+              ]
+            },
+            "metrics": {
+              "lexical": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "lsa": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "minilm": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "rrf": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "heuristic_rerank": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              }
+            }
+          },
+          {
+            "query": {
+              "id": "q3",
+              "text": "How does a Python generator avoid building the entire list?",
+              "relevant": [
+                "python-v1-generator"
+              ]
+            },
+            "rankings": {
+              "lexical": [
+                "python-v1-generator",
+                "api-v1-timeout",
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "index-v2-cost",
+                "http-v1-idempotent",
+                "cache-v1-version",
+                "ml-v1-leakage"
+              ],
+              "lsa": [
+                "python-v1-generator",
+                "index-v2-cost",
+                "api-v1-timeout",
+                "http-v1-idempotent",
+                "cache-v1-version",
+                "ml-v1-leakage",
+                "sql-v1-atomic",
+                "sql-v1-isolation"
+              ],
+              "minilm": [
+                "python-v1-generator",
+                "http-v1-idempotent",
+                "cache-v1-version",
+                "index-v2-cost",
+                "sql-v1-atomic",
+                "ml-v1-leakage",
+                "api-v1-timeout",
+                "sql-v1-isolation"
+              ],
+              "rrf": [
+                "python-v1-generator",
+                "http-v1-idempotent",
+                "api-v1-timeout",
+                "sql-v1-atomic",
+                "cache-v1-version",
+                "sql-v1-isolation",
+                "index-v2-cost"
+              ],
+              "heuristic_rerank": [
+                "python-v1-generator",
+                "http-v1-idempotent",
+                "api-v1-timeout",
+                "sql-v1-atomic",
+                "cache-v1-version",
+                "sql-v1-isolation",
+                "index-v2-cost"
+              ]
+            },
+            "metrics": {
+              "lexical": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "lsa": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "minilm": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "rrf": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "heuristic_rerank": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              }
+            }
+          },
+          {
+            "query": {
+              "id": "q4",
+              "text": "Does a client timeout cancel server work?",
+              "relevant": [
+                "api-v1-timeout"
+              ]
+            },
+            "rankings": {
+              "lexical": [
+                "api-v1-timeout",
+                "index-v2-cost",
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "http-v1-idempotent",
+                "python-v1-generator",
+                "cache-v1-version",
+                "ml-v1-leakage"
+              ],
+              "lsa": [
+                "api-v1-timeout",
+                "http-v1-idempotent",
+                "cache-v1-version",
+                "python-v1-generator",
+                "index-v2-cost",
+                "ml-v1-leakage",
+                "sql-v1-atomic",
+                "sql-v1-isolation"
+              ],
+              "minilm": [
+                "api-v1-timeout",
+                "http-v1-idempotent",
+                "sql-v1-isolation",
+                "sql-v1-atomic",
+                "cache-v1-version",
+                "ml-v1-leakage",
+                "index-v2-cost",
+                "python-v1-generator"
+              ],
+              "rrf": [
+                "api-v1-timeout",
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "index-v2-cost",
+                "http-v1-idempotent"
+              ],
+              "heuristic_rerank": [
+                "api-v1-timeout",
+                "index-v2-cost",
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "http-v1-idempotent"
+              ]
+            },
+            "metrics": {
+              "lexical": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "lsa": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "minilm": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "rrf": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "heuristic_rerank": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              }
+            }
+          },
+          {
+            "query": {
+              "id": "q5",
+              "text": "How can stale cached answers survive a data update?",
+              "relevant": [
+                "cache-v1-version"
+              ]
+            },
+            "rankings": {
+              "lexical": [
+                "cache-v1-version",
+                "ml-v1-leakage",
+                "api-v1-timeout",
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "index-v2-cost",
+                "http-v1-idempotent",
+                "python-v1-generator"
+              ],
+              "lsa": [
+                "cache-v1-version",
+                "ml-v1-leakage",
+                "api-v1-timeout",
+                "http-v1-idempotent",
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "python-v1-generator",
+                "index-v2-cost"
+              ],
+              "minilm": [
+                "cache-v1-version",
+                "api-v1-timeout",
+                "index-v2-cost",
+                "python-v1-generator",
+                "sql-v1-atomic",
+                "ml-v1-leakage",
+                "http-v1-idempotent",
+                "sql-v1-isolation"
+              ],
+              "rrf": [
+                "cache-v1-version",
+                "api-v1-timeout",
+                "ml-v1-leakage",
+                "index-v2-cost",
+                "sql-v1-atomic",
+                "python-v1-generator"
+              ],
+              "heuristic_rerank": [
+                "cache-v1-version",
+                "api-v1-timeout",
+                "ml-v1-leakage",
+                "index-v2-cost",
+                "sql-v1-atomic",
+                "python-v1-generator"
+              ]
+            },
+            "metrics": {
+              "lexical": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "lsa": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "minilm": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "rrf": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "heuristic_rerank": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              }
+            }
+          },
+          {
+            "query": {
+              "id": "q6",
+              "text": "Why is selecting a model with test labels invalid?",
+              "relevant": [
+                "ml-v1-leakage"
+              ]
+            },
+            "rankings": {
+              "lexical": [
+                "ml-v1-leakage",
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "index-v2-cost",
+                "http-v1-idempotent",
+                "python-v1-generator",
+                "api-v1-timeout",
+                "cache-v1-version"
+              ],
+              "lsa": [
+                "ml-v1-leakage",
+                "cache-v1-version",
+                "api-v1-timeout",
+                "index-v2-cost",
+                "python-v1-generator",
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "http-v1-idempotent"
+              ],
+              "minilm": [
+                "ml-v1-leakage",
+                "cache-v1-version",
+                "python-v1-generator",
+                "http-v1-idempotent",
+                "index-v2-cost",
+                "sql-v1-isolation",
+                "api-v1-timeout",
+                "sql-v1-atomic"
+              ],
+              "rrf": [
+                "ml-v1-leakage",
+                "sql-v1-atomic",
+                "cache-v1-version",
+                "sql-v1-isolation",
+                "python-v1-generator",
+                "index-v2-cost",
+                "http-v1-idempotent"
+              ],
+              "heuristic_rerank": [
+                "ml-v1-leakage",
+                "http-v1-idempotent",
+                "sql-v1-atomic",
+                "cache-v1-version",
+                "sql-v1-isolation",
+                "python-v1-generator",
+                "index-v2-cost"
+              ]
+            },
+            "metrics": {
+              "lexical": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "lsa": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "minilm": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "rrf": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "heuristic_rerank": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              }
+            }
+          },
+          {
+            "query": {
+              "id": "q7",
+              "text": "What produces items on demand without allocating a collection up front?",
+              "relevant": [
+                "python-v1-generator"
+              ]
+            },
+            "rankings": {
+              "lexical": [
+                "python-v1-generator",
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "index-v2-cost",
+                "http-v1-idempotent",
+                "api-v1-timeout",
+                "cache-v1-version",
+                "ml-v1-leakage"
+              ],
+              "lsa": [
+                "index-v2-cost",
+                "python-v1-generator",
+                "http-v1-idempotent",
+                "ml-v1-leakage",
+                "sql-v1-isolation",
+                "sql-v1-atomic",
+                "cache-v1-version",
+                "api-v1-timeout"
+              ],
+              "minilm": [
+                "python-v1-generator",
+                "index-v2-cost",
+                "sql-v1-atomic",
+                "sql-v1-isolation",
+                "http-v1-idempotent",
+                "cache-v1-version",
+                "ml-v1-leakage",
+                "api-v1-timeout"
+              ],
+              "rrf": [
+                "python-v1-generator",
+                "sql-v1-atomic",
+                "index-v2-cost",
+                "sql-v1-isolation"
+              ],
+              "heuristic_rerank": [
+                "python-v1-generator",
+                "index-v2-cost",
+                "sql-v1-atomic",
+                "sql-v1-isolation"
+              ]
+            },
+            "metrics": {
+              "lexical": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "lsa": {
+                "recall_at_3": 1.0,
+                "mrr": 0.5
+              },
+              "minilm": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "rrf": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              },
+              "heuristic_rerank": {
+                "recall_at_3": 1.0,
+                "mrr": 1.0
+              }
+            }
+          }
+        ],
+        "context": "[sql-v1-atomic] A SQL transaction groups operations. Atomicity means that its changes are committed together or rolled back together after failure.\n[sql-v1-isolation] Transaction isolation controls how concurrent transactions observe changes. Different isolation levels allow different concurrency anomalies.",
+        "extractive_baseline": "[sql-v1-atomic] A SQL transaction groups operations. Atomicity means that its changes are committed together or rolled back together after failure.\n[sql-v1-isolation] Transaction isolation controls how concurrent transactions observe changes. Different isolation levels allow different concurrency anomalies.",
+        "reranker": "term coverage heuristic, not cross-encoder",
+        "generation_status": "actual_local_smollm",
+        "generated_answer": {
+          "text": "If one operation fails, the transaction changes are rolled back together.",
+          "prompt_tokens": 111,
+          "generated_tokens": 14,
+          "seconds": 1.5025522999931127,
+          "tokens_per_second": 9.317479331710565,
+          "context_limit": 8192,
+          "max_new_tokens": 64
+        },
+        "cited_ids": [],
+        "citation_ids_known": true,
+        "has_citation": false,
+        "support_status": "requires claim-by-claim human check; ID existence is insufficient"
+      }
+    },
+    {
+      "module": "M11",
+      "command": ".\\.venv\\Scripts\\python.exe labs\\M11\\demo.py",
+      "status": "executed_successfully",
+      "report": "artifacts/M11/report.json",
+      "observed": {
+        "dataset_counts": {
+          "hr": 10,
+          "backend": 10
+        },
+        "arithmetic_fixture": {
+          "origin": "supplied synthetic example, not observed model quality",
+          "baseline_accuracy": 0.5,
+          "candidate_accuracy": 0.75,
+          "delta": 0.25,
+          "improved_case_numbers": [
+            2,
+            4,
+            8
+          ],
+          "regressed_case_numbers": [
+            3
+          ],
+          "critical_regressions": [
+            3
+          ],
+          "release_allowed": false,
+          "paired_bootstrap_95_percentile": [
+            -0.25,
+            0.75
+          ],
+          "bootstrap_seed": 17,
+          "bootstrap_repeats": 5000,
+          "resampling_unit": "paired case; assumes independent cases"
+        },
+        "confusion_matrix_fixture": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "kappa_fixture": 0.33333333333333337,
+        "actual_judge_status": "actual_local_smollm",
+        "actual_judge_outputs": [
+          {
+            "case_id": "good_atomic",
+            "answer": "A transaction commits all its changes together or rolls them back together.",
+            "manual_expected_score": 2,
+            "raw_result": {
+              "text": "A transaction commits all its changes together or rolls them back together.",
+              "prompt_tokens": 87,
+              "generated_tokens": 14,
+              "seconds": 2.0213676000130363,
+              "tokens_per_second": 6.926003958859195,
+              "context_limit": 8192,
+              "max_new_tokens": 48
+            },
+            "parsed": null,
+            "agrees": null
+          },
+          {
+            "case_id": "bad_atomic",
+            "answer": "Rollback always preserves all changes of the transaction.",
+            "manual_expected_score": 0,
+            "raw_result": {
+              "text": "Rollback always preserves all changes of the transaction.",
+              "prompt_tokens": 84,
+              "generated_tokens": 12,
+              "seconds": 1.399171800003387,
+              "tokens_per_second": 8.576502185057583,
+              "context_limit": 8192,
+              "max_new_tokens": 48
+            },
+            "parsed": null,
+            "agrees": null
+          },
+          {
+            "case_id": "good_timeout",
+            "answer": "A client timeout does not necessarily cancel server computation.",
+            "manual_expected_score": 2,
+            "raw_result": {
+              "text": "A client timeout does not necessarily cancel server computation.",
+              "prompt_tokens": 84,
+              "generated_tokens": 11,
+              "seconds": 1.7941165000083856,
+              "tokens_per_second": 6.1311514608714575,
+              "context_limit": 8192,
+              "max_new_tokens": 48
+            },
+            "parsed": null,
+            "agrees": null
+          },
+          {
+            "case_id": "bad_timeout",
+            "answer": "Every client timeout automatically stops all server computation.",
+            "manual_expected_score": 0,
+            "raw_result": {
+              "text": "JSON:\n```\n{\n  \"status\": \"0\",\n  \"error\": \"1\",\n  \"result\": \"2\",\n  \"reason\": \"short string\"\n}\n```\n\nTechnical correctness:\n\n- \"",
+              "prompt_tokens": 83,
+              "generated_tokens": 48,
+              "seconds": 9.43563899997389,
+              "tokens_per_second": 5.087095850120255,
+              "context_limit": 8192,
+              "max_new_tokens": 48
+            },
+            "parsed": null,
+            "agrees": null
+          }
+        ],
+        "actual_judge_summary": {
+          "total": 4,
+          "valid": 0,
+          "correct": 0,
+          "coverage": 0.0,
+          "agreement_on_valid": null,
+          "correct_over_all": 0.0,
+          "scope": "4 authored English checks; no reliable judge claim"
+        },
+        "position_probe": [
+          {
+            "order": "correct_first",
+            "raw_result": {
+              "text": "A: A transaction commits all its changes together or rolls them",
+              "prompt_tokens": 74,
+              "generated_tokens": 12,
+              "seconds": 2.479663200007053,
+              "tokens_per_second": 4.839366894651607,
+              "context_limit": 8192,
+              "max_new_tokens": 12
+            },
+            "strict_choice": null
+          },
+          {
+            "order": "correct_second",
+            "raw_result": {
+              "text": "A: Rollback always preserves all changes of the transaction.",
+              "prompt_tokens": 74,
+              "generated_tokens": 12,
+              "seconds": 1.971969900012482,
+              "tokens_per_second": 6.08528558165317,
+              "context_limit": 8192,
+              "max_new_tokens": 12
+            },
+            "strict_choice": null
+          }
+        ]
+      }
+    }
+  ],
+  "learner_status": "not_assessed",
+  "module_hubs": [
+    "course/modules/M06.md",
+    "course/modules/M07.md",
+    "course/modules/M08.md",
+    "course/modules/M09.md",
+    "course/modules/M10.md",
+    "course/modules/M11.md"
+  ],
+  "solutions": [
+    "solutions/modules/M06.md",
+    "solutions/modules/M07.md",
+    "solutions/modules/M08.md",
+    "solutions/modules/M09.md",
+    "solutions/modules/M10.md",
+    "solutions/modules/M11.md"
+  ],
+  "lab_instructions": [
+    "labs/M06/README.md",
+    "labs/M07/README.md",
+    "labs/M08/README.md",
+    "labs/M09/README.md",
+    "labs/M10/README.md",
+    "labs/M11/README.md"
+  ],
+  "evaluation_sets": [
+    "labs/M11/hr.jsonl",
+    "labs/M11/backend.jsonl",
+    "labs/M11/rubrics.md"
+  ],
+  "tests": {
+    "command": ".\\.venv\\Scripts\\python.exe -m pytest tests\\test_ml_llm_labs.py -q",
+    "result": "6 passed in 21.15s",
+    "scope": [
+      "preprocessing version mismatch",
+      "queue latency",
+      "causal no-future invariant",
+      "JSON schema rejection",
+      "RRF arithmetic",
+      "retrieval metrics",
+      "paired bootstrap",
+      "group split separation"
+    ]
+  },
+  "visual_verification": {
+    "quantitative_svg_count": 8,
+    "all_svg_xml_valid": true,
+    "rendered_pngs": [
+      "artifacts/visual-check-ml/M08-L03.png",
+      "artifacts/visual-check-ml/M09-L02.png"
+    ],
+    "inspection": "Readable Cyrillic, no clipped formula or legend on inspected renders; other diagrams checked structurally."
+  },
+  "models": [
+    {
+      "repo": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "license": "Apache-2.0",
+      "downloaded_file_bytes": 272444345,
+      "runtime": "transformers CPU float32",
+      "limitations": "small English instruct model; JSON failures observed; not a qualified Russian interviewer"
+    },
+    {
+      "repo": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "license": "Apache-2.0",
+      "downloaded_file_bytes": 91578299,
+      "runtime": "AutoModel CPU masked mean pooling and L2 normalization",
+      "limitations": "English encoder, max_length256; Russian retrieval not established"
+    }
+  ],
+  "sources_verified_on": "2026-11-03",
+  "status": "materials_and_labs_authored_and_locally_checked",
+  "pilot_status": "not_run_no_learner_results",
+  "standalone_snippet_verification": {
+    "environment": ".venv-full-verify/Scripts/python.exe",
+    "method": "Each Python block extracted from final Markdown and run with python -c in a separate new process from course root; no previous variables or cells.",
+    "M07-L03": {
+      "exit_code": 0,
+      "stdout": [
+        "train_before_step=0.693147",
+        "validation_after_step=0.513015"
+      ]
+    },
+    "M07-L05": {
+      "exit_code": 0,
+      "stdout": [
+        "[[3.5, -0.5], [-0.5, 0.5]]",
+        "max_abs_error=0.000000"
+      ]
+    }
+  }
+}

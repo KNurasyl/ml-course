@@ -45,7 +45,7 @@ def local_course(tmp_path):
         target = tmp_path / path
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(f"# {key}\n\nЗадание {key}-HW01. Объясни полученный результат.\n", encoding="utf-8")
-        registry[key] = {"id": key, "title": key, "path": path, "version": "0.2.0", "status": "ready"}
+        registry[key] = {"id": key, "title": key, "path": path, "version": "1.0.0", "status": "ready"}
     write_json(tmp_path / "metadata/material-registry.json", registry)
     inventory = []
     for i in range(1, 11):
@@ -139,3 +139,18 @@ def test_changed_progress_requires_reader_refresh(local_course):
         stream.write("\nЗаписана самостоятельная попытка P01.\n")
     assert "Offline reader is stale: rebuild with python tools/build_reader.py" in \
         validator.validate(local_course, require_local=True)["errors"]
+    assert builder.build_manifest(local_course)["delivery"]["status"] == "incomplete"
+
+
+def test_registering_full_route_requires_remaining_lesson_files(local_course):
+    path = local_course / "metadata/material-registry.json"
+    registry = json.loads(path.read_text(encoding="utf-8"))
+    source = local_course / "course/lessons/M00-L01.md"
+    source.parent.mkdir(parents=True)
+    source.write_text("# Первый урок", encoding="utf-8")
+    registry["M00-L01"] = {"id":"M00-L01","title":"Первый урок","path":"course/lessons/M00-L01.md","version":"1.0.0","status":"ready"}
+    write_json(path, registry)
+    manifest = builder.build_manifest(local_course)
+    assert manifest["delivery"]["status"] == "incomplete"
+    assert "M00-L02" in manifest["delivery"]["missing_materials"]
+    assert manifest["full_materials_ready"] is False

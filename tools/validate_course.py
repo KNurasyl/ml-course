@@ -10,7 +10,7 @@ import sys
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.2.0"
+VERSION = "1.0.0"
 MODULE_IDS = [f"M{i:02}" for i in range(17)]
 PILOT_IDS = [f"P{i:02}" for i in range(1, 11)]
 REQUIRED_MATERIALS = ["HOME", "PROGRESS", "DIAGNOSTIC", "MENTOR", "MENTOR-KEYS",
@@ -144,11 +144,11 @@ def _validate_local(root, curriculum, documents, errors):
         errors.append("Missing local course manifest")
         manifest = {}
     if manifest.get("course_version") != VERSION:
-        errors.append("Manifest version must be 0.2.0")
+        errors.append("Manifest version must be 1.0.0")
     if manifest.get("canonical_content") != "local_markdown":
         errors.append("Manifest must use local Markdown as canonical content")
     if manifest.get("full_course_ready") is not False:
-        errors.append("The pilot release must not claim that the full course is ready")
+        errors.append("Learner-calibrated release requires real pilot evidence; materials alone are insufficient")
     if manifest.get("progress_source") != "progress/progress.md":
         errors.append("Manifest must point at the local progress log")
     if REMOTE_PAGE.search(json.dumps(manifest)):
@@ -196,6 +196,21 @@ def _validate_local(root, curriculum, documents, errors):
             local_file(session.get(field), f"{session.get('id')} {field}")
         if session.get("path") != registry.get(session.get("id"), {}).get("path"):
             errors.append(f"Pilot material mapping mismatch: {session.get('id')}")
+    if any(key in registry for key in expected_lessons):
+        for module in curriculum["modules"]:
+            mid = module["id"]
+            for lesson in module["lessons"]:
+                lid = lesson["id"]
+                path = local_file(registry.get(lid, {}).get("path"), lid)
+                if path:
+                    content = path.read_text(encoding="utf-8")
+                    if len(content) < 2500 or "![" not in content or not re.search("самостоятельн", content, re.I):
+                        errors.append(f"Lesson package lacks explanation, visual or independent task: {lid}")
+            local_file(registry.get(f"{mid}-SOLUTIONS", {}).get("path"), f"{mid} solutions")
+            for relative in (f"labs/{mid}/demo.py", f"labs/{mid}/README.md", f"course/visuals/{mid}.html"):
+                local_file(relative, mid)
+        if not manifest.get("full_materials_ready"):
+            errors.append("Full local route is registered but its mandatory packages are incomplete")
     for name in ("README.md", "AGENTS.md"):
         path = local_file(name, name)
         if path:

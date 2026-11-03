@@ -1,0 +1,18 @@
+{
+  "llm": {
+    "repo_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "path": "models/Qwen2.5-0.5B-Instruct",
+    "license": "Apache-2.0"
+  },
+  "speech": {
+    "name": "vosk-model-small-ru-0.22",
+    "license": "Apache-2.0",
+    "url": "https://alphacephei.com/vosk/models/vosk-model-small-ru-0.22.zip",
+    "archive_sha256": "961d5ff98a17f4aa6de69864d0aa71fa5bac682301d2b5d17a3f24c5c99a46d4"
+  },
+  "tts": {
+    "engine": "Windows System.Speech",
+    "voice": "Microsoft Irina Desktop"
+  }
+}
