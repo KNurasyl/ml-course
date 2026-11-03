@@ -1,0 +1,157 @@
+{
+  "version": "1.1.0",
+  "lessons": [
+    {
+      "id": "M13-L06",
+      "title": "Очередь, дедлайн и восстановление HTTP-сервиса",
+      "prerequisites": [
+        "M13-L05"
+      ],
+      "estimated_minutes": 210
+    },
+    {
+      "id": "M14-L06",
+      "title": "Модель предлагает инструмент, исполнитель проверяет",
+      "prerequisites": [
+        "M14-L05"
+      ],
+      "estimated_minutes": 180
+    },
+    {
+      "id": "M15-L06",
+      "title": "От WAV к частичным гипотезам и отменяемым фрагментам",
+      "prerequisites": [
+        "M15-L05"
+      ],
+      "estimated_minutes": 210
+    },
+    {
+      "id": "M16-L06",
+      "title": "Обратная связь с проверяемыми основаниями",
+      "prerequisites": [
+        "M16-L01"
+      ],
+      "estimated_minutes": 180
+    },
+    {
+      "id": "M16-L07",
+      "title": "Состояние интервью и ограниченные уточнения",
+      "prerequisites": [
+        "M16-L06"
+      ],
+      "estimated_minutes": 180
+    },
+    {
+      "id": "M16-L08",
+      "title": "Самостоятельная сборка и защита нового требования",
+      "prerequisites": [
+        "M16-L05",
+        "M16-L07"
+      ],
+      "estimated_minutes": 300
+    }
+  ],
+  "module_lesson_orders": {
+    "M13": [
+      "M13-L01",
+      "M13-L02",
+      "M13-L03",
+      "M13-L04",
+      "M13-L05",
+      "M13-L06"
+    ],
+    "M14": [
+      "M14-L01",
+      "M14-L02",
+      "M14-L03",
+      "M14-L04",
+      "M14-L05",
+      "M14-L06"
+    ],
+    "M15": [
+      "M15-L01",
+      "M15-L02",
+      "M15-L03",
+      "M15-L04",
+      "M15-L05",
+      "M15-L06"
+    ],
+    "M16": [
+      "M16-L01",
+      "M16-L06",
+      "M16-L07",
+      "M16-L02",
+      "M16-L03",
+      "M16-L04",
+      "M16-L05",
+      "M16-L08"
+    ]
+  },
+  "lab_commands": [
+    "labs/M13/http_lab.py",
+    "labs/M14/llm_planner.py",
+    "labs/M15/streaming_lab.py",
+    "solutions/exercises/M13/hw_reference.py",
+    "solutions/exercises/M14/hw_reference.py",
+    "solutions/exercises/M15/hw_reference.py",
+    "solutions/exercises/M10/hw_reference.py"
+  ],
+  "evidence": [
+    "artifacts/M13-http/report.json",
+    "artifacts/M14-llm/report.json",
+    "artifacts/M15-stream/report.json",
+    "artifacts/M13-hw/report.json",
+    "artifacts/M14-hw/report.json",
+    "artifacts/M14-hw/manual-review.json",
+    "artifacts/M15-hw/report.json",
+    "artifacts/product-v2/visual-controls.json"
+  ],
+  "notes": "M16 order L01,L06,L07,L02,L03,L04,L05,L08; L08 requires L05 and L07. All starter keys separate. Real learner/microphone pilot remains not_run.",
+  "exercises": {
+    "M13": {
+      "starter": "exercises/M13/starter.py",
+      "checker": "exercises/M13/check.py",
+      "solution": "solutions/exercises/M13/solution.py"
+    },
+    "M14": {
+      "starter": "exercises/M14/starter.py",
+      "checker": "exercises/M14/check.py",
+      "solution": "solutions/exercises/M14/solution.py"
+    },
+    "M15": {
+      "starter": "exercises/M15/starter.py",
+      "checker": "exercises/M15/check.py",
+      "solution": "solutions/exercises/M15/solution.py"
+    },
+    "M16": {
+      "starter": "exercises/M16/starter.py",
+      "checker": "exercises/M16/check.py",
+      "solution": "solutions/exercises/M16/solution.py"
+    }
+  },
+  "retry_keys": "Every existing M13–M16 L01–L05 now has fixed B/C cases and separate keys; six new lessons have A/B/C keys.",
+  "interactive_visuals": {
+    "M13-L06": "course/visuals/M13-L06.html",
+    "M14-L06": "course/visuals/M14-L06.html",
+    "M15-L06": "course/visuals/M15-L06.html",
+    "M16-L06": "course/visuals/M16-L06.html",
+    "M16-L07": "course/visuals/M16-L07.html",
+    "M16-L08": "course/visuals/M16-L08.html"
+  },
+  "prerequisite_overrides": {
+    "M16-L02": [
+      "M16-L07"
+    ]
+  },
+  "capstone_reference": {
+    "command": ".\\.venv\\Scripts\\python.exe solutions\\exercises\\M16\\durable_app.py --port 8765",
+    "test": "tests/test_durable_capstone.py",
+    "scope": "Same reference web app plus single-process atomic persistence, separate from learner work; fake feedback used only in mechanics tests."
+  },
+  "validation": {
+    "pytest_command": ".venv/Scripts/python.exe -m pytest tests/test_durable_capstone.py tests/test_product_v2.py tests/test_interview_trainer.py tests/test_interview_recovery.py tests/test_ops_voice.py -q",
+    "result": "74 passed in 15.03s",
+    "real_model_limitation": "M14 extended lookup planner failed normal tasks; actual traces and manual review retained. M11 measures semantic quality of feedback separately.",
+    "durability": "Real HTTP start/answer, process restart, session restore and stale-turn rejection; model output explicitly fixture."
+  }
+}

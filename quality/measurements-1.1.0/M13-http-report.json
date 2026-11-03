@@ -1,0 +1,106 @@
+{
+  "clients": {
+    "1": [
+      {
+        "status": 200,
+        "body": {
+          "prediction": 5,
+          "release": "A",
+          "queue_ms": 0.028799986466765404,
+          "compute_ms": 80.38220001617447
+        },
+        "client_ms": 89.04809999512509
+      }
+    ],
+    "2": [
+      {
+        "status": 200,
+        "body": {
+          "prediction": 5,
+          "release": "A",
+          "queue_ms": 0.024200009647756815,
+          "compute_ms": 80.54709999123588
+        },
+        "client_ms": 82.62229998945259
+      },
+      {
+        "status": 200,
+        "body": {
+          "prediction": 5,
+          "release": "A",
+          "queue_ms": 56.47899999166839,
+          "compute_ms": 80.41689998935908
+        },
+        "client_ms": 163.68379999767058
+      }
+    ],
+    "4": [
+      {
+        "status": 200,
+        "body": {
+          "prediction": 5,
+          "release": "A",
+          "queue_ms": 80.31570000457577,
+          "compute_ms": 80.32280000043102
+        },
+        "client_ms": 163.38740001083352
+      },
+      {
+        "status": 503,
+        "body": {
+          "error": "queue_full"
+        },
+        "client_ms": 2.857900020899251
+      },
+      {
+        "status": 200,
+        "body": {
+          "prediction": 5,
+          "release": "A",
+          "queue_ms": 0.02649999805726111,
+          "compute_ms": 80.44910000171512
+        },
+        "client_ms": 82.46760000474751
+      },
+      {
+        "status": 503,
+        "body": {
+          "error": "queue_full"
+        },
+        "client_ms": 3.5647999902721494
+      }
+    ]
+  },
+  "deadline": [
+    {
+      "status": 504,
+      "body": {
+        "error": "queue_deadline",
+        "queue_ms": 15.106000006198883
+      },
+      "client_ms": 38.57049997895956
+    },
+    {
+      "status": 200,
+      "body": {
+        "prediction": 5,
+        "release": "A",
+        "queue_ms": 0.027600006433203816,
+        "compute_ms": 80.50310000544414
+      },
+      "client_ms": 82.68959997803904
+    }
+  ],
+  "bad_release_rejected": true,
+  "restart_restored": {
+    "status": 200,
+    "body": {
+      "prediction": 15,
+      "release": "A",
+      "queue_ms": 0.055199983762577176,
+      "compute_ms": 80.47190000070259
+    },
+    "client_ms": 107.0080999925267
+  },
+  "scope": "real localhost HTTP/processes; model compute is an explicit 80 ms sleep, not measured LLM throughput"
+}

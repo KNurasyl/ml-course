@@ -6,7 +6,7 @@ import importlib.util
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 CREATED = "2026-11-03"
 PILOT_IDS = [f"P{i:02}" for i in range(1, 11)]
 MODULE_IDS = [f"M{i:02}" for i in range(17)]
@@ -85,7 +85,10 @@ def build_manifest(root: Path = ROOT) -> dict:
         solution = materials.get(f"{module_id}-SOLUTIONS", {}).get("path")
         lab = f"labs/{module_id}/demo.py"
         visual = f"course/visuals/{module_id}.html"
-        module_ready = bool(path and all(lesson_paths) and solution and (root/lab).is_file() and (root/visual).is_file() and (root/f"labs/{module_id}/README.md").is_file())
+        exercise = {"instructions": f"exercises/{module_id}/README.md", "starter": f"exercises/{module_id}/starter.py",
+                    "checker": f"exercises/{module_id}/check.py", "solution": f"solutions/exercises/{module_id}/solution.py"}
+        module_ready = bool(path and all(lesson_paths) and solution and (root/lab).is_file() and (root/visual).is_file()
+                            and (root/f"labs/{module_id}/README.md").is_file() and all((root/p).is_file() for p in exercise.values()))
         module_entries.append({
             "id": module_id, "title": module["title"], "version": VERSION,
             "material_key": module_id, "path": path,
@@ -94,6 +97,7 @@ def build_manifest(root: Path = ROOT) -> dict:
             "full_module_ready": module_ready, "solution": solution, "lab": lab, "visual": visual,
             "lesson_ids": [lesson["id"] for lesson in module["lessons"]],
             "homework_id": module["homework"]["id"],
+            "exercise": exercise, "assessment_policy": "course/assessment.md",
         })
         for lesson in module["lessons"]:
             lesson_entries.append({
@@ -101,6 +105,7 @@ def build_manifest(root: Path = ROOT) -> dict:
                 "module_id": module_id, "material_key": lesson["id"], "path": materials.get(lesson["id"], {}).get("path"),
                 "scope": "complete_lesson", "material_status": "ready" if materials.get(lesson["id"]) else "missing",
                 "prerequisites": lesson["prerequisites"], "outcome_ids": lesson["outcome_ids"],
+                "workload": lesson.get("workload", {}),
                 "pilot_sessions": [key for key, value in pilot_map.items() if lesson["id"] in value],
             })
 
@@ -131,6 +136,9 @@ def build_manifest(root: Path = ROOT) -> dict:
         "language": "ru", "course_status": "complete_self_study_materials" if full_materials else "incomplete_materials",
         "full_materials_ready": full_materials,
         "full_course_ready": False,
+        "technical_evidence": {"release": "quality/release-1.1.0.json",
+                               "audit_resolution": "quality/audit-resolution-1.1.0.md",
+                               "policy": "File completeness alone is not verification or learner mastery; inspect the release evidence and its scope."},
         "entrypoint": "START_HERE.html", "canonical_content": "local_markdown",
         "learning_mode": "self_study_with_optional_mentor",
         "progress_source": "progress/progress.md",

@@ -1,0 +1,187 @@
+{
+  "configs": [
+    {
+      "config": "float32",
+      "repo_id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "threads": 2,
+      "load_seconds": 0.6759423000039533,
+      "conversion_seconds": 0.0,
+      "serialized_state_bytes": 538167007,
+      "rss_after_model_bytes": 974393344,
+      "warmup": {
+        "text": "Hello! How can",
+        "prompt_tokens": 31,
+        "generated_tokens": 4,
+        "seconds": 0.2537486999935936,
+        "tokens_per_second": 15.76362755789877,
+        "context_limit": 8192,
+        "max_new_tokens": 4,
+        "seconds_per_token": 0.0634371749983984,
+        "settings": {
+          "do_sample": false,
+          "temperature": null,
+          "top_p": null,
+          "seed": 17
+        }
+      },
+      "cases": [
+        {
+          "prompt": "Explain SQL transaction atomicity in one sentence.",
+          "output": {
+            "text": "SQL transaction atomicity ensures that all changes made to a database transaction are committed and executed simultaneously, preventing conflicts and data corruption",
+            "prompt_tokens": 39,
+            "generated_tokens": 24,
+            "seconds": 1.0701107000058983,
+            "tokens_per_second": 22.427586229973887,
+            "context_limit": 8192,
+            "max_new_tokens": 24,
+            "seconds_per_token": 0.04458794583357909,
+            "settings": {
+              "do_sample": false,
+              "temperature": null,
+              "top_p": null,
+              "seed": 17
+            }
+          }
+        },
+        {
+          "prompt": "What does an idempotent operation mean?",
+          "output": {
+            "text": "An idempotent operation is an operation that, when applied repeatedly, results in the same result. In other words",
+            "prompt_tokens": 40,
+            "generated_tokens": 24,
+            "seconds": 1.1436474999936763,
+            "tokens_per_second": 20.985487224107697,
+            "context_limit": 8192,
+            "max_new_tokens": 24,
+            "seconds_per_token": 0.04765197916640318,
+            "settings": {
+              "do_sample": false,
+              "temperature": null,
+              "top_p": null,
+              "seed": 17
+            }
+          }
+        },
+        {
+          "prompt": "Что означает индекс базы данных?",
+          "output": {
+            "text": "Что означает индекс базы данных",
+            "prompt_tokens": 55,
+            "generated_tokens": 24,
+            "seconds": 1.0818646000116132,
+            "tokens_per_second": 22.18392209130641,
+            "context_limit": 8192,
+            "max_new_tokens": 24,
+            "seconds_per_token": 0.04507769166715055,
+            "settings": {
+              "do_sample": false,
+              "temperature": null,
+              "top_p": null,
+              "seed": 17
+            }
+          }
+        }
+      ],
+      "note": "RSS includes interpreter/libraries/model; serialized state is not peak RAM. TTFT not measured.",
+      "sampled_peak_rss_bytes": 1861107712,
+      "rss_sampling_ms": 30
+    },
+    {
+      "config": "int8",
+      "repo_id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+      "threads": 2,
+      "load_seconds": 0.588446899986593,
+      "conversion_seconds": 1.6755158999876585,
+      "serialized_state_bytes": 248137617,
+      "rss_after_model_bytes": 1333866496,
+      "warmup": {
+        "text": "Hello! How can",
+        "prompt_tokens": 31,
+        "generated_tokens": 4,
+        "seconds": 0.2500929000088945,
+        "tokens_per_second": 15.994056607995432,
+        "context_limit": 8192,
+        "max_new_tokens": 4,
+        "seconds_per_token": 0.06252322500222363,
+        "settings": {
+          "do_sample": false,
+          "temperature": null,
+          "top_p": null,
+          "seed": 17
+        }
+      },
+      "cases": [
+        {
+          "prompt": "Explain SQL transaction atomicity in one sentence.",
+          "output": {
+            "text": "In SQL, atomicity refers to the concept that a transaction should only commit or roll back changes to a table, rather",
+            "prompt_tokens": 39,
+            "generated_tokens": 24,
+            "seconds": 1.279515199974412,
+            "tokens_per_second": 18.75710425361102,
+            "context_limit": 8192,
+            "max_new_tokens": 24,
+            "seconds_per_token": 0.05331313333226717,
+            "settings": {
+              "do_sample": false,
+              "temperature": null,
+              "top_p": null,
+              "seed": 17
+            }
+          }
+        },
+        {
+          "prompt": "What does an idempotent operation mean?",
+          "output": {
+            "text": "An idempotent operation is a type of operation that leaves the original input unchanged, meaning it does not affect the",
+            "prompt_tokens": 40,
+            "generated_tokens": 24,
+            "seconds": 1.318037999997614,
+            "tokens_per_second": 18.208883203703873,
+            "context_limit": 8192,
+            "max_new_tokens": 24,
+            "seconds_per_token": 0.05491824999990058,
+            "settings": {
+              "do_sample": false,
+              "temperature": null,
+              "top_p": null,
+              "seed": 17
+            }
+          }
+        },
+        {
+          "prompt": "Что означает индекс базы данных?",
+          "output": {
+            "text": "Что означало, это это �",
+            "prompt_tokens": 55,
+            "generated_tokens": 24,
+            "seconds": 1.3531043000111822,
+            "tokens_per_second": 17.736991893235178,
+            "context_limit": 8192,
+            "max_new_tokens": 24,
+            "seconds_per_token": 0.056379345833799256,
+            "settings": {
+              "do_sample": false,
+              "temperature": null,
+              "top_p": null,
+              "seed": 17
+            }
+          }
+        }
+      ],
+      "note": "RSS includes interpreter/libraries/model; serialized state is not peak RAM. TTFT not measured.",
+      "sampled_peak_rss_bytes": 1717366784,
+      "rss_sampling_ms": 30
+    }
+  ],
+  "quality_review_required": [
+    "Factual correctness",
+    "Russian language",
+    "Completeness"
+  ],
+  "comparison": "Same model revision, prompts, max_new_tokens, greedy, threads; separate fresh processes.",
+  "limits": "Sampled worker-tree RSS includes Windows launcher and may double-count shared pages; it is an operational upper sum, not unique private memory. Sampling may miss short spikes. Cold init includes float32 conversion for int8; no on-disk int8 loader benchmark."
+}

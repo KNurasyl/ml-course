@@ -1,0 +1,8 @@
+{
+  "scope": "Archive integrity recorded during review, after collection; not proof of original generation timestamp. Original outputs unchanged.",
+  "files": {
+    "run.json": "eedf6d945ebce019b01634c3aa37de059ad3897239da31ae43f434e690d3373f",
+    "outputs.jsonl": "81130041fe82f39fd98684f0580e250269d82136122cae041839657ebed9e4eb",
+    "annotations.jsonl": "2fbca782ebfa01f12dda5fe944005ec4e64276aaa764a6e0a33436c69da59881"
+  }
+}

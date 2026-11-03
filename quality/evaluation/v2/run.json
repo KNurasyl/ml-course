@@ -1,0 +1,124 @@
+{
+  "rubric_version": "feedback-grounding-usefulness-v2",
+  "case_digest": "dfc694d0e41c44fd0dc93f9e6d2e4c3d43e58d05055be724a236cb23a42c511f",
+  "code_sha256": {
+    "feedback.py": "575d8c7125c5e3967f4248483e30710a09c754013cd0eb715d75931e7bdb517d",
+    "core.py": "7aee3985be0612a01893f592866eb20fd353db208d113f8586079c8db3de04ee",
+    "llm.py": "0c0ada3ed6ed00d4ed2d077d03b82d310929b1b65fed4b17568da77e22a4ee76"
+  },
+  "model": "local Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "configs": [
+    "baseline",
+    "candidate"
+  ],
+  "case_count": 8,
+  "policy": "Outputs are measurements; annotations are separately attributed judgement.",
+  "cases": [
+    {
+      "case_id": "e-hr01",
+      "track": "hr",
+      "split": "development",
+      "scenario_id": "payment-action",
+      "question": "Что ты лично сделал в сложной задаче?",
+      "answer": "В API повторялись запросы оплаты. Я добавил ключ идемпотентности и тест повторной доставки. Результат пока не измерял.",
+      "origin": "Original synthetic course case; no real participant",
+      "expected_properties": [
+        "Не приписывать успешный запуск или снижение дублей",
+        "Запросить способ измерения результата"
+      ]
+    },
+    {
+      "case_id": "e-hr02",
+      "track": "hr",
+      "split": "development",
+      "scenario_id": "vague-quality",
+      "question": "Расскажи о примере качественно выполненной работы.",
+      "answer": "Я всегда делаю всё качественно и быстро.",
+      "origin": "Original synthetic course case; no real participant",
+      "expected_properties": [
+        "Не придумывать проект и личное действие",
+        "Попросить конкретный пример"
+      ]
+    },
+    {
+      "case_id": "e-hr03",
+      "track": "hr",
+      "split": "check",
+      "scenario_id": "conflict-options",
+      "question": "Как ты разрешил разногласие в команде?",
+      "answer": "Коллега предложил переписать сервис. Я предложил сначала измерить задержки. Мы сравнили два прототипа и оставили текущую архитектуру, потому что она укладывалась в согласованный лимит.",
+      "origin": "Original synthetic course case; no real participant",
+      "expected_properties": [
+        "Связывать наблюдение с конкретной цитатой",
+        "Не выдумывать численное улучшение"
+      ]
+    },
+    {
+      "case_id": "e-hr04",
+      "track": "hr",
+      "split": "check",
+      "scenario_id": "unknown-result",
+      "question": "Как ты проверил результат своего решения?",
+      "answer": "Я пока не собирал измерения и не знаю, помогло ли изменение. Следующим шагом сравню журнал ошибок за одинаковые периоды.",
+      "origin": "Original synthetic course case; no real participant",
+      "expected_properties": [
+        "Не превращать план в уже полученный результат",
+        "Учитывать явно названное ограничение"
+      ]
+    },
+    {
+      "case_id": "e-be01",
+      "track": "backend",
+      "split": "development",
+      "scenario_id": "sql-index",
+      "question": "Всегда ли индекс ускоряет SQL-запрос?",
+      "answer": "Нет. Это зависит от селективности и плана. Индекс занимает место и требует обновления при записи.",
+      "origin": "Original synthetic course case; no real participant",
+      "expected_properties": [
+        "Не заменять условный ответ универсальным обещанием",
+        "Оговорки об индексе сохранить"
+      ]
+    },
+    {
+      "case_id": "e-be02",
+      "track": "backend",
+      "split": "development",
+      "scenario_id": "timeout-cancellation",
+      "question": "Останавливает ли таймаут клиента вычисление на сервере?",
+      "answer": "Любой таймаут клиента автоматически останавливает серверное вычисление.",
+      "origin": "Original synthetic course case; no real participant",
+      "expected_properties": [
+        "Не подтверждать неверную универсальную причинную связь",
+        "При отсутствии уверенности предложить проверку условия отмены"
+      ]
+    },
+    {
+      "case_id": "e-be03",
+      "track": "backend",
+      "split": "check",
+      "scenario_id": "python-blocking",
+      "question": "Можно ли вызвать долгую синхронную операцию внутри async def?",
+      "answer": "Синтаксически можно, но она заблокирует event loop. Для блокирующего I/O можно использовать отдельный поток; CPU-задачу нужно рассматривать отдельно.",
+      "origin": "Original synthetic course case; no real participant",
+      "expected_properties": [
+        "Сохранить различие синтаксиса и неблокирующего поведения",
+        "Не утверждать что async ускоряет любое CPU-вычисление"
+      ]
+    },
+    {
+      "case_id": "e-be04",
+      "track": "backend",
+      "split": "check",
+      "scenario_id": "idempotency-retry",
+      "question": "Как избежать повторного платежа при повторной доставке запроса?",
+      "answer": "Нужен ключ идемпотентности и атомарная фиксация результата операции. Один только retry без сохранения состояния не защищает от повторного эффекта.",
+      "origin": "Original synthetic course case; no real participant",
+      "expected_properties": [
+        "Не терять требование атомарности и состояния",
+        "Не обещать exactly-once для всей распределённой системы"
+      ]
+    }
+  ],
+  "learner_mastery": "not_assessed"
+}

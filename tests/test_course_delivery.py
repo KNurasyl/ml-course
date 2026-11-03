@@ -45,7 +45,7 @@ def local_course(tmp_path):
         target = tmp_path / path
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(f"# {key}\n\nЗадание {key}-HW01. Объясни полученный результат.\n", encoding="utf-8")
-        registry[key] = {"id": key, "title": key, "path": path, "version": "1.0.0", "status": "ready"}
+        registry[key] = {"id": key, "title": key, "path": path, "version": builder.VERSION, "status": "ready"}
     write_json(tmp_path / "metadata/material-registry.json", registry)
     inventory = []
     for i in range(1, 11):
@@ -148,7 +148,7 @@ def test_registering_full_route_requires_remaining_lesson_files(local_course):
     source = local_course / "course/lessons/M00-L01.md"
     source.parent.mkdir(parents=True)
     source.write_text("# Первый урок", encoding="utf-8")
-    registry["M00-L01"] = {"id":"M00-L01","title":"Первый урок","path":"course/lessons/M00-L01.md","version":"1.0.0","status":"ready"}
+    registry["M00-L01"] = {"id":"M00-L01","title":"Первый урок","path":"course/lessons/M00-L01.md","version":builder.VERSION,"status":"ready"}
     write_json(path, registry)
     manifest = builder.build_manifest(local_course)
     assert manifest["delivery"]["status"] == "incomplete"

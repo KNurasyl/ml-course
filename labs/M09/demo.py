@@ -28,21 +28,30 @@ def load_local():
     model.eval()
     return tokenizer,model,time.perf_counter()-start
 
-def generate(tokenizer,model,messages,max_new_tokens=24):
+def generate(tokenizer,model,messages,max_new_tokens=24,*,do_sample=False,temperature=1.0,top_p=1.0,seed=17):
     inputs=tokenizer.apply_chat_template(messages,add_generation_prompt=True,tokenize=True,
                                         return_dict=True,return_tensors='pt')
     prompt_tokens=int(inputs['input_ids'].shape[1])
     context=int(model.config.max_position_embeddings)
     if prompt_tokens+max_new_tokens>context:raise ValueError('context budget exceeded')
     start=time.perf_counter()
+    if max_new_tokens < 1:raise ValueError('max_new_tokens must be positive')
+    if do_sample and (temperature<=0 or not 0<top_p<=1):raise ValueError('invalid sampling parameters')
+    torch.manual_seed(seed)
+    options={'do_sample':do_sample}
+    if do_sample:options.update(temperature=temperature,top_p=top_p)
     with torch.inference_mode():
         output=model.generate(**inputs,max_new_tokens=max_new_tokens,do_sample=False,
-                              pad_token_id=tokenizer.eos_token_id)
+                              pad_token_id=tokenizer.eos_token_id) if not do_sample else model.generate(
+                                  **inputs,max_new_tokens=max_new_tokens,**options,pad_token_id=tokenizer.eos_token_id)
     elapsed=time.perf_counter()-start
     new=output[0,prompt_tokens:]
     return {'text':tokenizer.decode(new,skip_special_tokens=True),'prompt_tokens':prompt_tokens,
             'generated_tokens':len(new),'seconds':elapsed,'tokens_per_second':len(new)/elapsed,
-            'context_limit':context,'max_new_tokens':max_new_tokens}
+            'context_limit':context,'max_new_tokens':max_new_tokens,
+            'seconds_per_token':elapsed/len(new) if len(new) else None,
+            'settings':{'do_sample':do_sample,'temperature':temperature if do_sample else None,
+                        'top_p':top_p if do_sample else None,'seed':seed}}
 
 def validate_feedback(text):
     try:value=json.loads(text)
@@ -54,6 +63,16 @@ def validate_feedback(text):
     if type(value['score']) is not int or not 0<=value['score']<=2:
         return {'valid':False,'reason':'score_out_of_range'}
     return {'valid':True,'value':value}
+
+
+def feedback_or_abstain(text):
+    """A terminal, observable fallback; it never invents a score after invalid JSON."""
+    validation=validate_feedback(text)
+    if validation['valid']:
+        return {'status':'ok','feedback':validation['value']['feedback'],
+                'score':validation['value']['score'],'fallback_used':False,'reason':None}
+    return {'status':'needs_review','feedback':'Не удалось проверить формат оценки. Сверь ответ с рубрикой самостоятельно.',
+            'score':None,'fallback_used':True,'reason':validation['reason']}
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--download',action='store_true');args=parser.parse_args()
@@ -73,7 +92,8 @@ def main():
             'load_seconds':load_seconds,'parameter_count':sum(p.numel() for p in model.parameters()),
             'parameter_bytes':sum(p.numel()*p.element_size() for p in model.parameters()),
             'rendered_prompt':rendered,'generation':result,'structured_generation':structured,
-            'validation':validation,'fallback_used':not validation['valid'],
+            'validation':validation,'response':feedback_or_abstain(structured['text']),
+            'fallback_used':feedback_or_abstain(structured['text'])['fallback_used'],
             'scope':'English small model; no claim of Russian interview quality or guaranteed valid JSON'}
     out=ROOT/'artifacts/M09';out.mkdir(parents=True,exist_ok=True)
     (out/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')

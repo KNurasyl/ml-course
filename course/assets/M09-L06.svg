@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img"><title>Инференс: три разных измерения памяти</title><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#306655"/></marker></defs><rect width="1000" height="440" fill="#f5f8f4"/>
+<text x="30" y="40" font-family="Arial" font-size="25" fill="#203b32" font-weight="bold">Инференс: три разных измерения памяти</text>
+<rect x="30" y="85" width="295" height="150" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="44" y="114" font-family="Arial" font-size="21" fill="#203b32">Артефакт на диске</text>
+<text x="44" y="141" font-family="Arial" font-size="21" fill="#203b32">serialized state bytes</text>
+<text x="44" y="168" font-family="Arial" font-size="21" fill="#203b32">float32 / packed int8</text>
+<rect x="350" y="85" width="295" height="150" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="364" y="114" font-family="Arial" font-size="21" fill="#203b32">Работающий процесс</text>
+<text x="364" y="141" font-family="Arial" font-size="21" fill="#203b32">RSS после подготовки</text>
+<text x="364" y="168" font-family="Arial" font-size="21" fill="#203b32">модель + библиотеки</text>
+<rect x="670" y="85" width="295" height="150" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="684" y="114" font-family="Arial" font-size="21" fill="#203b32">Наблюдаемый пик</text>
+<text x="684" y="141" font-family="Arial" font-size="21" fill="#203b32">всё дерево процесса</text>
+<text x="684" y="168" font-family="Arial" font-size="21" fill="#203b32">шаг измерения 30 мс</text>
+<text x="35" y="295" font-family="Arial" font-size="21" fill="#203b32">Не складывай и не подменяй эти числа: они отвечают на разные вопросы.</text>
+<text x="35" y="345" font-family="Arial" font-size="24" fill="#203b32">40 токенов / 10 секунд = 4 token/s; 10 / 40 = 0.25 s/token.</text>
+<text x="35" y="393" font-family="Arial" font-size="22" fill="#203b32">Та же ревизия + те же входы + отдельные процессы + чтение ответов.</text>
+</svg>

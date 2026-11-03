@@ -10,7 +10,7 @@ import sys
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 MODULE_IDS = [f"M{i:02}" for i in range(17)]
 PILOT_IDS = [f"P{i:02}" for i in range(1, 11)]
 REQUIRED_MATERIALS = ["HOME", "PROGRESS", "DIAGNOSTIC", "MENTOR", "MENTOR-KEYS",
@@ -144,7 +144,7 @@ def _validate_local(root, curriculum, documents, errors):
         errors.append("Missing local course manifest")
         manifest = {}
     if manifest.get("course_version") != VERSION:
-        errors.append("Manifest version must be 1.0.0")
+        errors.append(f"Manifest version must be {VERSION}")
     if manifest.get("canonical_content") != "local_markdown":
         errors.append("Manifest must use local Markdown as canonical content")
     if manifest.get("full_course_ready") is not False:

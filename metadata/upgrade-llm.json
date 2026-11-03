@@ -1,0 +1,249 @@
+{
+  "version": "1.1.0",
+  "modules": [
+    "M07",
+    "M08",
+    "M09",
+    "M10",
+    "M12"
+  ],
+  "lessons": [
+    {
+      "id": "M08-L06",
+      "title": "Residual и LayerNorm: сохранить путь и выровнять масштаб",
+      "path": "course/lessons/M08-L06.md",
+      "prerequisites": [
+        "M07-L01",
+        "M08-L04"
+      ],
+      "estimated_minutes": 135,
+      "estimate_status": "planning_hypothesis",
+      "practice": "Вручную нормировать строку и проверить residual; сравнить с PyTorch",
+      "assessment": "Новая строка, gamma/beta, неверная ось и постоянный вектор",
+      "status": "materials_ready",
+      "source_of_time": "author planning, learner pilot not measured"
+    },
+    {
+      "id": "M08-L07",
+      "title": "Полный forward Transformer-блока",
+      "path": "course/lessons/M08-L07.md",
+      "prerequisites": [
+        "M08-L06"
+      ],
+      "estimated_minutes": 180,
+      "estimate_status": "planning_hypothesis",
+      "practice": "Проследить формы/числа полного блока и реализовать causal/padding attention",
+      "assessment": "Параметры MLP, будущий и padding токен не меняют защищённые выходы",
+      "status": "materials_ready",
+      "source_of_time": "author planning, learner pilot not measured"
+    },
+    {
+      "id": "M09-L06",
+      "title": "Выбрать локальную конфигурацию по измерениям",
+      "path": "course/lessons/M09-L06.md",
+      "prerequisites": [
+        "M09-L05"
+      ],
+      "estimated_minutes": 210,
+      "estimate_status": "planning_hypothesis",
+      "practice": "Сравнить float32/int8 в отдельных процессах с RSS и outputs",
+      "assessment": "Решение по одинаковым запросам; правильные единицы и ограничение RSS дерева",
+      "status": "materials_ready",
+      "source_of_time": "author planning, learner pilot not measured"
+    },
+    {
+      "id": "M10-L06",
+      "title": "Диагностировать русский RAG по трассе ошибки",
+      "path": "course/lessons/M10-L06.md",
+      "prerequisites": [
+        "M10-L05"
+      ],
+      "estimated_minutes": 270,
+      "estimate_status": "planning_hypothesis",
+      "practice": "48 версионированных документов, две chunking, lexical/encoder/RRF, dev/check",
+      "assessment": "Локализовать потерю условия, устаревшую версию и вопрос без ответа",
+      "status": "materials_ready",
+      "source_of_time": "author planning, learner pilot not measured"
+    },
+    {
+      "id": "M12-L06",
+      "title": "Из диалога в обучающий пример: токены и маска потерь",
+      "path": "course/lessons/M12-L06.md",
+      "prerequisites": [
+        "M12-L05",
+        "M08-L05",
+        "M09-L01"
+      ],
+      "estimated_minutes": 180,
+      "estimate_status": "planning_hypothesis",
+      "practice": "Применить chat template, собрать assistant-only labels и проверить сдвиг loss",
+      "assessment": "Первый assistant-token и EOS сохранены, prefix/padding исключены, overflow отвергнут",
+      "status": "materials_ready",
+      "source_of_time": "author planning, learner pilot not measured"
+    },
+    {
+      "id": "M12-L07",
+      "title": "Настоящий малый SFT: адаптер, checkpoint и регрессии",
+      "path": "course/lessons/M12-L07.md",
+      "prerequisites": [
+        "M12-L06"
+      ],
+      "estimated_minutes": 300,
+      "estimate_status": "planning_hypothesis",
+      "practice": "Обучить LoRA pretrained Smol135; сохранить и восстановить в новом процессе; сравнить base/original/new",
+      "assessment": "Неизменность базы, корректные labels, loss и предметный gate отдельно, реальные ошибки сохранены",
+      "status": "materials_ready",
+      "source_of_time": "author planning, learner pilot not measured"
+    }
+  ],
+  "module_order": {
+    "M08": [
+      "M08-L01",
+      "M08-L02",
+      "M08-L03",
+      "M08-L04",
+      "M08-L06",
+      "M08-L07",
+      "M08-L05"
+    ],
+    "M09": [
+      "M09-L01",
+      "M09-L02",
+      "M09-L03",
+      "M09-L04",
+      "M09-L05",
+      "M09-L06"
+    ],
+    "M10": [
+      "M10-L01",
+      "M10-L02",
+      "M10-L03",
+      "M10-L04",
+      "M10-L05",
+      "M10-L06"
+    ],
+    "M12": [
+      "M12-L01",
+      "M12-L02",
+      "M12-L03",
+      "M12-L04",
+      "M12-L05",
+      "M12-L06",
+      "M12-L07"
+    ]
+  },
+  "prerequisite_overrides": {
+    "M08-L05": [
+      "M08-L07"
+    ]
+  },
+  "lab_commands": [
+    ".\\.venv\\Scripts\\python.exe solutions/exercises/M07/hw_reference.py",
+    ".\\.venv\\Scripts\\python.exe labs/M08/forward_trace.py",
+    ".\\.venv\\Scripts\\python.exe labs/M09/experiments.py",
+    ".\\.venv\\Scripts\\python.exe labs/M09/benchmark.py",
+    ".\\.venv\\Scripts\\python.exe labs/M10/diagnostic_ru.py",
+    ".\\.venv\\Scripts\\python.exe labs/M12/sft.py",
+    ".\\.venv\\Scripts\\python.exe labs/M12/restore_sft.py",
+    ".\\.venv\\Scripts\\python.exe solutions/exercises/M12/sft_variant.py",
+    ".\\.venv\\Scripts\\python.exe labs/M12/restore_sft.py artifacts/M12/sft-variant"
+  ],
+  "exercises": {
+    "M07": {
+      "starter": "exercises/M07/starter.py",
+      "instructions": "exercises/M07/README.md",
+      "checker": "exercises/M07/check.py",
+      "solution": "solutions/exercises/M07/solution.py",
+      "expected_outcome": "starter deliberately unfinished, solution passes, representative wrong solution rejected"
+    },
+    "M08": {
+      "starter": "exercises/M08/starter.py",
+      "instructions": "exercises/M08/README.md",
+      "checker": "exercises/M08/check.py",
+      "solution": "solutions/exercises/M08/solution.py",
+      "expected_outcome": "starter deliberately unfinished, solution passes, representative wrong solution rejected"
+    },
+    "M09": {
+      "starter": "exercises/M09/starter.py",
+      "instructions": "exercises/M09/README.md",
+      "checker": "exercises/M09/check.py",
+      "solution": "solutions/exercises/M09/solution.py",
+      "expected_outcome": "starter deliberately unfinished, solution passes, representative wrong solution rejected"
+    },
+    "M10": {
+      "starter": "exercises/M10/starter.py",
+      "instructions": "exercises/M10/README.md",
+      "checker": "exercises/M10/check.py",
+      "solution": "solutions/exercises/M10/solution.py",
+      "expected_outcome": "starter deliberately unfinished, solution passes, representative wrong solution rejected"
+    },
+    "M12": {
+      "starter": "exercises/M12/starter.py",
+      "instructions": "exercises/M12/README.md",
+      "checker": "exercises/M12/check.py",
+      "solution": "solutions/exercises/M12/solution.py",
+      "expected_outcome": "starter deliberately unfinished, solution passes, representative wrong solution rejected"
+    }
+  },
+  "audit_ids": [
+    "A08",
+    "A10",
+    "A11",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A23",
+    "A27",
+    "A09"
+  ],
+  "checks": {
+    "pytest_command": ".\\.venv\\Scripts\\python.exe -m pytest tests/test_llm_v2.py tests/test_ml_llm_labs.py -q",
+    "pytest_passed": 26,
+    "python_blocks_passed": 27,
+    "python_blocks_report": "artifacts/llm-v2/lesson-blocks.json",
+    "static_figures_reviewed": 9,
+    "fixed_lesson_repeats": {
+      "lessons": 15,
+      "variants_with_keys": 30,
+      "modules": [
+        "M07",
+        "M08",
+        "M09"
+      ]
+    },
+    "fixed_hw_repeats": {
+      "modules": 3,
+      "variants_with_keys": 6
+    },
+    "m07_hw_reference": {
+      "executed": true,
+      "error_ids": [
+        101,
+        141
+      ],
+      "accuracy": 0.89,
+      "fresh_process_max_abs_error": 0.0
+    },
+    "fixed_variant_numeric_checks": 20,
+    "fixed_variant_report": "artifacts/llm-v2/fixed-variant-checks.json",
+    "m07_hw_figure_reviewed": true
+  },
+  "measurement_reports": [
+    "artifacts/M07/hw-reference/hw-report.json",
+    "artifacts/M09/experiments.json",
+    "artifacts/M09/benchmark/comparison.json",
+    "artifacts/M10/ru/report.json",
+    "artifacts/M12/sft/report.json",
+    "artifacts/M12/sft/fresh-restore.json",
+    "artifacts/M12/sft-variant/report.json",
+    "artifacts/M12/sft-variant/fresh-restore.json"
+  ],
+  "limitations": [
+    "English Smol SFT does not demonstrate Russian interview quality",
+    "English MiniLM on Russian is an intentionally measured domain mismatch, lexical baseline wins in this corpus",
+    "SFT loss guard passes but command-quality gate rejects both adapters; failed outputs are preserved",
+    "RSS tree sum is not unique private memory; sampling may miss spikes",
+    "No learner mastery or pilot is inferred from author tests"
+  ]
+}

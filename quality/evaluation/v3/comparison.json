@@ -1,0 +1,168 @@
+{
+  "rubric_version": "feedback-grounding-usefulness-v2",
+  "tracks": {
+    "hr": {
+      "development": {
+        "configs": {
+          "baseline": {
+            "n": 2,
+            "grounded_mean": 0.5,
+            "useful_fraction": 0.0,
+            "critical_count": 1,
+            "fallback_fraction": 0.0,
+            "p50_seconds": 14.241950500000002
+          },
+          "candidate": {
+            "n": 2,
+            "grounded_mean": 1.5,
+            "useful_fraction": 0.5,
+            "critical_count": 0,
+            "fallback_fraction": 0.0,
+            "p50_seconds": 3.054504
+          }
+        },
+        "case_ids": [
+          "v3-hr01",
+          "v3-hr02"
+        ],
+        "paired_usefulness_delta": 1.0,
+        "case_weighted_delta": 1.0,
+        "scenario_count": 2,
+        "bootstrap_95": [
+          0.0,
+          2.0
+        ],
+        "bootstrap_unit": "scenario mean; every scenario has equal weight",
+        "bootstrap_seed": 1106,
+        "critical_regressions": [],
+        "release_allowed": false,
+        "release_blockers": [
+          "insufficient_usefulness"
+        ],
+        "scope": "Small authored examples. This interval does not establish broad user benefit."
+      },
+      "check": {
+        "configs": {
+          "baseline": {
+            "n": 2,
+            "grounded_mean": 0.5,
+            "useful_fraction": 0.5,
+            "critical_count": 1,
+            "fallback_fraction": 0.0,
+            "p50_seconds": 12.289688
+          },
+          "candidate": {
+            "n": 2,
+            "grounded_mean": 1.5,
+            "useful_fraction": 0.0,
+            "critical_count": 0,
+            "fallback_fraction": 0.0,
+            "p50_seconds": 2.887008
+          }
+        },
+        "case_ids": [
+          "v3-hr03",
+          "v3-hr04"
+        ],
+        "paired_usefulness_delta": -0.5,
+        "case_weighted_delta": -0.5,
+        "scenario_count": 2,
+        "bootstrap_95": [
+          -1.0,
+          0.0
+        ],
+        "bootstrap_unit": "scenario mean; every scenario has equal weight",
+        "bootstrap_seed": 1106,
+        "critical_regressions": [],
+        "release_allowed": false,
+        "release_blockers": [
+          "insufficient_usefulness"
+        ],
+        "scope": "Small authored examples. This interval does not establish broad user benefit."
+      }
+    },
+    "backend": {
+      "development": {
+        "configs": {
+          "baseline": {
+            "n": 2,
+            "grounded_mean": 1.5,
+            "useful_fraction": 1.0,
+            "critical_count": 0,
+            "fallback_fraction": 0.0,
+            "p50_seconds": 10.685495
+          },
+          "candidate": {
+            "n": 2,
+            "grounded_mean": 2.0,
+            "useful_fraction": 1.0,
+            "critical_count": 0,
+            "fallback_fraction": 0.0,
+            "p50_seconds": 4.0137339999999995
+          }
+        },
+        "case_ids": [
+          "v3-be01",
+          "v3-be02"
+        ],
+        "paired_usefulness_delta": 0.0,
+        "case_weighted_delta": 0.0,
+        "scenario_count": 2,
+        "bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "bootstrap_unit": "scenario mean; every scenario has equal weight",
+        "bootstrap_seed": 1106,
+        "critical_regressions": [],
+        "release_allowed": true,
+        "release_blockers": [],
+        "scope": "Small authored examples. This interval does not establish broad user benefit."
+      },
+      "check": {
+        "configs": {
+          "baseline": {
+            "n": 2,
+            "grounded_mean": 0.0,
+            "useful_fraction": 0.0,
+            "critical_count": 2,
+            "fallback_fraction": 0.0,
+            "p50_seconds": 15.471027
+          },
+          "candidate": {
+            "n": 2,
+            "grounded_mean": 1.5,
+            "useful_fraction": 0.5,
+            "critical_count": 0,
+            "fallback_fraction": 0.0,
+            "p50_seconds": 3.7405065
+          }
+        },
+        "case_ids": [
+          "v3-be03",
+          "v3-be04"
+        ],
+        "paired_usefulness_delta": 0.5,
+        "case_weighted_delta": 0.5,
+        "scenario_count": 2,
+        "bootstrap_95": [
+          0.0,
+          1.0
+        ],
+        "bootstrap_unit": "scenario mean; every scenario has equal weight",
+        "bootstrap_seed": 1106,
+        "critical_regressions": [],
+        "release_allowed": false,
+        "release_blockers": [
+          "insufficient_usefulness"
+        ],
+        "scope": "Small authored examples. This interval does not establish broad user benefit."
+      }
+    }
+  },
+  "rater_counts": {
+    "course-author AI-assisted review; not independent human validation": 16
+  },
+  "disclaimer": "Judgement is not automated ground truth. Source quotes require semantic review.",
+  "learner_mastery": "not_assessed"
+}

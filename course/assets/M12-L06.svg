@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img"><title>Assistant-only loss: input и labels имеют одинаковую длину</title><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#306655"/></marker></defs><rect width="1000" height="430" fill="#f5f8f4"/>
+<text x="30" y="40" font-family="Arial" font-size="25" fill="#203b32" font-weight="bold">Assistant-only loss: input и labels имеют одинаковую длину</text>
+<text x="30" y="90" font-family="Arial" font-size="22" fill="#203b32">input_ids</text>
+<text x="30" y="165" font-family="Arial" font-size="22" fill="#203b32">labels</text>
+<text x="30" y="240" font-family="Arial" font-size="22" fill="#203b32">attention</text>
+<rect x="195" y="60" width="110" height="55" rx="10" fill="#e7e7e7" stroke="#6f977f"/>
+<text x="209" y="89" font-family="Arial" font-size="21" fill="#203b32">11</text>
+<rect x="195" y="135" width="110" height="55" rx="10" fill="#e7e7e7" stroke="#6f977f"/>
+<text x="209" y="164" font-family="Arial" font-size="21" fill="#203b32">−100</text>
+<text x="235" y="240" font-family="Arial" font-size="23" fill="#203b32">1</text>
+<rect x="320" y="60" width="110" height="55" rx="10" fill="#e7e7e7" stroke="#6f977f"/>
+<text x="334" y="89" font-family="Arial" font-size="21" fill="#203b32">12</text>
+<rect x="320" y="135" width="110" height="55" rx="10" fill="#e7e7e7" stroke="#6f977f"/>
+<text x="334" y="164" font-family="Arial" font-size="21" fill="#203b32">−100</text>
+<text x="360" y="240" font-family="Arial" font-size="23" fill="#203b32">1</text>
+<rect x="445" y="60" width="110" height="55" rx="10" fill="#e7e7e7" stroke="#6f977f"/>
+<text x="459" y="89" font-family="Arial" font-size="21" fill="#203b32">13</text>
+<rect x="445" y="135" width="110" height="55" rx="10" fill="#e7e7e7" stroke="#6f977f"/>
+<text x="459" y="164" font-family="Arial" font-size="21" fill="#203b32">−100</text>
+<text x="485" y="240" font-family="Arial" font-size="23" fill="#203b32">1</text>
+<rect x="570" y="60" width="110" height="55" rx="10" fill="#cce5ca" stroke="#6f977f"/>
+<text x="584" y="89" font-family="Arial" font-size="21" fill="#203b32">21</text>
+<rect x="570" y="135" width="110" height="55" rx="10" fill="#cce5ca" stroke="#6f977f"/>
+<text x="584" y="164" font-family="Arial" font-size="21" fill="#203b32">21</text>
+<text x="610" y="240" font-family="Arial" font-size="23" fill="#203b32">1</text>
+<rect x="695" y="60" width="110" height="55" rx="10" fill="#cce5ca" stroke="#6f977f"/>
+<text x="709" y="89" font-family="Arial" font-size="21" fill="#203b32">22</text>
+<rect x="695" y="135" width="110" height="55" rx="10" fill="#cce5ca" stroke="#6f977f"/>
+<text x="709" y="164" font-family="Arial" font-size="21" fill="#203b32">22</text>
+<text x="735" y="240" font-family="Arial" font-size="23" fill="#203b32">1</text>
+<rect x="820" y="60" width="110" height="55" rx="10" fill="#cce5ca" stroke="#6f977f"/>
+<text x="834" y="89" font-family="Arial" font-size="21" fill="#203b32">2</text>
+<rect x="820" y="135" width="110" height="55" rx="10" fill="#cce5ca" stroke="#6f977f"/>
+<text x="834" y="164" font-family="Arial" font-size="21" fill="#203b32">2</text>
+<text x="860" y="240" font-family="Arial" font-size="23" fill="#203b32">1</text>
+<text x="200" y="290" font-family="Arial" font-size="22" fill="#203b32">system/user prefix</text>
+<text x="595" y="290" font-family="Arial" font-size="22" fill="#203b32">assistant + EOS</text>
+<text x="30" y="345" font-family="Arial" font-size="22" fill="#203b32">Loss делает внутренний сдвиг: logits позиции 2 предсказывают token 21.</text>
+<text x="30" y="392" font-family="Arial" font-size="22" fill="#203b32">Пользователь доступен attention, но его токены не входят в objective.</text>
+</svg>

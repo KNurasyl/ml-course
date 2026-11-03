@@ -27,9 +27,12 @@ def verify():
     return error
 
 def main():
+    global OUT
     parser=argparse.ArgumentParser();parser.add_argument('--verify',action='store_true')
     parser.add_argument('--seed',type=int,default=17);parser.add_argument('--noise',type=float,default=.20)
+    parser.add_argument('--output-dir',type=Path,default=OUT)
     args=parser.parse_args()
+    OUT=args.output_dir.resolve()
     torch.set_num_threads(1)
     if args.verify:verify();return
     torch.manual_seed(args.seed)
@@ -67,7 +70,7 @@ def main():
     (OUT/'release.json').write_text(json.dumps(cfg,indent=2),encoding='utf-8')
     (OUT/'split.json').write_text(json.dumps({'train':train.tolist(),'validation':valid.tolist(),'test':test.tolist()}),encoding='utf-8')
     (OUT/'history.json').write_text(json.dumps(history),encoding='utf-8')
-    check=subprocess.run([sys.executable,str(Path(__file__)), '--verify'],capture_output=True,text=True,check=True)
+    check=subprocess.run([sys.executable,str(Path(__file__)), '--verify', '--output-dir',str(OUT)],capture_output=True,text=True,check=True)
     report={'train_n':len(train),'validation_n':len(valid),'test_n':len(test),'best_epoch':best_epoch,
             'mlp_test_accuracy':accuracy,'logistic_test_accuracy':base,
             'first_train_loss':history[0]['train_loss'],'last_train_loss':history[-1]['train_loss'],

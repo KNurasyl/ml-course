@@ -17,7 +17,7 @@ async function speak(text) {
 }
 function render() {
   $('interview').hidden = session.finished; $('export').hidden=false;
-  $('counter').textContent=`Вопрос ${session.turn+1} / 4`;
+  $('counter').textContent=session.finished?'Интервью завершено':`Тема ${session.topic_index+1} / 4${session.clarification?' · уточнение':''}`;
   $('question').textContent=session.question || 'Интервью завершено';
   $('results').replaceChildren();
   for(const turn of session.history){

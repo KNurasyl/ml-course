@@ -1,0 +1,707 @@
+{
+  "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "seed": 41,
+  "fixed_steps": 36,
+  "rank": 4,
+  "alpha": 8,
+  "modules": [
+    "model.layers.26.self_attn.q_proj",
+    "model.layers.26.self_attn.v_proj",
+    "model.layers.27.self_attn.q_proj",
+    "model.layers.27.self_attn.v_proj",
+    "model.layers.28.self_attn.q_proj",
+    "model.layers.28.self_attn.v_proj",
+    "model.layers.29.self_attn.q_proj",
+    "model.layers.29.self_attn.v_proj"
+  ],
+  "trainable_parameters": 30720,
+  "total_parameters": 134545728,
+  "train_examples": 18,
+  "check_examples": 8,
+  "old_examples": 2,
+  "before": {
+    "train_nll": 3.350855999522739,
+    "check_nll": 3.271850287914276,
+    "old_nll": 2.3511902689933777,
+    "check_generations": [
+      {
+        "prompt": "My project went very well.",
+        "reference": "CLARIFY: Name your own action.",
+        "actual": "I'm glad you're enjoying the project. Now, let's talk about the tradeoff"
+      },
+      {
+        "prompt": "Everyone liked our improvements.",
+        "reference": "CLARIFY: Name your own action.",
+        "actual": "I'm glad you liked the improvements. I'm glad to hear that you found them helpful"
+      },
+      {
+        "prompt": "I compressed response bodies and transferred bytes fell from 900 to 200 KB.",
+        "reference": "NEXT: Explain one tradeoff.",
+        "actual": "I apologize for the inconvenience caused by the transfer of bytes. Please provide the actual transfer size"
+      },
+      {
+        "prompt": "I pooled connections and measured p95 as 35 ms instead of 120 ms.",
+        "reference": "NEXT: Explain one tradeoff.",
+        "actual": "That's a good start. Now, let's dive deeper into the tradeoff between p"
+      },
+      {
+        "prompt": "I only recorded the fastest result out of ten requests.",
+        "reference": "LIMIT: Explain measurement limits.",
+        "actual": "I'm sorry for the misunderstanding, but as an interview tutor, my primary function is to"
+      },
+      {
+        "prompt": "I compared latency with a different number of users.",
+        "reference": "LIMIT: Explain measurement limits.",
+        "actual": "I'm glad you asked about latency. In this case, latency is a measure of the"
+      },
+      {
+        "prompt": "I measured one warm request and called it the general latency.",
+        "reference": "LIMIT: Explain measurement limits.",
+        "actual": "The general latency is the average time it takes for a request to complete, and it's"
+      },
+      {
+        "prompt": "My benchmark used a much smaller database after the change.",
+        "reference": "LIMIT: Explain measurement limits.",
+        "actual": "I'm glad you're satisfied with the new database. Now, let's talk about the"
+      }
+    ],
+    "old_generations": [
+      {
+        "prompt": "What is 2 plus 2?",
+        "reference": "4.",
+        "actual": "Two plus two is a classic arithmetic operation that can be expressed as 2 + 2"
+      },
+      {
+        "prompt": "Name a programming language.",
+        "reference": "Python.",
+        "actual": "A programming language is a set of rules and guidelines that define how a language should be used"
+      }
+    ],
+    "task_review": {
+      "exact_match": 0.0,
+      "critical_wrong_command_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "Exact expected commands only; does not establish semantic quality on real interview answers."
+    }
+  },
+  "after": {
+    "train_nll": 0.5168369627661176,
+    "check_nll": 0.4273543320596218,
+    "old_nll": 2.061936140060425,
+    "check_generations": [
+      {
+        "prompt": "My project went very well.",
+        "reference": "CLARIFY: Name your own action.",
+        "actual": "LIMIT: Explain measurement limits."
+      },
+      {
+        "prompt": "Everyone liked our improvements.",
+        "reference": "CLARIFY: Name your own action.",
+        "actual": "LIMIT: Explain measurement limits."
+      },
+      {
+        "prompt": "I compressed response bodies and transferred bytes fell from 900 to 200 KB.",
+        "reference": "NEXT: Explain one tradeoff.",
+        "actual": "LIMIT: 200 KB"
+      },
+      {
+        "prompt": "I pooled connections and measured p95 as 35 ms instead of 120 ms.",
+        "reference": "NEXT: Explain one tradeoff.",
+        "actual": "LIMIT: Explain measurement limits."
+      },
+      {
+        "prompt": "I only recorded the fastest result out of ten requests.",
+        "reference": "LIMIT: Explain measurement limits.",
+        "actual": "LIMIT: Explain measurement limits."
+      },
+      {
+        "prompt": "I compared latency with a different number of users.",
+        "reference": "LIMIT: Explain measurement limits.",
+        "actual": "LIMIT: Explain measurement limits."
+      },
+      {
+        "prompt": "I measured one warm request and called it the general latency.",
+        "reference": "LIMIT: Explain measurement limits.",
+        "actual": "LIMIT: Explain measurement limits."
+      },
+      {
+        "prompt": "My benchmark used a much smaller database after the change.",
+        "reference": "LIMIT: Explain measurement limits.",
+        "actual": "LIMIT: Explain measurement limits."
+      }
+    ],
+    "old_generations": [
+      {
+        "prompt": "What is 2 plus 2?",
+        "reference": "4.",
+        "actual": "LIMIT: 2 + 2 = 4"
+      },
+      {
+        "prompt": "Name a programming language.",
+        "reference": "Python.",
+        "actual": "LIMIT: Explain: Explain: Explain: Explain: Explain: Explain: Explain: Explain"
+      }
+    ],
+    "task_review": {
+      "exact_match": 0.5,
+      "critical_wrong_command_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "scope": "Exact expected commands only; does not establish semantic quality on real interview answers."
+    }
+  },
+  "load_seconds": 0.6019215999986045,
+  "training_seconds": 10.314720299997134,
+  "history": [
+    3.1730215549468994,
+    3.1231191158294678,
+    2.952604055404663,
+    2.757032632827759,
+    2.305525064468384,
+    2.173976182937622,
+    3.2841992378234863,
+    3.190943479537964,
+    2.9525115489959717,
+    2.545043468475342,
+    2.2342255115509033,
+    1.773429274559021,
+    2.8800394535064697,
+    2.1896162033081055,
+    2.2503108978271484,
+    1.9086672067642212,
+    1.439089298248291,
+    1.63893723487854,
+    1.0642753839492798,
+    1.1099096536636353,
+    0.7709924578666687,
+    0.679467499256134,
+    0.48945459723472595,
+    0.35382723808288574,
+    0.8831513524055481,
+    0.6854810118675232,
+    0.6343091726303101,
+    0.6606881618499756,
+    0.406904935836792,
+    0.3068733215332031,
+    1.2489233016967773,
+    1.0449776649475098,
+    0.764370322227478,
+    0.44712236523628235,
+    0.33897483348846436,
+    0.37096846103668213
+  ],
+  "base_sha256": "f165a2f0fa763de2e86a40bb73a2ccf40fb60dbeeaf57d555f9baf0c7d2a444c",
+  "base_unchanged": true,
+  "restore_max_abs_error": 0.0,
+  "erase_max_abs_difference": 24.77062225341797,
+  "release_allowed_by_loss_guard": true,
+  "release_rule": "check NLL improves AND old NLL <= 1.2*before; human semantics review also required",
+  "release_allowed": false,
+  "semantic_gate": "No wrong CLARIFY/NEXT/LIMIT command on the fixed check; read content separately even if command passes.",
+  "mask_inspection": [
+    {
+      "id": 1,
+      "token": "<|im_start|>",
+      "label": -100
+    },
+    {
+      "id": 9690,
+      "token": "system",
+      "label": -100
+    },
+    {
+      "id": 198,
+      "token": "Ċ",
+      "label": -100
+    },
+    {
+      "id": 2683,
+      "token": "You",
+      "label": -100
+    },
+    {
+      "id": 359,
+      "token": "Ġare",
+      "label": -100
+    },
+    {
+      "id": 354,
+      "token": "Ġan",
+      "label": -100
+    },
+    {
+      "id": 5473,
+      "token": "Ġinterview",
+      "label": -100
+    },
+    {
+      "id": 15474,
+      "token": "Ġtutor",
+      "label": -100
+    },
+    {
+      "id": 30,
+      "token": ".",
+      "label": -100
+    },
+    {
+      "id": 19842,
+      "token": "ĠAnswer",
+      "label": -100
+    },
+    {
+      "id": 351,
+      "token": "Ġwith",
+      "label": -100
+    },
+    {
+      "id": 582,
+      "token": "Ġone",
+      "label": -100
+    },
+    {
+      "id": 1890,
+      "token": "Ġshort",
+      "label": -100
+    },
+    {
+      "id": 5785,
+      "token": "Ġinstruction",
+      "label": -100
+    },
+    {
+      "id": 30,
+      "token": ".",
+      "label": -100
+    },
+    {
+      "id": 1094,
+      "token": "ĠIf",
+      "label": -100
+    },
+    {
+      "id": 260,
+      "token": "Ġthe",
+      "label": -100
+    },
+    {
+      "id": 8991,
+      "token": "Ġcandidate",
+      "label": -100
+    },
+    {
+      "id": 314,
+      "token": "Ġis",
+      "label": -100
+    },
+    {
+      "id": 21765,
+      "token": "Ġvague",
+      "label": -100
+    },
+    {
+      "id": 28,
+      "token": ",",
+      "label": -100
+    },
+    {
+      "id": 1998,
+      "token": "Ġask",
+      "label": -100
+    },
+    {
+      "id": 601,
+      "token": "Ġthem",
+      "label": -100
+    },
+    {
+      "id": 288,
+      "token": "Ġto",
+      "label": -100
+    },
+    {
+      "id": 1462,
+      "token": "Ġname",
+      "label": -100
+    },
+    {
+      "id": 480,
+      "token": "Ġtheir",
+      "label": -100
+    },
+    {
+      "id": 1038,
+      "token": "Ġown",
+      "label": -100
+    },
+    {
+      "id": 2353,
+      "token": "Ġaction",
+      "label": -100
+    },
+    {
+      "id": 30,
+      "token": ".",
+      "label": -100
+    },
+    {
+      "id": 1094,
+      "token": "ĠIf",
+      "label": -100
+    },
+    {
+      "id": 354,
+      "token": "Ġan",
+      "label": -100
+    },
+    {
+      "id": 2353,
+      "token": "Ġaction",
+      "label": -100
+    },
+    {
+      "id": 284,
+      "token": "Ġand",
+      "label": -100
+    },
+    {
+      "id": 7585,
+      "token": "Ġmeasurement",
+      "label": -100
+    },
+    {
+      "id": 359,
+      "token": "Ġare",
+      "label": -100
+    },
+    {
+      "id": 1386,
+      "token": "Ġpresent",
+      "label": -100
+    },
+    {
+      "id": 28,
+      "token": ",",
+      "label": -100
+    },
+    {
+      "id": 1998,
+      "token": "Ġask",
+      "label": -100
+    },
+    {
+      "id": 563,
+      "token": "Ġabout",
+      "label": -100
+    },
+    {
+      "id": 260,
+      "token": "Ġthe",
+      "label": -100
+    },
+    {
+      "id": 3735,
+      "token": "Ġtrade",
+      "label": -100
+    },
+    {
+      "id": 3430,
+      "token": "off",
+      "label": -100
+    },
+    {
+      "id": 30,
+      "token": ".",
+      "label": -100
+    },
+    {
+      "id": 1094,
+      "token": "ĠIf",
+      "label": -100
+    },
+    {
+      "id": 260,
+      "token": "Ġthe",
+      "label": -100
+    },
+    {
+      "id": 7585,
+      "token": "Ġmeasurement",
+      "label": -100
+    },
+    {
+      "id": 5643,
+      "token": "Ġprocedure",
+      "label": -100
+    },
+    {
+      "id": 314,
+      "token": "Ġis",
+      "label": -100
+    },
+    {
+      "id": 29533,
+      "token": "Ġunreliable",
+      "label": -100
+    },
+    {
+      "id": 28,
+      "token": ",",
+      "label": -100
+    },
+    {
+      "id": 1998,
+      "token": "Ġask",
+      "label": -100
+    },
+    {
+      "id": 288,
+      "token": "Ġto",
+      "label": -100
+    },
+    {
+      "id": 3556,
+      "token": "Ġexplain",
+      "label": -100
+    },
+    {
+      "id": 7585,
+      "token": "Ġmeasurement",
+      "label": -100
+    },
+    {
+      "id": 6583,
+      "token": "Ġlimits",
+      "label": -100
+    },
+    {
+      "id": 30,
+      "token": ".",
+      "label": -100
+    },
+    {
+      "id": 2,
+      "token": "<|im_end|>",
+      "label": -100
+    },
+    {
+      "id": 198,
+      "token": "Ċ",
+      "label": -100
+    },
+    {
+      "id": 1,
+      "token": "<|im_start|>",
+      "label": -100
+    },
+    {
+      "id": 4093,
+      "token": "user",
+      "label": -100
+    },
+    {
+      "id": 198,
+      "token": "Ċ",
+      "label": -100
+    },
+    {
+      "id": 57,
+      "token": "I",
+      "label": -100
+    },
+    {
+      "id": 4573,
+      "token": "Ġhelped",
+      "label": -100
+    },
+    {
+      "id": 260,
+      "token": "Ġthe",
+      "label": -100
+    },
+    {
+      "id": 2299,
+      "token": "Ġteam",
+      "label": -100
+    },
+    {
+      "id": 30,
+      "token": ".",
+      "label": -100
+    },
+    {
+      "id": 2,
+      "token": "<|im_end|>",
+      "label": -100
+    },
+    {
+      "id": 198,
+      "token": "Ċ",
+      "label": -100
+    },
+    {
+      "id": 1,
+      "token": "<|im_start|>",
+      "label": -100
+    },
+    {
+      "id": 520,
+      "token": "ass",
+      "label": -100
+    },
+    {
+      "id": 9531,
+      "token": "istant",
+      "label": -100
+    },
+    {
+      "id": 198,
+      "token": "Ċ",
+      "label": -100
+    },
+    {
+      "id": 7430,
+      "token": "CL",
+      "label": 7430
+    },
+    {
+      "id": 2285,
+      "token": "AR",
+      "label": 2285
+    },
+    {
+      "id": 8107,
+      "token": "IF",
+      "label": 8107
+    },
+    {
+      "id": 73,
+      "token": "Y",
+      "label": 73
+    },
+    {
+      "id": 42,
+      "token": ":",
+      "label": 42
+    },
+    {
+      "id": 10181,
+      "token": "ĠName",
+      "label": 10181
+    },
+    {
+      "id": 469,
+      "token": "Ġyour",
+      "label": 469
+    },
+    {
+      "id": 1038,
+      "token": "Ġown",
+      "label": 1038
+    },
+    {
+      "id": 2353,
+      "token": "Ġaction",
+      "label": 2353
+    },
+    {
+      "id": 30,
+      "token": ".",
+      "label": 30
+    },
+    {
+      "id": 2,
+      "token": "<|im_end|>",
+      "label": 2
+    },
+    {
+      "id": 198,
+      "token": "Ċ",
+      "label": 198
+    }
+  ],
+  "manual_loss_shift_abs_error": 0.0,
+  "comparison_adapter": {
+    "check_nll": 1.4574474468827248,
+    "old_nll": 2.324058711528778,
+    "check_generations": [
+      {
+        "prompt": "My project went very well.",
+        "reference": "CLARIFY: Name your own action.",
+        "actual": "NEXT: Explain one tradeoff."
+      },
+      {
+        "prompt": "Everyone liked our improvements.",
+        "reference": "CLARIFY: Name your own action.",
+        "actual": "NEXT: Explain one tradeoff."
+      },
+      {
+        "prompt": "I compressed response bodies and transferred bytes fell from 900 to 200 KB.",
+        "reference": "NEXT: Explain one tradeoff.",
+        "actual": "NEXT: Explain one tradeoff."
+      },
+      {
+        "prompt": "I pooled connections and measured p95 as 35 ms instead of 120 ms.",
+        "reference": "NEXT: Explain one tradeoff.",
+        "actual": "NEXT: Explain one tradeoff."
+      },
+      {
+        "prompt": "I only recorded the fastest result out of ten requests.",
+        "reference": "LIMIT: Explain measurement limits.",
+        "actual": "NEXT: Explain one tradeoff."
+      },
+      {
+        "prompt": "I compared latency with a different number of users.",
+        "reference": "LIMIT: Explain measurement limits.",
+        "actual": "NEXT: Explain one tradeoff."
+      },
+      {
+        "prompt": "I measured one warm request and called it the general latency.",
+        "reference": "LIMIT: Explain measurement limits.",
+        "actual": "NEXT: Explain one tradeoff."
+      },
+      {
+        "prompt": "My benchmark used a much smaller database after the change.",
+        "reference": "LIMIT: Explain measurement limits.",
+        "actual": "NEXT: Explain one tradeoff."
+      }
+    ],
+    "old_generations": [
+      {
+        "prompt": "What is 2 plus 2?",
+        "reference": "4.",
+        "actual": "NEXT: Explain:"
+      },
+      {
+        "prompt": "Name a programming language.",
+        "reference": "Python.",
+        "actual": "NEXT: Explain: Name a programming language."
+      }
+    ],
+    "task_review": {
+      "exact_match": 0.25,
+      "critical_wrong_command_indices": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "Exact expected commands only; does not establish semantic quality on real interview answers."
+    }
+  },
+  "limits": "English synthetic format adaptation; no claim of Russian HR quality or statistically reliable generalization."
+}

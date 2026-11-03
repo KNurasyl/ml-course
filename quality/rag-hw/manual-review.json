@@ -1,0 +1,95 @@
+{
+  "reviewer": "AI-assisted course author review; not an independent human rating",
+  "outputs_sha256": "4e70ac419e6d1f3dfbbfd36edf8409a4cd58a55e89ff21ca952e90b7a1fc8d5a",
+  "rubric": [
+    "Every factual claim supported by provided source",
+    "Source ID actually present in model output",
+    "Question answered with conditions preserved",
+    "Unanswerable requests abstain"
+  ],
+  "cases": [
+    {
+      "case_id": "hw-term-pool",
+      "model_cited_ids": [],
+      "claims": [
+        {
+          "claim": "Пул соединений базы данных выполняет функцию обработки запросов, ограничивая количество одновременных запросов.",
+          "source_by_reviewer": "pool-v2-c1",
+          "label": "insufficient",
+          "evidence": "ограничивает число одновременно выданных соединений",
+          "reason": "Модель заменяет соединения запросами и приписывает пулу обработку. Источник описывает выдачу/переиспользование соединений, не общее число HTTP-запросов."
+        },
+        {
+          "claim": "Если все соединения заняты, новый запрос ждёт освобождения или получает отказ по дедлайну.",
+          "source_by_reviewer": "pool-v2-c1",
+          "label": "supported",
+          "evidence": "Если все соединения заняты, новый запрос ждёт освобождения или получает отказ по дедлайну.",
+          "reason": "Условие и два исхода сохранены, но ID модель не привела."
+        }
+      ],
+      "quality_pass": false,
+      "critical": false
+    },
+    {
+      "case_id": "hw-paraphrase-pool",
+      "model_cited_ids": [],
+      "claims": [
+        {
+          "claim": "Да, больше открытых соединений может ускорить работу с базой данных",
+          "source_by_reviewer": "pool-v2-c1",
+          "label": "insufficient",
+          "evidence": "Увеличение пула не гарантирует ускорения",
+          "reason": "Вопрос об обязательном ускорении требует отрицания гарантии. Начальное «Да» вводит в заблуждение, а возможность ускорения не обоснована данным кратким источником."
+        },
+        {
+          "claim": "это зависит от других факторов, таких как нагрузка на базу и доступность ресурсов.",
+          "source_by_reviewer": "pool-v2-c1",
+          "label": "insufficient",
+          "evidence": "база данных может стать перегруженной",
+          "reason": "Нагрузка связана с оговоркой источника; доступность ресурсов добавлена без конкретного основания. Составное утверждение не полностью подтверждено."
+        }
+      ],
+      "quality_pass": false,
+      "critical": false
+    },
+    {
+      "case_id": "hw-two-sources",
+      "model_cited_ids": [],
+      "claims": [
+        {
+          "claim": "В первом случае, если все соединения заняты, новый запрос ждёт освобождения или получения отказа.",
+          "source_by_reviewer": "pool-v2-c1",
+          "label": "insufficient",
+          "evidence": "Если все соединения заняты, новый запрос ждёт освобождения или получает отказ по дедлайну.",
+          "reason": "Механизм ожидания взят из pool, но «первый случай» в вопросе — перед обработчиком. Связь этапов перепутана/не обоснована."
+        },
+        {
+          "claim": "В втором случае, обратное давление ограничивает приём новых задач, а конечная очередь отклоняет новую задачу при заполнении очереди.",
+          "source_by_reviewer": "backpressure-v2-c1",
+          "label": "insufficient",
+          "evidence": "Обратное давление ограничивает приём новых задач, когда обработчик перегружен.",
+          "reason": "Само ограничение приёма описано в источнике. Однако ответ привязывает его ко второму этапу (соединение) и не объясняет необходимость отдельных измерений. Полное утверждение в контексте вопроса не подтверждено."
+        }
+      ],
+      "quality_pass": false,
+      "critical": false
+    },
+    {
+      "case_id": "hw-no-answer",
+      "model_cited_ids": [],
+      "claims": [
+        {
+          "claim": "Компания Арктур выделила точный бюджет в тенге на серверы в ноябре, который составил около 500 миллионов тенге.",
+          "source_by_reviewer": null,
+          "label": "insufficient",
+          "evidence": null,
+          "reason": "Ни один найденный источник не содержит корпоративного бюджета, месяца или числа 500 миллионов. Критическая галлюцинация; требовался отказ."
+        }
+      ],
+      "quality_pass": false,
+      "critical": true
+    }
+  ],
+  "conclusion": "0/4 pass all requirements. Citation omission in all four; unanswerable budget hallucination is a release blocker. Retrieval success is separate.",
+  "next_step": "Keep this failed check. Diagnose abstention and citation/claim constraints on separate development cases, then freeze and test new queries; no retuning on this check."
+}

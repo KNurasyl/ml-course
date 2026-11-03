@@ -10,6 +10,7 @@ import time
 import wave
 from .core import Interview, make_prompt
 from .llm import LocalLLM
+from .feedback import evaluate_answer
 from .speech import synthesize_wav, transcribe_wav
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -98,10 +99,12 @@ class Handler(BaseHTTPRequestHandler):
                     raise ValueError("Сессия не найдена")
                 question, sources = interview.prepare(data.get("answer"), data.get("turn"))
                 start = time.perf_counter()
-                feedback = MODEL.generate(make_prompt(interview.mode, question, data["answer"], sources))
-                if not feedback.strip():
+                assessment = evaluate_answer(MODEL, mode=interview.mode, question=question,
+                    answer=data['answer'], sources=sources, history=interview.history, config='candidate')
+                feedback = assessment['display_text']
+                if not assessment['raw_output'].strip():
                     raise RuntimeError("Модель вернула пустой разбор; ход не сохранён")
-                result = interview.commit(data["answer"], feedback, sources, time.perf_counter()-start, MODEL.last_generation)
+                result = interview.commit(data["answer"], feedback, sources, time.perf_counter()-start, MODEL.last_generation, assessment)
                 # In-memory only; user explicitly exports a session from the browser.
                 return self.send(200, result)
             if self.path == "/tts":

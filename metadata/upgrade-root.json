@@ -1,0 +1,50 @@
+{
+  "version": "1.1.0",
+  "new_lessons": [
+    {
+      "id": "M11-L06",
+      "title": "От реальных ответов к парному сравнению систем",
+      "prerequisites": [
+        "M11-L02",
+        "M11-L03",
+        "M11-L05",
+        "M09-L05"
+      ],
+      "estimated_minutes": 240,
+      "practice": "Собрать неизменённые ответы двух конфигураций, разметить по рубрике и принять решение отдельно по HR/backend.",
+      "assessment": "Новые случаи, полная разметка с происхождением, проверка отсутствующих оценок, парное сравнение и критические ограничения.",
+      "path": "course/lessons/M11-L06.md",
+      "status": "materials_ready",
+      "visual": "course/assets/M11-L06.svg"
+    }
+  ],
+  "module_order": {
+    "M11": [
+      "M11-L01",
+      "M11-L02",
+      "M11-L03",
+      "M11-L04",
+      "M11-L05",
+      "M11-L06"
+    ]
+  },
+  "exercises": [
+    {
+      "module": "M06",
+      "starter": "exercises/M06/starter.py",
+      "checker": "exercises/M06/check.py",
+      "solution": "solutions/exercises/M06/solution.py"
+    },
+    {
+      "module": "M11",
+      "starter": "exercises/M11/starter.py",
+      "checker": "exercises/M11/check.py",
+      "solution": "solutions/exercises/M11/solution.py"
+    }
+  ],
+  "new_lab_commands": [
+    "labs/M11/evaluate.py score --run quality/evaluation/v2 --annotations quality/evaluation/v2/annotations.jsonl",
+    "labs/M11/evaluate.py score --run quality/evaluation/v3 --annotations quality/evaluation/v3/annotations.jsonl"
+  ],
+  "learner_results": "not_assessed"
+}

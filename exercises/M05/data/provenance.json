@@ -1,0 +1,22 @@
+{
+  "version": "1.1.0",
+  "origin": "author-created synthetic records; no human data",
+  "generator": "labs/M05/pipeline.py::make_data",
+  "files": {
+    "delayed.csv": {
+      "sha256": "cd07bc5394f874e96d7f547ab4f2ee538fa930290fa361ca9da318d1f256f226",
+      "rows": 240,
+      "synthetic": true
+    },
+    "hw.csv": {
+      "sha256": "0b56aff5d8023f5198fa856e68cd2a46db5d78cdbd354e3acecb7e4027f0c561",
+      "rows": 240,
+      "synthetic": true
+    },
+    "retry.csv": {
+      "sha256": "14e383946c9fe574ceea14e0b8bb0114751a3785adca32b4b2ec117b1d92f833",
+      "rows": 240,
+      "synthetic": true
+    }
+  }
+}

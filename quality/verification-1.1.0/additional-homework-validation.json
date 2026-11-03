@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "command": [
+        "solutions/exercises/M07/hw_reference.py"
+      ],
+      "exit_code": 0,
+      "seconds": 16.65,
+      "log": "artifacts/extended-labs/final-M07.log"
+    },
+    {
+      "command": [
+        "solutions/exercises/M10/hw_reference.py",
+        "--output-dir",
+        "artifacts/M10/hw-final-qa"
+      ],
+      "exit_code": 0,
+      "seconds": 53.118,
+      "log": "artifacts/extended-labs/final-M10.log"
+    }
+  ],
+  "passed": true,
+  "learner_mastery": "not_assessed"
+}

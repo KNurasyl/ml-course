@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" role="img"><title>Chunking: найденный документ ≠ достаточный контекст</title><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#306655"/></marker></defs><rect width="1000" height="480" fill="#f5f8f4"/>
+<text x="30" y="40" font-family="Arial" font-size="25" fill="#203b32" font-weight="bold">Chunking: найденный документ ≠ достаточный контекст</text>
+<rect x="30" y="80" width="935" height="80" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="44" y="109" font-family="Arial" font-size="21" fill="#203b32">Документ: «Индекс ускоряет подходящие запросы, но не гарантирует</text>
+<text x="44" y="136" font-family="Arial" font-size="21" fill="#203b32">ускорения выборки большей части таблицы».</text>
+<path d="M250,165 L250,215" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M730,165 L730,215" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<rect x="30" y="225" width="440" height="125" rx="10" fill="#f4ded6" stroke="#6f977f"/>
+<text x="44" y="254" font-family="Arial" font-size="21" fill="#203b32">Окно отрезало условие:</text>
+<text x="44" y="281" font-family="Arial" font-size="21" fill="#203b32">«Индекс ускоряет</text>
+<text x="44" y="308" font-family="Arial" font-size="21" fill="#203b32">подходящие запросы»</text>
+<text x="44" y="335" font-family="Arial" font-size="21" fill="#203b32">Document Recall = 1</text>
+<rect x="520" y="225" width="445" height="125" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="534" y="254" font-family="Arial" font-size="21" fill="#203b32">Абзац сохранил условие:</text>
+<text x="534" y="281" font-family="Arial" font-size="21" fill="#203b32">«… но не гарантирует …»</text>
+<text x="534" y="308" font-family="Arial" font-size="21" fill="#203b32">Проверяем утверждение ответа</text>
+<text x="35" y="407" font-family="Arial" font-size="25" fill="#203b32">Трасса: версия → chunk → кандидаты → контекст → claim.</text>
+<text x="35" y="448" font-family="Arial" font-size="21" fill="#203b32">Нет ответа в корпусе: Recall = None; качество отказа считаем отдельно.</text>
+</svg>

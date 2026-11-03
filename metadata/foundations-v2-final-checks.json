@@ -1,0 +1,18 @@
+[
+  {
+    "command": "solutions/exercises/M03/run_hw.py",
+    "exit_code": 0
+  },
+  {
+    "command": "solutions/exercises/M05/run_hw.py --variant hw",
+    "exit_code": 0
+  },
+  {
+    "command": "solutions/exercises/M05/run_hw.py --variant retry",
+    "exit_code": 0
+  },
+  {
+    "command": "solutions/exercises/M05/run_hw.py --variant delayed",
+    "exit_code": 0
+  }
+]

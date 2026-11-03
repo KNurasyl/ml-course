@@ -1,0 +1,145 @@
+{
+  "records": [
+    {
+      "lesson": "P01",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P01.ipynb",
+      "output": "artifacts\\executed\\starter\\P01.ipynb"
+    },
+    {
+      "lesson": "P02",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P02.ipynb",
+      "output": "artifacts\\executed\\starter\\P02.ipynb"
+    },
+    {
+      "lesson": "P03",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P03.ipynb",
+      "output": "artifacts\\executed\\starter\\P03.ipynb"
+    },
+    {
+      "lesson": "P04",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P04.ipynb",
+      "output": "artifacts\\executed\\starter\\P04.ipynb"
+    },
+    {
+      "lesson": "P05",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P05.ipynb",
+      "output": "artifacts\\executed\\starter\\P05.ipynb"
+    },
+    {
+      "lesson": "P06",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P06.ipynb",
+      "output": "artifacts\\executed\\starter\\P06.ipynb"
+    },
+    {
+      "lesson": "P07",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P07.ipynb",
+      "output": "artifacts\\executed\\starter\\P07.ipynb"
+    },
+    {
+      "lesson": "P08",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P08.ipynb",
+      "output": "artifacts\\executed\\starter\\P08.ipynb"
+    },
+    {
+      "lesson": "P09",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P09.ipynb",
+      "output": "artifacts\\executed\\starter\\P09.ipynb"
+    },
+    {
+      "lesson": "P10",
+      "kind": "starter",
+      "status": "executed",
+      "source": "notebooks\\pilot\\P10.ipynb",
+      "output": "artifacts\\executed\\starter\\P10.ipynb"
+    },
+    {
+      "lesson": "P01",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P01.ipynb",
+      "output": "artifacts\\executed\\solutions\\P01.ipynb"
+    },
+    {
+      "lesson": "P02",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P02.ipynb",
+      "output": "artifacts\\executed\\solutions\\P02.ipynb"
+    },
+    {
+      "lesson": "P03",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P03.ipynb",
+      "output": "artifacts\\executed\\solutions\\P03.ipynb"
+    },
+    {
+      "lesson": "P04",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P04.ipynb",
+      "output": "artifacts\\executed\\solutions\\P04.ipynb"
+    },
+    {
+      "lesson": "P05",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P05.ipynb",
+      "output": "artifacts\\executed\\solutions\\P05.ipynb"
+    },
+    {
+      "lesson": "P06",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P06.ipynb",
+      "output": "artifacts\\executed\\solutions\\P06.ipynb"
+    },
+    {
+      "lesson": "P07",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P07.ipynb",
+      "output": "artifacts\\executed\\solutions\\P07.ipynb"
+    },
+    {
+      "lesson": "P08",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P08.ipynb",
+      "output": "artifacts\\executed\\solutions\\P08.ipynb"
+    },
+    {
+      "lesson": "P09",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P09.ipynb",
+      "output": "artifacts\\executed\\solutions\\P09.ipynb"
+    },
+    {
+      "lesson": "P10",
+      "kind": "solutions",
+      "status": "executed",
+      "source": "solutions\\pilot\\P10.ipynb",
+      "output": "artifacts\\executed\\solutions\\P10.ipynb"
+    }
+  ],
+  "learner_mastery": "not_assessed"
+}

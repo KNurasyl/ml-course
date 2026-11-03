@@ -1,0 +1,12 @@
+{
+  "chosen_context": "paragraph/lexical/top3 chunks",
+  "abstention_threshold": 0.12,
+  "llm_cases": [
+    "hw-term-pool",
+    "hw-paraphrase-pool",
+    "hw-two-sources",
+    "hw-no-answer"
+  ],
+  "max_new_tokens": 160,
+  "selection": "fixed before viewing outputs"
+}

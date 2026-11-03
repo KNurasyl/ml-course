@@ -1,0 +1,414 @@
+{
+  "results": [
+    {
+      "id": "M00-reference",
+      "command": [
+        "exercises/M00/check.py",
+        "solutions/exercises/M00/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.101,
+      "log": "artifacts/extended-labs/M00-reference.log"
+    },
+    {
+      "id": "M00-empty-rejected",
+      "command": [
+        "exercises/M00/check.py",
+        "exercises/M00/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.105,
+      "log": "artifacts/extended-labs/M00-empty-rejected.log"
+    },
+    {
+      "id": "M01-reference",
+      "command": [
+        "exercises/M01/check.py",
+        "solutions/exercises/M01/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.103,
+      "log": "artifacts/extended-labs/M01-reference.log"
+    },
+    {
+      "id": "M01-empty-rejected",
+      "command": [
+        "exercises/M01/check.py",
+        "exercises/M01/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.1,
+      "log": "artifacts/extended-labs/M01-empty-rejected.log"
+    },
+    {
+      "id": "M02-reference",
+      "command": [
+        "exercises/M02/check.py",
+        "solutions/exercises/M02/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.251,
+      "log": "artifacts/extended-labs/M02-reference.log"
+    },
+    {
+      "id": "M02-empty-rejected",
+      "command": [
+        "exercises/M02/check.py",
+        "exercises/M02/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.123,
+      "log": "artifacts/extended-labs/M02-empty-rejected.log"
+    },
+    {
+      "id": "M03-reference",
+      "command": [
+        "exercises/M03/check.py",
+        "solutions/exercises/M03/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.102,
+      "log": "artifacts/extended-labs/M03-reference.log"
+    },
+    {
+      "id": "M03-empty-rejected",
+      "command": [
+        "exercises/M03/check.py",
+        "exercises/M03/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.104,
+      "log": "artifacts/extended-labs/M03-empty-rejected.log"
+    },
+    {
+      "id": "M04-reference",
+      "command": [
+        "exercises/M04/check.py",
+        "solutions/exercises/M04/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.098,
+      "log": "artifacts/extended-labs/M04-reference.log"
+    },
+    {
+      "id": "M04-empty-rejected",
+      "command": [
+        "exercises/M04/check.py",
+        "exercises/M04/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.099,
+      "log": "artifacts/extended-labs/M04-empty-rejected.log"
+    },
+    {
+      "id": "M05-reference",
+      "command": [
+        "exercises/M05/check.py",
+        "solutions/exercises/M05/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 2.348,
+      "log": "artifacts/extended-labs/M05-reference.log"
+    },
+    {
+      "id": "M05-empty-rejected",
+      "command": [
+        "exercises/M05/check.py",
+        "exercises/M05/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 2.322,
+      "log": "artifacts/extended-labs/M05-empty-rejected.log"
+    },
+    {
+      "id": "M06-reference",
+      "command": [
+        "exercises/M06/check.py",
+        "solutions/exercises/M06/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.112,
+      "log": "artifacts/extended-labs/M06-reference.log"
+    },
+    {
+      "id": "M06-empty-rejected",
+      "command": [
+        "exercises/M06/check.py",
+        "exercises/M06/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.1,
+      "log": "artifacts/extended-labs/M06-empty-rejected.log"
+    },
+    {
+      "id": "M07-reference",
+      "command": [
+        "exercises/M07/check.py",
+        "solutions/exercises/M07/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 2.608,
+      "log": "artifacts/extended-labs/M07-reference.log"
+    },
+    {
+      "id": "M07-empty-rejected",
+      "command": [
+        "exercises/M07/check.py",
+        "exercises/M07/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 2.605,
+      "log": "artifacts/extended-labs/M07-empty-rejected.log"
+    },
+    {
+      "id": "M08-reference",
+      "command": [
+        "exercises/M08/check.py",
+        "solutions/exercises/M08/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.266,
+      "log": "artifacts/extended-labs/M08-reference.log"
+    },
+    {
+      "id": "M08-empty-rejected",
+      "command": [
+        "exercises/M08/check.py",
+        "exercises/M08/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.256,
+      "log": "artifacts/extended-labs/M08-empty-rejected.log"
+    },
+    {
+      "id": "M09-reference",
+      "command": [
+        "exercises/M09/check.py",
+        "solutions/exercises/M09/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.114,
+      "log": "artifacts/extended-labs/M09-reference.log"
+    },
+    {
+      "id": "M09-empty-rejected",
+      "command": [
+        "exercises/M09/check.py",
+        "exercises/M09/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.124,
+      "log": "artifacts/extended-labs/M09-empty-rejected.log"
+    },
+    {
+      "id": "M10-reference",
+      "command": [
+        "exercises/M10/check.py",
+        "solutions/exercises/M10/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.114,
+      "log": "artifacts/extended-labs/M10-reference.log"
+    },
+    {
+      "id": "M10-empty-rejected",
+      "command": [
+        "exercises/M10/check.py",
+        "exercises/M10/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.116,
+      "log": "artifacts/extended-labs/M10-empty-rejected.log"
+    },
+    {
+      "id": "M11-reference",
+      "command": [
+        "exercises/M11/check.py",
+        "solutions/exercises/M11/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.093,
+      "log": "artifacts/extended-labs/M11-reference.log"
+    },
+    {
+      "id": "M11-empty-rejected",
+      "command": [
+        "exercises/M11/check.py",
+        "exercises/M11/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.101,
+      "log": "artifacts/extended-labs/M11-empty-rejected.log"
+    },
+    {
+      "id": "M12-reference",
+      "command": [
+        "exercises/M12/check.py",
+        "solutions/exercises/M12/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.124,
+      "log": "artifacts/extended-labs/M12-reference.log"
+    },
+    {
+      "id": "M12-empty-rejected",
+      "command": [
+        "exercises/M12/check.py",
+        "exercises/M12/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.117,
+      "log": "artifacts/extended-labs/M12-empty-rejected.log"
+    },
+    {
+      "id": "M13-reference",
+      "command": [
+        "exercises/M13/check.py",
+        "solutions/exercises/M13/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.128,
+      "log": "artifacts/extended-labs/M13-reference.log"
+    },
+    {
+      "id": "M13-empty-rejected",
+      "command": [
+        "exercises/M13/check.py",
+        "exercises/M13/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.126,
+      "log": "artifacts/extended-labs/M13-empty-rejected.log"
+    },
+    {
+      "id": "M14-reference",
+      "command": [
+        "exercises/M14/check.py",
+        "solutions/exercises/M14/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.122,
+      "log": "artifacts/extended-labs/M14-reference.log"
+    },
+    {
+      "id": "M14-empty-rejected",
+      "command": [
+        "exercises/M14/check.py",
+        "exercises/M14/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.128,
+      "log": "artifacts/extended-labs/M14-empty-rejected.log"
+    },
+    {
+      "id": "M15-reference",
+      "command": [
+        "exercises/M15/check.py",
+        "solutions/exercises/M15/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.12,
+      "log": "artifacts/extended-labs/M15-reference.log"
+    },
+    {
+      "id": "M15-empty-rejected",
+      "command": [
+        "exercises/M15/check.py",
+        "exercises/M15/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.153,
+      "log": "artifacts/extended-labs/M15-empty-rejected.log"
+    },
+    {
+      "id": "M16-reference",
+      "command": [
+        "exercises/M16/check.py",
+        "solutions/exercises/M16/solution.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.153,
+      "log": "artifacts/extended-labs/M16-reference.log"
+    },
+    {
+      "id": "M16-empty-rejected",
+      "command": [
+        "exercises/M16/check.py",
+        "exercises/M16/starter.py"
+      ],
+      "expected_success": false,
+      "exit_code": 1,
+      "passed": true,
+      "seconds": 0.133,
+      "log": "artifacts/extended-labs/M16-empty-rejected.log"
+    }
+  ],
+  "passed": true,
+  "learner_mastery": "not_assessed"
+}

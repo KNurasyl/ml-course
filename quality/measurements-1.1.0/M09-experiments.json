@@ -1,0 +1,878 @@
+{
+  "repo_id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "torch_threads": 2,
+  "load_seconds": 0.5461321999900974,
+  "attempt_count": 25,
+  "cases": [
+    {
+      "case_id": "definition",
+      "mode": "greedy",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Explain SQL transaction atomicity in one sentence."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nExplain SQL transaction atomicity in one sentence.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "In SQL, atomicity refers to the concept that a transaction is executed in a single, independent unit of work, ensuring",
+        "prompt_tokens": 30,
+        "generated_tokens": 24,
+        "seconds": 0.9713488999987021,
+        "tokens_per_second": 24.707908764844504,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.04047287083327925,
+        "settings": {
+          "do_sample": false,
+          "temperature": null,
+          "top_p": null,
+          "seed": 17
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "definition",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Explain SQL transaction atomicity in one sentence."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nExplain SQL transaction atomicity in one sentence.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "In a SQL transaction, the outcome of a statement is evaluated at the start of each transaction, ensuring that data is committed",
+        "prompt_tokens": 30,
+        "generated_tokens": 24,
+        "seconds": 1.167312799982028,
+        "tokens_per_second": 20.560041833148325,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.048638033332584506,
+        "settings": {
+          "do_sample": true,
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "seed": 17
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "definition",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Explain SQL transaction atomicity in one sentence."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nExplain SQL transaction atomicity in one sentence.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "Transactions atomicity in SQL is achieved when a transaction is committed and then rolled back, ensuring that the data is un",
+        "prompt_tokens": 30,
+        "generated_tokens": 24,
+        "seconds": 1.0382865999999922,
+        "tokens_per_second": 23.115005047739402,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.04326194166666634,
+        "settings": {
+          "do_sample": true,
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "seed": 23
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "definition",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Explain SQL transaction atomicity in one sentence."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nExplain SQL transaction atomicity in one sentence.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "In a SQL transaction, if there is a fault in the transaction, it will not automatically abort. Instead, a transaction",
+        "prompt_tokens": 30,
+        "generated_tokens": 24,
+        "seconds": 1.10537080001086,
+        "tokens_per_second": 21.712171155384425,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.04605711666711917,
+        "settings": {
+          "do_sample": true,
+          "temperature": 1.1,
+          "top_p": 0.9,
+          "seed": 17
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "definition",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Explain SQL transaction atomicity in one sentence."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nExplain SQL transaction atomicity in one sentence.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "Transactions atomicity in SQL is achieved when a transaction is committed and not rolled back at the end, allowing all changes",
+        "prompt_tokens": 30,
+        "generated_tokens": 24,
+        "seconds": 1.0149870999739505,
+        "tokens_per_second": 23.645620718348002,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.042291129165581275,
+        "settings": {
+          "do_sample": true,
+          "temperature": 1.1,
+          "top_p": 0.9,
+          "seed": 23
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "clarification",
+      "mode": "greedy",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "An interview candidate said: I improved the API. Ask one question about their own contribution."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nAn interview candidate said: I improved the API. Ask one question about their own contribution.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "I'm glad you asked. I'd be happy to answer your question.\n\nWhat was the most significant change you",
+        "prompt_tokens": 39,
+        "generated_tokens": 24,
+        "seconds": 1.112110699992627,
+        "tokens_per_second": 21.58058545804758,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.04633794583302612,
+        "settings": {
+          "do_sample": false,
+          "temperature": null,
+          "top_p": null,
+          "seed": 17
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "clarification",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "An interview candidate said: I improved the API. Ask one question about their own contribution."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nAn interview candidate said: I improved the API. Ask one question about their own contribution.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "I'm glad you asked about your contribution to the API. I'd be happy to discuss your work in more detail.",
+        "prompt_tokens": 39,
+        "generated_tokens": 24,
+        "seconds": 1.0662719000247307,
+        "tokens_per_second": 22.508330191805065,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.04442799583436378,
+        "settings": {
+          "do_sample": true,
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "seed": 17
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "clarification",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "An interview candidate said: I improved the API. Ask one question about their own contribution."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nAn interview candidate said: I improved the API. Ask one question about their own contribution.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "I'd be happy to share my thoughts on your contributions to the API. Please go ahead and ask your question.",
+        "prompt_tokens": 39,
+        "generated_tokens": 24,
+        "seconds": 1.0762656000151765,
+        "tokens_per_second": 22.29932834391583,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.044844400000632355,
+        "settings": {
+          "do_sample": true,
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "seed": 23
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "clarification",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "An interview candidate said: I improved the API. Ask one question about their own contribution."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nAn interview candidate said: I improved the API. Ask one question about their own contribution.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "I'm so glad you brought up your own contribution. Please go ahead and ask your questions, and I'll do my",
+        "prompt_tokens": 39,
+        "generated_tokens": 24,
+        "seconds": 1.1153226000024006,
+        "tokens_per_second": 21.518437804405956,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.046471775000100024,
+        "settings": {
+          "do_sample": true,
+          "temperature": 1.1,
+          "top_p": 0.9,
+          "seed": 17
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "clarification",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "An interview candidate said: I improved the API. Ask one question about their own contribution."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nAn interview candidate said: I improved the API. Ask one question about their own contribution.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "So, I was really impressed by the insights you've been offering on my API in the past year, including suggestions to",
+        "prompt_tokens": 39,
+        "generated_tokens": 24,
+        "seconds": 1.2216139000083786,
+        "tokens_per_second": 19.64614187824434,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.05090057916701577,
+        "settings": {
+          "do_sample": true,
+          "temperature": 1.1,
+          "top_p": 0.9,
+          "seed": 23
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "json",
+      "mode": "greedy",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Return only JSON with feedback (string) and score (integer 0,1,2). Evaluate: A transaction groups operations."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nReturn only JSON with feedback (string) and score (integer 0,1,2). Evaluate: A transaction groups operations.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "A transaction groups operations.\n\nA JSON object with a `group` key and a `id` key:\n",
+        "prompt_tokens": 47,
+        "generated_tokens": 24,
+        "seconds": 1.521968500019284,
+        "tokens_per_second": 15.769051724589511,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.06341535416747017,
+        "settings": {
+          "do_sample": false,
+          "temperature": null,
+          "top_p": null,
+          "seed": 17
+        }
+      },
+      "response": {
+        "status": "needs_review",
+        "feedback": "Не удалось проверить формат оценки. Сверь ответ с рубрикой самостоятельно.",
+        "score": null,
+        "fallback_used": true,
+        "reason": "invalid_json"
+      }
+    },
+    {
+      "case_id": "json",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Return only JSON with feedback (string) and score (integer 0,1,2). Evaluate: A transaction groups operations."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nReturn only JSON with feedback (string) and score (integer 0,1,2). Evaluate: A transaction groups operations.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "A transaction groups operations.",
+        "prompt_tokens": 47,
+        "generated_tokens": 6,
+        "seconds": 0.3464271999837365,
+        "tokens_per_second": 17.31965619409122,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.05773786666395608,
+        "settings": {
+          "do_sample": true,
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "seed": 17
+        }
+      },
+      "response": {
+        "status": "needs_review",
+        "feedback": "Не удалось проверить формат оценки. Сверь ответ с рубрикой самостоятельно.",
+        "score": null,
+        "fallback_used": true,
+        "reason": "invalid_json"
+      }
+    },
+    {
+      "case_id": "json",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Return only JSON with feedback (string) and score (integer 0,1,2). Evaluate: A transaction groups operations."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nReturn only JSON with feedback (string) and score (integer 0,1,2). Evaluate: A transaction groups operations.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "A transaction groups operations.",
+        "prompt_tokens": 47,
+        "generated_tokens": 6,
+        "seconds": 0.32897080000839196,
+        "tokens_per_second": 18.238700820397863,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.054828466668065325,
+        "settings": {
+          "do_sample": true,
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "seed": 23
+        }
+      },
+      "response": {
+        "status": "needs_review",
+        "feedback": "Не удалось проверить формат оценки. Сверь ответ с рубрикой самостоятельно.",
+        "score": null,
+        "fallback_used": true,
+        "reason": "invalid_json"
+      }
+    },
+    {
+      "case_id": "json",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Return only JSON with feedback (string) and score (integer 0,1,2). Evaluate: A transaction groups operations."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nReturn only JSON with feedback (string) and score (integer 0,1,2). Evaluate: A transaction groups operations.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "I will evaluate each statement to provide feedback and improve upon the user's input:\n\n```python\n# Input:",
+        "prompt_tokens": 47,
+        "generated_tokens": 24,
+        "seconds": 1.1689361999742687,
+        "tokens_per_second": 20.531488374240016,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.04870567499892786,
+        "settings": {
+          "do_sample": true,
+          "temperature": 1.1,
+          "top_p": 0.9,
+          "seed": 17
+        }
+      },
+      "response": {
+        "status": "needs_review",
+        "feedback": "Не удалось проверить формат оценки. Сверь ответ с рубрикой самостоятельно.",
+        "score": null,
+        "fallback_used": true,
+        "reason": "invalid_json"
+      }
+    },
+    {
+      "case_id": "json",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Return only JSON with feedback (string) and score (integer 0,1,2). Evaluate: A transaction groups operations."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nReturn only JSON with feedback (string) and score (integer 0,1,2). Evaluate: A transaction groups operations.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "A transaction groups operations\n```json\n{\n  \"operation\": 1,\n  \"order\": {\n    \"id",
+        "prompt_tokens": 47,
+        "generated_tokens": 24,
+        "seconds": 1.2989424999977928,
+        "tokens_per_second": 18.476568439358,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.054122604166574696,
+        "settings": {
+          "do_sample": true,
+          "temperature": 1.1,
+          "top_p": 0.9,
+          "seed": 23
+        }
+      },
+      "response": {
+        "status": "needs_review",
+        "feedback": "Не удалось проверить формат оценки. Сверь ответ с рубрикой самостоятельно.",
+        "score": null,
+        "fallback_used": true,
+        "reason": "invalid_json"
+      }
+    },
+    {
+      "case_id": "ambiguous",
+      "mode": "greedy",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "An interview candidate said: It became better. Ask one question to clarify the evidence."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nAn interview candidate said: It became better. Ask one question to clarify the evidence.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "An interview candidate:\n\n\"I'm looking for clarity on the evidence provided. Can you explain the process of creating",
+        "prompt_tokens": 38,
+        "generated_tokens": 24,
+        "seconds": 1.3160846999962814,
+        "tokens_per_second": 18.235908372818113,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.05483686249984506,
+        "settings": {
+          "do_sample": false,
+          "temperature": null,
+          "top_p": null,
+          "seed": 17
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "ambiguous",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "An interview candidate said: It became better. Ask one question to clarify the evidence."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nAn interview candidate said: It became better. Ask one question to clarify the evidence.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "I'm ready to clarify the evidence. What was the most significant improvement you experienced during your tenure at the company?",
+        "prompt_tokens": 38,
+        "generated_tokens": 24,
+        "seconds": 1.0734889000013936,
+        "tokens_per_second": 22.357008069639885,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.04472870416672473,
+        "settings": {
+          "do_sample": true,
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "seed": 17
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "ambiguous",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "An interview candidate said: It became better. Ask one question to clarify the evidence."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nAn interview candidate said: It became better. Ask one question to clarify the evidence.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "I'd be happy to clarify the evidence. Can you tell me more about what you found out during the interview? What",
+        "prompt_tokens": 38,
+        "generated_tokens": 24,
+        "seconds": 1.0570282000117004,
+        "tokens_per_second": 22.705165292405955,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.044042841667154185,
+        "settings": {
+          "do_sample": true,
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "seed": 23
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "ambiguous",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "An interview candidate said: It became better. Ask one question to clarify the evidence."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nAn interview candidate said: It became better. Ask one question to clarify the evidence.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "I will try to clarify the question and provide evidence in a straightforward manner. What would you like me to ask this question",
+        "prompt_tokens": 38,
+        "generated_tokens": 24,
+        "seconds": 1.0706348000094295,
+        "tokens_per_second": 22.41660741813046,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.04460978333372623,
+        "settings": {
+          "do_sample": true,
+          "temperature": 1.1,
+          "top_p": 0.9,
+          "seed": 17
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "ambiguous",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "An interview candidate said: It became better. Ask one question to clarify the evidence."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nAn interview candidate said: It became better. Ask one question to clarify the evidence.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "So, can you please tell me more about how we can implement the new policy in terms of implementation, costs, and",
+        "prompt_tokens": 38,
+        "generated_tokens": 24,
+        "seconds": 1.1295468999887817,
+        "tokens_per_second": 21.24745771976211,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.047064454166199234,
+        "settings": {
+          "do_sample": true,
+          "temperature": 1.1,
+          "top_p": 0.9,
+          "seed": 23
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "russian",
+      "mode": "greedy",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Что значит идемпотентность HTTP? Ответь кратко по-русски."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nЧто значит идемпотентность HTTP? Ответь кратко по-русски.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "Что значит идемпотентность HTTP? Отв",
+        "prompt_tokens": 61,
+        "generated_tokens": 24,
+        "seconds": 1.047542299987981,
+        "tokens_per_second": 22.910769331487007,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.04364759583283254,
+        "settings": {
+          "do_sample": false,
+          "temperature": null,
+          "top_p": null,
+          "seed": 17
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "russian",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Что значит идемпотентность HTTP? Ответь кратко по-русски."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nЧто значит идемпотентность HTTP? Ответь кратко по-русски.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "Что значит идемпотентность HTTP? Отв",
+        "prompt_tokens": 61,
+        "generated_tokens": 24,
+        "seconds": 1.1481951999885496,
+        "tokens_per_second": 20.902369214084278,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.04784146666618957,
+        "settings": {
+          "do_sample": true,
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "seed": 17
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "russian",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Что значит идемпотентность HTTP? Ответь кратко по-русски."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nЧто значит идемпотентность HTTP? Ответь кратко по-русски.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "Что значит идемпотентность HTTP? Отв",
+        "prompt_tokens": 61,
+        "generated_tokens": 24,
+        "seconds": 1.1630336999951396,
+        "tokens_per_second": 20.635687512838448,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.048459737499797484,
+        "settings": {
+          "do_sample": true,
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "seed": 23
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "russian",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Что значит идемпотентность HTTP? Ответь кратко по-русски."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nЧто значит идемпотентность HTTP? Ответь кратко по-русски.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "I am a native English speaker, and I would say that HTTP is a common issue when communicating online. However, in",
+        "prompt_tokens": 61,
+        "generated_tokens": 24,
+        "seconds": 1.2037583999917842,
+        "tokens_per_second": 19.937555576072242,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.05015659999965768,
+        "settings": {
+          "do_sample": true,
+          "temperature": 1.1,
+          "top_p": 0.9,
+          "seed": 17
+        }
+      },
+      "response": null
+    },
+    {
+      "case_id": "russian",
+      "mode": "sampling",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a concise interview tutor."
+        },
+        {
+          "role": "user",
+          "content": "Что значит идемпотентность HTTP? Ответь кратко по-русски."
+        }
+      ],
+      "template": "<|im_start|>system\nYou are a concise interview tutor.<|im_end|>\n<|im_start|>user\nЧто значит идемпотентность HTTP? Ответь кратко по-русски.<|im_end|>\n<|im_start|>assistant\n",
+      "output": {
+        "text": "Что желето старажит другим демо�",
+        "prompt_tokens": 61,
+        "generated_tokens": 24,
+        "seconds": 1.2984987999952864,
+        "tokens_per_second": 18.482881924948348,
+        "context_limit": 8192,
+        "max_new_tokens": 24,
+        "seconds_per_token": 0.05410411666647027,
+        "settings": {
+          "do_sample": true,
+          "temperature": 1.1,
+          "top_p": 0.9,
+          "seed": 23
+        }
+      },
+      "response": null
+    }
+  ],
+  "fault_cases": {
+    "empty": {
+      "status": "needs_review",
+      "feedback": "Не удалось проверить формат оценки. Сверь ответ с рубрикой самостоятельно.",
+      "score": null,
+      "fallback_used": true,
+      "reason": "invalid_json"
+    },
+    "bool": {
+      "status": "needs_review",
+      "feedback": "Не удалось проверить формат оценки. Сверь ответ с рубрикой самостоятельно.",
+      "score": null,
+      "fallback_used": true,
+      "reason": "score_out_of_range"
+    },
+    "extra": {
+      "status": "needs_review",
+      "feedback": "Не удалось проверить формат оценки. Сверь ответ с рубрикой самостоятельно.",
+      "score": null,
+      "fallback_used": true,
+      "reason": "wrong_keys"
+    },
+    "truncated": {
+      "status": "needs_review",
+      "feedback": "Не удалось проверить формат оценки. Сверь ответ с рубрикой самостоятельно.",
+      "score": null,
+      "fallback_used": true,
+      "reason": "invalid_json"
+    },
+    "valid": {
+      "status": "ok",
+      "feedback": "Name your action",
+      "score": 1,
+      "fallback_used": false,
+      "reason": null
+    }
+  },
+  "context_overflow_rejected": true,
+  "interpretation": "Raw model outputs; format validity is not truth. Russian quality requires manual rubric."
+}

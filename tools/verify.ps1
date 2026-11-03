@@ -9,6 +9,10 @@ if ($LASTEXITCODE -ne 0) { throw 'Tests failed' }
 if ($LASTEXITCODE -ne 0) { throw 'Course integrity check failed' }
 & $coursePython tools/run_labs.py
 if ($LASTEXITCODE -ne 0) { throw 'Module laboratories failed' }
+& $coursePython tools/run_extended_labs.py
+if ($LASTEXITCODE -ne 0) { throw 'Extended experiments or student-contract checks failed' }
+& $coursePython tools/check_lesson_examples.py
+if ($LASTEXITCODE -ne 0) { throw 'Authored Python examples failed' }
 & $coursePython tools/run_notebooks.py --kind all
 if ($LASTEXITCODE -ne 0) { throw 'Notebook execution failed' }
 Write-Host 'Technical checks passed. Learner mastery and the human pilot are not assessed by this script.'

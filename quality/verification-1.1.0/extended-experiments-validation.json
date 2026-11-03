@@ -1,0 +1,311 @@
+{
+  "results": [
+    {
+      "id": "foundations-01",
+      "command": [
+        "labs/M04/bridges.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 1.511,
+      "log": "artifacts/extended-labs/foundations-01.log"
+    },
+    {
+      "id": "foundations-02",
+      "command": [
+        "labs/M05/pipeline.py",
+        "--variant",
+        "demo"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 2.623,
+      "log": "artifacts/extended-labs/foundations-02.log"
+    },
+    {
+      "id": "foundations-03",
+      "command": [
+        "solutions/exercises/M00/run_hw.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.106,
+      "log": "artifacts/extended-labs/foundations-03.log"
+    },
+    {
+      "id": "foundations-04",
+      "command": [
+        "solutions/exercises/M01/run_hw.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.12,
+      "log": "artifacts/extended-labs/foundations-04.log"
+    },
+    {
+      "id": "foundations-05",
+      "command": [
+        "solutions/exercises/M02/run_hw.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.27,
+      "log": "artifacts/extended-labs/foundations-05.log"
+    },
+    {
+      "id": "foundations-06",
+      "command": [
+        "solutions/exercises/M03/run_hw.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.321,
+      "log": "artifacts/extended-labs/foundations-06.log"
+    },
+    {
+      "id": "foundations-07",
+      "command": [
+        "solutions/exercises/M04/run_hw.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 1.504,
+      "log": "artifacts/extended-labs/foundations-07.log"
+    },
+    {
+      "id": "foundations-08",
+      "command": [
+        "solutions/exercises/M05/run_hw.py",
+        "--variant",
+        "hw"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 5.054,
+      "log": "artifacts/extended-labs/foundations-08.log"
+    },
+    {
+      "id": "foundations-09",
+      "command": [
+        "solutions/exercises/M05/run_hw.py",
+        "--variant",
+        "retry"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 5.146,
+      "log": "artifacts/extended-labs/foundations-09.log"
+    },
+    {
+      "id": "foundations-10",
+      "command": [
+        "solutions/exercises/M05/run_hw.py",
+        "--variant",
+        "delayed"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 5.04,
+      "log": "artifacts/extended-labs/foundations-10.log"
+    },
+    {
+      "id": "llm-01",
+      "command": [
+        "labs/M08/forward_trace.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 2.834,
+      "log": "artifacts/extended-labs/llm-01.log"
+    },
+    {
+      "id": "llm-02",
+      "command": [
+        "labs/M09/experiments.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 36.205,
+      "log": "artifacts/extended-labs/llm-02.log"
+    },
+    {
+      "id": "llm-03",
+      "command": [
+        "labs/M09/benchmark.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 31.48,
+      "log": "artifacts/extended-labs/llm-03.log"
+    },
+    {
+      "id": "llm-04",
+      "command": [
+        "labs/M10/diagnostic_ru.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 18.871,
+      "log": "artifacts/extended-labs/llm-04.log"
+    },
+    {
+      "id": "llm-05",
+      "command": [
+        "labs/M12/sft.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 32.785,
+      "log": "artifacts/extended-labs/llm-05.log"
+    },
+    {
+      "id": "llm-06",
+      "command": [
+        "labs/M12/restore_sft.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 10.316,
+      "log": "artifacts/extended-labs/llm-06.log"
+    },
+    {
+      "id": "llm-07",
+      "command": [
+        "solutions/exercises/M12/sft_variant.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 55.829,
+      "log": "artifacts/extended-labs/llm-07.log"
+    },
+    {
+      "id": "llm-08",
+      "command": [
+        "labs/M12/restore_sft.py",
+        "artifacts/M12/sft-variant"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 9.906,
+      "log": "artifacts/extended-labs/llm-08.log"
+    },
+    {
+      "id": "product-01",
+      "command": [
+        "labs/M13/http_lab.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 1.664,
+      "log": "artifacts/extended-labs/product-01.log"
+    },
+    {
+      "id": "product-02",
+      "command": [
+        "labs/M14/llm_planner.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 18.593,
+      "log": "artifacts/extended-labs/product-02.log"
+    },
+    {
+      "id": "product-03",
+      "command": [
+        "labs/M15/streaming_lab.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 3.568,
+      "log": "artifacts/extended-labs/product-03.log"
+    },
+    {
+      "id": "product-04",
+      "command": [
+        "solutions/exercises/M13/hw_reference.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 2.916,
+      "log": "artifacts/extended-labs/product-04.log"
+    },
+    {
+      "id": "product-05",
+      "command": [
+        "solutions/exercises/M14/hw_reference.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 23.298,
+      "log": "artifacts/extended-labs/product-05.log"
+    },
+    {
+      "id": "product-06",
+      "command": [
+        "solutions/exercises/M15/hw_reference.py"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 9.719,
+      "log": "artifacts/extended-labs/product-06.log"
+    },
+    {
+      "id": "root-01",
+      "command": [
+        "labs/M11/evaluate.py",
+        "score",
+        "--run",
+        "quality/evaluation/v2",
+        "--annotations",
+        "quality/evaluation/v2/annotations.jsonl"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.335,
+      "log": "artifacts/extended-labs/root-01.log"
+    },
+    {
+      "id": "root-02",
+      "command": [
+        "labs/M11/evaluate.py",
+        "score",
+        "--run",
+        "quality/evaluation/v3",
+        "--annotations",
+        "quality/evaluation/v3/annotations.jsonl"
+      ],
+      "expected_success": true,
+      "exit_code": 0,
+      "passed": true,
+      "seconds": 0.343,
+      "log": "artifacts/extended-labs/root-02.log"
+    }
+  ],
+  "passed": true,
+  "learner_mastery": "not_assessed"
+}

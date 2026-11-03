@@ -46,6 +46,8 @@ class Interview:
     id: str = field(default_factory=lambda: uuid4().hex)
     turn: int = 0
     history: list[dict] = field(default_factory=list)
+    topic_index: int = 0
+    clarification: bool = False
 
     def __post_init__(self):
         if self.mode not in QUESTIONS:
@@ -53,22 +55,41 @@ class Interview:
 
     def state(self):
         return {"id":self.id, "mode":self.mode, "turn":self.turn,
-            "question":QUESTIONS[self.mode][self.turn] if self.turn < 4 else None,
-            "finished":self.turn >= 4, "history":self.history}
+            "topic_index": self.topic_index, "clarification": self.clarification,
+            "question": self.current_question(),
+            "finished":self.topic_index >= len(QUESTIONS[self.mode]), "history":self.history}
+
+    def current_question(self):
+        if self.topic_index >= len(QUESTIONS[self.mode]):
+            return None
+        if self.clarification:
+            return ("Уточни предыдущий ответ: что именно ты сделал и как проверил результат?"
+                    if self.mode == 'hr' else "Уточни предыдущий ответ: приведи пример и условие, когда утверждение не работает.")
+        return QUESTIONS[self.mode][self.topic_index]
 
     def prepare(self, answer: str, turn: int):
         if type(turn) is not int:
             raise ValueError("Номер хода должен быть целым числом")
-        if turn != self.turn or self.turn >= 4:
+        if turn != self.turn or self.topic_index >= len(QUESTIONS[self.mode]):
             raise ValueError("Устаревший ход или завершённое интервью")
         if not isinstance(answer, str) or not 3 <= len(answer.strip()) <= 3000:
             raise ValueError("Ответ должен содержать от 3 до 3000 символов")
-        question = QUESTIONS[self.mode][self.turn]
-        return question, retrieve(question) if self.mode == "backend" else []
+        question = self.current_question()
+        return question, retrieve(QUESTIONS[self.mode][self.topic_index]) if self.mode == "backend" else []
 
-    def commit(self, answer: str, feedback: str, sources: list[dict], seconds: float, generation: dict | None = None):
-        self.history.append({"turn":self.turn,"question":QUESTIONS[self.mode][self.turn],
-            "answer":answer,"feedback":feedback,"sources":sources,"seconds":seconds,"generation":generation or {}})
+    def commit(self, answer: str, feedback: str, sources: list[dict], seconds: float, generation: dict | None = None, assessment: dict | None = None):
+        if self.current_question() is None:
+            raise ValueError('Интервью завершено')
+        self.history.append({"turn":self.turn,"topic_index":self.topic_index,"clarification":self.clarification,
+            "question":self.current_question(), "answer":answer,"feedback":feedback,"sources":sources,
+            "seconds":seconds,"generation":generation or {},"assessment":assessment or {}})
+        refusal = any(term in answer.lower() for term in ('не хочу', 'пропуст', 'отказываюсь'))
+        needs_detail = len(answer.strip()) < 80 or 'не знаю' in answer.lower()
+        if needs_detail and not refusal and not self.clarification:
+            self.clarification = True
+        else:
+            self.topic_index += 1
+            self.clarification = False
         self.turn += 1
         return self.state()
 

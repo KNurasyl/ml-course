@@ -1,0 +1,103 @@
+{
+  "version": "1.1.0",
+  "verified_at_utc": "2026-11-03T10:01:58.873566+00:00",
+  "material_status": "self_study_materials_revised_and_technically_verified",
+  "audit_items_addressed": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A06",
+    "A07",
+    "A08",
+    "A09",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28"
+  ],
+  "audit_mapping": "quality/audit-resolution-1.1.0.md",
+  "counts": {
+    "modules": 17,
+    "lessons": 103,
+    "new_lessons": 18,
+    "module_homeworks": 17,
+    "student_contracts": 17,
+    "pilot_sessions": 10,
+    "lesson_figures": 103,
+    "interactive_experiments": 26
+  },
+  "checks": {
+    "pytest": {
+      "tests": 212,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0
+    },
+    "python_examples": 117,
+    "module_labs": 17,
+    "additional_experiments_and_full_hw": 28,
+    "student_reference_and_empty_checks": 34,
+    "executed_notebooks": 20,
+    "structure": {
+      "modules": 17,
+      "lessons": 103,
+      "errors": [],
+      "learner_mastery": "not_assessed"
+    },
+    "reader_scenarios": 15
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "execution": "CPU",
+    "environments": [
+      ".venv",
+      ".venv-full-verify"
+    ],
+    "clean_install_this_revision": false,
+    "note": "Existing isolated environments from the prior lock-file installation were reused; no fresh reinstall is claimed. pip check passed.",
+    "dependency_lock": "requirements.lock.txt",
+    "paid_services": false
+  },
+  "receipt_sha256": {
+    "quality/verification-1.1.0/lab-validation.json": "271d147ddd07167304cb314a4d802d7eae16cae7307a9a8b1e644ae08ce127d1",
+    "quality/verification-1.1.0/extended-experiments-validation.json": "7f8540c353e63e113762c03291b63709066c32f2fffdca168a515ccac367f0ff",
+    "quality/verification-1.1.0/additional-homework-validation.json": "efc3dc7806298d55dec9ed3877ced1f524b015f11123f40f21ca27918f13fd17",
+    "quality/verification-1.1.0/extended-contracts-validation.json": "453b5bd7676966be383ba8ff18231ffb5b39b0938c17b5db862db6416a4c2a67",
+    "quality/verification-1.1.0/lesson-example-validation.json": "364315c59104424d0d37f271646a5b6a5fea6486dd53c851a6719ae85cb9b822",
+    "quality/verification-1.1.0/reader-v2-qa.json": "8ce9514b010b1751ddb35fa1bee9ffdc377315f65af5e1dac60c5d33792ac6cc",
+    "quality/verification-1.1.0/notebook-validation.json": "68b105e3a0373a8a15574316accdab64965f9cb6a3b4085702011ea3a08d5c16",
+    "quality/verification-1.1.0/pytest-release-1.1.0.xml": "81141d4cc1eb0546f540c8118502e8edcbe71427d62fd851a4ccfcc6e9129164"
+  },
+  "semantic_evidence": {
+    "paired_feedback": "course/feedback-case-study.md",
+    "russian_rag": "quality/rag-hw/manual-review.json",
+    "attribution": "AI-assisted author judgement, not independent human validation"
+  },
+  "limits": [
+    "Small-model quality gates can fail even when the experiment executes correctly.",
+    "Saved synthetic/reference runs do not establish learner mastery, user-pilot success or middle-level career readiness.",
+    "Human explanations are checked by rubrics and worked keys, not certified by pytest.",
+    "An audit and its corrections do not guarantee absence of every possible future defect."
+  ],
+  "learner_mastery": "not_assessed",
+  "learner_pilot": "not_run",
+  "personal_time_calibration": "awaiting_learner"
+}

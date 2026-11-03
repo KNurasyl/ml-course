@@ -1,1 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="420" viewBox="0 0 1040 420" role="img" aria-labelledby="title"><title id="title">M12-L02 · Данные для адаптации</title><rect width="1040" height="420" rx="20" fill="#f4f7fb"/><text x="35" y="48" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#15263d">M12-L02 · Данные для адаптации</text><rect x="35" y="85" width="300" height="100" rx="14" fill="white" stroke="#276bd1" stroke-width="2"/><text x="51" y="120" font-family="Arial,sans-serif" font-size="19" fill="#15263d">Сессия A: A1 A2</text><path d="M341,135h20m-6,-5l6,5l-6,5" fill="none" stroke="#276bd1" stroke-width="2"/><rect x="370" y="85" width="300" height="100" rx="14" fill="white" stroke="#276bd1" stroke-width="2"/><text x="386" y="120" font-family="Arial,sans-serif" font-size="19" fill="#15263d">Сессия B: B1 B2</text><path d="M676,135h20m-6,-5l6,5l-6,5" fill="none" stroke="#276bd1" stroke-width="2"/><rect x="705" y="85" width="300" height="100" rx="14" fill="white" stroke="#276bd1" stroke-width="2"/><text x="721" y="120" font-family="Arial,sans-serif" font-size="19" fill="#15263d">Train: A + B</text><rect x="35" y="230" width="300" height="100" rx="14" fill="white" stroke="#276bd1" stroke-width="2"/><text x="51" y="265" font-family="Arial,sans-serif" font-size="19" fill="#15263d">Сессия C: C1 C2</text><path d="M341,280h20m-6,-5l6,5l-6,5" fill="none" stroke="#276bd1" stroke-width="2"/><rect x="370" y="230" width="300" height="100" rx="14" fill="white" stroke="#276bd1" stroke-width="2"/><text x="386" y="265" font-family="Arial,sans-serif" font-size="19" fill="#15263d">Test: C</text><path d="M676,280h20m-6,-5l6,5l-6,5" fill="none" stroke="#276bd1" stroke-width="2"/><rect x="705" y="230" width="300" height="100" rx="14" fill="white" stroke="#276bd1" stroke-width="2"/><text x="721" y="265" font-family="Arial,sans-serif" font-size="19" fill="#15263d">Пересечение групп = 0</text><text x="35" y="390" font-family="Arial,sans-serif" font-size="17" fill="#526276">Прочитай схему слева направо; объясни каждую связь на собственном примере.</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480" viewBox="0 0 1000 480" role="img"><title>Разбиение целыми сессиями: группы не пересекаются</title><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#306655"/></marker></defs><rect width="1000" height="480" fill="#f5f8f4"/>
+<text x="30" y="40" font-family="Arial" font-size="25" fill="#203b32" font-weight="bold">Разбиение целыми сессиями: группы не пересекаются</text>
+<rect x="35" y="85" width="220" height="75" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="49" y="114" font-family="Arial" font-size="21" fill="#203b32">Сессия A: A1, A2</text>
+<rect x="35" y="200" width="220" height="75" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="49" y="229" font-family="Arial" font-size="21" fill="#203b32">Сессия B: B1, B2</text>
+<rect x="400" y="135" width="240" height="90" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="414" y="164" font-family="Arial" font-size="21" fill="#203b32">Train</text>
+<text x="414" y="191" font-family="Arial" font-size="21" fill="#203b32">A1, A2, B1, B2</text>
+<path d="M260,123 L390,165" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M260,237 L390,200" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<rect x="35" y="335" width="220" height="75" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="49" y="364" font-family="Arial" font-size="21" fill="#203b32">Сессия C: C1, C2</text>
+<rect x="400" y="335" width="240" height="75" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="414" y="364" font-family="Arial" font-size="21" fill="#203b32">Check: C1, C2</text>
+<path d="M260,372 L390,372" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="695" y="165" font-family="Arial" font-size="23" fill="#203b32">Train groups</text>
+<text x="695" y="205" font-family="Arial" font-size="25" fill="#203b32">{A, B}</text>
+<text x="695" y="320" font-family="Arial" font-size="23" fill="#203b32">Check groups {C}</text>
+<text x="400" y="455" font-family="Arial" font-size="23" fill="#203b32">{A, B} ∩ {C} = ∅; строки одной сессии не делим.</text>
+</svg>

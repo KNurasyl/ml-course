@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="570" viewBox="0 0 1000 570" role="img"><title>Pre-norm Transformer: две ветки изменения</title><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#306655"/></marker></defs><rect width="1000" height="570" fill="#f5f8f4"/>
+<text x="30" y="40" font-family="Arial" font-size="25" fill="#203b32" font-weight="bold">Pre-norm Transformer: две ветки изменения</text>
+<rect x="35" y="90" width="150" height="70" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="49" y="119" font-family="Arial" font-size="21" fill="#203b32">X [B,T,D]</text>
+<rect x="235" y="90" width="190" height="70" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="249" y="119" font-family="Arial" font-size="21" fill="#203b32">LayerNorm₁</text>
+<rect x="475" y="90" width="270" height="70" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="489" y="119" font-family="Arial" font-size="21" fill="#203b32">causal attention</text>
+<rect x="825" y="90" width="140" height="70" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="839" y="119" font-family="Arial" font-size="21" fill="#203b32">+ X</text>
+<path d="M185,125 L223,125" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M425,125 L463,125" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M745,125 L813,125" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M105,90 V65 H890 V90" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="180" y="207" font-family="Arial" font-size="23" fill="#203b32">Q,K,V: [B,T,D]    scores: [B,T,T]    AV: [B,T,D]</text>
+<rect x="35" y="270" width="150" height="70" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="49" y="299" font-family="Arial" font-size="21" fill="#203b32">U [B,T,D]</text>
+<rect x="235" y="270" width="190" height="70" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="249" y="299" font-family="Arial" font-size="21" fill="#203b32">LayerNorm₂</text>
+<rect x="475" y="255" width="270" height="110" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="489" y="284" font-family="Arial" font-size="21" fill="#203b32">Linear D → H</text>
+<text x="489" y="311" font-family="Arial" font-size="21" fill="#203b32">GELU → Linear H → D</text>
+<rect x="825" y="270" width="140" height="70" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="839" y="299" font-family="Arial" font-size="21" fill="#203b32">+ U</text>
+<path d="M185,305 L223,305" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M425,305 L463,305" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M745,305 L813,305" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M895,160 V235 H105 V270 M105,270 V240 H890 V270" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="35" y="425" font-family="Arial" font-size="23" fill="#203b32">Attention смешивает позиции; MLP меняет признаки каждой позиции.</text>
+<text x="35" y="467" font-family="Arial" font-size="24" fill="#203b32">MLP: [B,T,D] → [B,T,H] → [B,T,D]</text>
+<text x="35" y="515" font-family="Arial" font-size="24" fill="#203b32">Выход блока: Y [B,T,D]. Следующий блок получает Y.</text>
+</svg>

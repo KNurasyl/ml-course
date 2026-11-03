@@ -1,0 +1,202 @@
+{
+  "version": "1.1.0",
+  "runs": [
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "tools/check_foundations.py"
+      ],
+      "exit_code": 0,
+      "seconds": 15.137,
+      "stdout_tail": "{\"passed\": 66, \"failures\": []}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "labs/M04/bridges.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.791,
+      "stdout_tail": "rdant\": 79.8499,\n      \"expected_effect\": 0.09999999999999999\n    }\n  ],\n  \"paired_null_check\": [\n    {\n      \"n\": 50,\n      \"simulated_power\": 0.0232,\n      \"exact_power\": 0.023417501119667474,\n      \"monte_carlo_se\": 0.0010644660633387989,\n      \"mean_discordant\": 9.99925,\n      \"expected_effect\": 0.0\n    },\n    {\n      \"n\": 100,\n      \"simulated_power\": 0.0324,\n      \"exact_power\": 0.03247709934377657,\n      \"monte_carlo_se\": 0.0012520031948841026,\n      \"mean_discordant\": 20.0078,\n      \"expected_effect\": 0.0\n    },\n    {\n      \"n\": 200,\n      \"simulated_power\": 0.039,\n      \"exact_power\": 0.036870229313774136,\n      \"monte_carlo_se\": 0.0013689229342808162,\n      \"mean_discordant\": 40.0013,\n      \"expected_effect\": 0.0\n    },\n    {\n      \"n\": 400,\n      \"simulated_power\": 0.03925,\n      \"exact_power\": 0.03919804929411293,\n      \"monte_carlo_se\": 0.0013731248577605751,\n      \"mean_discordant\": 79.9693,\n      \"expected_effect\": 0.0\n    }\n  ],\n  \"not_measured_product_quality\": true\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "labs/M05/pipeline.py",
+        "--variant",
+        "demo"
+      ],
+      "exit_code": 0,
+      "seconds": 3.245,
+      "stdout_tail": "ed_probability\": 0.6448576000229893,\n      \"brier_score\": 0.24125037927904286,\n      \"fixed_threshold_cost\": 0.5,\n      \"model_refit\": false,\n      \"source_split\": \"validation\"\n    },\n    {\n      \"composition\": \"positive_25_percent\",\n      \"n\": 16,\n      \"observed_positive_rate\": 0.25,\n      \"mean_predicted_probability\": 0.5899566397404019,\n      \"brier_score\": 0.2756826640267778,\n      \"fixed_threshold_cost\": 0.6875,\n      \"model_refit\": false,\n      \"source_split\": \"validation\"\n    }\n  ],\n  \"fit_audit\": [\n    {\n      \"correct_fit_rows\": 16,\n      \"validation_rows\": 8,\n      \"global_fit_detected\": true\n    },\n    {\n      \"correct_fit_rows\": 16,\n      \"validation_rows\": 8,\n      \"global_fit_detected\": true\n    },\n    {\n      \"correct_fit_rows\": 16,\n      \"validation_rows\": 8,\n      \"global_fit_detected\": true\n    }\n  ],\n  \"restored_probabilities_equal\": true,\n  \"future_feature_ignored\": true,\n  \"limitation\": \"synthetic task; readiness label does not measure human hiring suitability\"\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "exercises/M00/check.py",
+        "solutions/exercises/M00/solution.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.139,
+      "stdout_tail": "{\"passed\": true, \"checks\": [\"negative_input\", \"zero_weight\", \"fraction\", \"finite_contract\"], \"understanding\": \"requires your explanation and a new case\"}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "solutions/exercises/M00/run_hw.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.11,
+      "stdout_tail": "5\n        ],\n        \"mse\": 0.0\n      },\n      {\n        \"w\": -1,\n        \"b\": 0,\n        \"predictions\": [\n          2,\n          0,\n          -3\n        ],\n        \"mse\": 4.666666666666667\n      }\n    ],\n    \"model\": {\n      \"w\": -2,\n      \"b\": 1,\n      \"version\": \"1.1.0-A\",\n      \"input_unit\": \"minutes\"\n    },\n    \"new_prediction\": -7\n  },\n  \"B\": {\n    \"candidates\": [\n      {\n        \"w\": 0.5,\n        \"b\": -2,\n        \"predictions\": [\n          -4.0,\n          -2.0,\n          -1.0\n        ],\n        \"mse\": 0.0\n      },\n      {\n        \"w\": 1,\n        \"b\": -1,\n        \"predictions\": [\n          -5,\n          -1,\n          1\n        ],\n        \"mse\": 2.0\n      }\n    ],\n    \"model\": {\n      \"w\": 0.5,\n      \"b\": -2,\n      \"version\": \"1.1.0-A\",\n      \"input_unit\": \"minutes\"\n    },\n    \"new_prediction\": 0.0\n  },\n  \"C\": {\n    \"physical_input_minutes\": 2,\n    \"same_input_seconds\": 120,\n    \"prediction_old\": -3,\n    \"prediction_new_preprocessed\": -3.0,\n    \"prediction_new_weight\": -3.0\n  }\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "exercises/M01/check.py",
+        "solutions/exercises/M01/solution.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.106,
+      "stdout_tail": "{\"passed\": true, \"checks\": [\"train_only_fit\", \"missing_values\", \"conflicting_duplicate\", \"grain\"], \"understanding\": \"requires your explanation and a new case\"}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "solutions/exercises/M01/run_hw.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.121,
+      "stdout_tail": "{\n  \"A\": {\n    \"mean\": 5.0,\n    \"train\": [\n      2,\n      5.0,\n      8\n    ],\n    \"test\": [\n      5.0,\n      1000\n    ]\n  },\n  \"sql_counts\": [\n    [\n      \"A\",\n      2\n    ],\n    [\n      \"B\",\n      1\n    ],\n    [\n      \"C\",\n      2\n    ]\n  ],\n  \"stage_rows\": [\n    6,\n    5\n  ],\n  \"B\": {\n    \"mean\": 5.0,\n    \"train\": [\n      1,\n      5.0,\n      9\n    ],\n    \"test\": [\n      5.0,\n      100\n    ]\n  },\n  \"C\": {\n    \"session_mean\": 3,\n    \"person_mean\": 5\n  },\n  \"conflict_rejected\": true\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "exercises/M02/check.py",
+        "solutions/exercises/M02/solution.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.276,
+      "stdout_tail": "{\"passed\": true, \"checks\": [\"3D_cosine\", \"ID_tie_rule\", \"query_scale\", \"set_recall\", \"invalid_input\"], \"understanding\": \"requires your explanation and a new case\"}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "solutions/exercises/M02/run_hw.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.302,
+      "stdout_tail": "{\n  \"A\": [\n    {\n      \"top3\": [\n        [\n          \"U\",\n          0.7071067811865475\n        ],\n        [\n          \"V\",\n          0.7071067811865475\n        ],\n        [\n          \"W\",\n          0.7071067811865475\n        ]\n      ],\n      \"recall\": {\n        \"1\": 0.5,\n        \"2\": 0.5,\n        \"3\": 1.0\n      }\n    },\n    {\n      \"top3\": [\n        [\n          \"X\",\n          1.0\n        ],\n        [\n          \"U\",\n          0.0\n        ],\n        [\n          \"V\",\n          0.0\n        ]\n      ],\n      \"recall\": {\n        \"1\": 0.5,\n        \"2\": 0.5,\n        \"3\": 0.5\n      }\n    }\n  ],\n  \"mean_recall\": [\n    0.5,\n    0.5,\n    0.75\n  ],\n  \"B\": {\n    \"top3\": [\n      [\n        \"U\",\n        0.7071067811865475\n      ],\n      [\n        \"V\",\n        0.7071067811865475\n      ],\n      [\n        \"W\",\n        0.7071067811865475\n      ]\n    ],\n    \"recall_at_3\": 0.6666666666666666\n  },\n  \"C\": {\n    \"recall\": 0.3333333333333333\n  }\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "exercises/M03/check.py",
+        "solutions/exercises/M03/solution.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.106,
+      "stdout_tail": "{\"passed\": true, \"checks\": [\"finite_difference_negative_zero_inputs\", \"bias_gradient\", \"mean_factor\", \"contract\"], \"understanding\": \"requires your explanation and a new case\"}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "solutions/exercises/M03/run_hw.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.302,
+      "stdout_tail": "\"penalty\": 1.482041587901701,\n        \"objective\": 2.4347826086956523\n      },\n      {\n        \"step\": 397,\n        \"w\": 1.217391304347826,\n        \"b\": -0.7391304347826083,\n        \"mse\": 0.9527410207939514,\n        \"penalty\": 1.482041587901701,\n        \"objective\": 2.4347826086956523\n      },\n      {\n        \"step\": 398,\n        \"w\": 1.217391304347826,\n        \"b\": -0.7391304347826083,\n        \"mse\": 0.9527410207939514,\n        \"penalty\": 1.482041587901701,\n        \"objective\": 2.4347826086956523\n      },\n      {\n        \"step\": 399,\n        \"w\": 1.217391304347826,\n        \"b\": -0.7391304347826083,\n        \"mse\": 0.9527410207939514,\n        \"penalty\": 1.482041587901701,\n        \"objective\": 2.4347826086956523\n      },\n      {\n        \"step\": 400,\n        \"w\": 1.217391304347826,\n        \"b\": -0.7391304347826083,\n        \"mse\": 0.9527410207939514,\n        \"penalty\": 1.482041587901701,\n        \"objective\": 2.4347826086956523\n      }\n    ]\n  },\n  \"C_duplicate_gradient_unchanged\": true\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "exercises/M04/check.py",
+        "solutions/exercises/M04/solution.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.128,
+      "stdout_tail": "{\"passed\": true, \"checks\": [\"inclusive_tail\", \"unequal_probability\", \"boundary_cases\", \"power_not_effect\"], \"understanding\": \"requires your explanation and a new case\"}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "solutions/exercises/M04/run_hw.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.656,
+      "stdout_tail": "t\": 0.16666666666666666,\n    \"sign_two_sided_p\": 0.6875\n  },\n  \"planning\": [\n    {\n      \"n\": 50,\n      \"simulated_power\": 0.34505,\n      \"exact_power\": 0.3479479761747838,\n      \"monte_carlo_se\": 0.0033614765914698856,\n      \"mean_discordant\": 9.9598,\n      \"expected_effect\": 0.09999999999999999\n    },\n    {\n      \"n\": 100,\n      \"simulated_power\": 0.6767,\n      \"exact_power\": 0.6754144842461925,\n      \"monte_carlo_se\": 0.003307394064819008,\n      \"mean_discordant\": 20.0602,\n      \"expected_effect\": 0.09999999999999999\n    },\n    {\n      \"n\": 200,\n      \"simulated_power\": 0.93275,\n      \"exact_power\": 0.9319729065781439,\n      \"monte_carlo_se\": 0.0017709804840821937,\n      \"mean_discordant\": 40.01515,\n      \"expected_effect\": 0.09999999999999999\n    },\n    {\n      \"n\": 400,\n      \"simulated_power\": 0.99825,\n      \"exact_power\": 0.9980742754860035,\n      \"monte_carlo_se\": 0.00029554504732781677,\n      \"mean_discordant\": 79.8499,\n      \"expected_effect\": 0.09999999999999999\n    }\n  ]\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "exercises/M05/check.py",
+        "solutions/exercises/M05/solution.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.606,
+      "stdout_tail": "{\"passed\": true, \"checks\": [\"group_time_split\", \"boundary_exclusion\", \"train_fit_audit\", \"unknown_and_missing\", \"future_feature_ignored\", \"threshold_cost\"], \"understanding\": \"requires your explanation and a new case\"}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "solutions/exercises/M05/run_hw.py"
+      ],
+      "exit_code": 0,
+      "seconds": 3.175,
+      "stdout_tail": "\": 0.25,\n      \"cost\": 0.23404255319148937,\n      \"log_loss\": 0.5150216590768666\n    }\n  ],\n  \"selection_data\": \"validation only\",\n  \"dataset_sha256\": \"0b56aff5d8023f5198fa856e68cd2a46db5d78cdbd354e3acecb7e4027f0c561\",\n  \"split_sizes\": {\n    \"train\": 141,\n    \"validation\": 47,\n    \"test\": 48,\n    \"excluded\": 4\n  },\n  \"test\": {\n    \"log_loss\": 0.5715097372202943,\n    \"baseline_log_loss\": 0.6632301197193291,\n    \"balanced_accuracy\": 0.6111111111111112,\n    \"tn_fp_fn_tp\": [\n      3,\n      9,\n      1,\n      35\n    ],\n    \"cost\": 0.22916666666666666\n  },\n  \"slices\": {\n    \"known_track\": {\n      \"n\": 40,\n      \"log_loss\": 0.5879253343997981\n    },\n    \"unknown_track\": {\n      \"n\": 8,\n      \"log_loss\": 0.48943175132277494\n    },\n    \"experience_missing\": {\n      \"n\": 5,\n      \"log_loss\": 0.5930516651705233\n    }\n  },\n  \"future_column_invariance\": true,\n  \"unknown_missing_probe\": true,\n  \"conclusion\": \"Synthetic results only; report both gains and costs; new policy needs a fresh check set.\"\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "solutions/exercises/M05/run_hw.py",
+        "--variant",
+        "retry"
+      ],
+      "exit_code": 0,
+      "seconds": 2.842,
+      "stdout_tail": "d\": 0.25,\n      \"cost\": 0.23076923076923078,\n      \"log_loss\": 0.564768947345467\n    }\n  ],\n  \"selection_data\": \"validation only\",\n  \"dataset_sha256\": \"14e383946c9fe574ceea14e0b8bb0114751a3785adca32b4b2ec117b1d92f833\",\n  \"split_sizes\": {\n    \"train\": 140,\n    \"validation\": 52,\n    \"test\": 48,\n    \"excluded\": 0\n  },\n  \"test\": {\n    \"log_loss\": 0.34959957205344044,\n    \"baseline_log_loss\": 0.632721141883682,\n    \"balanced_accuracy\": 0.7333333333333334,\n    \"tn_fp_fn_tp\": [\n      7,\n      8,\n      0,\n      33\n    ],\n    \"cost\": 0.16666666666666666\n  },\n  \"slices\": {\n    \"known_track\": {\n      \"n\": 40,\n      \"log_loss\": 0.3244433938426158\n    },\n    \"unknown_track\": {\n      \"n\": 8,\n      \"log_loss\": 0.47538046310756377\n    },\n    \"experience_missing\": {\n      \"n\": 5,\n      \"log_loss\": 0.5908252841515462\n    }\n  },\n  \"future_column_invariance\": true,\n  \"unknown_missing_probe\": true,\n  \"conclusion\": \"Synthetic results only; report both gains and costs; new policy needs a fresh check set.\"\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "solutions/exercises/M05/run_hw.py",
+        "--variant",
+        "delayed"
+      ],
+      "exit_code": 0,
+      "seconds": 2.68,
+      "stdout_tail": "old\": 0.25,\n      \"cost\": 0.5319148936170213,\n      \"log_loss\": 0.781849263055777\n    }\n  ],\n  \"selection_data\": \"validation only\",\n  \"dataset_sha256\": \"cd07bc5394f874e96d7f547ab4f2ee538fa930290fa361ca9da318d1f256f226\",\n  \"split_sizes\": {\n    \"train\": 141,\n    \"validation\": 47,\n    \"test\": 48,\n    \"excluded\": 4\n  },\n  \"test\": {\n    \"log_loss\": 0.5466471123478193,\n    \"baseline_log_loss\": 0.6552767171004584,\n    \"balanced_accuracy\": 0.5882352941176471,\n    \"tn_fp_fn_tp\": [\n      3,\n      14,\n      0,\n      31\n    ],\n    \"cost\": 0.2916666666666667\n  },\n  \"slices\": {\n    \"known_track\": {\n      \"n\": 40,\n      \"log_loss\": 0.5132810189348979\n    },\n    \"unknown_track\": {\n      \"n\": 8,\n      \"log_loss\": 0.713477579412426\n    },\n    \"experience_missing\": {\n      \"n\": 5,\n      \"log_loss\": 0.36852597877030474\n    }\n  },\n  \"future_column_invariance\": true,\n  \"unknown_missing_probe\": true,\n  \"conclusion\": \"Synthetic results only; report both gains and costs; new policy needs a fresh check set.\"\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "C:\\projects\\ml-llm-course\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_foundations_v2.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "seconds": 18.62,
+      "stdout_tail": "..........................                                               [100%]\n26 passed in 17.29s\n",
+      "stderr_tail": ""
+    }
+  ],
+  "passed": 18,
+  "failed": 0
+}

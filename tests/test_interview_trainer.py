@@ -26,8 +26,8 @@ def test_duplicate_turn_is_rejected_and_cannot_add_answer_twice():
 def test_finished_interview_has_no_fifth_question():
     interview = Interview("hr")
     for turn in range(4):
-        _, sources = interview.prepare("Работал над API", turn)
-        interview.commit("Работал над API", "Уточни результат", sources, .1)
+        _, sources = interview.prepare("Пропустить вопрос: я не хочу обсуждать этот пример", turn)
+        interview.commit("Пропустить вопрос: я не хочу обсуждать этот пример", "Без оценки", sources, .1)
     assert interview.state()["finished"] is True
     assert interview.state()["question"] is None
     with pytest.raises(ValueError):

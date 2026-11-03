@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title"><title id="title">Обучение, выбор и независимая оценка</title><rect width="960" height="520" fill="#f5f7ee"/><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0L8,4L0,8" fill="#356d62"/></marker></defs><g font-family="Arial,sans-serif" fill="#243c35" font-size="21"><text x="30" y="42" font-size="26">Обучение, выбор и независимая оценка</text>
+<rect x="30" y="85" width="230" height="85" fill="#deead9"/><text x="50" y="120">Train</text><text x="50" y="150">Только train → fit</text>
+<path d="M260,127H350" stroke="#356d62" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="365" y="85" width="550" height="85" fill="#deead9"/><text x="385" y="120">Медианы → масштаб → категории → веса</text><text x="385" y="150">Один Pipeline для каждого C</text>
+<rect x="30" y="220" width="230" height="85" fill="#e8dfc4"/><text x="50" y="255">Validation</text><text x="50" y="285">Выбор C и порога</text>
+<path d="M260,262H350" stroke="#356d62" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="365" y="220" width="550" height="85" fill="#e8dfc4"/><text x="385" y="255">Таблица стоимости: (2FN + FP) / N</text><text x="385" y="285">Фиксируем модель и порог до test</text>
+<path d="M30,345H915" stroke="#ad573c" stroke-width="3" stroke-dasharray="9 6"/>
+<rect x="30" y="385" width="230" height="85" fill="#dbe4ee"/><text x="50" y="420">Test</text><text x="50" y="450">только predict</text>
+<path d="M260,427H350" stroke="#356d62" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="365" y="385" width="550" height="85" fill="#dbe4ee"/><text x="385" y="420">Ошибки и ограничения выбранного решения</text><text x="385" y="450">Нет обратной стрелки к выбору</text></g></svg>

@@ -1,0 +1,69 @@
+{
+  "reader": [
+    {
+      "check": "single_answer_disclosure",
+      "passed": true
+    },
+    {
+      "check": "mobile_native_figure",
+      "passed": true
+    },
+    {
+      "check": "dependency_navigation",
+      "passed": true
+    },
+    {
+      "check": "search_positive_empty_clear_keyboard",
+      "passed": true
+    },
+    {
+      "check": "attention_mobile_no_horizontal_overflow",
+      "passed": true
+    },
+    {
+      "check": "new_lesson_own_solution",
+      "passed": true
+    },
+    {
+      "check": "module_overview_matches_route",
+      "passed": true
+    }
+  ],
+  "attention": [
+    {
+      "check": "query_changes_attention",
+      "passed": true
+    },
+    {
+      "check": "key_changes_attention",
+      "passed": true
+    },
+    {
+      "check": "value_only_changes_output",
+      "passed": true
+    },
+    {
+      "check": "mask_forbids_future",
+      "passed": true
+    },
+    {
+      "check": "wrong_axis_demonstrates_failure",
+      "passed": true
+    },
+    {
+      "check": "reset_restores_state",
+      "passed": true
+    },
+    {
+      "check": "empty_wrong_correct_prediction",
+      "passed": true
+    },
+    {
+      "check": "step_navigation",
+      "passed": true
+    }
+  ],
+  "network_requests": [],
+  "passed": true,
+  "learner_mastery": "not_assessed"
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img"><title>LoRA: замороженная база и обучаемое изменение</title><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#306655"/></marker></defs><rect width="1000" height="500" fill="#f5f8f4"/>
+<text x="30" y="40" font-family="Arial" font-size="25" fill="#203b32" font-weight="bold">LoRA: замороженная база и обучаемое изменение</text>
+<rect x="30" y="185" width="140" height="70" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="44" y="214" font-family="Arial" font-size="21" fill="#203b32">X [N,in]</text>
+<rect x="320" y="90" width="300" height="85" rx="10" fill="#e6e6e6" stroke="#6f977f"/>
+<text x="334" y="119" font-family="Arial" font-size="21" fill="#203b32">W [out,in]</text>
+<text x="334" y="146" font-family="Arial" font-size="21" fill="#203b32">заморожена</text>
+<rect x="245" y="285" width="230" height="90" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="259" y="314" font-family="Arial" font-size="21" fill="#203b32">A [rank,in]</text>
+<text x="259" y="341" font-family="Arial" font-size="21" fill="#203b32">обучается</text>
+<rect x="530" y="285" width="230" height="90" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="544" y="314" font-family="Arial" font-size="21" fill="#203b32">B [out,rank]</text>
+<text x="544" y="341" font-family="Arial" font-size="21" fill="#203b32">обучается</text>
+<rect x="820" y="185" width="140" height="70" rx="10" fill="#e0eee0" stroke="#6f977f"/>
+<text x="834" y="214" font-family="Arial" font-size="21" fill="#203b32">Сумма</text>
+<path d="M170,210 L310,135" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M170,225 L235,325" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M475,330 L520,330" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M620,135 L815,210" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M760,325 L815,230" stroke="#306655" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="35" y="425" font-family="Arial" font-size="27" fill="#203b32">Y = XWᵀ + b + (XAᵀBᵀ) · α/rank</text>
+<text x="35" y="470" font-family="Arial" font-size="23" fill="#203b32">Base hash неизменен; ответы могут измениться и ухудшиться.</text>
+</svg>

@@ -117,7 +117,9 @@ def test_recover_committed_answer_without_resubmitting_generation(recovery_serve
     assert recovered["turn"] == 1
     assert len(recovered["history"]) == 1
     assert recovered["history"][0]["answer"] == body["answer"]
-    assert recovered["history"][0]["feedback"] == "Fixture feedback 1"
+    assert recovered["history"][0]["assessment"]["raw_output"] == "Fixture feedback 1"
+    assert recovered["history"][0]["assessment"]["fallback_used"] is True
+    assert "Fixture feedback 1" not in recovered["history"][0]["feedback"]
 
     status, continued = request(server, "POST", "/answer", {
         "id": recovered["id"], "turn": recovered["turn"],

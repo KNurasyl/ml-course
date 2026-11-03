@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "language": "ru",
   "status": "materials_authored",
   "created_on": "2026-11-03",
@@ -26,7 +26,7 @@
     }
   },
   "prerequisite_policy": "Lesson prerequisites are authoritative gates; module prerequisites describe the broad route. Introductory lessons can be used in the pilot before completing a module.",
-  "development_note": "Все 85 уроков подготовлены для самостоятельного прохождения по новому запросу пользователя. Материалы, реальные результаты ученика и персональная калибровка учитываются отдельно.",
+  "development_note": "Самостоятельные материалы дополнены по аудиту A01–A28. Технические проверки и авторские разборы не являются результатами ученика или реальным учебным пилотом.",
   "pilot_lesson_map": {
     "P01": [
       "M00-L01"
@@ -96,9 +96,17 @@
           ],
           "practice": "Вручную вычислить y = 2x + 1 для трёх входов и повторить обычной Python-функцией.",
           "assessment": "Новый вход обработан правильно; названы вход и результат.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 80,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 35,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M00-L02",
@@ -111,9 +119,17 @@
           ],
           "practice": "Сравнить изменение x, w и b в y = wx + b; сохранить выбранные параметры в словаре.",
           "assessment": "Объяснить, почему сохранение истории запросов само по себе не меняет параметры.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 80,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 35,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M00-L03",
@@ -126,9 +142,17 @@
           ],
           "practice": "Сравнить три пары параметров на синтетических примерах по средней квадратичной ошибке.",
           "assessment": "Расчёт ошибки проверяем; выбор кандидата основан на указанной мере.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 100,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 55,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M00-L04",
@@ -141,9 +165,17 @@
           ],
           "practice": "Разметить шаги маленького приложения как обучение, инференс или хранение состояния; обзорно расположить LLM и RAG на карте.",
           "assessment": "На новом сценарии отделить новое сообщение, новый документ и изменение весов.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 80,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 35,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M00-L05",
@@ -158,14 +190,22 @@
           ],
           "practice": "Нарисовать путь CSV → подбор параметров → файл модели → функция предсказания → журнал проверки.",
           "assessment": "Для каждого блока назвать вход, выход и один сбой; предложить наблюдение, которое выявит сбой.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 100,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 55,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {
         "id": "M00-HW01",
-        "task": "M00-HW01: реализовать две настройки линейной модели обычным Python, вручную проверить одну ошибку, сохранить параметры и нарисовать схему приложения. Приложить объяснение трёх действий: новый запрос, новый документ в базе знаний, повторное обучение.",
+        "task": "Выполни M00-HW01 по актуальному условию в course/modules/M00.md.",
         "rubric": [
           "Вычисление: формула, значения и средняя ошибка согласованы.",
           "Понимание: параметры отделены от входа и истории приложения.",
@@ -180,8 +220,21 @@
           "Проверь одно предсказание и один квадрат ошибки на бумаге.",
           "Для сбоя назови наблюдаемый факт: неверный формат, отсутствующий файл или изменение ошибки."
         ],
-        "retry": "Новый набор: (1, 5), (2, 8), (3, 11). Сравнить (w=2,b=2) и (w=3,b=2); объяснить выбор и прогноз для x=4.",
-        "delayed_check": "В P06 без исходной таблицы объяснить модель и обучение на другом численном примере. В M09 вернуться к различию параметров и контекста."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M00.md",
+        "canonical_solutions": "solutions/modules/M00.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          120,
+          240
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "Обычный Python 3.11, несколько чисел, GPU и внешние сервисы не нужны.",
       "sources": [
@@ -226,9 +279,17 @@
           ],
           "practice": "Представить таблицу с тремя объектами и двумя признаками в списках и NumPy; проследить формы операций.",
           "assessment": "Найти ошибку формы в новом примере, объяснив ожидаемое число объектов и признаков.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 80,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 35,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M01-L02",
@@ -241,9 +302,17 @@
           ],
           "practice": "Проверить пропуски, дубликаты, единицы измерения и допустимые значения в небольшом CSV.",
           "assessment": "Предложить обоснованную обработку двух разных типов пропусков, сохранив исходные данные.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 80,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 35,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M01-L03",
@@ -256,9 +325,17 @@
           ],
           "practice": "Разделить примеры по объектам, отдельно разобрать связанные записи одного пользователя и временные данные.",
           "assessment": "Найти случай, когда случайное разбиение даёт неподходящую проверку.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 100,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 55,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M01-L04",
@@ -271,9 +348,17 @@
           ],
           "practice": "В SQLite соединить две маленькие таблицы и проверить число строк до и после JOIN.",
           "assessment": "Обнаружить размножение строк из-за связи многие-ко-многим и объяснить его влияние на эксперимент.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 80,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 35,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M01-L05",
@@ -289,14 +374,22 @@
           ],
           "practice": "Вынести чтение и преобразование CSV в функцию, сохранить конфигурацию и описание происхождения.",
           "assessment": "Повторить запуск на чистой копии данных и получить тот же результат без ручных действий в ноутбуке.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 100,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 55,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {
         "id": "M01-HW01",
-        "task": "M01-HW01: подготовить небольшой CSV с описанием полей, провести аудит, разделить данные, обучить только на train параметры заполнения и нормализации, сохранить отчёт и SQL-проверку ключей.",
+        "task": "Выполни M01-HW01 по актуальному условию в course/modules/M01.md.",
         "rubric": [
           "Данные: понятны единицы измерения, пропуски и ключи.",
           "Эксперимент: параметры преобразований получены только из разрешённой части.",
@@ -311,8 +404,21 @@
           "Пометь операции fit и применения отдельно.",
           "Сравни уникальные ключи и число строк до и после соединения."
         ],
-        "retry": "Повторить подготовку на наборе с повторными измерениями одних объектов; выбрать групповое разделение и объяснить отличие.",
-        "delayed_check": "В M05 найти скрытую утечку в новом конвейере; в M10 применить тот же принцип к версиям документов и запросов."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M01.md",
+        "canonical_solutions": "solutions/modules/M01.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          130,
+          260
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "Небольшие CSV, SQLite из стандартной библиотеки, NumPy и pandas на CPU.",
       "sources": [
@@ -361,9 +467,17 @@
           ],
           "practice": "Описать один объект несколькими числами, подписать смысл координат и выполнить сложение.",
           "assessment": "Объяснить, почему складывать несовместимые единицы без преобразования бессмысленно.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 80,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 35,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M02-L02",
@@ -376,9 +490,17 @@
           ],
           "practice": "Рассчитать [1,2]·[3,4] и длины векторов вручную и в NumPy.",
           "assessment": "Объяснить отличие величины вектора от его направления на новом примере.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 80,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 35,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M02-L03",
@@ -391,9 +513,17 @@
           ],
           "practice": "Умножить матрицу 2×3 на 3×1, затем проверить численно цепочку преобразований.",
           "assessment": "Проверить совместимость размеров и объяснить смысл каждой оси.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 100,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 55,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M02-L04",
@@ -406,9 +536,17 @@
           ],
           "practice": "Сравнить евклидово расстояние и косинусное сходство для векторов разного масштаба.",
           "assessment": "Обработать нулевой вектор и объяснить, почему косинусное сходство не определяет истинность текста.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 80,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 35,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M02-L05",
@@ -423,14 +561,22 @@
           ],
           "practice": "Найти ближайшие объекты в заданных вручную векторах и исследовать изменение ранжирования после нормализации.",
           "assessment": "Объяснить один неудачный результат через представление данных, а не через название алгоритма.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 100,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 55,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {
         "id": "M02-HW01",
-        "task": "M02-HW01: реализовать вычисление скалярного произведения, косинусного сходства и поиска top-k без векторной базы; проверить результат ручным расчётом и описать случай, где выбранная мера не подходит.",
+        "task": "Выполни M02-HW01 по актуальному условию в course/modules/M02.md.",
         "rubric": [
           "Размерности: формы операций объяснены до запуска.",
           "Расчёты: совпадают ручной и программный результаты.",
@@ -445,8 +591,21 @@
           "Выпиши форму каждого множителя.",
           "Отдельно протестируй нулевой вектор и масштабированную копию."
         ],
-        "retry": "Сравнить ранжирование новых векторов по расстоянию и косинусу; выбрать подходящую меру для заданного смысла координат.",
-        "delayed_check": "Перед attention в M08 восстановить правило размеров; в M10 объяснить изменение результатов поиска после нормализации embeddings."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M02.md",
+        "canonical_solutions": "solutions/modules/M02.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          140,
+          280
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "NumPy, десятки векторов с несколькими координатами, CPU.",
       "sources": [
@@ -496,9 +655,17 @@
           ],
           "practice": "Для f(x)=x² сравнить значения около x=2 и вычислить отношение приращений.",
           "assessment": "Объяснить приближение и эффект слишком большого или слишком малого приращения.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 80,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 35,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M03-L02",
@@ -511,9 +678,17 @@
           ],
           "practice": "Вывести изменение ошибки (wx+b−y)² по w и b на одном примере.",
           "assessment": "Показать роль множителя x и проверить знак производной численно.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 80,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 35,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M03-L03",
@@ -527,9 +702,17 @@
           ],
           "practice": "Усреднить производные по нескольким примерам и сравнить с конечной разностью.",
           "assessment": "На новом наборе обнаружить пропущенный множитель или неверное усреднение.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 100,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 55,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M03-L04",
@@ -542,9 +725,17 @@
           ],
           "practice": "Запустить один и тот же цикл с тремя значениями learning rate и записать loss.",
           "assessment": "Различить медленное уменьшение ошибки, устойчивый ход и расходимость по измерениям.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 80,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 35,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M03-L05",
@@ -559,14 +750,22 @@
           ],
           "practice": "Добавить простой штраф за большие веса, изменить масштаб признака и сравнить траектории.",
           "assessment": "Объяснить, что именно изменилось в целевой функции и почему оптимум может сдвинуться.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 100,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 25,
+            "practice_minutes": 55,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {
         "id": "M03-HW01",
-        "task": "M03-HW01: написать обучение линейной модели в NumPy, проверить градиенты конечными разностями, сравнить три шага, сохранить loss и параметры; отдельно проверить качество на новых примерах.",
+        "task": "Выполни M03-HW01 по актуальному условию в course/modules/M03.md.",
         "rubric": [
           "Математика: производная и среднее рассчитаны корректно.",
           "Проверка: аналитический и численный градиенты согласованы в выбранном допуске.",
@@ -581,8 +780,21 @@
           "Проверь знак численной разности.",
           "Зафиксируй начальные параметры перед сравнением шагов."
         ],
-        "retry": "Исправить цикл с неверным усреднением градиента и повторить опыт на признаке другого масштаба.",
-        "delayed_check": "В M07 объяснить, что делает optimizer.step, и восстановить простой ручной градиент до применения autograd."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M03.md",
+        "canonical_solutions": "solutions/modules/M03.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          150,
+          300
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "NumPy и маленький синтетический набор; CPU, без DL-фреймворка.",
       "sources": [
@@ -617,9 +829,46 @@
         {
           "id": "M04-C03",
           "description": "Разделять статистический вывод, размер эффекта и решение о продукте."
+        },
+        {
+          "id": "M04-C16",
+          "description": "Объяснить exp/ln и BCE на новых вероятностях."
+        },
+        {
+          "id": "M04-C17",
+          "description": "Получить биномиальный хвост из исходов и сочетаний."
+        },
+        {
+          "id": "M04-C18",
+          "description": "Выбрать объём по мощности при заданных предположениях и зафиксировать остановку."
         }
       ],
       "lessons": [
+        {
+          "id": "M04-L06",
+          "title": "Экспонента, логарифм и потеря вероятностного ответа",
+          "prerequisites": [
+            "M00-L03"
+          ],
+          "estimated_minutes": 90,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Объяснить exp/ln и BCE на новых вероятностях.",
+          "assessment": "Задача M04-L06-A, затем B/C по отдельному ключу; объяснение обязательно.",
+          "path": "course/lessons/M04-L06.md",
+          "status": "materials_ready",
+          "visual": "course/assets/M04-L06.png",
+          "outcome_ids": [
+            "M04-C16"
+          ],
+          "workload": {
+            "reading_minutes": 30,
+            "practice_minutes": 30,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
         {
           "id": "M04-L01",
           "title": "Случайность и условие",
@@ -631,9 +880,17 @@
           ],
           "practice": "Посчитать вероятности на маленькой таблице событий и сравнить P(A|B) с P(B|A).",
           "assessment": "Объяснить различие знаменателей и роль базовой частоты.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 100,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 45,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M04-L02",
@@ -646,24 +903,66 @@
           ],
           "practice": "Сравнить две выборки с одинаковым средним и разной вариативностью.",
           "assessment": "Выбрать характеристику для конкретного вопроса и объяснить её ограничения.",
+          "estimated_minutes": 120,
+          "estimate_status": "planning_hypothesis",
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M04-L07",
+          "title": "От исходов к распределению и вероятности хвоста",
+          "prerequisites": [
+            "M04-L01",
+            "M04-L02"
+          ],
           "estimated_minutes": 90,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "practice": "Получить биномиальный хвост из исходов и сочетаний.",
+          "assessment": "Задача M04-L07-A, затем B/C по отдельному ключу; объяснение обязательно.",
+          "path": "course/lessons/M04-L07.md",
+          "status": "materials_ready",
+          "visual": "course/assets/M04-L07.png",
+          "outcome_ids": [
+            "M04-C17"
+          ],
+          "workload": {
+            "reading_minutes": 30,
+            "practice_minutes": 30,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M04-L03",
           "title": "Неопределённость метрики",
           "prerequisites": [
-            "M04-L02"
+            "M04-L07"
           ],
           "outcome_ids": [
             "M04-C02"
           ],
           "practice": "Многократно выбирать подвыборки и наблюдать колебания среднего.",
           "assessment": "Различить одинаковую точечную оценку и разную уверенность при разных объёмах данных.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M04-L04",
@@ -677,9 +976,17 @@
           ],
           "practice": "Построить bootstrap-интервал для средней ошибки на независимых объектах.",
           "assessment": "Указать единицу повторной выборки и объяснить, почему зависимые записи нельзя свободно перемешивать.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 100,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 45,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M04-L05",
@@ -694,14 +1001,48 @@
           ],
           "practice": "Составить план A/B с заранее выбранной основной метрикой и правилом анализа.",
           "assessment": "Разобрать случай с малым p-value, но практически незначительным улучшением; назвать угрозу многократных проверок.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 100,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 45,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M04-L08",
+          "title": "Сколько наблюдений нужно: планирование симуляцией",
+          "prerequisites": [
+            "M04-L05",
+            "M04-L07"
+          ],
+          "estimated_minutes": 150,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Выбрать объём по мощности при заданных предположениях и зафиксировать остановку.",
+          "assessment": "Задача M04-L08-A, затем B/C по отдельному ключу; объяснение обязательно.",
+          "path": "course/lessons/M04-L08.md",
+          "status": "materials_ready",
+          "visual": "course/assets/M04-L08.png",
+          "outcome_ids": [
+            "M04-C18"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 75,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {
         "id": "M04-HW01",
-        "task": "M04-HW01: сравнить ошибки двух моделей на общем наборе объектов, построить интервал для разности и написать осторожный вывод; затем указать, какие данные потребовались бы для продуктового эксперимента.",
+        "task": "Выполни M04-HW01 по актуальному условию в course/modules/M04.md.",
         "rubric": [
           "Вероятность: события, условия и знаменатели определены.",
           "Метод: учтены единица наблюдения и зависимость.",
@@ -716,8 +1057,21 @@
           "Проверь, независимы ли строки.",
           "Сравни интервал с величиной эффекта, которая имела бы практический смысл."
         ],
-        "retry": "Повторить вывод для набора с несколькими ответами каждого пользователя, выбрав корректную единицу resampling.",
-        "delayed_check": "В M11 применить анализ неопределённости к оценке ответов LLM; не выдавать 100 запросов за универсальную гарантию качества."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M04.md",
+        "canonical_solutions": "solutions/modules/M04.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          160,
+          320
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "NumPy, небольшие массивы, фиксируемый seed; CPU.",
       "sources": [
@@ -754,6 +1108,14 @@
         {
           "id": "M05-C03",
           "description": "Разобрать ошибки и ограничения переноса на новые данные."
+        },
+        {
+          "id": "M05-C16",
+          "description": "Обучить классификатор, выбрать C/порог на validation и объяснить масштаб."
+        },
+        {
+          "id": "M05-C17",
+          "description": "Построить group/time pipeline на смешанном CSV и доказать отсутствие утечки."
         }
       ],
       "lessons": [
@@ -769,25 +1131,42 @@
           ],
           "practice": "Определить целевую переменную, цену ошибок и константный либо правиловый baseline.",
           "assessment": "Объяснить, почему выбранная метрика соответствует поставленной задаче.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 100,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 45,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M05-L02",
           "title": "Линейные модели",
           "prerequisites": [
             "M05-L01",
-            "M03-L04"
+            "M03-L04",
+            "M04-L06"
           ],
           "outcome_ids": [
             "M05-C01"
           ],
-          "practice": "Обучить регрессию и классификатор, исследовать масштаб признаков и регуляризацию.",
+          "practice": "Вычислить вероятности, BCE и матрицу ошибок для готовых scores; обучение классификатора выполнить в M05-L06.",
           "assessment": "Интерпретировать результат на примере с другим распределением признаков.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 100,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 45,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M05-L03",
@@ -800,9 +1179,17 @@
           ],
           "practice": "Сравнить дерево и небольшой ансамбль с линейным baseline на одном разбиении.",
           "assessment": "Показать, как ограничение сложности меняет train и validation результат.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M05-L04",
@@ -816,9 +1203,17 @@
           ],
           "practice": "Проверить pipeline, подобрать настройки на validation и один раз оценить выбранное решение на test.",
           "assessment": "Найти утечку в новом кейсе с повторными записями и устранить её.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 100,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 45,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M05-L05",
@@ -835,12 +1230,73 @@
           "assessment": "Выбрать следующий эксперимент и описать результат, который опровергнет гипотезу.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 20,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M05-L06",
+          "title": "Обучить классификатор и выбрать правило решения",
+          "prerequisites": [
+            "M05-L02",
+            "M05-L04",
+            "M04-L06"
+          ],
+          "estimated_minutes": 180,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Обучить классификатор, выбрать C/порог на validation и объяснить масштаб.",
+          "assessment": "Задача M05-L06-A, затем B/C по отдельному ключу; объяснение обязательно.",
+          "path": "course/lessons/M05-L06.md",
+          "status": "materials_ready",
+          "visual": "course/assets/M05-L06.svg",
+          "outcome_ids": [
+            "M05-C16"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 105,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M05-L07",
+          "title": "Самостоятельный эксперимент на неоднородных данных",
+          "prerequisites": [
+            "M05-L06",
+            "M01-L05"
+          ],
+          "estimated_minutes": 240,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Построить group/time pipeline на смешанном CSV и доказать отсутствие утечки.",
+          "assessment": "Задача M05-L07-A, затем B/C по отдельному ключу; объяснение обязательно.",
+          "path": "course/lessons/M05-L07.md",
+          "status": "materials_ready",
+          "visual": "course/assets/M05-L07.svg",
+          "outcome_ids": [
+            "M05-C17"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 165,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {
         "id": "M05-HW01",
-        "task": "M05-HW01: подготовить воспроизводимое сравнение baseline, линейной модели и дерева или бустинга; выбрать подходящее разделение, описать ошибки пяти объектов и защитить итоговое решение.",
+        "task": "Выполни M05-HW01 по актуальному условию в course/modules/M05.md.",
         "rubric": [
           "Постановка: цель и метрика имеют смысл для пользователя.",
           "Эксперимент: сравнение одинаковых объектов и независимая финальная проверка.",
@@ -855,8 +1311,21 @@
           "Для каждого признака спроси, когда он становится известен.",
           "Сравни ошибки одной и той же группы объектов у всех моделей."
         ],
-        "retry": "Получить новый датасет с временной структурой и переработать схему проверки без повторения случайного разбиения.",
-        "delayed_check": "В M12 сравнивать дообучение с исходным решением по тем же правилам; в M16 защитить выбор метрик на незнакомом кейсе."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M05.md",
+        "canonical_solutions": "solutions/modules/M05.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          170,
+          340
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "scikit-learn и небольшой табличный набор на CPU; тяжёлый перебор параметров не требуется.",
       "sources": [
@@ -906,9 +1375,17 @@
           ],
           "practice": "Написать краткую постановку сервиса: пользователи, входы, нагрузка, приемлемые ошибки и ограничения.",
           "assessment": "Отделить измеренное требование от предположения и предложить способ проверки.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 110,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 45,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M06-L02",
@@ -921,9 +1398,17 @@
           ],
           "practice": "Нарисовать отдельно подготовку данных, обучение, хранение версии и применение.",
           "assessment": "Объяснить, как избежать смешивания версий преобразований и модели.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 110,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 45,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M06-L03",
@@ -937,9 +1422,17 @@
           ],
           "practice": "Сравнить пакетный расчёт с ответом на запрос; выбрать схему для двух разных сценариев.",
           "assessment": "Защитить выбор через свежесть, задержку, цену вычислений и сложность эксплуатации.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M06-L04",
@@ -952,9 +1445,17 @@
           ],
           "practice": "Определить журналы и метрики, позволяющие заметить ошибку входа, сбой сервиса и деградацию модели.",
           "assessment": "Различить техническую доступность и полезность предсказаний.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 110,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 45,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M06-L05",
@@ -969,14 +1470,22 @@
           ],
           "practice": "Разобрать недоступность модели, ошибочный релиз и смену схемы данных.",
           "assessment": "Показать проверяемый план восстановления с известной рабочей версией.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {
         "id": "M06-HW01",
-        "task": "M06-HW01: спроектировать сервис для модели из M05; приложить схему двух контуров, контракт входа/выхода, требования и сценарий неудачного релиза с восстановлением.",
+        "task": "Выполни M06-HW01 по актуальному условию в course/modules/M06.md.",
         "rubric": [
           "Требования: качество, нагрузка и задержка имеют определение и способ измерения.",
           "Архитектура: версии данных, преобразований и модели согласованы.",
@@ -991,8 +1500,21 @@
           "Отдельно нарисуй путь появления новой версии модели.",
           "Для каждой метрики укажи, какое действие вызывает её ухудшение."
         ],
-        "retry": "Изменить требование: данные приходят с задержкой, а число запросов выросло. Пересмотреть только затронутые решения и защитить изменения.",
-        "delayed_check": "В M13 проверить схему практическим запуском и отказом; в M16 повторить защиту для голосового интервьюера."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M06.md",
+        "canonical_solutions": "solutions/modules/M06.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          180,
+          360
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "Диаграммы, маленький Python-сервис и локальные файлы. Облачная инфраструктура не обязательна.",
       "sources": [
@@ -1045,9 +1567,17 @@
           ],
           "practice": "Собрать двухслойную сеть на маленькой задаче; подписать формы всех тензоров.",
           "assessment": "Объяснить, что меняется при добавлении нелинейной активации.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 110,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 45,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M07-L02",
@@ -1060,9 +1590,17 @@
           ],
           "practice": "Сравнить градиент PyTorch с ручным вычислением для одного параметра.",
           "assessment": "Объяснить накопление градиентов и момент их обнуления.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 110,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 45,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M07-L03",
@@ -1075,9 +1613,17 @@
           ],
           "practice": "Написать прямой проход, loss, backward и шаг optimizer; вести train/validation историю.",
           "assessment": "Исправить цикл с пропущенным обнулением или неправильным режимом работы.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M07-L04",
@@ -1090,9 +1636,17 @@
           ],
           "practice": "Исследовать переобучение на малом наборе, NaN и нестабильный шаг.",
           "assessment": "Предложить проверку причины сбоя до случайной замены архитектуры.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 110,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 45,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M07-L05",
@@ -1107,14 +1661,22 @@
           ],
           "practice": "Сохранить параметры и конфигурацию, загрузить в новом процессе и сравнить ответы.",
           "assessment": "Доказать согласованность модели и preprocessing на контрольных входах.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {
         "id": "M07-HW01",
-        "task": "M07-HW01: обучить небольшую сеть и простой baseline на одной задаче, сохранить историю, объяснить две ошибки и загрузить модель в отдельном процессе с проверкой контрольных ответов.",
+        "task": "Выполни M07-HW01 по актуальному условию в course/modules/M07.md.",
         "rubric": [
           "Механика: прямой и обратный проход объяснены на конкретных тензорах.",
           "Эксперимент: обучение и оценивание разделены.",
@@ -1129,8 +1691,21 @@
           "Проверь формы и значения loss перед оптимизацией.",
           "Сравни один градиент с ручной формулой."
         ],
-        "retry": "Исправить предоставленный цикл с двумя независимыми ошибками и объяснить, какое наблюдение выявило каждую.",
-        "delayed_check": "В M12 провести адаптацию модели с тем же контролем данных и градиентов; в M16 объяснить незнакомый короткий training loop."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M07.md",
+        "canonical_solutions": "solutions/modules/M07.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          190,
+          380
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "Небольшая полносвязная сеть и CPU-версия PyTorch; обучение на считанных тысячах синтетических объектов.",
       "sources": [
@@ -1165,6 +1740,14 @@
         {
           "id": "M08-C03",
           "description": "Проводить маленький эксперимент языкового моделирования."
+        },
+        {
+          "id": "M08-C16",
+          "description": "Вручную нормировать строку и проверить residual; сравнить с PyTorch"
+        },
+        {
+          "id": "M08-C17",
+          "description": "Проследить формы/числа полного блока и реализовать causal/padding attention"
         }
       ],
       "lessons": [
@@ -1179,9 +1762,17 @@
           ],
           "practice": "Сравнить разбиение русских и английских строк; различить символ, слово и токен.",
           "assessment": "Объяснить, почему длина строки в символах не равна числу токенов.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 55,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M08-L02",
@@ -1194,9 +1785,17 @@
           ],
           "practice": "Использовать таблицу векторов токенов и проследить выбор строк по индексам.",
           "assessment": "Различить индекс токена, обучаемое представление и значение сходства.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 55,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M08-L03",
@@ -1209,9 +1808,17 @@
           ],
           "practice": "Рассчитать матрицу оценок и взвешенную сумму для трёх маленьких векторов.",
           "assessment": "Проверить формы Q, K, V и объяснить нормализацию весов.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 140,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 75,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M08-L04",
@@ -1224,15 +1831,74 @@
           ],
           "practice": "Добавить порядок и запрет будущих позиций в учебный attention-блок.",
           "assessment": "На новом примере показать, какую утечку создаёт доступ к будущему токену.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 55,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M08-L06",
+          "title": "Residual и LayerNorm: сохранить путь и выровнять масштаб",
+          "path": "course/lessons/M08-L06.md",
+          "prerequisites": [
+            "M07-L01",
+            "M08-L04"
+          ],
+          "estimated_minutes": 135,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Вручную нормировать строку и проверить residual; сравнить с PyTorch",
+          "assessment": "Новая строка, gamma/beta, неверная ось и постоянный вектор",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M08-C16"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 60,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M08-L07",
+          "title": "Полный forward Transformer-блока",
+          "path": "course/lessons/M08-L07.md",
+          "prerequisites": [
+            "M08-L06"
+          ],
+          "estimated_minutes": 180,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Проследить формы/числа полного блока и реализовать causal/padding attention",
+          "assessment": "Параметры MLP, будущий и padding токен не меняют защищённые выходы",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M08-C17"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 105,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M08-L05",
           "title": "Мини-языковая модель",
           "prerequisites": [
-            "M08-L04"
+            "M08-L07"
           ],
           "outcome_ids": [
             "M08-C01",
@@ -1243,12 +1909,20 @@
           "assessment": "Объяснить выбор цели, разделение корпуса и ограничения сгенерированного текста.",
           "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 55,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {
         "id": "M08-HW01",
-        "task": "M08-HW01: реализовать маленький attention-блок с causal mask, проверить формы и отсутствие влияния будущего токена на ранние позиции, затем описать эксперимент мини-языковой модели.",
+        "task": "Выполни M08-HW01 по актуальному условию в course/modules/M08.md.",
         "rubric": [
           "Представление: токены, индексы и embeddings различены.",
           "Вычисления: формы и маска проверены на численном примере.",
@@ -1263,8 +1937,21 @@
           "Измени только последний токен и сравни ранние выходы.",
           "Сначала проверь размерности без обучения."
         ],
-        "retry": "Найти ошибку оси softmax или causal mask в другом attention-блоке и доказать исправление наблюдаемым тестом.",
-        "delayed_check": "В M09 объяснить, как длинный контекст влияет на вычисления; в M12 отделить objective обучения от внешнего качества приложения."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M08.md",
+        "canonical_solutions": "solutions/modules/M08.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          200,
+          400
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "Маленькие тензоры и короткий синтетический корпус на CPU. Обучение большой LLM не требуется.",
       "sources": [
@@ -1299,6 +1986,10 @@
         {
           "id": "M09-C03",
           "description": "Измерять качество, память и задержки без необоснованных обещаний."
+        },
+        {
+          "id": "M09-C16",
+          "description": "Сравнить float32/int8 в отдельных процессах с RSS и outputs"
         }
       ],
       "lessons": [
@@ -1313,9 +2004,17 @@
           ],
           "practice": "Проследить превращение ролей и текста в вход токенизатора.",
           "assessment": "Объяснить, почему один и тот же текст при разных шаблонах может давать разные результаты.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 55,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M09-L02",
@@ -1328,9 +2027,17 @@
           ],
           "practice": "Собрать вход из инструкции, истории и нового запроса; посчитать бюджет и резерв ответа.",
           "assessment": "Выбрать, что удалить или сжать при превышении бюджета, сохранив назначение диалога.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 55,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M09-L03",
@@ -1343,9 +2050,17 @@
           ],
           "practice": "Сравнить фиксированные настройки генерации на небольшом наборе запросов.",
           "assessment": "Отделить наблюдаемое изменение поведения от предположения об улучшении.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 140,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 75,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M09-L04",
@@ -1358,9 +2073,17 @@
           ],
           "practice": "Запустить компактную открытую модель по проверенной инструкции, записать конфигурацию и ресурсные измерения.",
           "assessment": "Объяснить различие памяти весов, промежуточных вычислений и контекста; предложить облегчённый запуск.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 55,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M09-L05",
@@ -1375,14 +2098,47 @@
           ],
           "practice": "Получить структурированный ответ, проверить его схему и обработать невалидный результат.",
           "assessment": "Показать поведение приложения при пустом ответе, таймауте и нарушении формата.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 140,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 75,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M09-L06",
+          "title": "Выбрать локальную конфигурацию по измерениям",
+          "path": "course/lessons/M09-L06.md",
+          "prerequisites": [
+            "M09-L05"
+          ],
+          "estimated_minutes": 210,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Сравнить float32/int8 в отдельных процессах с RSS и outputs",
+          "assessment": "Решение по одинаковым запросам; правильные единицы и ограничение RSS дерева",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M09-C16"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 135,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {
         "id": "M09-HW01",
-        "task": "M09-HW01: запустить компактную локальную модель, подготовить набор запросов и адаптер ответа; зафиксировать шаблон, настройки, версии, ресурсы, задержки и обработку невалидного результата.",
+        "task": "Выполни M09-HW01 по актуальному условию в course/modules/M09.md.",
         "rubric": [
           "Вход: реальный контекст и резерв ответа известны.",
           "Измерения: указаны модель, настройки, оборудование и наблюдаемые результаты.",
@@ -1397,8 +2153,21 @@
           "Начни с короткого контекста и одного запроса.",
           "Проверь отказ на заранее подготовленном неправильном ответе."
         ],
-        "retry": "Изменить вход так, чтобы он превышал бюджет, и реализовать понятное правило сокращения без потери обязательной инструкции.",
-        "delayed_check": "В M15 измерить вклад LLM в общую задержку голосового ответа; в M16 защитить выбор компактной модели."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M09.md",
+        "canonical_solutions": "solutions/modules/M09.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          210,
+          420
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "Компактная модель в проверенной локальной конфигурации; CPU допустим. Размер и версия фиксируются после реального прогона лабораторной. Платный API не нужен.",
       "sources": [
@@ -1434,6 +2203,10 @@
         {
           "id": "M10-C03",
           "description": "Локализовать ошибку между источником, поиском, контекстом и ответом."
+        },
+        {
+          "id": "M10-C16",
+          "description": "48 версионированных документов, две chunking, lexical/encoder/RRF, dev/check"
         }
       ],
       "lessons": [
@@ -1450,9 +2223,17 @@
           ],
           "practice": "Разбить небольшую базу технических материалов, сохранив идентификаторы, заголовки и версии.",
           "assessment": "Показать случай, когда граница фрагмента разрушает необходимый контекст.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 55,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M10-L02",
@@ -1465,9 +2246,17 @@
           ],
           "practice": "Сравнить два способа поиска на готовом маленьком наборе запросов.",
           "assessment": "Объяснить промах по словам и промах по смысловой близости на конкретных примерах.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 55,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M10-L03",
@@ -1480,9 +2269,17 @@
           ],
           "practice": "Объединить кандидатов двух поисков, применить простое повторное ранжирование и проверить изменение.",
           "assessment": "Указать, на каких запросах этап помог, а на каких увеличил стоимость без пользы.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 140,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 75,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M10-L04",
@@ -1495,9 +2292,17 @@
           ],
           "practice": "Передать найденные фрагменты модели, потребовать ссылки и проверить соответствие утверждений источникам.",
           "assessment": "Обнаружить ссылку на существующий документ, который не подтверждает конкретный вывод.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 55,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M10-L05",
@@ -1512,14 +2317,47 @@
           ],
           "practice": "Разобрать отсутствие нужного документа, плохое ранжирование, устаревший фрагмент и ошибку генерации.",
           "assessment": "Предложить изменение в правильном компоненте и способ проверить его эффект.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 140,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 75,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M10-L06",
+          "title": "Диагностировать русский RAG по трассе ошибки",
+          "path": "course/lessons/M10-L06.md",
+          "prerequisites": [
+            "M10-L05"
+          ],
+          "estimated_minutes": 270,
+          "estimate_status": "planning_hypothesis",
+          "practice": "48 версионированных документов, две chunking, lexical/encoder/RRF, dev/check",
+          "assessment": "Локализовать потерю условия, устаревшую версию и вопрос без ответа",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M10-C16"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 195,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {
         "id": "M10-HW01",
-        "task": "M10-HW01: собрать локальный RAG на небольшой базе, сравнить лексический и векторный варианты, разобрать ошибки поиска и генерации отдельно; начать с предоставленного малого набора, затем добавить собственные размеченные запросы.",
+        "task": "Выполни M10-HW01 по актуальному условию в course/modules/M10.md.",
         "rubric": [
           "База: происхождение, версии и идентификаторы фрагментов сохранены.",
           "Поиск: сравнение выполнено на одинаковых запросах.",
@@ -1534,8 +2372,21 @@
           "Сохрани список кандидатов до генерации.",
           "Привяжи каждое утверждение к точному фрагменту, а не к названию документа."
         ],
-        "retry": "Повторить диагностику на другом корпусе с устаревшей и новой версиями инструкции, явно выбрав актуальный источник.",
-        "delayed_check": "В M11 построить независимый оценочный набор; в M16 проверить RAG на новых вопросах интервьюера."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M10.md",
+        "canonical_solutions": "solutions/modules/M10.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          220,
+          440
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "Маленькая база, локальный поиск и компактная embedding-модель после проверки ресурсов. Индекс может храниться в памяти; внешняя база и платный API не обязательны.",
       "sources": [
@@ -1571,6 +2422,10 @@
         {
           "id": "M11-C03",
           "description": "Проверять регрессию и отделять модельную оценку от доказательства качества."
+        },
+        {
+          "id": "M11-C16",
+          "description": "Собрать неизменённые ответы двух конфигураций, разметить по рубрике и принять решение отдельно по HR/backend."
         }
       ],
       "lessons": [
@@ -1586,9 +2441,17 @@
           ],
           "practice": "Разделить корректность, подтверждённость, полезность обратной связи и соблюдение формата.",
           "assessment": "Выбрать критерии для конкретной функции тренажёра и объяснить исключённые критерии.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 55,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M11-L02",
@@ -1601,9 +2464,17 @@
           ],
           "practice": "Разметить предоставленные примеры по инструкции, сравнить с разбором и дополнить покрытие.",
           "assessment": "Объяснить, как набор отделён от примеров настройки.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 55,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M11-L03",
@@ -1616,9 +2487,17 @@
           ],
           "practice": "Для технического ответа выделить факты и ошибки; для HR — конкретность, ясность и аргументацию.",
           "assessment": "Оценить два разных хороших ответа без требования одной дословной формулировки.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 140,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 75,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M11-L04",
@@ -1631,9 +2510,17 @@
           ],
           "practice": "Сопоставить оценки LLM с ручной разметкой и исследовать систематические расхождения.",
           "assessment": "Найти пример уверенной, но неправильной оценки и предложить ограничение автоматизации.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 120,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 55,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M11-L05",
@@ -1648,14 +2535,50 @@
           ],
           "practice": "Сравнить две версии на неизменном наборе и разобрать улучшения, ухудшения и неопределённость.",
           "assessment": "Сформулировать решение о выпуске с явными ограничениями данных.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 140,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 75,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M11-L06",
+          "title": "От реальных ответов к парному сравнению систем",
+          "prerequisites": [
+            "M11-L02",
+            "M11-L03",
+            "M11-L05",
+            "M09-L05"
+          ],
+          "estimated_minutes": 240,
+          "practice": "Собрать неизменённые ответы двух конфигураций, разметить по рубрике и принять решение отдельно по HR/backend.",
+          "assessment": "Новые случаи, полная разметка с происхождением, проверка отсутствующих оценок, парное сравнение и критические ограничения.",
+          "path": "course/lessons/M11-L06.md",
+          "status": "materials_ready",
+          "visual": "course/assets/M11-L06.svg",
+          "outcome_ids": [
+            "M11-C16"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 165,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "estimate_status": "planning_hypothesis",
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {
         "id": "M11-HW01",
-        "task": "M11-HW01: подготовить отдельные HR- и технический наборы, инструкцию разметки, несколько разобранных эталонов и отчёт сравнения двух версий; отдельно проверить ошибки модельного оценщика.",
+        "task": "Выполни M11-HW01 по актуальному условию в course/modules/M11.md.",
         "rubric": [
           "Покрытие: набор отражает цели и значимые сложные случаи.",
           "Рубрика: решение объяснимо через наблюдаемые признаки ответа.",
@@ -1670,8 +2593,21 @@
           "Добавь случай, где ответ звучит уверенно, но неверен.",
           "Раздели критерии ответа и качества голоса."
         ],
-        "retry": "Оценить новые ответы с той же рубрикой; выявить неоднозначный критерий и уточнить его, сохранив историю изменения.",
-        "delayed_check": "В M12 применить независимую проверку дообучения; в M16 провести финальную защиту на незнакомых примерах."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M11.md",
+        "canonical_solutions": "solutions/modules/M11.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          230,
+          460
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "JSON/CSV, ручная разметка, локальные метрики; модельный оценщик может быть компактным и исследовательским, не обязательным источником истины.",
       "sources": [
@@ -1708,6 +2644,14 @@
         {
           "id": "M12-C03",
           "description": "Сравнивать пользу и издержки адаптации на независимых примерах."
+        },
+        {
+          "id": "M12-C16",
+          "description": "Применить chat template, собрать assistant-only labels и проверить сдвиг loss"
+        },
+        {
+          "id": "M12-C17",
+          "description": "Обучить LoRA pretrained Smol135; сохранить и восстановить в новом процессе; сравнить base/original/new"
         }
       ],
       "lessons": [
@@ -1724,9 +2668,17 @@
           ],
           "practice": "Разобрать ошибки поведения, формата и недостатка актуальных сведений.",
           "assessment": "Обосновать, почему для конкретной проблемы подходит обучение, prompt или поиск.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M12-L02",
@@ -1739,9 +2691,17 @@
           ],
           "practice": "Подготовить маленький набор примеров, проверить происхождение, формат и разделение по связанным объектам.",
           "assessment": "Обнаружить утечку между обучением и оцениванием через почти одинаковые диалоги.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M12-L03",
@@ -1754,9 +2714,17 @@
           ],
           "practice": "Обучить очень маленькую учебную модель на контролируемом синтетическом корпусе.",
           "assessment": "Объяснить objective, обновляемые параметры и пределы этого эксперимента.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 150,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 85,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M12-L04",
@@ -1769,9 +2737,17 @@
           ],
           "practice": "Сравнить обновление всех параметров и малого обучаемого компонента на подходящем компактном примере.",
           "assessment": "Посчитать долю обучаемых параметров и проверить, какие веса действительно изменились.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M12-L05",
@@ -1786,14 +2762,74 @@
           ],
           "practice": "Сопоставить исходную модель, изменение инструкции и адаптацию на одном независимом наборе.",
           "assessment": "Защитить вывод о пользе либо отказе от адаптации с учётом регрессий и стоимости.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 150,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 85,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M12-L06",
+          "title": "Из диалога в обучающий пример: токены и маска потерь",
+          "path": "course/lessons/M12-L06.md",
+          "prerequisites": [
+            "M12-L05",
+            "M08-L05",
+            "M09-L01"
+          ],
+          "estimated_minutes": 180,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Применить chat template, собрать assistant-only labels и проверить сдвиг loss",
+          "assessment": "Первый assistant-token и EOS сохранены, prefix/padding исключены, overflow отвергнут",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M12-C16"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 105,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M12-L07",
+          "title": "Настоящий малый SFT: адаптер, checkpoint и регрессии",
+          "path": "course/lessons/M12-L07.md",
+          "prerequisites": [
+            "M12-L06"
+          ],
+          "estimated_minutes": 300,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Обучить LoRA pretrained Smol135; сохранить и восстановить в новом процессе; сравнить base/original/new",
+          "assessment": "Неизменность базы, корректные labels, loss и предметный gate отдельно, реальные ошибки сохранены",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M12-C17"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 225,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {
         "id": "M12-HW01",
-        "task": "M12-HW01: выбрать узкую измеримую проблему, сравнить исходное решение, изменение инструкции и небольшой эксперимент обучения; приложить разделение данных, параметры, число обучаемых весов и независимый отчёт.",
+        "task": "Выполни M12-HW01 по актуальному условию в course/modules/M12.md.",
         "rubric": [
           "Выбор: гипотеза адаптации связана с наблюдаемой проблемой.",
           "Механика: обновляемые параметры и данные известны.",
@@ -1808,8 +2844,21 @@
           "Проверь, что данные проверки не использовались для выбора примеров.",
           "Сравни веса до и после одного шага."
         ],
-        "retry": "Получить задачу обновления фактов и объяснить, почему обучение может уступить RAG; затем проверить это на небольшой контролируемой базе.",
-        "delayed_check": "На финальной защите M16 объяснить один неудачный эксперимент адаптации и причину выбранного решения."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M12.md",
+        "canonical_solutions": "solutions/modules/M12.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          240,
+          480
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "Малая PyTorch-модель и короткие последовательности на CPU. Полномасштабная QLoRA и GPU-оптимизация относятся к дополнительной ветке; обязательная цель — понять и проверить механизм обучения.",
       "sources": [
@@ -1846,6 +2895,10 @@
         {
           "id": "M13-C03",
           "description": "Диагностировать сбой и возвращать рабочую версию."
+        },
+        {
+          "id": "M13-C16",
+          "description": "Измерить очередь и дедлайн через настоящий HTTP, воспроизвести перегрузку и восстановление после рестарта."
         }
       ],
       "lessons": [
@@ -1862,9 +2915,17 @@
           ],
           "practice": "Связать код, параметры модели, данные, prompt и конфигурацию в одной записи запуска.",
           "assessment": "Воспроизвести известный результат по идентификатору версии.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M13-L02",
@@ -1877,9 +2938,17 @@
           ],
           "practice": "Описать окружение и упаковать локальный сервис; проверить допустимые и ошибочные входы.",
           "assessment": "Запустить сервис из чистого окружения без скрытых ручных зависимостей.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M13-L03",
@@ -1892,9 +2961,17 @@
           ],
           "practice": "Включить в проверку изменения маленький набор технических тестов и оценочных примеров.",
           "assessment": "Различить поломку API, численный дефект и ухудшение качества ответа.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 150,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 85,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M13-L04",
@@ -1907,9 +2984,17 @@
           ],
           "practice": "Записать этапы запроса, ошибки, распределение задержек и используемые ресурсы.",
           "assessment": "Найти узкий компонент по измерениям, а не по общей длительности запроса.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M13-L05",
@@ -1924,14 +3009,46 @@
           ],
           "practice": "Умышленно выпустить несовместимую конфигурацию в учебной среде и выполнить откат.",
           "assessment": "Подтвердить восстановление контрольными запросами и описать причину отказа.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 150,
           "estimate_status": "planning_hypothesis",
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 85,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M13-L06",
+          "title": "Очередь, дедлайн и восстановление HTTP-сервиса",
+          "prerequisites": [
+            "M13-L05"
+          ],
+          "estimated_minutes": 210,
+          "practice": "Измерить очередь и дедлайн через настоящий HTTP, воспроизвести перегрузку и восстановление после рестарта.",
+          "assessment": "Выполнить A, новый B и отложенный C по условиям M13-L06; код и объяснение обязательны.",
+          "path": "course/lessons/M13-L06.md",
+          "outcome_ids": [
+            "M13-C16"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 135,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "estimate_status": "planning_hypothesis",
+          "assessment_policy": "course/assessment.md",
           "status": "materials_ready"
         }
       ],
       "homework": {
         "id": "M13-HW01",
-        "task": "M13-HW01: упаковать учебный сервис, записать версии и метрики, провести небольшой нагрузочный опыт, смоделировать неудачный релиз и воспроизводимо восстановить рабочую версию.",
+        "task": "Выполни M13-HW01 по актуальному условию в course/modules/M13.md.",
         "rubric": [
           "Воспроизводимость: артефакты и конфигурация однозначно определены.",
           "Наблюдение: технические и качественные метрики не смешаны.",
@@ -1946,8 +3063,21 @@
           "Разложи задержку на измеримые этапы.",
           "Проверь совместимость возвращаемых артефактов."
         ],
-        "retry": "Разобрать новый сбой: индекс обновлён, а схема метаданных осталась старой; восстановить корректное поведение и добавить содержательную проверку.",
-        "delayed_check": "В M16 продемонстрировать диагностику и восстановление без заранее подготовленной последовательности команд."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M13.md",
+        "canonical_solutions": "solutions/modules/M13.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          250,
+          500
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "Локальный сервис, файлы/SQLite, стандартные журналы, небольшой генератор нагрузки; Docker после проверки установки. Облако не обязательно.",
       "sources": [
@@ -1984,6 +3114,10 @@
         {
           "id": "M14-C03",
           "description": "Проверять остановку, обработку ошибок и сохранение состояния."
+        },
+        {
+          "id": "M14-C16",
+          "description": "Выполнить реальные предложения LLM через валидатор инструментов и сравнить успех задачи с соблюдением доступа."
         }
       ],
       "lessons": [
@@ -2000,9 +3134,17 @@
           ],
           "practice": "Сравнить фиксированную последовательность и выбор следующего действия моделью на одной задаче.",
           "assessment": "Обосновать пользу или отказ от автономного выбора через измерения.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M14-L02",
@@ -2015,9 +3157,17 @@
           ],
           "practice": "Реализовать поиск вопроса по теме с явными аргументами, проверкой входа и структурой ответа.",
           "assessment": "Показать корректный отказ на неизвестной теме и неверном типе аргумента.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M14-L03",
@@ -2030,9 +3180,17 @@
           ],
           "practice": "Отделить историю беседы, текущий этап и данные инструментов; ограничить доступ конкретной сессией.",
           "assessment": "Найти случай смешивания двух сессий и доказать устранение.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 150,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 85,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M14-L04",
@@ -2045,9 +3203,17 @@
           ],
           "practice": "Добавить предел шагов, обработку таймаута, отмену и обнаружение повторяющегося неуспешного действия.",
           "assessment": "Остановить цикл на новом сбойном сценарии с понятным итогом.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M14-L05",
@@ -2062,14 +3228,46 @@
           ],
           "practice": "Оценить успех задачи, число действий и ошибки относительно простого сценария.",
           "assessment": "Разобрать инструкцию из найденного документа как недоверенные данные, а не разрешение на действие.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 150,
           "estimate_status": "planning_hypothesis",
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 85,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M14-L06",
+          "title": "Модель предлагает инструмент, исполнитель проверяет",
+          "prerequisites": [
+            "M14-L05"
+          ],
+          "estimated_minutes": 180,
+          "practice": "Выполнить реальные предложения LLM через валидатор инструментов и сравнить успех задачи с соблюдением доступа.",
+          "assessment": "Выполнить A, новый B и отложенный C по условиям M14-L06; код и объяснение обязательны.",
+          "path": "course/lessons/M14-L06.md",
+          "outcome_ids": [
+            "M14-C16"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 105,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "estimate_status": "planning_hypothesis",
+          "assessment_policy": "course/assessment.md",
           "status": "materials_ready"
         }
       ],
       "homework": {
         "id": "M14-HW01",
-        "task": "M14-HW01: добавить инструмент подбора вопроса, определить состояние интервью и ограничение шагов; сравнить с фиксированным сценарием и проверить сбой, повтор действия и недоверенную инструкцию.",
+        "task": "Выполни M14-HW01 по актуальному условию в course/modules/M14.md.",
         "rubric": [
           "Необходимость: преимущество агента проверяется относительно простой альтернативы.",
           "Контракты: аргументы и доступ проверяются приложением.",
@@ -2084,8 +3282,21 @@
           "Проверь инструмент без LLM обычным вызовом функции.",
           "Смоделируй три одинаковых неудачных результата подряд."
         ],
-        "retry": "Добавить отмену во время работы инструмента и доказать, что запоздалый результат не меняет состояние завершённой сессии.",
-        "delayed_check": "В M16 защитить выбор границ автономности и повторить тест изоляции двух интервью."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M14.md",
+        "canonical_solutions": "solutions/modules/M14.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          260,
+          520
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "Локальные функции и ограниченная машина состояний. MCP изучается как дополнительный способ интеграции; платный агентный сервис не нужен.",
       "sources": [
@@ -2121,6 +3332,10 @@
         {
           "id": "M15-C03",
           "description": "Измерять речевые ошибки и задержки на доступном оборудовании."
+        },
+        {
+          "id": "M15-C16",
+          "description": "Передать PCM фрагментами в ASR, измерить partial/final и отменить очередь TTS с поздним фрагментом."
         }
       ],
       "lessons": [
@@ -2136,9 +3351,17 @@
           ],
           "practice": "Прочитать короткий WAV, определить частоту дискретизации, каналы и длительность.",
           "assessment": "Обнаружить несогласованность формата без подмены её ошибкой языковой модели.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M15-L02",
@@ -2151,9 +3374,17 @@
           ],
           "practice": "Распознать короткие локальные записи, сравнить с транскриптом и исследовать паузы.",
           "assessment": "Посчитать ошибки по явному правилу нормализации текста и разобрать потерянное отрицание.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M15-L03",
@@ -2166,9 +3397,17 @@
           ],
           "practice": "Синтезировать несколько реплик и измерить время подготовки и воспроизведения.",
           "assessment": "Различить задержку до первого звука и общую длительность ответа.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 150,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 85,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M15-L04",
@@ -2181,9 +3420,17 @@
           ],
           "practice": "Соединить этапы, добавить идентификатор реплики, отмену и отбрасывание устаревшего результата.",
           "assessment": "Проверить, что после перебивания не звучит продолжение отменённого ответа.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 130,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 65,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M15-L05",
@@ -2198,14 +3445,46 @@
           ],
           "practice": "Провести сценарии с шумом, длинной паузой, повтором и медленной обработкой.",
           "assessment": "Локализовать ошибку по этапу и предложить проверяемое улучшение.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 150,
           "estimate_status": "planning_hypothesis",
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 85,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M15-L06",
+          "title": "От WAV к частичным гипотезам и отменяемым фрагментам",
+          "prerequisites": [
+            "M15-L05"
+          ],
+          "estimated_minutes": 210,
+          "practice": "Передать PCM фрагментами в ASR, измерить partial/final и отменить очередь TTS с поздним фрагментом.",
+          "assessment": "Выполнить A, новый B и отложенный C по условиям M15-L06; код и объяснение обязательны.",
+          "path": "course/lessons/M15-L06.md",
+          "outcome_ids": [
+            "M15-C16"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 135,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "estimate_status": "planning_hypothesis",
+          "assessment_policy": "course/assessment.md",
           "status": "materials_ready"
         }
       ],
       "homework": {
         "id": "M15-HW01",
-        "task": "M15-HW01: собрать локальный голосовой контур, записать измерения на коротких примерах, обработать паузу и перебивание; подготовить таблицу ошибок ASR и задержек каждого этапа.",
+        "task": "Выполни M15-HW01 по актуальному условию в course/modules/M15.md.",
         "rubric": [
           "Контур: аудио, текст и ответ связаны и воспроизводимы.",
           "Состояние: отменённый результат не возвращается в активный диалог.",
@@ -2220,8 +3499,21 @@
           "Добавь идентификатор и время к событиям.",
           "Отдельно измерь конец речи пользователя, начало генерации и первый звук."
         ],
-        "retry": "Повторить сценарий с запоздалым результатом распознавания и двумя последовательными перебиваниями; доказать правильный порядок событий.",
-        "delayed_check": "В M16 провести новый голосовой сценарий с участником и объяснить один наблюдаемый сбой без изменения всех компонентов сразу."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M15.md",
+        "canonical_solutions": "solutions/modules/M15.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          270,
+          540
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "Короткие записи и компактные локальные ASR/TTS-модели, выбираемые после проверки на оборудовании. Текстовый контур сохраняется для диагностики; внешние платные сервисы не обязательны.",
       "sources": [
@@ -2258,6 +3550,18 @@
         {
           "id": "M16-C03",
           "description": "Подтвердить самостоятельность на новой задаче и сформировать план развития."
+        },
+        {
+          "id": "M16-C16",
+          "description": "Получить обратную связь с цитатами, проверить основания и сравнить исправление на новых ответах."
+        },
+        {
+          "id": "M16-C17",
+          "description": "Реализовать ограниченные уточнения, повторную доставку и корректное завершение обоих режимов интервью."
+        },
+        {
+          "id": "M16-C18",
+          "description": "Защитить работающее приложение и новое требование с сохранением состояния после перезапуска."
         }
       ],
       "lessons": [
@@ -2274,24 +3578,88 @@
           ],
           "practice": "Зафиксировать сценарии HR и backend-интервью, критерии обратной связи и границы продукта.",
           "assessment": "Проверить два разных допустимых ответа и один уверенный, но неверный технический ответ.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 140,
           "estimate_status": "planning_hypothesis",
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 75,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M16-L06",
+          "title": "Обратная связь с проверяемыми основаниями",
+          "prerequisites": [
+            "M16-L01"
+          ],
+          "estimated_minutes": 180,
+          "practice": "Получить обратную связь с цитатами, проверить основания и сравнить исправление на новых ответах.",
+          "assessment": "Выполнить A, новый B и отложенный C по условиям M16-L06; код и объяснение обязательны.",
+          "path": "course/lessons/M16-L06.md",
+          "outcome_ids": [
+            "M16-C16"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 105,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "estimate_status": "planning_hypothesis",
+          "assessment_policy": "course/assessment.md",
+          "status": "materials_ready"
+        },
+        {
+          "id": "M16-L07",
+          "title": "Состояние интервью и ограниченные уточнения",
+          "prerequisites": [
+            "M16-L06"
+          ],
+          "estimated_minutes": 180,
+          "practice": "Реализовать ограниченные уточнения, повторную доставку и корректное завершение обоих режимов интервью.",
+          "assessment": "Выполнить A, новый B и отложенный C по условиям M16-L07; код и объяснение обязательны.",
+          "path": "course/lessons/M16-L07.md",
+          "outcome_ids": [
+            "M16-C17"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 105,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "estimate_status": "planning_hypothesis",
+          "assessment_policy": "course/assessment.md",
           "status": "materials_ready"
         },
         {
           "id": "M16-L02",
           "title": "Интеграция и независимая проверка",
           "prerequisites": [
-            "M16-L01"
+            "M16-L07"
           ],
           "outcome_ids": [
             "M16-C01"
           ],
           "practice": "Соединить диалог, RAG, отчёт и голос; применить отдельные наборы оценивания.",
           "assessment": "Разобрать расхождения качества текста и голоса без усреднения важных ошибок.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 140,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 75,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M16-L03",
@@ -2304,9 +3672,17 @@
           ],
           "practice": "Провести сессии с согласившимися участниками, собрать измерения и конкретные затруднения.",
           "assessment": "Показать исправление хотя бы одного наблюдаемого дефекта; не выдавать искусственный прогон за пользовательский пилот.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 160,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 95,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M16-L04",
@@ -2319,9 +3695,17 @@
           ],
           "practice": "Объяснить путь запроса, версии, ресурсы и восстановление; получить изменённое требование.",
           "assessment": "Адаптировать решение и проверить гипотезу на новом сценарии.",
-          "estimated_minutes": 90,
+          "estimated_minutes": 140,
           "estimate_status": "planning_hypothesis",
-          "status": "materials_ready"
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 75,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         },
         {
           "id": "M16-L05",
@@ -2336,14 +3720,47 @@
           ],
           "practice": "Подготовить воспроизводимую демонстрацию, отчёт экспериментов и объяснение собственного вклада.",
           "assessment": "Решить новую небольшую задачу без готового решения и отделить учебный опыт от коммерческого.",
-          "estimated_minutes": 120,
+          "estimated_minutes": 140,
           "estimate_status": "planning_hypothesis",
+          "status": "materials_ready",
+          "workload": {
+            "reading_minutes": 35,
+            "practice_minutes": 75,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M16-L08",
+          "title": "Самостоятельная сборка и защита нового требования",
+          "prerequisites": [
+            "M16-L05",
+            "M16-L07"
+          ],
+          "estimated_minutes": 300,
+          "practice": "Защитить работающее приложение и новое требование с сохранением состояния после перезапуска.",
+          "assessment": "Выполнить A, новый B и отложенный C по условиям M16-L08; код и объяснение обязательны.",
+          "path": "course/lessons/M16-L08.md",
+          "outcome_ids": [
+            "M16-C18"
+          ],
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 225,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "estimate_status": "planning_hypothesis",
+          "assessment_policy": "course/assessment.md",
           "status": "materials_ready"
         }
       ],
       "homework": {
         "id": "M16-HW01",
-        "task": "M16-HW01: представить работающую демонстрацию, отдельные HR- и технический отчёты, архитектуру, версию данных/моделей, измерения ресурсов, историю экспериментов и самостоятельную защиту изменённого кейса.",
+        "task": "Выполни M16-HW01 по актуальному условию в course/modules/M16.md.",
         "rubric": [
           "Продукт: обе ветки интервью имеют явные сценарии и проверку.",
           "Инженерия: решения и ограничения подтверждены наблюдениями.",
@@ -2358,8 +3775,21 @@
           "Выбери один неудачный эксперимент и покажи его причину.",
           "Отдели измеренные свойства от желаемых улучшений."
         ],
-        "retry": "Получить новую базу документов или изменённое требование задержки, предложить ограниченное изменение и план его проверки.",
-        "delayed_check": "Через следующий учебный цикл решить отдельный ML/LLM-кейс вне тренажёра; результаты использовать для персонального плана развития."
+        "retry": "Вариант B: отдельное условие и ключ в канонических материалах модуля.",
+        "delayed_check": "Вариант C через 3–7 дней: отдельное условие и ключ в материалах модуля.",
+        "canonical_task_and_rubric": "course/modules/M16.md",
+        "canonical_solutions": "solutions/modules/M16.md",
+        "mandatory_gates": [
+          "correctness",
+          "reasoning",
+          "independent_transfer",
+          "no_critical_error"
+        ],
+        "estimated_minutes_range": [
+          1800,
+          3600
+        ],
+        "estimate_status": "planning_hypothesis_not_measured"
       },
       "cpu_variant": "Работающая локальная демонстрация на проверенных компактных моделях; измеренная задержка документируется. Общедоступный хостинг и платный API не являются обязательными условиями защиты.",
       "sources": [
@@ -2408,5 +3838,7 @@
       "P09"
     ]
   },
-  "delivery_mode": "local_self_study"
+  "delivery_mode": "local_self_study",
+  "assessment_policy": "course/assessment.md",
+  "checkpoints": "course/checkpoints.md"
 }

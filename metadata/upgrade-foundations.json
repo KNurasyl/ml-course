@@ -1,0 +1,211 @@
+{
+  "version": "1.1.0",
+  "audit_ids": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A06",
+    "A09",
+    "A26",
+    "A27"
+  ],
+  "new_lessons": [
+    {
+      "id": "M04-L06",
+      "title": "Экспонента, логарифм и потеря вероятностного ответа",
+      "prerequisites": [
+        "M00-L03"
+      ],
+      "estimated_minutes": 90,
+      "estimate_status": "planning_hypothesis",
+      "practice": "Объяснить exp/ln и BCE на новых вероятностях.",
+      "assessment": "Задача M04-L06-A, затем B/C по отдельному ключу; объяснение обязательно.",
+      "path": "course/lessons/M04-L06.md",
+      "status": "materials_ready",
+      "visual": "course/assets/M04-L06.png"
+    },
+    {
+      "id": "M04-L07",
+      "title": "От исходов к распределению и вероятности хвоста",
+      "prerequisites": [
+        "M04-L01",
+        "M04-L02"
+      ],
+      "estimated_minutes": 90,
+      "estimate_status": "planning_hypothesis",
+      "practice": "Получить биномиальный хвост из исходов и сочетаний.",
+      "assessment": "Задача M04-L07-A, затем B/C по отдельному ключу; объяснение обязательно.",
+      "path": "course/lessons/M04-L07.md",
+      "status": "materials_ready",
+      "visual": "course/assets/M04-L07.png"
+    },
+    {
+      "id": "M04-L08",
+      "title": "Сколько наблюдений нужно: планирование симуляцией",
+      "prerequisites": [
+        "M04-L05",
+        "M04-L07"
+      ],
+      "estimated_minutes": 150,
+      "estimate_status": "planning_hypothesis",
+      "practice": "Выбрать объём по мощности при заданных предположениях и зафиксировать остановку.",
+      "assessment": "Задача M04-L08-A, затем B/C по отдельному ключу; объяснение обязательно.",
+      "path": "course/lessons/M04-L08.md",
+      "status": "materials_ready",
+      "visual": "course/assets/M04-L08.png"
+    },
+    {
+      "id": "M05-L06",
+      "title": "Обучить классификатор и выбрать правило решения",
+      "prerequisites": [
+        "M05-L02",
+        "M05-L04",
+        "M04-L06"
+      ],
+      "estimated_minutes": 180,
+      "estimate_status": "planning_hypothesis",
+      "practice": "Обучить классификатор, выбрать C/порог на validation и объяснить масштаб.",
+      "assessment": "Задача M05-L06-A, затем B/C по отдельному ключу; объяснение обязательно.",
+      "path": "course/lessons/M05-L06.md",
+      "status": "materials_ready",
+      "visual": "course/assets/M05-L06.svg"
+    },
+    {
+      "id": "M05-L07",
+      "title": "Самостоятельный эксперимент на неоднородных данных",
+      "prerequisites": [
+        "M05-L06",
+        "M01-L05"
+      ],
+      "estimated_minutes": 240,
+      "estimate_status": "planning_hypothesis",
+      "practice": "Построить group/time pipeline на смешанном CSV и доказать отсутствие утечки.",
+      "assessment": "Задача M05-L07-A, затем B/C по отдельному ключу; объяснение обязательно.",
+      "path": "course/lessons/M05-L07.md",
+      "status": "materials_ready",
+      "visual": "course/assets/M05-L07.svg"
+    }
+  ],
+  "module_order": {
+    "M04": [
+      "M04-L06",
+      "M04-L01",
+      "M04-L02",
+      "M04-L07",
+      "M04-L03",
+      "M04-L04",
+      "M04-L05",
+      "M04-L08"
+    ],
+    "M05": [
+      "M05-L01",
+      "M05-L02",
+      "M05-L03",
+      "M05-L04",
+      "M05-L05",
+      "M05-L06",
+      "M05-L07"
+    ]
+  },
+  "prerequisite_updates": {
+    "M04-L03": [
+      "M04-L07"
+    ],
+    "M05-L02": [
+      "M05-L01",
+      "M03-L04",
+      "M04-L06"
+    ]
+  },
+  "exercises": [
+    {
+      "module": "M00",
+      "starter": "exercises/M00/starter.py",
+      "checker": "exercises/M00/check.py",
+      "solution": "solutions/exercises/M00/solution.py",
+      "full_hw": "solutions/exercises/M00/run_hw.py"
+    },
+    {
+      "module": "M01",
+      "starter": "exercises/M01/starter.py",
+      "checker": "exercises/M01/check.py",
+      "solution": "solutions/exercises/M01/solution.py",
+      "full_hw": "solutions/exercises/M01/run_hw.py"
+    },
+    {
+      "module": "M02",
+      "starter": "exercises/M02/starter.py",
+      "checker": "exercises/M02/check.py",
+      "solution": "solutions/exercises/M02/solution.py",
+      "full_hw": "solutions/exercises/M02/run_hw.py"
+    },
+    {
+      "module": "M03",
+      "starter": "exercises/M03/starter.py",
+      "checker": "exercises/M03/check.py",
+      "solution": "solutions/exercises/M03/solution.py",
+      "full_hw": "solutions/exercises/M03/run_hw.py"
+    },
+    {
+      "module": "M04",
+      "starter": "exercises/M04/starter.py",
+      "checker": "exercises/M04/check.py",
+      "solution": "solutions/exercises/M04/solution.py",
+      "full_hw": "solutions/exercises/M04/run_hw.py"
+    },
+    {
+      "module": "M05",
+      "starter": "exercises/M05/starter.py",
+      "checker": "exercises/M05/check.py",
+      "solution": "solutions/exercises/M05/solution.py",
+      "full_hw": "solutions/exercises/M05/run_hw.py"
+    }
+  ],
+  "new_lab_commands": [
+    "labs/M04/bridges.py",
+    "labs/M05/pipeline.py --variant demo",
+    "solutions/exercises/M00/run_hw.py",
+    "solutions/exercises/M01/run_hw.py",
+    "solutions/exercises/M02/run_hw.py",
+    "solutions/exercises/M03/run_hw.py",
+    "solutions/exercises/M04/run_hw.py",
+    "solutions/exercises/M05/run_hw.py --variant hw",
+    "solutions/exercises/M05/run_hw.py --variant retry",
+    "solutions/exercises/M05/run_hw.py --variant delayed"
+  ],
+  "inline_visuals": [
+    "course/visuals/M04-L06.html",
+    "course/visuals/M05-L06.html"
+  ],
+  "technical_validation": {
+    "pytest": "27 passed; see tests/test_foundations_v2.py",
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_foundations_v2.py -q",
+    "all_six_student_reference_checkers": "passed",
+    "all_six_full_hw": "passed",
+    "M05_variants": [
+      "hw",
+      "retry",
+      "delayed"
+    ],
+    "note": "General harness ROOT import path repaired by parent; new snippets also execute in isolated processes.",
+    "lesson_and_old_lab_examples": "66 passed; failures=[]",
+    "complete_command_batch": "18/18 passed; metadata/foundations-v2-validation.json",
+    "visual_checks": "3 PNG and 2 SVG inspected; 2 interactive controls/reset checked in Edge.",
+    "local_links": "59 documents checked; no broken links.",
+    "final_reference_rerun": "metadata/foundations-v2-final-checks.json: M03 full key + M05 HW/retry/delayed all exit 0; all three saved models restored in a fresh Python process.",
+    "latest_pytest": "27 passed in 15.05s: .venv/Scripts/python.exe -m pytest tests/test_foundations_v2.py -q",
+    "final_links": {
+      "documents": 59,
+      "broken": 0
+    }
+  },
+  "learner_results": "not_assessed",
+  "lesson_updates": {
+    "M05-L02": {
+      "practice": "Вычислить sigmoid/BCE и объяснить разницу вероятности и порога; настоящее обучение обязательно в M05-L06.",
+      "assessment": "Новая арифметическая задача и объяснение; fit не засчитывается этим уроком."
+    }
+  }
+}

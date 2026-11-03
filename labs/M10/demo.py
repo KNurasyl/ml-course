@@ -66,10 +66,17 @@ def rrf(rankings,c=10):
     return sorted(scores,key=lambda i:(-scores[i],i))
 
 def metrics(ranking,relevant,k=3):
+    if type(k) is not int or k<1:raise ValueError('k must be a positive integer')
     ids=[CORPUS[i]['id'] for i in ranking];gold=set(relevant)
+    if not gold:
+        return {'recall_at_3':None,'mrr':None}
     recall=len(gold&set(ids[:k]))/len(gold)
     first=next((rank for rank,doc in enumerate(ids,1) if doc in gold),None)
     return {'recall_at_3':recall,'mrr':0 if first is None else 1/first}
+
+def mean_defined(values):
+    defined=[value for value in values if value is not None]
+    return float(np.mean(defined)) if defined else None
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--download',action='store_true')
@@ -98,7 +105,7 @@ def main():
         traces.append({'query':q,'rankings':{name:[CORPUS[i]['id'] for i in ids] for name,ids in rankings.items()},
                        'metrics':{name:metrics(ids,q['relevant']) for name,ids in rankings.items()}})
     assert rrf([[0,1,2],[1,3,0]])==[1,0,3,2]
-    summary={name:{key:float(np.mean([t['metrics'][name][key] for t in traces])) for key in ['recall_at_3','mrr']}
+    summary={name:{key:mean_defined([t['metrics'][name][key] for t in traces]) for key in ['recall_at_3','mrr']}
              for name in ['lexical','lsa','minilm','rrf','heuristic_rerank']}
     selected=traces[0]['rankings']['rrf'][:2]
     context='\n'.join(f"[{d['id']}] {d['text']}" for cid in selected for d in CORPUS if d['id']==cid)

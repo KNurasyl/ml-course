@@ -1,0 +1,10 @@
+[
+  {"id":"correct-independent","criteria":{"behavior":true,"transfer":true},"critical_errors":[],"assistance":"none","explanation_checked":true,"expected":"independent"},
+  {"id":"correct-after-hint","criteria":{"behavior":true,"transfer":true},"critical_errors":[],"assistance":"hint","explanation_checked":true,"expected":"with_support"},
+  {"id":"working-code-wrong-explanation","criteria":{"behavior":true,"meaning":false},"critical_errors":[],"assistance":"none","explanation_checked":true,"expected":"needs_review"},
+  {"id":"leaked-high-score","criteria":{"behavior":true,"presentation":true},"critical_errors":["test_used_for_tuning"],"assistance":"none","explanation_checked":true,"expected":"needs_review"},
+  {"id":"unsupported-conclusion","criteria":{"behavior":true,"claim_supported":false},"critical_errors":[],"assistance":"none","explanation_checked":true,"expected":"needs_review"},
+  {"id":"hardware-limit-correctly-diagnosed","criteria":{"measured_limit":true,"valid_smaller_plan":true},"critical_errors":[],"assistance":"none","explanation_checked":true,"expected":"independent"},
+  {"id":"old-method-fails-transfer","criteria":{"old_case":true,"new_case":false},"critical_errors":[],"assistance":"none","explanation_checked":true,"expected":"needs_review"},
+  {"id":"reasoning-not-reviewed","criteria":{"behavior":true},"critical_errors":[],"assistance":"none","explanation_checked":false,"expected":"not_assessed"}
+]

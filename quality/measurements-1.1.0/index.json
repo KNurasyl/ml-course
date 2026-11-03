@@ -1,0 +1,50 @@
+[
+  {
+    "source": "artifacts/M09/experiments.json",
+    "snapshot": "quality/measurements-1.1.0/M09-experiments.json"
+  },
+  {
+    "source": "artifacts/M09/benchmark/comparison.json",
+    "snapshot": "quality/measurements-1.1.0/M09-benchmark-comparison.json"
+  },
+  {
+    "source": "artifacts/M10/ru/report.json",
+    "snapshot": "quality/measurements-1.1.0/M10-ru-report.json"
+  },
+  {
+    "source": "artifacts/M12/sft/report.json",
+    "snapshot": "quality/measurements-1.1.0/M12-sft-report.json"
+  },
+  {
+    "source": "artifacts/M12/sft/fresh-restore.json",
+    "snapshot": "quality/measurements-1.1.0/M12-sft-fresh-restore.json"
+  },
+  {
+    "source": "artifacts/M12/sft-variant/report.json",
+    "snapshot": "quality/measurements-1.1.0/M12-sft-variant-report.json"
+  },
+  {
+    "source": "artifacts/M12/sft-variant/fresh-restore.json",
+    "snapshot": "quality/measurements-1.1.0/M12-sft-variant-fresh-restore.json"
+  },
+  {
+    "source": "artifacts/M13-http/report.json",
+    "snapshot": "quality/measurements-1.1.0/M13-http-report.json"
+  },
+  {
+    "source": "artifacts/M14-llm/report.json",
+    "snapshot": "quality/measurements-1.1.0/M14-llm-report.json"
+  },
+  {
+    "source": "artifacts/M15-stream/report.json",
+    "snapshot": "quality/measurements-1.1.0/M15-stream-report.json"
+  },
+  {
+    "source": "artifacts/M14-hw/manual-review.json",
+    "snapshot": "quality/measurements-1.1.0/M14-hw-manual-review.json"
+  },
+  {
+    "source": "artifacts/M07/hw-reference/hw-report.json",
+    "snapshot": "quality/measurements-1.1.0/M07-hw-reference-hw-report.json"
+  }
+]
