@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="d7ce1b7e387341d33c6f871ae8d7292128f066ebf44d710123cd9e8d9535792e"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="286fe35e980d69ab03f4a9e2a93ba8f8dc8474cc36ea523756bccf3792cc5059"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -2398,7 +2398,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M02.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M01-L05"><small>Предыдущий раздел</small>← M01-L05. Воспроизводимый конвейер</a><a href="#M02-L01"><small>Следующий раздел</small>M02-L01. Векторы как признаки →</a></nav></article><article class="material" id="M02-L01" data-title="M02-L01. Векторы как признаки" data-short-title="Векторы как признаки" data-kind="ready" data-module="M02"><header class="material-head"><div class="eyebrow"><span class="material-id">M02-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Векторы как признаки</h1><p class="outcome"><strong>После урока:</strong> Представить объект вектором признаков и объяснить смысл координат и линейной комбинации.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M02-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M02-L01--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M02-L01--объяснение">Объяснение</a></li><li><a href="#M02-L01--аналогия-снимок-метрик-с-фиксированным-порядком-полей">Аналогия: снимок метрик с фиксированным порядком полей</a></li><li><a href="#M02-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M02-L01--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M02-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M02-L01--самостоятельная-задача-a-m02-l01-a01">Самостоятельная задача A — M02-L01-A01</a></li><li><a href="#M02-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M02-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M02-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M02-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+"></iframe><p><a href="course/visuals/M02.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M01-L05"><small>Предыдущий раздел</small>← M01-L05. Воспроизводимый конвейер</a><a href="#M02-L01"><small>Следующий раздел</small>M02-L01. Векторы как признаки →</a></nav></article><article class="material" id="M02-L01" data-title="M02-L01. Векторы как признаки" data-short-title="Векторы как признаки" data-kind="ready" data-module="M02"><header class="material-head"><div class="eyebrow"><span class="material-id">M02-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Векторы как признаки</h1><p class="outcome"><strong>После урока:</strong> Представить объект вектором признаков и объяснить смысл координат и линейной комбинации.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M02-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M02-L01--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M02-L01--объяснение">Объяснение</a></li><li><a href="#M02-L01--аналогия-снимок-метрик-с-фиксированным-порядком-полей">Аналогия: снимок метрик с фиксированным порядком полей</a></li><li><a href="#M02-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M02-L01--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M02-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M02-L01--самостоятельная-задача-a-m02-l01-a01">Самостоятельная задача A — M02-L01-A01</a></li><li><a href="#M02-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M02-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M02-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M02-L01--карточка-урока">Карточка урока</a></li><li><a href="#M02-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M01-L01">M01-L01</a></p>
 <h2 id="M02-L01--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Embedding документа, строка таблицы и параметры линейной модели — разные сущности, которые удобно представлять векторами. Чтобы понимать поиск и обучение, нужно сначала отделить геометрические операции от смысла конкретных координат. Короткая программа с неверным порядком признаков может давать правильные размерности и неправильный ответ.</p>
@@ -2481,10 +2481,37 @@ assert np.allclose(mid,[3,2])
 <p><strong>Вариант B:</strong> Найди v·w для v=[2,−1,3],w=[1,2,0].</p>
 <p><strong>Вариант C через 3–7 дней:</strong> Для v=[2,−1,3],u=[−1,0,2] найди 2v+u.</p>
 <p><a href="#M02-SOLUTIONS--m02-l01-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M02-L01--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M02-L01--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Вектор — упорядоченный набор чисел; сложение и умножение на число выполняются покоординатно; линейная комбинация αu + βv; разность v − u — изменение по каждой координате</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Координата — признак в договорённом порядке; α и β — веса комбинации; e₁ и e₂ — базисные направления, x = x₁e₁ + x₂e₂</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Чтобы представить объект признаками или найти изменение между двумя объектами. Пример: u = (4, 1), v = (6, 5) дают v − u = (2, 4) и 0.5u + 0.5v = (5, 3)</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Переставить координаты или складывать идентификаторы и коды категорий как обычные числа</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M02-L01--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M02-SOLUTIONS--m02-l01-a01">Ключи M02</a> · <a href="labs/M02/README.md">Лабораторная модуля</a> · <a href="#M02">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://numpy.org/doc/stable/user/absolute_beginners.html" target="_blank" rel="noopener noreferrer" class="external-link">NumPy: векторы и операции над массивами</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M02">Модуль и домашняя работа</a> · <a href="#M02-SOLUTIONS--m02-l01-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M02-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M02"><small>Предыдущий раздел</small>← M02 Линейная алгебра</a><a href="#M02-L02"><small>Следующий раздел</small>M02-L02. Скалярное произведение и нормы →</a></nav></article><article class="material" id="M02-L02" data-title="M02-L02. Скалярное произведение и нормы" data-short-title="Скалярное произведение и нормы" data-kind="ready" data-module="M02"><header class="material-head"><div class="eyebrow"><span class="material-id">M02-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Скалярное произведение и нормы</h1><p class="outcome"><strong>После урока:</strong> Вычислить скалярное произведение, длину и косинусное сходство, обработать нулевой вектор.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M02-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M02-L02--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M02-L02--объяснение">Объяснение</a></li><li><a href="#M02-L02--аналогия-профили-вкусов-пользователей">Аналогия: профили вкусов пользователей</a></li><li><a href="#M02-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M02-L02--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M02-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M02-L02--самостоятельная-задача-a-m02-l02-a01">Самостоятельная задача A — M02-L02-A01</a></li><li><a href="#M02-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M02-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M02-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M02-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M02">Модуль и домашняя работа</a> · <a href="#M02-SOLUTIONS--m02-l01-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M02-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M02"><small>Предыдущий раздел</small>← M02 Линейная алгебра</a><a href="#M02-L02"><small>Следующий раздел</small>M02-L02. Скалярное произведение и нормы →</a></nav></article><article class="material" id="M02-L02" data-title="M02-L02. Скалярное произведение и нормы" data-short-title="Скалярное произведение и нормы" data-kind="ready" data-module="M02"><header class="material-head"><div class="eyebrow"><span class="material-id">M02-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Скалярное произведение и нормы</h1><p class="outcome"><strong>После урока:</strong> Вычислить скалярное произведение, длину и косинусное сходство, обработать нулевой вектор.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M02-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M02-L02--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M02-L02--объяснение">Объяснение</a></li><li><a href="#M02-L02--аналогия-профили-вкусов-пользователей">Аналогия: профили вкусов пользователей</a></li><li><a href="#M02-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M02-L02--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M02-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M02-L02--самостоятельная-задача-a-m02-l02-a01">Самостоятельная задача A — M02-L02-A01</a></li><li><a href="#M02-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M02-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M02-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M02-L02--карточка-урока">Карточка урока</a></li><li><a href="#M02-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M02-L01">M02-L01</a></p>
 <h2 id="M02-L02--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Линейная модель складывает взвешенные признаки, а векторный поиск сравнивает направления представлений. В обоих случаях появляется скалярное произведение. Понимание этой операции позволяет обнаружить, почему большой по длине документ получает высокий dot product, хотя его направление хуже совпадает с запросом.</p>
@@ -2677,10 +2704,37 @@ assert np.isclose(cosine(u,v),cosine(u,2*v))
 <p><strong>Вариант B:</strong> Найди cosine между [3,4] и [0,5].</p>
 <p><strong>Вариант C через 3–7 дней:</strong> Можно ли назначить нулевому query cosine=0 со всеми документами?</p>
 <p><a href="#M02-SOLUTIONS--m02-l02-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M02-L02--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M02-L02--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>u·v = Σuᵢvᵢ; ‖u‖ = √Σuᵢ²; cosine = u·v / (‖u‖·‖v‖) для ненулевых векторов, значение от −1 до 1</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Dot зависит и от длин, и от угла; норма — длина вектора; косинус — сходство направлений; у нулевого вектора направления нет</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Косинус — чтобы сравнить направления, dot — чтобы посчитать вклад признаков в w·x. Пример: u = (1, 2), v = (2, 4) дают cosine = 1, а dot = 10 растёт вместе с длиной v</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Делить на нулевую норму без явного правила или считать большой dot большим сходством направлений</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M02-L02--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M02-SOLUTIONS--m02-l02-a01">Ключи M02</a> · <a href="labs/M02/README.md">Лабораторная модуля</a> · <a href="#M02">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html" target="_blank" rel="noopener noreferrer" class="external-link">NumPy: норма вектора</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M02">Модуль и домашняя работа</a> · <a href="#M02-SOLUTIONS--m02-l02-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M02-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M02-L01"><small>Предыдущий раздел</small>← M02-L01. Векторы как признаки</a><a href="#M02-L03"><small>Следующий раздел</small>M02-L03. Матрицы и композиция →</a></nav></article><article class="material" id="M02-L03" data-title="M02-L03. Матрицы и композиция" data-short-title="Матрицы и композиция" data-kind="ready" data-module="M02"><header class="material-head"><div class="eyebrow"><span class="material-id">M02-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Матрицы и композиция</h1><p class="outcome"><strong>После урока:</strong> Проверить размеры матричного произведения и порядок последовательных преобразований.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M02-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M02-L03--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M02-L03--объяснение">Объяснение</a></li><li><a href="#M02-L03--аналогия-цепочка-middleware">Аналогия: цепочка middleware</a></li><li><a href="#M02-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M02-L03--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M02-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M02-L03--самостоятельная-задача-a-m02-l03-a01">Самостоятельная задача A — M02-L03-A01</a></li><li><a href="#M02-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M02-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M02-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M02-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M02">Модуль и домашняя работа</a> · <a href="#M02-SOLUTIONS--m02-l02-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M02-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M02-L01"><small>Предыдущий раздел</small>← M02-L01. Векторы как признаки</a><a href="#M02-L03"><small>Следующий раздел</small>M02-L03. Матрицы и композиция →</a></nav></article><article class="material" id="M02-L03" data-title="M02-L03. Матрицы и композиция" data-short-title="Матрицы и композиция" data-kind="ready" data-module="M02"><header class="material-head"><div class="eyebrow"><span class="material-id">M02-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Матрицы и композиция</h1><p class="outcome"><strong>После урока:</strong> Проверить размеры матричного произведения и порядок последовательных преобразований.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M02-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M02-L03--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M02-L03--объяснение">Объяснение</a></li><li><a href="#M02-L03--аналогия-цепочка-middleware">Аналогия: цепочка middleware</a></li><li><a href="#M02-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M02-L03--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M02-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M02-L03--самостоятельная-задача-a-m02-l03-a01">Самостоятельная задача A — M02-L03-A01</a></li><li><a href="#M02-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M02-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M02-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M02-L03--карточка-урока">Карточка урока</a></li><li><a href="#M02-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M02-L02">M02-L02</a></p>
 <h2 id="M02-L03--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Один проход слоя нейросети и одновременное предсказание для тысячи объектов — матричные операции. Ошибки размерностей проще обнаружить до запуска: нужно подписать, какая ось означает объекты, признаки и выходы. Матрица также позволяет понять, почему порядок преобразований нельзя менять произвольно.</p>
@@ -2766,10 +2820,37 @@ assert not np.allclose(B@A@x,A@B@x)
 <p><strong>Вариант B:</strong> A имеет форму 2×3, B — 3×4. Найди форму AB.</p>
 <p><strong>Вариант C через 3–7 дней:</strong> A имеет форму 3×2, B — 3×1. Почему AB не определено?</p>
 <p><a href="#M02-SOLUTIONS--m02-l03-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M02-L03--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M02-L03--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>(n×d)·(d×k) = n×k: внутренние размеры совпадают; элемент (i, j) — строка i на столбец j; BAx — сначала A, затем B; в общем случае AB ≠ BA</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>n — объекты, d — признаки, k — выходы; транспонирование меняет оси местами; ассоциативность (BA)x = B(Ax) позволяет заранее объединить линейные шаги</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При каждой формуле с матрицами — выписать формы. Пример: X формы (4, 3) и W формы (3, 6) дают XW формы (4, 6)</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Перемножать по внешним размерам, «чинить» ошибку формы транспонированием наугад или менять порядок преобразований</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M02-L03--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M02-SOLUTIONS--m02-l03-a01">Ключи M02</a> · <a href="labs/M02/README.md">Лабораторная модуля</a> · <a href="#M02">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://numpy.org/doc/stable/reference/generated/numpy.matmul.html" target="_blank" rel="noopener noreferrer" class="external-link">NumPy: матричное произведение</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M02">Модуль и домашняя работа</a> · <a href="#M02-SOLUTIONS--m02-l03-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M02-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M02-L02"><small>Предыдущий раздел</small>← M02-L02. Скалярное произведение и нормы</a><a href="#M02-L04"><small>Следующий раздел</small>M02-L04. Сходство и масштаб →</a></nav></article><article class="material" id="M02-L04" data-title="M02-L04. Сходство и масштаб" data-short-title="Сходство и масштаб" data-kind="ready" data-module="M02"><header class="material-head"><div class="eyebrow"><span class="material-id">M02-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сходство и масштаб</h1><p class="outcome"><strong>После урока:</strong> Показать изменение ближайшего соседа при смене масштаба и выбрать обоснованное преобразование.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M02-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M02-L04--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M02-L04--объяснение">Объяснение</a></li><li><a href="#M02-L04--аналогия-поиск-похожего-сервера-в-парке">Аналогия: поиск похожего сервера в парке</a></li><li><a href="#M02-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M02-L04--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M02-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M02-L04--самостоятельная-задача-a-m02-l04-a01">Самостоятельная задача A — M02-L04-A01</a></li><li><a href="#M02-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M02-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M02-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M02-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M02">Модуль и домашняя работа</a> · <a href="#M02-SOLUTIONS--m02-l03-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M02-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M02-L02"><small>Предыдущий раздел</small>← M02-L02. Скалярное произведение и нормы</a><a href="#M02-L04"><small>Следующий раздел</small>M02-L04. Сходство и масштаб →</a></nav></article><article class="material" id="M02-L04" data-title="M02-L04. Сходство и масштаб" data-short-title="Сходство и масштаб" data-kind="ready" data-module="M02"><header class="material-head"><div class="eyebrow"><span class="material-id">M02-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сходство и масштаб</h1><p class="outcome"><strong>После урока:</strong> Показать изменение ближайшего соседа при смене масштаба и выбрать обоснованное преобразование.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M02-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M02-L04--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M02-L04--объяснение">Объяснение</a></li><li><a href="#M02-L04--аналогия-поиск-похожего-сервера-в-парке">Аналогия: поиск похожего сервера в парке</a></li><li><a href="#M02-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M02-L04--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M02-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M02-L04--самостоятельная-задача-a-m02-l04-a01">Самостоятельная задача A — M02-L04-A01</a></li><li><a href="#M02-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M02-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M02-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M02-L04--карточка-урока">Карточка урока</a></li><li><a href="#M02-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M02-L03">M02-L03</a></p>
 <h2 id="M02-L04--результат-и-входные-знания">Результат и входные знания</h2>
 <p>В поиске похожих сессий один признак может быть в тысячах символов, другой — в долях. Евклидово расстояние будет преимущественно отражать первый. Нормализация не является косметическим улучшением: она задаёт, какие различия считать важными.</p>
@@ -2853,10 +2934,37 @@ assert raw.argmin()==1 and scaled.argmin()==0
 <p><strong>Вариант B:</strong> q=[1,1],a=[10,0],b=[0,1]. Сравни cosine и евклидовы расстояния.</p>
 <p><strong>Вариант C через 3–7 дней:</strong> Умножь первую координату всех объектов на 10. Сравни cosine с q.</p>
 <p><a href="#M02-SOLUTIONS--m02-l04-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M02-L04--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M02-L04--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>d(x, z) = √Σ(xᵢ − zᵢ)²; стандартизация zᵢ = (xᵢ − μᵢ)/sᵢ с μ и s по train; нормирование x/‖x‖ работает по строке объекта</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>μᵢ и sᵢ — среднее и разброс признака на train; стандартизация идёт по столбцам, нормирование — по строкам; при sᵢ = 0 делить нельзя</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Перед сравнением объектов по расстоянию, если признаки в разных единицах. Пример: признак в миллисекундах вместо секунд увеличивает свой вклад в квадрат расстояния в миллион раз</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Путать стандартизацию столбцов с нормированием строк или вычислять μ и s по всем данным вместе с test</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M02-L04--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M02-SOLUTIONS--m02-l04-a01">Ключи M02</a> · <a href="labs/M02/README.md">Лабораторная модуля</a> · <a href="#M02">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://scikit-learn.org/stable/modules/preprocessing.html" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: подготовка и масштабирование</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M02">Модуль и домашняя работа</a> · <a href="#M02-SOLUTIONS--m02-l04-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M02-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M02-L03"><small>Предыдущий раздел</small>← M02-L03. Матрицы и композиция</a><a href="#M02-L05"><small>Следующий раздел</small>M02-L05. Маленький векторный поиск →</a></nav></article><article class="material" id="M02-L05" data-title="M02-L05. Маленький векторный поиск" data-short-title="Маленький векторный поиск" data-kind="ready" data-module="M02"><header class="material-head"><div class="eyebrow"><span class="material-id">M02-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Маленький векторный поиск</h1><p class="outcome"><strong>После урока:</strong> Реализовать точный поиск по cosine, проверить top-k и сформулировать ограничения качества.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M02-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M02-L05--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M02-L05--объяснение">Объяснение</a></li><li><a href="#M02-L05--аналогия-поисковый-движок">Аналогия: поисковый движок</a></li><li><a href="#M02-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M02-L05--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M02-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M02-L05--самостоятельная-задача-a-m02-l05-a01">Самостоятельная задача A — M02-L05-A01</a></li><li><a href="#M02-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M02-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M02-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M02-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M02">Модуль и домашняя работа</a> · <a href="#M02-SOLUTIONS--m02-l04-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M02-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M02-L03"><small>Предыдущий раздел</small>← M02-L03. Матрицы и композиция</a><a href="#M02-L05"><small>Следующий раздел</small>M02-L05. Маленький векторный поиск →</a></nav></article><article class="material" id="M02-L05" data-title="M02-L05. Маленький векторный поиск" data-short-title="Маленький векторный поиск" data-kind="ready" data-module="M02"><header class="material-head"><div class="eyebrow"><span class="material-id">M02-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Маленький векторный поиск</h1><p class="outcome"><strong>После урока:</strong> Реализовать точный поиск по cosine, проверить top-k и сформулировать ограничения качества.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M02-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M02-L05--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M02-L05--объяснение">Объяснение</a></li><li><a href="#M02-L05--аналогия-поисковый-движок">Аналогия: поисковый движок</a></li><li><a href="#M02-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M02-L05--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M02-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M02-L05--самостоятельная-задача-a-m02-l05-a01">Самостоятельная задача A — M02-L05-A01</a></li><li><a href="#M02-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M02-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M02-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M02-L05--карточка-урока">Карточка урока</a></li><li><a href="#M02-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M02-L04">M02-L04</a></p>
 <h2 id="M02-L05--результат-и-входные-знания">Результат и входные знания</h2>
 <p>RAG начинается с поиска подходящих материалов. Прежде чем подключать векторную базу, полезно построить прозрачный поиск по нескольким векторам и проверить каждое число. Это отделит ошибку индекса от плохого представления текста или неверной оценки релевантности.</p>
@@ -2944,7 +3052,34 @@ assert top==[&quot;SQL&quot;,&quot;API&quot;]
 <p><strong>Вариант B:</strong> Документы Z и A имеют одинаковые векторы. Какой первый при правиле ID по возрастанию?</p>
 <p><strong>Вариант C через 3–7 дней:</strong> Релевантны A,B,C; найдено A,A,D. Чему равен recall?</p>
 <p><a href="#M02-SOLUTIONS--m02-l05-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M02-L05--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M02-L05--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Точный поиск: нормировать ненулевые векторы, оценки = D̂q̂, взять top-k по убыванию с правилом равенства; recall@k = найденные релевантные / все релевантные</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>q̂ и d̂ — векторы единичной длины, их скалярное произведение равно косинусу; k — размер выдачи; оценка сходства — не вероятность истинности</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Поиск по небольшому корпусу как эталон для проверки приближённых индексов. Пример: релевантны 3 документа, в top-5 найдено 2 — recall@5 = 2/3</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Сравнивать векторы разных encoder, оставлять равенства без детерминированного порядка или считать высокий косинус доказательством ответа</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M02-L05--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M02-SOLUTIONS--m02-l05-a01">Ключи M02</a> · <a href="labs/M02/README.md">Лабораторная модуля</a> · <a href="#M02">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: cosine similarity</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
 <div class="practice-note"><a href="#M02">Модуль и домашняя работа</a> · <a href="#M02-SOLUTIONS--m02-l05-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M02-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M02-L04"><small>Предыдущий раздел</small>← M02-L04. Сходство и масштаб</a><a href="#M03"><small>Следующий раздел</small>M03 Производные и оптимизация →</a></nav></article><article class="material" id="M03" data-title="M03 Производные и оптимизация" data-short-title="Производные и оптимизация" data-kind="ready" data-module="M03"><header class="material-head"><div class="eyebrow"><span class="material-id">M03</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Производные и оптимизация</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Модуль содержит самостоятельные уроки, локальную практику, итоговую домашнюю работу и отдельные ключи. Материалы подготовлены; результаты ученика остаются в личном журнале. Все обязательные вычисления этого модуля выполняются на CPU в окружении курса.</p>
@@ -14990,7 +15125,7 @@ assert not accept_result(3,2)
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 10 из 103 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 15 из 103 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -15063,6 +15198,42 @@ assert not accept_result(3,2)
 <li><strong>Смысл величин.</strong> μ_train — среднее обучающей части; артефакт — имена и порядок признаков, статистики и версия; seed — состояние генератора случайных чисел, а не версия данных.</li>
 <li><strong>Когда применять.</strong> При подготовке признаков для обучения и для сервиса. Пример: train [2, 6], μ = 4; новый x = 9 даёт z = 5, а среднее test после transform не обязано быть нулём.</li>
 <li><strong>Главная ошибка.</strong> Вызывать fit_transform на test или в сервисе, менять порядок признаков без проверки имён, загружать непроверенный pickle.</li>
+</ul>
+<h2 id="CHEATSHEET--m02-линейная-алгебра">M02. Линейная алгебра</h2>
+<h3 id="CHEATSHEET--m02-l01-векторы-как-признаки"><a href="#M02-L01">M02-L01. Векторы как признаки</a></h3>
+<ul>
+<li><strong>Правило.</strong> Вектор — упорядоченный набор чисел; сложение и умножение на число выполняются покоординатно; линейная комбинация αu + βv; разность v − u — изменение по каждой координате.</li>
+<li><strong>Смысл величин.</strong> Координата — признак в договорённом порядке; α и β — веса комбинации; e₁ и e₂ — базисные направления, x = x₁e₁ + x₂e₂.</li>
+<li><strong>Когда применять.</strong> Чтобы представить объект признаками или найти изменение между двумя объектами. Пример: u = (4, 1), v = (6, 5) дают v − u = (2, 4) и 0.5u + 0.5v = (5, 3).</li>
+<li><strong>Главная ошибка.</strong> Переставить координаты или складывать идентификаторы и коды категорий как обычные числа.</li>
+</ul>
+<h3 id="CHEATSHEET--m02-l02-скалярное-произведение-и-нормы"><a href="#M02-L02">M02-L02. Скалярное произведение и нормы</a></h3>
+<ul>
+<li><strong>Правило.</strong> u·v = Σuᵢvᵢ; ‖u‖ = √Σuᵢ²; cosine = u·v / (‖u‖·‖v‖) для ненулевых векторов, значение от −1 до 1.</li>
+<li><strong>Смысл величин.</strong> Dot зависит и от длин, и от угла; норма — длина вектора; косинус — сходство направлений; у нулевого вектора направления нет.</li>
+<li><strong>Когда применять.</strong> Косинус — чтобы сравнить направления, dot — чтобы посчитать вклад признаков в w·x. Пример: u = (1, 2), v = (2, 4) дают cosine = 1, а dot = 10 растёт вместе с длиной v.</li>
+<li><strong>Главная ошибка.</strong> Делить на нулевую норму без явного правила или считать большой dot большим сходством направлений.</li>
+</ul>
+<h3 id="CHEATSHEET--m02-l03-матрицы-и-композиция"><a href="#M02-L03">M02-L03. Матрицы и композиция</a></h3>
+<ul>
+<li><strong>Правило.</strong> (n×d)·(d×k) = n×k: внутренние размеры совпадают; элемент (i, j) — строка i на столбец j; BAx — сначала A, затем B; в общем случае AB ≠ BA.</li>
+<li><strong>Смысл величин.</strong> n — объекты, d — признаки, k — выходы; транспонирование меняет оси местами; ассоциативность (BA)x = B(Ax) позволяет заранее объединить линейные шаги.</li>
+<li><strong>Когда применять.</strong> При каждой формуле с матрицами — выписать формы. Пример: X формы (4, 3) и W формы (3, 6) дают XW формы (4, 6).</li>
+<li><strong>Главная ошибка.</strong> Перемножать по внешним размерам, «чинить» ошибку формы транспонированием наугад или менять порядок преобразований.</li>
+</ul>
+<h3 id="CHEATSHEET--m02-l04-сходство-и-масштаб"><a href="#M02-L04">M02-L04. Сходство и масштаб</a></h3>
+<ul>
+<li><strong>Правило.</strong> d(x, z) = √Σ(xᵢ − zᵢ)²; стандартизация zᵢ = (xᵢ − μᵢ)/sᵢ с μ и s по train; нормирование x/‖x‖ работает по строке объекта.</li>
+<li><strong>Смысл величин.</strong> μᵢ и sᵢ — среднее и разброс признака на train; стандартизация идёт по столбцам, нормирование — по строкам; при sᵢ = 0 делить нельзя.</li>
+<li><strong>Когда применять.</strong> Перед сравнением объектов по расстоянию, если признаки в разных единицах. Пример: признак в миллисекундах вместо секунд увеличивает свой вклад в квадрат расстояния в миллион раз.</li>
+<li><strong>Главная ошибка.</strong> Путать стандартизацию столбцов с нормированием строк или вычислять μ и s по всем данным вместе с test.</li>
+</ul>
+<h3 id="CHEATSHEET--m02-l05-маленький-векторный-поиск"><a href="#M02-L05">M02-L05. Маленький векторный поиск</a></h3>
+<ul>
+<li><strong>Правило.</strong> Точный поиск: нормировать ненулевые векторы, оценки = D̂q̂, взять top-k по убыванию с правилом равенства; recall@k = найденные релевантные / все релевантные.</li>
+<li><strong>Смысл величин.</strong> q̂ и d̂ — векторы единичной длины, их скалярное произведение равно косинусу; k — размер выдачи; оценка сходства — не вероятность истинности.</li>
+<li><strong>Когда применять.</strong> Поиск по небольшому корпусу как эталон для проверки приближённых индексов. Пример: релевантны 3 документа, в top-5 найдено 2 — recall@5 = 2/3.</li>
+<li><strong>Главная ошибка.</strong> Сравнивать векторы разных encoder, оставлять равенства без детерминированного порядка или считать высокий косинус доказательством ответа.</li>
 </ul>
 </div></div><footer class="source-note">Исходный текст: <code>course/cheatsheet.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#FAST-TRACK-LLM"><small>Предыдущий раздел</small>← Быстрый вход в M09–M11 для тех, кто уже делал RAG</a><a href="#REVIEW-SCHEDULE"><small>Следующий раздел</small>Расписание повторения →</a></nav></article><article class="material" id="REVIEW-SCHEDULE" data-title="Расписание повторения" data-short-title="Расписание повторения" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">REVIEW-SCHEDULE</span><span class="badge reference">Материал курса</span></div><h1>Расписание повторения</h1></header><div class="article-layout"><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Правило дополняет <a href="#MENTOR--отложенная-проверка">отложенную проверку</a> из учебного цикла: даты повторений считаются по журналу, а сами повторения смешивают задачи разных модулей.</p>
 <h2 id="REVIEW-SCHEDULE--правило-1-3-7-21">Правило 1–3–7–21</h2>
