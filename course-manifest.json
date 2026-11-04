@@ -1517,7 +1517,22 @@
         "checker": "exercises/M03/check.py",
         "solution": "solutions/exercises/M03/solution.py"
       },
-      "extra_exercises": [],
+      "extra_exercises": [
+        {
+          "id": "M03-ex02",
+          "starter": "exercises/M03/ex02_derivatives.py",
+          "checker": "exercises/M03/check_ex02.py",
+          "solution": "solutions/exercises/M03/ex02_derivatives.py",
+          "hidden_cases": "tests/hidden/M03_ex02.json"
+        },
+        {
+          "id": "M03-ex03",
+          "starter": "exercises/M03/ex03_steps.py",
+          "checker": "exercises/M03/check_ex03.py",
+          "solution": "solutions/exercises/M03/ex03_steps.py",
+          "hidden_cases": "tests/hidden/M03_ex03.json"
+        }
+      ],
       "assessment_policy": "course/assessment.md"
     },
     {

@@ -50,6 +50,12 @@ MISTAKES = [
     ("M02", "ex03", "return distances.index(min(distances))",
      "return len(distances) - 1 - distances[::-1].index(min(distances))", "меньший индекс"),
     ("M02", "ex03", "return [[(v - m) / s", "return [[v + 0 * (m + s)", "масштабирования"),
+    ("M03", "ex02", "return (f(w + h) - f(w - h)) / (2 * h)", "return (f(w + h) - f(w)) / h", "центральная разность"),
+    ("M03", "ex02", "return 2 * e * x, 2 * e", "return 2 * e, 2 * e", "градиент"),
+    ("M03", "ex02", "e = w * x + b - y", "e = y - (w * x + b)", "градиент"),
+    ("M03", "ex03", "path[-1] - eta * grad", "path[-1] + eta * grad", "спуск"),
+    ("M03", "ex03", "return 1 / c", "return 2 / c", "граница шага"),
+    ("M03", "ex03", "return a / (1 + lam)", "return a * (1 - lam)", "оптимум"),
 ]
 
 
