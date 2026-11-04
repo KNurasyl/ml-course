@@ -1565,7 +1565,22 @@
         "checker": "exercises/M04/check.py",
         "solution": "solutions/exercises/M04/solution.py"
       },
-      "extra_exercises": [],
+      "extra_exercises": [
+        {
+          "id": "M04-ex02",
+          "starter": "exercises/M04/ex02_estimates.py",
+          "checker": "exercises/M04/check_ex02.py",
+          "solution": "solutions/exercises/M04/ex02_estimates.py",
+          "hidden_cases": "tests/hidden/M04_ex02.json"
+        },
+        {
+          "id": "M04-ex03",
+          "starter": "exercises/M04/ex03_tests.py",
+          "checker": "exercises/M04/check_ex03.py",
+          "solution": "solutions/exercises/M04/ex03_tests.py",
+          "hidden_cases": "tests/hidden/M04_ex03.json"
+        }
+      ],
       "assessment_policy": "course/assessment.md"
     },
     {

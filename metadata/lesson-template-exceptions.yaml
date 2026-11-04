@@ -30,4 +30,4 @@ rollout:
   analogy: [M00, M01, M02, M03, M04]
   card: [M00, M01, M02, M03, M04]
   sources: [M00, M01, M02, M03, M04]
-  exercises: [M02, M03]  # T26: at least three auto-checked contracts in the module
+  exercises: [M02, M03, M04]  # T26: at least three auto-checked contracts in the module

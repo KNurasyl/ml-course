@@ -56,6 +56,12 @@ MISTAKES = [
     ("M03", "ex03", "path[-1] - eta * grad", "path[-1] + eta * grad", "спуск"),
     ("M03", "ex03", "return 1 / c", "return 2 / c", "граница шага"),
     ("M03", "ex03", "return a / (1 + lam)", "return a * (1 - lam)", "оптимум"),
+    ("M04", "ex02", "/ (n - 1)", "/ n", "описание выборки"),
+    ("M04", "ex02", "return mean, s2, s, s / math.sqrt(n)", "return mean, s2, s, s", "описание выборки"),
+    ("M04", "ex02", "(p + z * z / (2 * n)) / den", "p", "интервал Уилсона"),
+    ("M04", "ex03", "return min(1.0, 2 * tail)", "return min(1.0, tail)", "знаковый тест"),
+    ("M04", "ex03", "n = wins + losses  #", "n = wins + losses + ties  #", "ничьи"),
+    ("M04", "ex03", "q = prob if label == 1 else 1 - prob", "q = prob", "log loss"),
 ]
 
 
