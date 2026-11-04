@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="196e0f08bb3c4edee7d40554aa27f1ed11b7d8cd753bc87bbf16508d17dd231e"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="b19a8d718c436401065b61fa569ec6c74d0b17db09715ec73fdfa3f6c863b56e"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -3223,7 +3223,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M03.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M02-L05"><small>Предыдущий раздел</small>← M02-L05. Маленький векторный поиск</a><a href="#M03-L01"><small>Следующий раздел</small>M03-L01. Изменение функции →</a></nav></article><article class="material" id="M03-L01" data-title="M03-L01. Изменение функции" data-short-title="Изменение функции" data-kind="ready" data-module="M03"><header class="material-head"><div class="eyebrow"><span class="material-id">M03-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Изменение функции</h1><p class="outcome"><strong>После урока:</strong> Оценить скорость изменения функции конечной разностью и отличить её от значения функции.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M03-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M03-L01--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M03-L01--объяснение">Объяснение</a></li><li><a href="#M03-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M03-L01--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M03-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M03-L01--самостоятельная-задача-a-m03-l01-a01">Самостоятельная задача A — M03-L01-A01</a></li><li><a href="#M03-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M03-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M03-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M03-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+"></iframe><p><a href="course/visuals/M03.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M02-L05"><small>Предыдущий раздел</small>← M02-L05. Маленький векторный поиск</a><a href="#M03-L01"><small>Следующий раздел</small>M03-L01. Изменение функции →</a></nav></article><article class="material" id="M03-L01" data-title="M03-L01. Изменение функции" data-short-title="Изменение функции" data-kind="ready" data-module="M03"><header class="material-head"><div class="eyebrow"><span class="material-id">M03-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Изменение функции</h1><p class="outcome"><strong>После урока:</strong> Оценить скорость изменения функции конечной разностью и отличить её от значения функции.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M03-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M03-L01--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M03-L01--объяснение">Объяснение</a></li><li><a href="#M03-L01--аналогия-значение-метрики-и-скорость-её-роста">Аналогия: значение метрики и скорость её роста</a></li><li><a href="#M03-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M03-L01--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M03-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M03-L01--самостоятельная-задача-a-m03-l01-a01">Самостоятельная задача A — M03-L01-A01</a></li><li><a href="#M03-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M03-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M03-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M03-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M00-L03">M00-L03</a></p>
 <h2 id="M03-L01--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Обучение модели требует понимать, как небольшое изменение параметра влияет на ошибку. Само значение ошибки не говорит, в какую сторону двигаться. Производная даёт локальную информацию об изменении, а конечные разности позволяют проверить её вычисление простыми подстановками.</p>
@@ -3239,6 +3239,43 @@ draw();
 <p>Производная описывает локальную окрестность. Нулевой наклон не гарантирует минимум: у f(w)=w³ в нуле он равен 0, но функция продолжает расти по обе стороны. Для негладких функций, например |w| в нуле, обычная двухсторонняя производная не существует. Эти ограничения пригодятся при изучении активаций.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M03-L01-desktop.svg" target="_blank" data-figure="course/assets/responsive/M03-L01-desktop.svg" aria-label="Увеличить рисунок: Квадратичная функция и касательная при w=3 показывают разницу между высотой 9 и наклоном 6."><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M03-L01-mobile.svg"><img src="course/assets/responsive/M03-L01-desktop.svg" alt="Квадратичная функция и касательная при w=3 показывают разницу между высотой 9 и наклоном 6." loading="lazy"></picture></a><span class="figure-hint">Квадратичная функция и касательная при w=3 показывают разницу между высотой 9 и наклоном 6. · Открыть крупнее ↗</span></p>
 <p>Касательная наклонена сильнее, чем прямая около нуля. Подписи отделяют координату точки от изменения функции на единицу параметра.</p>
+<h2 id="M03-L01--аналогия-значение-метрики-и-скорость-её-роста">Аналогия: значение метрики и скорость её роста</h2>
+<p>Как похоже: в мониторинге длина очереди сейчас и скорость её роста — разные величины, как f(w) и f′(w). Функция <code>rate()</code> по окну h делит изменение за окно на длину окна — это и есть конечная разность. Слишком короткое окно даёт шум вместо сигнала.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>f(w) в точке</td>
+  <td>Текущее значение метрики, например длина очереди</td>
+</tr>
+<tr>
+  <td>Производная f′(w)</td>
+  <td>Скорость роста метрики в момент наблюдения</td>
+</tr>
+<tr>
+  <td>[f(w + h) − f(w)]/h</td>
+  <td><code>rate()</code> по окну h: изменение за окно, делённое на окно</td>
+</tr>
+<tr>
+  <td>Центральная разность</td>
+  <td>Окно, взятое симметрично вокруг момента</td>
+</tr>
+<tr>
+  <td>Слишком маленький h</td>
+  <td>Слишком короткое окно: округление важнее сигнала</td>
+</tr>
+<tr>
+  <td>Нулевой наклон</td>
+  <td>Метрика перестала расти, но это не значит, что она минимальна</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> метрика мониторинга — шумные измерения во времени. У f(w) = w² шума нет, ошибка конечной разности возникает только из-за плавающей арифметики. И производная в уроке берётся по параметру модели, а не по времени.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M03-L01--разобранный-пример">Разобранный пример</h2>
 <p>Для f(w)=w² при w=3 прямое приближение с h=0.1 равно(9.61−9)/0.1=6.1. При h=0.01 получаем 6.01. Центральная разность при 0.1: (9.61−8.41)/0.2=6.</p>
 <pre><code class="language-python">def f(w): return w*w
@@ -3273,7 +3310,7 @@ assert abs((f(3.01)-f(2.99))/.02-6)&lt;1e-10
 </section><h2 id="M03-L01--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M03-SOLUTIONS--m03-l01-a01">Ключи M03</a> · <a href="labs/M03/README.md">Лабораторная модуля</a> · <a href="#M03">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://developers.google.com/machine-learning/crash-course/linear-regression/gradient-descent" target="_blank" rel="noopener noreferrer" class="external-link">Google ML Crash Course: градиентный спуск</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M03">Модуль и домашняя работа</a> · <a href="#M03-SOLUTIONS--m03-l01-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M03-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M03"><small>Предыдущий раздел</small>← M03 Производные и оптимизация</a><a href="#M03-L02"><small>Следующий раздел</small>M03-L02. Производная и цепное правило →</a></nav></article><article class="material" id="M03-L02" data-title="M03-L02. Производная и цепное правило" data-short-title="Производная и цепное правило" data-kind="ready" data-module="M03"><header class="material-head"><div class="eyebrow"><span class="material-id">M03-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Производная и цепное правило</h1><p class="outcome"><strong>После урока:</strong> Применить цепное правило к квадрату ошибки линейной модели и проверить производные численно.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M03-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M03-L02--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M03-L02--объяснение">Объяснение</a></li><li><a href="#M03-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M03-L02--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M03-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M03-L02--самостоятельная-задача-a-m03-l02-a01">Самостоятельная задача A — M03-L02-A01</a></li><li><a href="#M03-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M03-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M03-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M03-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M03">Модуль и домашняя работа</a> · <a href="#M03-SOLUTIONS--m03-l01-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M03-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M03"><small>Предыдущий раздел</small>← M03 Производные и оптимизация</a><a href="#M03-L02"><small>Следующий раздел</small>M03-L02. Производная и цепное правило →</a></nav></article><article class="material" id="M03-L02" data-title="M03-L02. Производная и цепное правило" data-short-title="Производная и цепное правило" data-kind="ready" data-module="M03"><header class="material-head"><div class="eyebrow"><span class="material-id">M03-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Производная и цепное правило</h1><p class="outcome"><strong>После урока:</strong> Применить цепное правило к квадрату ошибки линейной модели и проверить производные численно.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M03-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M03-L02--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M03-L02--объяснение">Объяснение</a></li><li><a href="#M03-L02--аналогия-стоимость-запросов-через-цепочку-тарифов">Аналогия: стоимость запросов через цепочку тарифов</a></li><li><a href="#M03-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M03-L02--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M03-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M03-L02--самостоятельная-задача-a-m03-l02-a01">Самостоятельная задача A — M03-L02-A01</a></li><li><a href="#M03-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M03-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M03-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M03-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M03-L01">M03-L01</a></p>
 <h2 id="M03-L02--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Параметр обычно влияет на ошибку через несколько промежуточных вычислений. Сначала модель делает предсказание, затем вычисляется остаток, затем функция потерь. Цепное правило связывает изменения этих этапов и является основой обратного распространения в нейросетях.</p>
@@ -3290,6 +3327,39 @@ assert abs((f(3.01)-f(2.99))/.02-6)&lt;1e-10
 <p>Цепное правило также объясняет отсутствие влияния параметра: если хотя бы одна локальная производная на единственном пути равна нулю, произведение чувствительностей обнуляется. В более сложном графе у параметра может быть несколько путей к результату, и их вклады складываются. Поэтому нельзя просто перемножить все числа графа; нужно проследить конкретные зависимости. В нашем примере путь к каждому параметру один.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M03-L02-desktop.svg" target="_blank" data-figure="course/assets/responsive/M03-L02-desktop.svg" aria-label="Увеличить рисунок: Граф w→wx+b→остаток→квадрат с локальными производными x, 1, 2e."><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M03-L02-mobile.svg"><img src="course/assets/responsive/M03-L02-desktop.svg" alt="Граф w→wx+b→остаток→квадрат с локальными производными x, 1, 2e." loading="lazy"></picture></a><span class="figure-hint">Задано x=2, y=5, b=0. · Открыть крупнее ↗</span></p>
 <p>Синие стрелки показывают прямое вычисление. Для производной читай локальные множители под ними справа налево: от потери к параметру. Значения вдоль цепочки перемножаются, а независимые пути в большем графе будут складываться.</p>
+<h2 id="M03-L02--аналогия-стоимость-запросов-через-цепочку-тарифов">Аналогия: стоимость запросов через цепочку тарифов</h2>
+<p>Как похоже: счёт за LLM-сервис считается цепочкой — запросы превращаются в токены, токены в стоимость, к стоимости добавляется наценка. Насколько вырастет счёт от ещё одного запроса, показывает произведение местных тарифов: токенов на запрос × цена токена × наценка. Так же цепное правило перемножает локальные производные.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>w → ŷ → e → L</td>
+  <td>Запросы → токены → стоимость → счёт с наценкой</td>
+</tr>
+<tr>
+  <td>Локальная производная</td>
+  <td>Местный тариф: сколько добавляет единица на этом шаге</td>
+</tr>
+<tr>
+  <td>Произведение по цепному правилу</td>
+  <td>Чувствительность счёта = токенов на запрос × цена × наценка</td>
+</tr>
+<tr>
+  <td>x = 0 обнуляет ∂L/∂w</td>
+  <td>Бесплатный шаг: нулевой тариф обнуляет всю чувствительность</td>
+</tr>
+<tr>
+  <td>Численная проверка градиента</td>
+  <td>Пересчитать счёт при чуть большем объёме и сравнить</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> тарифы обычно постоянны, и цепочка линейна. В модели локальные производные зависят от текущей точки — множитель 2e меняется вместе с ошибкой, — поэтому произведение считают заново в каждой точке. В больших графах вклады нескольких путей ещё и складываются.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M03-L02--разобранный-пример">Разобранный пример</h2>
 <p>x=2, y=5, w=1, b=0: ŷ=2, e=−3, L=9. Производные dL/dw=2·(−3)·2=−12 и dL/db=−6. Маленькое увеличение w или b уменьшит потерю. При x=−2 знак производной по w может измениться.</p>
 <pre><code class="language-python">def loss(w,b,x=2.,y=5.): return (w*x+b-y)**2
@@ -3325,7 +3395,7 @@ assert abs(dw-numeric)&lt;1e-7
 </section><h2 id="M03-L02--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M03-SOLUTIONS--m03-l02-a01">Ключи M03</a> · <a href="labs/M03/README.md">Лабораторная модуля</a> · <a href="#M03">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://developers.google.com/machine-learning/crash-course/linear-regression/gradient-descent" target="_blank" rel="noopener noreferrer" class="external-link">Google ML Crash Course: градиентный спуск</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M03">Модуль и домашняя работа</a> · <a href="#M03-SOLUTIONS--m03-l02-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M03-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M03-L01"><small>Предыдущий раздел</small>← M03-L01. Изменение функции</a><a href="#M03-L03"><small>Следующий раздел</small>M03-L03. Градиент на наборе →</a></nav></article><article class="material" id="M03-L03" data-title="M03-L03. Градиент на наборе" data-short-title="Градиент на наборе" data-kind="ready" data-module="M03"><header class="material-head"><div class="eyebrow"><span class="material-id">M03-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Градиент на наборе</h1><p class="outcome"><strong>После урока:</strong> Вычислить градиент MSE по набору и выполнить согласованный шаг всех параметров.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M03-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M03-L03--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M03-L03--объяснение">Объяснение</a></li><li><a href="#M03-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M03-L03--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M03-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M03-L03--самостоятельная-задача-a-m03-l03-a01">Самостоятельная задача A — M03-L03-A01</a></li><li><a href="#M03-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M03-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M03-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M03-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M03">Модуль и домашняя работа</a> · <a href="#M03-SOLUTIONS--m03-l02-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M03-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M03-L01"><small>Предыдущий раздел</small>← M03-L01. Изменение функции</a><a href="#M03-L03"><small>Следующий раздел</small>M03-L03. Градиент на наборе →</a></nav></article><article class="material" id="M03-L03" data-title="M03-L03. Градиент на наборе" data-short-title="Градиент на наборе" data-kind="ready" data-module="M03"><header class="material-head"><div class="eyebrow"><span class="material-id">M03-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Градиент на наборе</h1><p class="outcome"><strong>После урока:</strong> Вычислить градиент MSE по набору и выполнить согласованный шаг всех параметров.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M03-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M03-L03--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M03-L03--объяснение">Объяснение</a></li><li><a href="#M03-L03--аналогия-голоса-запросов-и-атомарное-обновление-настроек">Аналогия: голоса запросов и атомарное обновление настроек</a></li><li><a href="#M03-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M03-L03--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M03-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M03-L03--самостоятельная-задача-a-m03-l03-a01">Самостоятельная задача A — M03-L03-A01</a></li><li><a href="#M03-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M03-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M03-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M03-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M03-L02">M03-L02</a>, <a href="#M02-L01">M02-L01</a></p>
 <h2 id="M03-L03--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Модель обучается на наборе, в котором отдельные примеры могут требовать противоположных изменений. Градиент среднего объединяет их требования. Реализация должна правильно усреднять, сохранять формы и обновлять параметры из одной и той же исходной точки.</p>
@@ -3342,6 +3412,43 @@ assert abs(dw-numeric)&lt;1e-7
 <p>Запиши в журнале, какую именно функцию минимизирует код: среднюю или сумму, со штрафом или без него. Константный множитель не меняет положение минимума простой задачи, но меняет величину градиента и устойчивый шаг. Поэтому две реализации могут иметь одинаковую формулу оптимального решения и разные кривые обучения. Для сравнения нужны не только итоговые параметры, но и одинаковые определения цели и шага.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M03-L03-desktop.svg" target="_blank" data-figure="course/assets/responsive/M03-L03-desktop.svg" aria-label="Увеличить рисунок: Два остатка дают вклады в градиент веса −4 и −16; средний градиент −10."><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M03-L03-mobile.svg"><img src="course/assets/responsive/M03-L03-desktop.svg" alt="Два остатка дают вклады в градиент веса −4 и −16; средний градиент −10." loading="lazy"></picture></a><span class="figure-hint">Два остатка дают вклады в градиент веса −4 и −16; средний градиент −10. · Открыть крупнее ↗</span></p>
 <p>Каждый столбец — вклад одного объекта до усреднения. Общий градиент не обязан совпадать с градиентом любого отдельного примера.</p>
+<h2 id="M03-L03--аналогия-голоса-запросов-и-атомарное-обновление-настроек">Аналогия: голоса запросов и атомарное обновление настроек</h2>
+<p>Как похоже: каждый объект «голосует», куда сдвинуть параметры, — это его градиент. Градиент MSE — среднее голосов всех объектов. Шаг обновляет обе настройки сразу по одному снимку, как атомарная запись двух значений конфига.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Градиент одного объекта</td>
+  <td>Голос одного запроса о сдвиге параметров</td>
+</tr>
+<tr>
+  <td>Градиент MSE по набору</td>
+  <td>Среднее голосов всех запросов журнала</td>
+</tr>
+<tr>
+  <td>Обновление w и b по старым значениям</td>
+  <td>Атомарное обновление двух настроек по одному снимку</td>
+</tr>
+<tr>
+  <td>Сначала w, затем db по новому w</td>
+  <td>Read-modify-write с промежуточным состоянием</td>
+</tr>
+<tr>
+  <td>Среднее вместо суммы</td>
+  <td>Нормировка на объём трафика: шаг не зависит от числа запросов</td>
+</tr>
+<tr>
+  <td>Мини-пакет</td>
+  <td>Выборка части журнала: дешевле, но шумнее</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> голоса о настройках сервиса обычно эвристические. Вклад объекта в градиент — точная производная выбранной функции потерь. Средний градиент может указывать туда, куда не «хочет» ни один отдельный объект.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M03-L03--разобранный-пример">Разобранный пример</h2>
 <p>x=[1, 2], y=[2, 4], w=b=0. Остатки[−2, −4], MSE=(4+16)/2=10. dw=(−4−16)/2=−10, db=(−4−8)/2=−6. При η=0.1 получаем w=1, b=0.6; новые ответы[1.6, 2.6], MSE=1.06.</p>
 <pre><code class="language-python">import numpy as np
@@ -3377,7 +3484,7 @@ assert np.allclose([w,b,new_loss],[1,.6,1.06])
 </section><h2 id="M03-L03--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M03-SOLUTIONS--m03-l03-a01">Ключи M03</a> · <a href="labs/M03/README.md">Лабораторная модуля</a> · <a href="#M03">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://developers.google.com/machine-learning/crash-course/linear-regression/gradient-descent" target="_blank" rel="noopener noreferrer" class="external-link">Google ML Crash Course: обучение линейной модели</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M03">Модуль и домашняя работа</a> · <a href="#M03-SOLUTIONS--m03-l03-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M03-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M03-L02"><small>Предыдущий раздел</small>← M03-L02. Производная и цепное правило</a><a href="#M03-L04"><small>Следующий раздел</small>M03-L04. Шаг обучения →</a></nav></article><article class="material" id="M03-L04" data-title="M03-L04. Шаг обучения" data-short-title="Шаг обучения" data-kind="ready" data-module="M03"><header class="material-head"><div class="eyebrow"><span class="material-id">M03-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Шаг обучения</h1><p class="outcome"><strong>После урока:</strong> Объяснить медленное обучение, колебания и расходимость через размер шага.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M03-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M03-L04--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M03-L04--объяснение">Объяснение</a></li><li><a href="#M03-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M03-L04--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M03-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M03-L04--самостоятельная-задача-a-m03-l04-a01">Самостоятельная задача A — M03-L04-A01</a></li><li><a href="#M03-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M03-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M03-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M03-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M03">Модуль и домашняя работа</a> · <a href="#M03-SOLUTIONS--m03-l03-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M03-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M03-L02"><small>Предыдущий раздел</small>← M03-L02. Производная и цепное правило</a><a href="#M03-L04"><small>Следующий раздел</small>M03-L04. Шаг обучения →</a></nav></article><article class="material" id="M03-L04" data-title="M03-L04. Шаг обучения" data-short-title="Шаг обучения" data-kind="ready" data-module="M03"><header class="material-head"><div class="eyebrow"><span class="material-id">M03-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Шаг обучения</h1><p class="outcome"><strong>После урока:</strong> Объяснить медленное обучение, колебания и расходимость через размер шага.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M03-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M03-L04--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M03-L04--объяснение">Объяснение</a></li><li><a href="#M03-L04--аналогия-автоскейлер-с-пропорциональной-поправкой">Аналогия: автоскейлер с пропорциональной поправкой</a></li><li><a href="#M03-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M03-L04--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M03-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M03-L04--самостоятельная-задача-a-m03-l04-a01">Самостоятельная задача A — M03-L04-A01</a></li><li><a href="#M03-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M03-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M03-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M03-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M03-L03">M03-L03</a></p>
 <h2 id="M03-L04--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Если потеря растёт, необязательно виновата архитектура. Слишком большой шаг может разрушить даже обучение одной переменной. Прозрачная квадратичная задача позволяет увидеть это без скрытых деталей библиотеки и научиться читать кривую обучения.</p>
@@ -3501,6 +3608,43 @@ draw();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
 "></iframe><p><a href="course/visuals/M03.html" target="_blank">Открыть опыт отдельно на весь экран</a></p></section>
 <p>На графике каждая кривая стартует из одной точки. Различается только η. Логарифмическая вертикальная шкала показывает, что расходящийся запуск увеличивает ошибку на порядки.</p>
+<h2 id="M03-L04--аналогия-автоскейлер-с-пропорциональной-поправкой">Аналогия: автоскейлер с пропорциональной поправкой</h2>
+<p>Как похоже: автоскейлер меняет число реплик на величину, пропорциональную отклонению от цели, с коэффициентом усиления. Малое усиление подтягивает медленно, среднее — с перерегулированием, которое затухает, слишком большое раскачивает систему. Шаг обучения ведёт себя так же.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Ошибка параметра δ = w − 3</td>
+  <td>Отклонение числа реплик от нужного</td>
+</tr>
+<tr>
+  <td>Шаг обучения η</td>
+  <td>Коэффициент усиления автоскейлера</td>
+</tr>
+<tr>
+  <td>0 &lt; η &lt; 0.5</td>
+  <td>Плавное приближение с одной стороны, медленное при малом усилении</td>
+</tr>
+<tr>
+  <td>0.5 &lt; η &lt; 1</td>
+  <td>Перерегулирование: колебания вокруг цели затухают</td>
+</tr>
+<tr>
+  <td>η = 1</td>
+  <td>Незатухающие колебания</td>
+</tr>
+<tr>
+  <td>η &gt; 1</td>
+  <td>Раскачка: каждая поправка больше предыдущей</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> автоскейлер работает с шумной системой и задержкой реакции. Здесь потеря — известная квадратичная функция, поэтому граница устойчивости точная. У настоящих моделей кривизна разная по направлениям и меняется во время обучения, единой точной границы шага нет.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M03-L04--разобранный-пример">Разобранный пример</h2>
 <p>Начнём с w=0. При η=0.1 первый шаг w=0.6, потеря 5.76. При η=0.5 получаем w=3 и нулевую потерю. При η=1.1 получаем w=6.6, потеря 12.96, затем w−1.32, потеря 18.6624.</p>
 <pre><code class="language-python">def run(eta,steps=3):
@@ -3538,7 +3682,7 @@ assert run(.1)[1][-1]&lt;9 and run(1.1)[1][-1]&gt;9
 </section><h2 id="M03-L04--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M03-SOLUTIONS--m03-l04-a01">Ключи M03</a> · <a href="labs/M03/README.md">Лабораторная модуля</a> · <a href="#M03">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://developers.google.com/machine-learning/crash-course/linear-regression/hyperparameters" target="_blank" rel="noopener noreferrer" class="external-link">Google ML Crash Course: шаг обучения</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M03">Модуль и домашняя работа</a> · <a href="#M03-SOLUTIONS--m03-l04-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M03-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M03-L03"><small>Предыдущий раздел</small>← M03-L03. Градиент на наборе</a><a href="#M03-L05"><small>Следующий раздел</small>M03-L05. Регуляризация и масштаб →</a></nav></article><article class="material" id="M03-L05" data-title="M03-L05. Регуляризация и масштаб" data-short-title="Регуляризация и масштаб" data-kind="ready" data-module="M03"><header class="material-head"><div class="eyebrow"><span class="material-id">M03-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Регуляризация и масштаб</h1><p class="outcome"><strong>После урока:</strong> Добавить L2-регуляризацию, вывести её градиент и объяснить связь с масштабом признаков.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M03-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M03-L05--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M03-L05--объяснение">Объяснение</a></li><li><a href="#M03-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M03-L05--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M03-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M03-L05--самостоятельная-задача-a-m03-l05-a01">Самостоятельная задача A — M03-L05-A01</a></li><li><a href="#M03-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M03-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M03-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M03-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M03">Модуль и домашняя работа</a> · <a href="#M03-SOLUTIONS--m03-l04-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M03-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M03-L03"><small>Предыдущий раздел</small>← M03-L03. Градиент на наборе</a><a href="#M03-L05"><small>Следующий раздел</small>M03-L05. Регуляризация и масштаб →</a></nav></article><article class="material" id="M03-L05" data-title="M03-L05. Регуляризация и масштаб" data-short-title="Регуляризация и масштаб" data-kind="ready" data-module="M03"><header class="material-head"><div class="eyebrow"><span class="material-id">M03-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Регуляризация и масштаб</h1><p class="outcome"><strong>После урока:</strong> Добавить L2-регуляризацию, вывести её градиент и объяснить связь с масштабом признаков.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M03-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M03-L05--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M03-L05--объяснение">Объяснение</a></li><li><a href="#M03-L05--аналогия-задержка-против-платы-за-ресурсы">Аналогия: задержка против платы за ресурсы</a></li><li><a href="#M03-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M03-L05--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M03-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M03-L05--самостоятельная-задача-a-m03-l05-a01">Самостоятельная задача A — M03-L05-A01</a></li><li><a href="#M03-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M03-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M03-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M03-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M03-L04">M03-L04</a></p>
 <h2 id="M03-L05--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Минимальная ошибка на train не всегда означает полезную модель. Регуляризация ограничивает предпочтительные параметры и может снизить чувствительность к шуму. При этом она меняет целевую функцию: сравнивать её значение с обычной MSE без оговорки нельзя.</p>
@@ -3554,6 +3698,43 @@ assert run(.1)[1][-1]&lt;9 and run(1.1)[1][-1]&gt;9
 <p>L2 не гарантирует разреженность: многие веса становятся небольшими, но не точно нулевыми. L1 использует сумму модулей и имеет другую геометрию и поведение около нуля. В обязательной задаче достаточно понимать L2 и не переносить её свойства на любой вид регуляризации.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M03-L05-desktop.svg" target="_blank" data-figure="course/assets/responsive/M03-L05-desktop.svg" aria-label="Увеличить рисунок: Сумма ошибки(w−4)² и штрафа w² имеет минимум при w=2, между минимумами двух составляющих."><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M03-L05-mobile.svg"><img src="course/assets/responsive/M03-L05-desktop.svg" alt="Сумма ошибки(w−4)² и штрафа w² имеет минимум при w=2, между минимумами двух составляющих." loading="lazy"></picture></a><span class="figure-hint">Сумма ошибки(w−4)² и штрафа w² имеет минимум при w=2, между минимумами двух составляющих. · Открыть крупнее ↗</span></p>
 <p>Отдельные кривые показывают два конкурирующих требования. Минимум суммы не совпадает с минимумом ошибки по данным. Подписи помогают не спутать train-MSE с полной целью.</p>
+<h2 id="M03-L05--аналогия-задержка-против-платы-за-ресурсы">Аналогия: задержка против платы за ресурсы</h2>
+<p>Как похоже: при настройке сервиса минимизируют сумму — отклонение задержки от цели плюс плату за ресурсы, растущую с квадратом их числа. Коэффициент платы решает, сколько задержки готовы отдать ради экономии. Оптимум суммы берёт меньше ресурсов, чем нужно ради одной задержки.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>MSE по данным</td>
+  <td>Отклонение задержки от цели</td>
+</tr>
+<tr>
+  <td>Штраф λw²</td>
+  <td>Плата за ресурсы, растущая с квадратом их числа</td>
+</tr>
+<tr>
+  <td>λ</td>
+  <td>Курс: сколько задержки готовы отдать за экономию</td>
+</tr>
+<tr>
+  <td>Оптимум 4/(1 + λ) меньше 4</td>
+  <td>Компромисс: меньше реплик, чем нужно ради одной задержки</td>
+</tr>
+<tr>
+  <td>Смещение b не штрафуется</td>
+  <td>Базовая стоимость инфраструктуры вне платы</td>
+</tr>
+<tr>
+  <td>Масштаб признака меняет штраф</td>
+  <td>Реплики в сотнях вместо штук: тот же курс значит другое</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> плата за ресурсы — реальные деньги с известной ценой. L2-штраф — предпочтение модели без «настоящей цены», λ подбирают на validation. Бюджет отражает реальное ограничение, а регуляризация не исправляет утечку или плохие метки.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M03-L05--разобранный-пример">Разобранный пример</h2>
 <p>При λ=1 J=(w−4)²+w². Для w=4: MSE=0, штраф 16, J16. Для w=2: MSE=4, штраф 4, J8. Для w=0: MSE=16, штраф 0, J16. Минимум w=2 подтверждается нулевой производной 4w−8.</p>
 <pre><code class="language-python">def objective(w,lam): return (w-4)**2+lam*w*w
