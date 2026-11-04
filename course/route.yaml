@@ -1,0 +1,213 @@
+# Адаптивный маршрут для знакомых тем (план 1.2.0, задача T10).
+# Каждый урок P01-P10 и M00-M06 начинается с блока «Проверь себя сначала»;
+# правило описано в course/self-study.md, раздел «Адаптивный маршрут».
+# Файл проверяется tools/validate_course.py --require-local.
+version: 1
+created: 2026-11-04
+rule:
+  pass: Верный ответ и объяснение без подсказок — сразу к самостоятельной задаче урока, затем к B/C и отложенной проверке.
+  fail: Ошибка, сомнение или ответ без объяснения — полный урок с начала.
+  no_credit: Короткий путь не засчитывает навык; навык подтверждают самостоятельная задача, B/C и отложенная проверка.
+  scope: Только знакомые темы P01-P10 и M00-M06; с M07 новые темы проходятся полностью.
+evidence: quality/research-2026-11-03.md, раздел 4 (Kalyuga et al., 2003; Kalyuga & Sweller, 2004).
+checks:
+  - lesson: P01
+    check: P01-D
+    file: course/pilot/P01.md
+    answer: solutions/pilot/answer-key.md#p01-d
+  - lesson: P02
+    check: P02-D
+    file: course/pilot/P02.md
+    answer: solutions/pilot/answer-key.md#p02-d
+  - lesson: P03
+    check: P03-D
+    file: course/pilot/P03.md
+    answer: solutions/pilot/answer-key.md#p03-d
+  - lesson: P04
+    check: P04-D
+    file: course/pilot/P04.md
+    answer: solutions/pilot/answer-key.md#p04-d
+  - lesson: P05
+    check: P05-D
+    file: course/pilot/P05.md
+    answer: solutions/pilot/answer-key.md#p05-d
+  - lesson: P06
+    check: P06-D
+    file: course/pilot/P06.md
+    answer: solutions/pilot/answer-key.md#p06-d
+  - lesson: P07
+    check: P07-D
+    file: course/pilot/P07.md
+    answer: solutions/pilot/answer-key.md#p07-d
+  - lesson: P08
+    check: P08-D
+    file: course/pilot/P08.md
+    answer: solutions/pilot/answer-key.md#p08-d
+  - lesson: P09
+    check: P09-D
+    file: course/pilot/P09.md
+    answer: solutions/pilot/answer-key.md#p09-d
+  - lesson: P10
+    check: P10-D
+    file: course/pilot/P10.md
+    answer: solutions/pilot/answer-key.md#p10-d
+  - lesson: M00-L01
+    check: M00-L01-D
+    file: course/lessons/M00-L01.md
+    answer: solutions/modules/M00.md#m00-l01-d
+  - lesson: M00-L02
+    check: M00-L02-D
+    file: course/lessons/M00-L02.md
+    answer: solutions/modules/M00.md#m00-l02-d
+  - lesson: M00-L03
+    check: M00-L03-D
+    file: course/lessons/M00-L03.md
+    answer: solutions/modules/M00.md#m00-l03-d
+  - lesson: M00-L04
+    check: M00-L04-D
+    file: course/lessons/M00-L04.md
+    answer: solutions/modules/M00.md#m00-l04-d
+  - lesson: M00-L05
+    check: M00-L05-D
+    file: course/lessons/M00-L05.md
+    answer: solutions/modules/M00.md#m00-l05-d
+  - lesson: M01-L01
+    check: M01-L01-D
+    file: course/lessons/M01-L01.md
+    answer: solutions/modules/M01.md#m01-l01-d
+  - lesson: M01-L02
+    check: M01-L02-D
+    file: course/lessons/M01-L02.md
+    answer: solutions/modules/M01.md#m01-l02-d
+  - lesson: M01-L03
+    check: M01-L03-D
+    file: course/lessons/M01-L03.md
+    answer: solutions/modules/M01.md#m01-l03-d
+  - lesson: M01-L04
+    check: M01-L04-D
+    file: course/lessons/M01-L04.md
+    answer: solutions/modules/M01.md#m01-l04-d
+  - lesson: M01-L05
+    check: M01-L05-D
+    file: course/lessons/M01-L05.md
+    answer: solutions/modules/M01.md#m01-l05-d
+  - lesson: M02-L01
+    check: M02-L01-D
+    file: course/lessons/M02-L01.md
+    answer: solutions/modules/M02.md#m02-l01-d
+  - lesson: M02-L02
+    check: M02-L02-D
+    file: course/lessons/M02-L02.md
+    answer: solutions/modules/M02.md#m02-l02-d
+  - lesson: M02-L03
+    check: M02-L03-D
+    file: course/lessons/M02-L03.md
+    answer: solutions/modules/M02.md#m02-l03-d
+  - lesson: M02-L04
+    check: M02-L04-D
+    file: course/lessons/M02-L04.md
+    answer: solutions/modules/M02.md#m02-l04-d
+  - lesson: M02-L05
+    check: M02-L05-D
+    file: course/lessons/M02-L05.md
+    answer: solutions/modules/M02.md#m02-l05-d
+  - lesson: M03-L01
+    check: M03-L01-D
+    file: course/lessons/M03-L01.md
+    answer: solutions/modules/M03.md#m03-l01-d
+  - lesson: M03-L02
+    check: M03-L02-D
+    file: course/lessons/M03-L02.md
+    answer: solutions/modules/M03.md#m03-l02-d
+  - lesson: M03-L03
+    check: M03-L03-D
+    file: course/lessons/M03-L03.md
+    answer: solutions/modules/M03.md#m03-l03-d
+  - lesson: M03-L04
+    check: M03-L04-D
+    file: course/lessons/M03-L04.md
+    answer: solutions/modules/M03.md#m03-l04-d
+  - lesson: M03-L05
+    check: M03-L05-D
+    file: course/lessons/M03-L05.md
+    answer: solutions/modules/M03.md#m03-l05-d
+  - lesson: M04-L06
+    check: M04-L06-D
+    file: course/lessons/M04-L06.md
+    answer: solutions/modules/M04.md#m04-l06-d
+  - lesson: M04-L01
+    check: M04-L01-D
+    file: course/lessons/M04-L01.md
+    answer: solutions/modules/M04.md#m04-l01-d
+  - lesson: M04-L02
+    check: M04-L02-D
+    file: course/lessons/M04-L02.md
+    answer: solutions/modules/M04.md#m04-l02-d
+  - lesson: M04-L07
+    check: M04-L07-D
+    file: course/lessons/M04-L07.md
+    answer: solutions/modules/M04.md#m04-l07-d
+  - lesson: M04-L03
+    check: M04-L03-D
+    file: course/lessons/M04-L03.md
+    answer: solutions/modules/M04.md#m04-l03-d
+  - lesson: M04-L04
+    check: M04-L04-D
+    file: course/lessons/M04-L04.md
+    answer: solutions/modules/M04.md#m04-l04-d
+  - lesson: M04-L05
+    check: M04-L05-D
+    file: course/lessons/M04-L05.md
+    answer: solutions/modules/M04.md#m04-l05-d
+  - lesson: M04-L08
+    check: M04-L08-D
+    file: course/lessons/M04-L08.md
+    answer: solutions/modules/M04.md#m04-l08-d
+  - lesson: M05-L01
+    check: M05-L01-D
+    file: course/lessons/M05-L01.md
+    answer: solutions/modules/M05.md#m05-l01-d
+  - lesson: M05-L02
+    check: M05-L02-D
+    file: course/lessons/M05-L02.md
+    answer: solutions/modules/M05.md#m05-l02-d
+  - lesson: M05-L03
+    check: M05-L03-D
+    file: course/lessons/M05-L03.md
+    answer: solutions/modules/M05.md#m05-l03-d
+  - lesson: M05-L04
+    check: M05-L04-D
+    file: course/lessons/M05-L04.md
+    answer: solutions/modules/M05.md#m05-l04-d
+  - lesson: M05-L05
+    check: M05-L05-D
+    file: course/lessons/M05-L05.md
+    answer: solutions/modules/M05.md#m05-l05-d
+  - lesson: M05-L06
+    check: M05-L06-D
+    file: course/lessons/M05-L06.md
+    answer: solutions/modules/M05.md#m05-l06-d
+  - lesson: M05-L07
+    check: M05-L07-D
+    file: course/lessons/M05-L07.md
+    answer: solutions/modules/M05.md#m05-l07-d
+  - lesson: M06-L01
+    check: M06-L01-D
+    file: course/lessons/M06-L01.md
+    answer: solutions/modules/M06.md#m06-l01-d
+  - lesson: M06-L02
+    check: M06-L02-D
+    file: course/lessons/M06-L02.md
+    answer: solutions/modules/M06.md#m06-l02-d
+  - lesson: M06-L03
+    check: M06-L03-D
+    file: course/lessons/M06-L03.md
+    answer: solutions/modules/M06.md#m06-l03-d
+  - lesson: M06-L04
+    check: M06-L04-D
+    file: course/lessons/M06-L04.md
+    answer: solutions/modules/M06.md#m06-l04-d
+  - lesson: M06-L05
+    check: M06-L05-D
+    file: course/lessons/M06-L05.md
+    answer: solutions/modules/M06.md#m06-l05-d

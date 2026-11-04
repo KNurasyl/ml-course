@@ -4,6 +4,7 @@ import argparse
 from html.parser import HTMLParser
 import importlib.util
 import json
+import os
 from pathlib import Path
 import re
 import sys
@@ -141,6 +142,53 @@ def validate(root: Path = ROOT, require_local: bool = False) -> dict:
             "learner_mastery": "not_assessed"}
 
 
+def _validate_route(root, curriculum, errors):
+    """Every familiar lesson starts with a first-step check whose key really exists."""
+    import yaml
+
+    path = root / "course/route.yaml"
+    if not path.is_file():
+        errors.append("Missing adaptive route: course/route.yaml")
+        return
+    try:
+        route = yaml.safe_load(path.read_text(encoding="utf-8"))
+    except yaml.YAMLError as error:
+        errors.append(f"Cannot parse course/route.yaml: {error}")
+        return
+    checks = route.get("checks") if isinstance(route, dict) else None
+    if not isinstance(checks, list) or route.get("version") != 1:
+        errors.append("course/route.yaml needs version 1 and a list of checks")
+        return
+    expected = PILOT_IDS + [lesson["id"] for m in curriculum["modules"] if m["id"] in MODULE_IDS[:7] for lesson in m["lessons"]]
+    if [item.get("lesson") if isinstance(item, dict) else None for item in checks] != expected:
+        errors.append("course/route.yaml must list P01-P10 and every M00-M06 lesson once, in course order")
+    for item in checks:
+        if not isinstance(item, dict):
+            continue
+        lesson, check = item.get("lesson"), item.get("check")
+        lesson_path = root / str(item.get("file", ""))
+        key_relative, _, anchor = str(item.get("answer", "")).partition("#")
+        key_path = root / key_relative
+        if check != f"{lesson}-D" or anchor != str(check).lower():
+            errors.append(f"Route check for {lesson} must be {lesson}-D with anchor {str(lesson).lower()}-d")
+            continue
+        if not lesson_path.is_file() or not key_path.is_file():
+            errors.append(f"Route files missing for {check}: {item.get('file')}, {key_relative}")
+            continue
+        text = lesson_path.read_text(encoding="utf-8")
+        block = re.search(r"(?ms)^## Проверь себя сначала\n(.*?)(?=^## |\Z)", text)
+        task = re.search(r"(?m)^## .*[Сс]амостоятельн", text)
+        link = Path(os.path.relpath(key_path, lesson_path.parent)).as_posix() + "#" + anchor
+        if not block:
+            errors.append(f"Missing first-step check block in {item.get('file')}")
+        elif not task or task.start() < block.start():
+            errors.append(f"First-step check must precede the independent task in {item.get('file')}")
+        elif f"]({link})" not in block.group(1):
+            errors.append(f"First-step check in {item.get('file')} must link to its key {link}")
+        if not re.search(rf"(?m)^## {re.escape(check)}$", key_path.read_text(encoding="utf-8")):
+            errors.append(f"Missing key section ## {check} in {key_relative}")
+
+
 def _validate_local(root, curriculum, documents, errors, warnings):
     import mistune
 
@@ -224,6 +272,7 @@ def _validate_local(root, curriculum, documents, errors, warnings):
         freshness = tool_freshness(root)
         errors.extend(freshness["errors"])
         warnings.extend(freshness["warnings"])
+        _validate_route(root, curriculum, errors)
     for name in ("README.md", "AGENTS.md"):
         path = local_file(name, name)
         if path:

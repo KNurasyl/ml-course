@@ -10,3 +10,5 @@ ipykernel>=6.29,<7
 jupyterlab>=4.3,<5
 pytest>=8.3,<9
 mistune>=3.4,<4
+# Already pinned in the lock as a Jupyter dependency; validate_course.py reads course/route.yaml.
+PyYAML>=6,<7
