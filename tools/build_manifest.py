@@ -44,6 +44,21 @@ def registry_drift(registry: dict, curriculum: dict) -> list[str]:
     return [key for key, entry in curriculum_entries(curriculum).items() if key in registry and registry[key] != entry]
 
 
+def extra_exercises(root: Path, module_id: str) -> list[dict]:
+    """Extra exercises found on disk: exNN_*.py starter, check_exNN.py, reference and hidden cases."""
+    found = []
+    for checker in sorted((root / "exercises" / module_id).glob("check_ex*.py")):
+        number = checker.stem.removeprefix("check_")
+        starter = next((root / "exercises" / module_id).glob(f"{number}_*.py"), None)
+        if starter is None:
+            continue
+        found.append({"id": f"{module_id}-{number}", "starter": f"exercises/{module_id}/{starter.name}",
+                      "checker": f"exercises/{module_id}/{checker.name}",
+                      "solution": f"solutions/exercises/{module_id}/{starter.name}",
+                      "hidden_cases": f"tests/hidden/{module_id}_{number}.json"})
+    return found
+
+
 def sync_registry(root: Path = ROOT) -> list[str]:
     """Rewrite curriculum items in the registry and add those whose file exists; return changed keys."""
     path = root / "metadata" / "material-registry.json"
@@ -140,7 +155,8 @@ def build_manifest(root: Path = ROOT) -> dict:
             "full_module_ready": module_ready, "solution": solution, "lab": lab, "visual": visual,
             "lesson_ids": [lesson["id"] for lesson in module["lessons"]],
             "homework_id": module["homework"]["id"],
-            "exercise": exercise, "assessment_policy": "course/assessment.md",
+            "exercise": exercise, "extra_exercises": extra_exercises(root, module_id),
+            "assessment_policy": "course/assessment.md",
         })
         for lesson in module["lessons"]:
             lesson_entries.append({

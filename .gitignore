@@ -16,3 +16,4 @@ models/
 recordings/
 # Per-task working snapshots; only release baselines are tracked.
 quality/snapshots/before-*.json
+.hypothesis/

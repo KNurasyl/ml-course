@@ -1412,6 +1412,7 @@
         "checker": "exercises/M00/check.py",
         "solution": "solutions/exercises/M00/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1441,6 +1442,7 @@
         "checker": "exercises/M01/check.py",
         "solution": "solutions/exercises/M01/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1470,6 +1472,22 @@
         "checker": "exercises/M02/check.py",
         "solution": "solutions/exercises/M02/solution.py"
       },
+      "extra_exercises": [
+        {
+          "id": "M02-ex02",
+          "starter": "exercises/M02/ex02_matrices.py",
+          "checker": "exercises/M02/check_ex02.py",
+          "solution": "solutions/exercises/M02/ex02_matrices.py",
+          "hidden_cases": "tests/hidden/M02_ex02.json"
+        },
+        {
+          "id": "M02-ex03",
+          "starter": "exercises/M02/ex03_scaling.py",
+          "checker": "exercises/M02/check_ex03.py",
+          "solution": "solutions/exercises/M02/ex03_scaling.py",
+          "hidden_cases": "tests/hidden/M02_ex03.json"
+        }
+      ],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1499,6 +1517,7 @@
         "checker": "exercises/M03/check.py",
         "solution": "solutions/exercises/M03/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1531,6 +1550,7 @@
         "checker": "exercises/M04/check.py",
         "solution": "solutions/exercises/M04/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1562,6 +1582,7 @@
         "checker": "exercises/M05/check.py",
         "solution": "solutions/exercises/M05/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1591,6 +1612,7 @@
         "checker": "exercises/M06/check.py",
         "solution": "solutions/exercises/M06/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1620,6 +1642,7 @@
         "checker": "exercises/M07/check.py",
         "solution": "solutions/exercises/M07/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1651,6 +1674,7 @@
         "checker": "exercises/M08/check.py",
         "solution": "solutions/exercises/M08/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1681,6 +1705,7 @@
         "checker": "exercises/M09/check.py",
         "solution": "solutions/exercises/M09/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1711,6 +1736,7 @@
         "checker": "exercises/M10/check.py",
         "solution": "solutions/exercises/M10/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1741,6 +1767,7 @@
         "checker": "exercises/M11/check.py",
         "solution": "solutions/exercises/M11/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1772,6 +1799,7 @@
         "checker": "exercises/M12/check.py",
         "solution": "solutions/exercises/M12/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1802,6 +1830,7 @@
         "checker": "exercises/M13/check.py",
         "solution": "solutions/exercises/M13/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1832,6 +1861,7 @@
         "checker": "exercises/M14/check.py",
         "solution": "solutions/exercises/M14/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1862,6 +1892,7 @@
         "checker": "exercises/M15/check.py",
         "solution": "solutions/exercises/M15/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     },
     {
@@ -1894,6 +1925,7 @@
         "checker": "exercises/M16/check.py",
         "solution": "solutions/exercises/M16/solution.py"
       },
+      "extra_exercises": [],
       "assessment_policy": "course/assessment.md"
     }
   ],

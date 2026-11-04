@@ -38,6 +38,13 @@ def main():
             mid = f"M{i:02}"
             tasks += [(f"{mid}-reference", [f"exercises/{mid}/check.py", f"solutions/exercises/{mid}/solution.py"], True),
                 (f"{mid}-empty-rejected", [f"exercises/{mid}/check.py", f"exercises/{mid}/starter.py"], False)]
+            # Extra exercises (plan 3.4): exNN_*.py starter, check_exNN.py and a reference of the same name.
+            for checker in sorted((ROOT / "exercises" / mid).glob("check_ex*.py")):
+                number = checker.stem.removeprefix("check_")
+                starter = next((ROOT / "exercises" / mid).glob(f"{number}_*.py"))
+                checker_path, starter_path = f"exercises/{mid}/{checker.name}", f"exercises/{mid}/{starter.name}"
+                tasks += [(f"{mid}-{number}-reference", [checker_path, f"solutions/exercises/{mid}/{starter.name}"], True),
+                          (f"{mid}-{number}-empty-rejected", [checker_path, starter_path], False)]
     if not args.contracts_only:
         for name in ("foundations", "llm", "product", "root"):
             meta = json.loads((ROOT / f"metadata/upgrade-{name}.json").read_text(encoding="utf-8"))
