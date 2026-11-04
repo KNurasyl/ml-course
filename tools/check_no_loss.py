@@ -21,7 +21,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = 1
 TREES = ("course", "solutions", "exercises", "labs", "notebooks", "projects", "src",
-         "tests", "data", "metadata", "progress", "quality")
+         "tests", "data", "metadata", "progress", "quality", "archive")
 MARKDOWN_TREES = ("course", "solutions")
 SKIP_DIRS = {"__pycache__", ".ipynb_checkpoints", ".pytest_cache"}
 # The guard's own snapshots are working data, not course content.
