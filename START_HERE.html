@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="0198533c82936d8272d1a9f6dd73994c544726eaeda8c807c6d98063b4957fa8"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="7c6457b203d88e11659d349e342a72e0fbc9b29ddc38326f4dfacc532132ff42"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -7225,7 +7225,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M07.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M07.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M06-L05"><small>Предыдущий раздел</small>← M06-L05. Отказы и откат</a><a href="#M07-L01"><small>Следующий раздел</small>M07-L01. Линейный слой и нелинейность →</a></nav></article><article class="material" id="M07-L01" data-title="M07-L01. Линейный слой и нелинейность" data-short-title="Линейный слой и нелинейность" data-kind="ready" data-module="M07"><header class="material-head"><div class="eyebrow"><span class="material-id">M07-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Линейный слой и нелинейность</h1><p class="outcome"><strong>После урока:</strong> Объяснить, что меняется при добавлении нелинейной активации.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M02-L03, M03-L04, M05-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 110 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M07-L01--объяснение">Объяснение</a></li><li><a href="#M07-L01--аналогия-курсы-валют-и-тарифы-с-порогами">Аналогия: курсы валют и тарифы с порогами</a></li><li><a href="#M07-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M07-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M07-L01--самостоятельная-задача-a-m07-l01-a">Самостоятельная задача A — M07-L01-A</a></li><li><a href="#M07-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M07-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M07-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M07-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+"></iframe><p><a href="course/visuals/M07.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M07.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M06-L05"><small>Предыдущий раздел</small>← M06-L05. Отказы и откат</a><a href="#M07-L01"><small>Следующий раздел</small>M07-L01. Линейный слой и нелинейность →</a></nav></article><article class="material" id="M07-L01" data-title="M07-L01. Линейный слой и нелинейность" data-short-title="Линейный слой и нелинейность" data-kind="ready" data-module="M07"><header class="material-head"><div class="eyebrow"><span class="material-id">M07-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Линейный слой и нелинейность</h1><p class="outcome"><strong>После урока:</strong> Объяснить, что меняется при добавлении нелинейной активации.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M02-L03, M03-L04, M05-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 110 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M07-L01--объяснение">Объяснение</a></li><li><a href="#M07-L01--аналогия-курсы-валют-и-тарифы-с-порогами">Аналогия: курсы валют и тарифы с порогами</a></li><li><a href="#M07-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M07-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M07-L01--самостоятельная-задача-a-m07-l01-a">Самостоятельная задача A — M07-L01-A</a></li><li><a href="#M07-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M07-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M07-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M07-L01--карточка-урока">Карточка урока</a></li><li><a href="#M07-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M07-L01--объяснение">Объяснение</h2>
 <p>Нейронная сеть — параметризованная композиция преобразований. «Нейрон» здесь означает вычислительный элемент, а не точную модель клетки мозга. В полносвязном слое каждый выход складывает входные признаки с собственными весами и смещением. Для одного объекта x слой вычисляет z = Wx+b. Если векторы объектов записаны строками матрицы X, удобная запись становится Z = XWᵀ+b. Это та же операция при другом соглашении о расположении векторов.</p>
@@ -7415,13 +7415,40 @@ assert torch.relu(z).tolist() == [[0., 0.]]
 <p>Вариант <strong>M07-L01-B</strong>. У сети Linear(4,5) → ReLU → Linear(5,3) оба слоя имеют bias. Вход X — матрица из двух строк [1,1,1,1]. Все веса равны 1, все bias равны 0. Найди число обучаемых параметров, формы промежуточных тензоров и численный выход. Отдельно скажи, изменится ли число параметров при batch=8.</p>
 <p>Отложенный вариант <strong>M07-L01-C</strong> (через 7–10 дней). Два скалярных слоя без активации заданы h=2x+1 и y=3h−4. Вычисли y для x=[−1,0,1], сверни цепочку в один слой и объясни, может ли произвольная глубина таких слоёв с одним линейным решающим правилом представить XOR на (0,0),(0,1),(1,0),(1,1).</p>
 <p>Сначала сохрани свою попытку и полученную помощь; затем открой <a href="#M07-SOLUTIONS--m07-l01-b-и-c">ключи B/C</a>. После разбора B выполняй C без открытого решения. Статус «подтверждено позже» относится только к фактически выполненной отложенной проверке; до неё не отмечай освоение заранее.</p>
-</section><h2 id="M07-L01--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M07-L01--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Linear(a, b): Z = XWᵀ + b, weight формы [b, a], параметров a·b + b; ReLU(z) = max(0, z); два линейных слоя без активации сворачиваются в один: W₂W₁x + (W₂b₁ + b₂)</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Logits — ненормированные оценки классов; softmax превращает их в положительные доли с суммой 1; CrossEntropyLoss ожидает logits и целочисленные номера классов</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Чтобы оценить форму и размер сети до запуска. Пример: сеть 5→3→1 с bias — 5·3 + 3 = 18 и 3·1 + 1 = 4, всего 22 параметра, 88 байт в float32</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Ставить softmax перед CrossEntropyLoss или считать logits вероятностями</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M07-L01--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://docs.pytorch.org/tutorials/beginner/basics/intro.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch: основы</a></li>
 <li><a href="https://docs.pytorch.org/tutorials/beginner/basics/autogradqs_tutorial.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch: autograd</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M07">Модуль и домашняя работа</a> · <a href="#M07-SOLUTIONS--m07-l01-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M07-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M07"><small>Предыдущий раздел</small>← M07 Нейросети и PyTorch</a><a href="#M07-L02"><small>Следующий раздел</small>M07-L02. Autograd и обратный проход →</a></nav></article><article class="material" id="M07-L02" data-title="M07-L02. Autograd и обратный проход" data-short-title="Autograd и обратный проход" data-kind="ready" data-module="M07"><header class="material-head"><div class="eyebrow"><span class="material-id">M07-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Autograd и обратный проход</h1><p class="outcome"><strong>После урока:</strong> Объяснить накопление градиентов и момент их обнуления.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M07-L01. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 110 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M07-L02--объяснение">Объяснение</a></li><li><a href="#M07-L02--аналогия-распределённая-трассировка-и-счётчики-метрик">Аналогия: распределённая трассировка и счётчики метрик</a></li><li><a href="#M07-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M07-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M07-L02--самостоятельная-задача-a-m07-l02-a">Самостоятельная задача A — M07-L02-A</a></li><li><a href="#M07-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M07-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M07-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M07-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M07">Модуль и домашняя работа</a> · <a href="#M07-SOLUTIONS--m07-l01-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M07-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M07"><small>Предыдущий раздел</small>← M07 Нейросети и PyTorch</a><a href="#M07-L02"><small>Следующий раздел</small>M07-L02. Autograd и обратный проход →</a></nav></article><article class="material" id="M07-L02" data-title="M07-L02. Autograd и обратный проход" data-short-title="Autograd и обратный проход" data-kind="ready" data-module="M07"><header class="material-head"><div class="eyebrow"><span class="material-id">M07-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Autograd и обратный проход</h1><p class="outcome"><strong>После урока:</strong> Объяснить накопление градиентов и момент их обнуления.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M07-L01. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 110 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M07-L02--объяснение">Объяснение</a></li><li><a href="#M07-L02--аналогия-распределённая-трассировка-и-счётчики-метрик">Аналогия: распределённая трассировка и счётчики метрик</a></li><li><a href="#M07-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M07-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M07-L02--самостоятельная-задача-a-m07-l02-a">Самостоятельная задача A — M07-L02-A</a></li><li><a href="#M07-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M07-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M07-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M07-L02--карточка-урока">Карточка урока</a></li><li><a href="#M07-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M07-L02--объяснение">Объяснение</h2>
 <p>Обратное распространение ошибки вычисляет производные функции потерь по параметрам композиции. Autograd автоматизирует применение цепного правила к операциям, выполненным над тензорами. Он не выбирает хорошую цель, не очищает данные и не гарантирует обучение: если программа вычисляет неверный loss, производная будет корректной именно для этого неверного выражения. Поэтому ручной маленький пример полезен даже при работе с библиотекой.</p>
@@ -7504,13 +7531,40 @@ assert b.grad.item() == -2
 <p>Вариант <strong>M07-L02-B</strong>. Для w=1, b=0, x=[1,3], y=[2,2] вычисли MSE со средним по двум объектам и градиенты по w и b. Затем замени mean на sum и пересчитай. Объясни, почему при том же learning rate это другой шаг.</p>
 <p>Отложенный вариант <strong>M07-L02-C</strong>. В коде w — скаляр 2 с requires_grad=True; z=(3*w).detach().requires_grad_(True); loss=(z−1)**2; loss.backward(). Укажи z.grad и w.grad. Удали ровно разрыв графа и назови новый градиент w. Почему наличие градиента у z ещё не доказывает обучение w?</p>
 <p>Сначала сохрани свою попытку и полученную помощь; затем открой <a href="#M07-SOLUTIONS--m07-l02-b-и-c">ключи B/C</a>. После разбора B выполняй C без открытого решения. Статус «подтверждено позже» относится только к фактически выполненной отложенной проверке; до неё не отмечай освоение заранее.</p>
-</section><h2 id="M07-L02--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M07-L02--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Для ŷ = wx + b и L = (ŷ − y)²: ∂L/∂w = 2ex, ∂L/∂b = 2e, где e = ŷ − y; шаг w ← w − η·∂L/∂w; backward() добавляет производные в .grad</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>requires_grad включает запись графа; zero_grad очищает накопленное; detach отделяет тензор от графа; item() извлекает число для журнала; no_grad отключает градиенты, eval() меняет поведение слоёв</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Чтобы проверить autograd вручную. Пример: x = 1, y = 4, w = 2, b = 1 — e = −1, оба градиента −2; при η = 0.1 получаем w = 2.2, b = 1.2</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Не обнулить градиенты перед независимым шагом или вызвать detach на пути, по которому нужен градиент</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M07-L02--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://docs.pytorch.org/tutorials/beginner/basics/intro.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch: основы</a></li>
 <li><a href="https://docs.pytorch.org/tutorials/beginner/basics/autogradqs_tutorial.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch: autograd</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M07">Модуль и домашняя работа</a> · <a href="#M07-SOLUTIONS--m07-l02-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M07-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M07-L01"><small>Предыдущий раздел</small>← M07-L01. Линейный слой и нелинейность</a><a href="#M07-L03"><small>Следующий раздел</small>M07-L03. Цикл обучения →</a></nav></article><article class="material" id="M07-L03" data-title="M07-L03. Цикл обучения" data-short-title="Цикл обучения" data-kind="ready" data-module="M07"><header class="material-head"><div class="eyebrow"><span class="material-id">M07-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Цикл обучения</h1><p class="outcome"><strong>После урока:</strong> Исправить цикл с пропущенным обнулением или неправильным режимом работы.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M07-L02. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 130 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M07-L03--объяснение">Объяснение</a></li><li><a href="#M07-L03--аналогия-воркер-разбирающий-очередь-пачками">Аналогия: воркер, разбирающий очередь пачками</a></li><li><a href="#M07-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M07-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M07-L03--самостоятельная-задача-a-m07-l03-a">Самостоятельная задача A — M07-L03-A</a></li><li><a href="#M07-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M07-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M07-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M07-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M07">Модуль и домашняя работа</a> · <a href="#M07-SOLUTIONS--m07-l02-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M07-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M07-L01"><small>Предыдущий раздел</small>← M07-L01. Линейный слой и нелинейность</a><a href="#M07-L03"><small>Следующий раздел</small>M07-L03. Цикл обучения →</a></nav></article><article class="material" id="M07-L03" data-title="M07-L03. Цикл обучения" data-short-title="Цикл обучения" data-kind="ready" data-module="M07"><header class="material-head"><div class="eyebrow"><span class="material-id">M07-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Цикл обучения</h1><p class="outcome"><strong>После урока:</strong> Исправить цикл с пропущенным обнулением или неправильным режимом работы.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M07-L02. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 130 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M07-L03--объяснение">Объяснение</a></li><li><a href="#M07-L03--аналогия-воркер-разбирающий-очередь-пачками">Аналогия: воркер, разбирающий очередь пачками</a></li><li><a href="#M07-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M07-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M07-L03--самостоятельная-задача-a-m07-l03-a">Самостоятельная задача A — M07-L03-A</a></li><li><a href="#M07-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M07-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M07-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M07-L03--карточка-урока">Карточка урока</a></li><li><a href="#M07-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M07-L03--объяснение">Объяснение</h2>
 <p>Цикл обучения соединяет данные, модель, функцию потерь и оптимизатор. У каждого компонента своя роль. Модель превращает вход в предсказание; loss измеряет ошибку относительно цели; autograd вычисляет производные; optimizer использует их для изменения параметров. Если разделять эти роли, легче локализовать сбой, чем воспринимать fit как одну магическую операцию.</p>
@@ -7619,13 +7673,40 @@ print(f'validation_after_step={val_loss:.6f}')
 <p>Вариант <strong>M07-L03-B</strong>. Средние loss четырёх батчей равны [1,1,1,4], размеры [3,3,3,1]. Найди loss по всем объектам и результат ошибочного среднего четырёх средних. Объясни, почему последний батч нельзя наделять весом полного.</p>
 <p>Отложенный вариант <strong>M07-L03-C</strong>. У линейной модели w=1 без bias SGD имеет lr=0,1. Первый батч x=1,y=0, второй x=2,y=0; loss=(wx−y)². Выполни два шага с zero_grad перед каждым. Затем повтори, если zero_grad был только перед первым шагом. Запиши w после обоих шагов и источник расхождения.</p>
 <p>Сначала сохрани свою попытку и полученную помощь; затем открой <a href="#M07-SOLUTIONS--m07-l03-b-и-c">ключи B/C</a>. После разбора B выполняй C без открытого решения. Статус «подтверждено позже» относится только к фактически выполненной отложенной проверке; до неё не отмечай освоение заранее.</p>
-</section><h2 id="M07-L03--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M07-L03--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Шаг: zero_grad, forward, loss, backward, step; loss эпохи = Σ(loss_batch·n_batch)/Σn_batch; validation — в eval() и без градиентов</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Батч — группа примеров для одного шага, эпоха — проход по train; лучший checkpoint — копия state_dict эпохи с лучшей validation; test оценивают один раз после выбора</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Для любого цикла обучения. Пример: батчи размеров 5 и 1 со средними 0.2 и 0.8 — loss эпохи (1.0 + 0.8)/6 = 0.3, а не 0.5</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Усреднять средние батчей одинаковым весом или выбирать эпоху по test</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M07-L03--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://docs.pytorch.org/tutorials/beginner/basics/intro.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch: основы</a></li>
 <li><a href="https://docs.pytorch.org/tutorials/beginner/basics/autogradqs_tutorial.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch: autograd</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M07">Модуль и домашняя работа</a> · <a href="#M07-SOLUTIONS--m07-l03-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M07-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M07-L02"><small>Предыдущий раздел</small>← M07-L02. Autograd и обратный проход</a><a href="#M07-L04"><small>Следующий раздел</small>M07-L04. Проверка и диагностика →</a></nav></article><article class="material" id="M07-L04" data-title="M07-L04. Проверка и диагностика" data-short-title="Проверка и диагностика" data-kind="ready" data-module="M07"><header class="material-head"><div class="eyebrow"><span class="material-id">M07-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Проверка и диагностика</h1><p class="outcome"><strong>После урока:</strong> Предложить проверку причины сбоя до случайной замены архитектуры.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M07-L03. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 110 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M07-L04--объяснение">Объяснение</a></li><li><a href="#M07-L04--аналогия-отладка-инцидента-в-продакшене">Аналогия: отладка инцидента в продакшене</a></li><li><a href="#M07-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M07-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M07-L04--самостоятельная-задача-a-m07-l04-a">Самостоятельная задача A — M07-L04-A</a></li><li><a href="#M07-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M07-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M07-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M07-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M07">Модуль и домашняя работа</a> · <a href="#M07-SOLUTIONS--m07-l03-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M07-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M07-L02"><small>Предыдущий раздел</small>← M07-L02. Autograd и обратный проход</a><a href="#M07-L04"><small>Следующий раздел</small>M07-L04. Проверка и диагностика →</a></nav></article><article class="material" id="M07-L04" data-title="M07-L04. Проверка и диагностика" data-short-title="Проверка и диагностика" data-kind="ready" data-module="M07"><header class="material-head"><div class="eyebrow"><span class="material-id">M07-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Проверка и диагностика</h1><p class="outcome"><strong>После урока:</strong> Предложить проверку причины сбоя до случайной замены архитектуры.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M07-L03. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 110 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M07-L04--объяснение">Объяснение</a></li><li><a href="#M07-L04--аналогия-отладка-инцидента-в-продакшене">Аналогия: отладка инцидента в продакшене</a></li><li><a href="#M07-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M07-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M07-L04--самостоятельная-задача-a-m07-l04-a">Самостоятельная задача A — M07-L04-A</a></li><li><a href="#M07-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M07-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M07-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M07-L04--карточка-урока">Карточка урока</a></li><li><a href="#M07-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M07-L04--объяснение">Объяснение</h2>
 <p>Диагностика обучения начинается с наблюдаемого симптома. «Нейросеть не работает» слишком расплывчато: loss не меняется, становится NaN, падает только на train или даёт разные ответы после загрузки — это разные проблемы. Сначала зафиксируй минимальный воспроизводимый пример и ожидаемое свойство. Изменение сразу пяти параметров может случайно помочь, но не объяснит причину.</p>
@@ -7703,13 +7784,40 @@ check_finite('input', torch.tensor([1.,2.]))
 <p>Вариант <strong>M07-L04-B</strong>. Журнал эпох 1…5: train=[0,80;0,60;0,42;0,30;0,23], validation=[0,82;0,62;0,55;0,59;0,67]. Все данные конечны, число объектов неизменно. Выбери checkpoint и объясни наблюдаемую проблему. Test ещё не вычисляли: разрешено ли выбирать эпоху по нему?</p>
 <p>Отложенный вариант <strong>M07-L04-C</strong>. В новом запуске train loss=0,41, validation loss=NaN. Проверки дают: параметры конечны; все train-входы конечны; в validation-входе с индексом 17 есть NaN; labels в диапазоне; NaN воспроизводится и в eval, и в train. Назови подтверждённый дефект, две проверки после исправления и предел вывода о причине. Не подменяй эти данные общим советом «уменьши learning rate».</p>
 <p>Сначала сохрани свою попытку и полученную помощь; затем открой <a href="#M07-SOLUTIONS--m07-l04-b-и-c">ключи B/C</a>. После разбора B выполняй C без открытого решения. Статус «подтверждено позже» относится только к фактически выполненной отложенной проверке; до неё не отмечай освоение заранее.</p>
-</section><h2 id="M07-L04--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M07-L04--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Сначала симптом и минимальный воспроизводимый пример; подгонка 8–16 объектов проверяет вычислительный путь; NaN ищут по этапам — вход, logits, loss, градиенты — до первой нечисловой точки</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Недообучение — высокая ошибка и на train, и на validation; переобучение — train улучшается, validation ухудшается; clipping ограничивает норму градиента, но не устраняет причину</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Когда обучение ведёт себя странно. Пример: validation [0.9, 0.7, 0.6, 0.58, 0.63, 0.7] при падающем train — берём checkpoint эпохи 4</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Менять сразу несколько настроек или снижать learning rate, когда NaN уже есть во входе</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M07-L04--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://docs.pytorch.org/tutorials/beginner/basics/intro.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch: основы</a></li>
 <li><a href="https://docs.pytorch.org/tutorials/beginner/basics/autogradqs_tutorial.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch: autograd</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M07">Модуль и домашняя работа</a> · <a href="#M07-SOLUTIONS--m07-l04-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M07-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M07-L03"><small>Предыдущий раздел</small>← M07-L03. Цикл обучения</a><a href="#M07-L05"><small>Следующий раздел</small>M07-L05. Сохранение и воспроизведение →</a></nav></article><article class="material" id="M07-L05" data-title="M07-L05. Сохранение и воспроизведение" data-short-title="Сохранение и воспроизведение" data-kind="ready" data-module="M07"><header class="material-head"><div class="eyebrow"><span class="material-id">M07-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сохранение и воспроизведение</h1><p class="outcome"><strong>После урока:</strong> Доказать согласованность модели и preprocessing на контрольных входах.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M07-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 130 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M07-L05--объяснение">Объяснение</a></li><li><a href="#M07-L05--аналогия-бэкап-и-restore-drill-базы-данных">Аналогия: бэкап и restore drill базы данных</a></li><li><a href="#M07-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M07-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M07-L05--самостоятельная-задача-a-m07-l05-a">Самостоятельная задача A — M07-L05-A</a></li><li><a href="#M07-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M07-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M07-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M07-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M07">Модуль и домашняя работа</a> · <a href="#M07-SOLUTIONS--m07-l04-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M07-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M07-L03"><small>Предыдущий раздел</small>← M07-L03. Цикл обучения</a><a href="#M07-L05"><small>Следующий раздел</small>M07-L05. Сохранение и воспроизведение →</a></nav></article><article class="material" id="M07-L05" data-title="M07-L05. Сохранение и воспроизведение" data-short-title="Сохранение и воспроизведение" data-kind="ready" data-module="M07"><header class="material-head"><div class="eyebrow"><span class="material-id">M07-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сохранение и воспроизведение</h1><p class="outcome"><strong>После урока:</strong> Доказать согласованность модели и preprocessing на контрольных входах.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M07-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 130 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M07-L05--объяснение">Объяснение</a></li><li><a href="#M07-L05--аналогия-бэкап-и-restore-drill-базы-данных">Аналогия: бэкап и restore drill базы данных</a></li><li><a href="#M07-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M07-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M07-L05--самостоятельная-задача-a-m07-l05-a">Самостоятельная задача A — M07-L05-A</a></li><li><a href="#M07-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M07-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M07-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M07-L05--карточка-урока">Карточка урока</a></li><li><a href="#M07-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M07-L05--объяснение">Объяснение</h2>
 <p>Обученная сеть существует не только как объект Python в памяти. Чтобы использовать её завтра или в другом процессе, нужно сохранить параметры и условия их интерпретации. В PyTorch state_dict сопоставляет имена параметров и буферов тензорам. Он не хранит автоматически произвольную логику подготовки данных или все решения эксперимента. Архитектуру и preprocessing нужно восстановить согласованно.</p>
@@ -7831,7 +7939,34 @@ with TemporaryDirectory(prefix='ml-course-checkpoint-') as directory:
 <p>Вариант <strong>M07-L05-B</strong>. В сохранённом выпуске W=[[1,2],[−1,1]], bias=[0,5;−0,5], mean=[10,20], scale=[2,5]. Для raw=[14,10] вычисли преобразованный вход и logits. Новый процесс вернул [34,5;−4,5]. Локализуй ошибку и вычисли max_abs_error. Считай допуск 1e−6.</p>
 <p>Отложенный вариант <strong>M07-L05-C</strong>. Сравни два комплекта после шага 100 Adam: A содержит веса, архитектуру, scaler и контрольные logits; B дополнительно содержит optimizer.state_dict, scheduler, номер шага, состояния RNG и позицию в порядке данных. При одинаковом окружении предсказания A воспроизводятся, но шаг 101 отличается. Объясни, почему это совместимо, и что проверить до заявления о точном возобновлении из B.</p>
 <p>Сначала сохрани свою попытку и полученную помощь; затем открой <a href="#M07-SOLUTIONS--m07-l05-b-и-c">ключи B/C</a>. После разбора B выполняй C без открытого решения. Статус «подтверждено позже» относится только к фактически выполненной отложенной проверке; до неё не отмечай освоение заранее.</p>
-</section><h2 id="M07-L05--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M07-L05--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Выпуск инференса = state_dict, config архитектуры, preprocessing и контрольные входы с ожидаемыми logits; загрузка — создать архитектуру, load_state_dict со strict, eval(), сравнить logits с допуском в новом процессе</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>weights_only=True читает только тензоры; map_location='cpu' задаёт устройство; для продолжения обучения дополнительно нужны состояние оптимизатора, scheduler, номер шага и состояния RNG</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Перед использованием сохранённой модели. Пример: mean = [4, 6], scale = [2, 3], W — единичная матрица, b = 0: raw [6, 12] даёт вход [1, 2] и logits [1, 2]; если scale потерян и стал [1, 1], logits [2, 6], max_abs_error = 4</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Считать model.pt полным выпуском или проверять восстановление в том же ноутбуке со старым scaler</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M07-L05--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://docs.pytorch.org/tutorials/beginner/basics/intro.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch: основы</a></li>
 <li><a href="https://docs.pytorch.org/tutorials/beginner/basics/autogradqs_tutorial.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch: autograd</a></li>
@@ -16984,7 +17119,7 @@ assert not accept_result(3,2)
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 40 из 103 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 45 из 103 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -17272,6 +17407,42 @@ assert not accept_result(3,2)
 <li><strong>Смысл величин.</strong> Таймаут ограничивает ожидание, но не останавливает работу; shadow считает кандидата без показа, canary показывает его малой группе; fallback — заранее определённый честный ограниченный режим.</li>
 <li><strong>Когда применять.</strong> Перед активацией кандидата и при сбое. Пример: эталон контрольного входа 12.5, кандидат дал 12.5000003 при допуске 1e−6 — принят; кандидат с другим preprocessing дал 9.0 — остаётся stable.</li>
 <li><strong>Главная ошибка.</strong> Бесконечные повторы без ограничения или откат только весов с новыми статистиками preprocessing.</li>
+</ul>
+<h2 id="CHEATSHEET--m07-нейросети-и-pytorch">M07. Нейросети и PyTorch</h2>
+<h3 id="CHEATSHEET--m07-l01-линейный-слой-и-нелинейность"><a href="#M07-L01">M07-L01. Линейный слой и нелинейность</a></h3>
+<ul>
+<li><strong>Правило.</strong> Linear(a, b): Z = XWᵀ + b, weight формы [b, a], параметров a·b + b; ReLU(z) = max(0, z); два линейных слоя без активации сворачиваются в один: W₂W₁x + (W₂b₁ + b₂).</li>
+<li><strong>Смысл величин.</strong> Logits — ненормированные оценки классов; softmax превращает их в положительные доли с суммой 1; CrossEntropyLoss ожидает logits и целочисленные номера классов.</li>
+<li><strong>Когда применять.</strong> Чтобы оценить форму и размер сети до запуска. Пример: сеть 5→3→1 с bias — 5·3 + 3 = 18 и 3·1 + 1 = 4, всего 22 параметра, 88 байт в float32.</li>
+<li><strong>Главная ошибка.</strong> Ставить softmax перед CrossEntropyLoss или считать logits вероятностями.</li>
+</ul>
+<h3 id="CHEATSHEET--m07-l02-autograd-и-обратный-проход"><a href="#M07-L02">M07-L02. Autograd и обратный проход</a></h3>
+<ul>
+<li><strong>Правило.</strong> Для ŷ = wx + b и L = (ŷ − y)²: ∂L/∂w = 2ex, ∂L/∂b = 2e, где e = ŷ − y; шаг w ← w − η·∂L/∂w; backward() добавляет производные в .grad.</li>
+<li><strong>Смысл величин.</strong> requires_grad включает запись графа; zero_grad очищает накопленное; detach отделяет тензор от графа; item() извлекает число для журнала; no_grad отключает градиенты, eval() меняет поведение слоёв.</li>
+<li><strong>Когда применять.</strong> Чтобы проверить autograd вручную. Пример: x = 1, y = 4, w = 2, b = 1 — e = −1, оба градиента −2; при η = 0.1 получаем w = 2.2, b = 1.2.</li>
+<li><strong>Главная ошибка.</strong> Не обнулить градиенты перед независимым шагом или вызвать detach на пути, по которому нужен градиент.</li>
+</ul>
+<h3 id="CHEATSHEET--m07-l03-цикл-обучения"><a href="#M07-L03">M07-L03. Цикл обучения</a></h3>
+<ul>
+<li><strong>Правило.</strong> Шаг: zero_grad, forward, loss, backward, step; loss эпохи = Σ(loss_batch·n_batch)/Σn_batch; validation — в eval() и без градиентов.</li>
+<li><strong>Смысл величин.</strong> Батч — группа примеров для одного шага, эпоха — проход по train; лучший checkpoint — копия state_dict эпохи с лучшей validation; test оценивают один раз после выбора.</li>
+<li><strong>Когда применять.</strong> Для любого цикла обучения. Пример: батчи размеров 5 и 1 со средними 0.2 и 0.8 — loss эпохи (1.0 + 0.8)/6 = 0.3, а не 0.5.</li>
+<li><strong>Главная ошибка.</strong> Усреднять средние батчей одинаковым весом или выбирать эпоху по test.</li>
+</ul>
+<h3 id="CHEATSHEET--m07-l04-проверка-и-диагностика"><a href="#M07-L04">M07-L04. Проверка и диагностика</a></h3>
+<ul>
+<li><strong>Правило.</strong> Сначала симптом и минимальный воспроизводимый пример; подгонка 8–16 объектов проверяет вычислительный путь; NaN ищут по этапам — вход, logits, loss, градиенты — до первой нечисловой точки.</li>
+<li><strong>Смысл величин.</strong> Недообучение — высокая ошибка и на train, и на validation; переобучение — train улучшается, validation ухудшается; clipping ограничивает норму градиента, но не устраняет причину.</li>
+<li><strong>Когда применять.</strong> Когда обучение ведёт себя странно. Пример: validation [0.9, 0.7, 0.6, 0.58, 0.63, 0.7] при падающем train — берём checkpoint эпохи 4.</li>
+<li><strong>Главная ошибка.</strong> Менять сразу несколько настроек или снижать learning rate, когда NaN уже есть во входе.</li>
+</ul>
+<h3 id="CHEATSHEET--m07-l05-сохранение-и-воспроизведение"><a href="#M07-L05">M07-L05. Сохранение и воспроизведение</a></h3>
+<ul>
+<li><strong>Правило.</strong> Выпуск инференса = state_dict, config архитектуры, preprocessing и контрольные входы с ожидаемыми logits; загрузка — создать архитектуру, load_state_dict со strict, eval(), сравнить logits с допуском в новом процессе.</li>
+<li><strong>Смысл величин.</strong> weights_only=True читает только тензоры; map_location='cpu' задаёт устройство; для продолжения обучения дополнительно нужны состояние оптимизатора, scheduler, номер шага и состояния RNG.</li>
+<li><strong>Когда применять.</strong> Перед использованием сохранённой модели. Пример: mean = [4, 6], scale = [2, 3], W — единичная матрица, b = 0: raw [6, 12] даёт вход [1, 2] и logits [1, 2]; если scale потерян и стал [1, 1], logits [2, 6], max_abs_error = 4.</li>
+<li><strong>Главная ошибка.</strong> Считать model.pt полным выпуском или проверять восстановление в том же ноутбуке со старым scaler.</li>
 </ul>
 </div></div><footer class="source-note">Исходный текст: <code>course/cheatsheet.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#FAST-TRACK-LLM"><small>Предыдущий раздел</small>← Быстрый вход в M09–M11 для тех, кто уже делал RAG</a><a href="#REVIEW-SCHEDULE"><small>Следующий раздел</small>Расписание повторения →</a></nav></article><article class="material" id="REVIEW-SCHEDULE" data-title="Расписание повторения" data-short-title="Расписание повторения" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">REVIEW-SCHEDULE</span><span class="badge reference">Материал курса</span></div><h1>Расписание повторения</h1></header><div class="article-layout"><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Правило дополняет <a href="#MENTOR--отложенная-проверка">отложенную проверку</a> из учебного цикла: даты повторений считаются по журналу, а сами повторения смешивают задачи разных модулей.</p>
 <h2 id="REVIEW-SCHEDULE--правило-1-3-7-21">Правило 1–3–7–21</h2>
