@@ -8,3 +8,8 @@ quality/rag-hw/** -text whitespace=cr-at-eol
 quality/verification-1.1.0/** -text whitespace=cr-at-eol
 quality/measurements-1.1.0/** -text whitespace=cr-at-eol
 quality/design-v2/** -text whitespace=cr-at-eol
+# Generated reader (rebuilt by tools/build_reader.py) and binary evidence stay in
+# git so the textbook opens without a build, but text diffs would only add noise.
+START_HERE.html -diff
+quality/**/*.png -diff
+*.zip binary
