@@ -53,12 +53,19 @@ def reader_fingerprint(root):
     return reader.source_fingerprint(root)
 
 
+def tool_freshness(root):
+    spec = importlib.util.spec_from_file_location("course_tool_freshness", Path(__file__).with_name("check_freshness.py"))
+    freshness = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(freshness)
+    return freshness.check(root)
+
+
 def validate(root: Path = ROOT, require_local: bool = False) -> dict:
     root = root.resolve()
-    errors = []
+    errors, warnings = [], []
     curriculum = read_json(root / "curriculum.json", errors)
     if curriculum is None:
-        return {"modules": 0, "lessons": 0, "errors": errors, "learner_mastery": "not_assessed"}
+        return {"modules": 0, "lessons": 0, "errors": errors, "warnings": warnings, "learner_mastery": "not_assessed"}
     modules = curriculum["modules"]
     ids = [m["id"] for m in modules]
     if ids != MODULE_IDS:
@@ -127,12 +134,12 @@ def validate(root: Path = ROOT, require_local: bool = False) -> dict:
                 for c in nb["cells"] if c["cell_type"] == "markdown")
 
     if require_local:
-        _validate_local(root, curriculum, documents, errors)
-    return {"modules": len(modules), "lessons": len(lesson_ids), "errors": errors,
+        _validate_local(root, curriculum, documents, errors, warnings)
+    return {"modules": len(modules), "lessons": len(lesson_ids), "errors": errors, "warnings": warnings,
             "learner_mastery": "not_assessed"}
 
 
-def _validate_local(root, curriculum, documents, errors):
+def _validate_local(root, curriculum, documents, errors, warnings):
     import mistune
 
     registry = read_json(root / "metadata/material-registry.json", errors)
@@ -211,6 +218,10 @@ def _validate_local(root, curriculum, documents, errors):
                 local_file(relative, mid)
         if not manifest.get("full_materials_ready"):
             errors.append("Full local route is registered but its mandatory packages are incomplete")
+        # A missing tool-version block is an error; an old verification date only warns.
+        freshness = tool_freshness(root)
+        errors.extend(freshness["errors"])
+        warnings.extend(freshness["warnings"])
     for name in ("README.md", "AGENTS.md"):
         path = local_file(name, name)
         if path:
