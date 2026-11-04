@@ -27,7 +27,7 @@ lessons:
 # Phase 2 tasks are applied module by module (T20 analogy, T22 card, T23 sources). For the modules
 # listed here every lesson must already have the element; add a module once it is complete.
 rollout:
-  analogy: [M00, M01]
+  analogy: [M00, M01, M02]
   card: [M00, M01]
   sources: [M00, M01]
   exercises: [M02]  # T26: at least three auto-checked contracts in the module
