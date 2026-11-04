@@ -12,3 +12,6 @@ pytest>=8.3,<9
 mistune>=3.4,<4
 # Already pinned in the lock as a Jupyter dependency; validate_course.py reads course/route.yaml.
 PyYAML>=6,<7
+# Property-based checks of the extra exercises (T26) and formatting of checker code.
+hypothesis>=6.170,<7
+ruff>=0.17,<0.18

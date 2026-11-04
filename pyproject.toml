@@ -14,3 +14,8 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+
+[tool.ruff]
+# Checker code is formatted with ruff format (plan section 3.4); 120 keeps the compact course style readable.
+line-length = 120
+target-version = "py311"
