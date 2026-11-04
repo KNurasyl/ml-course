@@ -120,3 +120,10 @@ def test_current_course_keeps_everything_from_release_baseline():
     result = guard.compare(baseline, guard.snapshot(SOURCE, include_tests=False))
     assert result["losses"] == [], result["losses"]
     assert result["skipped"] == ["tests: not collected in the later snapshot"]
+
+
+def test_only_task_headings_count_as_task_a():
+    metrics = guard.markdown_metrics("## Самостоятельная задача A — M00-L01-A01\n\nТекст.\n\n"
+                                     "## Критерии самостоятельной проверки\n\nТекст.\n\n"
+                                     "## Основная самостоятельная работа M16-HW01\n\nТекст.\n")
+    assert metrics["tasks_a"] == 2

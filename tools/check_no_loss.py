@@ -30,7 +30,8 @@ IMAGE_SUFFIXES = {".png", ".svg", ".jpg", ".jpeg", ".gif", ".webp"}
 WORD = re.compile(r"\w+")
 HEADING = re.compile(r"(?m)^#{1,6} .*$")
 SECTION = re.compile(r"(?m)^#{2,6} ")
-TASK_A = re.compile(r"(?m)^#{2,6} .*[Сс]амостоятельн")
+# Only task headings: "Критерии самостоятельной проверки" is not a task.
+TASK_A = re.compile(r"(?m)^#{2,6} .*[Сс]амостоятельн\w* (?:задач|работ)")
 # B/C variants are written in several styles: "Вариант B", "**M07-L01-B**",
 # "**C — через неделю**", "Повтор B:", "Отложенная задача C", "C через", "… B: условие".
 TASK_BC = re.compile(

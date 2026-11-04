@@ -1,0 +1,26 @@
+# Documented deviations from the 1.2.0 lesson template (IMPROVEMENT_PLAN.md, section 3.3; task T13).
+# tools/lint_lessons.py accepts only what is listed here. Each entry says why the text cannot be
+# brought to the template by heading changes alone. Remove an entry once the lesson is fixed:
+# the linter reports stale exceptions.
+version: 1
+lessons:
+  M11-L06:
+    missing: [Подсказки по очереди]
+    reason: >-
+      Подсказки относятся к практике с compare_pairs и стоят абзацем внутри «Практики с поддержкой»,
+      перед самостоятельной задачей. Перенос абзаца изменил бы текст урока.
+  M12-L07:
+    missing: [Подсказки по очереди]
+    reason: >-
+      В уроке нет подсказок к самостоятельной задаче. Добавить их — правка содержания, а не заголовков.
+  M16-L06:
+    order_free: true
+    reason: >-
+      Варианты B/C записаны в одном абзаце с подсказками, а критерий завершения стоит после них.
+      Порядок нельзя восстановить без переноса текста.
+  M16-L08:
+    missing: [Практика с поддержкой]
+    order_free: true
+    reason: >-
+      Итоговый урок M16 построен как защита продукта: требование, работа, порядок проверки,
+      технический пример, защита. Отдельной практики с поддержкой нет, разобранный пример стоит после задачи.

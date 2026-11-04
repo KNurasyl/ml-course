@@ -63,6 +63,13 @@ def tool_freshness(root):
     return freshness.check(root)
 
 
+def lesson_template(root):
+    spec = importlib.util.spec_from_file_location("course_lesson_template", Path(__file__).with_name("lint_lessons.py"))
+    linter = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(linter)
+    return linter.lint(root)
+
+
 def validate(root: Path = ROOT, require_local: bool = False) -> dict:
     root = root.resolve()
     errors, warnings = [], []
@@ -273,6 +280,7 @@ def _validate_local(root, curriculum, documents, errors, warnings):
         errors.extend(freshness["errors"])
         warnings.extend(freshness["warnings"])
         _validate_route(root, curriculum, errors)
+        errors.extend(lesson_template(root)["errors"])
     for name in ("README.md", "AGENTS.md"):
         path = local_file(name, name)
         if path:
