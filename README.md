@@ -82,7 +82,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools\verify.ps1
 .\.venv\Scripts\python.exe tools\validate_course.py --require-local
 .\.venv\Scripts\python.exe -m pytest -q
 .\.venv\Scripts\python.exe tools\run_notebooks.py --kind all --html
+.\.venv\Scripts\python.exe tools\check_no_loss.py compare --before quality\snapshots\baseline-1.1.0.json
 ```
+
+Последняя команда сравнивает текущие материалы со снимком выпуска 1.1.0 и завершается ошибкой, если пропал урок, задача A/B/C, файл решения, лабораторной, упражнения или ноутбука, тест либо уменьшилось число слов основного текста какого-либо Markdown-файла курса и решений. Перед правкой можно сохранить свой снимок: `tools\check_no_loss.py snapshot --out quality\snapshots\before-Txx.json`.
 
 Исполненные копии сохраняются в artifacts/executed. Автоматическое выполнение примеров не проверяет незаполненные ответы ученика. Для каждого M00–M16 есть exercises/Mxx/starter.py, check.py и инструкция. Проверка получает путь к твоей реализации; отдельный полный эталон находится в solutions/exercises. Старые проверки mse/gradient/predict также сохранены.
 

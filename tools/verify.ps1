@@ -7,6 +7,8 @@ if ($LASTEXITCODE -ne 0) { throw 'Dependency check failed' }
 if ($LASTEXITCODE -ne 0) { throw 'Tests failed' }
 & $coursePython tools/validate_course.py --require-local
 if ($LASTEXITCODE -ne 0) { throw 'Course integrity check failed' }
+& $coursePython tools/check_no_loss.py compare --before quality/snapshots/baseline-1.1.0.json
+if ($LASTEXITCODE -ne 0) { throw 'Content was lost against the 1.1.0 baseline' }
 & $coursePython tools/run_labs.py
 if ($LASTEXITCODE -ne 0) { throw 'Module laboratories failed' }
 & $coursePython tools/run_extended_labs.py
