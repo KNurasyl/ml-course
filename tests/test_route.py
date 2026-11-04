@@ -2,6 +2,7 @@
 from __future__ import annotations
 import importlib.util
 import json
+import re
 from pathlib import Path
 
 import pytest
@@ -83,3 +84,19 @@ def test_check_after_independent_task_or_wrong_link_is_reported(small_route):
     errors = route_errors(small_route)
     assert "First-step check must precede the independent task in course/lessons/M01-L01.md" in errors
     assert any(e.startswith("First-step check in course/pilot/P02.md must link to its key") for e in errors)
+
+
+def test_checkpoint_table_covers_every_pilot_to_module_link():
+    curriculum = json.loads((SOURCE / "curriculum.json").read_text(encoding="utf-8"))
+    text = (SOURCE / "course/checkpoints.md").read_text(encoding="utf-8")
+    section = text.split("### Что сокращать после CP0")[1].split("\n## ")[0]
+    rows = {}
+    for line in section.splitlines():
+        cells = [cell.strip() for cell in line.strip("|").split("|")]
+        if line.startswith("| P") and len(cells) == 5:
+            rows[cells[0]] = (re.findall(r"\[(M\d{2}-L\d{2})\]\(lessons/\1\.md\)", cells[1]), cells[3])
+    assert set(rows) == set(curriculum["pilot_lesson_map"])
+    for session, lessons in curriculum["pilot_lesson_map"].items():
+        linked, start = rows[session]
+        assert linked == lessons
+        assert all(f"{lesson}-D" in start for lesson in lessons)

@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="05e5402f6cfd4027c1ec73095d2b06eda1084186a853809801a156ab53e1d479"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="5a3f420bfba78e37e18ab538400221c179e95b6948c220d78f4f47c21971391a"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -13634,6 +13634,91 @@ assert not accept_result(3,2)
 <li>Выпуск содержит mean=10, scale=2, w=3, b=1. Покажи путь x=14 до ответа и что нужно откатить при смене preprocessing.</li>
 </ol>
 <p>Если пункт решён и объяснён, начинай соответствующий знакомый урок M00/M01/M03 с его <strong>новой</strong> самостоятельной задачи, а не с полного повторного чтения. Не пропускай M04 и остальные новые темы по сходству названия. При ошибке используй таблицу ниже.</p>
+<h3 id="CHECKPOINTS--что-сокращать-после-cp0-занятие-уроки-модулей">Что сокращать после CP0: занятие → уроки модулей</h3>
+<p>Связи взяты из <code>pilot_lesson_map</code> в curriculum.json. «Начать с» означает: реши проверку первого шага урока (раздел «Проверь себя сначала», <a href="#MENTOR--адаптивный-маршрут">правило</a>); если она верна и объяснена, сразу переходи к самостоятельной задаче. Варианты B/C и отложенная проверка не сокращаются ни в одной строке. В последнем столбце — то, чего в занятии не было или было лишь упомянуто: именно здесь проверка первого шага чаще всего показывает пробел, и тогда урок проходится полностью.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Занятие</th>
+  <th>Уроки</th>
+  <th>Пункт CP0</th>
+  <th>Начать с</th>
+  <th>Новое по сравнению с занятием</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>P01</td>
+  <td><a href="#M00-L01">M00-L01</a></td>
+  <td>1</td>
+  <td>M00-L01-D → задача M00-L01-A01</td>
+  <td>Ничего сверх обычного цикла: урок повторяет P01</td>
+</tr>
+<tr>
+  <td>P02</td>
+  <td><a href="#M00-L02">M00-L02</a>, <a href="#M00-L03">M00-L03</a></td>
+  <td>1 — только для M00-L02</td>
+  <td>M00-L02-D → M00-L02-A01; M00-L03-D → M00-L03-A01</td>
+  <td>M00-L02: различие архитектуры и параметров и явный артефакт параметров (JSON) в P02 не разбирались. MSE пункты CP0 не проверяют, поэтому проверка M00-L03-D обязательна</td>
+</tr>
+<tr>
+  <td>P03</td>
+  <td><a href="#M01-L02">M01-L02</a>, <a href="#M01-L03">M01-L03</a></td>
+  <td>2 — только для M01-L03</td>
+  <td>M01-L02-D → M01-L02-A01; M01-L03-D → M01-L03-A01</td>
+  <td>M01-L02: пропуски, дубликаты и единица наблюдения в P03 только упоминаются. M01-L03: в P03 группы разобраны на одном случае с репликами разговора, урок добавляет временное разбиение</td>
+</tr>
+<tr>
+  <td>P04</td>
+  <td><a href="#M01-L01">M01-L01</a>, <a href="#M02-L01">M02-L01</a>, <a href="#M02-L02">M02-L02</a></td>
+  <td>нет</td>
+  <td>M01-L01-D → M01-L01-A01; M02-L01-D → M02-L01-A01; M02-L02-D → M02-L02-A01</td>
+  <td>M02-L02: нормы, косинусное сходство и нулевой вектор в P04 не разбирались, CP0 их не проверяет</td>
+</tr>
+<tr>
+  <td>P05</td>
+  <td><a href="#M00-L05">M00-L05</a></td>
+  <td>4</td>
+  <td>M00-L05-D → M00-L05-A01</td>
+  <td>Ничего сверх обычного цикла</td>
+</tr>
+<tr>
+  <td>P06</td>
+  <td><a href="#M00-L04">M00-L04</a></td>
+  <td>1</td>
+  <td>M00-L04-D → M00-L04-A01</td>
+  <td>Ничего сверх обычного цикла</td>
+</tr>
+<tr>
+  <td>P07</td>
+  <td><a href="#M03-L01">M03-L01</a>, <a href="#M03-L02">M03-L02</a></td>
+  <td>3</td>
+  <td>M03-L01-D → M03-L01-A01; M03-L02-D → M03-L02-A01</td>
+  <td>M03-L02: цепное правило выводится явно и проверяется численно; в P07 частные производные показаны на одном примере</td>
+</tr>
+<tr>
+  <td>P08</td>
+  <td><a href="#M03-L03">M03-L03</a>, <a href="#M03-L04">M03-L04</a></td>
+  <td>3</td>
+  <td>M03-L03-D → M03-L03-A01; M03-L04-D → M03-L04-A01</td>
+  <td>M03-L04: условие сходимости по шагу выводится формулой; в P08 влияние шага показано на примере</td>
+</tr>
+<tr>
+  <td>P09</td>
+  <td><a href="#M01-L05">M01-L05</a>, <a href="#M05-L01">M05-L01</a></td>
+  <td>2 — только для M01-L05</td>
+  <td>M01-L05-D → M01-L05-A01; M05-L01-D → M05-L01-A01</td>
+  <td>M05-L01: классификация, матрица ошибок, precision и recall в P09 не разбирались — там регрессия</td>
+</tr>
+<tr>
+  <td>P10</td>
+  <td><a href="#M06-L01">M06-L01</a>, <a href="#M06-L02">M06-L02</a></td>
+  <td>4 — только для M06-L02</td>
+  <td>M06-L01-D → задача M06-L01-A; M06-L02-D → M06-L02-A</td>
+  <td>M06-L01: измеренные требования и предположения; M06-L02: manifest версий подготовки и модели — в P10 этого не было</td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="CHECKPOINTS--cp1-после-m05-поставить-честный-эксперимент">CP1. После M05: поставить честный эксперимент</h2>
 <p>В учебном CSV несколько строк одного пользователя, время события и признак <code>result_after_interview</code>. Цель — предсказывать исход для <strong>новых пользователей следующего месяца</strong>. Напиши допустимое разбиение, решение о будущем признаке, место fit preprocessing и роль validation/test. Затем выполни интеграционную работу M05. Укажи случай, на котором работающий Pipeline всё ещё оценивает не ту задачу.</p>
 <h2 id="CHECKPOINTS--cp2-после-m08-проследить-вычисление-модели">CP2. После M08: проследить вычисление модели</h2>
