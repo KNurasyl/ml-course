@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="1bfaee7bc797202f697ec127323986337b57948a81dd9fd49e227b8a0e466117"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="17fc0e63cb5d60a0c6b78ef06737411df8af99867a5b91a0cbc338b7cd4ac09e"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -5265,7 +5265,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M05.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L08"><small>Предыдущий раздел</small>← M04-L08. Сколько наблюдений нужно: планирование симуляцией</a><a href="#M05-L01"><small>Следующий раздел</small>M05-L01. Задача и исходное решение →</a></nav></article><article class="material" id="M05-L01" data-title="M05-L01. Задача и исходное решение" data-short-title="Задача и исходное решение" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Задача и исходное решение</h1><p class="outcome"><strong>После урока:</strong> Сформулировать задачу классификации, построить baseline и выбрать метрику по ошибкам.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M05-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M05-L01--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M05-L01--объяснение">Объяснение</a></li><li><a href="#M05-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M05-L01--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M05-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M05-L01--самостоятельная-задача-a-m05-l01-a01">Самостоятельная задача A — M05-L01-A01</a></li><li><a href="#M05-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M05-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M05-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M05-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+"></iframe><p><a href="course/visuals/M05.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L08"><small>Предыдущий раздел</small>← M04-L08. Сколько наблюдений нужно: планирование симуляцией</a><a href="#M05-L01"><small>Следующий раздел</small>M05-L01. Задача и исходное решение →</a></nav></article><article class="material" id="M05-L01" data-title="M05-L01. Задача и исходное решение" data-short-title="Задача и исходное решение" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Задача и исходное решение</h1><p class="outcome"><strong>После урока:</strong> Сформулировать задачу классификации, построить baseline и выбрать метрику по ошибкам.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M05-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M05-L01--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M05-L01--объяснение">Объяснение</a></li><li><a href="#M05-L01--аналогия-антифрод-платёжного-сервиса">Аналогия: антифрод платёжного сервиса</a></li><li><a href="#M05-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M05-L01--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M05-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M05-L01--самостоятельная-задача-a-m05-l01-a01">Самостоятельная задача A — M05-L01-A01</a></li><li><a href="#M05-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M05-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M05-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M05-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M01-L03">M01-L03</a>, <a href="#M00-L03">M00-L03</a></p>
 <h2 id="M05-L01--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Сложная модель не нужна, пока не определены объект, целевая переменная и момент применения. Для тренажёра можно предсказывать, требует ли ответ ручной проверки. Но качество такого предсказания нельзя измерять одной accuracy, если проблемные ответы редки и именно их пропуск важен.</p>
@@ -5281,6 +5281,43 @@ draw();
 <p>Выбор основной метрики связан с действием. Если ложная тревога вызывает дорогое ручное интервью, важна precision. Если пропуск ведёт к вредному совету, важна полнота при допустимом числе тревог. Практично заранее задать ограничение на один вид ошибки и улучшать другой. Тестовый набор должен отражать заявленный сценарий, а его метки не используются для выбора порога.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M05-L01-desktop.svg" target="_blank" data-figure="course/assets/responsive/M05-L01-desktop.svg" aria-label="Увеличить рисунок: Матрица ошибок показывает два пропуска и одну ложную тревогу при восьми объектах."><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M05-L01-mobile.svg"><img src="course/assets/responsive/M05-L01-desktop.svg" alt="Матрица ошибок показывает два пропуска и одну ложную тревогу при восьми объектах." loading="lazy"></picture></a><span class="figure-hint">Матрица ошибок показывает два пропуска и одну ложную тревогу при восьми объектах. · Открыть крупнее ↗</span></p>
 <p>Строки — настоящие классы, столбцы — предсказания. Прочитай сначала подписи: перестановка осей меняет интерпретацию FP и FN, хотя числа остаются теми же.</p>
+<h2 id="M05-L01--аналогия-антифрод-платёжного-сервиса">Аналогия: антифрод платёжного сервиса</h2>
+<p>Как похоже: правило «пропускать все платежи» верно для 99% операций и при этом не ловит ни одного мошенника — это baseline с высокой accuracy и нулевым recall. Precision — доля настоящих мошенников среди заблокированных платежей, recall — доля пойманных среди всех мошеннических. Сначала договариваются, сколько честных клиентов допустимо заблокировать, и только потом улучшают поимку.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Положительный класс</td>
+  <td>Мошеннический платёж</td>
+</tr>
+<tr>
+  <td>TP</td>
+  <td>Заблокирован мошеннический платёж</td>
+</tr>
+<tr>
+  <td>FP</td>
+  <td>Заблокирован честный клиент</td>
+</tr>
+<tr>
+  <td>FN</td>
+  <td>Пропущенное мошенничество</td>
+</tr>
+<tr>
+  <td>Baseline «всегда 0»</td>
+  <td>Правило «пропускать всё»: 99% верных ответов, ноль пойманных</td>
+</tr>
+<tr>
+  <td>Ограничение на один вид ошибки</td>
+  <td>Допустимая доля ложных блокировок, заданная бизнесом</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> в антифроде метка приходит с опозданием (через возврат платежа), а мошенники подстраиваются под правила. Метка урока — оценка ответа по рубрике, а не свойство человека, и цену двух ошибок задаёт продукт тренажёра, а не аналогия.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M05-L01--разобранный-пример">Разобранный пример</h2>
 <p>Истина [0, 0, 0, 0, 0, 1, 1, 1], прогноз [0, 0, 0, 0, 1, 0, 0, 1]. TP=1, FP=1, FN=2, TN=4. Accuracy=5/8=0.625, precision=1/2, recall=1/3. Baseline всегда 0 тоже имеет accuracy5/8, но recall=0.</p>
 <pre><code class="language-python">from sklearn.metrics import confusion_matrix,accuracy_score,precision_score,recall_score
@@ -5314,7 +5351,7 @@ assert accuracy_score(y,p)==5/8
 </section><h2 id="M05-L01--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M05-SOLUTIONS--m05-l01-a01">Ключи M05</a> · <a href="labs/M05/README.md">Лабораторная модуля</a> · <a href="#M05">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: оценивание классификации</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M05">Модуль и домашняя работа</a> · <a href="#M05-SOLUTIONS--m05-l01-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M05-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M05"><small>Предыдущий раздел</small>← M05 Классический ML</a><a href="#M05-L02"><small>Следующий раздел</small>M05-L02. Линейные модели →</a></nav></article><article class="material" id="M05-L02" data-title="M05-L02. Линейные модели" data-short-title="Линейные модели" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Линейные модели</h1><p class="outcome"><strong>После урока:</strong> Объяснить логистическую модель, вероятность и порог как разные части решения.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M05-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M05-L02--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M05-L02--объяснение">Объяснение</a></li><li><a href="#M05-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M05-L02--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M05-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M05-L02--самостоятельная-задача-a-m05-l02-a01">Самостоятельная задача A — M05-L02-A01</a></li><li><a href="#M05-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M05-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M05-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M05-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M05">Модуль и домашняя работа</a> · <a href="#M05-SOLUTIONS--m05-l01-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M05-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M05"><small>Предыдущий раздел</small>← M05 Классический ML</a><a href="#M05-L02"><small>Следующий раздел</small>M05-L02. Линейные модели →</a></nav></article><article class="material" id="M05-L02" data-title="M05-L02. Линейные модели" data-short-title="Линейные модели" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Линейные модели</h1><p class="outcome"><strong>После урока:</strong> Объяснить логистическую модель, вероятность и порог как разные части решения.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M05-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M05-L02--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M05-L02--объяснение">Объяснение</a></li><li><a href="#M05-L02--аналогия-балл-антиспама-в-почтовом-сервере">Аналогия: балл антиспама в почтовом сервере</a></li><li><a href="#M05-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M05-L02--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M05-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M05-L02--самостоятельная-задача-a-m05-l02-a01">Самостоятельная задача A — M05-L02-A01</a></li><li><a href="#M05-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M05-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M05-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M05-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M05-L01">M05-L01</a>, <a href="#M03-L04">M03-L04</a></p>
 <p>Перед этим уроком пройди <a href="#M04-L06">экспоненту и логарифм</a>. После ручной арифметики обязательная <a href="#M05-L06">M05-L06</a> доводит тему до обучения классификатора.</p>
 <h2 id="M05-L02--результат-и-входные-знания">Результат и входные знания</h2>
@@ -5439,6 +5476,43 @@ draw();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
 "></iframe><p><a href="course/visuals/M05.html" target="_blank">Открыть опыт отдельно на весь экран</a></p></section>
 <p>Горизонтальная линия порога пересекает одну и ту же кривую в разных score. Веса не меняются: меняется правило принятия решения по уже вычисленному числу.</p>
+<h2 id="M05-L02--аналогия-балл-антиспама-в-почтовом-сервере">Аналогия: балл антиспама в почтовом сервере</h2>
+<p>Как похоже: почтовый фильтр складывает веса сработавших правил — подозрительная тема, ссылка, неизвестный отправитель — и сравнивает сумму с порогом из конфига. Логистическая регрессия так же считает взвешенную сумму признаков, а порог меняется без переобучения, как строка в конфиге без пересборки фильтра.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Признаки x</td>
+  <td>Сработавшие правила письма</td>
+</tr>
+<tr>
+  <td>Score z = w·x + b</td>
+  <td>Сумма весов сработавших правил</td>
+</tr>
+<tr>
+  <td>Сигмоида σ(z)</td>
+  <td>Перевод балла в вероятность «это спам»</td>
+</tr>
+<tr>
+  <td>Порог t</td>
+  <td>Порог в конфиге: меняется без пересборки фильтра</td>
+</tr>
+<tr>
+  <td>Три действия по вероятности</td>
+  <td>Доставить, отправить в «Спам», задержать на карантин</td>
+</tr>
+<tr>
+  <td>Калибровка</td>
+  <td>Среди писем с отметкой «80%» действительно около 80% спама</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> веса классического фильтра часто подобраны вручную, а его балл не вероятность. Логистическая регрессия учит веса по кросс-энтропии на данных, и даже её вероятность нужно проверять на калибровку — она может разойтись с частотами на другой совокупности.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M05-L02--разобранный-пример">Разобранный пример</h2>
 <p>Для score[−2, 0, 2] вероятности примерно[0.1192, 0.5, 0.8808]. При пороге 0.5 и правиле≥ прогнозы[0, 1, 1]. При 0.8 получаем[0, 0, 1]. Для положительной метки и p0.8 потеря−ln0.8≈0.2231, при p0.2≈1.6094.</p>
 <pre><code class="language-python">import numpy as np
@@ -5472,7 +5546,7 @@ assert -np.log(.8)&lt;-np.log(.2)
 </section><h2 id="M05-L02--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M05-SOLUTIONS--m05-l02-a01">Ключи M05</a> · <a href="labs/M05/README.md">Лабораторная модуля</a> · <a href="#M05">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: логистическая регрессия</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M05">Модуль и домашняя работа</a> · <a href="#M05-SOLUTIONS--m05-l02-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M05-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M05-L01"><small>Предыдущий раздел</small>← M05-L01. Задача и исходное решение</a><a href="#M05-L03"><small>Следующий раздел</small>M05-L03. Деревья и бустинг →</a></nav></article><article class="material" id="M05-L03" data-title="M05-L03. Деревья и бустинг" data-short-title="Деревья и бустинг" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Деревья и бустинг</h1><p class="outcome"><strong>После урока:</strong> Построить простое дерево, объяснить усреднение в листьях и идею бустинга.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M05-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M05-L03--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M05-L03--объяснение">Объяснение</a></li><li><a href="#M05-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M05-L03--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M05-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M05-L03--самостоятельная-задача-a-m05-l03-a01">Самостоятельная задача A — M05-L03-A01</a></li><li><a href="#M05-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M05-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M05-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M05-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M05">Модуль и домашняя работа</a> · <a href="#M05-SOLUTIONS--m05-l02-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M05-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M05-L01"><small>Предыдущий раздел</small>← M05-L01. Задача и исходное решение</a><a href="#M05-L03"><small>Следующий раздел</small>M05-L03. Деревья и бустинг →</a></nav></article><article class="material" id="M05-L03" data-title="M05-L03. Деревья и бустинг" data-short-title="Деревья и бустинг" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Деревья и бустинг</h1><p class="outcome"><strong>После урока:</strong> Построить простое дерево, объяснить усреднение в листьях и идею бустинга.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M05-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M05-L03--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M05-L03--объяснение">Объяснение</a></li><li><a href="#M05-L03--аналогия-правила-маршрутизации-и-серия-хотфиксов">Аналогия: правила маршрутизации и серия хотфиксов</a></li><li><a href="#M05-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M05-L03--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M05-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M05-L03--самостоятельная-задача-a-m05-l03-a01">Самостоятельная задача A — M05-L03-A01</a></li><li><a href="#M05-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M05-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M05-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M05-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M05-L02">M05-L02</a></p>
 <h2 id="M05-L03--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Табличные признаки часто имеют пороговые и нелинейные зависимости. Дерево разделяет пространство правилами, которые можно проследить. Ансамбли деревьев дают сильные исходные решения, но их качество зависит от глубины, данных и честной проверки, а не от названия алгоритма.</p>
@@ -5488,6 +5562,43 @@ assert -np.log(.8)&lt;-np.log(.2)
 <p>Деревья обычно не требуют стандартного масштабирования для пороговых разбиений, потому что монотонное преобразование сохраняет порядок значений. Но это не отменяет обработки пропусков, категорий, утечек и контрактов. Разные реализации поддерживают эти случаи по-разному. Обычное дерево регрессии также плохо экстраполирует за пределы обученных диапазонов: оно возвращает значение крайнего листа.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M05-L03-desktop.svg" target="_blank" data-figure="course/assets/responsive/M05-L03-desktop.svg" aria-label="Увеличить рисунок: Дерево с порогом 1.5 делит точки 0, 1 и 2, 3; прогнозы листьев 0 и 2."><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M05-L03-mobile.svg"><img src="course/assets/responsive/M05-L03-desktop.svg" alt="Дерево с порогом 1.5 делит точки 0, 1 и 2, 3; прогнозы листьев 0 и 2." loading="lazy"></picture></a><span class="figure-hint">Дерево с порогом 1.5 делит точки 0, 1 и 2, 3; прогнозы листьев 0 и 2. · Открыть крупнее ↗</span></p>
 <p>Ступенчатый прогноз отличается от прямой. За пределами крайних наблюдений ступень продолжается: дерево не выводит автоматически закон роста.</p>
+<h2 id="M05-L03--аналогия-правила-маршрутизации-и-серия-хотфиксов">Аналогия: правила маршрутизации и серия хотфиксов</h2>
+<p>Как похоже: дерево решений похоже на цепочку if/else в роутере запросов: каждое правило отправляет запрос в ветку, а лист выдаёт ответ. Случайный лес — несколько независимо настроенных роутеров, чьи ответы усредняют. Бустинг — серия хотфиксов: каждый исправляет то, что осталось сломанным после предыдущих, и выкатывается с малой долей.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Узел x ≤ порога</td>
+  <td>Правило if/else в роутере</td>
+</tr>
+<tr>
+  <td>Лист и среднее в нём</td>
+  <td>Ответ для всех запросов, попавших в ветку</td>
+</tr>
+<tr>
+  <td>Глубокое дерево</td>
+  <td>Отдельное правило под каждый запрос из журнала</td>
+</tr>
+<tr>
+  <td>Случайный лес</td>
+  <td>Независимые роутеры, ответы которых усредняют</td>
+</tr>
+<tr>
+  <td>Бустинг F + η·h</td>
+  <td>Хотфикс поверх текущей версии, исправляющий остаток ошибок</td>
+</tr>
+<tr>
+  <td>learning_rate η</td>
+  <td>Выкатывать каждый хотфикс лишь частично</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> правила роутера пишет человек с понятным намерением, а дерево выбирает пороги по данным жадно и может закрепить шум. Хотфиксы бустинга никто не ревьюит: их пользу показывает только качество на новых данных, а за пределами диапазона train дерево просто повторяет крайний лист.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M05-L03--разобранный-пример">Разобранный пример</h2>
 <p>x=[0, 1, 2, 3], y=[0, 0, 2, 2]. Постоянный прогноз 1 имеет MSE=1. Порог 1.5 делит набор на два чистых листа со средними 0 и 2, MSE=0. На новом x10 дерево продолжит выдавать 2, хотя истинный будущий закон неизвестен.</p>
 <pre><code class="language-python">import numpy as np
@@ -5524,7 +5635,7 @@ assert np.isclose(tree.tree_.threshold[0],1.5)
 </section><h2 id="M05-L03--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M05-SOLUTIONS--m05-l03-a01">Ключи M05</a> · <a href="labs/M05/README.md">Лабораторная модуля</a> · <a href="#M05">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://scikit-learn.org/stable/modules/ensemble.html#gradient-boosting" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: деревья и ансамбли</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M05">Модуль и домашняя работа</a> · <a href="#M05-SOLUTIONS--m05-l03-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M05-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M05-L02"><small>Предыдущий раздел</small>← M05-L02. Линейные модели</a><a href="#M05-L04"><small>Следующий раздел</small>M05-L04. Валидация и утечки →</a></nav></article><article class="material" id="M05-L04" data-title="M05-L04. Валидация и утечки" data-short-title="Валидация и утечки" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Валидация и утечки</h1><p class="outcome"><strong>После урока:</strong> Организовать cross-validation с подготовкой внутри каждого fold и отдельным финальным test.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M05-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M05-L04--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M05-L04--объяснение">Объяснение</a></li><li><a href="#M05-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M05-L04--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M05-L04--схема">Схема</a></li><li><a href="#M05-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M05-L04--самостоятельная-задача-a-m05-l04-a01">Самостоятельная задача A — M05-L04-A01</a></li><li><a href="#M05-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M05-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M05-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M05-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M05">Модуль и домашняя работа</a> · <a href="#M05-SOLUTIONS--m05-l03-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M05-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M05-L02"><small>Предыдущий раздел</small>← M05-L02. Линейные модели</a><a href="#M05-L04"><small>Следующий раздел</small>M05-L04. Валидация и утечки →</a></nav></article><article class="material" id="M05-L04" data-title="M05-L04. Валидация и утечки" data-short-title="Валидация и утечки" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Валидация и утечки</h1><p class="outcome"><strong>После урока:</strong> Организовать cross-validation с подготовкой внутри каждого fold и отдельным финальным test.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M05-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M05-L04--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M05-L04--объяснение">Объяснение</a></li><li><a href="#M05-L04--аналогия-изолированные-тестовые-базы-в-ci">Аналогия: изолированные тестовые базы в CI</a></li><li><a href="#M05-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M05-L04--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M05-L04--схема">Схема</a></li><li><a href="#M05-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M05-L04--самостоятельная-задача-a-m05-l04-a01">Самостоятельная задача A — M05-L04-A01</a></li><li><a href="#M05-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M05-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M05-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M05-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M05-L03">M05-L03</a>, <a href="#M04-L04">M04-L04</a></p>
 <p>После примера проверь процедуру независимо от метрики: <a href="#M05-L07">M05-L07</a> и <code>labs/M05/pipeline.py</code> записывают реальные fit ID; намеренно глобальный fit отклоняется в каждом fold даже при хорошей метрике.</p>
 <h2 id="M05-L04--результат-и-входные-знания">Результат и входные знания</h2>
@@ -5541,6 +5652,43 @@ assert np.isclose(tree.tree_.threshold[0],1.5)
 <p>После выбора настроек по cross-validation процедуру обычно обучают заново на доступной обучающей части и один раз оценивают на отложенном test. Если после теста понадобилось изменить решение, предыдущий результат сохраняется как наблюдение, а для нового независимого утверждения нужен свежий набор или честное признание повторного использования.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M05-L04-desktop.svg" target="_blank" data-figure="course/assets/responsive/M05-L04-desktop.svg" aria-label="Увеличить рисунок: Три folds: подготовка и модель обучаются на двух частях, третья используется только для оценки."><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M05-L04-mobile.svg"><img src="course/assets/responsive/M05-L04-desktop.svg" alt="Три folds: подготовка и модель обучаются на двух частях, третья используется только для оценки." loading="lazy"></picture></a><span class="figure-hint">fit(preprocessing + model) выполняется только на train данного fold. · Открыть крупнее ↗</span></p>
 <p>На каждом проходе выделена своя validation-часть. Стрелка fit не должна проходить через неё. Финальный test нарисован отдельно и не участвует в выборе настроек.</p>
+<h2 id="M05-L04--аналогия-изолированные-тестовые-базы-в-ci">Аналогия: изолированные тестовые базы в CI</h2>
+<p>Как похоже: k-fold похож на k прогонов тестов, где каждый раз проверочной становится другая часть фикстур. Утечка — тест, который читает ожидаемый ответ из той же базы, куда его записал проверяемый код: зелёный результат ничего не доказывает. Сиды и миграции применяются к каждой изолированной базе отдельно — так и подготовка обучается внутри каждого fold.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Fold</td>
+  <td>Один прогон CI с отдельной проверочной частью фикстур</td>
+</tr>
+<tr>
+  <td>fit подготовки внутри fold</td>
+  <td>Сиды и миграции для каждой изолированной базы отдельно</td>
+</tr>
+<tr>
+  <td>Утечка</td>
+  <td>Тест читает ответ, записанный проверяемым кодом</td>
+</tr>
+<tr>
+  <td>GroupKFold</td>
+  <td>Данные одного клиента не попадают одновременно в обе части</td>
+</tr>
+<tr>
+  <td>Отложенный test</td>
+  <td>Приёмочный прогон перед релизом, один раз</td>
+</tr>
+<tr>
+  <td>Слишком хорошая метрика</td>
+  <td>Подозрительно быстрый и всегда зелёный тест</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> ожидаемый ответ теста детерминирован, а оценки folds шумные, и обучающие части пересекаются. Тесты можно перезапускать бесплатно, а каждый взгляд на test расходует его независимость.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M05-L04--разобранный-пример">Разобранный пример</h2>
 <p>Возьмём x=0…8, y=2x+1, три folds. Pipeline содержит StandardScaler и LinearRegression. Идеальная линейная зависимость позволяет получить практически нулевую MSE в каждом fold, если всё вычислено правильно. Это техническая проверка конвейера, а не реалистичная оценка продукта.</p>
 <pre><code class="language-python">import numpy as np
@@ -5595,7 +5743,7 @@ assert np.max(scores)&lt;1e-20
 </section><h2 id="M05-L04--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M05-SOLUTIONS--m05-l04-a01">Ключи M05</a> · <a href="labs/M05/README.md">Лабораторная модуля</a> · <a href="#M05">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://scikit-learn.org/stable/modules/cross_validation.html" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: cross-validation</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M05">Модуль и домашняя работа</a> · <a href="#M05-SOLUTIONS--m05-l04-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M05-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M05-L03"><small>Предыдущий раздел</small>← M05-L03. Деревья и бустинг</a><a href="#M05-L05"><small>Следующий раздел</small>M05-L05. Анализ ошибок →</a></nav></article><article class="material" id="M05-L05" data-title="M05-L05. Анализ ошибок" data-short-title="Анализ ошибок" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Анализ ошибок</h1><p class="outcome"><strong>После урока:</strong> Разобрать ошибки по содержательным группам и выбрать следующий эксперимент без подгонки теста.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M05-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M05-L05--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M05-L05--объяснение">Объяснение</a></li><li><a href="#M05-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M05-L05--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M05-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M05-L05--самостоятельная-задача-a-m05-l05-a01">Самостоятельная задача A — M05-L05-A01</a></li><li><a href="#M05-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M05-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M05-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M05-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M05">Модуль и домашняя работа</a> · <a href="#M05-SOLUTIONS--m05-l04-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M05-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M05-L03"><small>Предыдущий раздел</small>← M05-L03. Деревья и бустинг</a><a href="#M05-L05"><small>Следующий раздел</small>M05-L05. Анализ ошибок →</a></nav></article><article class="material" id="M05-L05" data-title="M05-L05. Анализ ошибок" data-short-title="Анализ ошибок" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Анализ ошибок</h1><p class="outcome"><strong>После урока:</strong> Разобрать ошибки по содержательным группам и выбрать следующий эксперимент без подгонки теста.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M05-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M05-L05--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M05-L05--объяснение">Объяснение</a></li><li><a href="#M05-L05--аналогия-разбор-ошибок-по-логам">Аналогия: разбор ошибок по логам</a></li><li><a href="#M05-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M05-L05--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M05-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M05-L05--самостоятельная-задача-a-m05-l05-a01">Самостоятельная задача A — M05-L05-A01</a></li><li><a href="#M05-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M05-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M05-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M05-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M05-L04">M05-L04</a></p>
 <h2 id="M05-L05--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Общая метрика сообщает, что система ошибается, но редко объясняет причину. Для тренажёра важны отдельные типы вопросов, длины ответов и технические условия. Анализ ошибок превращает неопределённое «нужно улучшить модель» в проверяемую инженерную гипотезу.</p>
@@ -5611,6 +5759,47 @@ assert np.max(scores)&lt;1e-20
 <p>Проверка улучшения должна включать регрессии: новая версия может лучше работать на длинных ответах и хуже на коротких. Сохраняй фиксированный набор критических случаев и общий независимый набор. Узкая регрессия ловит известный дефект, но не заменяет широкую оценку. Любое новое правило должно иметь критерий пользы и возможный побочный эффект.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M05-L05-desktop.svg" target="_blank" data-figure="course/assets/responsive/M05-L05-desktop.svg" aria-label="Увеличить рисунок: Ошибки по двум группам: HR имеет MAE=0.5, technical3, несмотря на общую 1.75."><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M05-L05-mobile.svg"><img src="course/assets/responsive/M05-L05-desktop.svg" alt="Ошибки по двум группам: HR имеет MAE=0.5, technical3, несмотря на общую 1.75." loading="lazy"></picture></a><span class="figure-hint">Ошибки по двум группам: HR имеет MAE=0.5, technical3, несмотря на общую 1.75. · Открыть крупнее ↗</span></p>
 <p>Столбцы показывают среднюю абсолютную ошибку, подписи — количество объектов. Общая линия скрывает различие между группами. Это учебный набор по два объекта, поэтому вывод о причине пока слабый.</p>
+<h2 id="M05-L05--аналогия-разбор-ошибок-по-логам">Аналогия: разбор ошибок по логам</h2>
+<p>Как похоже: общая доля ошибок сервиса в норме, но группировка логов по эндпоинту и версии клиента показывает, что падает один маршрут у одной версии. Анализ ошибок модели устроен так же: таблица уровня наблюдения, срезы, гипотезы и отдельная проверка каждой. Bias похож на отстающие часы сервера: все метки времени сдвинуты в одну сторону.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Таблица уровня наблюдения</td>
+  <td>Сырые логи с request_id</td>
+</tr>
+<tr>
+  <td>Срез</td>
+  <td>Группировка по эндпоинту или версии клиента</td>
+</tr>
+<tr>
+  <td>Размер среза</td>
+  <td>Сколько запросов в группе: 1 из 2 или 50 из 100</td>
+</tr>
+<tr>
+  <td>Bias</td>
+  <td>Систематический сдвиг, как отстающие часы сервера</td>
+</tr>
+<tr>
+  <td>Гипотеза и проверка</td>
+  <td>Пункт постмортема, который проверяют отдельно</td>
+</tr>
+<tr>
+  <td>Правка test под метрику</td>
+  <td>Правка теста, чтобы CI позеленел</td>
+</tr>
+<tr>
+  <td>Набор критических случаев</td>
+  <td>Регрессионные тесты после исправления бага</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> в логах часто виден стек вызовов и точная причина. Связь ошибки модели со срезом причину не доказывает — technical может отличаться длиной ответов. И логи можно перечитывать сколько угодно, а test после разбора уже участвовал в выборе решения.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M05-L05--разобранный-пример">Разобранный пример</h2>
 <p>Истина[1, 2, 5, 6], прогноз[1, 3, 2, 3], группы[HR, HR, technical, technical]. Остатки[0, 1, −3, −3], MAE=1.75, bias=−1.25. HR:MAE=0.5, bias=0.5;technical:MAE=3, bias=−3. Технические ответы недооценены в обоих наблюдаемых случаях.</p>
 <pre><code class="language-python">import pandas as pd
@@ -5645,7 +5834,7 @@ assert report.loc[&quot;technical&quot;,&quot;bias&quot;]==-3
 </section><h2 id="M05-L05--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M05-SOLUTIONS--m05-l05-a01">Ключи M05</a> · <a href="labs/M05/README.md">Лабораторная модуля</a> · <a href="#M05">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: оценивание и выбор модели</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M05">Модуль и домашняя работа</a> · <a href="#M05-SOLUTIONS--m05-l05-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M05-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M05-L04"><small>Предыдущий раздел</small>← M05-L04. Валидация и утечки</a><a href="#M05-L06"><small>Следующий раздел</small>M05-L06. Обучить классификатор и выбрать правило решения →</a></nav></article><article class="material" id="M05-L06" data-title="M05-L06. Обучить классификатор и выбрать правило решения" data-short-title="Обучить классификатор и выбрать правило решения" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Обучить классификатор и выбрать правило решения</h1><p class="outcome"><strong>После урока:</strong> обучить классификационный pipeline, выбрать регуляризацию и порог на validation и проверить сохранённую модель. <strong>До урока:</strong> M05-L02, M05-L04, M04-L06. Ориентир — 180 минут.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M05-L06--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M05-L06--объяснение">Объяснение</a></li><li><a href="#M05-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M05-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M05-L06--самостоятельная-задача-a-m05-l06-a">Самостоятельная задача A — M05-L06-A</a></li><li><a href="#M05-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M05-L06--подсказки-по-очереди-новая-и-отложенная-проверка">Подсказки по очереди; новая и отложенная проверка</a></li><li><a href="#M05-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M05">Модуль и домашняя работа</a> · <a href="#M05-SOLUTIONS--m05-l05-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M05-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M05-L04"><small>Предыдущий раздел</small>← M05-L04. Валидация и утечки</a><a href="#M05-L06"><small>Следующий раздел</small>M05-L06. Обучить классификатор и выбрать правило решения →</a></nav></article><article class="material" id="M05-L06" data-title="M05-L06. Обучить классификатор и выбрать правило решения" data-short-title="Обучить классификатор и выбрать правило решения" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Обучить классификатор и выбрать правило решения</h1><p class="outcome"><strong>После урока:</strong> обучить классификационный pipeline, выбрать регуляризацию и порог на validation и проверить сохранённую модель. <strong>До урока:</strong> M05-L02, M05-L04, M04-L06. Ориентир — 180 минут.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M05-L06--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M05-L06--объяснение">Объяснение</a></li><li><a href="#M05-L06--аналогия-релизный-артефакт-сервиса">Аналогия: релизный артефакт сервиса</a></li><li><a href="#M05-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M05-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M05-L06--самостоятельная-задача-a-m05-l06-a">Самостоятельная задача A — M05-L06-A</a></li><li><a href="#M05-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M05-L06--подсказки-по-очереди-новая-и-отложенная-проверка">Подсказки по очереди; новая и отложенная проверка</a></li><li><a href="#M05-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <h2 id="M05-L06--проверь-себя-сначала">Проверь себя сначала</h2>
 <p><strong>Короткий путь для знакомой темы, 2–5 минут.</strong> Validation: y = [1, 0, 1], p = [0.7, 0.4, 0.3]. Стоимость = 3·FN + FP, правило p ≥ threshold. Сравни пороги 0.25, 0.35 и 0.5 и выбери один. Меняет ли этот выбор модель?</p>
 <p>Запиши ответ и объяснение, затем сверь с <a href="#M05-SOLUTIONS--m05-l06-d">ключом M05-L06-D</a>. Всё верно и объяснение совпадает по смыслу — переходи сразу к самостоятельной задаче этого урока, затем к варианту B/C. Ошибка, сомнение или ответ без объяснения — проходи урок полностью с начала. <a href="#MENTOR--адаптивный-маршрут">Как работает адаптивный маршрут</a>.</p>
@@ -5702,6 +5891,47 @@ t.oninput=cost.oninput=draw;document.querySelector(&#x27;#reset&#x27;).onclick=(
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
 "></iframe><p><a href="course/visuals/M05-L06.html" target="_blank">Открыть опыт отдельно на весь экран</a></p></section>
 <p>Проследи красную границу: сведения из test не должны менять медианы, словарь категорий, веса, C или порог. Если увидел плохой test и изменил модель, этот набор стал частью разработки; для независимого вывода потребуется новый test.</p>
+<h2 id="M05-L06--аналогия-релизный-артефакт-сервиса">Аналогия: релизный артефакт сервиса</h2>
+<p>Как похоже: в продакшен выкатывают не голый бинарник, а образ контейнера — код, зависимости и конфиг вместе. Pipeline — такой же артефакт: медианы, масштаб, словарь категорий, веса и порог сохраняются вместе. Задеплоить одни веса без подготовки — всё равно что выкатить бинарник без конфига: тот же запрос даст другой ответ.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Pipeline: imputer, scaler, encoder, модель</td>
+  <td>Образ контейнера: код, зависимости и конфиг</td>
+</tr>
+<tr>
+  <td>Медианы, масштаб, словарь категорий</td>
+  <td>Значения по умолчанию и справочники, вшитые при сборке</td>
+</tr>
+<tr>
+  <td>Сохранить только веса</td>
+  <td>Выкатить бинарник без конфига</td>
+</tr>
+<tr>
+  <td>C, выбранный на validation</td>
+  <td>Параметр сборки, подобранный на staging</td>
+</tr>
+<tr>
+  <td>Порог</td>
+  <td>Флаг в конфиге: меняет решение без пересборки</td>
+</tr>
+<tr>
+  <td>handle_unknown='ignore'</td>
+  <td>Неизвестное значение enum не роняет сервис, но и не получает смысла</td>
+</tr>
+<tr>
+  <td>Загрузка и сравнение вероятностей</td>
+  <td>Smoke-тест образа после выкладки</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> образ собирается из кода детерминированно, а параметры pipeline зависят от данных train: другие данные при том же коде дают другой артефакт. И smoke-тест не скажет, как модель поведёт себя при новой доле классов, — это отдельная проверка.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M05-L06--разобранный-пример">Разобранный пример</h2>
 <h3 id="M05-L06--один-законченный-путь">Один законченный путь</h3>
 <p>Лабораторная <code>pipeline.py</code> создаёт 240 строк, по две на пользователя. В демонстрации первые 72 пользователя входят в train, следующие 24 — в validation, последние 24 — в test. Время также возрастает между частями. <code>FitAudit</code> сохраняет фактические ID строк, переданных в fit. Это позволяет проверить процедуру отдельно от метрики: высокая точность не делает смешанные данные допустимыми.</p>
@@ -5734,7 +5964,7 @@ assert len(table) == 9
 <h2 id="M05-L06--источники-и-углубление">Источники и углубление</h2>
 <p>Источники: <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html" target="_blank" rel="noopener noreferrer" class="external-link">LogisticRegression</a>, <a href="https://scikit-learn.org/stable/common_pitfalls.html" target="_blank" rel="noopener noreferrer" class="external-link">защита от утечки и Pipeline</a>. Версия обязательного опыта закреплена окружением курса; выводы выше относятся к локальному прогону.</p>
 <p><a href="course/visuals/M05-L06.html">Интерактивный эксперимент этого урока</a>: сначала предскажи изменение, затем сравни числа.</p>
-<div class="practice-note"><a href="#M05">Модуль и домашняя работа</a> · <a href="#M05-SOLUTIONS--m05-l06-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M05-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M05-L05"><small>Предыдущий раздел</small>← M05-L05. Анализ ошибок</a><a href="#M05-L07"><small>Следующий раздел</small>M05-L07. Самостоятельный эксперимент на неоднородных данных →</a></nav></article><article class="material" id="M05-L07" data-title="M05-L07. Самостоятельный эксперимент на неоднородных данных" data-short-title="Самостоятельный эксперимент на неоднородных данных" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05-L07</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Самостоятельный эксперимент на неоднородных данных</h1><p class="outcome"><strong>После урока:</strong> построить воспроизводимый pipeline на CSV с пропусками, категориями, повторными пользователями, временем и признаком из будущего. <strong>До урока:</strong> M01, M05-L04–L06. Ориентир — 240 минут на первый проход; домашняя работа выполняется отдельно.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M05-L07--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M05-L07--объяснение">Объяснение</a></li><li><a href="#M05-L07--разобранный-пример">Разобранный пример</a></li><li><a href="#M05-L07--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M05-L07--самостоятельная-задача-a-m05-l07-a">Самостоятельная задача A — M05-L07-A</a></li><li><a href="#M05-L07--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M05-L07--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M05-L07--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M05-L07--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M05">Модуль и домашняя работа</a> · <a href="#M05-SOLUTIONS--m05-l06-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M05-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M05-L05"><small>Предыдущий раздел</small>← M05-L05. Анализ ошибок</a><a href="#M05-L07"><small>Следующий раздел</small>M05-L07. Самостоятельный эксперимент на неоднородных данных →</a></nav></article><article class="material" id="M05-L07" data-title="M05-L07. Самостоятельный эксперимент на неоднородных данных" data-short-title="Самостоятельный эксперимент на неоднородных данных" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05-L07</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Самостоятельный эксперимент на неоднородных данных</h1><p class="outcome"><strong>После урока:</strong> построить воспроизводимый pipeline на CSV с пропусками, категориями, повторными пользователями, временем и признаком из будущего. <strong>До урока:</strong> M01, M05-L04–L06. Ориентир — 240 минут на первый проход; домашняя работа выполняется отдельно.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M05-L07--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M05-L07--объяснение">Объяснение</a></li><li><a href="#M05-L07--аналогия-контракт-api-и-поле-от-фонового-воркера">Аналогия: контракт API и поле от фонового воркера</a></li><li><a href="#M05-L07--разобранный-пример">Разобранный пример</a></li><li><a href="#M05-L07--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M05-L07--самостоятельная-задача-a-m05-l07-a">Самостоятельная задача A — M05-L07-A</a></li><li><a href="#M05-L07--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M05-L07--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M05-L07--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M05-L07--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <h2 id="M05-L07--проверь-себя-сначала">Проверь себя сначала</h2>
 <p><strong>Короткий путь для знакомой темы, 2–5 минут.</strong> В CSV есть user_id, created_at, city (категории с пропусками), answer_len, label и resolved_at — время, когда ответ проверили. Модель предсказывает label в момент создания ответа для новых пользователей. Какой признак исключить и почему? Как разделять данные? Где обучать заполнение пропусков и кодирование категорий?</p>
 <p>Запиши ответ и объяснение, затем сверь с <a href="#M05-SOLUTIONS--m05-l07-d">ключом M05-L07-D</a>. Всё верно и объяснение совпадает по смыслу — переходи сразу к самостоятельной задаче этого урока, затем к варианту B/C. Ошибка, сомнение или ответ без объяснения — проходи урок полностью с начала. <a href="#MENTOR--адаптивный-маршрут">Как работает адаптивный маршрут</a>.</p>
@@ -5747,6 +5977,43 @@ assert len(table) == 9
 <p>В наборе есть пользователь с событиями по обе стороны границы. Нельзя разрезать его строки и сохранить независимость групп. В данном учебном протоколе такая группа исключается полностью и записывается в <code>excluded</code>. Это не единственная допустимая политика. Альтернатива — поменять границу и все последующие оценки; выбор требует объяснить, к какой популяции относится результат. Молчаливое удаление неудобной группы неприемлемо.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M05-L07-desktop.svg" target="_blank" data-figure="course/assets/responsive/M05-L07-desktop.svg" aria-label="Увеличить рисунок: Группы внутри временных окон целиком попадают в train, validation или test; пересекающая границу группа отдельно исключена."><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M05-L07-mobile.svg"><img src="course/assets/responsive/M05-L07-desktop.svg" alt="Группы внутри временных окон целиком попадают в train, validation или test; пересекающая границу группа отдельно исключена." loading="lazy"></picture></a><span class="figure-hint">Validation: дни 5…7. Политика исключения фиксируется до обучения. · Открыть крупнее ↗</span></p>
 <p>На рисунке каждая линия связывает сессии <strong>одного</strong> пользователя. Проверь сначала отсутствие пересечения ID, затем порядок времени. Если выполнено только одно условие, получена другая задача обобщения.</p>
+<h2 id="M05-L07--аналогия-контракт-api-и-поле-от-фонового-воркера">Аналогия: контракт API и поле от фонового воркера</h2>
+<p>Как похоже: обработчик запроса не может читать поле, которое через час заполнит фоновый воркер, — в момент запроса его ещё нет. Признак <code>review_score_after</code> такой же: он появляется после оценки. Переименование поля в API не меняет того, когда оно заполняется. Разбиение по группам и времени похоже на проверку новой версии на клиентах, пришедших после снапшота.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Контракт полей</td>
+  <td>Схема API с пометкой, когда заполняется каждое поле</td>
+</tr>
+<tr>
+  <td>Признак из будущего</td>
+  <td>Поле, которое пишет фоновый воркер после ответа</td>
+</tr>
+<tr>
+  <td>Переименование столбца</td>
+  <td>Переименование поля API: время заполнения то же</td>
+</tr>
+<tr>
+  <td>Групповое и временное разбиение</td>
+  <td>Старые клиенты до снапшота против новых после него</td>
+</tr>
+<tr>
+  <td>Группа на границе в excluded</td>
+  <td>Клиент по обе стороны снапшота исключён и записан в отчёт</td>
+</tr>
+<tr>
+  <td>FitAudit</td>
+  <td>Журнал обращений к таблицам во время сборки</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> схему API проверяет валидатор в рантайме, а доступность признака во времени в таблице не видна — её нужно выяснить и записать самому. И журнал FitAudit ученик может переписать: это учебный контроль процесса, а не средство безопасности.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M05-L07--разобранный-пример">Разобранный пример</h2>
 <h3 id="M05-L07--короткий-пример-со-сложной-группой">Короткий пример со сложной группой</h3>
 <pre><code class="language-python">import pandas as pd
