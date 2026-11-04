@@ -1,0 +1,15 @@
+{
+  "train_n": 600,
+  "validation_n": 200,
+  "test_n": 200,
+  "best_epoch": 115,
+  "mlp_test_accuracy": 0.8899999856948853,
+  "logistic_test_accuracy": 0.875,
+  "first_train_loss": 0.6816738247871399,
+  "last_train_loss": 0.18311744928359985,
+  "fresh_process": {
+    "fresh_process_max_abs_error": 0.0
+  },
+  "gradient_w": -8.0,
+  "gradient_b": -4.0
+}

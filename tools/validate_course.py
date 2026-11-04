@@ -16,6 +16,8 @@ PILOT_IDS = [f"P{i:02}" for i in range(1, 11)]
 REQUIRED_MATERIALS = ["HOME", "PROGRESS", "DIAGNOSTIC", "MENTOR", "MENTOR-KEYS",
                       "GLOSSARY", "PROJECT", *MODULE_IDS, *PILOT_IDS]
 REMOTE_PAGE = re.compile(r"https?://(?:www\.)?chatgpt\.com/space(?:/|\b)", re.I)
+# Git-ignored outputs exist only after local runs; links to them break a fresh clone.
+GENERATED = re.compile(r"(?:artifacts|models|submissions|\.venv[^/]*)(?:/|$)|labs/[^/]+/output(?:/|$)")
 
 
 class HtmlLinks(HTMLParser):
@@ -256,6 +258,8 @@ def _validate_local(root, curriculum, documents, errors, warnings):
         target = (source.parent / path_part).resolve() if path_part else source
         if not target.is_relative_to(root):
             errors.append(f"Link leaves repository in {source.relative_to(root)}: {reference}")
+        elif GENERATED.match(target.relative_to(root).as_posix()):
+            errors.append(f"Link to generated, git-ignored file in {source.relative_to(root)}: {reference}")
         elif not target.exists():
             errors.append(f"Broken local link in {source.relative_to(root)}: {reference}")
         elif parsed.fragment and target.suffix.lower() in (".html", ".htm"):

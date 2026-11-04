@@ -134,6 +134,16 @@ def test_reader_cannot_silently_depend_on_file_outside_repository(local_course):
                for error in validator.validate(local_course, require_local=True)["errors"])
 
 
+def test_link_to_generated_artifact_breaks_fresh_clone(local_course):
+    report = local_course / "artifacts/M07/hw-reference/hw-report.json"
+    report.parent.mkdir(parents=True)
+    report.write_text("{}", encoding="utf-8")
+    with (local_course / "course/diagnostic.md").open("a", encoding="utf-8") as stream:
+        stream.write("\n[Отчёт](../artifacts/M07/hw-reference/hw-report.json)\n")
+    assert any("Link to generated, git-ignored file" in error and "hw-report.json" in error
+               for error in validator.validate(local_course, require_local=True)["errors"])
+
+
 def test_changed_progress_requires_reader_refresh(local_course):
     with (local_course / "progress/progress.md").open("a", encoding="utf-8") as stream:
         stream.write("\nЗаписана самостоятельная попытка P01.\n")

@@ -13,3 +13,5 @@ quality/design-v2/** -text whitespace=cr-at-eol
 START_HERE.html -diff
 quality/**/*.png -diff
 *.zip binary
+# Saved reference runs are evidence and must stay byte-for-byte.
+quality/reference-runs/** -text whitespace=cr-at-eol

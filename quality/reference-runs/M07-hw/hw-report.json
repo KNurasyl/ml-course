@@ -1,0 +1,118 @@
+{
+  "seed": 23,
+  "noise": 0.3,
+  "training_report": {
+    "train_n": 600,
+    "validation_n": 200,
+    "test_n": 200,
+    "best_epoch": 115,
+    "mlp_test_accuracy": 0.8899999856948853,
+    "logistic_test_accuracy": 0.875,
+    "first_train_loss": 0.6816738247871399,
+    "last_train_loss": 0.18311744928359985,
+    "fresh_process": {
+      "fresh_process_max_abs_error": 0.0
+    },
+    "gradient_w": -8.0,
+    "gradient_b": -4.0
+  },
+  "test_error_count": 22,
+  "errors": [
+    {
+      "dataset_index": 101,
+      "test_position": 104,
+      "raw_features": [
+        -0.6589975139915212,
+        -0.5478325048667737
+      ],
+      "scaled_features": [
+        -1.2582094691208228,
+        -1.367723240215862
+      ],
+      "target": 0,
+      "predicted": 1,
+      "logits": [
+        -0.6290320158004761,
+        0.7127536535263062
+      ],
+      "probabilities": [
+        0.2072165608406067,
+        0.7927834391593933
+      ],
+      "nearest_15_train_indices": [
+        622,
+        353,
+        569,
+        50,
+        589,
+        263,
+        160,
+        62,
+        739,
+        691,
+        112,
+        121,
+        651,
+        88,
+        196
+      ],
+      "nearest_15_train_class_counts": [
+        7,
+        8
+      ],
+      "interpretation": "Observed misclassification. Neighbour counts describe this fitted feature space; they do not identify whether noise, limited capacity or sampling caused this error."
+    },
+    {
+      "dataset_index": 141,
+      "test_position": 11,
+      "raw_features": [
+        0.5877886073616619,
+        0.4714829127316928
+      ],
+      "scaled_features": [
+        0.08732350119560332,
+        0.35798450185139924
+      ],
+      "target": 1,
+      "predicted": 0,
+      "logits": [
+        0.8431380987167358,
+        -0.6523386240005493
+      ],
+      "probabilities": [
+        0.8168988823890686,
+        0.1831011176109314
+      ],
+      "nearest_15_train_indices": [
+        110,
+        340,
+        807,
+        766,
+        419,
+        153,
+        798,
+        636,
+        758,
+        281,
+        820,
+        69,
+        598,
+        214,
+        592
+      ],
+      "nearest_15_train_class_counts": [
+        13,
+        2
+      ],
+      "interpretation": "Observed misclassification. Neighbour counts describe this fitted feature space; they do not identify whether noise, limited capacity or sampling caused this error."
+    }
+  ],
+  "finite_difference": -8.00000000005241,
+  "analytic_gradient": -8.0,
+  "finite_difference_epsilon": 1e-05,
+  "plots": [
+    "loss-and-errors.png"
+  ],
+  "selection_policy": "first two mistakes sorted by original dataset index, after frozen checkpoint selection",
+  "conclusion": "Metrics describe this split. Test error analysis did not select or change the checkpoint."
+}
