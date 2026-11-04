@@ -15,3 +15,5 @@ quality/**/*.png -diff
 *.zip binary
 # Saved reference runs are evidence and must stay byte-for-byte.
 quality/reference-runs/** -text whitespace=cr-at-eol
+# Vendored third-party files are kept byte-for-byte; tests check their recorded hashes.
+tools/vendor/** -text

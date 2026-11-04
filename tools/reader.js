@@ -222,5 +222,19 @@
     const button=document.createElement('button');button.className='copy-code';button.type='button';button.textContent='Копировать';button.ariaLabel='Копировать код';
     button.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(code.textContent);button.textContent='Скопировано';}catch{button.textContent='Выдели код вручную';}setTimeout(()=>{button.textContent='Копировать';},2400);});pre.prepend(button);
   });
+  // Mermaid is a local file loaded on the first visible diagram; hidden diagrams would get zero sizes.
+  const diagrams=document.querySelectorAll('pre.mermaid');
+  if(diagrams.length&&'IntersectionObserver' in window){
+    let library=null;
+    const load=()=>library||(library=new Promise((resolve,reject)=>{
+      const script=document.createElement('script');script.src='tools/vendor/mermaid/mermaid.min.js';
+      script.onload=()=>{window.mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'neutral',fontFamily:'Segoe UI, system-ui, sans-serif'});resolve(window.mermaid);};
+      script.onerror=reject;document.head.appendChild(script);}));
+    const observer=new IntersectionObserver(entries=>{for(const entry of entries){
+      if(!entry.isIntersecting)continue;observer.unobserve(entry.target);
+      load().then(mermaid=>mermaid.run({nodes:[entry.target]})).catch(()=>entry.target.classList.add('diagram-unavailable'));
+    }},{rootMargin:'200px'});
+    diagrams.forEach(diagram=>observer.observe(diagram));
+  }
   filter();select();markOutline();
 })();

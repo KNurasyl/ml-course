@@ -44,6 +44,28 @@ ANALOGY_PARTS = ("| В уроке | В аналогии |", "**Где анало
 # T22: the lesson card has four fields and stands after the delayed check, before the sources.
 CARD = re.compile(r"(?ms)^## Карточка урока\n(.*?)(?=^## |\Z)")
 CARD_FIELDS = ("Правило", "Смысл величин", "Когда применять", "Главная ошибка")
+# T21: a "Схема" section holds one Mermaid diagram after the worked example and before practice,
+# with at most nine blocks, a highlighted main path (classDef main) and a caption next to it (Mayer).
+SCHEMA = re.compile(r"(?ms)^## Схема\n(.*?)(?=^## |\Z)")
+MERMAID = re.compile(r"(?ms)^```mermaid\n(.*?)^```")
+MAX_BLOCKS = 9
+
+
+def diagram_blocks(source: str) -> int:
+    """Approximate node count of a flowchart, or participant count of a sequence diagram."""
+    lines = [line.strip() for line in source.splitlines()[1:] if line.strip() and not line.strip().startswith("%%")]
+    if source.lstrip().startswith("sequenceDiagram"):
+        return len({line.split()[1] for line in lines if line.split()[0] in ("participant", "actor")})
+    nodes = set()
+    for line in lines:
+        if line.split()[0] in ("classDef", "class", "style", "linkStyle", "subgraph", "end", "direction"):
+            continue
+        line = re.sub(r"\|[^|]*\|", " ", line)  # Edge labels are not nodes.
+        line = re.sub(r'"[^"]*"', "", line)
+        nodes.update(re.findall(r"(?:^|[\s&>])([A-Za-z_]\w*)(?=\s*(?:[\[({>]|-|=|&|$))", line))
+    return len(nodes)
+
+
 # T23: at least two distinct external sources in the sources section.
 SOURCES = re.compile(r"(?ms)^## Источники и углубление\n(.*?)(?=^## |\Z)")
 
@@ -116,6 +138,22 @@ def lint(root: Path = ROOT) -> dict:
                       for name in canonical_parts(heading)]
             if "Новая и отложенная проверка" not in before or "Источники и углубление" in before:
                 errors.append(f"{lesson_id}: lesson card must stand after the delayed check and before the sources")
+        for schema in SCHEMA.finditer(text):
+            diagram = MERMAID.search(schema.group(1))
+            caption = MERMAID.sub("", schema.group(1)).strip()
+            if not diagram:
+                errors.append(f"{lesson_id}: schema section needs a mermaid diagram")
+            else:
+                if diagram_blocks(diagram.group(1)) > MAX_BLOCKS:
+                    errors.append(f"{lesson_id}: schema has more than {MAX_BLOCKS} blocks")
+                if "classDef main" not in diagram.group(1) or not re.search(r"(?m)(:::main\b|^\s*class .*\bmain\s*$)", diagram.group(1)):
+                    errors.append(f"{lesson_id}: schema must highlight the main path with classDef main")
+            if not caption:
+                errors.append(f"{lesson_id}: schema needs a caption next to the diagram")
+            before = [name for heading in re.findall(r"(?m)^## (.+?)\s*$", text[:schema.start()])
+                      for name in canonical_parts(heading)]
+            if "Разобранный пример" not in before or "Практика с поддержкой" in before:
+                errors.append(f"{lesson_id}: schema must stand after the worked example and before practice")
         module = lesson_id[:3]
         if module in rollout.get("analogy", []) and not ANALOGY.search(text):
             errors.append(f"{lesson_id}: {module} is rolled out for T20 but the lesson has no analogy")
@@ -125,7 +163,9 @@ def lint(root: Path = ROOT) -> dict:
         if module in rollout.get("sources", []) and len(external_links(sources.group(1) if sources else "")) < 2:
             errors.append(f"{lesson_id}: {module} is rolled out for T23 but sources have fewer than two external links")
         practice = PRACTICE.search(text)
-        if re.search(r"(?m)^```", text) and practice and PREDICT not in practice.group(1):
+        # A Mermaid diagram is not code to run; only other fenced blocks call for a prediction.
+        runnable = any(lang != "mermaid" for lang in re.findall(r"(?ms)^```(\w*)\n.*?^```", text))
+        if runnable and practice and PREDICT not in practice.group(1):
             errors.append(f"{lesson_id}: practice of a lesson with code lacks the '{PREDICT}' line")
         ranks = [RANK[name] for name in dict.fromkeys(found)]
         if ranks != sorted(ranks) and not allowed.get("order_free"):

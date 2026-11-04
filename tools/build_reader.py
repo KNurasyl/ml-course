@@ -69,6 +69,12 @@ class CourseRenderer(mistune.HTMLRenderer):
         self.path_ids = path_ids
         self.heading_counts: dict[str, int] = {}
 
+    def block_code(self, code: str, info: str | None = None) -> str:
+        # Mermaid source stays readable text; reader.js draws it with the local library when visible.
+        if info and info.split()[0] == "mermaid":
+            return f'<figure class="diagram"><pre class="mermaid">{escape(code)}</pre></figure>\n'
+        return super().block_code(code, info)
+
     def destination(self, url: str) -> tuple[str | None, bool]:
         parsed = urlsplit(url)
         if parsed.scheme in {"http", "https"}:
