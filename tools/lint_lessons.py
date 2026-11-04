@@ -38,6 +38,9 @@ RESULT_BLOCK = re.compile(r"(?m)^\*\*Результат:?\*\*")
 # T27: practice in a lesson with code starts in the "predict, then run" mode (ICAP, constructive).
 PREDICT = "**Предскажи до запуска.**"
 PRACTICE = re.compile(r"(?ms)^## Практика с поддержкой\n(.*?)(?=^## |\Z)")
+# T20: an analogy sits between the explanation and the worked example and always says where it breaks.
+ANALOGY = re.compile(r"(?ms)^## (Аналогия(?::[^\n]*)?)\n(.*?)(?=^## |\Z)")
+ANALOGY_PARTS = ("| В уроке | В аналогии |", "**Где аналогия ломается:**")
 
 
 def canonical_parts(heading: str) -> list[str]:
@@ -90,6 +93,13 @@ def lint(root: Path = ROOT) -> dict:
                 errors.append(f"{lesson_id}: missing section '{name}'")
             if count and name in allowed.get("missing", []):
                 errors.append(f"{lesson_id}: exception for '{name}' is stale, the section exists")
+        for analogy in ANALOGY.finditer(text):
+            if not all(part in analogy.group(2) for part in ANALOGY_PARTS):
+                errors.append(f"{lesson_id}: analogy needs the mapping table and '**Где аналогия ломается:**'")
+            before = [name for heading in re.findall(r"(?m)^## (.+?)\s*$", text[:analogy.start()])
+                      for name in canonical_parts(heading)]
+            if "Объяснение" not in before or "Разобранный пример" in before:
+                errors.append(f"{lesson_id}: analogy must stand after the explanation and before the worked example")
         practice = PRACTICE.search(text)
         if re.search(r"(?m)^```", text) and practice and PREDICT not in practice.group(1):
             errors.append(f"{lesson_id}: practice of a lesson with code lacks the '{PREDICT}' line")

@@ -88,3 +88,15 @@ def test_lesson_with_code_needs_predict_line_in_practice(course):
     write(course, lesson(SECTIONS).replace("## Практика с поддержкой\n\nТекст.",
                                            "## Практика с поддержкой\n\n**Предскажи до запуска.** Запиши.\n\n" + code))
     assert linter.lint(course)["errors"] == []
+
+
+def test_analogy_needs_table_breaking_point_and_position(course):
+    good = "## Аналогия: кэш\n\nКак похоже: текст.\n\n| В уроке | В аналогии |\n| --- | --- |\n| a | b |\n\n" \
+           "**Где аналогия ломается:** текст.\n\n"
+    write(course, lesson(SECTIONS).replace("## Разобранный пример", good + "## Разобранный пример"))
+    assert linter.lint(course)["errors"] == []
+    write(course, lesson(SECTIONS).replace("## Разобранный пример", good.split("**Где")[0] + "## Разобранный пример"))
+    write(course, lesson(SECTIONS).replace("## Практика с поддержкой", good + "## Практика с поддержкой"), "M00-L02")
+    errors = linter.lint(course)["errors"]
+    assert "M00-L01: analogy needs the mapping table and '**Где аналогия ломается:**'" in errors
+    assert "M00-L02: analogy must stand after the explanation and before the worked example" in errors
