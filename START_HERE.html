@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="1e19575f93047d90acb967669ff1ff0f0967324d39a3aae911251cc87f4f7e03"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="4927df2ee9c933cf1fbc1a46a0897222ef473c7057aa846a40cd88998693d8d1"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -1574,7 +1574,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M01.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M00-L05"><small>Предыдущий раздел</small>← M00-L05. Первая схема ML-сервиса</a><a href="#M01-L01"><small>Следующий раздел</small>M01-L01. Массивы и формы →</a></nav></article><article class="material" id="M01-L01" data-title="M01-L01. Массивы и формы" data-short-title="Массивы и формы" data-kind="ready" data-module="M01"><header class="material-head"><div class="eyebrow"><span class="material-id">M01-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Массивы и формы</h1><p class="outcome"><strong>После урока:</strong> Выбрать форму массива по смыслу данных и вычислить среднее по нужной оси.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M01-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M01-L01--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M01-L01--объяснение">Объяснение</a></li><li><a href="#M01-L01--аналогия-таблица-с-типизированными-столбцами">Аналогия: таблица с типизированными столбцами</a></li><li><a href="#M01-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M01-L01--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M01-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M01-L01--самостоятельная-задача-a-m01-l01-a01">Самостоятельная задача A — M01-L01-A01</a></li><li><a href="#M01-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M01-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M01-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M01-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+"></iframe><p><a href="course/visuals/M01.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M00-L05"><small>Предыдущий раздел</small>← M00-L05. Первая схема ML-сервиса</a><a href="#M01-L01"><small>Следующий раздел</small>M01-L01. Массивы и формы →</a></nav></article><article class="material" id="M01-L01" data-title="M01-L01. Массивы и формы" data-short-title="Массивы и формы" data-kind="ready" data-module="M01"><header class="material-head"><div class="eyebrow"><span class="material-id">M01-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Массивы и формы</h1><p class="outcome"><strong>После урока:</strong> Выбрать форму массива по смыслу данных и вычислить среднее по нужной оси.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M01-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M01-L01--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M01-L01--объяснение">Объяснение</a></li><li><a href="#M01-L01--аналогия-таблица-с-типизированными-столбцами">Аналогия: таблица с типизированными столбцами</a></li><li><a href="#M01-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M01-L01--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M01-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M01-L01--самостоятельная-задача-a-m01-l01-a01">Самостоятельная задача A — M01-L01-A01</a></li><li><a href="#M01-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M01-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M01-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M01-L01--карточка-урока">Карточка урока</a></li><li><a href="#M01-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M00-L01">M00-L01</a></p>
 <h2 id="M01-L01--результат-и-входные-знания">Результат и входные знания</h2>
 <p>В таблице интервью строки могут обозначать сессии, а столбцы — длительность, число вопросов и длину ответа. Модель получает числа, но библиотека не знает, какой смысл ты назначил каждой оси. Ошибка формы иногда вызывает исключение, а иногда незаметно превращает нужную операцию в совсем другую. Поэтому форма является частью контракта данных.</p>
@@ -1764,10 +1764,37 @@ assert np.allclose(centered.mean(axis=0), 0)
 <p><strong>Вариант B:</strong> Для [[1,2,3],[4,5,6]] вычисли mean по axis=0 и axis=1.</p>
 <p><strong>Вариант C через 3–7 дней:</strong> Какая форма у (3,1)+(3,)? Как получить три поэлементные суммы?</p>
 <p><a href="#M01-SOLUTIONS--m01-l01-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M01-L01--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M01-L01--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Строка — объект, столбец — признак; mean(axis=0) даёт среднее каждого признака; broadcasting сравнивает размеры справа налево, каждая пара должна совпадать или содержать 1</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>shape — число элементов по осям; axis — ось, которая исчезает при сокращении; (3,) — одна ось, (3, 1) — столбец, (1, 3) — строка; dtype — общий тип элементов</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Перед каждой операцией над массивами: выпиши формы входов и ожидаемую форму результата. Пример: (4, 2) − (2,) вычитает вектор из каждой строки и даёт (4, 2)</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Вычесть (n,) и (n, 1) и получить матрицу n×n вместо n остатков или усреднить по axis=1 признаки в разных единицах</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M01-L01--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M01-SOLUTIONS--m01-l01-a01">Ключи M01</a> · <a href="labs/M01/README.md">Лабораторная модуля</a> · <a href="#M01">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://numpy.org/doc/stable/user/absolute_beginners.html" target="_blank" rel="noopener noreferrer" class="external-link">NumPy: основы массивов</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M01">Модуль и домашняя работа</a> · <a href="#M01-SOLUTIONS--m01-l01-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M01-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M01"><small>Предыдущий раздел</small>← M01 Данные и численный Python</a><a href="#M01-L02"><small>Следующий раздел</small>M01-L02. Качество таблицы →</a></nav></article><article class="material" id="M01-L02" data-title="M01-L02. Качество таблицы" data-short-title="Качество таблицы" data-kind="ready" data-module="M01"><header class="material-head"><div class="eyebrow"><span class="material-id">M01-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Качество таблицы</h1><p class="outcome"><strong>После урока:</strong> Найти пропуски, дубликаты и несоответствие единицы наблюдения до обучения.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M01-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M01-L02--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M01-L02--объяснение">Объяснение</a></li><li><a href="#M01-L02--аналогия-ограничения-базы-данных">Аналогия: ограничения базы данных</a></li><li><a href="#M01-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M01-L02--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M01-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M01-L02--самостоятельная-задача-a-m01-l02-a01">Самостоятельная задача A — M01-L02-A01</a></li><li><a href="#M01-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M01-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M01-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M01-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M01">Модуль и домашняя работа</a> · <a href="#M01-SOLUTIONS--m01-l01-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M01-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M01"><small>Предыдущий раздел</small>← M01 Данные и численный Python</a><a href="#M01-L02"><small>Следующий раздел</small>M01-L02. Качество таблицы →</a></nav></article><article class="material" id="M01-L02" data-title="M01-L02. Качество таблицы" data-short-title="Качество таблицы" data-kind="ready" data-module="M01"><header class="material-head"><div class="eyebrow"><span class="material-id">M01-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Качество таблицы</h1><p class="outcome"><strong>После урока:</strong> Найти пропуски, дубликаты и несоответствие единицы наблюдения до обучения.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M01-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M01-L02--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M01-L02--объяснение">Объяснение</a></li><li><a href="#M01-L02--аналогия-ограничения-базы-данных">Аналогия: ограничения базы данных</a></li><li><a href="#M01-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M01-L02--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M01-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M01-L02--самостоятельная-задача-a-m01-l02-a01">Самостоятельная задача A — M01-L02-A01</a></li><li><a href="#M01-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M01-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M01-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M01-L02--карточка-урока">Карточка урока</a></li><li><a href="#M01-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M00-L01">M00-L01</a></p>
 <h2 id="M01-L02--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Модель может успешно обучиться на испорченной таблице. Например, повторная загрузка логов удвоит вес одной сессии, а пропущенная длительность превратится в ноль и станет ложным сигналом. Проверка данных начинается с вопроса, что именно означает одна строка, а не с вызова fit.</p>
@@ -1852,10 +1879,37 @@ assert clean[&quot;session&quot;].is_unique
 <p><strong>Вариант B:</strong> У двух строк одинаковый session_id, но value 2 и 3. Можно удалить вторую как копию?</p>
 <p><strong>Вариант C через 3–7 дней:</strong> A имеет значения [1,1,1], B — [9]. Сравни среднее сессий и равновесное среднее людей.</p>
 <p><a href="#M01-SOLUTIONS--m01-l02-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M01-L02--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M01-L02--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Сначала определи единицу наблюдения и первичный ключ, затем ищи конфликты ключа, пропуски и нарушения диапазона; каждое правило очистки записывает, что сделано и со сколькими строками</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Единица наблюдения — что представляет строка; первичный ключ — поля, уникально задающие строку; пропуск — неизвестное значение, а не ноль; доля пропусков = пропуски / строки</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>До обучения и при каждом новом источнике данных. Пример: 2 пропуска на 8 строк дают долю 0.25, и причину пропусков нужно выяснить до заполнения</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Заменять пропуск нулём или удалять «дубликаты» без проверки, что строки с одним ключом действительно одинаковы</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M01-L02--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M01-SOLUTIONS--m01-l02-a01">Ключи M01</a> · <a href="labs/M01/README.md">Лабораторная модуля</a> · <a href="#M01">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://pandas.pydata.org/docs/user_guide/missing_data.html" target="_blank" rel="noopener noreferrer" class="external-link">pandas: работа с отсутствующими данными</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M01">Модуль и домашняя работа</a> · <a href="#M01-SOLUTIONS--m01-l02-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M01-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M01-L01"><small>Предыдущий раздел</small>← M01-L01. Массивы и формы</a><a href="#M01-L03"><small>Следующий раздел</small>M01-L03. Разделение данных →</a></nav></article><article class="material" id="M01-L03" data-title="M01-L03. Разделение данных" data-short-title="Разделение данных" data-kind="ready" data-module="M01"><header class="material-head"><div class="eyebrow"><span class="material-id">M01-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Разделение данных</h1><p class="outcome"><strong>После урока:</strong> Разделить данные под будущий сценарий и исключить пересечение связанных объектов.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M01-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M01-L03--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M01-L03--объяснение">Объяснение</a></li><li><a href="#M01-L03--аналогия-подготовка-к-собеседованию">Аналогия: подготовка к собеседованию</a></li><li><a href="#M01-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M01-L03--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M01-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M01-L03--самостоятельная-задача-a-m01-l03-a01">Самостоятельная задача A — M01-L03-A01</a></li><li><a href="#M01-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M01-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M01-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M01-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M01">Модуль и домашняя работа</a> · <a href="#M01-SOLUTIONS--m01-l02-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M01-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M01-L01"><small>Предыдущий раздел</small>← M01-L01. Массивы и формы</a><a href="#M01-L03"><small>Следующий раздел</small>M01-L03. Разделение данных →</a></nav></article><article class="material" id="M01-L03" data-title="M01-L03. Разделение данных" data-short-title="Разделение данных" data-kind="ready" data-module="M01"><header class="material-head"><div class="eyebrow"><span class="material-id">M01-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Разделение данных</h1><p class="outcome"><strong>После урока:</strong> Разделить данные под будущий сценарий и исключить пересечение связанных объектов.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M01-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M01-L03--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M01-L03--объяснение">Объяснение</a></li><li><a href="#M01-L03--аналогия-подготовка-к-собеседованию">Аналогия: подготовка к собеседованию</a></li><li><a href="#M01-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M01-L03--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M01-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M01-L03--самостоятельная-задача-a-m01-l03-a01">Самостоятельная задача A — M01-L03-A01</a></li><li><a href="#M01-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M01-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M01-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M01-L03--карточка-урока">Карточка урока</a></li><li><a href="#M01-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M00-L03">M00-L03</a></p>
 <h2 id="M01-L03--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Если ответы одного человека попадут одновременно в обучение и проверку, модель может запомнить его стиль и показать слишком оптимистичное качество. Для продукта важно качество на тех людях и условиях, которые действительно появятся после выпуска. Поэтому способ разбиения является частью постановки задачи.</p>
@@ -1939,10 +1993,37 @@ assert len(train)==4 and len(test)==2 and not overlap
 <p><strong>Вариант B:</strong> Есть A1,A2,B1,C1. Назначь A,B в train, C в test и проверь группы.</p>
 <p><strong>Вариант C через 3–7 дней:</strong> У A события дней 2 и 9, граница 6. Что нарушит разрезание группы?</p>
 <p><a href="#M01-SOLUTIONS--m01-l03-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M01-L03--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M01-L03--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Train — подбор параметров, validation — выбор настроек, test — однократная оценка выбранной процедуры; разбиение повторяет будущий сценарий: по группам, по времени или со стратификацией</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Группа — связанные строки одного пользователя или сессии, они целиком в одной части; временная граница — прошлое для обучения, будущее для проверки; seed и список ключей делают разбиение воспроизводимым</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>До любой подготовки, которая узнаёт свойства данных. Пример: для модели на новых людях обе строки пользователя A попадают в одну часть, а не делятся между train и test</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Случайно делить строки одного пользователя между train и test или выбирать лучшую версию по test</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M01-L03--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M01-SOLUTIONS--m01-l03-a01">Ключи M01</a> · <a href="labs/M01/README.md">Лабораторная модуля</a> · <a href="#M01">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://scikit-learn.org/stable/common_pitfalls.html" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: типичные ошибки и утечка</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M01">Модуль и домашняя работа</a> · <a href="#M01-SOLUTIONS--m01-l03-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M01-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M01-L02"><small>Предыдущий раздел</small>← M01-L02. Качество таблицы</a><a href="#M01-L04"><small>Следующий раздел</small>M01-L04. SQL и происхождение данных →</a></nav></article><article class="material" id="M01-L04" data-title="M01-L04. SQL и происхождение данных" data-short-title="SQL и происхождение данных" data-kind="ready" data-module="M01"><header class="material-head"><div class="eyebrow"><span class="material-id">M01-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>SQL и происхождение данных</h1><p class="outcome"><strong>После урока:</strong> Получить агрегат SQL с правильным числом наблюдений и проверить кратность соединения.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M01-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M01-L04--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M01-L04--объяснение">Объяснение</a></li><li><a href="#M01-L04--аналогия-средний-возраст-покупателей-по-строкам-чеков">Аналогия: средний возраст покупателей по строкам чеков</a></li><li><a href="#M01-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M01-L04--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M01-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M01-L04--самостоятельная-задача-a-m01-l04-a01">Самостоятельная задача A — M01-L04-A01</a></li><li><a href="#M01-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M01-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M01-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M01-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M01">Модуль и домашняя работа</a> · <a href="#M01-SOLUTIONS--m01-l03-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M01-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M01-L02"><small>Предыдущий раздел</small>← M01-L02. Качество таблицы</a><a href="#M01-L04"><small>Следующий раздел</small>M01-L04. SQL и происхождение данных →</a></nav></article><article class="material" id="M01-L04" data-title="M01-L04. SQL и происхождение данных" data-short-title="SQL и происхождение данных" data-kind="ready" data-module="M01"><header class="material-head"><div class="eyebrow"><span class="material-id">M01-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>SQL и происхождение данных</h1><p class="outcome"><strong>После урока:</strong> Получить агрегат SQL с правильным числом наблюдений и проверить кратность соединения.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M01-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M01-L04--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M01-L04--объяснение">Объяснение</a></li><li><a href="#M01-L04--аналогия-средний-возраст-покупателей-по-строкам-чеков">Аналогия: средний возраст покупателей по строкам чеков</a></li><li><a href="#M01-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M01-L04--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M01-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M01-L04--самостоятельная-задача-a-m01-l04-a01">Самостоятельная задача A — M01-L04-A01</a></li><li><a href="#M01-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M01-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M01-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M01-L04--карточка-урока">Карточка урока</a></li><li><a href="#M01-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M01-L03">M01-L03</a></p>
 <h2 id="M01-L04--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Большинство инженерных ML-задач начинается с таблиц, а не с нейросети. Соединение с таблицей ответов может размножить строки сессий и незаметно изменить среднюю длительность. Такой результат выглядит численно точным, потому что SQL честно вычисляет именно тот запрос, который был написан.</p>
@@ -2029,10 +2110,37 @@ c.close()
 <p><strong>Вариант B:</strong> После JOIN значение A=10 повторилось 3 раза, B=30 — один раз. Сравни среднее до/после.</p>
 <p><strong>Вариант C через 3–7 дней:</strong> Как сохранить среднее по сессиям при JOIN один-ко-многим?</p>
 <p><a href="#M01-SOLUTIONS--m01-l04-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M01-L04--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M01-L04--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>JOIN один-ко-многим повторяет родительскую строку по числу дочерних; признаки уровня сессии получают агрегацией дочерней таблицы до одной строки на ключ, затем проверяют уникальность ключа</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>COUNT(*) — число строк, COUNT(column) — число известных значений; AVG пропускает NULL; LEFT JOIN сохраняет левые строки, но WHERE по правому полю может их удалить</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При сборке признаков из нескольких таблиц. Пример: сессии длятся 20 и 40 с, у первой три ответа — после JOIN среднее (20·3 + 40)/4 = 25 вместо 30</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Усреднять поле родителя после JOIN или фильтровать LEFT JOIN условием WHERE по полю правой таблицы</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M01-L04--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M01-SOLUTIONS--m01-l04-a01">Ключи M01</a> · <a href="labs/M01/README.md">Лабораторная модуля</a> · <a href="#M01">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://www.sqlite.org/lang_select.html" target="_blank" rel="noopener noreferrer" class="external-link">SQLite: SELECT и JOIN</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M01">Модуль и домашняя работа</a> · <a href="#M01-SOLUTIONS--m01-l04-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M01-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M01-L03"><small>Предыдущий раздел</small>← M01-L03. Разделение данных</a><a href="#M01-L05"><small>Следующий раздел</small>M01-L05. Воспроизводимый конвейер →</a></nav></article><article class="material" id="M01-L05" data-title="M01-L05. Воспроизводимый конвейер" data-short-title="Воспроизводимый конвейер" data-kind="ready" data-module="M01"><header class="material-head"><div class="eyebrow"><span class="material-id">M01-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Воспроизводимый конвейер</h1><p class="outcome"><strong>После урока:</strong> Разделить fit и transform и воспроизвести подготовку новых объектов сохранёнными параметрами.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M01-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M01-L05--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M01-L05--объяснение">Объяснение</a></li><li><a href="#M01-L05--аналогия-lock-файл-зависимостей">Аналогия: lock-файл зависимостей</a></li><li><a href="#M01-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M01-L05--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M01-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M01-L05--самостоятельная-задача-a-m01-l05-a01">Самостоятельная задача A — M01-L05-A01</a></li><li><a href="#M01-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M01-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M01-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M01-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M01">Модуль и домашняя работа</a> · <a href="#M01-SOLUTIONS--m01-l04-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M01-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M01-L03"><small>Предыдущий раздел</small>← M01-L03. Разделение данных</a><a href="#M01-L05"><small>Следующий раздел</small>M01-L05. Воспроизводимый конвейер →</a></nav></article><article class="material" id="M01-L05" data-title="M01-L05. Воспроизводимый конвейер" data-short-title="Воспроизводимый конвейер" data-kind="ready" data-module="M01"><header class="material-head"><div class="eyebrow"><span class="material-id">M01-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Воспроизводимый конвейер</h1><p class="outcome"><strong>После урока:</strong> Разделить fit и transform и воспроизвести подготовку новых объектов сохранёнными параметрами.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M01-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M01-L05--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M01-L05--объяснение">Объяснение</a></li><li><a href="#M01-L05--аналогия-lock-файл-зависимостей">Аналогия: lock-файл зависимостей</a></li><li><a href="#M01-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M01-L05--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M01-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M01-L05--самостоятельная-задача-a-m01-l05-a01">Самостоятельная задача A — M01-L05-A01</a></li><li><a href="#M01-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M01-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M01-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M01-L05--карточка-урока">Карточка урока</a></li><li><a href="#M01-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M01-L02">M01-L02</a>, <a href="#M01-L03">M01-L03</a></p>
 <h2 id="M01-L05--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Одинаковый код может давать разные признаки, если каждый раз пересчитывать среднее на новой партии запросов. Для эксплуатации нужно сохранить не только веса модели, но и всю обученную подготовку. Иначе ответ начнёт зависеть от того, какие чужие запросы попали в соседний пакет.</p>
@@ -2118,7 +2226,34 @@ assert loaded[&quot;mean&quot;]==4
 <p><strong>Вариант B:</strong> Train=[1,3], test=[100]. Центрируй test по train.</p>
 <p><strong>Вариант C через 3–7 дней:</strong> Добавь test=−100: должна ли поменяться сохранённая средняя?</p>
 <p><a href="#M01-SOLUTIONS--m01-l05-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M01-L05--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M01-L05--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>fit вычисляет параметры подготовки только на train и сохраняет их; transform применяет сохранённые параметры к любому входу; центрирование: z = x − μ_train</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>μ_train — среднее обучающей части; артефакт — имена и порядок признаков, статистики и версия; seed — состояние генератора случайных чисел, а не версия данных</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При подготовке признаков для обучения и для сервиса. Пример: train [2, 6], μ = 4; новый x = 9 даёт z = 5, а среднее test после transform не обязано быть нулём</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Вызывать fit_transform на test или в сервисе, менять порядок признаков без проверки имён, загружать непроверенный pickle</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M01-L05--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M01-SOLUTIONS--m01-l05-a01">Ключи M01</a> · <a href="labs/M01/README.md">Лабораторная модуля</a> · <a href="#M01">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://scikit-learn.org/stable/common_pitfalls.html" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: согласованная подготовка и Pipeline</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
 <div class="practice-note"><a href="#M01">Модуль и домашняя работа</a> · <a href="#M01-SOLUTIONS--m01-l05-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M01-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M01-L04"><small>Предыдущий раздел</small>← M01-L04. SQL и происхождение данных</a><a href="#M02"><small>Следующий раздел</small>M02 Линейная алгебра →</a></nav></article><article class="material" id="M02" data-title="M02 Линейная алгебра" data-short-title="Линейная алгебра" data-kind="ready" data-module="M02"><header class="material-head"><div class="eyebrow"><span class="material-id">M02</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Линейная алгебра</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Модуль содержит самостоятельные уроки, локальную практику, итоговую домашнюю работу и отдельные ключи. Материалы подготовлены; результаты ученика остаются в личном журнале. Все обязательные вычисления этого модуля выполняются на CPU в окружении курса.</p>
@@ -14665,7 +14800,7 @@ assert not accept_result(3,2)
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 5 из 103 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 10 из 103 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -14702,6 +14837,42 @@ assert not accept_result(3,2)
 <li><strong>Смысл величин.</strong> Контракт — тип, допустимые значения и единицы входа; артефакт — параметры, подготовка входа и версия; откат — возврат всего совместимого набора.</li>
 <li><strong>Когда применять.</strong> При проектировании и выпуске сервиса: каждая стрелка схемы подписана передаваемыми данными, центр и масштаб хранятся и откатываются вместе с весами.</li>
 <li><strong>Главная ошибка.</strong> Откатывать только веса, оставив подготовку входа от новой версии, или считать быстрый ответ без ошибок доказательством правильных предсказаний.</li>
+</ul>
+<h2 id="CHEATSHEET--m01-данные-и-численный-python">M01. Данные и численный Python</h2>
+<h3 id="CHEATSHEET--m01-l01-массивы-и-формы"><a href="#M01-L01">M01-L01. Массивы и формы</a></h3>
+<ul>
+<li><strong>Правило.</strong> Строка — объект, столбец — признак; mean(axis=0) даёт среднее каждого признака; broadcasting сравнивает размеры справа налево, каждая пара должна совпадать или содержать 1.</li>
+<li><strong>Смысл величин.</strong> shape — число элементов по осям; axis — ось, которая исчезает при сокращении; (3,) — одна ось, (3, 1) — столбец, (1, 3) — строка; dtype — общий тип элементов.</li>
+<li><strong>Когда применять.</strong> Перед каждой операцией над массивами: выпиши формы входов и ожидаемую форму результата. Пример: (4, 2) − (2,) вычитает вектор из каждой строки и даёт (4, 2).</li>
+<li><strong>Главная ошибка.</strong> Вычесть (n,) и (n, 1) и получить матрицу n×n вместо n остатков или усреднить по axis=1 признаки в разных единицах.</li>
+</ul>
+<h3 id="CHEATSHEET--m01-l02-качество-таблицы"><a href="#M01-L02">M01-L02. Качество таблицы</a></h3>
+<ul>
+<li><strong>Правило.</strong> Сначала определи единицу наблюдения и первичный ключ, затем ищи конфликты ключа, пропуски и нарушения диапазона; каждое правило очистки записывает, что сделано и со сколькими строками.</li>
+<li><strong>Смысл величин.</strong> Единица наблюдения — что представляет строка; первичный ключ — поля, уникально задающие строку; пропуск — неизвестное значение, а не ноль; доля пропусков = пропуски / строки.</li>
+<li><strong>Когда применять.</strong> До обучения и при каждом новом источнике данных. Пример: 2 пропуска на 8 строк дают долю 0.25, и причину пропусков нужно выяснить до заполнения.</li>
+<li><strong>Главная ошибка.</strong> Заменять пропуск нулём или удалять «дубликаты» без проверки, что строки с одним ключом действительно одинаковы.</li>
+</ul>
+<h3 id="CHEATSHEET--m01-l03-разделение-данных"><a href="#M01-L03">M01-L03. Разделение данных</a></h3>
+<ul>
+<li><strong>Правило.</strong> Train — подбор параметров, validation — выбор настроек, test — однократная оценка выбранной процедуры; разбиение повторяет будущий сценарий: по группам, по времени или со стратификацией.</li>
+<li><strong>Смысл величин.</strong> Группа — связанные строки одного пользователя или сессии, они целиком в одной части; временная граница — прошлое для обучения, будущее для проверки; seed и список ключей делают разбиение воспроизводимым.</li>
+<li><strong>Когда применять.</strong> До любой подготовки, которая узнаёт свойства данных. Пример: для модели на новых людях обе строки пользователя A попадают в одну часть, а не делятся между train и test.</li>
+<li><strong>Главная ошибка.</strong> Случайно делить строки одного пользователя между train и test или выбирать лучшую версию по test.</li>
+</ul>
+<h3 id="CHEATSHEET--m01-l04-sql-и-происхождение-данных"><a href="#M01-L04">M01-L04. SQL и происхождение данных</a></h3>
+<ul>
+<li><strong>Правило.</strong> JOIN один-ко-многим повторяет родительскую строку по числу дочерних; признаки уровня сессии получают агрегацией дочерней таблицы до одной строки на ключ, затем проверяют уникальность ключа.</li>
+<li><strong>Смысл величин.</strong> COUNT(*) — число строк, COUNT(column) — число известных значений; AVG пропускает NULL; LEFT JOIN сохраняет левые строки, но WHERE по правому полю может их удалить.</li>
+<li><strong>Когда применять.</strong> При сборке признаков из нескольких таблиц. Пример: сессии длятся 20 и 40 с, у первой три ответа — после JOIN среднее (20·3 + 40)/4 = 25 вместо 30.</li>
+<li><strong>Главная ошибка.</strong> Усреднять поле родителя после JOIN или фильтровать LEFT JOIN условием WHERE по полю правой таблицы.</li>
+</ul>
+<h3 id="CHEATSHEET--m01-l05-воспроизводимый-конвейер"><a href="#M01-L05">M01-L05. Воспроизводимый конвейер</a></h3>
+<ul>
+<li><strong>Правило.</strong> fit вычисляет параметры подготовки только на train и сохраняет их; transform применяет сохранённые параметры к любому входу; центрирование: z = x − μ_train.</li>
+<li><strong>Смысл величин.</strong> μ_train — среднее обучающей части; артефакт — имена и порядок признаков, статистики и версия; seed — состояние генератора случайных чисел, а не версия данных.</li>
+<li><strong>Когда применять.</strong> При подготовке признаков для обучения и для сервиса. Пример: train [2, 6], μ = 4; новый x = 9 даёт z = 5, а среднее test после transform не обязано быть нулём.</li>
+<li><strong>Главная ошибка.</strong> Вызывать fit_transform на test или в сервисе, менять порядок признаков без проверки имён, загружать непроверенный pickle.</li>
 </ul>
 </div></div><footer class="source-note">Исходный текст: <code>course/cheatsheet.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#FAST-TRACK-LLM"><small>Предыдущий раздел</small>← Быстрый вход в M09–M11 для тех, кто уже делал RAG</a><a href="#REVIEW-SCHEDULE"><small>Следующий раздел</small>Расписание повторения →</a></nav></article><article class="material" id="REVIEW-SCHEDULE" data-title="Расписание повторения" data-short-title="Расписание повторения" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">REVIEW-SCHEDULE</span><span class="badge reference">Материал курса</span></div><h1>Расписание повторения</h1></header><div class="article-layout"><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Правило дополняет <a href="#MENTOR--отложенная-проверка">отложенную проверку</a> из учебного цикла: даты повторений считаются по журналу, а сами повторения смешивают задачи разных модулей.</p>
 <h2 id="REVIEW-SCHEDULE--правило-1-3-7-21">Правило 1–3–7–21</h2>
