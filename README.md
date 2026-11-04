@@ -67,6 +67,15 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools\bootstrap.ps1
 
 Затем обнови учебник в браузере. HTML не записывает ответы и прогресс автоматически.
 
+Те же шаги и полную пересборку выполняет единая точка сборки `tools\build_all.py` с фиксированным порядком: интерактивные опыты (`build_visuals` → `build_module_visuals` → `build_product_visuals`) → рисунки (`build_foundation_figures` → `build_quantitative_figures` → `build_responsive_figures`) → учебник → manifest. Генераторы детерминированы: при неизменных исходниках полный прогон не меняет файлы.
+
+```powershell
+.\.venv\Scripts\python.exe tools\build_all.py --text-only
+.\.venv\Scripts\python.exe tools\build_all.py
+```
+
+Первая команда — только учебник и manifest, её достаточно после правки Markdown или журнала. Флаг `--reports` дополнительно перезаписывает свидетельства выпуска в quality/ из artifacts/ полной проверки; он нужен только при подготовке выпуска. `--dry-run` показывает шаги без запуска. Разовые скрипты интеграции версии 1.1.0 перенесены в [tools/legacy](tools/legacy/README.md) — их не запускать.
+
 Историческое происхождение материалов хранится только в metadata/source-pages.json. Старые удалённые копии больше не являются актуальным учебником. Бывшая временная папка .authoring с архивом создания перенесена в [archive/authoring-0.1.0.zip](archive/README.md): её старые генераторы нельзя запускать для пересоздания текущих материалов.
 
 ## Проверка материалов
