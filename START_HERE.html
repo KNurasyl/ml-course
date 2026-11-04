@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="cc378f413adcec4915d6756710a0bac180f342c85385084193a316a3ceae154c"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="14c6dfae7fc63a30981073293cf2b6cd99d74b5042eb278bcef419e9c38b5694"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -6396,7 +6396,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M06.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M05-L07"><small>Предыдущий раздел</small>← M05-L07. Самостоятельный эксперимент на неоднородных данных</a><a href="#M06-L01"><small>Следующий раздел</small>M06-L01. Цель и ограничения →</a></nav></article><article class="material" id="M06-L01" data-title="M06-L01. Цель и ограничения" data-short-title="Цель и ограничения" data-kind="ready" data-module="M06"><header class="material-head"><div class="eyebrow"><span class="material-id">M06-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Цель и ограничения</h1><p class="outcome"><strong>После урока:</strong> Отделить измеренное требование от предположения и предложить способ проверки.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M00-L05. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 110 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M06-L01--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M06-L01--объяснение">Объяснение</a></li><li><a href="#M06-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M06-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M06-L01--самостоятельная-задача-a-m06-l01-a">Самостоятельная задача A — M06-L01-A</a></li><li><a href="#M06-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M06-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M06-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M06-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+"></iframe><p><a href="course/visuals/M06.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M05-L07"><small>Предыдущий раздел</small>← M05-L07. Самостоятельный эксперимент на неоднородных данных</a><a href="#M06-L01"><small>Следующий раздел</small>M06-L01. Цель и ограничения →</a></nav></article><article class="material" id="M06-L01" data-title="M06-L01. Цель и ограничения" data-short-title="Цель и ограничения" data-kind="ready" data-module="M06"><header class="material-head"><div class="eyebrow"><span class="material-id">M06-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Цель и ограничения</h1><p class="outcome"><strong>После урока:</strong> Отделить измеренное требование от предположения и предложить способ проверки.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M00-L05. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 110 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M06-L01--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M06-L01--объяснение">Объяснение</a></li><li><a href="#M06-L01--аналогия-slo-сервиса">Аналогия: SLO сервиса</a></li><li><a href="#M06-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M06-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M06-L01--самостоятельная-задача-a-m06-l01-a">Самостоятельная задача A — M06-L01-A</a></li><li><a href="#M06-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M06-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M06-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M06-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M06-L01--проверь-себя-сначала">Проверь себя сначала</h2>
 <p><strong>Короткий путь для знакомой темы, 2–5 минут.</strong> Из 50 запущенных сессий 40 дошли до конца; из 10 проверенных отзывов 6 оценили вопросы как полезные. Найди обе доли с явными знаменателями. Можно ли утверждать, что «60% пользователей считают вопросы полезными»?</p>
@@ -6409,6 +6409,43 @@ draw();
 <p>Нефункциональное требование должно иметь единицу, окно измерения и способ расчёта. «Быстро» заменяется на «измеряем p95 полного времени ответа на 100 запросах фиксированной длины после прогрева». p95 — значение, ниже которого находится около 95 процентов наблюдений; способ вычисления квантиля тоже фиксируется. Порог до измерения является целевым, а не достигнутым. Время загрузки весов записывается отдельно, иначе изменение холодного старта замаскирует поведение обычного диалога.</p>
 <p>До архитектуры полезно построить простой baseline: фиксированную последовательность вопросов и рубрику, проверяемую человеком. Он показывает, какую ценность добавляет модель и где достаточно обычного кода. Запиши также неприятные исходы: неподтверждённый технический совет, потеря ответа, повтор одного вопроса. Для каждого реши, что система делает: просит уточнение, сообщает ограничение, повторяет операцию или завершает сессию. Такая постановка превращает большой проект в проверяемые инженерные задачи.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M06-L01-desktop.svg" target="_blank" data-figure="course/assets/responsive/M06-L01-desktop.svg" aria-label="Увеличить рисунок: Цель и ограничения: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M06-L01-mobile.svg"><img src="course/assets/responsive/M06-L01-desktop.svg" alt="Цель и ограничения: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M06-L01--аналогия-slo-сервиса">Аналогия: SLO сервиса</h2>
+<p>Как похоже: «сервис должен быть быстрым» ничего не обещает, а «p95 задержки ниже 2 с за 28 дней по логам балансировщика» — уже SLO с единицей, окном и способом расчёта. Пока замера нет, это цель, а не факт. Требования к ML-сервису записывают так же и отдельно держат бизнес-KPI и технические SLI.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Требование с единицей, окном и способом расчёта</td>
+  <td>SLO: «p95 &lt; 2 с за 28 дней по логам балансировщика»</td>
+</tr>
+<tr>
+  <td>Целевое значение до измерения</td>
+  <td>SLO, записанный до первого замера SLI</td>
+</tr>
+<tr>
+  <td>Продуктовая метрика</td>
+  <td>Бизнес-KPI: конверсия, удержание</td>
+</tr>
+<tr>
+  <td>Техническая метрика</td>
+  <td>SLI: доля HTTP 200, задержка</td>
+</tr>
+<tr>
+  <td>Ограничение</td>
+  <td>Жёсткое требование: on-prem, бюджет, лимит памяти</td>
+</tr>
+<tr>
+  <td>Baseline</td>
+  <td>Ручной процесс или простая форма до автоматизации</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> SLI сервиса считается автоматически по каждому запросу. Корректность технического совета проверяет человек по рубрике и на выборке, поэтому у неё свой, обычно маленький знаменатель. Перемножить доступность и корректность, как SLO цепочки, без предположений о выборке нельзя.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M06-L01--разобранный-пример">Разобранный пример</h2>
 <p>Пусть за день поступило 200 запросов, из них 196 получили HTTP 200. Доступность по этим наблюдениям равна 196/200 = 0,98. Из 50 случайно отобранных завершённых ответов 40 соответствуют рубрике: наблюдаемая доля корректных ответов 0,80. Знаменатели разные; перемножение 0,98 и 0,80 допустимо только при дополнительных предположениях о выборке и определении события, которых здесь нет.</p>
 <pre><code class="language-python">successful_http, requests = 196, 200
@@ -6443,7 +6480,7 @@ print(round(correct / reviewed, 2))         # 0.8
 <li><a href="https://developers.google.com/machine-learning/guides/rules-of-ml" target="_blank" rel="noopener noreferrer" class="external-link">Google: Rules of ML</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M06">Модуль и домашняя работа</a> · <a href="#M06-SOLUTIONS--m06-l01-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M06-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M06"><small>Предыдущий раздел</small>← M06 Проектирование ML-систем</a><a href="#M06-L02"><small>Следующий раздел</small>M06-L02. Контуры данных и модели →</a></nav></article><article class="material" id="M06-L02" data-title="M06-L02. Контуры данных и модели" data-short-title="Контуры данных и модели" data-kind="ready" data-module="M06"><header class="material-head"><div class="eyebrow"><span class="material-id">M06-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Контуры данных и модели</h1><p class="outcome"><strong>После урока:</strong> Объяснить, как избежать смешивания версий преобразований и модели.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M06-L01. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 110 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M06-L02--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M06-L02--объяснение">Объяснение</a></li><li><a href="#M06-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M06-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M06-L02--самостоятельная-задача-a-m06-l02-a">Самостоятельная задача A — M06-L02-A</a></li><li><a href="#M06-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M06-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M06-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M06-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M06">Модуль и домашняя работа</a> · <a href="#M06-SOLUTIONS--m06-l01-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M06-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M06"><small>Предыдущий раздел</small>← M06 Проектирование ML-систем</a><a href="#M06-L02"><small>Следующий раздел</small>M06-L02. Контуры данных и модели →</a></nav></article><article class="material" id="M06-L02" data-title="M06-L02. Контуры данных и модели" data-short-title="Контуры данных и модели" data-kind="ready" data-module="M06"><header class="material-head"><div class="eyebrow"><span class="material-id">M06-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Контуры данных и модели</h1><p class="outcome"><strong>После урока:</strong> Объяснить, как избежать смешивания версий преобразований и модели.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M06-L01. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 110 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M06-L02--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M06-L02--объяснение">Объяснение</a></li><li><a href="#M06-L02--аналогия-номера-полей-в-protobuf">Аналогия: номера полей в protobuf</a></li><li><a href="#M06-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M06-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M06-L02--самостоятельная-задача-a-m06-l02-a">Самостоятельная задача A — M06-L02-A</a></li><li><a href="#M06-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M06-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M06-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M06-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M06-L02--проверь-себя-сначала">Проверь себя сначала</h2>
 <p><strong>Короткий путь для знакомой темы, 2–5 минут.</strong> Выпуск: mean = 50, scale = 10, weight = 4, bias = 2, ŷ = weight·(x − mean)/scale + bias. Найди ответ для x = 70. Каким он станет, если scale загрузить из другой версии, где scale = 5?</p>
@@ -6457,6 +6494,43 @@ print(round(correct / reviewed, 2))         # 0.8
 <p>Журнал запроса связывает входную схему, идентификатор выпуска и результат. Полное хранение личного текста не всегда необходимо: для технической диагностики часто хватает идентификатора сессии, размеров, кодов ошибок и согласованного набора обезличенных примеров. Если требуется воспроизвести конкретное предсказание, заранее определи, какие данные сохраняются и на какой срок. Это инженерное требование к наблюдаемости, а не повод собирать всё без разбора.</p>
 <p>Нарисуй два потока: данные → преобразование → обучение → проверка → выпуск; запрос → проверка схемы → преобразование выпуска → модель выпуска → ответ. Соединяет их только проверенный комплект. Обратная связь поступает в новые данные через отдельную проверку, а не автоматически меняет параметры после каждого ответа.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M06-L02-desktop.svg" target="_blank" data-figure="course/assets/responsive/M06-L02-desktop.svg" aria-label="Увеличить рисунок: Контуры данных и модели: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M06-L02-mobile.svg"><img src="course/assets/responsive/M06-L02-desktop.svg" alt="Контуры данных и модели: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M06-L02--аналогия-номера-полей-в-protobuf">Аналогия: номера полей в protobuf</h2>
+<p>Как похоже: в protobuf значение поля определяется номером, а не именем. Если новая версия сервера переиспользует номер 1 под другую величину, старый клиент продолжит слать возраст, а сервер прочитает его как длительность — без ошибки, но неверно. Порядок признаков, μ и s — такой же контракт между обучением и сервисом. Указатель current.json похож на symlink current при атомарном деплое: его переключают только после проверки новой папки.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>feature_order</td>
+  <td>Номера полей: смысл задаёт номер, а не имя</td>
+</tr>
+<tr>
+  <td>μ и s из обучения</td>
+  <td>Единицы и смысл поля, зафиксированные в схеме</td>
+</tr>
+<tr>
+  <td>Статистики одного выпуска и веса другого</td>
+  <td>Клиент и сервер разных версий схемы: ошибки нет, ответ неверен</td>
+</tr>
+<tr>
+  <td>manifest.json</td>
+  <td>Описание схемы с версией и списком полей</td>
+</tr>
+<tr>
+  <td>current.json</td>
+  <td>Symlink current, переключаемый после проверки папки релиза</td>
+</tr>
+<tr>
+  <td>Контрольный запрос</td>
+  <td>Контрактный тест между клиентом и сервером</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> несовместимую схему protobuf часто ловит валидатор или генератор кода. μ и s — просто числа: подмену не поймает ни тип, ни схема, только контрольный вход не в точке среднего. И у данных есть время события и время поступления, которых в схеме сообщения нет.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M06-L02--разобранный-пример">Разобранный пример</h2>
 <p>Выпуск A использует μ=10, s=2, w=3 и b=1. Для x=14: z=2, ответ 3·2+1=7. Выпуск B использует μ=12, s=2 и другой обученный вес w=1. Если случайно взять статистики B и вес A, ответ станет 4. Все числа допустимы, исключения нет, но система несовместима.</p>
 <pre><code class="language-python">def predict(x, release):
@@ -6492,7 +6566,7 @@ assert predict(14, a) == 7
 <li><a href="https://developers.google.com/machine-learning/guides/rules-of-ml" target="_blank" rel="noopener noreferrer" class="external-link">Google: Rules of ML</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M06">Модуль и домашняя работа</a> · <a href="#M06-SOLUTIONS--m06-l02-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M06-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M06-L01"><small>Предыдущий раздел</small>← M06-L01. Цель и ограничения</a><a href="#M06-L03"><small>Следующий раздел</small>M06-L03. Batch и online →</a></nav></article><article class="material" id="M06-L03" data-title="M06-L03. Batch и online" data-short-title="Batch и online" data-kind="ready" data-module="M06"><header class="material-head"><div class="eyebrow"><span class="material-id">M06-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Batch и online</h1><p class="outcome"><strong>После урока:</strong> Защитить выбор через свежесть, задержку, цену вычислений и сложность эксплуатации.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M06-L02, M05-L05. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 130 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M06-L03--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M06-L03--объяснение">Объяснение</a></li><li><a href="#M06-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M06-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M06-L03--самостоятельная-задача-a-m06-l03-a">Самостоятельная задача A — M06-L03-A</a></li><li><a href="#M06-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M06-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M06-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M06-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M06">Модуль и домашняя работа</a> · <a href="#M06-SOLUTIONS--m06-l02-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M06-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M06-L01"><small>Предыдущий раздел</small>← M06-L01. Цель и ограничения</a><a href="#M06-L03"><small>Следующий раздел</small>M06-L03. Batch и online →</a></nav></article><article class="material" id="M06-L03" data-title="M06-L03. Batch и online" data-short-title="Batch и online" data-kind="ready" data-module="M06"><header class="material-head"><div class="eyebrow"><span class="material-id">M06-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Batch и online</h1><p class="outcome"><strong>После урока:</strong> Защитить выбор через свежесть, задержку, цену вычислений и сложность эксплуатации.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M06-L02, M05-L05. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 130 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M06-L03--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M06-L03--объяснение">Объяснение</a></li><li><a href="#M06-L03--аналогия-ssg-isr-и-ssr-в-next-js">Аналогия: SSG, ISR и SSR в Next.js</a></li><li><a href="#M06-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M06-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M06-L03--самостоятельная-задача-a-m06-l03-a">Самостоятельная задача A — M06-L03-A</a></li><li><a href="#M06-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M06-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M06-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M06-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M06-L03--проверь-себя-сначала">Проверь себя сначала</h2>
 <p><strong>Короткий путь для знакомой темы, 2–5 минут.</strong> Запросы приходят в моменты [0, 0.2, 3] с, обработка одного занимает 1 с, обработчик один. Найди начало, окончание и полную задержку каждого запроса. Какой режим нужен для ежедневного пересчёта эмбеддингов базы — batch или online?</p>
@@ -6613,6 +6687,43 @@ draw();
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
 "></iframe><p><a href="course/visuals/M06.html" target="_blank">Открыть опыт отдельно на весь экран</a></p></section>
+<h2 id="M06-L03--аналогия-ssg-isr-и-ssr-в-next-js">Аналогия: SSG, ISR и SSR в Next.js</h2>
+<p>Как похоже: статическую страницу собирают заранее (SSG), ISR пересобирает её раз в revalidate секунд, а SSR рендерит на каждый запрос. Batch inference — это SSG и ISR: ответы готовы заранее и устаревают до следующего пересчёта. Online inference — это SSR: ответ считается после запроса, и пользователь ждёт рендер.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Batch inference</td>
+  <td>SSG: страницы собраны заранее при сборке</td>
+</tr>
+<tr>
+  <td>Интервал пересчёта и свежесть</td>
+  <td>ISR с revalidate: страница устаревает до регенерации</td>
+</tr>
+<tr>
+  <td>Online inference</td>
+  <td>SSR: рендер на каждый запрос</td>
+</tr>
+<tr>
+  <td>Эмбеддинги заранее, диалог онлайн</td>
+  <td>Статичная оболочка и динамические данные на одной странице</td>
+</tr>
+<tr>
+  <td>Ключ кэша с версией и состоянием</td>
+  <td>Ключ кэша без пользователя отдаёт чужую страницу</td>
+</tr>
+<tr>
+  <td>Очередь при нехватке исполнителя</td>
+  <td>Медленный SSR под пиком: запросы ждут свободный рендер</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> SSR-рендер обычно занимает миллисекунды, а генерация LLM на одном исполнителе — секунды, поэтому очередь растёт намного быстрее. Следующий вопрос зависит от состояния диалога, и заранее его не собрать. А online learning — обновление весов — аналога в рендеринге страниц не имеет.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M06-L03--разобранный-пример">Разобранный пример</h2>
 <p>Запросы приходят в моменты [0, 1, 2, 3] секунд. Один исполнитель обслуживает каждый две секунды. Начала обработки: [0, 2, 4, 6], окончания: [2, 4, 6, 8]. Полная задержка равна [2, 3, 4, 5], хотя модель всегда работает ровно две секунды.</p>
 <pre><code class="language-python">finish = 0
@@ -6649,7 +6760,7 @@ assert latencies == [2, 3, 4, 5]
 <li><a href="https://developers.google.com/machine-learning/guides/rules-of-ml" target="_blank" rel="noopener noreferrer" class="external-link">Google: Rules of ML</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M06">Модуль и домашняя работа</a> · <a href="#M06-SOLUTIONS--m06-l03-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M06-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M06-L02"><small>Предыдущий раздел</small>← M06-L02. Контуры данных и модели</a><a href="#M06-L04"><small>Следующий раздел</small>M06-L04. Наблюдение и изменение качества →</a></nav></article><article class="material" id="M06-L04" data-title="M06-L04. Наблюдение и изменение качества" data-short-title="Наблюдение и изменение качества" data-kind="ready" data-module="M06"><header class="material-head"><div class="eyebrow"><span class="material-id">M06-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Наблюдение и изменение качества</h1><p class="outcome"><strong>После урока:</strong> Различить техническую доступность и полезность предсказаний.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M06-L03. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 110 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M06-L04--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M06-L04--объяснение">Объяснение</a></li><li><a href="#M06-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M06-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M06-L04--самостоятельная-задача-a-m06-l04-a">Самостоятельная задача A — M06-L04-A</a></li><li><a href="#M06-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M06-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M06-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M06-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M06">Модуль и домашняя работа</a> · <a href="#M06-SOLUTIONS--m06-l03-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M06-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M06-L02"><small>Предыдущий раздел</small>← M06-L02. Контуры данных и модели</a><a href="#M06-L04"><small>Следующий раздел</small>M06-L04. Наблюдение и изменение качества →</a></nav></article><article class="material" id="M06-L04" data-title="M06-L04. Наблюдение и изменение качества" data-short-title="Наблюдение и изменение качества" data-kind="ready" data-module="M06"><header class="material-head"><div class="eyebrow"><span class="material-id">M06-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Наблюдение и изменение качества</h1><p class="outcome"><strong>После урока:</strong> Различить техническую доступность и полезность предсказаний.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M06-L03. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 110 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M06-L04--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M06-L04--объяснение">Объяснение</a></li><li><a href="#M06-L04--аналогия-дашборд-интернет-магазина">Аналогия: дашборд интернет-магазина</a></li><li><a href="#M06-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M06-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M06-L04--самостоятельная-задача-a-m06-l04-a">Самостоятельная задача A — M06-L04-A</a></li><li><a href="#M06-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M06-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M06-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M06-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M06-L04--проверь-себя-сначала">Проверь себя сначала</h2>
 <p><strong>Короткий путь для знакомой темы, 2–5 минут.</strong> Выпуск A: RU 9/10 правильных, EN 1/10. Выпуск B: RU 5/10, EN 5/10. Найди общую долю правильных у каждого выпуска и доли по языкам. Что скрывает общий показатель?</p>
@@ -6663,6 +6774,47 @@ assert latencies == [2, 3, 4, 5]
 <p>Хороший сигнал мониторинга связан с действием. Если растёт доля невалидного формата, проверить выпуск шаблона и валидатор. Если увеличилась очередь при неизменном времени вычисления, ограничить конкуренцию или пересмотреть нагрузку. Если ухудшилась разметка на SQL, вернуть прошлую версию базы знаний либо уточнить рубрику после анализа. Порог без владельца и действия превращается в уведомление, которое со временем игнорируется.</p>
 <p>При локальной разработке достаточно JSONL со строкой на запрос и скрипта сводки. Сохраняй request_id, release_id, этап, длительность, outcome и размеры. Сырые пользовательские ответы не нужны для всех технических графиков. Прежде чем строить сложную панель, проверь, что по одному неудачному запросу можешь восстановить последовательность событий и отличить ошибку данных от ошибки модели.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M06-L04-desktop.svg" target="_blank" data-figure="course/assets/responsive/M06-L04-desktop.svg" aria-label="Увеличить рисунок: Наблюдение и изменение качества: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M06-L04-mobile.svg"><img src="course/assets/responsive/M06-L04-desktop.svg" alt="Наблюдение и изменение качества: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M06-L04--аналогия-дашборд-интернет-магазина">Аналогия: дашборд интернет-магазина</h2>
+<p>Как похоже: health check зелёный и доля 5xx низкая, а заказы не доходят до покупателей — техническая доступность не равна полезности. Больше мобильных клиентов — сдвиг входов, который ещё не означает проблему. Изменилась налоговая ставка — тот же заказ теперь имеет другую правильную сумму, это уже смена связи входа и ответа.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Доступность против полезности</td>
+  <td>Health check зелёный, а заказы не доходят до покупателя</td>
+</tr>
+<tr>
+  <td>Data drift</td>
+  <td>Сменился профиль трафика: больше мобильных клиентов</td>
+</tr>
+<tr>
+  <td>Concept drift</td>
+  <td>Новая налоговая ставка: тот же заказ, другая правильная сумма</td>
+</tr>
+<tr>
+  <td>Задержанная метка</td>
+  <td>Возвраты и жалобы приходят через недели</td>
+</tr>
+<tr>
+  <td>Быстрый прокси</td>
+  <td>Доля отказов платёжного шлюза</td>
+</tr>
+<tr>
+  <td>Срез по языку</td>
+  <td>Конверсия по регионам: среднее скрывает отстающий регион</td>
+</tr>
+<tr>
+  <td>Порог с владельцем и действием</td>
+  <td>Алерт с runbook и дежурным</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> судьба заказа рано или поздно известна точно. Корректность технического разбора проверяет человек по рубрике и выборочно, а часть меток не придёт никогда. Поэтому нужен отдельный согласованный набор для содержательного аудита.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M06-L04--разобранный-пример">Разобранный пример</h2>
 <p>Вчера средняя длина ответа была 100 символов, сегодня 150. Относительный сдвиг (150−100)/100 = 0,5, то есть 50%. Из этого нельзя вычислить точность модели. На ручной проверке было 18 правильных из 20 вчера и 17 из 20 сегодня. Разница −0,05 заметна численно, но маленькие выборки требуют осторожности.</p>
 <pre><code class="language-python">shift = (150-100)/100
@@ -6696,7 +6848,7 @@ print(round(shift, 2), round(quality_delta, 2))  # 0.5 -0.05
 <li><a href="https://developers.google.com/machine-learning/guides/rules-of-ml" target="_blank" rel="noopener noreferrer" class="external-link">Google: Rules of ML</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M06">Модуль и домашняя работа</a> · <a href="#M06-SOLUTIONS--m06-l04-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M06-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M06-L03"><small>Предыдущий раздел</small>← M06-L03. Batch и online</a><a href="#M06-L05"><small>Следующий раздел</small>M06-L05. Отказы и откат →</a></nav></article><article class="material" id="M06-L05" data-title="M06-L05. Отказы и откат" data-short-title="Отказы и откат" data-kind="ready" data-module="M06"><header class="material-head"><div class="eyebrow"><span class="material-id">M06-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Отказы и откат</h1><p class="outcome"><strong>После урока:</strong> Показать проверяемый план восстановления с известной рабочей версией.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M06-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 130 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M06-L05--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M06-L05--объяснение">Объяснение</a></li><li><a href="#M06-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M06-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M06-L05--самостоятельная-задача-a-m06-l05-a">Самостоятельная задача A — M06-L05-A</a></li><li><a href="#M06-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M06-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M06-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M06-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M06">Модуль и домашняя работа</a> · <a href="#M06-SOLUTIONS--m06-l04-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M06-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M06-L03"><small>Предыдущий раздел</small>← M06-L03. Batch и online</a><a href="#M06-L05"><small>Следующий раздел</small>M06-L05. Отказы и откат →</a></nav></article><article class="material" id="M06-L05" data-title="M06-L05. Отказы и откат" data-short-title="Отказы и откат" data-kind="ready" data-module="M06"><header class="material-head"><div class="eyebrow"><span class="material-id">M06-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Отказы и откат</h1><p class="outcome"><strong>После урока:</strong> Показать проверяемый план восстановления с известной рабочей версией.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M06-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 130 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M06-L05--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M06-L05--объяснение">Объяснение</a></li><li><a href="#M06-L05--аналогия-курьерская-доставка">Аналогия: курьерская доставка</a></li><li><a href="#M06-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M06-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M06-L05--самостоятельная-задача-a-m06-l05-a">Самостоятельная задача A — M06-L05-A</a></li><li><a href="#M06-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M06-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M06-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M06-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M06-L05--проверь-себя-сначала">Проверь себя сначала</h2>
 <p><strong>Короткий путь для знакомой темы, 2–5 минут.</strong> Активный ход сессии — 5. Сначала приходит результат хода 4 (пользователь уже перешёл дальше), затем повтор запроса хода 5 с тем же ключом идемпотентности. Что сервис должен сделать в каждом случае?</p>
@@ -6710,6 +6862,47 @@ print(round(shift, 2), round(quality_delta, 2))  # 0.5 -0.05
 <p>Fallback — заранее определённый запасной путь. В интервьюере это может быть фиксированный уточняющий вопрос или сообщение о невозможности оценки. Он должен быть обозначен как ограниченный режим. Подставлять случайную оценку ради «успешного ответа» хуже честного отказа. Запасной путь тоже тестируется: он не должен зависеть от той же недоступной модели или бесконечно повторять сбой.</p>
 <p>План восстановления становится проверяемым, когда есть три части: как обнаружить проблему, как переключить систему, как убедиться, что она восстановилась. Метрика возвращения процесса недостаточна: нужен контрольный пользовательский сценарий. В лабораторной мы специально активируем несовместимый выпуск, обнаруживаем неправильный ответ и возвращаем согласованный комплект. Это небольшой fault injection — управляемое внесение отказа для проверки защиты.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M06-L05-desktop.svg" target="_blank" data-figure="course/assets/responsive/M06-L05-desktop.svg" aria-label="Увеличить рисунок: Отказы и откат: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M06-L05-mobile.svg"><img src="course/assets/responsive/M06-L05-desktop.svg" alt="Отказы и откат: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M06-L05--аналогия-курьерская-доставка">Аналогия: курьерская доставка</h2>
+<p>Как похоже: повторный звонок с тем же номером заказа не создаёт вторую посылку. Если клиент отменил заказ, а курьер всё же приехал, посылку не вручают, а возвращают на склад и отмечают в журнале. Клиент может перестать ждать, но курьер ещё едет — таймаут не останавливает работу. Новую службу доставки сначала пробуют в одном районе.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Ключ идемпотентности</td>
+  <td>Номер заказа: повторный звонок не создаёт вторую посылку</td>
+</tr>
+<tr>
+  <td>Устаревший результат хода</td>
+  <td>Курьер привёз отменённый заказ: не вручать, записать в журнал</td>
+</tr>
+<tr>
+  <td>Таймаут</td>
+  <td>Клиент перестал ждать, а курьер ещё в пути</td>
+</tr>
+<tr>
+  <td>Canary</td>
+  <td>Новая служба доставки сначала в одном районе</td>
+</tr>
+<tr>
+  <td>Shadow</td>
+  <td>Новая служба строит маршруты параллельно, но посылки не возит</td>
+</tr>
+<tr>
+  <td>Fallback</td>
+  <td>Честно объявленный самовывоз при сбое доставки</td>
+</tr>
+<tr>
+  <td>Откат</td>
+  <td>Возврат прежней службы вместе с её формами накладных</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> посылка физическая, и вторую сложно не заметить. В сервисе дубликат — две одинаковые записи, различимые только по ключу и проверке содержимого. А откат модели требует вернуть согласованный комплект — веса, preprocessing, токенизатор, шаблон; у службы доставки нет аналога статистик, которые тихо меняют ответ.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M06-L05--разобранный-пример">Разобранный пример</h2>
 <p>Есть два выпуска: stable возвращает для контрольного x=14 ответ7, candidate —4. Проверка перед активацией сравнивает результат с эталоном. На реальных моделях допустим численный допуск, например abs(actual−expected)&lt;1e−6, если это согласовано с точностью вычислений.</p>
 <pre><code class="language-python">def release_is_compatible(predict):
