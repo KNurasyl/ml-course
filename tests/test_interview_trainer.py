@@ -5,7 +5,9 @@ import sys
 import wave
 import http.client
 import json
+import socket
 import threading
+import time
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -98,3 +100,21 @@ def test_http_rejects_bad_request_without_loading_llm(http_server, body, origin,
     assert response.status == status
     assert "error" in json.loads(response.read())
     connection.close()
+
+
+def test_foreign_origin_reply_survives_a_body_sent_after_the_headers(http_server):
+    # An early 403 must still read the body: closing with unread data makes Windows send RST,
+    # and the client may lose the reply. The pause lets the server answer before the body arrives.
+    body = b'{"mode":"hr"}'
+    head = ("POST /start HTTP/1.1\r\nHost: 127.0.0.1\r\nOrigin: https://foreign.example\r\n"
+            f"Content-Type: application/json\r\nContent-Length: {len(body)}\r\n\r\n").encode()
+    with socket.create_connection(("127.0.0.1", http_server.server_port), timeout=5) as client:
+        client.sendall(head)
+        time.sleep(0.2)
+        client.sendall(body)
+        reply = b""
+        while chunk := client.recv(65536):
+            reply += chunk
+    status_line, _, rest = reply.partition(b"\r\n")
+    assert status_line.split()[1] == b"403"
+    assert "error" in json.loads(rest.partition(b"\r\n\r\n")[2])

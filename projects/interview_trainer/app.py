@@ -60,14 +60,28 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(200, (WEB / name).read_bytes(), mime)
         self.send(404, {"error":"Не найдено"})
 
+    def body_limit(self):
+        return 3_900_000 if self.path == "/asr" else 20000
+
+    def discard_body(self):
+        # An early reply must still read the body: closing a socket with unread data makes
+        # Windows send RST, and the client may lose the reply. Oversized bodies are not read.
+        try:
+            size = int(self.headers.get("Content-Length", "0"))
+            if 0 < size <= self.body_limit():
+                self.rfile.read(size)
+        except (ValueError, OSError):
+            pass
+
     def do_POST(self):
         expected = f"http://127.0.0.1:{self.server.server_port}"
         if self.headers.get("Origin") not in (None, expected, f"http://localhost:{self.server.server_port}"):
+            self.discard_body()
             return self.send(403, {"error":"Допускается только локальный интерфейс"})
         locked = False
         try:
             size = int(self.headers.get("Content-Length", "0"))
-            limit = 3_900_000 if self.path == "/asr" else 20000
+            limit = self.body_limit()
             if not 0 < size <= limit:
                 raise ValueError("Пустой или слишком большой запрос")
             body = self.rfile.read(size)
