@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="5476257c9093938d47b2d171c5518979f891f20fd89028ddedeacce8c272247e"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="6e35f7a49ff69c8038dcb5a6dcb3d5fc12241b100c011b6affd391fb39578a29"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -4050,7 +4050,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M04.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M03-L05"><small>Предыдущий раздел</small>← M03-L05. Регуляризация и масштаб</a><a href="#M04-L06"><small>Следующий раздел</small>M04-L06. Экспонента, логарифм и потеря вероятностного ответа →</a></nav></article><article class="material" id="M04-L06" data-title="M04-L06. Экспонента, логарифм и потеря вероятностного ответа" data-short-title="Экспонента, логарифм и потеря вероятностного ответа" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Экспонента, логарифм и потеря вероятностного ответа</h1><p class="outcome"><strong>После урока:</strong> объяснить область определения ln, вычислить потерю вероятностного ответа и предсказать её изменение. <strong>До урока:</strong> M00-L03, школьные степени и функции. Это восстановительный мостик: пройди его перед M04 и M05-L02. Ориентир — 90 минут, включая ручной расчёт и самостоятельную задачу.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L06--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L06--объяснение">Объяснение</a></li><li><a href="#M04-L06--аналогия-доступность-цепочки-сервисов">Аналогия: доступность цепочки сервисов</a></li><li><a href="#M04-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L06--самостоятельная-задача-a-m04-l06-a">Самостоятельная задача A — M04-L06-A</a></li><li><a href="#M04-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L06--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+"></iframe><p><a href="course/visuals/M04.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M03-L05"><small>Предыдущий раздел</small>← M03-L05. Регуляризация и масштаб</a><a href="#M04-L06"><small>Следующий раздел</small>M04-L06. Экспонента, логарифм и потеря вероятностного ответа →</a></nav></article><article class="material" id="M04-L06" data-title="M04-L06. Экспонента, логарифм и потеря вероятностного ответа" data-short-title="Экспонента, логарифм и потеря вероятностного ответа" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Экспонента, логарифм и потеря вероятностного ответа</h1><p class="outcome"><strong>После урока:</strong> объяснить область определения ln, вычислить потерю вероятностного ответа и предсказать её изменение. <strong>До урока:</strong> M00-L03, школьные степени и функции. Это восстановительный мостик: пройди его перед M04 и M05-L02. Ориентир — 90 минут, включая ручной расчёт и самостоятельную задачу.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L06--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L06--объяснение">Объяснение</a></li><li><a href="#M04-L06--аналогия-доступность-цепочки-сервисов">Аналогия: доступность цепочки сервисов</a></li><li><a href="#M04-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L06--самостоятельная-задача-a-m04-l06-a">Самостоятельная задача A — M04-L06-A</a></li><li><a href="#M04-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L06--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L06--карточка-урока">Карточка урока</a></li><li><a href="#M04-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <h2 id="M04-L06--проверь-себя-сначала">Проверь себя сначала</h2>
 <p><strong>Короткий путь для знакомой темы, 2–5 минут.</strong> Пример 1: y = 1, p = 0.5. Пример 2: y = 0, p = 0.2 (p — вероятность класса 1). Найди потерю −ln(вероятность правильного исхода) для каждого примера и среднюю. Что будет при p = 0 для y = 1?</p>
 <p>Запиши ответ и объяснение, затем сверь с <a href="#M04-SOLUTIONS--m04-l06-d">ключом M04-L06-D</a>. Всё верно и объяснение совпадает по смыслу — переходи сразу к самостоятельной задаче этого урока, затем к варианту B/C. Ошибка, сомнение или ответ без объяснения — проходи урок полностью с начала. <a href="#MENTOR--адаптивный-маршрут">Как работает адаптивный маршрут</a>.</p>
@@ -4175,10 +4175,37 @@ assert abs(sum(terms)/len(terms)-0.2899092476) &lt; 1e-9
 </div></details>
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M04-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>Вариант B: y=[1,0], p=[0.6,0.3]. Через 3–7 дней вариант C: найди две ошибки в утверждении «ln(−0.2) — отрицательная потеря, а при p=0 потеря равна нулю». Затем вычисли потерю для y=0,p=0.95. Числа и объяснения всех вариантов находятся в <a href="#M04-SOLUTIONS--m04-l06-a">ключе M04</a>.</p>
-</section><h2 id="M04-L06--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M04-L06--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Потеря примера L = −ln(вероятность случившегося исхода): для y = 1 это −ln p, для y = 0 — −ln(1 − p); средняя BCE усредняет потери по примерам</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>p — вероятность класса 1; ln — функция, обратная exp, определена только для положительных чисел; ln(ab) = ln a + ln b превращает произведение вероятностей в сумму</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Чтобы оценить вероятностный классификатор. Пример: y = 1 при p = 0.9 даёт 0.105, а при p = 0.1 — 2.303: уверенная ошибка стоит примерно в 22 раза дороже</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Брать −ln p для y = 0 или «чинить» ln(0) нулём вместо проверки области определения</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M04-L06--источники-и-углубление">Источники и углубление</h2>
 <p>Источник для синтаксиса и области определения: <a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html" target="_blank" rel="noopener noreferrer" class="external-link">NumPy log</a>. Объяснение и примеры здесь авторские; внешний источник не требуется для обязательной задачи.</p>
 <p><a href="course/visuals/M04-L06.html">Интерактивный эксперимент этого урока</a>: сначала предскажи изменение, затем сравни числа.</p>
-<div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l06-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04"><small>Предыдущий раздел</small>← M04 Вероятность и статистика</a><a href="#M04-L01"><small>Следующий раздел</small>M04-L01. Случайность и условие →</a></nav></article><article class="material" id="M04-L01" data-title="M04-L01. Случайность и условие" data-short-title="Случайность и условие" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Случайность и условие</h1><p class="outcome"><strong>После урока:</strong> Вычислить условную вероятность по таблице и явно назвать знаменатель.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M04-L01--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L01--объяснение">Объяснение</a></li><li><a href="#M04-L01--аналогия-алерты-и-инциденты">Аналогия: алерты и инциденты</a></li><li><a href="#M04-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L01--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M04-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L01--самостоятельная-задача-a-m04-l01-a01">Самостоятельная задача A — M04-L01-A01</a></li><li><a href="#M04-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l06-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04"><small>Предыдущий раздел</small>← M04 Вероятность и статистика</a><a href="#M04-L01"><small>Следующий раздел</small>M04-L01. Случайность и условие →</a></nav></article><article class="material" id="M04-L01" data-title="M04-L01. Случайность и условие" data-short-title="Случайность и условие" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Случайность и условие</h1><p class="outcome"><strong>После урока:</strong> Вычислить условную вероятность по таблице и явно назвать знаменатель.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M04-L01--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L01--объяснение">Объяснение</a></li><li><a href="#M04-L01--аналогия-алерты-и-инциденты">Аналогия: алерты и инциденты</a></li><li><a href="#M04-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L01--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M04-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L01--самостоятельная-задача-a-m04-l01-a01">Самостоятельная задача A — M04-L01-A01</a></li><li><a href="#M04-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L01--карточка-урока">Карточка урока</a></li><li><a href="#M04-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M01-L02">M01-L02</a></p>
 <h2 id="M04-L01--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Фраза «модель верно оценивает 90% ответов» скрывает знаменатель. Возможно, речь только о коротких ответах или случаях, где модель уже уверена. Для проверки качества нужно назвать событие, условие и совокупность, к которой относится число. Это позволит сравнивать системы, даже когда состав пользователей меняется.</p>
@@ -4262,10 +4289,37 @@ assert abs(overall-(.8*2/3+.6/3))&lt;1e-12
 <p><strong>Вариант B:</strong> Technical: 18 верных,12 неверных; HR:16 верных,4 неверных. Найди P(correct|tech), P(tech|correct).</p>
 <p><strong>Вариант C через 3–7 дней:</strong> При составе 20% tech и 80% HR сохрани качество внутри типов. Найди общую долю.</p>
 <p><a href="#M04-SOLUTIONS--m04-l01-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M04-L01--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M04-L01--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>P(A ∣ B) = P(A∩B)/P(B) при P(B) &gt; 0; полная вероятность P(A) = P(A ∣ B)P(B) + P(A ∣ не B)P(не B); Байес P(B ∣ A) = P(A ∣ B)P(B)/P(A)</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Условие B выбирает строку таблицы, её размер становится знаменателем; P(A ∣ B) и P(B ∣ A) отвечают на разные вопросы; независимость означает P(A ∣ B) = P(A)</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Чтобы найти долю внутри подгруппы или пересчитать качество при новом составе. Пример: среди 30 длинных ответов 24 корректны, значит P(корректно ∣ длинный) = 0.8</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Путать P(A ∣ B) с P(B ∣ A) или брать для обеих вероятностей один и тот же знаменатель</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M04-L01--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M04-SOLUTIONS--m04-l01-a01">Ключи M04</a> · <a href="labs/M04/README.md">Лабораторная модуля</a> · <a href="#M04">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://docs.scipy.org/doc/scipy/tutorial/stats/discrete.html" target="_blank" rel="noopener noreferrer" class="external-link">SciPy: дискретные вероятностные распределения</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l01-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L06"><small>Предыдущий раздел</small>← M04-L06. Экспонента, логарифм и потеря вероятностного ответа</a><a href="#M04-L02"><small>Следующий раздел</small>M04-L02. Среднее, дисперсия и выборка →</a></nav></article><article class="material" id="M04-L02" data-title="M04-L02. Среднее, дисперсия и выборка" data-short-title="Среднее, дисперсия и выборка" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Среднее, дисперсия и выборка</h1><p class="outcome"><strong>После урока:</strong> Различить разброс наблюдений и неопределённость среднего, вычислить обе величины.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M04-L02--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L02--объяснение">Объяснение</a></li><li><a href="#M04-L02--аналогия-задержки-запросов-в-мониторинге">Аналогия: задержки запросов в мониторинге</a></li><li><a href="#M04-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L02--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M04-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L02--самостоятельная-задача-a-m04-l02-a01">Самостоятельная задача A — M04-L02-A01</a></li><li><a href="#M04-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l01-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L06"><small>Предыдущий раздел</small>← M04-L06. Экспонента, логарифм и потеря вероятностного ответа</a><a href="#M04-L02"><small>Следующий раздел</small>M04-L02. Среднее, дисперсия и выборка →</a></nav></article><article class="material" id="M04-L02" data-title="M04-L02. Среднее, дисперсия и выборка" data-short-title="Среднее, дисперсия и выборка" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Среднее, дисперсия и выборка</h1><p class="outcome"><strong>После урока:</strong> Различить разброс наблюдений и неопределённость среднего, вычислить обе величины.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M04-L02--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L02--объяснение">Объяснение</a></li><li><a href="#M04-L02--аналогия-задержки-запросов-в-мониторинге">Аналогия: задержки запросов в мониторинге</a></li><li><a href="#M04-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L02--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M04-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L02--самостоятельная-задача-a-m04-l02-a01">Самостоятельная задача A — M04-L02-A01</a></li><li><a href="#M04-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L02--карточка-урока">Карточка урока</a></li><li><a href="#M04-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M04-L01">M04-L01</a></p>
 <h2 id="M04-L02--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Средняя задержка не описывает весь опыт пользователя. Две системы могут иметь одинаковое среднее и разные редкие паузы. Одновременно среднее по пяти измерениям менее устойчиво, чем по пяти тысячам независимых измерений. Это два разных вида разброса, и для инженерного решения важно сообщать оба.</p>
@@ -4349,10 +4403,37 @@ assert np.isclose(se,np.sqrt(5/3)/2)
 <p><strong>Вариант B:</strong> Для [1,3,5] вычисли среднее, выборочную дисперсию, SD и SE.</p>
 <p><strong>Вариант C через 3–7 дней:</strong> Продублируй каждую строку. Можно ли считать шесть независимых наблюдений?</p>
 <p><a href="#M04-SOLUTIONS--m04-l02-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M04-L02--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M04-L02--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>x̄ = (1/n)Σxᵢ; s² = Σ(xᵢ − x̄)²/(n − 1); s = √s²; SE = s/√n</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>s — разброс отдельных наблюдений в исходных единицах; SE — неопределённость оценки среднего; деление на n − 1 используют при оценке по выборке</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Чтобы описать центр и разброс и указать точность среднего. Пример: [1, 4, 10] дают x̄ = 5, s² = 21, s ≈ 4.58, SE ≈ 2.65</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Путать s со стандартной ошибкой или «повышать точность» копированием строк</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M04-L02--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M04-SOLUTIONS--m04-l02-a01">Ключи M04</a> · <a href="labs/M04/README.md">Лабораторная модуля</a> · <a href="#M04">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://numpy.org/doc/stable/reference/generated/numpy.var.html" target="_blank" rel="noopener noreferrer" class="external-link">NumPy: дисперсия и ddof</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l02-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L01"><small>Предыдущий раздел</small>← M04-L01. Случайность и условие</a><a href="#M04-L07"><small>Следующий раздел</small>M04-L07. От исходов к распределению и вероятности хвоста →</a></nav></article><article class="material" id="M04-L07" data-title="M04-L07. От исходов к распределению и вероятности хвоста" data-short-title="От исходов к распределению и вероятности хвоста" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L07</span><span class="badge ready">Урок · Теория и практика</span></div><h1>От исходов к распределению и вероятности хвоста</h1><p class="outcome"><strong>После урока:</strong> построить распределение числа успехов из простых исходов и вычислить вероятность события «не менее k». <strong>До урока:</strong> M04-L01, M04-L02. Этот урок идёт до интервалов и проверки гипотез. Ориентир — 90 минут.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L07--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L07--объяснение">Объяснение</a></li><li><a href="#M04-L07--аналогия-кворум-реплик">Аналогия: кворум реплик</a></li><li><a href="#M04-L07--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L07--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L07--самостоятельная-задача-a-m04-l07-a">Самостоятельная задача A — M04-L07-A</a></li><li><a href="#M04-L07--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L07--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L07--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L07--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l02-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L01"><small>Предыдущий раздел</small>← M04-L01. Случайность и условие</a><a href="#M04-L07"><small>Следующий раздел</small>M04-L07. От исходов к распределению и вероятности хвоста →</a></nav></article><article class="material" id="M04-L07" data-title="M04-L07. От исходов к распределению и вероятности хвоста" data-short-title="От исходов к распределению и вероятности хвоста" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L07</span><span class="badge ready">Урок · Теория и практика</span></div><h1>От исходов к распределению и вероятности хвоста</h1><p class="outcome"><strong>После урока:</strong> построить распределение числа успехов из простых исходов и вычислить вероятность события «не менее k». <strong>До урока:</strong> M04-L01, M04-L02. Этот урок идёт до интервалов и проверки гипотез. Ориентир — 90 минут.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L07--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L07--объяснение">Объяснение</a></li><li><a href="#M04-L07--аналогия-кворум-реплик">Аналогия: кворум реплик</a></li><li><a href="#M04-L07--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L07--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L07--самостоятельная-задача-a-m04-l07-a">Самостоятельная задача A — M04-L07-A</a></li><li><a href="#M04-L07--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L07--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L07--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L07--карточка-урока">Карточка урока</a></li><li><a href="#M04-L07--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <h2 id="M04-L07--проверь-себя-сначала">Проверь себя сначала</h2>
 <p><strong>Короткий путь для знакомой темы, 2–5 минут.</strong> Четыре независимых броска честной монеты, X — число орлов. Найди P(X ≥ 3). Сколько исходов дают X = 3 и почему?</p>
 <p>Запиши ответ и объяснение, затем сверь с <a href="#M04-SOLUTIONS--m04-l07-d">ключом M04-L07-D</a>. Всё верно и объяснение совпадает по смыслу — переходи сразу к самостоятельной задаче этого урока, затем к варианту B/C. Ошибка, сомнение или ответ без объяснения — проходи урок полностью с начала. <a href="#MENTOR--адаптивный-маршрут">Как работает адаптивный маршрут</a>.</p>
@@ -4430,9 +4511,36 @@ assert tail == 5/16
 </div></details>
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M04-L07--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>Вариант B: n=4,p=0.25, событие X≥1. Реши суммой и через дополнение 1−P(X=0). Вариант C через 3–7 дней: n=0, затем minimum&gt;n. Объясни, почему вероятность X≥0 при нуле испытаний равна единице, а невозможного события — нулю. <a href="#M04-SOLUTIONS--m04-l07-a">Ключ и разбор</a>.</p>
-</section><h2 id="M04-L07--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M04-L07--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>P(X = k) = C(n, k)·pᵏ(1 − p)ⁿ⁻ᵏ для n независимых испытаний; P(X ≥ k) — сумма таких вероятностей от k до n</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>X — число успехов; C(n, k) — число последовательностей с k успехами; «не менее k» включает k, «больше k» начинается с k + 1</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Чтобы найти вероятность «не менее k успехов». Пример: n = 6, p = 0.5 дают P(X ≥ 5) = (6 + 1)/64 ≈ 0.109</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Забыть граничное значение в «не менее k» или считать последовательности при p ≠ 0.5 равновероятными</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M04-L07--источники-и-углубление">Источники и углубление</h2>
 <p>Дополнительный источник: <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binomtest.html" target="_blank" rel="noopener noreferrer" class="external-link">SciPy: биномиальная проверка</a>. До следующего урока запомни не название теста, а смысл хвоста: какие возможные результаты складываются и при каких предположениях.</p>
-<div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l07-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L07.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L02"><small>Предыдущий раздел</small>← M04-L02. Среднее, дисперсия и выборка</a><a href="#M04-L03"><small>Следующий раздел</small>M04-L03. Неопределённость метрики →</a></nav></article><article class="material" id="M04-L03" data-title="M04-L03. Неопределённость метрики" data-short-title="Неопределённость метрики" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Неопределённость метрики</h1><p class="outcome"><strong>После урока:</strong> Оценить неопределённость доли успехов и корректно интерпретировать интервал.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M04-L03--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L03--объяснение">Объяснение</a></li><li><a href="#M04-L03--аналогия-доля-успешных-запросов-у-нового-сервиса">Аналогия: доля успешных запросов у нового сервиса</a></li><li><a href="#M04-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L03--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M04-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L03--самостоятельная-задача-a-m04-l03-a01">Самостоятельная задача A — M04-L03-A01</a></li><li><a href="#M04-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l07-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L07.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L02"><small>Предыдущий раздел</small>← M04-L02. Среднее, дисперсия и выборка</a><a href="#M04-L03"><small>Следующий раздел</small>M04-L03. Неопределённость метрики →</a></nav></article><article class="material" id="M04-L03" data-title="M04-L03. Неопределённость метрики" data-short-title="Неопределённость метрики" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Неопределённость метрики</h1><p class="outcome"><strong>После урока:</strong> Оценить неопределённость доли успехов и корректно интерпретировать интервал.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M04-L03--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L03--объяснение">Объяснение</a></li><li><a href="#M04-L03--аналогия-доля-успешных-запросов-у-нового-сервиса">Аналогия: доля успешных запросов у нового сервиса</a></li><li><a href="#M04-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L03--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M04-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L03--самостоятельная-задача-a-m04-l03-a01">Самостоятельная задача A — M04-L03-A01</a></li><li><a href="#M04-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L03--карточка-урока">Карточка урока</a></li><li><a href="#M04-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M04-L02">M04-L02</a></p>
 <p>Перед этим уроком пройди <a href="#M04-L07">исходы и биномиальное распределение</a>: формула интервала использует модель независимых испытаний.</p>
 <h2 id="M04-L03--результат-и-входные-знания">Результат и входные знания</h2>
@@ -4628,10 +4736,37 @@ assert wilson(10,10)[0]&lt;1
 <p><strong>Вариант B:</strong> Для 20/20 найди нижнюю границу Wilson при z=1.96.</p>
 <p><strong>Вариант C через 3–7 дней:</strong> Для 0/20 найди верхнюю границу.</p>
 <p><a href="#M04-SOLUTIONS--m04-l03-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M04-L03--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M04-L03--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>p̂ = k/n; SE ≈ √[p̂(1 − p̂)/n]; интервал Уилсона лучше ведёт себя у 0 и 1, чем p̂ ± 1.96·SE</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>k — успехи, n — независимые попытки; интервал описывает неопределённость доли при принятых предположениях, а не диапазон следующей партии</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Чтобы доложить долю успехов с честной неопределённостью. Пример: 45/50 и 450/500 дают одну долю 0.9, но SE ≈ 0.042 и ≈ 0.013</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Доложить долю без n или считать, что интервал гарантирует результат следующей партии</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M04-L03--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M04-SOLUTIONS--m04-l03-a01">Ключи M04</a> · <a href="labs/M04/README.md">Лабораторная модуля</a> · <a href="#M04">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats._result_classes.BinomTestResult.proportion_ci.html" target="_blank" rel="noopener noreferrer" class="external-link">SciPy: интервал биномиальной доли</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l03-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L07"><small>Предыдущий раздел</small>← M04-L07. От исходов к распределению и вероятности хвоста</a><a href="#M04-L04"><small>Следующий раздел</small>M04-L04. Bootstrap и интервалы →</a></nav></article><article class="material" id="M04-L04" data-title="M04-L04. Bootstrap и интервалы" data-short-title="Bootstrap и интервалы" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Bootstrap и интервалы</h1><p class="outcome"><strong>После урока:</strong> Построить парный bootstrap и сохранить правильную единицу пересэмплирования.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M04-L04--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L04--объяснение">Объяснение</a></li><li><a href="#M04-L04--аналогия-повтор-записанного-трафика">Аналогия: повтор записанного трафика</a></li><li><a href="#M04-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L04--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M04-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L04--самостоятельная-задача-a-m04-l04-a01">Самостоятельная задача A — M04-L04-A01</a></li><li><a href="#M04-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l03-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L07"><small>Предыдущий раздел</small>← M04-L07. От исходов к распределению и вероятности хвоста</a><a href="#M04-L04"><small>Следующий раздел</small>M04-L04. Bootstrap и интервалы →</a></nav></article><article class="material" id="M04-L04" data-title="M04-L04. Bootstrap и интервалы" data-short-title="Bootstrap и интервалы" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Bootstrap и интервалы</h1><p class="outcome"><strong>После урока:</strong> Построить парный bootstrap и сохранить правильную единицу пересэмплирования.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M04-L04--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L04--объяснение">Объяснение</a></li><li><a href="#M04-L04--аналогия-повтор-записанного-трафика">Аналогия: повтор записанного трафика</a></li><li><a href="#M04-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L04--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M04-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L04--самостоятельная-задача-a-m04-l04-a01">Самостоятельная задача A — M04-L04-A01</a></li><li><a href="#M04-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L04--карточка-урока">Карточка урока</a></li><li><a href="#M04-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M04-L03">M04-L03</a>, <a href="#M01-L03">M01-L03</a></p>
 <h2 id="M04-L04--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Для сложной метрики формулу неопределённости не всегда удобно вывести. Bootstrap приближает повторение выборки пересэмплированием имеющихся объектов. Для сравнения двух моделей важно сохранять, что обе отвечали на одни и те же вопросы, иначе теряется полезная информация о парности результатов.</p>
@@ -4717,10 +4852,37 @@ assert abs(means.mean()-.4)&lt;.01
 <p><strong>Вариант B:</strong> A=[0,1,0,1],B=[1,1,1,0]. Найди парные разности и средний эффект.</p>
 <p><strong>Вариант C через 3–7 дней:</strong> Пересэмплируй пары индексами [0,0,3,3]. Чему равен эффект?</p>
 <p><a href="#M04-SOLUTIONS--m04-l04-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M04-L04--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M04-L04--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Парный bootstrap: пересэмплировать индексы пар с возвращением, в каждом наборе считать среднее разностей, интервал — квантили 2.5% и 97.5%</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Единица пересэмплирования — то, что независимо: вопрос или человек; число повторов влияет на устойчивость квантилей, но не добавляет данных; seed делает расчёт повторимым</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Чтобы оценить неопределённость разницы двух систем на одних примерах. Пример: разности [1, 0, 2] и индексы [0, 0, 2] дают повтор со средним (1 + 1 + 2)/3 ≈ 1.33</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Пересэмплировать A и B независимо или считать ответы одного человека независимыми</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M04-L04--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M04-SOLUTIONS--m04-l04-a01">Ключи M04</a> · <a href="labs/M04/README.md">Лабораторная модуля</a> · <a href="#M04">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html" target="_blank" rel="noopener noreferrer" class="external-link">SciPy: bootstrap и парные данные</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l04-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L03"><small>Предыдущий раздел</small>← M04-L03. Неопределённость метрики</a><a href="#M04-L05"><small>Следующий раздел</small>M04-L05. Гипотезы и эксперимент →</a></nav></article><article class="material" id="M04-L05" data-title="M04-L05. Гипотезы и эксперимент" data-short-title="Гипотезы и эксперимент" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Гипотезы и эксперимент</h1><p class="outcome"><strong>После урока:</strong> Различить размер эффекта, статистическую проверку и решение о полезности изменения.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M04-L05--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L05--объяснение">Объяснение</a></li><li><a href="#M04-L05--аналогия-канареечный-выпуск">Аналогия: канареечный выпуск</a></li><li><a href="#M04-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L05--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M04-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L05--самостоятельная-задача-a-m04-l05-a01">Самостоятельная задача A — M04-L05-A01</a></li><li><a href="#M04-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l04-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L03"><small>Предыдущий раздел</small>← M04-L03. Неопределённость метрики</a><a href="#M04-L05"><small>Следующий раздел</small>M04-L05. Гипотезы и эксперимент →</a></nav></article><article class="material" id="M04-L05" data-title="M04-L05. Гипотезы и эксперимент" data-short-title="Гипотезы и эксперимент" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Гипотезы и эксперимент</h1><p class="outcome"><strong>После урока:</strong> Различить размер эффекта, статистическую проверку и решение о полезности изменения.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M04-L05--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L05--объяснение">Объяснение</a></li><li><a href="#M04-L05--аналогия-канареечный-выпуск">Аналогия: канареечный выпуск</a></li><li><a href="#M04-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L05--как-проверить-рассуждение">Как проверить рассуждение</a></li><li><a href="#M04-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L05--самостоятельная-задача-a-m04-l05-a01">Самостоятельная задача A — M04-L05-A01</a></li><li><a href="#M04-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L05--карточка-урока">Карточка урока</a></li><li><a href="#M04-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <p><strong>Перед началом:</strong> <a href="#M04-L04">M04-L04</a></p>
 <h2 id="M04-L05--результат-и-входные-знания">Результат и входные знания</h2>
 <p>Небольшое улучшение может быть случайностью, а статистически заметное изменение — слишком маленьким для продукта. Инженер заранее определяет, какое улучшение имеет смысл, как измеряется и какие ограничения не позволяют сделать сильный вывод. Это защищает от выбора красивого результата после множества попыток.</p>
@@ -4804,10 +4966,37 @@ assert symmetric_binomial_p(8,10)==112/1024
 <p><strong>Вариант B:</strong> Нетождественных пар 10: побед 9, поражений 1. Найди двусторонний знаковый p.</p>
 <p><strong>Вариант C через 3–7 дней:</strong> В тех же 10 парах побед 6, поражений 4. Можно ли доказать равенство?</p>
 <p><a href="#M04-SOLUTIONS--m04-l05-a01">Отдельные ключи B/C</a>. Сохрани попытку, ошибку и требуемую помощь в журнале.</p>
-</section><h2 id="M04-L05--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M04-L05--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>p-value — вероятность при H₀ получить результат не менее экстремальный; в знаковом тесте при H₀ каждая сторона выигрывает с вероятностью 0.5, ничьи не учитываются</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>α — допустимая частота ложных отклонений; ошибка I рода — отклонить верную H₀, ошибка II рода — пропустить реальный эффект; практическая значимость — величина эффекта и его цена</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Для заранее спланированного парного сравнения. Пример: 9 побед из 10 дают двустороннее p = 22/1024 ≈ 0.021</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Читать p-value как вероятность истинности H₀ или проверять много гипотез без поправки</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M04-L05--источники-и-углубление">Источники и углубление</h2>
 <p><a href="#M04-SOLUTIONS--m04-l05-a01">Ключи M04</a> · <a href="labs/M04/README.md">Лабораторная модуля</a> · <a href="#M04">Оглавление модуля</a></p>
 <p>Основной дополнительный источник: <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binomtest.html" target="_blank" rel="noopener noreferrer" class="external-link">SciPy: точный биномиальный тест</a>. Собственных объяснений, данных и кода в уроке достаточно для обязательного задания; внешняя ссылка нужна для уточнений и углубления.</p>
-<div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l05-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L04"><small>Предыдущий раздел</small>← M04-L04. Bootstrap и интервалы</a><a href="#M04-L08"><small>Следующий раздел</small>M04-L08. Сколько наблюдений нужно: планирование симуляцией →</a></nav></article><article class="material" id="M04-L08" data-title="M04-L08. Сколько наблюдений нужно: планирование симуляцией" data-short-title="Сколько наблюдений нужно: планирование симуляцией" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L08</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сколько наблюдений нужно: планирование симуляцией</h1><p class="outcome"><strong>После урока:</strong> выбрать объём из заранее заданных вариантов по мощности при явных предположениях и зафиксировать остановку. <strong>До урока:</strong> M04-L05 и M04-L07. Ориентир — 150 минут. Все эксперименты работают на CPU.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L08--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L08--объяснение">Объяснение</a></li><li><a href="#M04-L08--аналогия-план-нагрузочного-теста">Аналогия: план нагрузочного теста</a></li><li><a href="#M04-L08--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L08--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L08--самостоятельная-задача-a-m04-l08-a">Самостоятельная задача A — M04-L08-A</a></li><li><a href="#M04-L08--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L08--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L08--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L08--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l05-a01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L04"><small>Предыдущий раздел</small>← M04-L04. Bootstrap и интервалы</a><a href="#M04-L08"><small>Следующий раздел</small>M04-L08. Сколько наблюдений нужно: планирование симуляцией →</a></nav></article><article class="material" id="M04-L08" data-title="M04-L08. Сколько наблюдений нужно: планирование симуляцией" data-short-title="Сколько наблюдений нужно: планирование симуляцией" data-kind="ready" data-module="M04"><header class="material-head"><div class="eyebrow"><span class="material-id">M04-L08</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сколько наблюдений нужно: планирование симуляцией</h1><p class="outcome"><strong>После урока:</strong> выбрать объём из заранее заданных вариантов по мощности при явных предположениях и зафиксировать остановку. <strong>До урока:</strong> M04-L05 и M04-L07. Ориентир — 150 минут. Все эксперименты работают на CPU.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M04-L08--проверь-себя-сначала">Проверь себя сначала</a></li><li><a href="#M04-L08--объяснение">Объяснение</a></li><li><a href="#M04-L08--аналогия-план-нагрузочного-теста">Аналогия: план нагрузочного теста</a></li><li><a href="#M04-L08--разобранный-пример">Разобранный пример</a></li><li><a href="#M04-L08--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M04-L08--самостоятельная-задача-a-m04-l08-a">Самостоятельная задача A — M04-L08-A</a></li><li><a href="#M04-L08--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M04-L08--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M04-L08--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M04-L08--карточка-урока">Карточка урока</a></li><li><a href="#M04-L08--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 <h2 id="M04-L08--проверь-себя-сначала">Проверь себя сначала</h2>
 <p><strong>Короткий путь для знакомой темы, 2–5 минут.</strong> Сравнение долей 0.6 и 0.65 заранее спланировано на n = 200. Через 50 наблюдений B выглядит лучше — можно ли остановиться? Если при p₁ = 0.65 правило отвергло H₀ в 640 из 1000 симуляций, чему равна оценка мощности и хватает ли её для цели 0.8?</p>
 <p>Запиши ответ и объяснение, затем сверь с <a href="#M04-SOLUTIONS--m04-l08-d">ключом M04-L08-D</a>. Всё верно и объяснение совпадает по смыслу — переходи сразу к самостоятельной задаче этого урока, затем к варианту B/C. Ошибка, сомнение или ответ без объяснения — проходи урок полностью с начала. <a href="#MENTOR--адаптивный-маршрут">Как работает адаптивный маршрут</a>.</p>
@@ -4888,7 +5077,34 @@ assert next(r['n'] for r in rows if r['simulated_power'] &gt;= .8) == 200
 </div></details>
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M04-L08--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>Повтор B: парные вероятности improve=0.10, regress=0.05, сетка [100,200,400,800], seed75. Если симулированная мощность оказалась рядом с 0.8, сравни расхождение с Monte Carlo SE и с exact_power лабораторной: она отдельно суммирует все возможные числа нетождественных пар. Не выбирай seed ради попадания выше порога. Через неделю C: сравни протокол фиксированного n=200 с просмотром после каждых десяти наблюдений и остановкой при первом успехе. Предложи корректный вариант без разработки последовательного теста. Численные ответы и эталон протокола — <a href="#M04-SOLUTIONS--m04-l08-a">в решениях M04</a>.</p>
-</section><h2 id="M04-L08--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M04-L08--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Мощность — вероятность отвергнуть H₀, если верен полезный эффект; объём выбирают из заранее заданной сетки как первый n, где мощность не ниже требуемой</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>p₀ — базовая вероятность, p₁ — минимальный полезный эффект; симуляция с seed оценивает мощность долей отвержений; правило остановки фиксируют до сбора данных</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При планировании сравнения до сбора данных. Пример: 712 отвержений из 1000 симуляций дают мощность ≈ 0.71 — для цели 0.8 нужен больший n</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Останавливать сбор при первом хорошем результате или менять сетку и порог после просмотра данных</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M04-L08--источники-и-углубление">Источники и углубление</h2>
 <p>Основной источник API: <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binomtest.html" target="_blank" rel="noopener noreferrer" class="external-link">SciPy binomial test</a>. В уроке используются самостоятельно построенные симуляции, а не выводы о реальном качестве тренажёра.</p>
 <div class="practice-note"><a href="#M04">Модуль и домашняя работа</a> · <a href="#M04-SOLUTIONS--m04-l08-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M04-L08.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M04-L05"><small>Предыдущий раздел</small>← M04-L05. Гипотезы и эксперимент</a><a href="#M05"><small>Следующий раздел</small>M05 Классический ML →</a></nav></article><article class="material" id="M05" data-title="M05 Классический ML" data-short-title="Классический ML" data-kind="ready" data-module="M05"><header class="material-head"><div class="eyebrow"><span class="material-id">M05</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Классический ML</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Модуль содержит самостоятельные уроки, локальную практику, итоговую домашнюю работу и отдельные ключи. Материалы подготовлены; результаты ученика остаются в личном журнале. Все обязательные вычисления этого модуля выполняются на CPU в окружении курса.</p>
 <h2 id="M05--порядок-уроков">Порядок уроков</h2>
@@ -15748,7 +15964,7 @@ assert not accept_result(3,2)
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 20 из 103 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 28 из 103 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -15893,6 +16109,63 @@ assert not accept_result(3,2)
 <li><strong>Смысл величин.</strong> λ ≥ 0 — сила штрафа; смещение b не штрафуется; штраф тянет вес к нулю, но не делает его точно нулевым.</li>
 <li><strong>Когда применять.</strong> Чтобы ограничить величину весов; λ выбирают на validation. Пример: a = 9 и λ = 0.5 дают w* = 6.</li>
 <li><strong>Главная ошибка.</strong> Штрафовать признаки в разных масштабах одним λ без стандартизации или подбирать λ по test.</li>
+</ul>
+<h2 id="CHEATSHEET--m04-вероятность-и-статистика">M04. Вероятность и статистика</h2>
+<h3 id="CHEATSHEET--m04-l06-экспонента-логарифм-и-потеря-вероятностного-ответа"><a href="#M04-L06">M04-L06. Экспонента, логарифм и потеря вероятностного ответа</a></h3>
+<ul>
+<li><strong>Правило.</strong> Потеря примера L = −ln(вероятность случившегося исхода): для y = 1 это −ln p, для y = 0 — −ln(1 − p); средняя BCE усредняет потери по примерам.</li>
+<li><strong>Смысл величин.</strong> p — вероятность класса 1; ln — функция, обратная exp, определена только для положительных чисел; ln(ab) = ln a + ln b превращает произведение вероятностей в сумму.</li>
+<li><strong>Когда применять.</strong> Чтобы оценить вероятностный классификатор. Пример: y = 1 при p = 0.9 даёт 0.105, а при p = 0.1 — 2.303: уверенная ошибка стоит примерно в 22 раза дороже.</li>
+<li><strong>Главная ошибка.</strong> Брать −ln p для y = 0 или «чинить» ln(0) нулём вместо проверки области определения.</li>
+</ul>
+<h3 id="CHEATSHEET--m04-l01-случайность-и-условие"><a href="#M04-L01">M04-L01. Случайность и условие</a></h3>
+<ul>
+<li><strong>Правило.</strong> P(A ∣ B) = P(A∩B)/P(B) при P(B) &gt; 0; полная вероятность P(A) = P(A ∣ B)P(B) + P(A ∣ не B)P(не B); Байес P(B ∣ A) = P(A ∣ B)P(B)/P(A).</li>
+<li><strong>Смысл величин.</strong> Условие B выбирает строку таблицы, её размер становится знаменателем; P(A ∣ B) и P(B ∣ A) отвечают на разные вопросы; независимость означает P(A ∣ B) = P(A).</li>
+<li><strong>Когда применять.</strong> Чтобы найти долю внутри подгруппы или пересчитать качество при новом составе. Пример: среди 30 длинных ответов 24 корректны, значит P(корректно ∣ длинный) = 0.8.</li>
+<li><strong>Главная ошибка.</strong> Путать P(A ∣ B) с P(B ∣ A) или брать для обеих вероятностей один и тот же знаменатель.</li>
+</ul>
+<h3 id="CHEATSHEET--m04-l02-среднее-дисперсия-и-выборка"><a href="#M04-L02">M04-L02. Среднее, дисперсия и выборка</a></h3>
+<ul>
+<li><strong>Правило.</strong> x̄ = (1/n)Σxᵢ; s² = Σ(xᵢ − x̄)²/(n − 1); s = √s²; SE = s/√n.</li>
+<li><strong>Смысл величин.</strong> s — разброс отдельных наблюдений в исходных единицах; SE — неопределённость оценки среднего; деление на n − 1 используют при оценке по выборке.</li>
+<li><strong>Когда применять.</strong> Чтобы описать центр и разброс и указать точность среднего. Пример: [1, 4, 10] дают x̄ = 5, s² = 21, s ≈ 4.58, SE ≈ 2.65.</li>
+<li><strong>Главная ошибка.</strong> Путать s со стандартной ошибкой или «повышать точность» копированием строк.</li>
+</ul>
+<h3 id="CHEATSHEET--m04-l07-от-исходов-к-распределению-и-вероятности-хвоста"><a href="#M04-L07">M04-L07. От исходов к распределению и вероятности хвоста</a></h3>
+<ul>
+<li><strong>Правило.</strong> P(X = k) = C(n, k)·pᵏ(1 − p)ⁿ⁻ᵏ для n независимых испытаний; P(X ≥ k) — сумма таких вероятностей от k до n.</li>
+<li><strong>Смысл величин.</strong> X — число успехов; C(n, k) — число последовательностей с k успехами; «не менее k» включает k, «больше k» начинается с k + 1.</li>
+<li><strong>Когда применять.</strong> Чтобы найти вероятность «не менее k успехов». Пример: n = 6, p = 0.5 дают P(X ≥ 5) = (6 + 1)/64 ≈ 0.109.</li>
+<li><strong>Главная ошибка.</strong> Забыть граничное значение в «не менее k» или считать последовательности при p ≠ 0.5 равновероятными.</li>
+</ul>
+<h3 id="CHEATSHEET--m04-l03-неопределённость-метрики"><a href="#M04-L03">M04-L03. Неопределённость метрики</a></h3>
+<ul>
+<li><strong>Правило.</strong> p̂ = k/n; SE ≈ √[p̂(1 − p̂)/n]; интервал Уилсона лучше ведёт себя у 0 и 1, чем p̂ ± 1.96·SE.</li>
+<li><strong>Смысл величин.</strong> k — успехи, n — независимые попытки; интервал описывает неопределённость доли при принятых предположениях, а не диапазон следующей партии.</li>
+<li><strong>Когда применять.</strong> Чтобы доложить долю успехов с честной неопределённостью. Пример: 45/50 и 450/500 дают одну долю 0.9, но SE ≈ 0.042 и ≈ 0.013.</li>
+<li><strong>Главная ошибка.</strong> Доложить долю без n или считать, что интервал гарантирует результат следующей партии.</li>
+</ul>
+<h3 id="CHEATSHEET--m04-l04-bootstrap-и-интервалы"><a href="#M04-L04">M04-L04. Bootstrap и интервалы</a></h3>
+<ul>
+<li><strong>Правило.</strong> Парный bootstrap: пересэмплировать индексы пар с возвращением, в каждом наборе считать среднее разностей, интервал — квантили 2.5% и 97.5%.</li>
+<li><strong>Смысл величин.</strong> Единица пересэмплирования — то, что независимо: вопрос или человек; число повторов влияет на устойчивость квантилей, но не добавляет данных; seed делает расчёт повторимым.</li>
+<li><strong>Когда применять.</strong> Чтобы оценить неопределённость разницы двух систем на одних примерах. Пример: разности [1, 0, 2] и индексы [0, 0, 2] дают повтор со средним (1 + 1 + 2)/3 ≈ 1.33.</li>
+<li><strong>Главная ошибка.</strong> Пересэмплировать A и B независимо или считать ответы одного человека независимыми.</li>
+</ul>
+<h3 id="CHEATSHEET--m04-l05-гипотезы-и-эксперимент"><a href="#M04-L05">M04-L05. Гипотезы и эксперимент</a></h3>
+<ul>
+<li><strong>Правило.</strong> p-value — вероятность при H₀ получить результат не менее экстремальный; в знаковом тесте при H₀ каждая сторона выигрывает с вероятностью 0.5, ничьи не учитываются.</li>
+<li><strong>Смысл величин.</strong> α — допустимая частота ложных отклонений; ошибка I рода — отклонить верную H₀, ошибка II рода — пропустить реальный эффект; практическая значимость — величина эффекта и его цена.</li>
+<li><strong>Когда применять.</strong> Для заранее спланированного парного сравнения. Пример: 9 побед из 10 дают двустороннее p = 22/1024 ≈ 0.021.</li>
+<li><strong>Главная ошибка.</strong> Читать p-value как вероятность истинности H₀ или проверять много гипотез без поправки.</li>
+</ul>
+<h3 id="CHEATSHEET--m04-l08-сколько-наблюдений-нужно-планирование-симуляцией"><a href="#M04-L08">M04-L08. Сколько наблюдений нужно: планирование симуляцией</a></h3>
+<ul>
+<li><strong>Правило.</strong> Мощность — вероятность отвергнуть H₀, если верен полезный эффект; объём выбирают из заранее заданной сетки как первый n, где мощность не ниже требуемой.</li>
+<li><strong>Смысл величин.</strong> p₀ — базовая вероятность, p₁ — минимальный полезный эффект; симуляция с seed оценивает мощность долей отвержений; правило остановки фиксируют до сбора данных.</li>
+<li><strong>Когда применять.</strong> При планировании сравнения до сбора данных. Пример: 712 отвержений из 1000 симуляций дают мощность ≈ 0.71 — для цели 0.8 нужен больший n.</li>
+<li><strong>Главная ошибка.</strong> Останавливать сбор при первом хорошем результате или менять сетку и порог после просмотра данных.</li>
 </ul>
 </div></div><footer class="source-note">Исходный текст: <code>course/cheatsheet.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#FAST-TRACK-LLM"><small>Предыдущий раздел</small>← Быстрый вход в M09–M11 для тех, кто уже делал RAG</a><a href="#REVIEW-SCHEDULE"><small>Следующий раздел</small>Расписание повторения →</a></nav></article><article class="material" id="REVIEW-SCHEDULE" data-title="Расписание повторения" data-short-title="Расписание повторения" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">REVIEW-SCHEDULE</span><span class="badge reference">Материал курса</span></div><h1>Расписание повторения</h1></header><div class="article-layout"><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Правило дополняет <a href="#MENTOR--отложенная-проверка">отложенную проверку</a> из учебного цикла: даты повторений считаются по журналу, а сами повторения смешивают задачи разных модулей.</p>
 <h2 id="REVIEW-SCHEDULE--правило-1-3-7-21">Правило 1–3–7–21</h2>
