@@ -100,3 +100,17 @@ def test_checkpoint_table_covers_every_pilot_to_module_link():
         linked, start = rows[session]
         assert linked == lessons
         assert all(f"{lesson}-D" in start for lesson in lessons)
+
+
+def test_fast_track_maps_every_rubric_item_of_m09_m11():
+    page = (SOURCE / "course/fast-track-llm.md").read_text(encoding="utf-8")
+    for module in ("M09", "M10", "M11"):
+        overview = (SOURCE / f"course/modules/{module}.md").read_text(encoding="utf-8")
+        assert "../fast-track-llm.md" in overview
+        rubric = overview.split("## Рубрика")[1].split("\n## ")[0]
+        items = [line[2:].rstrip(".") for line in rubric.splitlines() if line.startswith("- ")]
+        assert len(items) == 4
+        section = page.split(f"## {module}.")[1].split("\n## ")[0]
+        for item in items:
+            row = next(line for line in section.splitlines() if line.startswith(f"| {item} |"))
+            assert re.search(rf"\]\(lessons/{module}-L\d{{2}}\.md\)", row), row

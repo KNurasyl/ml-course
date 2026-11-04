@@ -1125,5 +1125,12 @@
     "path": "course/lessons/M16-L08.md",
     "version": "1.1.0",
     "status": "ready"
+  },
+  "FAST-TRACK-LLM": {
+    "id": "FAST-TRACK-LLM",
+    "title": "Быстрый вход в M09–M11 для тех, кто уже делал RAG",
+    "path": "course/fast-track-llm.md",
+    "version": "1.1.0",
+    "status": "ready"
   }
 }
