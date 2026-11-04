@@ -44,6 +44,8 @@ ANALOGY_PARTS = ("| В уроке | В аналогии |", "**Где анало
 # T22: the lesson card has four fields and stands after the delayed check, before the sources.
 CARD = re.compile(r"(?ms)^## Карточка урока\n(.*?)(?=^## |\Z)")
 CARD_FIELDS = ("Правило", "Смысл величин", "Когда применять", "Главная ошибка")
+# T23: at least two distinct external sources in the sources section.
+SOURCES = re.compile(r"(?ms)^## Источники и углубление\n(.*?)(?=^## |\Z)")
 
 
 def canonical_parts(heading: str) -> list[str]:
@@ -57,18 +59,20 @@ def canonical_parts(heading: str) -> list[str]:
     return parts
 
 
-def load_exceptions(root: Path) -> dict:
+def load_template(root: Path) -> dict:
     import yaml
 
     path = root / EXCEPTIONS
-    if not path.is_file():
-        return {}
-    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-    return data.get("lessons", {})
+    return (yaml.safe_load(path.read_text(encoding="utf-8")) or {}) if path.is_file() else {}
+
+
+def external_links(section: str) -> set[str]:
+    return set(re.findall(r"\]\((https?://[^)\s]+)\)", section))
 
 
 def lint(root: Path = ROOT) -> dict:
-    exceptions = load_exceptions(root)
+    template = load_template(root)
+    exceptions, rollout = template.get("lessons", {}), template.get("rollout", {})
     errors = []
     lessons = sorted((root / "course/lessons").glob("*.md"))
     for lesson_id in sorted(set(exceptions) - {p.stem for p in lessons}):
@@ -112,6 +116,14 @@ def lint(root: Path = ROOT) -> dict:
                       for name in canonical_parts(heading)]
             if "Новая и отложенная проверка" not in before or "Источники и углубление" in before:
                 errors.append(f"{lesson_id}: lesson card must stand after the delayed check and before the sources")
+        module = lesson_id[:3]
+        if module in rollout.get("analogy", []) and not ANALOGY.search(text):
+            errors.append(f"{lesson_id}: {module} is rolled out for T20 but the lesson has no analogy")
+        if module in rollout.get("card", []) and not card:
+            errors.append(f"{lesson_id}: {module} is rolled out for T22 but the lesson has no card")
+        sources = SOURCES.search(text)
+        if module in rollout.get("sources", []) and len(external_links(sources.group(1) if sources else "")) < 2:
+            errors.append(f"{lesson_id}: {module} is rolled out for T23 but sources have fewer than two external links")
         practice = PRACTICE.search(text)
         if re.search(r"(?m)^```", text) and practice and PREDICT not in practice.group(1):
             errors.append(f"{lesson_id}: practice of a lesson with code lacks the '{PREDICT}' line")

@@ -24,3 +24,9 @@ lessons:
     reason: >-
       Итоговый урок M16 построен как защита продукта: требование, работа, порядок проверки,
       технический пример, защита. Отдельной практики с поддержкой нет, разобранный пример стоит после задачи.
+# Phase 2 tasks are applied module by module (T20 analogy, T22 card, T23 sources). For the modules
+# listed here every lesson must already have the element; add a module once it is complete.
+rollout:
+  analogy: [M00]
+  card: [M00]
+  sources: [M00]

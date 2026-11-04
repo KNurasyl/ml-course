@@ -100,3 +100,14 @@ def test_analogy_needs_table_breaking_point_and_position(course):
     errors = linter.lint(course)["errors"]
     assert "M00-L01: analogy needs the mapping table and '**Где аналогия ломается:**'" in errors
     assert "M00-L02: analogy must stand after the explanation and before the worked example" in errors
+
+
+def test_rollout_modules_require_analogy_card_and_two_sources(course):
+    (course / linter.EXCEPTIONS).write_text("version: 1\nrollout:\n  analogy: [M00]\n  card: [M00]\n  sources: [M00]\n",
+                                            encoding="utf-8")
+    write(course, lesson(SECTIONS).replace("## Источники и углубление\n\nТекст.",
+                                           "## Источники и углубление\n\n[Один](https://example.org/a)."))
+    errors = linter.lint(course)["errors"]
+    assert "M00-L01: M00 is rolled out for T20 but the lesson has no analogy" in errors
+    assert "M00-L01: M00 is rolled out for T22 but the lesson has no card" in errors
+    assert "M00-L01: M00 is rolled out for T23 but sources have fewer than two external links" in errors
