@@ -35,6 +35,9 @@ RANK = {"Результат и входные знания": 0, "Объясне�
         "Новая и отложенная проверка": 6, "Источники и углубление": 7}
 OPTIONAL = {"Проверь себя сначала", "Аналогия", "Схема", "Карточка урока"}
 RESULT_BLOCK = re.compile(r"(?m)^\*\*Результат:?\*\*")
+# T27: practice in a lesson with code starts in the "predict, then run" mode (ICAP, constructive).
+PREDICT = "**Предскажи до запуска.**"
+PRACTICE = re.compile(r"(?ms)^## Практика с поддержкой\n(.*?)(?=^## |\Z)")
 
 
 def canonical_parts(heading: str) -> list[str]:
@@ -87,6 +90,9 @@ def lint(root: Path = ROOT) -> dict:
                 errors.append(f"{lesson_id}: missing section '{name}'")
             if count and name in allowed.get("missing", []):
                 errors.append(f"{lesson_id}: exception for '{name}' is stale, the section exists")
+        practice = PRACTICE.search(text)
+        if re.search(r"(?m)^```", text) and practice and PREDICT not in practice.group(1):
+            errors.append(f"{lesson_id}: practice of a lesson with code lacks the '{PREDICT}' line")
         ranks = [RANK[name] for name in dict.fromkeys(found)]
         if ranks != sorted(ranks) and not allowed.get("order_free"):
             errors.append(f"{lesson_id}: canonical sections are out of order: {' > '.join(dict.fromkeys(found))}")

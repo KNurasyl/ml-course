@@ -78,3 +78,13 @@ def test_exceptions_need_reason_and_become_stale(course):
     assert "M00-L02: exception needs a reason" in errors
     assert "M00-L02: exception for 'Подсказки по очереди' is stale, the section exists" in errors
     assert "M99-L01: exception for a lesson that does not exist" in errors
+
+
+def test_lesson_with_code_needs_predict_line_in_practice(course):
+    code = "```python\nprint(1)\n```\n\n"
+    write(course, lesson(SECTIONS).replace("## Практика с поддержкой\n\nТекст.", "## Практика с поддержкой\n\n" + code))
+    errors = linter.lint(course)["errors"]
+    assert "M00-L01: practice of a lesson with code lacks the '**Предскажи до запуска.**' line" in errors
+    write(course, lesson(SECTIONS).replace("## Практика с поддержкой\n\nТекст.",
+                                           "## Практика с поддержкой\n\n**Предскажи до запуска.** Запиши.\n\n" + code))
+    assert linter.lint(course)["errors"] == []
