@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="e74ac29596117c5efeb4a9e0efcc842327ee2a25d6dda5966b3be9576fe94989"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="465543952dd7699319f8a64fc8ba4773d64edc776a2bea63c8b496ce3646c5cf"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -8126,7 +8126,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M08.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M08.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M07-L05"><small>Предыдущий раздел</small>← M07-L05. Сохранение и воспроизведение</a><a href="#M08-L01"><small>Следующий раздел</small>M08-L01. Текст и токены →</a></nav></article><article class="material" id="M08-L01" data-title="M08-L01. Текст и токены" data-short-title="Текст и токены" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Текст и токены</h1><p class="outcome"><strong>После урока:</strong> Объяснить, почему длина строки в символах не равна числу токенов.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M07-L03. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L01--объяснение">Объяснение</a></li><li><a href="#M08-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M08-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L01--самостоятельная-задача-a-m08-l01-a">Самостоятельная задача A — M08-L01-A</a></li><li><a href="#M08-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+"></iframe><p><a href="course/visuals/M08.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M08.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M07-L05"><small>Предыдущий раздел</small>← M07-L05. Сохранение и воспроизведение</a><a href="#M08-L01"><small>Следующий раздел</small>M08-L01. Текст и токены →</a></nav></article><article class="material" id="M08-L01" data-title="M08-L01. Текст и токены" data-short-title="Текст и токены" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Текст и токены</h1><p class="outcome"><strong>После урока:</strong> Объяснить, почему длина строки в символах не равна числу токенов.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M07-L03. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L01--объяснение">Объяснение</a></li><li><a href="#M08-L01--аналогия-байты-utf-8-и-словарь-сжатия">Аналогия: байты UTF-8 и словарь сжатия</a></li><li><a href="#M08-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M08-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L01--самостоятельная-задача-a-m08-l01-a">Самостоятельная задача A — M08-L01-A</a></li><li><a href="#M08-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M08-L01--объяснение">Объяснение</h2>
 <p>Компьютер получает текст как последовательность чисел. Токенизатор задаёт правило преобразования строки в последовательность идентификаторов и обратного декодирования. Токен может соответствовать целому слову, части слова, пробелу, знаку препинания или последовательности байтов. Поэтому число токенов не равно числу слов или символов. Для LLM ограничение контекста и цена вычислений обычно выражаются именно в токенах конкретного токенизатора.</p>
@@ -8138,6 +8138,47 @@ draw();
 <p>Разделять корпус нужно до формирования перекрывающихся окон. Если сначала нарезать один документ на окна со сдвигом 1 и случайно поделить окна, train и test будут почти дубликатами. Для учебного корпуса используем разделение по целым строкам или документам и сохраняем их идентификаторы. Словарь символьной модели строим по train; неизвестный символ в validation обрабатываем явным UNK либо заранее определённым байтовым алфавитом.</p>
 <p>Токенизация является частью версии модели. Сохраняй tokenizer вместе с весами, не меняй нормализацию текста незаметно и проверяй round-trip на контрольных строках. Обратное декодирование не всегда возвращает побитово исходный текст: некоторые токенизаторы нормализуют пробелы или Unicode. Такое поведение нужно измерить и описать, особенно когда позиции токенов связываются с источниками и выделением ошибок.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M08-L01-desktop.svg" target="_blank" data-figure="course/assets/responsive/M08-L01-desktop.svg" aria-label="Увеличить рисунок: Текст и токены: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M08-L01-mobile.svg"><img src="course/assets/responsive/M08-L01-desktop.svg" alt="Текст и токены: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M08-L01--аналогия-байты-utf-8-и-словарь-сжатия">Аналогия: байты UTF-8 и словарь сжатия</h2>
+<p>Как похоже: в JavaScript <code>&quot;привет&quot;.length</code> равно 6, а <code>Buffer.byteLength(&quot;привет&quot;)</code> — 12, потому что кириллица в UTF-8 занимает два байта. Лимит контекста LLM похож на лимит размера сообщения в байтах: считать нужно после кодирования, а не по символам. BPE напоминает словарь сжатия: частые подстроки получают один короткий код.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Токенизатор</td>
+  <td>Кодировщик строки в последовательность кодов</td>
+</tr>
+<tr>
+  <td>Токены против символов</td>
+  <td>Buffer.byteLength против string.length</td>
+</tr>
+<tr>
+  <td>Лимит контекста в токенах</td>
+  <td>Лимит размера сообщения в байтах, а не в символах</td>
+</tr>
+<tr>
+  <td>ID токена</td>
+  <td>Первичный ключ строки таблицы: адрес, а не величина</td>
+</tr>
+<tr>
+  <td>BPE: частые фрагменты целиком</td>
+  <td>Словарь сжатия: частая подстрока получает один код</td>
+</tr>
+<tr>
+  <td>EOS и PAD</td>
+  <td>Служебные байты протокола: конец сообщения и выравнивание</td>
+</tr>
+<tr>
+  <td>Токенизатор как часть версии модели</td>
+  <td>Смена кодировки портит ранее сохранённые данные</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> UTF-8 — один стандарт с однозначным декодированием. Токенизатор выучен на корпусе, у каждой модели свой, а decode может нормализовать пробелы и Unicode. Поэтому правило «два байта на букву» переносится, а «четыре символа на токен» — нет: токены считают конкретным токенизатором.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M08-L01--разобранный-пример">Разобранный пример</h2>
 <p>Для учебного словаря sorted(set(&quot;кот ток&quot;)) получаем [пробел,к,о,т]. Строка «кот» кодируется[1,2,3], а «ток» —[3,2,1].</p>
 <pre><code class="language-python">chars = sorted(set('кот ток'))
@@ -8175,7 +8216,7 @@ assert x == [1,2] and target == [2,3]
 <li><a href="https://huggingface.co/learn/llm-course/ru/chapter1/1" target="_blank" rel="noopener noreferrer" class="external-link">Hugging Face: русский курс LLM</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l01-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08"><small>Предыдущий раздел</small>← M08 NLP и Transformer</a><a href="#M08-L02"><small>Следующий раздел</small>M08-L02. Embeddings →</a></nav></article><article class="material" id="M08-L02" data-title="M08-L02. Embeddings" data-short-title="Embeddings" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Embeddings</h1><p class="outcome"><strong>После урока:</strong> Различить индекс токена, обучаемое представление и значение сходства.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L01. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L02--объяснение">Объяснение</a></li><li><a href="#M08-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M08-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L02--самостоятельная-задача-a-m08-l02-a">Самостоятельная задача A — M08-L02-A</a></li><li><a href="#M08-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l01-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08"><small>Предыдущий раздел</small>← M08 NLP и Transformer</a><a href="#M08-L02"><small>Следующий раздел</small>M08-L02. Embeddings →</a></nav></article><article class="material" id="M08-L02" data-title="M08-L02. Embeddings" data-short-title="Embeddings" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Embeddings</h1><p class="outcome"><strong>После урока:</strong> Различить индекс токена, обучаемое представление и значение сходства.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L01. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L02--объяснение">Объяснение</a></li><li><a href="#M08-L02--аналогия-таблица-с-векторной-колонкой">Аналогия: таблица с векторной колонкой</a></li><li><a href="#M08-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M08-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L02--самостоятельная-задача-a-m08-l02-a">Самостоятельная задача A — M08-L02-A</a></li><li><a href="#M08-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M08-L02--объяснение">Объяснение</h2>
 <p>Embedding — векторное представление дискретного объекта. Для токенов простейший механизм выглядит как таблица E формы[V,d], где V — размер словаря, d — размерность представления. Идентификатор токена выбирает строку E. Если ids имеет форму[B,T], результат embedding имеет форму[B,T,d]. В этом шаге ещё нет смешивания соседних слов: одинаковый ID выбирает одну и ту же строку независимо от контекста.</p>
@@ -8187,6 +8228,47 @@ assert x == [1,2] and target == [2,3]
 <p>Размер таблицы равен V·d параметров. При V=10000 и d=128 это 1,28 миллиона чисел, около 5,12MB в float32 без учёта градиентов. В больших словарях embedding занимает заметную часть памяти. Иногда выходная матрица языковой модели разделяет веса с входной таблицей, но это архитектурное решение, а не обязательное свойство всех моделей.</p>
 <p>Для самостоятельной проверки проследи путь ID→строка→контекст→оценка следующего токена. У каждого шага разные формы и смысл. Такой разбор предотвращает частую путаницу: векторный поиск использует представления для сравнения документов, а обучение LLM изменяет параметры, которые формируют представления и предсказания.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M08-L02-desktop.svg" target="_blank" data-figure="course/assets/responsive/M08-L02-desktop.svg" aria-label="Увеличить рисунок: Embeddings: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M08-L02-mobile.svg"><img src="course/assets/responsive/M08-L02-desktop.svg" alt="Embeddings: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M08-L02--аналогия-таблица-с-векторной-колонкой">Аналогия: таблица с векторной колонкой</h2>
+<p>Как похоже: nn.Embedding — таблица, где ключ — ID токена, а значение — вектор. Lookup — это SELECT по первичному ключу, а не перебор всей таблицы; умножение one-hot на E даёт ту же строку, как полный скан с маской, только дорого. Косинус похож на оператор сходства векторов в pgvector, с которым встретимся в M10.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Таблица E [V, d]</td>
+  <td>Таблица с векторной колонкой, ключ — ID токена</td>
+</tr>
+<tr>
+  <td>Lookup по ID</td>
+  <td>SELECT по первичному ключу</td>
+</tr>
+<tr>
+  <td>Умножение one-hot на E</td>
+  <td>Полный скан с маской: та же строка, но дорого</td>
+</tr>
+<tr>
+  <td>Обучение строк таблицы</td>
+  <td>UPDATE только тех строк, что участвовали в запросе</td>
+</tr>
+<tr>
+  <td>Косинус</td>
+  <td>Оператор сходства векторов в pgvector</td>
+</tr>
+<tr>
+  <td>Статический против контекстного вектора</td>
+  <td>Значение из таблицы против значения, вычисленного под конкретный запрос</td>
+</tr>
+<tr>
+  <td>Среднее без PAD</td>
+  <td>AVG, который не учитывает строки-заглушки</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> значения в обычной таблице записывает человек, и они что-то означают сами по себе. Строки E сначала случайны и получают свойства только от обучения, а близость векторов не доказывает близость смысла.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M08-L02--разобранный-пример">Разобранный пример</h2>
 <p>Пусть E=[[1,0],[0,1],[1,1]], ids=[2,0]. Lookup даёт[[1,1],[1,0]]. Косинус первого вектора с[1,0] равен 1/√2≈0,7071.</p>
 <pre><code class="language-python">import torch
@@ -8224,7 +8306,7 @@ assert abs(score.item()-2**-.5)&lt;1e-6
 <li><a href="https://huggingface.co/learn/llm-course/ru/chapter1/1" target="_blank" rel="noopener noreferrer" class="external-link">Hugging Face: русский курс LLM</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l02-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L01"><small>Предыдущий раздел</small>← M08-L01. Текст и токены</a><a href="#M08-L03"><small>Следующий раздел</small>M08-L03. Attention →</a></nav></article><article class="material" id="M08-L03" data-title="M08-L03. Attention" data-short-title="Attention" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Attention</h1><p class="outcome"><strong>После урока:</strong> Проверить формы Q, K, V и объяснить нормализацию весов.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L02. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 140 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L03--объяснение">Объяснение</a></li><li><a href="#M08-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M08-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L03--самостоятельная-задача-a-m08-l03-a">Самостоятельная задача A — M08-L03-A</a></li><li><a href="#M08-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l02-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L01"><small>Предыдущий раздел</small>← M08-L01. Текст и токены</a><a href="#M08-L03"><small>Следующий раздел</small>M08-L03. Attention →</a></nav></article><article class="material" id="M08-L03" data-title="M08-L03. Attention" data-short-title="Attention" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Attention</h1><p class="outcome"><strong>После урока:</strong> Проверить формы Q, K, V и объяснить нормализацию весов.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L02. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 140 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L03--объяснение">Объяснение</a></li><li><a href="#M08-L03--аналогия-нечёткий-поиск-в-key-value-хранилище">Аналогия: нечёткий поиск в key-value хранилище</a></li><li><a href="#M08-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M08-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L03--самостоятельная-задача-a-m08-l03-a">Самостоятельная задача A — M08-L03-A</a></li><li><a href="#M08-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M08-L03--объяснение">Объяснение</h2>
 <p>Attention вычисляет для каждой позиции взвешенную смесь информации из доступных позиций. Механизм полезен потому, что важность соседей зависит от текущего запроса и контекста. В языке местоимение может обращаться к существительному далеко назад; фиксированного среднего всех слов недостаточно. При этом слово «внимание» — метафора вычислительного механизма, а не доказательство человеческого понимания.</p>
@@ -8369,6 +8451,47 @@ el(&#x27;check&#x27;).onclick=()=&gt;{if(el(&#x27;guess&#x27;).value===&#x27;&#x
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
 "></iframe><p><a href="course/visuals/attention-lab.html" target="_blank">Открыть опыт отдельно на весь экран</a></p></section>
+<h2 id="M08-L03--аналогия-нечёткий-поиск-в-key-value-хранилище">Аналогия: нечёткий поиск в key-value хранилище</h2>
+<p>Как похоже: KV-хранилище по точному ключу возвращает одну запись. Attention — мягкий поиск: запрос сравнивается со всеми ключами, оценки превращаются в доли, а ответ — смесь содержимого всех записей с этими долями. Это похоже на поисковую выдачу, где результаты не выбирают, а смешивают по релевантности.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Query</td>
+  <td>Поисковый запрос позиции</td>
+</tr>
+<tr>
+  <td>Key</td>
+  <td>Индексируемый ключ записи</td>
+</tr>
+<tr>
+  <td>Value</td>
+  <td>Содержимое записи</td>
+</tr>
+<tr>
+  <td>QKᵀ</td>
+  <td>Оценка релевантности запроса каждому ключу</td>
+</tr>
+<tr>
+  <td>Деление на √d_k</td>
+  <td>Нормировка оценок, чтобы доли не стали слишком острыми</td>
+</tr>
+<tr>
+  <td>Softmax по ключам</td>
+  <td>Доли одной выдачи: в сумме 1</td>
+</tr>
+<tr>
+  <td>O = AV</td>
+  <td>Ответ — смесь содержимого, а не одна запись</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> в хранилище ключи и значения — заданные поля, а в attention Q, K и V — обученные проекции одних и тех же состояний. Attention всегда смешивает все доступные значения. И веса не объясняют, почему модель ответила именно так.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M08-L03--разобранный-пример">Разобранный пример</h2>
 <p>Упростим d_k=1, Q=[[1],[0],[−1]], K=[[1],[0],[−1]], V=[[10],[20],[30]]. Для первой строки scores=[1,0,−1], softmax≈[0,6652;0,2447;0,0900]. Выход≈14,2479. Вторая строка имеет равные веса 1/3 и выход 20.</p>
 <pre><code class="language-python">import torch
@@ -8406,7 +8529,7 @@ print(o.flatten().round(decimals=4))  # [14.2479,20.0000,25.7521]
 <li><a href="https://huggingface.co/learn/llm-course/ru/chapter1/1" target="_blank" rel="noopener noreferrer" class="external-link">Hugging Face: русский курс LLM</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l03-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L02"><small>Предыдущий раздел</small>← M08-L02. Embeddings</a><a href="#M08-L04"><small>Следующий раздел</small>M08-L04. Позиции и causal mask →</a></nav></article><article class="material" id="M08-L04" data-title="M08-L04. Позиции и causal mask" data-short-title="Позиции и causal mask" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Позиции и causal mask</h1><p class="outcome"><strong>После урока:</strong> На новом примере показать, какую утечку создаёт доступ к будущему токену.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L03. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L04--объяснение">Объяснение</a></li><li><a href="#M08-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M08-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L04--самостоятельная-задача-a-m08-l04-a">Самостоятельная задача A — M08-L04-A</a></li><li><a href="#M08-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l03-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L02"><small>Предыдущий раздел</small>← M08-L02. Embeddings</a><a href="#M08-L04"><small>Следующий раздел</small>M08-L04. Позиции и causal mask →</a></nav></article><article class="material" id="M08-L04" data-title="M08-L04. Позиции и causal mask" data-short-title="Позиции и causal mask" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Позиции и causal mask</h1><p class="outcome"><strong>После урока:</strong> На новом примере показать, какую утечку создаёт доступ к будущему токену.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L03. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L04--объяснение">Объяснение</a></li><li><a href="#M08-L04--аналогия-журнал-событий-и-бэктест">Аналогия: журнал событий и бэктест</a></li><li><a href="#M08-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M08-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L04--самостоятельная-задача-a-m08-l04-a">Самостоятельная задача A — M08-L04-A</a></li><li><a href="#M08-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M08-L04--объяснение">Объяснение</h2>
 <p>Self-attention без позиционной информации не знает, какая позиция была первой. Если одинаково переставить входные токены, соответствующие выходы переставятся вместе с ними. Для многих языковых задач порядок важен: «сервер вызвал клиент» и «клиент вызвал сервер» содержат те же слова, но описывают разные отношения. Поэтому модель должна получать информацию о позициях или относительных смещениях.</p>
@@ -8418,6 +8541,47 @@ print(o.flatten().round(decimals=4))  # [14.2479,20.0000,25.7521]
 <p>На генерации каждый новый токен добавляется к префиксу. Полный пересчёт всех состояний прост, но дорог; KV-cache сохраняет ключи и значения прошлых позиций. Позиционные индексы должны продолжаться, а не начинаться с нуля на каждом новом токене. Иначе кеш и новый запрос описывают разные позиции. В учебной мини-модели пока используем полный пересчёт, чтобы не прятать причинную структуру.</p>
 <p>Causal language model и двунаправленная модель решают разные задачи. Для классификации готового текста доступ ко всем словам может быть допустим. Для предсказания следующего слова нужен запрет будущего. Выбор маски определяется информацией, доступной в момент реального применения, а не тем, какой вариант даёт меньше loss на учебном массиве.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M08-L04-desktop.svg" target="_blank" data-figure="course/assets/responsive/M08-L04-desktop.svg" aria-label="Увеличить рисунок: Позиции и causal mask: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M08-L04-mobile.svg"><img src="course/assets/responsive/M08-L04-desktop.svg" alt="Позиции и causal mask: численная схема" loading="lazy"></picture></a><span class="figure-hint">Позиции и causal mask: численная схема · Открыть крупнее ↗</span></p>
+<h2 id="M08-L04--аналогия-журнал-событий-и-бэктест">Аналогия: журнал событий и бэктест</h2>
+<p>Как похоже: без номера события журнал превращается в множество — порядок теряется. Обработчик события с номером i может читать только события до него. Модель, видящая будущий токен, похожа на бэктест торговой стратегии, который подглядывает в завтрашние цены: результат отличный, но в реальной работе таких данных не будет.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Позиционная информация</td>
+  <td>Номер события: без него журнал — это множество</td>
+</tr>
+<tr>
+  <td>Causal mask</td>
+  <td>Обработчик события i видит только события с номером ≤ i</td>
+</tr>
+<tr>
+  <td>−∞ до softmax, а не 0</td>
+  <td>Фильтр WHERE seq ≤ i, а не обнуление значения будущей записи</td>
+</tr>
+<tr>
+  <td>Утечка будущего токена</td>
+  <td>Бэктест, подглядывающий в завтрашние цены</td>
+</tr>
+<tr>
+  <td>Padding mask</td>
+  <td>Пустые слоты пачки: заполнение, а не события</td>
+</tr>
+<tr>
+  <td>Продолжение позиций при генерации</td>
+  <td>Offset продолжается, а не начинается с нуля</td>
+</tr>
+<tr>
+  <td>Тест с одинаковым префиксом</td>
+  <td>Замена будущих событий не меняет ранние результаты</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> номер события — точное целое число, а модель получает позицию как обученный вектор или вращение, и таблица позиций ограничена T_max. Обработчик событий — детерминированный код, а attention смешивает разрешённые позиции с обученными весами.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M08-L04--разобранный-пример">Разобранный пример</h2>
 <p>Для T=3 разрешённая матрица имеет строки[1,0,0],[1,1,0],[1,1,1]. Если все разрешённые scores равны 0, веса после softmax будут[1,0,0],[0,5;0,5;0],[1/3;1/3;1/3].</p>
 <pre><code class="language-python">import torch
@@ -8455,7 +8619,7 @@ assert a[1].tolist() == [.5,.5,0.]
 <li><a href="https://huggingface.co/learn/llm-course/ru/chapter1/1" target="_blank" rel="noopener noreferrer" class="external-link">Hugging Face: русский курс LLM</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l04-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L03"><small>Предыдущий раздел</small>← M08-L03. Attention</a><a href="#M08-L06"><small>Следующий раздел</small>M08-L06. Residual и LayerNorm: сохранить путь и выровнять масштаб →</a></nav></article><article class="material" id="M08-L06" data-title="M08-L06. Residual и LayerNorm: сохранить путь и выровнять масштаб" data-short-title="Residual и LayerNorm: сохранить путь и выровнять масштаб" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Residual и LayerNorm: сохранить путь и выровнять масштаб</h1><p class="outcome"><strong>После урока:</strong> вручную нормировать одну строку признаков и объяснить, почему residual складывает тензоры одинаковой формы.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M07-L01, M08-L04. Этот урок проходится до M08-L05. Ориентир: 45 минут объяснения, 60 минут вычислений, 30 минут самостоятельной задачи. Это план, не измерение твоего времени.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L06--объяснение">Объяснение</a></li><li><a href="#M08-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M08-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L06--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M08-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L06--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l04-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L03"><small>Предыдущий раздел</small>← M08-L03. Attention</a><a href="#M08-L06"><small>Следующий раздел</small>M08-L06. Residual и LayerNorm: сохранить путь и выровнять масштаб →</a></nav></article><article class="material" id="M08-L06" data-title="M08-L06. Residual и LayerNorm: сохранить путь и выровнять масштаб" data-short-title="Residual и LayerNorm: сохранить путь и выровнять масштаб" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Residual и LayerNorm: сохранить путь и выровнять масштаб</h1><p class="outcome"><strong>После урока:</strong> вручную нормировать одну строку признаков и объяснить, почему residual складывает тензоры одинаковой формы.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M07-L01, M08-L04. Этот урок проходится до M08-L05. Ориентир: 45 минут объяснения, 60 минут вычислений, 30 минут самостоятельной задачи. Это план, не измерение твоего времени.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L06--объяснение">Объяснение</a></li><li><a href="#M08-L06--аналогия-патч-поверх-версии-и-шкала-ревьюера">Аналогия: патч поверх версии и шкала ревьюера</a></li><li><a href="#M08-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M08-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L06--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M08-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L06--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M08-L06--объяснение">Объяснение</h2>
 <h3 id="M08-L06--зачем-нужен-ещё-один-блок">Зачем нужен ещё один блок</h3>
@@ -8467,6 +8631,47 @@ assert a[1].tolist() == [.5,.5,0.]
 <p>Формула z_i=(x_i−μ)/sqrt(v+ε). Здесь v — среднее квадратов отклонений с делением на число признаков, а ε — небольшое положительное число, защищающее деление при почти постоянной строке. Затем обучаемые γ и β масштабируют и сдвигают результат: y_i=γ_i z_i+β_i. При инициализации γ=1, β=0, но во время обучения они могут изменяться.</p>
 <p>Не путай эту операцию с нормализацией числовых столбцов датасета из M01. LayerNorm не накапливает среднее всего train и не использует статистику соседнего объекта. Для тензора [B,T,D] с normalized_shape=D каждая пара индексов b,t нормируется отдельно по D. Если нормировать по T, представление позиции начнёт зависеть от статистики других токенов — получится другое вычисление.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M08-L06-desktop.svg" target="_blank" data-figure="course/assets/responsive/M08-L06-desktop.svg" aria-label="Увеличить рисунок: Нормализация каждой строки и residual-сумма"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M08-L06-mobile.svg"><img src="course/assets/responsive/M08-L06-desktop.svg" alt="Нормализация каждой строки и residual-сумма" loading="lazy"></picture></a><span class="figure-hint">Нормируются признаки D; позиции T не смешиваются. · Открыть крупнее ↗</span></p>
+<h2 id="M08-L06--аналогия-патч-поверх-версии-и-шкала-ревьюера">Аналогия: патч поверх версии и шкала ревьюера</h2>
+<p>Как похоже: residual похож на патч поверх базовой версии: ветка F выдаёт только изменение, а пустой патч оставляет файл прежним. Применить патч можно только к тому же файлу — отсюда требование одинаковых форм. LayerNorm похожа на приведение оценок одного ревьюера к его же среднему и разбросу: строгий и мягкий ревьюер после этого сравнимы, а шкалы разных ревьюеров не смешиваются.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Residual h + F(h)</td>
+  <td>Патч поверх базовой версии: F выдаёт только изменение</td>
+</tr>
+<tr>
+  <td>F(h) = 0</td>
+  <td>Пустой патч: файл остаётся прежним</td>
+</tr>
+<tr>
+  <td>Одинаковые формы веток</td>
+  <td>Патч применяется к тому же файлу</td>
+</tr>
+<tr>
+  <td>LayerNorm по признакам одной позиции</td>
+  <td>Оценки одного ревьюера по его же среднему и разбросу</td>
+</tr>
+<tr>
+  <td>Нормировка по T или по батчу</td>
+  <td>Смешать шкалы разных ревьюеров — другое вычисление</td>
+</tr>
+<tr>
+  <td>γ и β</td>
+  <td>Обученная пересчётная шкала после нормировки</td>
+</tr>
+<tr>
+  <td>ε</td>
+  <td>Защита, когда ревьюер поставил всем одинаковую оценку</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> патч пишет человек, и он осмыслен сам по себе; F — обученная функция, а её «изменение» — вектор чисел без отдельного смысла. У скрытых признаков нет единиц, как у оценок, а γ и β обучаются, поэтому выход LayerNorm не обязан иметь нулевое среднее.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M08-L06--разобранный-пример">Разобранный пример</h2>
 <pre><code class="language-python">import torch
 from torch import nn
@@ -8501,7 +8706,7 @@ print((x+delta).tolist())
 <p>B: x=[2,2,2], ε=1e−5, γ=[3,2,1], β=[−1,0,1]. Получится ли нулевой итог? C через 3–7 дней: две строки [1,3] и [100,104]. Нормируй по строкам и сравни с ошибочной нормализацией всего массива. Найди тест, который отличает процедуры. Отдельные ключи находятся в <a href="#M08-SOLUTIONS--m08-l06-a-нормализация-и-residual">решениях модуля</a>.</p>
 </section><h2 id="M08-L06--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://docs.pytorch.org/docs/2.15/generated/torch.nn.LayerNorm.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch LayerNorm</a>. Собственные числа объясняют операцию; документация фиксирует оси, параметры и оценку дисперсии.</p>
-<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l06-a-нормализация-и-residual">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L04"><small>Предыдущий раздел</small>← M08-L04. Позиции и causal mask</a><a href="#M08-L07"><small>Следующий раздел</small>M08-L07. Полный forward Transformer-блока →</a></nav></article><article class="material" id="M08-L07" data-title="M08-L07. Полный forward Transformer-блока" data-short-title="Полный forward Transformer-блока" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L07</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Полный forward Transformer-блока</h1><p class="outcome"><strong>После урока:</strong> проследить форму и назначение каждого тензора от входных embeddings до выхода блока и найти ошибку, не вызывающую исключения.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L06, M08-L03–L04. После этого урока переходи к M08-L05 и обучению tiny LM. Ориентир: 45 минут чтения, 90 минут лабораторной, 45 минут новой задачи.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L07--объяснение">Объяснение</a></li><li><a href="#M08-L07--разобранный-пример-опыт-и-запуск">Разобранный пример — опыт и запуск</a></li><li><a href="#M08-L07--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L07--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M08-L07--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L07--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L07--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L07--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l06-a-нормализация-и-residual">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L04"><small>Предыдущий раздел</small>← M08-L04. Позиции и causal mask</a><a href="#M08-L07"><small>Следующий раздел</small>M08-L07. Полный forward Transformer-блока →</a></nav></article><article class="material" id="M08-L07" data-title="M08-L07. Полный forward Transformer-блока" data-short-title="Полный forward Transformer-блока" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L07</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Полный forward Transformer-блока</h1><p class="outcome"><strong>После урока:</strong> проследить форму и назначение каждого тензора от входных embeddings до выхода блока и найти ошибку, не вызывающую исключения.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L06, M08-L03–L04. После этого урока переходи к M08-L05 и обучению tiny LM. Ориентир: 45 минут чтения, 90 минут лабораторной, 45 минут новой задачи.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L07--объяснение">Объяснение</a></li><li><a href="#M08-L07--аналогия-конвейер-обработчиков-в-nestjs">Аналогия: конвейер обработчиков в NestJS</a></li><li><a href="#M08-L07--разобранный-пример-опыт-и-запуск">Разобранный пример — опыт и запуск</a></li><li><a href="#M08-L07--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L07--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M08-L07--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L07--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L07--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L07--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M08-L07--объяснение">Объяснение</h2>
 <h3 id="M08-L07--два-преобразования-внутри-одного-блока">Два преобразования внутри одного блока</h3>
@@ -8520,6 +8725,47 @@ print((x+delta).tolist())
 <p>Для D=8 и двух голов ширина одной головы d_k=4. Обученные Q/K/V сначала имеют форму [B,T,8], затем представляются как [B,2,T,4]. Каждая голова считает свои scores [B,T,T]; вместе получается [B,2,T,T]. Softmax по последней оси отдельно нормирует каждую query каждой головы. Выходы [B,2,T,4] переставляются и склеиваются в [B,T,8], затем выходной Linear смешивает восемь признаков. Склеивание не является сложением: иначе ширина сократилась бы до4.</p>
 <p>Несколько голов дают несколько обучаемых способов сопоставления, но сами по себе не гарантируют фиксированных человеческих ролей «грамматика» или «факты». Учебный trace ниже использует одну голову, чтобы числа можно было проверить руками; расширение числа голов меняет организацию вычисления, а не правило mask/softmax/AV.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M08-L07-desktop.svg" target="_blank" data-figure="course/assets/responsive/M08-L07-desktop.svg" aria-label="Увеличить рисунок: Полный путь тензоров с двумя residual-связями"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M08-L07-mobile.svg"><img src="course/assets/responsive/M08-L07-desktop.svg" alt="Полный путь тензоров с двумя residual-связями" loading="lazy"></picture></a><span class="figure-hint">Синий обозначает данные и residual; бирюзовый — преобразование и сложение. Учебная схема одной головы, pre-norm. · Открыть крупнее ↗</span></p>
+<h2 id="M08-L07--аналогия-конвейер-обработчиков-в-nestjs">Аналогия: конвейер обработчиков в NestJS</h2>
+<p>Как похоже: в NestJS pipe нормализует вход до обработчика — pre-norm так же ставит LayerNorm перед преобразованием. Первая половина блока — этап, где каждая позиция собирает данные у других, вторая — локальная обработка каждой позиции одним и тем же кодом. Исходное значение проходит дальше, а обработчик лишь добавляет к нему изменение.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>LayerNorm перед преобразованием</td>
+  <td>Pipe нормализации входа перед обработчиком</td>
+</tr>
+<tr>
+  <td>Attention</td>
+  <td>Этап, где каждая позиция собирает данные у других</td>
+</tr>
+<tr>
+  <td>MLP</td>
+  <td>Локальная обработка каждой позиции одним и тем же кодом</td>
+</tr>
+<tr>
+  <td>Residual вокруг каждой половины</td>
+  <td>Исходное значение идёт дальше, обработчик добавляет изменение</td>
+</tr>
+<tr>
+  <td>Несколько голов</td>
+  <td>Несколько независимых поисков, результаты склеиваются</td>
+</tr>
+<tr>
+  <td>Выходной Linear после склейки</td>
+  <td>Агрегатор, объединяющий результаты всех поисков</td>
+</tr>
+<tr>
+  <td>Совпадение форм на выходе</td>
+  <td>Контракт: обработчик возвращает объект той же схемы</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> роли middleware задаёт программист. Роли голов и признаков в блоке возникают при обучении и не обязаны быть понятными людям. А «добавить изменение» здесь — поэлементное сложение векторов, а не слияние полей объекта.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M08-L07--разобранный-пример-опыт-и-запуск">Разобранный пример — опыт и запуск</h2>
 <p>Из корня курса выполни:</p>
 <pre><code class="language-powershell">.\.venv\Scripts\python.exe labs\M08\forward_trace.py
@@ -8544,7 +8790,7 @@ print((x+delta).tolist())
 <p>B: D=6, скрытая ширина=10; замени GELU на тождественную функцию и объясни, что потеряно. C через неделю: проверяющий меняет один будущий токен и один padding-токен. Предскажи, какие выходы вправе измениться, затем проверь кодом. <a href="#M08-SOLUTIONS--m08-l07-a-полный-forward">Ключи</a> содержат численные ответы и эталон контракта, но не доказывают твою самостоятельность.</p>
 </section><h2 id="M08-L07--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer" class="external-link">Transformer: исходная статья</a>, <a href="https://docs.pytorch.org/docs/2.15/generated/torch.nn.GELU.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch GELU</a>. Лабораторная использует учебный pre-norm-вариант, а не побитовое воспроизведение архитектуры исходной статьи.</p>
-<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l07-a-полный-forward">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L07.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L06"><small>Предыдущий раздел</small>← M08-L06. Residual и LayerNorm: сохранить путь и выровнять масштаб</a><a href="#M08-L05"><small>Следующий раздел</small>M08-L05. Мини-языковая модель →</a></nav></article><article class="material" id="M08-L05" data-title="M08-L05. Мини-языковая модель" data-short-title="Мини-языковая модель" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Мини-языковая модель</h1><p class="outcome"><strong>После урока:</strong> Объяснить выбор цели, разделение корпуса и ограничения сгенерированного текста.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L07. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L05--объяснение">Объяснение</a></li><li><a href="#M08-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M08-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L05--самостоятельная-задача-a-m08-l05-a">Самостоятельная задача A — M08-L05-A</a></li><li><a href="#M08-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l07-a-полный-forward">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L07.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L06"><small>Предыдущий раздел</small>← M08-L06. Residual и LayerNorm: сохранить путь и выровнять масштаб</a><a href="#M08-L05"><small>Следующий раздел</small>M08-L05. Мини-языковая модель →</a></nav></article><article class="material" id="M08-L05" data-title="M08-L05. Мини-языковая модель" data-short-title="Мини-языковая модель" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Мини-языковая модель</h1><p class="outcome"><strong>После урока:</strong> Объяснить выбор цели, разделение корпуса и ограничения сгенерированного текста.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L07. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L05--объяснение">Объяснение</a></li><li><a href="#M08-L05--аналогия-автодополнение-в-поисковой-строке">Аналогия: автодополнение в поисковой строке</a></li><li><a href="#M08-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M08-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L05--самостоятельная-задача-a-m08-l05-a">Самостоятельная задача A — M08-L05-A</a></li><li><a href="#M08-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <h2 id="M08-L05--объяснение">Объяснение</h2>
 <p>Языковая модель задаёт распределение вероятностей следующего токена по предыдущим. Вероятность последовательности можно разложить в произведение условных вероятностей: P(x₁…x_T)=Π_t P(x_t|x_&lt;t). На практике минимизируют средний отрицательный логарифм этих вероятностей, чтобы заменить произведение суммой и получить удобную функцию потерь. Это objective обучения, а не непосредственная оценка полезности диалога.</p>
@@ -8556,6 +8802,47 @@ print((x+delta).tolist())
 <p>Генерация начинается с префикса, получает logits последней позиции, выбирает следующий ID и повторяет процесс. Greedy выбирает максимум; sampling делает случайный выбор по распределению. Даже при хорошем teacher-forced loss свободная генерация может уйти в незнакомую последовательность: теперь вход содержит собственные прошлые ошибки модели. Поэтому в отчёте нужны и численная оценка на фиксированных последовательностях, и примеры свободного продолжения.</p>
 <p>Проверки лабораторной отделяют механику от результата: формы совпадают, будущие токены не влияют на прошлые, loss снижается, checkpoint читается. Затем анализируются validation loss и генерации. Все эти уровни нужны вместе. Красивое предложение без корректного split не доказывает обучение, а правильный causal mask сам по себе не гарантирует качественного текста.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M08-L05-desktop.svg" target="_blank" data-figure="course/assets/responsive/M08-L05-desktop.svg" aria-label="Увеличить рисунок: Мини-языковая модель: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M08-L05-mobile.svg"><img src="course/assets/responsive/M08-L05-desktop.svg" alt="Мини-языковая модель: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M08-L05--аналогия-автодополнение-в-поисковой-строке">Аналогия: автодополнение в поисковой строке</h2>
+<p>Как похоже: автодополнение предлагает продолжение по уже набранному префиксу. Языковая модель делает то же для следующего токена. Cross-entropy — штраф подсказчику: −ln вероятности, которую он дал верному продолжению. Свободная генерация похожа на пользователя, который всегда принимает первую подсказку: одна ошибка тянет за собой следующие.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>P(следующий токен ∣ префикс)</td>
+  <td>Подсказки по уже набранному префиксу</td>
+</tr>
+<tr>
+  <td>Cross-entropy</td>
+  <td>Штраф: −ln вероятности верного продолжения</td>
+</tr>
+<tr>
+  <td>Perplexity</td>
+  <td>Среди скольких равновероятных вариантов подсказчик колеблется</td>
+</tr>
+<tr>
+  <td>Unigram baseline</td>
+  <td>Подсказывать самые частые слова, не глядя на префикс</td>
+</tr>
+<tr>
+  <td>Teacher forcing</td>
+  <td>Пользователь всё равно набирает верный текст сам</td>
+</tr>
+<tr>
+  <td>Свободная генерация</td>
+  <td>Пользователь всегда принимает первую подсказку</td>
+</tr>
+<tr>
+  <td>Split по целым строкам</td>
+  <td>Тестовые запросы — не кусочки обучающих</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> реальное автодополнение опирается на частоты настоящих запросов. Наша модель обучена на синтетической грамматике, и низкая perplexity там не означает знания языка. Perplexity зависит от токенизатора: числа двух моделей с разными словарями напрямую не сравнить.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M08-L05--разобранный-пример">Разобранный пример</h2>
 <p>Для трёх правильных токенов модель назначила вероятности[0,5;0,25;0,5]. Средний NLL=−(ln0,5+ln0,25+ln0,5)/3≈0,9242. Perplexity≈2,5198.</p>
 <pre><code class="language-python">import math
