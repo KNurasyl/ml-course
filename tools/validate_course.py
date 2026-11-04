@@ -70,6 +70,13 @@ def manifest_builder():
     return builder
 
 
+def cheatsheet_markdown(root):
+    spec = importlib.util.spec_from_file_location("course_cheatsheet", Path(__file__).with_name("build_cheatsheet.py"))
+    cheatsheet = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(cheatsheet)
+    return cheatsheet.build(root)[0]
+
+
 def lesson_template(root):
     spec = importlib.util.spec_from_file_location("course_lesson_template", Path(__file__).with_name("lint_lessons.py"))
     linter = importlib.util.module_from_spec(spec)
@@ -304,6 +311,9 @@ def _validate_local(root, curriculum, documents, errors, warnings):
         warnings.extend(freshness["warnings"])
         _validate_route(root, curriculum, errors)
         errors.extend(lesson_template(root)["errors"])
+        cheatsheet = root / "course/cheatsheet.md"
+        if cheatsheet.is_file() and cheatsheet.read_text(encoding="utf-8") != cheatsheet_markdown(root):
+            errors.append("course/cheatsheet.md is stale: rebuild with python tools/build_cheatsheet.py")
     for name in ("README.md", "AGENTS.md"):
         path = local_file(name, name)
         if path:

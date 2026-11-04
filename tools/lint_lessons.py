@@ -41,6 +41,9 @@ PRACTICE = re.compile(r"(?ms)^## Практика с поддержкой\n(.*?)
 # T20: an analogy sits between the explanation and the worked example and always says where it breaks.
 ANALOGY = re.compile(r"(?ms)^## (Аналогия(?::[^\n]*)?)\n(.*?)(?=^## |\Z)")
 ANALOGY_PARTS = ("| В уроке | В аналогии |", "**Где аналогия ломается:**")
+# T22: the lesson card has four fields and stands after the delayed check, before the sources.
+CARD = re.compile(r"(?ms)^## Карточка урока\n(.*?)(?=^## |\Z)")
+CARD_FIELDS = ("Правило", "Смысл величин", "Когда применять", "Главная ошибка")
 
 
 def canonical_parts(heading: str) -> list[str]:
@@ -100,6 +103,15 @@ def lint(root: Path = ROOT) -> dict:
                       for name in canonical_parts(heading)]
             if "Объяснение" not in before or "Разобранный пример" in before:
                 errors.append(f"{lesson_id}: analogy must stand after the explanation and before the worked example")
+        card = CARD.search(text)
+        if card:
+            rows = {line.strip("| ").split(" | ")[0] for line in card.group(1).splitlines() if line.startswith("| ")}
+            if not set(CARD_FIELDS) <= rows:
+                errors.append(f"{lesson_id}: lesson card needs the rows {', '.join(CARD_FIELDS)}")
+            before = [name for heading in re.findall(r"(?m)^## (.+?)\s*$", text[:card.start()])
+                      for name in canonical_parts(heading)]
+            if "Новая и отложенная проверка" not in before or "Источники и углубление" in before:
+                errors.append(f"{lesson_id}: lesson card must stand after the delayed check and before the sources")
         practice = PRACTICE.search(text)
         if re.search(r"(?m)^```", text) and practice and PREDICT not in practice.group(1):
             errors.append(f"{lesson_id}: practice of a lesson with code lacks the '{PREDICT}' line")

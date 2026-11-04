@@ -1132,5 +1132,12 @@
     "path": "course/fast-track-llm.md",
     "version": "1.1.0",
     "status": "ready"
+  },
+  "CHEATSHEET": {
+    "id": "CHEATSHEET",
+    "title": "Шпаргалка: карточки уроков",
+    "path": "course/cheatsheet.md",
+    "version": "1.1.0",
+    "status": "ready"
   }
 }

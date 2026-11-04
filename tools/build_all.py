@@ -1,7 +1,7 @@
 """Rebuild every generated course file in one fixed order.
 
 metadata (registry entries copied from curriculum.json, the canonical source)
--> visuals (interactive experiments) -> figures (lesson SVG) -> reader -> manifest
+-> cheatsheet (lesson cards) -> visuals (interactive experiments) -> figures (lesson SVG) -> reader -> manifest
 Each generator is deterministic for unchanged sources, so a full run leaves the
 working tree untouched unless a source changed. Release reports are opt-in:
 they rewrite committed evidence from artifacts of a full verification run.
@@ -19,14 +19,15 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 STAGES = [
     ("metadata", ["build_manifest.py --sync-registry-only"]),
+    ("cheatsheet", ["build_cheatsheet.py"]),
     ("visuals", ["build_visuals.py", "build_module_visuals.py", "build_product_visuals.py"]),
     ("figures", ["build_foundation_figures.py", "build_quantitative_figures.py", "build_responsive_figures.py"]),
     ("reader", ["build_reader.py"]),
     ("manifest", ["build_manifest.py"]),
     ("reports", ["build_release_report.py", "build_design_report.py"]),
 ]
-DEFAULT = ("metadata", "visuals", "figures", "reader", "manifest")
-TEXT_ONLY = ("metadata", "reader", "manifest")
+DEFAULT = ("metadata", "cheatsheet", "visuals", "figures", "reader", "manifest")
+TEXT_ONLY = ("metadata", "cheatsheet", "reader", "manifest")
 
 
 def planned_steps(stages: tuple[str, ...]) -> list[tuple[str, str]]:
