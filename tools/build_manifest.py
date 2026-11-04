@@ -1,4 +1,9 @@
-"""Build local course navigation without changing the learner's progress log."""
+"""Build local course navigation without changing the learner's progress log.
+
+curriculum.json is the canonical source of modules, lessons and their keys; the
+registry mirrors those entries (--sync-registry copies them) and adds the other
+materials. The manifest is generated only and must not be edited by hand.
+"""
 from __future__ import annotations
 import argparse
 import json
@@ -16,6 +21,41 @@ REQUIRED_MATERIALS = ["HOME", "PROGRESS", "DIAGNOSTIC", "MENTOR", "MENTOR-KEYS",
 
 def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def curriculum_entries(curriculum: dict) -> dict:
+    """Registry entries that curriculum.json defines; it is the canonical source for them."""
+    entries = {}
+    for module in curriculum["modules"]:
+        mid = module["id"]
+        entries[mid] = {"id": mid, "title": f"{mid} {module['title']}", "path": f"course/modules/{mid}.md",
+                        "version": VERSION, "status": "ready"}
+        for lesson in module["lessons"]:
+            lid = lesson["id"]
+            entries[lid] = {"id": lid, "title": f"{lid}. {lesson['title']}", "path": f"course/lessons/{lid}.md",
+                            "version": VERSION, "status": "ready"}
+        entries[f"{mid}-SOLUTIONS"] = {"id": f"{mid}-SOLUTIONS", "title": f"{mid}. Решения для самопроверки",
+                                       "path": f"solutions/modules/{mid}.md", "version": VERSION, "status": "ready"}
+    return entries
+
+
+def registry_drift(registry: dict, curriculum: dict) -> list[str]:
+    """Curriculum items whose registry entry differs from what curriculum.json defines."""
+    return [key for key, entry in curriculum_entries(curriculum).items() if key in registry and registry[key] != entry]
+
+
+def sync_registry(root: Path = ROOT) -> list[str]:
+    """Rewrite curriculum items in the registry and add those whose file exists; return changed keys."""
+    path = root / "metadata" / "material-registry.json"
+    registry = read_json(path)
+    changed = []
+    for key, entry in curriculum_entries(read_json(root / "curriculum.json")).items():
+        if registry.get(key) != entry and (key in registry or (root / entry["path"]).is_file()):
+            registry[key] = entry
+            changed.append(key)
+    if changed:
+        path.write_text(json.dumps(registry, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+    return changed
 
 
 def local_asset(root: Path, relative: str) -> str:
@@ -52,9 +92,12 @@ def build_manifest(root: Path = ROOT) -> dict:
         if not set(linked_lessons).issubset(lesson_ids):
             raise ValueError(f"Unknown curriculum lesson in {session_id}")
 
+    canonical = curriculum_entries(curriculum)
     materials, missing = {}, []
     for key in dict.fromkeys([*required, *registry]):
         item = registry.get(key)
+        if isinstance(item, dict) and key in canonical:
+            item = canonical[key]  # Titles and paths of modules, lessons and keys come from curriculum.json.
         if not isinstance(item, dict) or item.get("id") != key:
             missing.append(key)
             continue
@@ -173,7 +216,15 @@ def build_manifest(root: Path = ROOT) -> dict:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="Inspect without replacing the manifest")
+    parser.add_argument("--sync-registry", action="store_true",
+                        help="First copy module, lesson and key entries from curriculum.json into the registry")
+    parser.add_argument("--sync-registry-only", action="store_true",
+                        help="Only synchronise the registry with curriculum.json; do not build the manifest")
     args = parser.parse_args()
+    if args.sync_registry or args.sync_registry_only:
+        print(json.dumps({"registry_synced_from_curriculum": sync_registry()}, ensure_ascii=True))
+        if args.sync_registry_only:
+            return 0
     manifest = build_manifest()
     if args.check and (not (ROOT / "course-manifest.json").is_file() or read_json(ROOT / "course-manifest.json") != manifest):
         raise SystemExit("Manifest is stale. Run: python tools/build_manifest.py")

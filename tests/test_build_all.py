@@ -18,17 +18,19 @@ def load_tool(name):
 build_all = load_tool("build_all")
 
 
-def test_default_order_is_visuals_figures_reader_manifest():
+def test_default_order_is_metadata_visuals_figures_reader_manifest():
     scripts = [script for _, script in build_all.planned_steps(build_all.DEFAULT)]
-    assert scripts == ["build_visuals.py", "build_module_visuals.py", "build_product_visuals.py",
+    assert scripts == ["build_manifest.py --sync-registry-only",
+                       "build_visuals.py", "build_module_visuals.py", "build_product_visuals.py",
                        "build_foundation_figures.py", "build_quantitative_figures.py", "build_responsive_figures.py",
                        "build_reader.py", "build_manifest.py"]
-    assert all((SOURCE / "tools" / script).is_file() for _, scripts in build_all.STAGES for script in scripts)
+    assert all((SOURCE / "tools" / script.split()[0]).is_file() for _, scripts in build_all.STAGES for script in scripts)
 
 
 def test_text_only_and_reports_modes(capsys):
     assert build_all.main(["--dry-run", "--text-only"]) == 0
-    assert json.loads(capsys.readouterr().out) == ["tools/build_reader.py", "tools/build_manifest.py"]
+    assert json.loads(capsys.readouterr().out) == ["tools/build_manifest.py --sync-registry-only",
+                                                   "tools/build_reader.py", "tools/build_manifest.py"]
     assert build_all.main(["--dry-run", "--reports"]) == 0
     planned = json.loads(capsys.readouterr().out)
     # Evidence is rewritten only on request and only after the reader and manifest are current.

@@ -41,11 +41,14 @@ def local_course(tmp_path):
         **{f"P{i:02}": f"course/pilot/P{i:02}.md" for i in range(1, 11)},
     }
     registry = {}
+    # Module entries mirror curriculum.json, the canonical source for modules, lessons and keys.
+    canonical = builder.curriculum_entries(json.loads((tmp_path / "curriculum.json").read_text(encoding="utf-8")))
     for key, path in mapping.items():
         target = tmp_path / path
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(f"# {key}\n\nЗадание {key}-HW01. Объясни полученный результат.\n", encoding="utf-8")
-        registry[key] = {"id": key, "title": key, "path": path, "version": builder.VERSION, "status": "ready"}
+        registry[key] = canonical.get(key) or {"id": key, "title": key, "path": path, "version": builder.VERSION,
+                                                "status": "ready"}
     write_json(tmp_path / "metadata/material-registry.json", registry)
     inventory = []
     for i in range(1, 11):
@@ -164,3 +167,34 @@ def test_registering_full_route_requires_remaining_lesson_files(local_course):
     assert manifest["delivery"]["status"] == "incomplete"
     assert "M00-L02" in manifest["delivery"]["missing_materials"]
     assert manifest["full_materials_ready"] is False
+
+
+def test_manifest_rebuild_is_idempotent_and_matches_the_repository():
+    first, second = builder.build_manifest(SOURCE), builder.build_manifest(SOURCE)
+    assert first == second
+    assert json.loads((SOURCE / "course-manifest.json").read_text(encoding="utf-8")) == first
+
+
+def test_hand_edited_manifest_is_rejected(local_course):
+    path = local_course / "course-manifest.json"
+    manifest = json.loads(path.read_text(encoding="utf-8"))
+    manifest["materials"]["GLOSSARY"]["title"] = "Исправлено вручную"
+    write_json(path, manifest)
+    assert any("differs from a fresh build" in error
+               for error in validator.validate(local_course, require_local=True)["errors"])
+
+
+def test_registry_follows_curriculum_and_sync_restores_it(local_course):
+    path = local_course / "metadata/material-registry.json"
+    registry = json.loads(path.read_text(encoding="utf-8"))
+    registry["M03"]["title"] = "M03 Старое название"
+    write_json(path, registry)
+    errors = validator.validate(local_course, require_local=True)["errors"]
+    assert any(error.startswith("Registry entry M03 differs from curriculum.json") for error in errors)
+    lesson = local_course / "course/lessons/M00-L01.md"
+    lesson.parent.mkdir(parents=True)
+    lesson.write_text("# M00-L01", encoding="utf-8")
+    assert builder.sync_registry(local_course) == ["M00-L01", "M03"]
+    synced = json.loads(path.read_text(encoding="utf-8"))
+    assert synced["M00-L01"]["title"].startswith("M00-L01. ") and builder.registry_drift(synced, json.loads(
+        (local_course / "curriculum.json").read_text(encoding="utf-8"))) == []

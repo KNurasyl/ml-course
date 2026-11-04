@@ -54,9 +54,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools\bootstrap.ps1
 | Код и исходные лабораторные | src/, notebooks/, labs/, projects/ |
 | Оформление учебника и поведение навигации | tools/reader.css, tools/reader.js, tools/build_reader.py |
 | Адаптивные схемы и их происхождение | course/assets/README.md, metadata/responsive-figures.json |
-| Реестр локальных материалов | metadata/material-registry.json |
-| Программа и зависимости | curriculum.json |
-| Связи заданий, файлов и версий | course-manifest.json |
+| Реестр локальных материалов | metadata/material-registry.json — вручную только материалы вне программы; записи модулей, уроков и ключей копируются из curriculum.json |
+| Программа и зависимости | curriculum.json — канонический источник модулей, уроков, их названий и порядка |
+| Связи заданий, файлов и версий | course-manifest.json — генерируется tools/build_manifest.py, вручную не править |
+
+После правки curriculum.json выполни `tools\build_all.py --text-only`: первым шагом он переносит названия и пути модулей, уроков и ключей в реестр (`build_manifest.py --sync-registry-only`), затем собирает учебник и manifest. `validate_course.py --require-local` отклоняет реестр, расходящийся с программой, и manifest, отличающийся от свежей сборки.
 
 **Markdown — оригинал, START_HERE.html — генерируемая копия для чтения.** После изменения текста или журнала выполни:
 

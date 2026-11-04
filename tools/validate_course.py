@@ -63,6 +63,13 @@ def tool_freshness(root):
     return freshness.check(root)
 
 
+def manifest_builder():
+    spec = importlib.util.spec_from_file_location("course_manifest_builder", Path(__file__).with_name("build_manifest.py"))
+    builder = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(builder)
+    return builder
+
+
 def lesson_template(root):
     spec = importlib.util.spec_from_file_location("course_lesson_template", Path(__file__).with_name("lint_lessons.py"))
     linter = importlib.util.module_from_spec(spec)
@@ -219,6 +226,22 @@ def _validate_local(root, curriculum, documents, errors, warnings):
         errors.append("Remote Page dependency in course-manifest.json")
     if manifest.get("pages") or manifest.get("publication"):
         errors.append("Manifest still uses remote publication metadata")
+    # curriculum.json is canonical; the registry mirrors it and the manifest is generated, never edited.
+    builder = manifest_builder()
+    for key in builder.registry_drift(registry, curriculum):
+        errors.append(f"Registry entry {key} differs from curriculum.json, the canonical source: "
+                      "run tools/build_manifest.py --sync-registry")
+    try:
+        fresh = builder.build_manifest(root)
+    except (OSError, ValueError, KeyError) as error:
+        errors.append(f"Cannot rebuild course-manifest.json: {error}")
+    else:
+        if manifest and manifest != fresh:
+            errors.append("course-manifest.json differs from a fresh build; it is generated: "
+                          "edit curriculum.json or the registry, then run tools/build_manifest.py")
+    for entry in read_json(root / "metadata/pilot-lab-inventory.json", errors) or []:
+        if entry.get("lesson") and entry["lesson"] != registry.get(entry.get("id"), {}).get("path"):
+            errors.append(f"Pilot inventory lesson path for {entry.get('id')} differs from the registry")
     sessions = manifest.get("pilot", {}).get("sessions", [])
     if [s.get("id") for s in sessions] != PILOT_IDS:
         errors.append("Manifest must contain P01..P10 exactly once in order")

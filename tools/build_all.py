@@ -1,6 +1,7 @@
 """Rebuild every generated course file in one fixed order.
 
-visuals (interactive experiments) -> figures (lesson SVG) -> reader -> manifest
+metadata (registry entries copied from curriculum.json, the canonical source)
+-> visuals (interactive experiments) -> figures (lesson SVG) -> reader -> manifest
 Each generator is deterministic for unchanged sources, so a full run leaves the
 working tree untouched unless a source changed. Release reports are opt-in:
 they rewrite committed evidence from artifacts of a full verification run.
@@ -17,14 +18,15 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 STAGES = [
+    ("metadata", ["build_manifest.py --sync-registry-only"]),
     ("visuals", ["build_visuals.py", "build_module_visuals.py", "build_product_visuals.py"]),
     ("figures", ["build_foundation_figures.py", "build_quantitative_figures.py", "build_responsive_figures.py"]),
     ("reader", ["build_reader.py"]),
     ("manifest", ["build_manifest.py"]),
     ("reports", ["build_release_report.py", "build_design_report.py"]),
 ]
-DEFAULT = ("visuals", "figures", "reader", "manifest")
-TEXT_ONLY = ("reader", "manifest")
+DEFAULT = ("metadata", "visuals", "figures", "reader", "manifest")
+TEXT_ONLY = ("metadata", "reader", "manifest")
 
 
 def planned_steps(stages: tuple[str, ...]) -> list[tuple[str, str]]:
@@ -36,7 +38,8 @@ def run(steps: list[tuple[str, str]]) -> list[dict]:
     results = []
     for stage, script in steps:
         started = time.perf_counter()
-        process = subprocess.run([sys.executable, "-X", "utf8", str(ROOT / "tools" / script)], cwd=ROOT, env=env,
+        name, *options = script.split()
+        process = subprocess.run([sys.executable, "-X", "utf8", str(ROOT / "tools" / name), *options], cwd=ROOT, env=env,
                                  capture_output=True, text=True, encoding="utf-8", errors="replace")
         results.append({"stage": stage, "script": f"tools/{script}", "exit_code": process.returncode,
                         "seconds": round(time.perf_counter() - started, 2)})
