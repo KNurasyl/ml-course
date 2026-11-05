@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="7bfa827db2a00af3ef17ad15a00e4165d2159c98cba8b7757f92725910763c21"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="618db8df56e2f82d5baaded7574099390a0ee66463ddcf45ccb2a689deac7196"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -14522,7 +14522,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M14.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M14.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L06"><small>Предыдущий раздел</small>← M13-L06. Очередь, дедлайн и восстановление HTTP-сервиса</a><a href="#M14-L01"><small>Следующий раздел</small>M14-L01. Сценарий и агентный цикл →</a></nav></article><article class="material" id="M14-L01" data-title="M14-L01. Сценарий и агентный цикл" data-short-title="Сценарий и агентный цикл" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сценарий и агентный цикл</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M14-L01--объяснение">Объяснение</a></li><li><a href="#M14-L01--аналогия-конечный-автомат-против-оркестратора-задач">Аналогия: конечный автомат против оркестратора задач</a></li><li><a href="#M14-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M14-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M14-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M14-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M14-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+"></iframe><p><a href="course/visuals/M14.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M14.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L06"><small>Предыдущий раздел</small>← M13-L06. Очередь, дедлайн и восстановление HTTP-сервиса</a><a href="#M14-L01"><small>Следующий раздел</small>M14-L01. Сценарий и агентный цикл →</a></nav></article><article class="material" id="M14-L01" data-title="M14-L01. Сценарий и агентный цикл" data-short-title="Сценарий и агентный цикл" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сценарий и агентный цикл</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M14-L01--объяснение">Объяснение</a></li><li><a href="#M14-L01--аналогия-конечный-автомат-против-оркестратора-задач">Аналогия: конечный автомат против оркестратора задач</a></li><li><a href="#M14-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M14-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M14-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M14-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M14-L01--карточка-урока">Карточка урока</a></li><li><a href="#M14-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; внешние модели не используются · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/json.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: json</a></p>
 </blockquote>
@@ -14611,13 +14611,40 @@ assert result['stop'] == 'finished'
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M14-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: три известных SQL-вопроса и фиксированный список уточнений. Нужен ли свободный agent loop? C через неделю: пользователь выбирает неизвестную тему, нужно искать источник и решать, достаточно ли его; что меняется?</p>
 <p>Сохрани новую попытку до просмотра <a href="#M14-SOLUTIONS--m14-l01-b-c">ключа B/C</a>.</p>
-</section><h2 id="M14-L01--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M14-L01--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Сценарий задаёт порядок действий заранее, агентный цикл выбирает следующее действие по состоянию; цикл: состояние → планировщик предлагает → исполнитель проверяет → инструмент → наблюдение → обновление состояния → STOP или следующий шаг; право исполнения принадлежит приложению</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Состояние — цель, история действий, наблюдения, session_id, бюджет и причина завершения; секреты и серверные права остаются вне контекста модели; наблюдение инструмента — данные, а не инструкция; успех — выполнение задачи при соблюдении ограничений, а не число шагов</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При выборе архитектуры. Пример: сценарий с тремя известными ветками даёт 3 траектории, а агент с 4 инструментами и 3 шагами — до 4³ = 64 последовательностей действий: адаптивность окупается, только если её выигрыш больше стоимости проверки</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Выбрать агента там, где хватает трёх условных переходов, или смешать тест исполнителя с оценкой модели</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M14-L01--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://json-schema.org/understanding-json-schema/reference/object" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M14/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M14">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14"><small>Предыдущий раздел</small>← M14 Агенты и инструменты</a><a href="#M14-L02"><small>Следующий раздел</small>M14-L02. Контракт инструмента →</a></nav></article><article class="material" id="M14-L02" data-title="M14-L02. Контракт инструмента" data-short-title="Контракт инструмента" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Контракт инструмента</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M14-L02--объяснение">Объяснение</a></li><li><a href="#M14-L02--аналогия-userid-из-токена-а-не-из-тела-запроса">Аналогия: userId из токена, а не из тела запроса</a></li><li><a href="#M14-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M14-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L02--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M14-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M14-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M14-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14"><small>Предыдущий раздел</small>← M14 Агенты и инструменты</a><a href="#M14-L02"><small>Следующий раздел</small>M14-L02. Контракт инструмента →</a></nav></article><article class="material" id="M14-L02" data-title="M14-L02. Контракт инструмента" data-short-title="Контракт инструмента" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Контракт инструмента</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M14-L02--объяснение">Объяснение</a></li><li><a href="#M14-L02--аналогия-userid-из-токена-а-не-из-тела-запроса">Аналогия: userId из токена, а не из тела запроса</a></li><li><a href="#M14-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M14-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L02--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M14-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M14-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M14-L02--карточка-урока">Карточка урока</a></li><li><a href="#M14-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; внешние модели не используются · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/json.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: json</a></p>
 </blockquote>
@@ -14706,13 +14733,40 @@ assert not validate({'document_id': 1})
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M14-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: действие read_document получает {document_id:&quot;d1&quot;,session:&quot;s2&quot;}, server session=s1. Что произойдёт до чтения? C через неделю: запись списала счёт, но ответ потерялся; достаточно ли запрета повторного чтения?</p>
 <p>Сохрани новую попытку до просмотра <a href="#M14-SOLUTIONS--m14-l02-b-c">ключа B/C</a>.</p>
-</section><h2 id="M14-L02--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M14-L02--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Порядок проверки: форма объекта → имя из allow-list → точная схема аргументов и типы → полномочия → только потом данные или побочный эффект; параметры области доступа (сессию, владельца) задаёт сервер, а не модель</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Описание инструмента помогает модели выбрать действие, но не заменяет проверку в коде; результат тоже имеет контракт — ok, not_found, forbidden, timeout и internal_error различимы; повтор записи не эквивалентен повтору чтения и требует идемпотентного ключа; ID ресурса вместо пути файла или команды shell</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При добавлении инструмента. Пример: lookup_term с {&quot;term&quot;: &quot;индекс&quot;} проходит проверки; {&quot;term&quot;: [&quot;индекс&quot;]} — неверный тип; {&quot;term&quot;: &quot;индекс&quot;, &quot;scope&quot;: &quot;all&quot;} — лишнее поле, отказ до выполнения; неизвестный термин — структурированный not_found, а не пустая строка</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Принять синтаксически верный JSON за допустимое действие или разрешить модели передавать сессию и путь файла</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M14-L02--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://json-schema.org/understanding-json-schema/reference/object" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M14/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M14">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l02">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L01"><small>Предыдущий раздел</small>← M14-L01. Сценарий и агентный цикл</a><a href="#M14-L03"><small>Следующий раздел</small>M14-L03. Состояние и границы доступа →</a></nav></article><article class="material" id="M14-L03" data-title="M14-L03. Состояние и границы доступа" data-short-title="Состояние и границы доступа" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Состояние и границы доступа</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M14-L03--объяснение">Объяснение</a></li><li><a href="#M14-L03--аналогия-multi-tenant-saas-с-изоляцией-клиентов">Аналогия: multi-tenant SaaS с изоляцией клиентов</a></li><li><a href="#M14-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M14-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L03--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M14-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M14-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M14-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l02">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L01"><small>Предыдущий раздел</small>← M14-L01. Сценарий и агентный цикл</a><a href="#M14-L03"><small>Следующий раздел</small>M14-L03. Состояние и границы доступа →</a></nav></article><article class="material" id="M14-L03" data-title="M14-L03. Состояние и границы доступа" data-short-title="Состояние и границы доступа" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Состояние и границы доступа</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M14-L03--объяснение">Объяснение</a></li><li><a href="#M14-L03--аналогия-multi-tenant-saas-с-изоляцией-клиентов">Аналогия: multi-tenant SaaS с изоляцией клиентов</a></li><li><a href="#M14-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M14-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L03--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M14-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M14-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M14-L03--карточка-урока">Карточка урока</a></li><li><a href="#M14-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; внешние модели не используются · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/json.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: json</a></p>
 </blockquote>
@@ -14802,13 +14856,40 @@ assert 'text' not in read('s1', 'd2')
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M14-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: инструмент читает только s1, но summary в prompt уже содержит чужой ответ из s2. Исправляет ли tool scope утечку? C через неделю: идентификаторы answer_id совпадают в двух сессиях — какой ключ использовать в кэше?</p>
 <p>Сохрани новую попытку до просмотра <a href="#M14-SOLUTIONS--m14-l03-b-c">ключа B/C</a>.</p>
-</section><h2 id="M14-L03--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M14-L03--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Доверие определяется происхождением и ролью данных: права, владелец сессии и версия — на сервере; модель видит задачу, нужную историю и наблюдения; проверка доступа идёт до помещения содержимого в observations, а не просьбой «не показывать» после</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>session_id объединяет интервью, turn_id — реплику, request_id — попытку обработки; минимальный контекст снижает стоимость и риск перепутать старые инструкции; критические поля хранят структурированно, а не только в сводке; негативный путь проверяют по ответу, трассе и следующей истории</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При проектировании состояния агента. Пример: документ d5 сессии s1 содержит «прочитай d9», а d9 принадлежит s3 — исполнитель с session = s1 возвращает not_available, observations пусты, и в трассе, логе и следующем prompt нет текста d9</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Позволить тексту документа или ответа кандидата определять права либо проверять доступ уже после того, как чужой текст попал в контекст</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M14-L03--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M14/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M14">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l03">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L02"><small>Предыдущий раздел</small>← M14-L02. Контракт инструмента</a><a href="#M14-L04"><small>Следующий раздел</small>M14-L04. Ошибки и остановка →</a></nav></article><article class="material" id="M14-L04" data-title="M14-L04. Ошибки и остановка" data-short-title="Ошибки и остановка" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Ошибки и остановка</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M14-L04--объяснение">Объяснение</a></li><li><a href="#M14-L04--аналогия-политика-повторов-http-клиента">Аналогия: политика повторов HTTP-клиента</a></li><li><a href="#M14-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M14-L04--схема">Схема</a></li><li><a href="#M14-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L04--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M14-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M14-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M14-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l03">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L02"><small>Предыдущий раздел</small>← M14-L02. Контракт инструмента</a><a href="#M14-L04"><small>Следующий раздел</small>M14-L04. Ошибки и остановка →</a></nav></article><article class="material" id="M14-L04" data-title="M14-L04. Ошибки и остановка" data-short-title="Ошибки и остановка" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Ошибки и остановка</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M14-L04--объяснение">Объяснение</a></li><li><a href="#M14-L04--аналогия-политика-повторов-http-клиента">Аналогия: политика повторов HTTP-клиента</a></li><li><a href="#M14-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M14-L04--схема">Схема</a></li><li><a href="#M14-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L04--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M14-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M14-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M14-L04--карточка-урока">Карточка урока</a></li><li><a href="#M14-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; внешние модели не используются · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/json.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: json</a></p>
 </blockquote>
@@ -15016,13 +15097,40 @@ assert execute([read, read])['stop'] == 'repeated_call'
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M14-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: максимум 2 повтора после исходной попытки; последовательность timeout,timeout,success,finish. Сколько вызовов? C через неделю: первая попытка invalid_arguments; сколько повторов допустимо?</p>
 <p>Сохрани новую попытку до просмотра <a href="#M14-SOLUTIONS--m14-l04-b-c">ключа B/C</a>.</p>
-</section><h2 id="M14-L04--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M14-L04--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Исполнитель ограничивает цикл независимо от модели: лимит шагов (finish в него входит), время, повторы операции; повтор той же пары tool + document_id при неизменном состоянии останавливает цикл; постоянные ошибки не повторяют, временные — ограниченно и с задержкой</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Причины остановки: finished, budget, denied, repeated_call, not_available, invalid_action, no_final_action; только finished означает финальный ответ, и его смысл ещё проверяют; безопасная остановка по лимиту — корректный исход; остановка ожидания не отменяет уже выполненную запись</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При проектировании цикла. Пример: если сессии доступны d1, d3 и d4, план read(d1), read(d3), read(d4), finish при budget = 3 выполняет три чтения и останавливается с budget — finish уже не входит; при budget = 4 тот же план завершается finished</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Бесконечно повторять тот же вызов или прятать от пользователя остановку по бюджету вместо понятного объяснения</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M14-L04--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://docs.python.org/3/library/time.html#time.monotonic" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M14/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M14">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l04">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L03"><small>Предыдущий раздел</small>← M14-L03. Состояние и границы доступа</a><a href="#M14-L05"><small>Следующий раздел</small>M14-L05. Проверка агента →</a></nav></article><article class="material" id="M14-L05" data-title="M14-L05. Проверка агента" data-short-title="Проверка агента" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Проверка агента</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M14-L05--объяснение">Объяснение</a></li><li><a href="#M14-L05--аналогия-тесты-авторизации-и-audit-log">Аналогия: тесты авторизации и audit log</a></li><li><a href="#M14-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M14-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L05--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M14-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M14-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M14-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l04">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L03"><small>Предыдущий раздел</small>← M14-L03. Состояние и границы доступа</a><a href="#M14-L05"><small>Следующий раздел</small>M14-L05. Проверка агента →</a></nav></article><article class="material" id="M14-L05" data-title="M14-L05. Проверка агента" data-short-title="Проверка агента" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Проверка агента</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M14-L05--объяснение">Объяснение</a></li><li><a href="#M14-L05--аналогия-тесты-авторизации-и-audit-log">Аналогия: тесты авторизации и audit log</a></li><li><a href="#M14-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M14-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L05--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M14-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M14-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M14-L05--карточка-урока">Карточка урока</a></li><li><a href="#M14-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; внешние модели не используются · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/json.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: json</a></p>
 </blockquote>
@@ -15108,13 +15216,40 @@ assert accuracy == 1.0
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M14-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: ответ верен, но прочитан чужой d2. Допустим ли выпуск по среднему успеху 9/10? C через неделю: доступ безопасен, budget соблюдён, ответ неверен; какой столбец отчёта провален?</p>
 <p>Сохрани новую попытку до просмотра <a href="#M14-SOLUTIONS--m14-l05-b-c">ключа B/C</a>.</p>
-</section><h2 id="M14-L05--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M14-L05--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Агента оценивают по трём измерениям: полезность результата, соблюдение ограничений, эффективность траектории; для каждого теста заранее задают допустимый исход; уровни: тесты исполнителя → выбор действий реальным планировщиком → продукт на реальных запросах</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Доля finished не равна качеству: часть тестов требует denied или not_available; трасса — наблюдаемые действия, статусы и идентификаторы, без скрытых рассуждений; для стохастического планировщика нужны повторы и распределение исходов; неудачные случаи сохраняют</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При отчёте о качестве агента. Пример: 10 тестов исполнителя, из них 6 должны закончиться отказом — доля finished 4/10 = 0.4, а совпадение с ожидаемым исходом 10/10 = 1.0: метрика сравнивает факт с ожиданием конкретного случая</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Считать долю finished качеством или оценивать агента только по финальному тексту, пропуская нарушение прав</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M14-L05--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://docs.python.org/3/library/unittest.html" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M14/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M14">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l05">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L04"><small>Предыдущий раздел</small>← M14-L04. Ошибки и остановка</a><a href="#M14-L06"><small>Следующий раздел</small>M14-L06. Модель предлагает инструмент, исполнитель проверяет →</a></nav></article><article class="material" id="M14-L06" data-title="M14-L06. Модель предлагает инструмент, исполнитель проверяет" data-short-title="Модель предлагает инструмент, исполнитель проверяет" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Модель предлагает инструмент, исполнитель проверяет</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L06--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M14-L06--объяснение">Объяснение</a></li><li><a href="#M14-L06--аналогия-pr-и-обязательные-проверки-ci">Аналогия: PR и обязательные проверки CI</a></li><li><a href="#M14-L06--разобранный-пример-траектория">Разобранный пример — траектория</a></li><li><a href="#M14-L06--схема">Схема</a></li><li><a href="#M14-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L06--самостоятельная-задача-a-m14-l06-a">Самостоятельная задача A — M14-L06-A</a></li><li><a href="#M14-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L06--подсказки-по-очереди-новая-и-отложенная-проверка">Подсказки по очереди; новая и отложенная проверка</a></li><li><a href="#M14-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия 1.1.0. До урока: M14-L05. Начальный ориентир: 180 минут вместе с практикой; измеренное время записывай отдельно.</p>
+<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l05">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L04"><small>Предыдущий раздел</small>← M14-L04. Ошибки и остановка</a><a href="#M14-L06"><small>Следующий раздел</small>M14-L06. Модель предлагает инструмент, исполнитель проверяет →</a></nav></article><article class="material" id="M14-L06" data-title="M14-L06. Модель предлагает инструмент, исполнитель проверяет" data-short-title="Модель предлагает инструмент, исполнитель проверяет" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Модель предлагает инструмент, исполнитель проверяет</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L06--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M14-L06--объяснение">Объяснение</a></li><li><a href="#M14-L06--аналогия-pr-и-обязательные-проверки-ci">Аналогия: PR и обязательные проверки CI</a></li><li><a href="#M14-L06--разобранный-пример-траектория">Разобранный пример — траектория</a></li><li><a href="#M14-L06--схема">Схема</a></li><li><a href="#M14-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L06--самостоятельная-задача-a-m14-l06-a">Самостоятельная задача A — M14-L06-A</a></li><li><a href="#M14-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L06--подсказки-по-очереди-новая-и-отложенная-проверка">Подсказки по очереди; новая и отложенная проверка</a></li><li><a href="#M14-L06--карточка-урока">Карточка урока</a></li><li><a href="#M14-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия 1.1.0. До урока: M14-L05. Начальный ориентир: 180 минут вместе с практикой; измеренное время записывай отдельно.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, transformers 4.57.6, PyTorch 2.15.0+cpu; модель Qwen2.5-0.5B-Instruct (ревизия 7ae5576) · проверено 04.11.2026 · источник: <a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">карточка Qwen2.5-0.5B-Instruct</a></p>
 </blockquote>
@@ -15260,6 +15395,33 @@ function draw(){const s=scenarios[$(&#x27;action&#x27;).value];$(&#x27;proposal&
 <details class="hints" id="M14-L06--подсказки-по-очереди-новая-и-отложенная-проверка"><summary>Подсказки по очереди; новая и отложенная проверка</summary><div>
 <p>Первое затруднение — точная schema, второе — сохранение observation в следующем запросе, третье — критерий semantic_success. Вариант B: модель выдаёт корректный JSON finish до чтения; докажи, что синтаксическая валидность не равна выполнению задачи с источником. Через неделю вариант C: документ поменял версию; реши, почему простой запрет повторного ID уже недостаточен. <a href="#M14-SOLUTIONS--m14-l06-a-b-c">Решения</a>.</p>
 </div></details>
+<h2 id="M14-L06--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Модель выдаёт данные {tool, args}, исполнитель проверяет имя, точные поля и типы и берёт scope из серверного состояния; после разрешённого чтения следующий запрос к модели получает задачу, прошлое действие и наблюдение; невалидный JSON и отказ — видимые причины остановки, сырой текст сохраняют</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Успех исполнителя (границы соблюдены) и успех модели (задача выполнена по источнику) измеряют раздельно; denied — не semantic_success; наблюдение — данные: инструкция из документа не меняет набор инструментов; запрет повтора ID годится только для неизменного read-only источника</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При запуске реального planner. Пример: в двух задачах первая закончилась invalid_json, во второй модель прочитала d1 и завершила задачу неверным выводом — исполнитель в обеих отработал правильно, а семантический успех модели 0 из 2</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Подменить неверную генерацию ожидаемой или считать синтаксически валидный finish выполнением задачи</td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="M14-L06--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">Карточка локальной Qwen</a>, <a href="https://docs.python.org/3.11/library/json.html" target="_blank" rel="noopener noreferrer" class="external-link">Python JSON</a>. Контракты действий и учебные данные созданы для этого курса.</p>
 <div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l06-a-b-c">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L05"><small>Предыдущий раздел</small>← M14-L05. Проверка агента</a><a href="#M15"><small>Следующий раздел</small>M15 Речь и голосовой диалог →</a></nav></article><article class="material" id="M15" data-title="M15 Речь и голосовой диалог" data-short-title="Речь и голосовой диалог" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Речь и голосовой диалог</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: M09, M11 и M13: диалог, метрики и диагностика.</p>
@@ -20240,7 +20402,7 @@ assert not accept_result(3,2)
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 83 из 103 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 89 из 103 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -20836,6 +20998,49 @@ assert not accept_result(3,2)
 <li><strong>Смысл величин.</strong> Вместимость включает выполняющийся запрос; client_ms ≈ queue_ms + compute_ms плюс накладные расходы, поэтому рост клиентского времени не означает замедления модели; таймаут клиента не останавливает вычисление на сервере; восстановление — новый процесс из сохранённого релиза с проверкой schema и canary.</li>
 <li><strong>Когда применять.</strong> При ограничении нагрузки на CPU-сервис. Пример: вместимость 2, compute 50 мс, дедлайн ожидания 30 мс, три одновременных запроса — третий сразу получает 503, второй ждёт worker и примерно через 30 мс получает 504 queue_deadline, первый получает 200 примерно через 50 мс.</li>
 <li><strong>Главная ошибка.</strong> Считать выросшее клиентское время замедлением модели или освобождать worker, который запрос не захватил.</li>
+</ul>
+<h2 id="CHEATSHEET--m14-агенты-и-инструменты">M14. Агенты и инструменты</h2>
+<h3 id="CHEATSHEET--m14-l01-сценарий-и-агентный-цикл"><a href="#M14-L01">M14-L01. Сценарий и агентный цикл</a></h3>
+<ul>
+<li><strong>Правило.</strong> Сценарий задаёт порядок действий заранее, агентный цикл выбирает следующее действие по состоянию; цикл: состояние → планировщик предлагает → исполнитель проверяет → инструмент → наблюдение → обновление состояния → STOP или следующий шаг; право исполнения принадлежит приложению.</li>
+<li><strong>Смысл величин.</strong> Состояние — цель, история действий, наблюдения, session_id, бюджет и причина завершения; секреты и серверные права остаются вне контекста модели; наблюдение инструмента — данные, а не инструкция; успех — выполнение задачи при соблюдении ограничений, а не число шагов.</li>
+<li><strong>Когда применять.</strong> При выборе архитектуры. Пример: сценарий с тремя известными ветками даёт 3 траектории, а агент с 4 инструментами и 3 шагами — до 4³ = 64 последовательностей действий: адаптивность окупается, только если её выигрыш больше стоимости проверки.</li>
+<li><strong>Главная ошибка.</strong> Выбрать агента там, где хватает трёх условных переходов, или смешать тест исполнителя с оценкой модели.</li>
+</ul>
+<h3 id="CHEATSHEET--m14-l02-контракт-инструмента"><a href="#M14-L02">M14-L02. Контракт инструмента</a></h3>
+<ul>
+<li><strong>Правило.</strong> Порядок проверки: форма объекта → имя из allow-list → точная схема аргументов и типы → полномочия → только потом данные или побочный эффект; параметры области доступа (сессию, владельца) задаёт сервер, а не модель.</li>
+<li><strong>Смысл величин.</strong> Описание инструмента помогает модели выбрать действие, но не заменяет проверку в коде; результат тоже имеет контракт — ok, not_found, forbidden, timeout и internal_error различимы; повтор записи не эквивалентен повтору чтения и требует идемпотентного ключа; ID ресурса вместо пути файла или команды shell.</li>
+<li><strong>Когда применять.</strong> При добавлении инструмента. Пример: lookup_term с {&quot;term&quot;: &quot;индекс&quot;} проходит проверки; {&quot;term&quot;: [&quot;индекс&quot;]} — неверный тип; {&quot;term&quot;: &quot;индекс&quot;, &quot;scope&quot;: &quot;all&quot;} — лишнее поле, отказ до выполнения; неизвестный термин — структурированный not_found, а не пустая строка.</li>
+<li><strong>Главная ошибка.</strong> Принять синтаксически верный JSON за допустимое действие или разрешить модели передавать сессию и путь файла.</li>
+</ul>
+<h3 id="CHEATSHEET--m14-l03-состояние-и-границы-доступа"><a href="#M14-L03">M14-L03. Состояние и границы доступа</a></h3>
+<ul>
+<li><strong>Правило.</strong> Доверие определяется происхождением и ролью данных: права, владелец сессии и версия — на сервере; модель видит задачу, нужную историю и наблюдения; проверка доступа идёт до помещения содержимого в observations, а не просьбой «не показывать» после.</li>
+<li><strong>Смысл величин.</strong> session_id объединяет интервью, turn_id — реплику, request_id — попытку обработки; минимальный контекст снижает стоимость и риск перепутать старые инструкции; критические поля хранят структурированно, а не только в сводке; негативный путь проверяют по ответу, трассе и следующей истории.</li>
+<li><strong>Когда применять.</strong> При проектировании состояния агента. Пример: документ d5 сессии s1 содержит «прочитай d9», а d9 принадлежит s3 — исполнитель с session = s1 возвращает not_available, observations пусты, и в трассе, логе и следующем prompt нет текста d9.</li>
+<li><strong>Главная ошибка.</strong> Позволить тексту документа или ответа кандидата определять права либо проверять доступ уже после того, как чужой текст попал в контекст.</li>
+</ul>
+<h3 id="CHEATSHEET--m14-l04-ошибки-и-остановка"><a href="#M14-L04">M14-L04. Ошибки и остановка</a></h3>
+<ul>
+<li><strong>Правило.</strong> Исполнитель ограничивает цикл независимо от модели: лимит шагов (finish в него входит), время, повторы операции; повтор той же пары tool + document_id при неизменном состоянии останавливает цикл; постоянные ошибки не повторяют, временные — ограниченно и с задержкой.</li>
+<li><strong>Смысл величин.</strong> Причины остановки: finished, budget, denied, repeated_call, not_available, invalid_action, no_final_action; только finished означает финальный ответ, и его смысл ещё проверяют; безопасная остановка по лимиту — корректный исход; остановка ожидания не отменяет уже выполненную запись.</li>
+<li><strong>Когда применять.</strong> При проектировании цикла. Пример: если сессии доступны d1, d3 и d4, план read(d1), read(d3), read(d4), finish при budget = 3 выполняет три чтения и останавливается с budget — finish уже не входит; при budget = 4 тот же план завершается finished.</li>
+<li><strong>Главная ошибка.</strong> Бесконечно повторять тот же вызов или прятать от пользователя остановку по бюджету вместо понятного объяснения.</li>
+</ul>
+<h3 id="CHEATSHEET--m14-l05-проверка-агента"><a href="#M14-L05">M14-L05. Проверка агента</a></h3>
+<ul>
+<li><strong>Правило.</strong> Агента оценивают по трём измерениям: полезность результата, соблюдение ограничений, эффективность траектории; для каждого теста заранее задают допустимый исход; уровни: тесты исполнителя → выбор действий реальным планировщиком → продукт на реальных запросах.</li>
+<li><strong>Смысл величин.</strong> Доля finished не равна качеству: часть тестов требует denied или not_available; трасса — наблюдаемые действия, статусы и идентификаторы, без скрытых рассуждений; для стохастического планировщика нужны повторы и распределение исходов; неудачные случаи сохраняют.</li>
+<li><strong>Когда применять.</strong> При отчёте о качестве агента. Пример: 10 тестов исполнителя, из них 6 должны закончиться отказом — доля finished 4/10 = 0.4, а совпадение с ожидаемым исходом 10/10 = 1.0: метрика сравнивает факт с ожиданием конкретного случая.</li>
+<li><strong>Главная ошибка.</strong> Считать долю finished качеством или оценивать агента только по финальному тексту, пропуская нарушение прав.</li>
+</ul>
+<h3 id="CHEATSHEET--m14-l06-модель-предлагает-инструмент-исполнитель-проверяет"><a href="#M14-L06">M14-L06. Модель предлагает инструмент, исполнитель проверяет</a></h3>
+<ul>
+<li><strong>Правило.</strong> Модель выдаёт данные {tool, args}, исполнитель проверяет имя, точные поля и типы и берёт scope из серверного состояния; после разрешённого чтения следующий запрос к модели получает задачу, прошлое действие и наблюдение; невалидный JSON и отказ — видимые причины остановки, сырой текст сохраняют.</li>
+<li><strong>Смысл величин.</strong> Успех исполнителя (границы соблюдены) и успех модели (задача выполнена по источнику) измеряют раздельно; denied — не semantic_success; наблюдение — данные: инструкция из документа не меняет набор инструментов; запрет повтора ID годится только для неизменного read-only источника.</li>
+<li><strong>Когда применять.</strong> При запуске реального planner. Пример: в двух задачах первая закончилась invalid_json, во второй модель прочитала d1 и завершила задачу неверным выводом — исполнитель в обеих отработал правильно, а семантический успех модели 0 из 2.</li>
+<li><strong>Главная ошибка.</strong> Подменить неверную генерацию ожидаемой или считать синтаксически валидный finish выполнением задачи.</li>
 </ul>
 </div></div><footer class="source-note">Исходный текст: <code>course/cheatsheet.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#FAST-TRACK-LLM"><small>Предыдущий раздел</small>← Быстрый вход в M09–M11 для тех, кто уже делал RAG</a><a href="#REVIEW-SCHEDULE"><small>Следующий раздел</small>Расписание повторения →</a></nav></article><article class="material" id="REVIEW-SCHEDULE" data-title="Расписание повторения" data-short-title="Расписание повторения" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">REVIEW-SCHEDULE</span><span class="badge reference">Материал курса</span></div><h1>Расписание повторения</h1></header><div class="article-layout"><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Правило дополняет <a href="#MENTOR--отложенная-проверка">отложенную проверку</a> из учебного цикла: даты повторений считаются по журналу, а сами повторения смешивают задачи разных модулей.</p>
 <h2 id="REVIEW-SCHEDULE--правило-1-3-7-21">Правило 1–3–7–21</h2>
