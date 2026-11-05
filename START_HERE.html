@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="7b616c9a14136ef06d2d1daf7d9f6854a9073d0f113da74b9dd4354ff0f774fb"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="b2ba0ca47395ccda037e7c39d6e2d7300e06c832910c2b604b1044165afb4b4e"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -10246,7 +10246,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M10.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M10.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L06"><small>Предыдущий раздел</small>← M09-L06. Выбрать локальную конфигурацию по измерениям</a><a href="#M10-L01"><small>Следующий раздел</small>M10-L01. Документ и фрагмент →</a></nav></article><article class="material" id="M10-L01" data-title="M10-L01. Документ и фрагмент" data-short-title="Документ и фрагмент" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Документ и фрагмент</h1><p class="outcome"><strong>После урока:</strong> Показать случай, когда граница фрагмента разрушает необходимый контекст.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L02, M02-L05, M01-L05. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L01--объяснение">Объяснение</a></li><li><a href="#M10-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L01--самостоятельная-задача-a-m10-l01-a">Самостоятельная задача A — M10-L01-A</a></li><li><a href="#M10-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M10-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M10-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+"></iframe><p><a href="course/visuals/M10.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M10.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L06"><small>Предыдущий раздел</small>← M09-L06. Выбрать локальную конфигурацию по измерениям</a><a href="#M10-L01"><small>Следующий раздел</small>M10-L01. Документ и фрагмент →</a></nav></article><article class="material" id="M10-L01" data-title="M10-L01. Документ и фрагмент" data-short-title="Документ и фрагмент" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Документ и фрагмент</h1><p class="outcome"><strong>После урока:</strong> Показать случай, когда граница фрагмента разрушает необходимый контекст.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L02, M02-L05, M01-L05. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L01--объяснение">Объяснение</a></li><li><a href="#M10-L01--аналогия-статья-базы-знаний-и-записи-поискового-индекса">Аналогия: статья базы знаний и записи поискового индекса</a></li><li><a href="#M10-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L01--самостоятельная-задача-a-m10-l01-a">Самостоятельная задача A — M10-L01-A</a></li><li><a href="#M10-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M10-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M10-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, NumPy 2.4.6, scikit-learn 1.9.1, PyTorch 2.15.0+cpu, transformers 4.57.6; модели all-MiniLM-L6-v2 (ревизия 1110a24) и SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 04.11.2026 · источник: <a href="https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: текстовые признаки</a></p>
@@ -10261,6 +10261,47 @@ draw();
 <p>Доступность документа и его применимость — разные вопросы. Заметка может быть устаревшей, относиться к другой версии API или объяснять частный случай. Метаданные позволяют фильтровать язык, продукт и версию до поиска либо при ранжировании. Если в базе есть противоречащие инструкции, генератор не обязан сам правильно выбрать актуальную. Правило приоритета версии лучше задать в подготовке данных и явно показать в контексте.</p>
 <p>Для интервьюера техническая база поддерживает объяснение, но не должна превращать любую найденную фразу в оценку человека. Сначала формулируется проверяемое техническое утверждение, затем ищется основание. HR-ясность и конкретность оцениваются другой рубрикой; технический RAG не измеряет личность или профессиональную ценность кандидата. Уже на уровне документов разделяй эти задачи.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M10-L01-desktop.svg" target="_blank" data-figure="course/assets/responsive/M10-L01-desktop.svg" aria-label="Увеличить рисунок: Документ и фрагмент: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M10-L01-mobile.svg"><img src="course/assets/responsive/M10-L01-desktop.svg" alt="Документ и фрагмент: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M10-L01--аналогия-статья-базы-знаний-и-записи-поискового-индекса">Аналогия: статья базы знаний и записи поискового индекса</h2>
+<p>Как похоже: статью в CMS правят авторы, а поиск работает по записям индекса Elasticsearch, на которые её разложили. У каждой записи свой <code>_id</code>, ссылка на статью и номер версии. Новую версию индексируют в свежий индекс и атомарно переключают alias, чтобы пользователь не увидел смесь старого и нового. Удаление статьи из CMS без удаления из индекса оставляет её в выдаче.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Документ</td>
+  <td>Статья в CMS — исходник, который правят авторы</td>
+</tr>
+<tr>
+  <td>Chunk</td>
+  <td>Запись поискового индекса, которую возвращает поиск</td>
+</tr>
+<tr>
+  <td>Граница посреди условия</td>
+  <td>Строка, обрезанная по лимиту колонки: хвост с условием пропал</td>
+</tr>
+<tr>
+  <td>Overlap</td>
+  <td>Повтор хвоста предыдущей записи: связь сохранена, но индекс растёт, а в выдаче почти дубли</td>
+</tr>
+<tr>
+  <td>id, document_id, version</td>
+  <td>Первичный ключ, ссылка на статью и номер версии записи</td>
+</tr>
+<tr>
+  <td>Пересобрать индекс и атомарно переключить manifest</td>
+  <td>Новый индекс Elasticsearch и атомарное переключение alias</td>
+</tr>
+<tr>
+  <td>Удалённый документ остался в выдаче</td>
+  <td>Удаление только в интерфейсе: в индексе запись жива</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> запись индекса состоит из типизированных полей, и разбиение по полям не меняет значения поля. Chunk — кусок рассуждения: граница между «не» и остальной частью меняет смысл на противоположный, и схема индекса этого не поймает — нужна проверка на вопросах. И в CMS правило актуальности обычно одно — показывать последнюю версию, а в RAG старая версия бывает нужна, чтобы воспроизвести прошлый отчёт.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M10-L01--разобранный-пример">Разобранный пример</h2>
 <p>Текст: «GET обычно читают без изменения ресурса. Повторный PUT с тем же представлением должен иметь тот же предполагаемый эффект». Если chunk1 заканчивается на «Повторный PUT», а chunk2 начинается с «с тем же представлением», каждый фрагмент теряет важное условие. Структурная нарезка сохраняет второе предложение целиком.</p>
 <pre><code class="language-python">chunk = {
@@ -10298,7 +10339,7 @@ assert chunk['id'].startswith(chunk['document_id'])
 <li><a href="https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction" target="_blank" rel="noopener noreferrer" class="external-link">Scikit-learn: текстовые признаки</a></li>
 <li><a href="https://sbert.net/examples/sentence_transformer/applications/semantic-search/README.html" target="_blank" rel="noopener noreferrer" class="external-link">Sentence Transformers: semantic search</a></li>
 </ul>
-<div class="practice-note"><a href="#M10">Модуль и домашняя работа</a> · <a href="#M10-SOLUTIONS--m10-l01-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M10-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10"><small>Предыдущий раздел</small>← M10 RAG и поиск</a><a href="#M10-L02"><small>Следующий раздел</small>M10-L02. Лексический и векторный поиск →</a></nav></article><article class="material" id="M10-L02" data-title="M10-L02. Лексический и векторный поиск" data-short-title="Лексический и векторный поиск" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Лексический и векторный поиск</h1><p class="outcome"><strong>После урока:</strong> Объяснить промах по словам и промах по смысловой близости на конкретных примерах.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L01. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L02--объяснение">Объяснение</a></li><li><a href="#M10-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L02--самостоятельная-задача-a-m10-l02-a">Самостоятельная задача A — M10-L02-A</a></li><li><a href="#M10-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M10-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M10-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M10">Модуль и домашняя работа</a> · <a href="#M10-SOLUTIONS--m10-l01-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M10-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10"><small>Предыдущий раздел</small>← M10 RAG и поиск</a><a href="#M10-L02"><small>Следующий раздел</small>M10-L02. Лексический и векторный поиск →</a></nav></article><article class="material" id="M10-L02" data-title="M10-L02. Лексический и векторный поиск" data-short-title="Лексический и векторный поиск" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Лексический и векторный поиск</h1><p class="outcome"><strong>После урока:</strong> Объяснить промах по словам и промах по смысловой близости на конкретных примерах.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L01. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L02--объяснение">Объяснение</a></li><li><a href="#M10-L02--аналогия-полнотекстовый-индекс-postgresql-и-pgvector">Аналогия: полнотекстовый индекс PostgreSQL и pgvector</a></li><li><a href="#M10-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L02--самостоятельная-задача-a-m10-l02-a">Самостоятельная задача A — M10-L02-A</a></li><li><a href="#M10-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M10-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M10-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, NumPy 2.4.6, scikit-learn 1.9.1, PyTorch 2.15.0+cpu, transformers 4.57.6; модели all-MiniLM-L6-v2 (ревизия 1110a24) и SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 04.11.2026 · источник: <a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2" target="_blank" rel="noopener noreferrer" class="external-link">карточка all-MiniLM-L6-v2</a></p>
@@ -10420,6 +10461,47 @@ draw();
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
 "></iframe><p><a href="course/visuals/M10.html" target="_blank">Открыть опыт отдельно на весь экран</a></p></section>
+<h2 id="M10-L02--аналогия-полнотекстовый-индекс-postgresql-и-pgvector">Аналогия: полнотекстовый индекс PostgreSQL и pgvector</h2>
+<p>Как похоже: лексический поиск похож на полнотекстовый индекс PostgreSQL — tsvector хранит слова документа, а запрос находит строки с теми же словами. Векторный поиск похож на колонку pgvector, где документ ищут по расстоянию до вектора запроса. Первый находит код ошибки E42 дословно, но пропускает перефразирование; второй находит перефразирование, но может потерять редкий код.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>TF-IDF и разреженный вектор</td>
+  <td>Полнотекстовый индекс: tsvector со словами документа</td>
+</tr>
+<tr>
+  <td>Точный редкий термин вроде E42</td>
+  <td>Поиск кода ошибки в логах: grep находит его дословно</td>
+</tr>
+<tr>
+  <td>Промах на перефразировании</td>
+  <td>Запрос со словом «транзакция» не находит текст про «атомарную операцию»</td>
+</tr>
+<tr>
+  <td>Плотный вектор и cosine</td>
+  <td>Колонка pgvector и оператор косинусного расстояния <code>&lt;=&gt;</code></td>
+</tr>
+<tr>
+  <td>Точный перебор против ANN</td>
+  <td>Seq scan против индекса HNSW: быстрее, но может пропустить ближайшую строку</td>
+</tr>
+<tr>
+  <td>Разметка query_id → chunk_id</td>
+  <td>Тесты поискового эндпоинта с ожидаемыми ID</td>
+</tr>
+<tr>
+  <td>Recall@k и precision@k</td>
+  <td>Доля ожидаемых ID в первых k и доля нужных среди k показанных</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> условие WHERE в SQL отвечает «да» или «нет», и пустой результат — честный ответ «не нашлось». Векторный поиск всегда вернёт k ближайших, даже если ни один не отвечает на вопрос. И ts_rank в PostgreSQL не учитывает, насколько слово редко во всём корпусе, а IDF учитывает: добавление новых документов меняет scores старых, хотя сами они не менялись.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M10-L02--разобранный-пример">Разобранный пример</h2>
 <p>В корпусе 4 документа, термин есть в одном: IDF=ln(5/2)+1≈1,9163. Если термин есть во всех, IDF=ln(5/5)+1=1. Пусть релевантны{A,C}, а top3=[A,B,D]. Recall@3=1/2=0,5, precision@3=1/3≈0,333.</p>
 <pre><code class="language-python">relevant = {'A','C'}
@@ -10455,7 +10537,7 @@ assert round(hits/len(found),3) == .333
 <li><a href="https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction" target="_blank" rel="noopener noreferrer" class="external-link">Scikit-learn: текстовые признаки</a></li>
 <li><a href="https://sbert.net/examples/sentence_transformer/applications/semantic-search/README.html" target="_blank" rel="noopener noreferrer" class="external-link">Sentence Transformers: semantic search</a></li>
 </ul>
-<div class="practice-note"><a href="#M10">Модуль и домашняя работа</a> · <a href="#M10-SOLUTIONS--m10-l02-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M10-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L01"><small>Предыдущий раздел</small>← M10-L01. Документ и фрагмент</a><a href="#M10-L03"><small>Следующий раздел</small>M10-L03. Гибридный поиск и reranking →</a></nav></article><article class="material" id="M10-L03" data-title="M10-L03. Гибридный поиск и reranking" data-short-title="Гибридный поиск и reranking" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Гибридный поиск и reranking</h1><p class="outcome"><strong>После урока:</strong> Указать, на каких запросах этап помог, а на каких увеличил стоимость без пользы.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L02. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 140 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L03--объяснение">Объяснение</a></li><li><a href="#M10-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L03--самостоятельная-задача-a-m10-l03-a">Самостоятельная задача A — M10-L03-A</a></li><li><a href="#M10-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M10-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M10-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M10">Модуль и домашняя работа</a> · <a href="#M10-SOLUTIONS--m10-l02-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M10-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L01"><small>Предыдущий раздел</small>← M10-L01. Документ и фрагмент</a><a href="#M10-L03"><small>Следующий раздел</small>M10-L03. Гибридный поиск и reranking →</a></nav></article><article class="material" id="M10-L03" data-title="M10-L03. Гибридный поиск и reranking" data-short-title="Гибридный поиск и reranking" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Гибридный поиск и reranking</h1><p class="outcome"><strong>После урока:</strong> Указать, на каких запросах этап помог, а на каких увеличил стоимость без пользы.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L02. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 140 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L03--объяснение">Объяснение</a></li><li><a href="#M10-L03--аналогия-два-рекрутера-и-техническое-интервью">Аналогия: два рекрутера и техническое интервью</a></li><li><a href="#M10-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L03--самостоятельная-задача-a-m10-l03-a">Самостоятельная задача A — M10-L03-A</a></li><li><a href="#M10-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M10-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M10-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, NumPy 2.4.6, scikit-learn 1.9.1, PyTorch 2.15.0+cpu, transformers 4.57.6; модели all-MiniLM-L6-v2 (ревизия 1110a24) и SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 04.11.2026 · источник: <a href="https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: текстовые признаки</a></p>
@@ -10470,6 +10552,47 @@ assert round(hits/len(found),3) == .333
 <p>Увеличение N повышает шанс получить нужный источник, но увеличивает время второй стадии и может добавить шум. В голосовом диалоге поиск входит в общий бюджет задержки. Выбор N обосновывается измерениями, а не максимальным доступным числом. Если качество двух вариантов одинаково в пределах неопределённости, более простой и быстрый путь может быть предпочтительнее.</p>
 <p>Дубликаты и версии фильтруются до окончательного контекста. Одинаковый фрагмент под разными ID способен получить лишний вес в объединении и занять несколько мест. Привязка к document_id и version помогает сохранить разнообразие оснований. В отчёте сохраняются исходные результаты, объединённые кандидаты и финальный порядок. Такая трасса позволяет увидеть, какой этап потерял нужную информацию, и проверить локальное исправление.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M10-L03-desktop.svg" target="_blank" data-figure="course/assets/responsive/M10-L03-desktop.svg" aria-label="Увеличить рисунок: Гибридный поиск и reranking: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M10-L03-mobile.svg"><img src="course/assets/responsive/M10-L03-desktop.svg" alt="Гибридный поиск и reranking: численная схема" loading="lazy"></picture></a><span class="figure-hint">Гибридный поиск и reranking: численная схема · Открыть крупнее ↗</span></p>
+<h2 id="M10-L03--аналогия-два-рекрутера-и-техническое-интервью">Аналогия: два рекрутера и техническое интервью</h2>
+<p>Как похоже: два рекрутера независимо составляют шорт-листы на одну вакансию — один ищет по ключевым навыкам в резюме, другой по похожему опыту. Их оценки в разных шкалах, поэтому сравнивают места в списках. Кандидат, которого оба поставили высоко, обходит фаворита только одного из них. Дорогое техническое интервью проводят лишь для первых N — и нанять того, кого нет ни в одном шорт-листе, интервьюер не может.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Lexical и dense retriever</td>
+  <td>Два рекрутера с независимыми шорт-листами</td>
+</tr>
+<tr>
+  <td>Прямое сложение scores</td>
+  <td>Сложить «8 из 10» одного рекрутера и «4 звезды» другого: шкалы разные</td>
+</tr>
+<tr>
+  <td>RRF: 1/(c + rank)</td>
+  <td>Учитывать только место кандидата в каждом шорт-листе</td>
+</tr>
+<tr>
+  <td>Документ высоко в обоих списках</td>
+  <td>Кандидат в первой тройке у обоих обходит фаворита одного</td>
+</tr>
+<tr>
+  <td>Cross-encoder на top-N</td>
+  <td>Техническое интервью только для первых N: каждое стоит часа интервьюера</td>
+</tr>
+<tr>
+  <td>Нужный chunk вне top-N</td>
+  <td>Нельзя нанять того, кого нет в шорт-листе</td>
+</tr>
+<tr>
+  <td>Дубликат под разными ID</td>
+  <td>Одно резюме, присланное дважды, занимает два места в шорт-листе</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> RRF не знает, насколько уверен рекрутер: первое место с большим отрывом и первое место «на волоске» дают одинаковый вклад. А интервью оценивает самого человека, тогда как cross-encoder оценивает только соответствие пары текстов в пределах своей обучающей задачи: высокий score не доказывает, что источник истинен.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M10-L03--разобранный-пример">Разобранный пример</h2>
 <p>Списки lexical=[A,B,C], dense=[B,D,A]. При c=10 получаем A=1/11+1/13≈0,16783; B=1/12+1/11≈0,17424; C=1/13≈0,07692; D=1/12≈0,08333. Итог [B,A,D,C].</p>
 <pre><code class="language-python">from collections import defaultdict
@@ -10506,7 +10629,7 @@ assert sorted(score,key=score.get,reverse=True) == ['B','A','D','C']
 <li><a href="https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction" target="_blank" rel="noopener noreferrer" class="external-link">Scikit-learn: текстовые признаки</a></li>
 <li><a href="https://sbert.net/examples/sentence_transformer/applications/semantic-search/README.html" target="_blank" rel="noopener noreferrer" class="external-link">Sentence Transformers: semantic search</a></li>
 </ul>
-<div class="practice-note"><a href="#M10">Модуль и домашняя работа</a> · <a href="#M10-SOLUTIONS--m10-l03-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M10-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L02"><small>Предыдущий раздел</small>← M10-L02. Лексический и векторный поиск</a><a href="#M10-L04"><small>Следующий раздел</small>M10-L04. Контекст и подтверждение ответа →</a></nav></article><article class="material" id="M10-L04" data-title="M10-L04. Контекст и подтверждение ответа" data-short-title="Контекст и подтверждение ответа" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Контекст и подтверждение ответа</h1><p class="outcome"><strong>После урока:</strong> Обнаружить ссылку на существующий документ, который не подтверждает конкретный вывод.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L03. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L04--объяснение">Объяснение</a></li><li><a href="#M10-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L04--самостоятельная-задача-a-m10-l04-a">Самостоятельная задача A — M10-L04-A</a></li><li><a href="#M10-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M10-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M10-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M10">Модуль и домашняя работа</a> · <a href="#M10-SOLUTIONS--m10-l03-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M10-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L02"><small>Предыдущий раздел</small>← M10-L02. Лексический и векторный поиск</a><a href="#M10-L04"><small>Следующий раздел</small>M10-L04. Контекст и подтверждение ответа →</a></nav></article><article class="material" id="M10-L04" data-title="M10-L04. Контекст и подтверждение ответа" data-short-title="Контекст и подтверждение ответа" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Контекст и подтверждение ответа</h1><p class="outcome"><strong>После урока:</strong> Обнаружить ссылку на существующий документ, который не подтверждает конкретный вывод.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L03. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L04--объяснение">Объяснение</a></li><li><a href="#M10-L04--аналогия-ревью-pr-со-ссылками-на-тикеты">Аналогия: ревью PR со ссылками на тикеты</a></li><li><a href="#M10-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L04--самостоятельная-задача-a-m10-l04-a">Самостоятельная задача A — M10-L04-A</a></li><li><a href="#M10-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M10-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M10-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, NumPy 2.4.6, scikit-learn 1.9.1, PyTorch 2.15.0+cpu, transformers 4.57.6; модели all-MiniLM-L6-v2 (ревизия 1110a24) и SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 04.11.2026 · источник: <a href="https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">карточка SmolLM2-135M-Instruct</a></p>
@@ -10521,6 +10644,47 @@ assert sorted(score,key=score.get,reverse=True) == ['B','A','D','C']
 <p>В лабораторной один путь показывает extractive baseline: возвращает найденный фрагмент с ID. Это не генеративная LLM, а прозрачная проверка доступности информации. Второй путь действительно передаёт найденный текст SmolLM и генерирует новый ответ. Оба outputs сохраняются раздельно. Если генератор ухудшил доступный фрагмент, это важный результат, а не повод подменить output правильным шаблоном.</p>
 <p>Качество RAG включает полезность ответа, но полезность не должна компенсировать выдуманное основание. Хороший технический ответ может быть кратким и честно ограниченным. Для HR-вопроса об опыте пользователя внешняя техническая база вообще не подтверждает личную историю: оценивать можно ясность и конкретность рассказа по отдельной рубрике. Связывай каждую проверку с функцией продукта. Самостоятельный разбор заканчивается цепочкой: что нашли, что отправили, что утверждает модель и какой текст поддерживает каждый вывод.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M10-L04-desktop.svg" target="_blank" data-figure="course/assets/responsive/M10-L04-desktop.svg" aria-label="Увеличить рисунок: Контекст и подтверждение ответа: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M10-L04-mobile.svg"><img src="course/assets/responsive/M10-L04-desktop.svg" alt="Контекст и подтверждение ответа: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M10-L04--аналогия-ревью-pr-со-ссылками-на-тикеты">Аналогия: ревью PR со ссылками на тикеты</h2>
+<p>Как похоже: в описании PR написано «исправляет #123», и ссылка рабочая. Но ревьюер всё равно открывает тикет и проверяет, исправляет ли изменение именно его. Внешний ключ в БД гарантирует, что строка существует, но не то, что она подтверждает вывод. Так и ссылка [doc3] проверяет ID, а не смысл.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Ссылка на существующий ID</td>
+  <td>Внешний ключ: строка есть, но вывод она не подтверждает</td>
+</tr>
+<tr>
+  <td>Проверка поддержки утверждения</td>
+  <td>Ревьюер читает тикет и проверяет, что PR исправляет именно его</td>
+</tr>
+<tr>
+  <td>Атомарные утверждения</td>
+  <td>Ревью по коммитам: верная правка не прикрывает соседнюю ошибочную</td>
+</tr>
+<tr>
+  <td>«Может» превратилось в «всегда»</td>
+  <td>«Исправляет все таймауты», а тест покрывает один случай</td>
+</tr>
+<tr>
+  <td>insufficient против contradicted</td>
+  <td>Неполные логи молчат о событии — это не доказательство, что его не было</td>
+</tr>
+<tr>
+  <td>Abstention</td>
+  <td>Поддержка отвечает «без логов причину не назвать» вместо догадки</td>
+</tr>
+<tr>
+  <td>Инструкция внутри документа</td>
+  <td>Строка «DROP TABLE» в поле комментария: данные, а не команда</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> параметризованный запрос никогда не выполнит «DROP TABLE» из поля — у БД отдельный канал для данных. У модели такого канала нет: фраза из документа попадает в ту же последовательность токенов, что и инструкция, поэтому разделители не гарантируют защиту. И внешний ключ проверяется запросом за миллисекунды, а поддержку утверждения можно оценить только сопоставлением смысла, где ошибается и человек, и автоматическая проверка.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M10-L04--разобранный-пример">Разобранный пример</h2>
 <p>Источник A: «Транзакция объединяет операции: они фиксируются вместе или откатываются». Ответ «Операции фиксируются вместе [A]» поддержан. Ответ «Транзакция всегда делает запрос быстрее [A]» не поддержан, хотя ID существует.</p>
 <pre><code class="language-python">allowed_ids = {'A','B'}
@@ -10555,7 +10719,7 @@ assert set(citations) &lt;= allowed_ids
 <li><a href="https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction" target="_blank" rel="noopener noreferrer" class="external-link">Scikit-learn: текстовые признаки</a></li>
 <li><a href="https://sbert.net/examples/sentence_transformer/applications/semantic-search/README.html" target="_blank" rel="noopener noreferrer" class="external-link">Sentence Transformers: semantic search</a></li>
 </ul>
-<div class="practice-note"><a href="#M10">Модуль и домашняя работа</a> · <a href="#M10-SOLUTIONS--m10-l04-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M10-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L03"><small>Предыдущий раздел</small>← M10-L03. Гибридный поиск и reranking</a><a href="#M10-L05"><small>Следующий раздел</small>M10-L05. Диагностика и обновления →</a></nav></article><article class="material" id="M10-L05" data-title="M10-L05. Диагностика и обновления" data-short-title="Диагностика и обновления" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Диагностика и обновления</h1><p class="outcome"><strong>После урока:</strong> Предложить изменение в правильном компоненте и способ проверить его эффект.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 140 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L05--объяснение">Объяснение</a></li><li><a href="#M10-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L05--самостоятельная-задача-a-m10-l05-a">Самостоятельная задача A — M10-L05-A</a></li><li><a href="#M10-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M10-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M10-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M10">Модуль и домашняя работа</a> · <a href="#M10-SOLUTIONS--m10-l04-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M10-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L03"><small>Предыдущий раздел</small>← M10-L03. Гибридный поиск и reranking</a><a href="#M10-L05"><small>Следующий раздел</small>M10-L05. Диагностика и обновления →</a></nav></article><article class="material" id="M10-L05" data-title="M10-L05. Диагностика и обновления" data-short-title="Диагностика и обновления" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Диагностика и обновления</h1><p class="outcome"><strong>После урока:</strong> Предложить изменение в правильном компоненте и способ проверить его эффект.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 140 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L05--объяснение">Объяснение</a></li><li><a href="#M10-L05--аналогия-разбор-инцидента-по-распределённой-трассе">Аналогия: разбор инцидента по распределённой трассе</a></li><li><a href="#M10-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L05--самостоятельная-задача-a-m10-l05-a">Самостоятельная задача A — M10-L05-A</a></li><li><a href="#M10-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M10-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M10-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, NumPy 2.4.6, scikit-learn 1.9.1, PyTorch 2.15.0+cpu, transformers 4.57.6; модели all-MiniLM-L6-v2 (ревизия 1110a24) и SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 04.11.2026 · источник: <a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2" target="_blank" rel="noopener noreferrer" class="external-link">карточка all-MiniLM-L6-v2</a></p>
@@ -10570,6 +10734,51 @@ assert set(citations) &lt;= allowed_ids
 <p>Регрессионный набор включает обычные вопросы, перефразирования, точные идентификаторы, несколько необходимых источников, отсутствие ответа и устаревшую инструкцию. Исправленная старая ошибка становится частью development-набора. Новый отложенный набор нужен для проверки переноса. Постоянная подгонка под одни двадцать вопросов превращает их в данные настройки, даже если файл называется final_test. Разделение определяется использованием, а не названием.</p>
 <p>Важна стоимость изменения. Если проблема в границе одного абзаца, переход на большую LLM может не решить её и увеличить задержку. Если релевантный текст уже в контексте, новый векторный индекс может не изменить ответ. Выбирай компонент по доказательствам из трассы. Сохраняй query_id, ожидаемое основание, кандидатов, финальный prompt, output, тип сбоя и проверяемую гипотезу исправления. Это превращает общий совет «улучшить RAG» в конкретный воспроизводимый эксперимент и готовит систему к регрессионной оценке M11.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M10-L05-desktop.svg" target="_blank" data-figure="course/assets/responsive/M10-L05-desktop.svg" aria-label="Увеличить рисунок: Диагностика и обновления: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M10-L05-mobile.svg"><img src="course/assets/responsive/M10-L05-desktop.svg" alt="Диагностика и обновления: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M10-L05--аналогия-разбор-инцидента-по-распределённой-трассе">Аналогия: разбор инцидента по распределённой трассе</h2>
+<p>Как похоже: при инциденте инженер открывает трассу запроса в OpenTelemetry и ищет первый span, где данные уже неверны, — дальше ошибка лишь распространяется. Чтобы проверить гипотезу, зависимость подменяют заглушкой с заведомо верным ответом. Исправление закрепляют регрессионным тестом, а после деплоя помнят про кэш: если в ключе нет версии сборки, пользователь увидит старый ответ.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Трасса query_id: корпус → кандидаты → контекст → ответ</td>
+  <td>Распределённая трасса: span каждого сервиса</td>
+</tr>
+<tr>
+  <td>Самый ранний достаточный дефект</td>
+  <td>Первый span с неверными данными: дальше ошибка лишь распространяется</td>
+</tr>
+<tr>
+  <td>Oracle context</td>
+  <td>Заглушка зависимости с заведомо верным ответом</td>
+</tr>
+<tr>
+  <td>Oracle-метрика не равна качеству RAG</td>
+  <td>Тест с заглушкой не измеряет настоящую зависимость</td>
+</tr>
+<tr>
+  <td>Смена encoder без переиндексации</td>
+  <td>Старые данные, прочитанные новым сериализатором: байты те же, смысл полей другой</td>
+</tr>
+<tr>
+  <td>Проверка model_id и revision по manifest</td>
+  <td>Проверка версии схемы при старте: несовместимую отклонить с понятной ошибкой</td>
+</tr>
+<tr>
+  <td>Ключ кэша только по вопросу</td>
+  <td>Ключ кэша без версии сборки: после деплоя отдаётся старый ответ</td>
+</tr>
+<tr>
+  <td>Исправленный сбой в регрессионном наборе</td>
+  <td>Регрессионный тест на каждый исправленный баг</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> сервис в трассе обычно детерминирован: повтор запроса с тем же входом даёт тот же span, и баг воспроизводится. Генератор чувствителен к мелким изменениям контекста и настроек sampling: ошибка может появиться на одном запросе и исчезнуть на перефразированном, а правильность ответа — оценка по рубрике, а не сравнение байтов. Поэтому исправление проверяют на фиксированном наборе запросов, а не по одному удачному повтору.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M10-L05--разобранный-пример">Разобранный пример</h2>
 <p>Нужный D есть в корпусе. Lexical top-5=[A,D,B,C,E], объединённые кандидаты=[A,B,D], финальный контекст=[A,B]. Источник потерян при последнем отборе. Простое увеличение доступного лимита LLM не добавит его, пока политика выбора остаётся прежней.</p>
 <pre><code class="language-python">trace = {'corpus':{'A','B','C','D','E'},
@@ -10604,7 +10813,7 @@ assert 'D' not in trace['context']
 <li><a href="https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction" target="_blank" rel="noopener noreferrer" class="external-link">Scikit-learn: текстовые признаки</a></li>
 <li><a href="https://sbert.net/examples/sentence_transformer/applications/semantic-search/README.html" target="_blank" rel="noopener noreferrer" class="external-link">Sentence Transformers: semantic search</a></li>
 </ul>
-<div class="practice-note"><a href="#M10">Модуль и домашняя работа</a> · <a href="#M10-SOLUTIONS--m10-l05-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M10-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L04"><small>Предыдущий раздел</small>← M10-L04. Контекст и подтверждение ответа</a><a href="#M10-L06"><small>Следующий раздел</small>M10-L06. Диагностировать русский RAG по трассе ошибки →</a></nav></article><article class="material" id="M10-L06" data-title="M10-L06. Диагностировать русский RAG по трассе ошибки" data-short-title="Диагностировать русский RAG по трассе ошибки" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Диагностировать русский RAG по трассе ошибки</h1><p class="outcome"><strong>После урока:</strong> отличить потерю нужного документа, потерю условия при разбиении, устаревшую версию и вопрос без ответа; выбрать исправление по наблюдению.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L01–L05. План: 60 минут чтения и ручного разбора, 120 минут эксперимента, 90 минут самостоятельной работы. Модели уже подготовлены в M09/M10; новый платный сервис не нужен.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L06--объяснение">Объяснение</a></li><li><a href="#M10-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L06--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M10-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L06--подсказки-по-очереди-новая-и-отложенная-проверка">Подсказки по очереди; новая и отложенная проверка</a></li><li><a href="#M10-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M10">Модуль и домашняя работа</a> · <a href="#M10-SOLUTIONS--m10-l05-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M10-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L04"><small>Предыдущий раздел</small>← M10-L04. Контекст и подтверждение ответа</a><a href="#M10-L06"><small>Следующий раздел</small>M10-L06. Диагностировать русский RAG по трассе ошибки →</a></nav></article><article class="material" id="M10-L06" data-title="M10-L06. Диагностировать русский RAG по трассе ошибки" data-short-title="Диагностировать русский RAG по трассе ошибки" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Диагностировать русский RAG по трассе ошибки</h1><p class="outcome"><strong>После урока:</strong> отличить потерю нужного документа, потерю условия при разбиении, устаревшую версию и вопрос без ответа; выбрать исправление по наблюдению.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L01–L05. План: 60 минут чтения и ручного разбора, 120 минут эксперимента, 90 минут самостоятельной работы. Модели уже подготовлены в M09/M10; новый платный сервис не нужен.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L06--объяснение">Объяснение</a></li><li><a href="#M10-L06--аналогия-статус-200-с-обрезанным-телом">Аналогия: статус 200 с обрезанным телом</a></li><li><a href="#M10-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L06--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M10-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L06--подсказки-по-очереди-новая-и-отложенная-проверка">Подсказки по очереди; новая и отложенная проверка</a></li><li><a href="#M10-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, NumPy 2.4.6, scikit-learn 1.9.1 (TF-IDF); для сравнения — PyTorch 2.15.0+cpu, transformers 4.57.6 и all-MiniLM-L6-v2 (ревизия 1110a24) · проверено 04.11.2026 · источник: <a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2" target="_blank" rel="noopener noreferrer" class="external-link">карточка all-MiniLM-L6-v2</a></p>
@@ -10619,6 +10828,47 @@ assert 'D' not in trace['context']
 <p>14 запросов разделены на development и check. Есть точные термины, перефразирования, отрицания, вопрос с двумя источниками и два вопроса, на которые корпус не отвечает. Полный независимый экзамен потребует новых запросов после изучения ключа; check в этом опыте — отложенная часть эксперимента, а не секретный тест человека.</p>
 <p>Сравниваются разбиение окнами по 18 слов и разбиение по абзацам. Окно может разрезать отрицание или условие. Абзац сохраняет связь, но длинные абзацы тоже могут содержать лишнее и выйти за предел encoder. Мы не объявляем одну стратегию универсально лучшей: смотрим, какая ошибка возникает на конкретных запросах.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M10-L06-desktop.svg" target="_blank" data-figure="course/assets/responsive/M10-L06-desktop.svg" aria-label="Увеличить рисунок: Документ, разорванное условие и проверка контекста"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M10-L06-mobile.svg"><img src="course/assets/responsive/M10-L06-desktop.svg" alt="Документ, разорванное условие и проверка контекста" loading="lazy"></picture></a><span class="figure-hint">Трасса: версия → chunk → кандидаты → контекст → claim. · Открыть крупнее ↗</span></p>
+<h2 id="M10-L06--аналогия-статус-200-с-обрезанным-телом">Аналогия: статус 200 с обрезанным телом</h2>
+<p>Как похоже: мониторинг, который считает только коды ответа, покажет 100% успеха, даже если тело приходит обрезанным. Document Recall@3 = 1 — такой же «статус 200»: документ найден, но условие из него могло не дойти до генератора. Средний чек считают по заказам, а не по дням: день без заказов — не заказ на 0 тенге. Так и вопрос без ответа не даёт recall, равный нулю.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Document Recall@3 = 1 при потерянном условии</td>
+  <td>Статус 200 при обрезанном теле ответа</td>
+</tr>
+<tr>
+  <td>Подтверждающая фраза в переданных chunks</td>
+  <td>Контрактный тест содержимого тела, а не только статуса</td>
+</tr>
+<tr>
+  <td>relevant = [] → Recall = None</td>
+  <td>День без заказов не входит в средний чек как заказ на 0 тенге</td>
+</tr>
+<tr>
+  <td>Доля правильных отказов со своим знаменателем</td>
+  <td>Отдельная метрика: доля корректных 404 на несуществующие ресурсы</td>
+</tr>
+<tr>
+  <td>obsolete-версия в актуальном поиске</td>
+  <td>Старая реплика за балансировщиком после миграции: отвечает по старой схеме</td>
+</tr>
+<tr>
+  <td>MiniLM, обученный на английском, на русском корпусе</td>
+  <td>Валидатор адресов, написанный для США, на казахстанских адресах</td>
+</tr>
+<tr>
+  <td>Порог отказа задан до check</td>
+  <td>Порог алерта, зафиксированный до инцидента, а не подогнанный под него</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> статус и тело — точные данные: обрезку видно сравнением с ожидаемым ответом. Сохранение условия строковая проверка ловит лишь приблизительно: фраза может остаться в контексте, а вывод модели всё равно оказаться неверным — поэтому дальше нужна проверка claim → source из M11. И валидатор адресов явно отвергает чужой формат, а encoder на чужом языке молча возвращает векторы: падение качества видно только по метрикам на размеченных запросах.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M10-L06--разобранный-пример">Разобранный пример</h2>
 <h3 id="M10-L06--запуск-и-разобранное-наблюдение">Запуск и разобранное наблюдение</h3>
 <pre><code class="language-powershell">.\.venv\Scripts\python.exe labs\M10\diagnostic_ru.py
