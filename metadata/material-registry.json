@@ -1174,5 +1174,12 @@
     "path": "course/lessons/M10-L09X.md",
     "version": "1.1.0",
     "status": "ready"
+  },
+  "M09-L07X": {
+    "id": "M09-L07X",
+    "title": "M09-L07X. Локальный serving: llama.cpp и Ollama",
+    "path": "course/lessons/M09-L07X.md",
+    "version": "1.1.0",
+    "status": "ready"
   }
 }

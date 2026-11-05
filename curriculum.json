@@ -1990,6 +1990,10 @@
         {
           "id": "M09-C16",
           "description": "Сравнить float32/int8 в отдельных процессах с RSS и outputs"
+        },
+        {
+          "id": "M09-C17",
+          "description": "Поднять локальную модель за OpenAI-совместимым API через llama.cpp, прочитать состав GGUF и измерить на CPU TTFT, prefill, генерацию и пик памяти для моделей 0.5B и 4B в сравнении с transformers float32."
         }
       ],
       "lessons": [
@@ -2131,6 +2135,33 @@
             "practice_minutes": 135,
             "self_check_minutes": 30,
             "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M09-L07X",
+          "title": "Локальный serving: llama.cpp и Ollama",
+          "path": "course/lessons/M09-L07X.md",
+          "prerequisites": [
+            "M09-L06"
+          ],
+          "estimated_minutes": 180,
+          "estimate_status": "planning_hypothesis",
+          "practice": "llama-server b11803 на 127.0.0.1: Qwen2.5-0.5B в transformers float32, GGUF Q8_0 и Q4_K_M, Qwen3.5-4B Q4_K_M; TTFT по потоку, prefill, генерация, RSS и private, состав GGUF, кэш общего начала prompt",
+          "assessment": "Таблица TTFT, prefill, генерации и памяти с разбросом, состав GGUF и вывод в пределах машины и запросов",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M09-C17"
+          ],
+          "extension": "1.2.0",
+          "required": false,
+          "workload": {
+            "reading_minutes": 50,
+            "practice_minutes": 100,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; llama.cpp binary 24 MB and GGUF files about 3.9 GB",
             "estimate_status": "planning_hypothesis_not_measured"
           },
           "assessment_policy": "course/assessment.md"

@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="8aa569a7fd10c6d37cab22cd98e5ac84e8bd4541ecd60667197b7514b2f6881c"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="53ecaccff3e30cf2ca00cffd1e524ac5b605f7b4e549f1fde965b08d20536aa0"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -32,7 +32,7 @@
 <section class="nav-group"><details class="nav-module"><summary>M06 Проектирование ML-систем</summary><ul><li data-key="M06"><a href="#M06" data-material="M06"><span class="nav-marker">M06</span><span>Проектирование ML-систем</span></a></li><li data-key="M06-L01"><a href="#M06-L01" data-material="M06-L01"><span class="nav-marker">L01</span><span>Цель и ограничения</span></a></li><li data-key="M06-L02"><a href="#M06-L02" data-material="M06-L02"><span class="nav-marker">L02</span><span>Контуры данных и модели</span></a></li><li data-key="M06-L03"><a href="#M06-L03" data-material="M06-L03"><span class="nav-marker">L03</span><span>Batch и online</span></a></li><li data-key="M06-L04"><a href="#M06-L04" data-material="M06-L04"><span class="nav-marker">L04</span><span>Наблюдение и изменение качества</span></a></li><li data-key="M06-L05"><a href="#M06-L05" data-material="M06-L05"><span class="nav-marker">L05</span><span>Отказы и откат</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M07 Нейросети и PyTorch</summary><ul><li data-key="M07"><a href="#M07" data-material="M07"><span class="nav-marker">M07</span><span>Нейросети и PyTorch</span></a></li><li data-key="M07-L01"><a href="#M07-L01" data-material="M07-L01"><span class="nav-marker">L01</span><span>Линейный слой и нелинейность</span></a></li><li data-key="M07-L02"><a href="#M07-L02" data-material="M07-L02"><span class="nav-marker">L02</span><span>Autograd и обратный проход</span></a></li><li data-key="M07-L03"><a href="#M07-L03" data-material="M07-L03"><span class="nav-marker">L03</span><span>Цикл обучения</span></a></li><li data-key="M07-L04"><a href="#M07-L04" data-material="M07-L04"><span class="nav-marker">L04</span><span>Проверка и диагностика</span></a></li><li data-key="M07-L05"><a href="#M07-L05" data-material="M07-L05"><span class="nav-marker">L05</span><span>Сохранение и воспроизведение</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M08 NLP и Transformer</summary><ul><li data-key="M08"><a href="#M08" data-material="M08"><span class="nav-marker">M08</span><span>NLP и Transformer</span></a></li><li data-key="M08-L01"><a href="#M08-L01" data-material="M08-L01"><span class="nav-marker">L01</span><span>Текст и токены</span></a></li><li data-key="M08-L02"><a href="#M08-L02" data-material="M08-L02"><span class="nav-marker">L02</span><span>Embeddings</span></a></li><li data-key="M08-L03"><a href="#M08-L03" data-material="M08-L03"><span class="nav-marker">L03</span><span>Attention</span></a></li><li data-key="M08-L04"><a href="#M08-L04" data-material="M08-L04"><span class="nav-marker">L04</span><span>Позиции и causal mask</span></a></li><li data-key="M08-L06"><a href="#M08-L06" data-material="M08-L06"><span class="nav-marker">L06</span><span>Residual и LayerNorm: сохранить путь и выровнять масштаб</span></a></li><li data-key="M08-L07"><a href="#M08-L07" data-material="M08-L07"><span class="nav-marker">L07</span><span>Полный forward Transformer-блока</span></a></li><li data-key="M08-L05"><a href="#M08-L05" data-material="M08-L05"><span class="nav-marker">L05</span><span>Мини-языковая модель</span></a></li></ul></details></section>
-<section class="nav-group"><details class="nav-module"><summary>M09 Применение и запуск LLM</summary><ul><li data-key="M09"><a href="#M09" data-material="M09"><span class="nav-marker">M09</span><span>Применение и запуск LLM</span></a></li><li data-key="M09-L01"><a href="#M09-L01" data-material="M09-L01"><span class="nav-marker">L01</span><span>Сообщения и шаблон диалога</span></a></li><li data-key="M09-L02"><a href="#M09-L02" data-material="M09-L02"><span class="nav-marker">L02</span><span>Контекст и история</span></a></li><li data-key="M09-L03"><a href="#M09-L03" data-material="M09-L03"><span class="nav-marker">L03</span><span>Генерация и ограничения</span></a></li><li data-key="M09-L04"><a href="#M09-L04" data-material="M09-L04"><span class="nav-marker">L04</span><span>Локальный инференс и память</span></a></li><li data-key="M09-L05"><a href="#M09-L05" data-material="M09-L05"><span class="nav-marker">L05</span><span>Контракт ответа</span></a></li><li data-key="M09-L06"><a href="#M09-L06" data-material="M09-L06"><span class="nav-marker">L06</span><span>Выбрать локальную конфигурацию по измерениям</span></a></li></ul></details></section>
+<section class="nav-group"><details class="nav-module"><summary>M09 Применение и запуск LLM</summary><ul><li data-key="M09"><a href="#M09" data-material="M09"><span class="nav-marker">M09</span><span>Применение и запуск LLM</span></a></li><li data-key="M09-L01"><a href="#M09-L01" data-material="M09-L01"><span class="nav-marker">L01</span><span>Сообщения и шаблон диалога</span></a></li><li data-key="M09-L02"><a href="#M09-L02" data-material="M09-L02"><span class="nav-marker">L02</span><span>Контекст и история</span></a></li><li data-key="M09-L03"><a href="#M09-L03" data-material="M09-L03"><span class="nav-marker">L03</span><span>Генерация и ограничения</span></a></li><li data-key="M09-L04"><a href="#M09-L04" data-material="M09-L04"><span class="nav-marker">L04</span><span>Локальный инференс и память</span></a></li><li data-key="M09-L05"><a href="#M09-L05" data-material="M09-L05"><span class="nav-marker">L05</span><span>Контракт ответа</span></a></li><li data-key="M09-L06"><a href="#M09-L06" data-material="M09-L06"><span class="nav-marker">L06</span><span>Выбрать локальную конфигурацию по измерениям</span></a></li><li data-key="M09-L07X"><a href="#M09-L07X" data-material="M09-L07X"><span class="nav-marker">L07X</span><span>Локальный serving: llama.cpp и Ollama</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M10 RAG и поиск</summary><ul><li data-key="M10"><a href="#M10" data-material="M10"><span class="nav-marker">M10</span><span>RAG и поиск</span></a></li><li data-key="M10-L01"><a href="#M10-L01" data-material="M10-L01"><span class="nav-marker">L01</span><span>Документ и фрагмент</span></a></li><li data-key="M10-L02"><a href="#M10-L02" data-material="M10-L02"><span class="nav-marker">L02</span><span>Лексический и векторный поиск</span></a></li><li data-key="M10-L03"><a href="#M10-L03" data-material="M10-L03"><span class="nav-marker">L03</span><span>Гибридный поиск и reranking</span></a></li><li data-key="M10-L04"><a href="#M10-L04" data-material="M10-L04"><span class="nav-marker">L04</span><span>Контекст и подтверждение ответа</span></a></li><li data-key="M10-L05"><a href="#M10-L05" data-material="M10-L05"><span class="nav-marker">L05</span><span>Диагностика и обновления</span></a></li><li data-key="M10-L06"><a href="#M10-L06" data-material="M10-L06"><span class="nav-marker">L06</span><span>Диагностировать русский RAG по трассе ошибки</span></a></li><li data-key="M10-L07X"><a href="#M10-L07X" data-material="M10-L07X"><span class="nav-marker">L07X</span><span>Эмбеддеры для русского языка</span></a></li><li data-key="M10-L08X"><a href="#M10-L08X" data-material="M10-L08X"><span class="nav-marker">L08X</span><span>Векторное хранилище</span></a></li><li data-key="M10-L09X"><a href="#M10-L09X" data-material="M10-L09X"><span class="nav-marker">L09X</span><span>Кросс-энкодер для reranking</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M11 Оценивание LLM-систем</summary><ul><li data-key="M11"><a href="#M11" data-material="M11"><span class="nav-marker">M11</span><span>Оценивание LLM-систем</span></a></li><li data-key="M11-L01"><a href="#M11-L01" data-material="M11-L01"><span class="nav-marker">L01</span><span>Что именно оцениваем</span></a></li><li data-key="M11-L02"><a href="#M11-L02" data-material="M11-L02"><span class="nav-marker">L02</span><span>Набор примеров и разметка</span></a></li><li data-key="M11-L03"><a href="#M11-L03" data-material="M11-L03"><span class="nav-marker">L03</span><span>HR и технические рубрики</span></a></li><li data-key="M11-L04"><a href="#M11-L04" data-material="M11-L04"><span class="nav-marker">L04</span><span>Модель как оценщик</span></a></li><li data-key="M11-L05"><a href="#M11-L05" data-material="M11-L05"><span class="nav-marker">L05</span><span>Регрессии и отчёт</span></a></li><li data-key="M11-L06"><a href="#M11-L06" data-material="M11-L06"><span class="nav-marker">L06</span><span>От реальных ответов к парному сравнению систем</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M12 Обучение и адаптация моделей</summary><ul><li data-key="M12"><a href="#M12" data-material="M12"><span class="nav-marker">M12</span><span>Обучение и адаптация моделей</span></a></li><li data-key="M12-L01"><a href="#M12-L01" data-material="M12-L01"><span class="nav-marker">L01</span><span>Выбор вмешательства</span></a></li><li data-key="M12-L02"><a href="#M12-L02" data-material="M12-L02"><span class="nav-marker">L02</span><span>Данные для адаптации</span></a></li><li data-key="M12-L03"><a href="#M12-L03" data-material="M12-L03"><span class="nav-marker">L03</span><span>Малое обучение с нуля</span></a></li><li data-key="M12-L04"><a href="#M12-L04" data-material="M12-L04"><span class="nav-marker">L04</span><span>Дообучение и адаптеры</span></a></li><li data-key="M12-L05"><a href="#M12-L05" data-material="M12-L05"><span class="nav-marker">L05</span><span>Сравнение до и после</span></a></li><li data-key="M12-L06"><a href="#M12-L06" data-material="M12-L06"><span class="nav-marker">L06</span><span>Из диалога в обучающий пример: токены и маска потерь</span></a></li><li data-key="M12-L07"><a href="#M12-L07" data-material="M12-L07"><span class="nav-marker">L07</span><span>Настоящий малый SFT: адаптер, checkpoint и регрессии</span></a></li></ul></details></section>
@@ -9118,6 +9118,7 @@ print(round(math.exp(nll),4))  # 2.5198
 <li><a href="#M09-L04">M09-L04. Локальный инференс и память</a></li>
 <li><a href="#M09-L05">M09-L05. Контракт ответа</a></li>
 <li><a href="#M09-L06">M09-L06. Выбрать локальную конфигурацию по измерениям</a></li>
+<li><a href="#M09-L07X">M09-L07X. Локальный serving: llama.cpp и Ollama</a> — расширение 1.2.0, не входит в обязательный минимум; нужны бинарник llama.cpp и модели около 3.9 ГБ</li>
 </ol>
 <p>После каждого урока сначала выполни самостоятельную задачу. Открой решение только после своей попытки. Проходить весь модуль за один день не требуется: при 4–5 часах в день чередуй чтение, расчёты, программирование и воспроизведение по памяти.</p>
 <p>Если ты уже делал RAG и интеграции LLM, модуль можно пройти по <a href="#FAST-TRACK-LLM">быстрому входу</a>: сначала домашняя работа, затем уроки только по пунктам рубрики, оценённым ниже 2.</p>
@@ -10101,7 +10102,292 @@ assert not valid('{&quot;feedback&quot;:&quot;&quot;,&quot;score&quot;:2}')
 <h2 id="M09-L06--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://docs.pytorch.org/docs/2.15/generated/torch.ao.quantization.quantize_dynamic.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch dynamic quantization</a>, <a href="https://huggingface.co/docs/transformers/v4.57.5/en/main_classes/text_generation" target="_blank" rel="noopener noreferrer" class="external-link">Transformers 4.57 generation</a>. API torch.ao имеет уведомление о дальнейшем переносе развития в torchao; курс фиксирует проверенную текущую конфигурацию, а не обещает неизменность API.</p>
 <p>Для углубления: <a href="https://docs.pytorch.org/docs/2.15/quantization.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch 2.15: Quantization</a> — уведомление о переносе развития квантования в torchao и план для существующих потоков torch.ao.quantization; <a href="https://github.com/pytorch/ao" target="_blank" rel="noopener noreferrer" class="external-link">torchao</a> — библиотека квантования PyTorch, куда переносится развитие (обе на английском).</p>
-<div class="practice-note"><a href="#M09">Модуль и домашняя работа</a> · <a href="#M09-SOLUTIONS--m09-l06-полный-опыт-сравнения-и-варианты">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M09-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L05"><small>Предыдущий раздел</small>← M09-L05. Контракт ответа</a><a href="#M10"><small>Следующий раздел</small>M10 RAG и поиск →</a></nav></article><article class="material" id="M10" data-title="M10 RAG и поиск" data-short-title="RAG и поиск" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>RAG и поиск</h1></header><div class="article-layout"><div class="body-content"><p>Модуль строит локальный поиск и настоящий RAG с компактной LLM. Лексический baseline, плотные представления, объединение рангов и генерация измеряются отдельно. Существование ссылки и поддержка утверждения являются разными проверками.</p>
+<div class="practice-note"><a href="#M09">Модуль и домашняя работа</a> · <a href="#M09-SOLUTIONS--m09-l06-полный-опыт-сравнения-и-варианты">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M09-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L05"><small>Предыдущий раздел</small>← M09-L05. Контракт ответа</a><a href="#M09-L07X"><small>Следующий раздел</small>M09-L07X. Локальный serving: llama.cpp и Ollama →</a></nav></article><article class="material" id="M09-L07X" data-title="M09-L07X. Локальный serving: llama.cpp и Ollama" data-short-title="Локальный serving: llama.cpp и Ollama" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L07X</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Локальный serving: llama.cpp и Ollama</h1><p class="outcome"><strong>После урока:</strong> поднять локальную модель за OpenAI-совместимым HTTP API через llama.cpp и прочитать, что лежит в GGUF-файле и что значит Q4_K_M. Затем измерить на CPU время до первого токена, скорость prefill и генерации и пиковую память для моделей 0.5B и 4B и сравнить их с transformers float32.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L04, M09-L06. Нужны бинарник llama.cpp (<code>labs/M09/llama_local.py fetch</code>, около 24 МБ) и GGUF-файлы (<code>tools/download_models.py --gguf</code>, около 3.9 ГБ, из них 2.7 ГБ — модель 4B). Без модели 4B лабораторная измерит только 0.5B. Ориентир времени — 180 минут чтения, прогона и разбора; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L07X--объяснение">Объяснение</a></li><li><a href="#M09-L07X--аналогия-встроенная-sqlite-и-сервер-postgresql">Аналогия: встроенная SQLite и сервер PostgreSQL</a></li><li><a href="#M09-L07X--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L07X--схема">Схема</a></li><li><a href="#M09-L07X--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L07X--самостоятельная-задача-a-m09-l07x-a">Самостоятельная задача A — M09-L07X-A</a></li><li><a href="#M09-L07X--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L07X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L07X--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L07X--карточка-урока">Карточка урока</a></li><li><a href="#M09-L07X--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Урок дополняет модуль, не входит в обязательный минимум 1.1.0.</p>
+
+
+<blockquote>
+<p><strong>Версии и дата проверки:</strong> llama.cpp b11803 (CPU-сборка для Windows x64 от 21.10.2026), Python 3.11.9, PyTorch 2.15.0+cpu, transformers 4.57.6; модели Qwen2.5-0.5B-Instruct (GGUF Q4_K_M и Q8_0 от Qwen, ревизия 9217f5d; safetensors, ревизия 7ae5576), Qwen3.5-4B Q4_K_M (квантизация unsloth, ревизия e87f176) · проверено 06.11.2026 · источник: <a href="https://github.com/ggml-org/llama.cpp/blob/b11803/tools/server/README.md" target="_blank" rel="noopener noreferrer" class="external-link">README llama-server</a></p>
+</blockquote>
+<h2 id="M09-L07X--объяснение">Объяснение</h2>
+<p>До сих пор модель жила внутри Python-процесса лабораторной: transformers загружал веса, и код вызывал <code>generate</code>. В приложении так делают редко. Обычно модель держит отдельный процесс-сервер, а приложение — например, сервис на NestJS — обращается к нему по HTTP. Такой сервер называют serving. Он загружает веса один раз, держит их в памяти и отвечает многим клиентам на любом языке.</p>
+<p>llama.cpp — движок инференса на C/C++ для моделей в формате GGUF. Он оптимизирован под CPU: умножает матрицы прямо в квантованном виде, а сборка для Windows содержит варианты ядер под разные наборы инструкций процессора и выбирает подходящий при запуске. В комплекте есть <code>llama-server</code> — HTTP-сервер с OpenAI-совместимым API. Запрос <code>POST /v1/chat/completions</code> с полями <code>messages</code>, <code>max_tokens</code>, <code>temperature</code> и <code>stream</code> устроен так же, как у облачных API, у Ollama и у vLLM. Клиентский код переключается между ними сменой базового адреса. При <code>stream: true</code> ответ приходит потоком событий <code>data: {...}</code> — по фрагменту текста на событие, в конце <code>data: [DONE]</code>. Это и позволяет измерить время до первого токена.</p>
+<p>GGUF — один файл, в котором лежат метаданные и тензоры. В метаданных записаны архитектура, число слоёв, длина контекста, токенизатор и шаблон чата, у каждого тензора свой тип хранения. Q8_0 хранит блоки по 32 веса: 32 восьмибитных числа и один масштаб float16, то есть 34 байта на 32 веса, или 8.5 бита на вес. Q4_K хранит суперблоки по 256 весов: четырёхбитные значения плюс шестибитные масштабы и минимумы для каждых 32, всего 144 байта на 256 весов, или 4.5 бита. Буква M в Q4_K_M означает смесь: часть чувствительных тензоров кладётся в Q6_K (6.56 бита). Есть и ограничение формата: блок k-квантов — 256 чисел строки. Если длина строки тензора на 256 не делится, llama.cpp при квантовании берёт запасной тип: Q5_0 вместо Q4_K и Q8_0 вместо Q6_K. Поэтому подпись Q4_K_M не обещает четыре бита на каждый вес. Средний размер узнают, прочитав сам файл; лабораторная делает это функцией <code>gguf_summary</code>.</p>
+<p>Время ответа складывается из этапов M09-L04. Prefill обрабатывает весь prompt сразу: это умножение матрицы на матрицу, и оно хорошо распараллеливается по токенам. Decode выдаёт по одному токену, и на каждом шаге нужно прочитать из памяти все веса модели. Поэтому скорость генерации на CPU упирается в пропускную способность памяти, и квантование ускоряет её прямо пропорционально уменьшению байтов. Грубая оценка сверху: токенов в секунду ≈ пропускная способность памяти / размер весов в байтах. Время до первого токена (TTFT) — это prefill плюс первый шаг decode. llama-server умеет переиспользовать KV-cache общего начала prompt из прошлых запросов (поле <code>cache_prompt</code>): одинаковый системный prompt не пересчитывается заново.</p>
+<p>Память — это веса, KV-cache и рабочие буферы. KV-cache выделяется под заданную длину контекста (<code>-c</code>), а не под фактический диалог. Qwen3.5-4B по умолчанию объявляет контекст 262 144 токена, и без явного <code>-c</code> сервер попытается выделить кэш под него. У Qwen3.5 полное внимание только в каждом четвёртом слое, остальные слои линейного внимания хранят состояние фиксированного размера, поэтому её кэш растёт с контекстом медленнее, чем у обычной архитектуры. Модель-специфичные поля тоже важны. Qwen3.5 по умолчанию рассуждает перед ответом в блоке <code>&lt;think&gt;</code>, и карточка модели предлагает выключать это полем <code>chat_template_kwargs: {&quot;enable_thinking&quot;: false}</code>. Иначе часть токенов бюджета уйдёт на рассуждение.</p>
+<p>Ollama — оболочка над тем же движком ggml. Она добавляет реестр моделей (<code>ollama pull</code>), Modelfile с параметрами и шаблоном, автоматическую выгрузку моделей из памяти и тот же OpenAI-совместимый API на порту 11434. Для разработки это удобно, но настройки по умолчанию — контекст, квантование, шаблон — выбирает она, и их нужно проверять так же, как здесь. В курсе Ollama разобрана обзорно: по решению автора она не устанавливалась. vLLM и SGLang — серверы для GPU, их сила в одновременном обслуживании многих запросов: память под KV-cache разбивается на страницы (PagedAttention), запросы объединяются в пакеты на лету. На CPU-пути курса они не нужны, но их API тот же. И последнее: llama-server при запуске предупреждает, что ключа API нет и CORS открыт для всех. Сервер в лабораторной слушает только 127.0.0.1; выставлять его в сеть без <code>--api-key</code> и обратного прокси нельзя.</p>
+<p><a class="figure-expand" href="course/assets/M09-L07X.svg" target="_blank" data-figure="course/assets/M09-L07X.svg" aria-label="Увеличить рисунок: Где уходит время и память при локальном serving"><picture><img src="course/assets/M09-L07X.svg" alt="Где уходит время и память при локальном serving" loading="lazy"></picture></a><span class="figure-hint">Где уходит время и память при локальном serving · Открыть крупнее ↗</span></p>
+<h2 id="M09-L07X--аналогия-встроенная-sqlite-и-сервер-postgresql">Аналогия: встроенная SQLite и сервер PostgreSQL</h2>
+<p>Как похоже: transformers внутри Python-процесса — как SQLite, встроенная в приложение: просто, без сети, но только для этого процесса и этого языка. llama-server — как сервер PostgreSQL: отдельный процесс держит данные в памяти и обслуживает клиентов по своему протоколу. OpenAI-совместимый API похож на протокол PostgreSQL, который поддерживают и другие базы: клиентский код не меняется, меняется адрес.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>transformers в процессе лабораторной</td>
+  <td>SQLite, встроенная в приложение</td>
+</tr>
+<tr>
+  <td>llama-server на 127.0.0.1</td>
+  <td>Сервер PostgreSQL на localhost</td>
+</tr>
+<tr>
+  <td>OpenAI-совместимый API у llama.cpp, Ollama, vLLM</td>
+  <td>Протокол PostgreSQL у разных совместимых баз</td>
+</tr>
+<tr>
+  <td>GGUF с метаданными и тензорами</td>
+  <td>Файлы базы со схемой и данными</td>
+</tr>
+<tr>
+  <td>Квантование Q8_0 и Q4_K_M</td>
+  <td>Сжатие страниц: меньше места, другие значения</td>
+</tr>
+<tr>
+  <td>cache_prompt и KV-cache префикса</td>
+  <td>Кэш планов и буферов для повторяющихся запросов</td>
+</tr>
+<tr>
+  <td><code>-c</code> — длина контекста</td>
+  <td><code>shared_buffers</code>: память выделяется заранее по настройке</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> две совместимые базы на один и тот же SQL-запрос вернут одинаковые строки. Два сервера с «тем же» API — нет. Шаблон чата, параметры по умолчанию, токенизация, квантование и дополнительные поля (<code>cache_prompt</code>, <code>chat_template_kwargs</code>) у них свои, и один запрос даёт разный текст. Сжатие страниц в базе не меняет данные, а квантование меняет веса, и ответы модели расходятся уже через несколько слов.</p>
+<section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M09-L07X--разобранный-пример">Разобранный пример</h2>
+<p>Q8_0: 34 байта на 32 веса — 34 · 8 / 32 = 8.5 бита. Q4_K: 144 байта на 256 весов — 4.5 бита. Если бы все 630 млн весов Qwen2.5-0.5B лежали в Q4_K, файл занял бы около 630 · 10⁶ · 4.5 / 8 ≈ 354 млн байт. Файл весит 491 млн байт, потому что строки длиной 896 на 256 не делятся, и большинство тензоров ушло в Q5_0.</p>
+<p>KV-cache Qwen2.5-0.5B при <code>-c 4096</code> по формуле M09-L04: 2 · L · T · H_kv · D_head · b = 2 · 24 · 4096 · 2 · 64 · 2 = 50 331 648 байт, 48 МиБ во float16. Оценка скорости генерации: если 0.5B в Q4_K_M читает около 485 млн байт весов на токен и выдаёт 22 токена в секунду, эффективная пропускная способность — около 10.7 ГБ/с. Модель 4B в Q4_K_M — около 2.7 ГБ весов, то есть при той же памяти стоит ждать не больше 10.7 / 2.7 ≈ 4 токенов в секунду. Это предсказание до замера; авторский прогон ниже его проверяет.</p>
+<pre><code class="language-python">q8_0 = 34 * 8 / 32
+q4_k = 144 * 8 / 256
+assert q8_0 == 8.5 and q4_k == 4.5
+weights = 630_000_000
+assert round(weights * q4_k / 8 / 1e6) == 354
+kv_bytes = 2 * 24 * 4096 * 2 * 64 * 2  # K и V, слои, токены, KV-головы, размер головы, байты float16
+assert kv_bytes == 50_331_648 and kv_bytes / 2**20 == 48
+bandwidth = 485e6 * 22  # байт весов на токен × токенов в секунду
+print(round(bandwidth / 1e9, 1), 'ГБ/с;', round(bandwidth / 2.7e9, 1), 'токена в секунду ожидается для 4B')
+</code></pre>
+<h3 id="M09-L07X--авторский-прогон-06-11-2026">Авторский прогон 06.11.2026</h3>
+<p>Ноутбук с Intel Core i7-11800H (8 ядер, 16 потоков) и 32 ГБ памяти, 4 потока, шесть коротких запросов на русском и английском, жадная генерация, до 64 новых токенов, контекст 4096. Данные из <code>artifacts/M09/llama/report.json</code>; файл указан в МиБ, память — пик за прогон. Prefix cache в замерах выключен, чтобы каждый prompt считался с нуля, как в transformers.</p>
+<p>Ниже 0.5B — Qwen2.5-0.5B-Instruct, 4B — Qwen3.5-4B. Скорость, медиана по шести запросам:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Конфигурация</th>
+  <th>TTFT, мс</th>
+  <th>Prefill, ток/с</th>
+  <th>Генерация, ток/с</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>0.5B, transformers float32</td>
+  <td>476</td>
+  <td>103</td>
+  <td>5.5</td>
+</tr>
+<tr>
+  <td>0.5B, llama.cpp Q8_0</td>
+  <td>400</td>
+  <td>126</td>
+  <td>18.6</td>
+</tr>
+<tr>
+  <td>0.5B, llama.cpp Q4_K_M</td>
+  <td>388</td>
+  <td>133</td>
+  <td>24.2</td>
+</tr>
+<tr>
+  <td>4B, llama.cpp Q4_K_M</td>
+  <td>1540</td>
+  <td>20</td>
+  <td>3.4</td>
+</tr>
+</tbody>
+</table></div>
+<p>Файл, время старта сервера, память и совпадение ответов:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Конфигурация</th>
+  <th>Файл, МиБ</th>
+  <th>Старт, с</th>
+  <th>Пик RSS, МиБ</th>
+  <th>Пик private, МиБ</th>
+  <th>Совпало с float32</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>0.5B, transformers float32</td>
+  <td>942</td>
+  <td>2.9</td>
+  <td>3196</td>
+  <td>5391</td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>0.5B, llama.cpp Q8_0</td>
+  <td>644</td>
+  <td>1.6</td>
+  <td>642</td>
+  <td>205</td>
+  <td>0 из 6</td>
+</tr>
+<tr>
+  <td>0.5B, llama.cpp Q4_K_M</td>
+  <td>469</td>
+  <td>1.3</td>
+  <td>544</td>
+  <td>234</td>
+  <td>0 из 6</td>
+</tr>
+<tr>
+  <td>4B, llama.cpp Q4_K_M</td>
+  <td>2614</td>
+  <td>5.9</td>
+  <td>4893</td>
+  <td>2769</td>
+  <td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p>В первом полном прогоне той же ночью генерация была медленнее: 3.6, 14.9, 18.0 и 3.3 токена в секунду — на 3–35 %. На ноутбуке скорость зависит от температуры и фоновых задач, поэтому конфигурации сравнивают внутри одного прогона и указывают разброс. Тексты ответов в обоих прогонах совпали во всех четырёх конфигурациях: жадная генерация в одном движке воспроизводима, меняется только время.</p>
+<p>Что лежит в файлах — по <code>gguf_summary</code>, доля весов по типу хранения:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Файл</th>
+  <th>Средний бит на вес</th>
+  <th>Q4_K</th>
+  <th>Q5_0 или Q5_K</th>
+  <th>Q6_K</th>
+  <th>Q8_0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Qwen2.5-0.5B Q4_K_M</td>
+  <td>6.16</td>
+  <td>8 %</td>
+  <td>62 % (Q5_0)</td>
+  <td>8 %</td>
+  <td>22 %</td>
+</tr>
+<tr>
+  <td>Qwen2.5-0.5B Q8_0</td>
+  <td>8.5</td>
+  <td>—</td>
+  <td>—</td>
+  <td>—</td>
+  <td>100 %</td>
+</tr>
+<tr>
+  <td>Qwen3.5-4B Q4_K_M</td>
+  <td>5.19</td>
+  <td>58 %</td>
+  <td>18 % (Q5_K)</td>
+  <td>24 %</td>
+  <td>меньше 0.1 %</td>
+</tr>
+</tbody>
+</table></div>
+<p>Q4_K_M модели 0.5B — в основном Q5_0. Строки длиной 896 не делятся на 256, и при квантовании сработала замена Q4_K на Q5_0 из <code>llama-quant.cpp</code>. У 4B ширина 2560 делится на 256, и Q4_K там действительно основной тип. Число 5.19 бита на вес совпало с тем, что печатает сам llama.cpp при загрузке.</p>
+<p>Что из этого следует. llama.cpp с Q4_K_M генерирует в 4.4 раза быстрее transformers float32 на той же модели (в первом прогоне — в 5 раз). Переход с Q8_0 на Q4_K_M уменьшил файл на 27 % и ускорил генерацию на 30 %. Prefill почти не изменился: он упирается в вычисления, а не в чтение весов. Предсказание разобранного примера для 4B — не больше 4 токенов в секунду — подтвердилось: 3.4. Ответ из 64 токенов у 4B занимает 1.5 + 63 / 3.4 ≈ 20 секунд. Для голосового диалога на этом процессоре это слишком медленно, для пакетной проверки ответов — приемлемо. Качество двух моделей этот урок не сравнивает, это задача T51.</p>
+<p>Квантование меняет текст. Ни один ответ GGUF-версий 0.5B не совпал с float32 слово в слово. Общее начало в среднем — 39.5 символа у Q8_0 и 29.5 у Q4_K_M: ответы расходятся уже в первом предложении. Этот прогон не разделяет вклад квантования и другой арифметики ядер, потому что неквантованного GGUF в нём нет.</p>
+<p>Кэш общего начала prompt работает так, как обещает README. Для нового запроса к 0.5B Q4_K_M сервер досчитал 21 токен за 191 мс, остальное взял из общего системного начала шаблона. Повтор того же запроса досчитал 1 токен за 41 мс. У 4B — 33 токена за 1475 мс и 4 токена за 504 мс при повторе. Слоям линейного внимания нужно восстановить состояние с контрольной точки, поэтому переиспользование у гибридной модели грубее.</p>
+<p>Память читается не одним числом. RSS у llama.cpp включает страницы GGUF-файла, отображённые в память (mmap): система может их выгрузить и прочитать заново. Собственная память процесса (private) у 0.5B Q4_K_M — 234 МиБ, KV-cache на 4096 токенов из разобранного примера занимает 48 из них. У 4B в простое RSS 4198 МиБ, private 2088 МиБ. Сводка памяти llama.cpp (запуск с <code>-lv 4</code>) раскладывает это так: 1305 МиБ весов в отображённом файле, 1297 МиБ — переупакованная копия весов Q4_K для быстрых ядер CPU (<code>CPU_REPACK</code>), 178 МиБ контекста и 83 МиБ рабочих буферов. У PyTorch наоборот: private 5391 МиБ больше RSS 3196 МиБ, потому что процесс зарезервировал больше памяти, чем занял. Поэтому решение «влезет ли модель» принимают по пику под нагрузкой с запасом и по сводке самого движка, а не по размеру файла.</p>
+<p>Режим размышлений Qwen3.5 выключился: поле <code>reasoning_content</code> во всех ответах 4B пустое.</p>
+</section><h2 id="M09-L07X--схема">Схема</h2>
+<figure class="diagram"><pre class="mermaid">flowchart TD
+    C[&quot;Клиент: Node, Python или curl&quot;] --&gt;|&quot;POST /v1/chat/completions&quot;| T[&quot;Шаблон чата из GGUF&quot;]
+    G[&quot;GGUF: метаданные и квантованные тензоры&quot;] -.-&gt;|&quot;mmap при загрузке&quot;| W[&quot;Веса в памяти&quot;]
+    T --&gt; K[&quot;Токенизация&quot;]
+    K --&gt; P[&quot;Prefill всего prompt; общее начало берётся из KV-cache&quot;]
+    W --&gt; P
+    P --&gt; D[&quot;Decode: по токену, каждый шаг читает все веса&quot;]
+    D --&gt;|&quot;data: фрагмент&quot;| S[&quot;Поток событий SSE и timings&quot;]
+    S --&gt; C
+    classDef main fill:#e8f0fe,stroke:#245bba,stroke-width:2px,color:#182b3a
+    class P,D,S main
+</pre></figure>
+<p>Путь одного запроса через llama-server. Клиент шлёт обычный OpenAI-совместимый запрос. Сервер применяет шаблон чата, записанный в самом GGUF, и токенизирует текст. Затем prefill обрабатывает prompt целиком, а общее начало с прошлыми запросами берётся из KV-cache. Decode выдаёт по токену, и каждый шаг читает все веса из памяти: поэтому квантование ускоряет именно генерацию. Ответ уходит потоком событий, последнее содержит <code>timings</code> со скоростью prefill и генерации. Выделен главный путь: prefill → decode → поток. Пунктир — веса отображаются из файла при загрузке и дальше читаются из памяти.</p>
+<section class="lesson-stage" data-stage="practice"><span class="stage-label">Пробуем с поддержкой</span><h2 id="M09-L07X--практика-с-поддержкой">Практика с поддержкой</h2>
+<p><strong>Предскажи до запуска.</strong> Прежде чем запускать код или пересчитывать пример, запиши ожидаемый вывод: числа, формы массивов, порядок или текст. После запуска сравни с фактическим и объясни каждое расхождение.</p>
+<p>Скачай бинарник и модели, затем запусти лабораторную:</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe labs\M09\llama_local.py fetch
+.\.venv\Scripts\python.exe tools\download_models.py --gguf
+.\.venv\Scripts\python.exe labs\M09\llama_serving.py
+</code></pre>
+<p>До запуска запиши три предсказания: во сколько раз Q4_K_M генерирует быстрее float32, сколько токенов в секунду даст 4B по оценке «пропускная способность / размер весов», совпадут ли ответы Q8_0 и float32. После запуска открой <code>artifacts/M09/llama/report.json</code> и найди у каждой конфигурации <code>gguf.types</code>, <code>prompt_cache</code> и тексты ответов. Флаг <code>--only</code> запускает выбранные конфигурации, <code>--threads</code> меняет число потоков.</p>
+<p>Затем подними сервер вручную и пошли запрос так, как это сделает приложение:</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe labs\M09\llama_local.py serve qwen2.5-0.5b-instruct-q4_k_m
+</code></pre>
+<p>Во втором окне PowerShell:</p>
+<pre><code class="language-powershell">$body = @{ model = 'qwen2.5-0.5b-instruct-q4_k_m'; max_tokens = 40; temperature = 0; messages = @(@{ role = 'user'; content = 'Что такое идемпотентность?' }) } | ConvertTo-Json -Depth 4
+Invoke-RestMethod -Uri http://127.0.0.1:18080/v1/chat/completions -Method Post -ContentType 'application/json; charset=utf-8' -Body ([Text.Encoding]::UTF8.GetBytes($body))
+</code></pre>
+<p>Найди в ответе поля <code>choices</code>, <code>usage</code> и <code>timings</code>. Отправь тот же запрос второй раз и сравни <code>timings.prompt_n</code>. Если сервер остался после прерванного запуска, останови его командой <code>Stop-Process -Name llama-server</code>.</p>
+</section><section class="lesson-stage" data-stage="task"><span class="stage-label">Твоя попытка</span><h2 id="M09-L07X--самостоятельная-задача-a-m09-l07x-a">Самостоятельная задача A — M09-L07X-A</h2>
+<p>Измерь, как число потоков влияет на prefill и генерацию модели 0.5B Q4_K_M: запусти лабораторную с <code>--only qwen2.5-0.5b-q4_k_m-llama.cpp --threads N</code> при N = 1, 2, 4 и 8, каждый вариант дважды. Гипотезу запиши до запуска. Построй таблицу: медиана prefill, медиана генерации и TTFT для каждого N, разброс между двумя прогонами. Объясни, почему генерация растёт с потоками хуже, чем prefill, и выбери число потоков для сервера, на котором одновременно работает ещё и распознавание речи.</p>
+<p>Первая попытка — без готового решения. Сохрани код, таблицу и объяснение в <code>submissions/M09-L07X/</code>. AI может пояснять термины и помогать искать ошибку; запиши полученную помощь.</p>
+</section><details class="hints" id="M09-L07X--подсказки-по-очереди"><summary>Подсказки по очереди</summary><div>
+<ol>
+<li>Prefill — это умножение матрицы на матрицу по всем токенам prompt, вычисления хорошо делятся между потоками.</li>
+<li>Генерация читает все веса на каждый токен; когда память уже загружена полностью, новые потоки ждут её, а не считают.</li>
+<li>Разница меньше разброса между двумя прогонами одного N ничего не доказывает.</li>
+</ol>
+</div></details>
+<h2 id="M09-L07X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</h2>
+<p>Ошибка: сравнивать скорость конфигураций из разных прогонов или с включённым prefix cache у одной и выключенным у другой. Ошибка: считать подпись Q4_K_M обещанием четырёх бит на вес. Ошибка: судить о памяти по размеру файла или по одному RSS без private и пика. Ошибка: выставить llama-server в сеть без ключа API. Ошибка: не выключить режим размышлений у модели, которая включает его по умолчанию, и списать медленный ответ на движок. Критерий: таблица TTFT, prefill, генерации и памяти с разбросом, ссылка на состав GGUF и вывод, который не выходит за пределы машины и запросов.</p>
+<p>После попытки сверь результат с <a href="#M09-SOLUTIONS--m09-l07x-a">решением M09-L07X-A</a>.</p>
+<section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M09-L07X--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
+<p><strong>B — размер и скорость по типам.</strong> В модели 3.0 млрд весов: 70 % хранятся в Q4_K, 20 % в Q6_K, 10 % в Q8_0. Посчитай средний бит на вес и размер весов в ГБ. Сколько токенов в секунду генерации можно ожидать на машине с эффективной пропускной способностью памяти 12 ГБ/с? Что изменится, если та же модель целиком будет в Q8_0?</p>
+<p><strong>C — через 7–10 дней.</strong> Тренажёру собеседований нужен ответ из 120 токенов, а пользователь готов ждать первого слова не больше 2 секунд. На ноутбуке есть 0.5B Q4_K_M (TTFT 0.4 с, 24 токена в секунду) и 4B Q4_K_M (TTFT 1.5 с, 3.4 токена в секунду). Посчитай полное время ответа обеих моделей и реши, что выбрать для живого диалога, а что — для ночной проверки ответов. Что ещё нужно измерить до решения, кроме скорости?</p>
+<p>Сначала сохрани собственное решение B/C, затем сверь <a href="#M09-SOLUTIONS--m09-l07x-b-c">отдельный ключ M09-L07X-B-C</a>. Отметь помощь; отложенную проверку засчитывай только после фактической новой попытки.</p>
+</section><h2 id="M09-L07X--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Модель обслуживают отдельным сервером за OpenAI-совместимым API; конфигурации сравнивают в одном прогоне по TTFT, prefill, генерации и пику памяти с разбросом, состав GGUF читают из файла, а модельные поля вроде <code>chat_template_kwargs</code> задают явно</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>TTFT — prefill плюс первый шаг decode; генерация ≈ пропускная способность памяти / байты весов; бит на вес: Q8_0 8.5, Q4_K 4.5, Q6_K 6.56; RSS включает отображённый файл, private — собственная память процесса; KV-cache выделяется под <code>-c</code></td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Когда модель нужна приложению на CPU без облака. Пример: Qwen2.5-0.5B в Q4_K_M генерировала 24.2 токена в секунду против 5.5 у transformers float32 при пике RSS 544 против 3196 МиБ, а 4B в Q4_K_M — 3.4 токена в секунду, и ответ из 64 токенов занимал около 20 секунд</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Выбрать квантование по подписи, сравнить скорости из разных прогонов или решить, что модель влезет, по размеру файла</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M09-L07X--источники-и-углубление">Источники и углубление</h2>
+<ul>
+<li><a href="https://github.com/ggml-org/llama.cpp/blob/b11803/tools/server/README.md" target="_blank" rel="noopener noreferrer" class="external-link">README llama-server</a> — OpenAI-совместимые маршруты, поток событий, <code>cache_prompt</code>, <code>chat_template_kwargs</code>, <code>timings</code> и ключ API (на английском)</li>
+<li><a href="https://github.com/ggml-org/ggml/blob/master/docs/gguf.md" target="_blank" rel="noopener noreferrer" class="external-link">Спецификация GGUF</a> — заголовок, метаданные, таблица тензоров и выравнивание (на английском)</li>
+<li><a href="https://github.com/ggml-org/llama.cpp/blob/b11803/src/llama-quant.cpp" target="_blank" rel="noopener noreferrer" class="external-link">llama.cpp: llama-quant.cpp</a> — правило замены типа, когда строка тензора не делится на размер блока (на английском)</li>
+<li><a href="https://huggingface.co/Qwen/Qwen3.5-4B" target="_blank" rel="noopener noreferrer" class="external-link">Qwen/Qwen3.5-4B</a> — карточка модели: режим размышлений по умолчанию и как его выключить (на английском)</li>
+<li><a href="https://huggingface.co/unsloth/Qwen3.5-4B-GGUF" target="_blank" rel="noopener noreferrer" class="external-link">unsloth/Qwen3.5-4B-GGUF</a> — квантизация сообщества, использованная в курсе (на английском)</li>
+<li><a href="https://docs.ollama.com/api/openai-compatibility" target="_blank" rel="noopener noreferrer" class="external-link">Ollama: OpenAI compatibility</a> — тот же API у Ollama на порту 11434 (на английском)</li>
+<li><a href="https://arxiv.org/abs/2309.06180" target="_blank" rel="noopener noreferrer" class="external-link">Kwon et al.: PagedAttention</a> — как vLLM управляет памятью KV-cache на GPU (на английском)</li>
+</ul>
+<p>Запросы, численные наблюдения и код лабораторной созданы для курса; внешние тексты не копировались в учебные данные.</p>
+<div class="practice-note"><a href="#M09">Модуль и домашняя работа</a> · <a href="#M09-SOLUTIONS--m09-l07x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M09-L07X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L06"><small>Предыдущий раздел</small>← M09-L06. Выбрать локальную конфигурацию по измерениям</a><a href="#M10"><small>Следующий раздел</small>M10 RAG и поиск →</a></nav></article><article class="material" id="M10" data-title="M10 RAG и поиск" data-short-title="RAG и поиск" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>RAG и поиск</h1></header><div class="article-layout"><div class="body-content"><p>Модуль строит локальный поиск и настоящий RAG с компактной LLM. Лексический baseline, плотные представления, объединение рангов и генерация измеряются отдельно. Существование ссылки и поддержка утверждения являются разными проверками.</p>
 <h2 id="M10--порядок-занятий">Порядок занятий</h2>
 <ol>
 <li><a href="#M10-L01">M10-L01. Документ и фрагмент</a></li>
@@ -10249,7 +10535,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M10.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M10.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L06"><small>Предыдущий раздел</small>← M09-L06. Выбрать локальную конфигурацию по измерениям</a><a href="#M10-L01"><small>Следующий раздел</small>M10-L01. Документ и фрагмент →</a></nav></article><article class="material" id="M10-L01" data-title="M10-L01. Документ и фрагмент" data-short-title="Документ и фрагмент" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Документ и фрагмент</h1><p class="outcome"><strong>После урока:</strong> Показать случай, когда граница фрагмента разрушает необходимый контекст.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L02, M02-L05, M01-L05. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L01--объяснение">Объяснение</a></li><li><a href="#M10-L01--аналогия-статья-базы-знаний-и-записи-поискового-индекса">Аналогия: статья базы знаний и записи поискового индекса</a></li><li><a href="#M10-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L01--самостоятельная-задача-a-m10-l01-a">Самостоятельная задача A — M10-L01-A</a></li><li><a href="#M10-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M10-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M10-L01--карточка-урока">Карточка урока</a></li><li><a href="#M10-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+"></iframe><p><a href="course/visuals/M10.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M10.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L07X"><small>Предыдущий раздел</small>← M09-L07X. Локальный serving: llama.cpp и Ollama</a><a href="#M10-L01"><small>Следующий раздел</small>M10-L01. Документ и фрагмент →</a></nav></article><article class="material" id="M10-L01" data-title="M10-L01. Документ и фрагмент" data-short-title="Документ и фрагмент" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Документ и фрагмент</h1><p class="outcome"><strong>После урока:</strong> Показать случай, когда граница фрагмента разрушает необходимый контекст.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L02, M02-L05, M01-L05. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L01--объяснение">Объяснение</a></li><li><a href="#M10-L01--аналогия-статья-базы-знаний-и-записи-поискового-индекса">Аналогия: статья базы знаний и записи поискового индекса</a></li><li><a href="#M10-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L01--самостоятельная-задача-a-m10-l01-a">Самостоятельная задача A — M10-L01-A</a></li><li><a href="#M10-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M10-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M10-L01--карточка-урока">Карточка урока</a></li><li><a href="#M10-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, NumPy 2.4.6, scikit-learn 1.9.1, PyTorch 2.15.0+cpu, transformers 4.57.6; модели all-MiniLM-L6-v2 (ревизия 1110a24) и SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 04.11.2026 · источник: <a href="https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: текстовые признаки</a></p>
@@ -20288,7 +20574,19 @@ assert not accept_result(3,2)
 <nav class="answer-actions" aria-label="После самопроверки"><a href="#M09-L05" data-return-task="M09-L05">← Вернуться к задаче</a><a href="#M09-L05" data-return-retry="M09-L05">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M09-SOLUTIONS--m09-hw01-b-и-c"><summary>Ответ: M09-HW01: B и C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M09" data-return-task="M09">← Вернуться к задаче</a><a href="#M09" data-return-retry="M09">Новый вариант B / C →</a></nav>
 <p><strong>B.</strong> До уточнения 420+200+128=748≤768. После 60 новых токенов — 808, превышение 40. Удаление старой пары 80 даёт 728, текущий вопрос/правила сохранены. После двух неудачных попыток новых вызовов 0, итоговое число попыток 2. Возвращается needs_review, score=None и понятный текст о невозможности сформировать надёжную оценку; можно предложить продолжить или повторить действие по инициативе пользователя. Timeout не кодирует качество ответа кандидата.</p>
 <p><strong>C.</strong> A устарел: его нельзя прикрепить к текущему ответу, даже при верном формате. B относится к верному ходу, но bool запрещён контрактом целой оценки. A отбрасывается как stale (с причиной в трассе), B приводит к терминальному fallback needs_review без численной оценки. Score=0 утверждал бы низкое качество ответа без полученного свидетельства; отказ сервиса и оценивание кандидата должны быть различимы.</p>
-<nav class="answer-actions" aria-label="После самопроверки"><a href="#M09" data-return-task="M09">← Вернуться к задаче</a><a href="#M09" data-return-retry="M09">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M09.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M09"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M10-SOLUTIONS" data-title="M10. Решения для самопроверки" data-short-title="M10. Решения для самопроверки" data-kind="answer" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M10. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Открывай после собственной попытки. Если ты изучил ключ до решения, новая задача из раздела повторения обязательна для проверки самостоятельности. Числа в учебных примерах не являются оценкой реальных кандидатов.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M09" data-return-task="M09">← Вернуться к задаче</a><a href="#M09" data-return-retry="M09">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M09-SOLUTIONS--m09-l07x-a"><summary>Ответ: M09-L07X-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M09-L07X" data-return-task="M09-L07X">← Вернуться к задаче</a><a href="#M09-L07X" data-return-retry="M09-L07X">Новый вариант B / C →</a></nav>
+<p>Числа зависят от процессора и даже от прогона, поэтому ключ проверяет ход решения. Авторская проверка 06.11.2026 на Intel Core i7-11800H (8 ядер, 16 потоков), по два прогона на каждое N:</p>
+<ul>
+<li>prefill — 44, 66–77, 110 и 123–129 токенов в секунду при 1, 2, 4 и 8 потоках;</li>
+<li>генерация — 8.0–8.3, 10.4–13.3, 17.1–17.8 и 16.5–16.8 токена в секунду;</li>
+<li>TTFT — 1.1–1.2 с, 0.66–0.78 с, 0.47–0.48 с и 0.43 с.</li>
+</ul>
+<p>Prefill растёт до 8 потоков, хотя с 4 до 8 прибавляет только около 14 %. Генерация с 4 до 8 потоков не выросла и даже чуть упала. Prefill — это умножение матриц по всем токенам prompt, работа делится между ядрами. Генерация на каждом токене читает все веса из памяти, и четырёх потоков уже хватает, чтобы занять пропускную способность памяти. Дальше потоки ждут данные и мешают друг другу. Для сервера, где рядом работает распознавание речи, разумно 4 потока: генерация на максимуме, а оставшиеся физические ядра остаются распознаванию. 8 потоков отберут ядра у распознавания ради 10 % TTFT.</p>
+<p>Разница между двумя прогонами одного N доходила до 28 % (генерация при 2 потоках — 10.4 и 13.3). В основном прогоне урока та же конфигурация при 4 потоках дала 24.2 токена в секунду, а здесь — 17–18. Сравнивать можно только внутри одной серии, и вывод должен опираться на разницу больше разброса. Критическая ошибка — выбрать число потоков по одному прогону или по prefill, если медленная часть ответа — генерация.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M09-L07X" data-return-task="M09-L07X">← Вернуться к задаче</a><a href="#M09-L07X" data-return-retry="M09-L07X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M09-SOLUTIONS--m09-l07x-b-c"><summary>Ответ: M09-L07X-B-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M09-L07X" data-return-task="M09-L07X">← Вернуться к задаче</a><a href="#M09-L07X" data-return-retry="M09-L07X">Новый вариант B / C →</a></nav>
+<p>B: средний бит на вес — 0.7 · 4.5 + 0.2 · 6.5625 + 0.1 · 8.5 = 3.15 + 1.3125 + 0.85 = 5.3125. Размер весов — 3.0 · 10⁹ · 5.3125 / 8 ≈ 1.99 · 10⁹ байт, около 2.0 ГБ. Генерация читает все веса на каждый токен, поэтому при 12 ГБ/с стоит ждать не больше 12 / 1.99 ≈ 6 токенов в секунду. Это верхняя оценка: кроме чтения весов есть вычисления, KV-cache и накладные расходы. Целиком в Q8_0 веса займут 3.0 · 10⁹ · 8.5 / 8 ≈ 3.19 ГБ, а оценка скорости упадёт до 12 / 3.19 ≈ 3.8 токена в секунду. Файл вырастет в 1.6 раза, генерация во столько же раз замедлится, качество обычно чуть ближе к исходным весам — это нужно проверить на своих запросах.</p>
+<p>C: полное время ответа из 120 токенов — TTFT плюс 119 оставшихся токенов, делённых на скорость генерации. 0.5B: 0.4 + 119 / 24 ≈ 5.4 с. 4B: 1.5 + 119 / 3.4 ≈ 36.5 с. Обе модели укладываются в 2 секунды до первого слова, но 4B говорит медленнее, чем человек слушает, и ответ длится больше полуминуты. Для живого диалога на этом ноутбуке остаётся 0.5B с потоковым выводом. 4B подходит для ночной пакетной проверки ответов, где время не важно. Кроме скорости до решения нужно измерить качество ответов по рубрике на одном наборе (T51) и долю валидного JSON, если ответ структурированный (T31). Нужны также p95 задержки, а не медиана, скорость при одновременной работе распознавания речи и память всего приложения под нагрузкой. Ещё нужна устойчивая скорость после нагрева: в авторских прогонах она менялась до 35 %.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M09-L07X" data-return-task="M09-L07X">← Вернуться к задаче</a><a href="#M09-L07X" data-return-retry="M09-L07X">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M09.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M09"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M10-SOLUTIONS" data-title="M10. Решения для самопроверки" data-short-title="M10. Решения для самопроверки" data-kind="answer" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M10. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Открывай после собственной попытки. Если ты изучил ключ до решения, новая задача из раздела повторения обязательна для проверки самостоятельности. Числа в учебных примерах не являются оценкой реальных кандидатов.</p>
 <details class="answer-key" id="M10-SOLUTIONS--m10-l01-a"><summary>Ответ: M10-L01-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M10-L01" data-return-task="M10-L01">← Вернуться к задаче</a><a href="#M10-L01" data-return-retry="M10-L01">Новый вариант B / C →</a></nav>
 <p>Пример: {id:&quot;index-v1-01&quot;,document_id:&quot;index&quot;,version:1,source:&quot;course-authored&quot;,text:&quot;Индекс ускоряет чтение, но замедляет некоторые записи&quot;}; v2 содержит уточнение о запросе и селективности. Пересборка создаёт новый snapshot с v2, пересчитывает embedding, проверяет контрольные запросы и переключает active_version. v1 сохраняется в архиве для воспроизведения, но исключается из актуального поиска. Вопрос «Почему индекс не ускорил выборку почти всей таблицы?» требует оговорки v2; одна общая фраза v1 недостаточна. Корректный ответ не должен обещать ускорение любого чтения.</p>
 <nav class="answer-actions" aria-label="После самопроверки"><a href="#M10-L01" data-return-task="M10-L01">← Вернуться к задаче</a><a href="#M10-L01" data-return-retry="M10-L01">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M10-SOLUTIONS--m10-l02-a"><summary>Ответ: M10-L02-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M10-L02" data-return-task="M10-L02">← Вернуться к задаче</a><a href="#M10-L02" data-return-retry="M10-L02">Новый вариант B / C →</a></nav>
@@ -22286,7 +22584,7 @@ assert not accept_result(3,2)
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 106 из 106 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 107 из 107 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -22703,6 +23001,13 @@ assert not accept_result(3,2)
 <li><strong>Смысл величин.</strong> Размер состояния — torch.save конкретного артефакта со служебными данными; RSS — сумма рабочей памяти дерева процессов, общие страницы могут учитываться дважды; пик — замеры каждые 30 мс; dynamic int8 квантует Linear-слои, остальные части не обязаны стать int8.</li>
 <li><strong>Когда применять.</strong> При выборе между float32 и int8 или другим runtime. Пример: 40 токенов за 10 с — 4 token/s и 0.25 s/token; 32 токена за 9 с — ≈ 3.56 token/s: меньшее полное время не означает большую скорость токенов.</li>
 <li><strong>Главная ошибка.</strong> Объявлять квантование лучше по одной скорости или выдавать размер файла за пик RAM.</li>
+</ul>
+<h3 id="CHEATSHEET--m09-l07x-локальный-serving-llama-cpp-и-ollama"><a href="#M09-L07X">M09-L07X. Локальный serving: llama.cpp и Ollama</a></h3>
+<ul>
+<li><strong>Правило.</strong> Модель обслуживают отдельным сервером за OpenAI-совместимым API; конфигурации сравнивают в одном прогоне по TTFT, prefill, генерации и пику памяти с разбросом, состав GGUF читают из файла, а модельные поля вроде <code>chat_template_kwargs</code> задают явно.</li>
+<li><strong>Смысл величин.</strong> TTFT — prefill плюс первый шаг decode; генерация ≈ пропускная способность памяти / байты весов; бит на вес: Q8_0 8.5, Q4_K 4.5, Q6_K 6.56; RSS включает отображённый файл, private — собственная память процесса; KV-cache выделяется под <code>-c</code>.</li>
+<li><strong>Когда применять.</strong> Когда модель нужна приложению на CPU без облака. Пример: Qwen2.5-0.5B в Q4_K_M генерировала 24.2 токена в секунду против 5.5 у transformers float32 при пике RSS 544 против 3196 МиБ, а 4B в Q4_K_M — 3.4 токена в секунду, и ответ из 64 токенов занимал около 20 секунд.</li>
+<li><strong>Главная ошибка.</strong> Выбрать квантование по подписи, сравнить скорости из разных прогонов или решить, что модель влезет, по размеру файла.</li>
 </ul>
 <h2 id="CHEATSHEET--m10-rag-и-поиск">M10. RAG и поиск</h2>
 <h3 id="CHEATSHEET--m10-l01-документ-и-фрагмент"><a href="#M10-L01">M10-L01. Документ и фрагмент</a></h3>

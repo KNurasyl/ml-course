@@ -667,6 +667,13 @@
       "version": "1.1.0",
       "status": "ready"
     },
+    "M09-L07X": {
+      "id": "M09-L07X",
+      "title": "M09-L07X. Локальный serving: llama.cpp и Ollama",
+      "path": "course/lessons/M09-L07X.md",
+      "version": "1.1.0",
+      "status": "ready"
+    },
     "M10-L01": {
       "id": "M10-L01",
       "title": "M10-L01. Документ и фрагмент",
@@ -1295,6 +1302,7 @@
       "M09-L04",
       "M09-L05",
       "M09-L06",
+      "M09-L07X",
       "M10-L01",
       "M10-L02",
       "M10-L03",
@@ -1750,7 +1758,8 @@
         "M09-L03",
         "M09-L04",
         "M09-L05",
-        "M09-L06"
+        "M09-L06",
+        "M09-L07X"
       ],
       "homework_id": "M09-HW01",
       "exercise": {
@@ -3475,6 +3484,30 @@
         "practice_minutes": 135,
         "self_check_minutes": 30,
         "setup_minutes": "separate; record actual",
+        "estimate_status": "planning_hypothesis_not_measured"
+      },
+      "pilot_sessions": []
+    },
+    {
+      "id": "M09-L07X",
+      "title": "Локальный serving: llama.cpp и Ollama",
+      "version": "1.1.0",
+      "module_id": "M09",
+      "material_key": "M09-L07X",
+      "path": "course/lessons/M09-L07X.md",
+      "scope": "complete_lesson",
+      "material_status": "ready",
+      "prerequisites": [
+        "M09-L06"
+      ],
+      "outcome_ids": [
+        "M09-C17"
+      ],
+      "workload": {
+        "reading_minutes": 50,
+        "practice_minutes": 100,
+        "self_check_minutes": 30,
+        "setup_minutes": "separate; llama.cpp binary 24 MB and GGUF files about 3.9 GB",
         "estimate_status": "planning_hypothesis_not_measured"
       },
       "pilot_sessions": []

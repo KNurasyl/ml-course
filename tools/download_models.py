@@ -61,15 +61,33 @@ def rerankers():
         print(f"Reranker ready: {directory}")
 
 
+def gguf():
+    """Optional 1.2.0 extension (M09-L07X, T30): GGUF files for llama.cpp, pinned to a revision and checked by sha256."""
+    from huggingface_hub import hf_hub_download
+    for config in json.loads((ROOT / "metadata/reference-models.json").read_text(encoding="utf-8"))["gguf"]:
+        target = ROOT / config["path"] / config["file"]
+        if not target.exists():
+            hf_hub_download(repo_id=config["repo_id"], filename=config["file"], revision=config["revision"],
+                            local_dir=ROOT / config["path"])
+        digest = hashlib.sha256()
+        with target.open("rb") as handle:
+            for block in iter(lambda: handle.read(1 << 24), b""):
+                digest.update(block)
+        if digest.hexdigest() != config["sha256"]:
+            raise SystemExit(f"sha256 mismatch for {target.name}")
+        print(f"GGUF ready: {target}")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--speech", action="store_true")
     parser.add_argument("--llm", action="store_true")
     parser.add_argument("--embedders", action="store_true", help="optional M10-L07X models, about 4.9 GB in total")
     parser.add_argument("--rerankers", action="store_true", help="optional M10-L03 cross-encoder, about 2.3 GB")
+    parser.add_argument("--gguf", action="store_true", help="optional M09-L07X GGUF files for llama.cpp, about 3.9 GB")
     args = parser.parse_args()
-    if not args.speech and not args.llm and not args.embedders and not args.rerankers:
-        parser.error("Укажи --speech, --llm, --embedders и/или --rerankers")
+    if not (args.speech or args.llm or args.embedders or args.rerankers or args.gguf):
+        parser.error("Укажи --speech, --llm, --embedders, --rerankers и/или --gguf")
     if args.speech:
         speech()
     if args.llm:
@@ -78,3 +96,5 @@ if __name__ == "__main__":
         embedders()
     if args.rerankers:
         rerankers()
+    if args.gguf:
+        gguf()
