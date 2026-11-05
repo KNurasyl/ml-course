@@ -62,6 +62,18 @@ MISTAKES = [
     ("M04", "ex03", "return min(1.0, 2 * tail)", "return min(1.0, tail)", "знаковый тест"),
     ("M04", "ex03", "n = wins + losses  #", "n = wins + losses + ties  #", "ничьи"),
     ("M04", "ex03", "q = prob if label == 1 else 1 - prob", "q = prob", "log loss"),
+    ("M10", "ex02", 'enumerate(_unique(ranking, "ranking"), 1)', 'enumerate(_unique(ranking, "ranking"))', "RRF"),
+    ("M10", "ex02", "scores.get(doc, Fraction(0)) + 1 / (Fraction(c) + rank)", "scores.get(doc, 0.0) + 1 / (c + rank)",
+     "ничья по ID"),
+    ("M10", "ex02", "/ len(gold)", "/ n", "candidate Recall"),
+    ("M10", "ex02", "            continue  # unanswerable", "            values.append(0.0)\n            continue  #",
+     "без ответа"),
+    ("M10", "ex03", "break  # this window", "pass  # this window", "окна"),
+    ("M10", "ex03", "step, windows, start = size - overlap, [], 0", "step, windows, start = size, [], 0", "окна"),
+    ("M10", "ex03", "elif used + tokens > budget:", "elif used + tokens >= budget:", "ровно по бюджету"),
+    ("M10", "ex03", 'elif chunk["text"] in texts:', "elif False:", "дубликат"),
+    ("M10", "ex03", 'if document not in active_versions or active_versions[document] != chunk["version"]:',
+     'if active_versions.get(document, chunk["version"]) != chunk["version"]:', "отбор контекста"),
 ]
 
 

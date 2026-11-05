@@ -1766,7 +1766,22 @@
         "checker": "exercises/M10/check.py",
         "solution": "solutions/exercises/M10/solution.py"
       },
-      "extra_exercises": [],
+      "extra_exercises": [
+        {
+          "id": "M10-ex02",
+          "starter": "exercises/M10/ex02_fusion.py",
+          "checker": "exercises/M10/check_ex02.py",
+          "solution": "solutions/exercises/M10/ex02_fusion.py",
+          "hidden_cases": "tests/hidden/M10_ex02.json"
+        },
+        {
+          "id": "M10-ex03",
+          "starter": "exercises/M10/ex03_context.py",
+          "checker": "exercises/M10/check_ex03.py",
+          "solution": "solutions/exercises/M10/ex03_context.py",
+          "hidden_cases": "tests/hidden/M10_ex03.json"
+        }
+      ],
       "assessment_policy": "course/assessment.md"
     },
     {

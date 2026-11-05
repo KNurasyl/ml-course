@@ -1,0 +1,1125 @@
+{
+ "note": "Скрытые случаи проверки. По правилам самопроверки ученик их не открывает: ожидаемые значения посчитаны отдельным генератором (формула числа окон и прямой проход по выдаче) независимо от эталона.",
+ "cases": [
+  {
+   "window": [
+    0,
+    16,
+    0
+   ],
+   "windows": [],
+   "ranked": [
+    {
+     "id": "c0",
+     "document_id": "sql",
+     "version": 2,
+     "tokens": 14,
+     "text": "t1"
+    },
+    {
+     "id": "c1",
+     "document_id": "http",
+     "version": 1,
+     "tokens": 21,
+     "text": "t1"
+    },
+    {
+     "id": "c2",
+     "document_id": "sql",
+     "version": 1,
+     "tokens": 16,
+     "text": "t1"
+    },
+    {
+     "id": "c3",
+     "document_id": "sql",
+     "version": 1,
+     "tokens": 13,
+     "text": "t1"
+    },
+    {
+     "id": "c4",
+     "document_id": "idx",
+     "version": 1,
+     "tokens": 23,
+     "text": "t1"
+    }
+   ],
+   "active": {
+    "idx": 1,
+    "sql": 1
+   },
+   "budget": 79,
+   "selected": [
+    "c2"
+   ],
+   "excluded": [
+    [
+     "c0",
+     "obsolete"
+    ],
+    [
+     "c1",
+     "obsolete"
+    ],
+    [
+     "c3",
+     "duplicate"
+    ],
+    [
+     "c4",
+     "duplicate"
+    ]
+   ],
+   "used": 16
+  },
+  {
+   "window": [
+    364,
+    59,
+    33
+   ],
+   "windows": [
+    [
+     0,
+     59
+    ],
+    [
+     26,
+     85
+    ],
+    [
+     52,
+     111
+    ],
+    [
+     78,
+     137
+    ],
+    [
+     104,
+     163
+    ],
+    [
+     130,
+     189
+    ],
+    [
+     156,
+     215
+    ],
+    [
+     182,
+     241
+    ],
+    [
+     208,
+     267
+    ],
+    [
+     234,
+     293
+    ],
+    [
+     260,
+     319
+    ],
+    [
+     286,
+     345
+    ],
+    [
+     312,
+     364
+    ]
+   ],
+   "ranked": [
+    {
+     "id": "c0",
+     "document_id": "idx",
+     "version": 1,
+     "tokens": 25,
+     "text": "t0"
+    },
+    {
+     "id": "c1",
+     "document_id": "idx",
+     "version": 1,
+     "tokens": 1,
+     "text": "t0"
+    },
+    {
+     "id": "c2",
+     "document_id": "sql",
+     "version": 2,
+     "tokens": 12,
+     "text": "t0"
+    },
+    {
+     "id": "c3",
+     "document_id": "idx",
+     "version": 1,
+     "tokens": 5,
+     "text": "t1"
+    },
+    {
+     "id": "c4",
+     "document_id": "idx",
+     "version": 2,
+     "tokens": 13,
+     "text": "t2"
+    },
+    {
+     "id": "c5",
+     "document_id": "sql",
+     "version": 2,
+     "tokens": 10,
+     "text": "t2"
+    },
+    {
+     "id": "c6",
+     "document_id": "sql",
+     "version": 2,
+     "tokens": 15,
+     "text": "t0"
+    },
+    {
+     "id": "c7",
+     "document_id": "sql",
+     "version": 1,
+     "tokens": 10,
+     "text": "t1"
+    },
+    {
+     "id": "c8",
+     "document_id": "sql",
+     "version": 1,
+     "tokens": 31,
+     "text": "t3"
+    }
+   ],
+   "active": {
+    "idx": 1,
+    "sql": 2
+   },
+   "budget": 7,
+   "selected": [
+    "c1",
+    "c3"
+   ],
+   "excluded": [
+    [
+     "c0",
+     "budget"
+    ],
+    [
+     "c2",
+     "duplicate"
+    ],
+    [
+     "c4",
+     "obsolete"
+    ],
+    [
+     "c5",
+     "budget"
+    ],
+    [
+     "c6",
+     "duplicate"
+    ],
+    [
+     "c7",
+     "obsolete"
+    ],
+    [
+     "c8",
+     "obsolete"
+    ]
+   ],
+   "used": 6
+  },
+  {
+   "window": [
+    86,
+    39,
+    23
+   ],
+   "windows": [
+    [
+     0,
+     39
+    ],
+    [
+     16,
+     55
+    ],
+    [
+     32,
+     71
+    ],
+    [
+     48,
+     86
+    ]
+   ],
+   "ranked": [
+    {
+     "id": "c0",
+     "document_id": "idx",
+     "version": 1,
+     "tokens": 34,
+     "text": "t3"
+    },
+    {
+     "id": "c1",
+     "document_id": "sql",
+     "version": 2,
+     "tokens": 39,
+     "text": "t0"
+    },
+    {
+     "id": "c2",
+     "document_id": "sql",
+     "version": 1,
+     "tokens": 4,
+     "text": "t2"
+    },
+    {
+     "id": "c3",
+     "document_id": "idx",
+     "version": 2,
+     "tokens": 18,
+     "text": "t2"
+    },
+    {
+     "id": "c4",
+     "document_id": "sql",
+     "version": 2,
+     "tokens": 14,
+     "text": "t3"
+    },
+    {
+     "id": "c5",
+     "document_id": "idx",
+     "version": 1,
+     "tokens": 21,
+     "text": "t2"
+    },
+    {
+     "id": "c6",
+     "document_id": "idx",
+     "version": 1,
+     "tokens": 13,
+     "text": "t1"
+    },
+    {
+     "id": "c7",
+     "document_id": "idx",
+     "version": 1,
+     "tokens": 11,
+     "text": "t2"
+    },
+    {
+     "id": "c8",
+     "document_id": "sql",
+     "version": 2,
+     "tokens": 1,
+     "text": "t1"
+    }
+   ],
+   "active": {
+    "idx": 1,
+    "sql": 2
+   },
+   "budget": 74,
+   "selected": [
+    "c0",
+    "c1",
+    "c8"
+   ],
+   "excluded": [
+    [
+     "c2",
+     "obsolete"
+    ],
+    [
+     "c3",
+     "obsolete"
+    ],
+    [
+     "c4",
+     "duplicate"
+    ],
+    [
+     "c5",
+     "budget"
+    ],
+    [
+     "c6",
+     "budget"
+    ],
+    [
+     "c7",
+     "budget"
+    ]
+   ],
+   "used": 74
+  },
+  {
+   "window": [
+    335,
+    4,
+    0
+   ],
+   "windows": [
+    [
+     0,
+     4
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     8,
+     12
+    ],
+    [
+     12,
+     16
+    ],
+    [
+     16,
+     20
+    ],
+    [
+     20,
+     24
+    ],
+    [
+     24,
+     28
+    ],
+    [
+     28,
+     32
+    ],
+    [
+     32,
+     36
+    ],
+    [
+     36,
+     40
+    ],
+    [
+     40,
+     44
+    ],
+    [
+     44,
+     48
+    ],
+    [
+     48,
+     52
+    ],
+    [
+     52,
+     56
+    ],
+    [
+     56,
+     60
+    ],
+    [
+     60,
+     64
+    ],
+    [
+     64,
+     68
+    ],
+    [
+     68,
+     72
+    ],
+    [
+     72,
+     76
+    ],
+    [
+     76,
+     80
+    ],
+    [
+     80,
+     84
+    ],
+    [
+     84,
+     88
+    ],
+    [
+     88,
+     92
+    ],
+    [
+     92,
+     96
+    ],
+    [
+     96,
+     100
+    ],
+    [
+     100,
+     104
+    ],
+    [
+     104,
+     108
+    ],
+    [
+     108,
+     112
+    ],
+    [
+     112,
+     116
+    ],
+    [
+     116,
+     120
+    ],
+    [
+     120,
+     124
+    ],
+    [
+     124,
+     128
+    ],
+    [
+     128,
+     132
+    ],
+    [
+     132,
+     136
+    ],
+    [
+     136,
+     140
+    ],
+    [
+     140,
+     144
+    ],
+    [
+     144,
+     148
+    ],
+    [
+     148,
+     152
+    ],
+    [
+     152,
+     156
+    ],
+    [
+     156,
+     160
+    ],
+    [
+     160,
+     164
+    ],
+    [
+     164,
+     168
+    ],
+    [
+     168,
+     172
+    ],
+    [
+     172,
+     176
+    ],
+    [
+     176,
+     180
+    ],
+    [
+     180,
+     184
+    ],
+    [
+     184,
+     188
+    ],
+    [
+     188,
+     192
+    ],
+    [
+     192,
+     196
+    ],
+    [
+     196,
+     200
+    ],
+    [
+     200,
+     204
+    ],
+    [
+     204,
+     208
+    ],
+    [
+     208,
+     212
+    ],
+    [
+     212,
+     216
+    ],
+    [
+     216,
+     220
+    ],
+    [
+     220,
+     224
+    ],
+    [
+     224,
+     228
+    ],
+    [
+     228,
+     232
+    ],
+    [
+     232,
+     236
+    ],
+    [
+     236,
+     240
+    ],
+    [
+     240,
+     244
+    ],
+    [
+     244,
+     248
+    ],
+    [
+     248,
+     252
+    ],
+    [
+     252,
+     256
+    ],
+    [
+     256,
+     260
+    ],
+    [
+     260,
+     264
+    ],
+    [
+     264,
+     268
+    ],
+    [
+     268,
+     272
+    ],
+    [
+     272,
+     276
+    ],
+    [
+     276,
+     280
+    ],
+    [
+     280,
+     284
+    ],
+    [
+     284,
+     288
+    ],
+    [
+     288,
+     292
+    ],
+    [
+     292,
+     296
+    ],
+    [
+     296,
+     300
+    ],
+    [
+     300,
+     304
+    ],
+    [
+     304,
+     308
+    ],
+    [
+     308,
+     312
+    ],
+    [
+     312,
+     316
+    ],
+    [
+     316,
+     320
+    ],
+    [
+     320,
+     324
+    ],
+    [
+     324,
+     328
+    ],
+    [
+     328,
+     332
+    ],
+    [
+     332,
+     335
+    ]
+   ],
+   "ranked": [
+    {
+     "id": "c0",
+     "document_id": "sql",
+     "version": 1,
+     "tokens": 15,
+     "text": "t2"
+    },
+    {
+     "id": "c1",
+     "document_id": "http",
+     "version": 2,
+     "tokens": 11,
+     "text": "t3"
+    },
+    {
+     "id": "c2",
+     "document_id": "http",
+     "version": 1,
+     "tokens": 19,
+     "text": "t1"
+    },
+    {
+     "id": "c3",
+     "document_id": "idx",
+     "version": 1,
+     "tokens": 1,
+     "text": "t3"
+    },
+    {
+     "id": "c4",
+     "document_id": "sql",
+     "version": 2,
+     "tokens": 22,
+     "text": "t1"
+    },
+    {
+     "id": "c5",
+     "document_id": "idx",
+     "version": 1,
+     "tokens": 24,
+     "text": "t2"
+    },
+    {
+     "id": "c6",
+     "document_id": "idx",
+     "version": 1,
+     "tokens": 40,
+     "text": "t0"
+    }
+   ],
+   "active": {
+    "idx": 1,
+    "sql": 1
+   },
+   "budget": 59,
+   "selected": [
+    "c0",
+    "c3",
+    "c6"
+   ],
+   "excluded": [
+    [
+     "c1",
+     "obsolete"
+    ],
+    [
+     "c2",
+     "obsolete"
+    ],
+    [
+     "c4",
+     "obsolete"
+    ],
+    [
+     "c5",
+     "duplicate"
+    ]
+   ],
+   "used": 56
+  },
+  {
+   "window": [
+    234,
+    14,
+    2
+   ],
+   "windows": [
+    [
+     0,
+     14
+    ],
+    [
+     12,
+     26
+    ],
+    [
+     24,
+     38
+    ],
+    [
+     36,
+     50
+    ],
+    [
+     48,
+     62
+    ],
+    [
+     60,
+     74
+    ],
+    [
+     72,
+     86
+    ],
+    [
+     84,
+     98
+    ],
+    [
+     96,
+     110
+    ],
+    [
+     108,
+     122
+    ],
+    [
+     120,
+     134
+    ],
+    [
+     132,
+     146
+    ],
+    [
+     144,
+     158
+    ],
+    [
+     156,
+     170
+    ],
+    [
+     168,
+     182
+    ],
+    [
+     180,
+     194
+    ],
+    [
+     192,
+     206
+    ],
+    [
+     204,
+     218
+    ],
+    [
+     216,
+     230
+    ],
+    [
+     228,
+     234
+    ]
+   ],
+   "ranked": [
+    {
+     "id": "c0",
+     "document_id": "idx",
+     "version": 2,
+     "tokens": 12,
+     "text": "t2"
+    },
+    {
+     "id": "c1",
+     "document_id": "http",
+     "version": 1,
+     "tokens": 30,
+     "text": "t1"
+    },
+    {
+     "id": "c2",
+     "document_id": "sql",
+     "version": 2,
+     "tokens": 17,
+     "text": "t2"
+    },
+    {
+     "id": "c3",
+     "document_id": "sql",
+     "version": 2,
+     "tokens": 38,
+     "text": "t2"
+    },
+    {
+     "id": "c4",
+     "document_id": "http",
+     "version": 1,
+     "tokens": 38,
+     "text": "t3"
+    },
+    {
+     "id": "c5",
+     "document_id": "idx",
+     "version": 2,
+     "tokens": 13,
+     "text": "t3"
+    },
+    {
+     "id": "c6",
+     "document_id": "idx",
+     "version": 2,
+     "tokens": 8,
+     "text": "t3"
+    },
+    {
+     "id": "c7",
+     "document_id": "idx",
+     "version": 2,
+     "tokens": 21,
+     "text": "t1"
+    }
+   ],
+   "active": {
+    "idx": 2,
+    "sql": 1
+   },
+   "budget": 0,
+   "selected": [],
+   "excluded": [
+    [
+     "c0",
+     "budget"
+    ],
+    [
+     "c1",
+     "obsolete"
+    ],
+    [
+     "c2",
+     "obsolete"
+    ],
+    [
+     "c3",
+     "obsolete"
+    ],
+    [
+     "c4",
+     "obsolete"
+    ],
+    [
+     "c5",
+     "budget"
+    ],
+    [
+     "c6",
+     "budget"
+    ],
+    [
+     "c7",
+     "budget"
+    ]
+   ],
+   "used": 0
+  },
+  {
+   "window": [
+    174,
+    26,
+    17
+   ],
+   "windows": [
+    [
+     0,
+     26
+    ],
+    [
+     9,
+     35
+    ],
+    [
+     18,
+     44
+    ],
+    [
+     27,
+     53
+    ],
+    [
+     36,
+     62
+    ],
+    [
+     45,
+     71
+    ],
+    [
+     54,
+     80
+    ],
+    [
+     63,
+     89
+    ],
+    [
+     72,
+     98
+    ],
+    [
+     81,
+     107
+    ],
+    [
+     90,
+     116
+    ],
+    [
+     99,
+     125
+    ],
+    [
+     108,
+     134
+    ],
+    [
+     117,
+     143
+    ],
+    [
+     126,
+     152
+    ],
+    [
+     135,
+     161
+    ],
+    [
+     144,
+     170
+    ],
+    [
+     153,
+     174
+    ]
+   ],
+   "ranked": [
+    {
+     "id": "c0",
+     "document_id": "sql",
+     "version": 2,
+     "tokens": 40,
+     "text": "t1"
+    },
+    {
+     "id": "c1",
+     "document_id": "sql",
+     "version": 2,
+     "tokens": 8,
+     "text": "t3"
+    },
+    {
+     "id": "c2",
+     "document_id": "sql",
+     "version": 2,
+     "tokens": 10,
+     "text": "t2"
+    },
+    {
+     "id": "c3",
+     "document_id": "http",
+     "version": 1,
+     "tokens": 30,
+     "text": "t1"
+    },
+    {
+     "id": "c4",
+     "document_id": "sql",
+     "version": 1,
+     "tokens": 16,
+     "text": "t2"
+    }
+   ],
+   "active": {
+    "idx": 1,
+    "sql": 2
+   },
+   "budget": 52,
+   "selected": [
+    "c0",
+    "c1"
+   ],
+   "excluded": [
+    [
+     "c2",
+     "budget"
+    ],
+    [
+     "c3",
+     "obsolete"
+    ],
+    [
+     "c4",
+     "obsolete"
+    ]
+   ],
+   "used": 48
+  }
+ ]
+}
