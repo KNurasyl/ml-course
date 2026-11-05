@@ -46,6 +46,16 @@ def test_cards_become_cheatsheet_sections_and_two_anki_rows(tmp_path):
     assert len(records) == 2 and records[1][1].endswith("Главная ошибка: нет квадрата")
 
 
+def test_anki_rows_escape_angle_brackets_and_keep_code_spans():
+    # Anki reads the fields as HTML: "x_<t" must not open a tag that hides the rest of the answer.
+    card = {"module": {"id": "M09"}, "lesson": {"id": "M09-L01", "title": "Шаблон"},
+            "fields": {"Правило": "P(x_t ∣ x_<t), где 0 < T", "Смысл величин": "шаблон `<user>Hi</user>`",
+                       "Когда применять": "всегда", "Главная ошибка": "Нет"}}
+    records = [row for row in csv.reader(io.StringIO(cheatsheet.anki_rows([card]))) if not row[0].startswith("#")]
+    assert records[0][1] == "P(x_t ∣ x_&lt;t), где 0 &lt; T<br><br>шаблон <code>&lt;user&gt;Hi&lt;/user&gt;</code>"
+    assert records[1][1] == "всегда<br><br>Главная ошибка: нет"
+
+
 def test_lesson_card_rows_and_position_are_linted(tmp_path):
     (tmp_path / "course/lessons").mkdir(parents=True)
     sections = ["Результат и входные знания", "Объяснение", "Разобранный пример", "Практика с поддержкой",

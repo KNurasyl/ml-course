@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import html
 import io
 import json
 from pathlib import Path
@@ -66,13 +67,18 @@ def render(cards: list[dict], total: int) -> str:
     return "\n".join(lines) + "\n"
 
 
+def anki_html(text: str) -> str:
+    # The CSV declares #html:true, so "x_<t" or "<user>" would be read as tags: escape them, show `code` as code.
+    return re.sub(r"`([^`]+)`", r"<code>\1</code>", html.escape(text, quote=False))
+
+
 def anki_rows(cards: list[dict]) -> str:
     buffer = io.StringIO()
     buffer.write("#separator:Comma\n#html:true\n#columns:Вопрос,Ответ,Теги\n#tags column:3\n")
     writer = csv.writer(buffer, lineterminator="\n")
     for card in cards:
-        lesson, fields = card["lesson"], card["fields"]
-        topic = f"{lesson['id']} «{lesson['title']}»"
+        lesson, fields = card["lesson"], {name: anki_html(value) for name, value in card["fields"].items()}
+        topic = anki_html(f"{lesson['id']} «{lesson['title']}»")
         tag = f"ml-llm-course {card['module']['id']} {lesson['id']}"
         writer.writerow([f"{topic}: правило и смысл величин?",
                          f"{fields.get('Правило', '')}<br><br>{fields.get('Смысл величин', '')}", tag])
