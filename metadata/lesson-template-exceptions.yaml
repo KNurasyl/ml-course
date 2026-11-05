@@ -28,6 +28,6 @@ lessons:
 # listed here every lesson must already have the element; add a module once it is complete.
 rollout:
   analogy: [M00, M01, M02, M03, M04, M05, M06, M07, M08, M09, M10]
-  card: [M00, M01, M02, M03, M04, M05, M06, M07, M08, M09]
+  card: [M00, M01, M02, M03, M04, M05, M06, M07, M08, M09, M10]
   sources: [M00, M01, M02, M03, M04, M05, M06, M07, M08, M09]
   exercises: [M02, M03, M04]  # T26: at least three auto-checked contracts in the module
