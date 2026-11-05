@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="2c87e9e5e6d8cceb370db7e910302999537f34e5ba0781011cb69fd4ff4f7a89"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="35c2612c647ddce53775bbe88a034c5a13ad600fbbd5ea09ae3bb225f29e2c69"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -13528,7 +13528,9 @@ print(hashlib.sha256(payload).hexdigest())
 </table></div>
 <h2 id="M13-L01--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer" class="external-link">Python: hashlib — безопасные хеши и дайджесты</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc8785" target="_blank" rel="noopener noreferrer" class="external-link">RFC 8785: JSON Canonicalization Scheme</a> — каноническая сериализация JSON для хеширования и подписи: порядок ключей и запись чисел (на английском)</li>
+<li><a href="https://docs.docker.com/reference/cli/docker/image/pull/" target="_blank" rel="noopener noreferrer" class="external-link">Docker: docker image pull</a> — загрузка образа по digest, неизменяемому идентификатору, в отличие от тега (на английском)</li>
 <li><a href="labs/M13/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M13">Оглавление модуля</a></p>
@@ -13655,7 +13657,9 @@ for invalid in [True, float('nan'), '2']:
 </table></div>
 <h2 id="M13-L02--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://json-schema.org/understanding-json-schema/reference/object" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://json-schema.org/understanding-json-schema/reference/object" target="_blank" rel="noopener noreferrer" class="external-link">JSON Schema: object — properties, required и additionalProperties</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc9457" target="_blank" rel="noopener noreferrer" class="external-link">RFC 9457: Problem Details for HTTP APIs</a> — машинно различимое описание ошибки HTTP API: type, status, detail (на английском)</li>
+<li><a href="https://docs.python.org/3.11/library/functions.html#bool" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: bool</a> — bool является подклассом int, поэтому isinstance(True, int) истинно (на английском)</li>
 <li><a href="labs/M13/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M13">Оглавление модуля</a></p>
@@ -13773,7 +13777,9 @@ for weight, bias in [(2, 1), (20, 1)]:
 </table></div>
 <h2 id="M13-L03--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://docs.python.org/3/library/unittest.html" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://docs.python.org/3/library/unittest.html" target="_blank" rel="noopener noreferrer" class="external-link">Python: unittest — фреймворк модульных тестов</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://stryker-mutator.io/docs/" target="_blank" rel="noopener noreferrer" class="external-link">Stryker Mutator: What is mutation testing?</a> — мутационное тестирование: выживший мутант показывает тест, который ничего не проверяет (на английском)</li>
+<li><a href="https://research.google/pubs/the-ml-test-score-a-rubric-for-ml-production-readiness-and-technical-debt-reduction/" target="_blank" rel="noopener noreferrer" class="external-link">Breck et al.: The ML Test Score</a> — 28 конкретных тестов и проверок мониторинга для ML-систем в продакшене (Google, на английском)</li>
 <li><a href="labs/M13/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M13">Оглавление модуля</a></p>
@@ -13894,7 +13900,9 @@ p95 = values[math.ceil(.95 * len(values)) - 1]
 </table></div>
 <h2 id="M13-L04--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://docs.python.org/3/library/time.html#time.perf_counter" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://docs.python.org/3/library/time.html#time.perf_counter" target="_blank" rel="noopener noreferrer" class="external-link">Python: time.perf_counter — часы для измерения интервалов</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://research.google/pubs/the-tail-at-scale/" target="_blank" rel="noopener noreferrer" class="external-link">Dean, Barroso: The Tail at Scale</a> — почему редкие медленные ответы компонентов определяют задержку системы из многих обращений (Google, на английском)</li>
+<li><a href="https://opentelemetry.io/docs/concepts/signals/traces/" target="_blank" rel="noopener noreferrer" class="external-link">OpenTelemetry: Traces</a> — трасса и span: этапы одного запроса со временем каждого (на английском)</li>
 <li><a href="labs/M13/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M13">Оглавление модуля</a></p>
@@ -14142,7 +14150,9 @@ print(active['version'])  # 1.0
 </table></div>
 <h2 id="M13-L05--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://docs.docker.com/build/building/best-practices/" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://docs.docker.com/build/building/best-practices/" target="_blank" rel="noopener noreferrer" class="external-link">Docker: Building best practices</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://sre.google/sre-book/postmortem-culture/" target="_blank" rel="noopener noreferrer" class="external-link">Google SRE Book: Postmortem Culture</a> — разбор инцидента без поиска виноватого: факты, влияние, действия (на английском)</li>
+<li><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/" target="_blank" rel="noopener noreferrer" class="external-link">Kubernetes: Liveness, Readiness and Startup Probes</a> — что проверяет каждая проба; ни одна не проверяет правильность ответов (на английском)</li>
 <li><a href="labs/M13/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M13">Оглавление модуля</a></p>
@@ -14333,6 +14343,7 @@ document.querySelectorAll(&#x27;input&#x27;).forEach(el=&gt;el.addEventListener(
 </table></div>
 <h2 id="M13-L06--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://docs.python.org/3.11/library/http.server.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: HTTPServer</a>, <a href="https://docs.python.org/3.11/library/threading.html" target="_blank" rel="noopener noreferrer" class="external-link">threading и семафоры</a>. Формулы очереди здесь — расчёт для заданного детерминированного расписания, а не универсальная теория очередей.</p>
+<p>Для углубления: <a href="https://sre.google/sre-book/handling-overload/" target="_blank" rel="noopener noreferrer" class="external-link">Google SRE Book: Handling Overload</a> — отказ от лишней нагрузки, троттлинг на стороне клиента и критичность запросов; <a href="https://sre.google/sre-book/addressing-cascading-failures/" target="_blank" rel="noopener noreferrer" class="external-link">Google SRE Book: Addressing Cascading Failures</a> — управление очередями, сброс нагрузки и передача дедлайнов между сервисами (обе на английском).</p>
 <div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l06-a-b-c">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L05"><small>Предыдущий раздел</small>← M13-L05. Неудачный релиз и восстановление</a><a href="#M14"><small>Следующий раздел</small>M14 Агенты и инструменты →</a></nav></article><article class="material" id="M14" data-title="M14 Агенты и инструменты" data-short-title="Агенты и инструменты" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Агенты и инструменты</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: M10, M11 и M13: поиск, оценивание и эксплуатация.</p>
 <h2 id="M14--уроки-и-практические-ступени">Уроки и практические ступени</h2>
 <ol>
