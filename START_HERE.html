@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="618db8df56e2f82d5baaded7574099390a0ee66463ddcf45ccb2a689deac7196"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="e4b194a26bbd23dc308ecef5bffb15c4ad531c997a00561ea20b726e5f453707"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -14640,7 +14640,9 @@ assert result['stop'] == 'finished'
 </table></div>
 <h2 id="M14-L01--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://json-schema.org/understanding-json-schema/reference/object" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://json-schema.org/understanding-json-schema/reference/object" target="_blank" rel="noopener noreferrer" class="external-link">JSON Schema: object — properties, required и additionalProperties</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noopener noreferrer" class="external-link">Anthropic: Building effective agents</a> — workflow с заранее заданными путями в коде против агента, который сам выбирает следующий шаг, и совет начинать с самого простого решения (на английском)</li>
+<li><a href="https://arxiv.org/abs/2210.03629" target="_blank" rel="noopener noreferrer" class="external-link">Yao et al.: ReAct: Synergizing Reasoning and Acting in Language Models</a> — чередование рассуждений и действий с инструментами по полученным наблюдениям (на английском)</li>
 <li><a href="labs/M14/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M14">Оглавление модуля</a></p>
@@ -14762,7 +14764,9 @@ assert not validate({'document_id': 1})
 </table></div>
 <h2 id="M14-L02--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://json-schema.org/understanding-json-schema/reference/object" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://json-schema.org/understanding-json-schema/reference/object" target="_blank" rel="noopener noreferrer" class="external-link">JSON Schema: object — properties, required и additionalProperties</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://modelcontextprotocol.io/specification/2025-06-18/server/tools" target="_blank" rel="noopener noreferrer" class="external-link">Model Context Protocol: Tools</a> — описание инструмента с inputSchema и требование к серверу проверять все входы инструмента (на английском)</li>
+<li><a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/" target="_blank" rel="noopener noreferrer" class="external-link">OWASP LLM06:2025 Excessive Agency</a> — лишние функции, права и автономия LLM-приложения и способы их ограничить (на английском)</li>
 <li><a href="labs/M14/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M14">Оглавление модуля</a></p>
@@ -14885,7 +14889,9 @@ assert 'text' not in read('s1', 'd2')
 </table></div>
 <h2 id="M14-L03--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" target="_blank" rel="noopener noreferrer" class="external-link">OWASP Top 10 for Large Language Model Applications</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://arxiv.org/abs/2302.12173" target="_blank" rel="noopener noreferrer" class="external-link">Greshake et al.: Not what you've signed up for</a> — непрямая инъекция через данные, которые приложение само извлекает: граница между данными и инструкциями размыта (на английском)</li>
+<li><a href="https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authorization/" target="_blank" rel="noopener noreferrer" class="external-link">OWASP API1:2023 Broken Object Level Authorization</a> — проверка доступа к каждому объекту по его владельцу на стороне сервера (на английском)</li>
 <li><a href="labs/M14/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M14">Оглавление модуля</a></p>
@@ -15126,7 +15132,9 @@ assert execute([read, read])['stop'] == 'repeated_call'
 </table></div>
 <h2 id="M14-L04--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://docs.python.org/3/library/time.html#time.monotonic" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://docs.python.org/3/library/time.html#time.monotonic" target="_blank" rel="noopener noreferrer" class="external-link">Python: time.monotonic — монотонные часы для таймаутов</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/" target="_blank" rel="noopener noreferrer" class="external-link">AWS Builders' Library: Timeouts, retries, and backoff with jitter</a> — таймауты, ограниченные повторы и экспоненциальная задержка со случайным разбросом (на английском)</li>
+<li><a href="https://docs.stripe.com/api/idempotent_requests" target="_blank" rel="noopener noreferrer" class="external-link">Stripe API: Idempotent requests</a> — ключ идемпотентности: повтор запроса записи не выполняет операцию дважды (на английском)</li>
 <li><a href="labs/M14/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M14">Оглавление модуля</a></p>
@@ -15245,7 +15253,9 @@ assert accuracy == 1.0
 </table></div>
 <h2 id="M14-L05--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://docs.python.org/3/library/unittest.html" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://docs.python.org/3/library/unittest.html" target="_blank" rel="noopener noreferrer" class="external-link">Python: unittest — фреймворк модульных тестов</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://arxiv.org/abs/2406.12045" target="_blank" rel="noopener noreferrer" class="external-link">Yao et al.: τ-bench</a> — агент с инструментами и правилами домена в диалоге с пользователем; метрика pass^k для надёжности по повторным попыткам (на английском)</li>
+<li><a href="https://arxiv.org/abs/2406.13352" target="_blank" rel="noopener noreferrer" class="external-link">Debenedetti et al.: AgentDojo</a> — задачи и тесты безопасности для агентов, работающих с недоверенными данными: полезность и устойчивость к инъекциям измеряются отдельно (на английском)</li>
 <li><a href="labs/M14/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M14">Оглавление модуля</a></p>
@@ -15424,6 +15434,7 @@ function draw(){const s=scenarios[$(&#x27;action&#x27;).value];$(&#x27;proposal&
 </table></div>
 <h2 id="M14-L06--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">Карточка локальной Qwen</a>, <a href="https://docs.python.org/3.11/library/json.html" target="_blank" rel="noopener noreferrer" class="external-link">Python JSON</a>. Контракты действий и учебные данные созданы для этого курса.</p>
+<p>Для углубления: <a href="https://huggingface.co/docs/transformers/v4.57.5/en/chat_extras" target="_blank" rel="noopener noreferrer" class="external-link">Transformers 4.57: Tool use</a> — как передать описания инструментов в chat template и вернуть результат инструмента в историю сообщений (на английском).</p>
 <div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l06-a-b-c">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L05"><small>Предыдущий раздел</small>← M14-L05. Проверка агента</a><a href="#M15"><small>Следующий раздел</small>M15 Речь и голосовой диалог →</a></nav></article><article class="material" id="M15" data-title="M15 Речь и голосовой диалог" data-short-title="Речь и голосовой диалог" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Речь и голосовой диалог</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: M09, M11 и M13: диалог, метрики и диагностика.</p>
 <h2 id="M15--уроки-и-практические-ступени">Уроки и практические ступени</h2>
 <ol>
