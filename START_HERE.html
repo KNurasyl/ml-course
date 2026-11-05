@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="e4b194a26bbd23dc308ecef5bffb15c4ad531c997a00561ea20b726e5f453707"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="977b7559812743436b0c64d206324d7b0f6764cb23dc423427061dd5b1c519b6"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -15613,7 +15613,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M15.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M15.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L06"><small>Предыдущий раздел</small>← M14-L06. Модель предлагает инструмент, исполнитель проверяет</a><a href="#M15-L01"><small>Следующий раздел</small>M15-L01. Аудио и речь →</a></nav></article><article class="material" id="M15-L01" data-title="M15-L01. Аудио и речь" data-short-title="Аудио и речь" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Аудио и речь</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L01--объяснение">Объяснение</a></li><li><a href="#M15-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M15-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+"></iframe><p><a href="course/visuals/M15.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M15.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L06"><small>Предыдущий раздел</small>← M14-L06. Модель предлагает инструмент, исполнитель проверяет</a><a href="#M15-L01"><small>Следующий раздел</small>M15-L01. Аудио и речь →</a></nav></article><article class="material" id="M15-L01" data-title="M15-L01. Аудио и речь" data-short-title="Аудио и речь" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Аудио и речь</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L01--объяснение">Объяснение</a></li><li><a href="#M15-L01--аналогия-несжатое-изображение-и-видео">Аналогия: несжатое изображение и видео</a></li><li><a href="#M15-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M15-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, Vosk 0.3.45 и vosk-model-small-ru-0.22; синтез — Windows System.Speech с голосом Microsoft Irina Desktop · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/wave.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: wave</a></p>
 </blockquote>
@@ -15628,6 +15628,47 @@ draw();
 <p>Речевой сигнал содержит паузы, шумы и изменения громкости. Визуализация формы волны помогает увидеть тишину, обрезание и длину фрагментов, но не показывает качество распознавания сама по себе. Красивый график не означает разборчивую речь. Слушай запись, проверяй технические параметры и сохраняй текстовый эталон для последующего сравнения.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M15-L01-desktop.svg" target="_blank" data-figure="course/assets/responsive/M15-L01-desktop.svg" aria-label="Увеличить рисунок: Отсчёт: амплитуда; 16000 отсчётов / с; PCM16: 2 байта; Моно: 1 канал; 2 с = 64000 байтов; WAV добавляет заголовок"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M15-L01-mobile.svg"><img src="course/assets/responsive/M15-L01-desktop.svg" alt="Отсчёт: амплитуда; 16000 отсчётов / с; PCM16: 2 байта; Моно: 1 канал; 2 с = 64000 байтов; WAV добавляет заголовок" loading="lazy"></picture></a><span class="figure-hint">Отсчёт: амплитуда; 16000 отсчётов / с; PCM16: 2 байта; Моно: 1 канал; 2 с = 64000 байтов; WAV добавляет заголовок · Открыть крупнее ↗</span></p>
 <p>Сопоставь подписи с примером: объясни величины и укажи, какие отношения показаны на рисунке.</p>
+<h2 id="M15-L01--аналогия-несжатое-изображение-и-видео">Аналогия: несжатое изображение и видео</h2>
+<p>Как похоже: размер несжатой картинки — ширина × высота × байты на пиксель, а у видео ещё умножается на кадры в секунду. Файл .mp4 — контейнер, и кодек внутри может быть разным. Если в заголовке картинки исправить ширину, изображение не масштабируется, а превратится в мусор. Пересвеченные пиксели уже потеряли детали, и уменьшение яркости их не вернёт.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Частота дискретизации</td>
+  <td>Кадры в секунду у видео</td>
+</tr>
+<tr>
+  <td>PCM16: 2 байта на отсчёт</td>
+  <td>Байты на пиксель у несжатого изображения</td>
+</tr>
+<tr>
+  <td>Моно и стерео</td>
+  <td>Один канал яркости или три канала RGB</td>
+</tr>
+<tr>
+  <td>WAV — контейнер</td>
+  <td>.mp4 — контейнер, кодек внутри может быть разным</td>
+</tr>
+<tr>
+  <td>Фрейм: по отсчёту каждого канала</td>
+  <td>Пиксель: значения всех каналов цвета вместе</td>
+</tr>
+<tr>
+  <td>Resampling вместо правки заголовка</td>
+  <td>Масштабирование картинки вместо правки ширины в заголовке</td>
+</tr>
+<tr>
+  <td>Клиппинг</td>
+  <td>Пересвеченные пиксели: уменьшение яркости не вернёт детали</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> картинку видно целиком, и дефект часто заметен глазом, а звук разворачивается во времени: пауза, обрыв или шум проявляются только при прослушивании и в отдельных измерениях. И у изображения нет шага, похожего на распознавание речи: правильный формат ещё не гарантирует, что ASR поймёт слова.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M15-L01--разобранный-пример">Разобранный пример</h2>
 <p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса (например, в ячейке Jupyter). Для примеров M15 сначала создай <code>question.wav</code> запуском лабораторной.</p>
 <p>Две секунды моно PCM16 при 16000 Гц содержат 32000 отсчётов и 64000 байтов полезного звука. Заголовок WAV добавляет служебные байты. Для стерео объём полезной части удвоится до 128000 байтов при той же длительности.</p>
@@ -15663,7 +15704,7 @@ with wave.open('artifacts/M15/question.wav', 'rb') as audio:
 <li><a href="labs/M15/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M15">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M15">Модуль и домашняя работа</a> · <a href="#M15-SOLUTIONS--m15-l01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M15-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15"><small>Предыдущий раздел</small>← M15 Речь и голосовой диалог</a><a href="#M15-L02"><small>Следующий раздел</small>M15-L02. Распознавание и сегменты →</a></nav></article><article class="material" id="M15-L02" data-title="M15-L02. Распознавание и сегменты" data-short-title="Распознавание и сегменты" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Распознавание и сегменты</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L02--объяснение">Объяснение</a></li><li><a href="#M15-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L02--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M15-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M15">Модуль и домашняя работа</a> · <a href="#M15-SOLUTIONS--m15-l01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M15-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15"><small>Предыдущий раздел</small>← M15 Речь и голосовой диалог</a><a href="#M15-L02"><small>Следующий раздел</small>M15-L02. Распознавание и сегменты →</a></nav></article><article class="material" id="M15-L02" data-title="M15-L02. Распознавание и сегменты" data-short-title="Распознавание и сегменты" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Распознавание и сегменты</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L02--объяснение">Объяснение</a></li><li><a href="#M15-L02--аналогия-поиск-по-мере-набора-с-debounce">Аналогия: поиск по мере набора с debounce</a></li><li><a href="#M15-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L02--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M15-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, Vosk 0.3.45 и vosk-model-small-ru-0.22; синтез — Windows System.Speech с голосом Microsoft Irina Desktop · проверено 04.11.2026 · источник: <a href="https://alphacephei.com/vosk/models" target="_blank" rel="noopener noreferrer" class="external-link">модели Vosk</a></p>
 </blockquote>
@@ -15678,6 +15719,47 @@ with wave.open('artifacts/M15/question.wav', 'rb') as audio:
 <p>Сохраняй исходный текст, распознанную гипотезу и условия записи. При оценке ответа кандидата полезно позволить исправить ошибку расшифровки. Иначе продукт может наказать человека за дефект ASR. Само наличие низкого среднего WER не исключает критическую замену «не поддерживает» на «поддерживает», поэтому позже потребуется оценка смысловых ошибок.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M15-L02-desktop.svg" target="_blank" data-figure="course/assets/responsive/M15-L02-desktop.svg" aria-label="Увеличить рисунок: Микрофон / WAV; Блоки PCM; Промежуточный текст; Граница сегмента; Окончательный текст; RTF = время / аудио"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M15-L02-mobile.svg"><img src="course/assets/responsive/M15-L02-desktop.svg" alt="Микрофон / WAV; Блоки PCM; Промежуточный текст; Граница сегмента; Окончательный текст; RTF = время / аудио" loading="lazy"></picture></a><span class="figure-hint">Сопоставление понятий; строки не означают поток выполнения. · Открыть крупнее ↗</span></p>
 <p>Сопоставь подписи с примером: объясни величины и укажи, какие отношения показаны на рисунке.</p>
+<h2 id="M15-L02--аналогия-поиск-по-мере-набора-с-debounce">Аналогия: поиск по мере набора с debounce</h2>
+<p>Как похоже: строка поиска показывает подсказки по каждой новой букве, но запрос уходит на сервер только после паузы — debounce — или нажатия Enter. Короткая задержка отправит запрос по недописанному слову, длинная заставит ждать. Записывать каждое нажатие клавиши как отдельный запрос — значит засорить историю. А кнопка «Вы имели в виду…» даёт пользователю исправить распознанное.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Промежуточная гипотеза</td>
+  <td>Подсказки поиска, меняющиеся с каждой буквой</td>
+</tr>
+<tr>
+  <td>Окончательный сегмент</td>
+  <td>Запрос, отправленный после Enter</td>
+</tr>
+<tr>
+  <td>Порог тишины</td>
+  <td>Задержка debounce: короткая — недописанное слово, длинная — ожидание</td>
+</tr>
+<tr>
+  <td>Каждая partial как новая реплика в LLM</td>
+  <td>Каждое нажатие клавиши как отдельный поисковый запрос в логе</td>
+</tr>
+<tr>
+  <td>RTF</td>
+  <td>Время обработки на секунду записи: больше 1 — не успевает за речью</td>
+</tr>
+<tr>
+  <td>Исправление расшифровки пользователем</td>
+  <td>«Вы имели в виду…»: пользователь правит распознанное</td>
+</tr>
+<tr>
+  <td>Загрузка модели при первом вызове</td>
+  <td>Холодный старт serverless-функции</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> подсказки поиска строятся по точно набранным буквам, и ввод не искажается. ASR восстанавливает слова по звуку вероятностно и может молча заменить «не поддерживает» на «поддерживает» — debounce это не исправит, такую ошибку ловят сравнением с эталоном. И пауза в речи бывает посреди мысли, а не только в конце.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M15-L02--разобранный-пример">Разобранный пример</h2>
 <p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса (например, в ячейке Jupyter). Для примеров M15 сначала создай <code>question.wav</code> запуском лабораторной.</p>
 <p>Контрольная запись длительностью 4,505 с распознавалась 6,021 с: RTF≈1,337. Время включало работу конкретного локального адаптера. Этот результат не подтверждает разговор без задержки; он задаёт исходную точку измерений.</p>
@@ -15713,7 +15795,7 @@ print(text)
 <li><a href="labs/M15/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M15">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M15">Модуль и домашняя работа</a> · <a href="#M15-SOLUTIONS--m15-l02">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M15-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L01"><small>Предыдущий раздел</small>← M15-L01. Аудио и речь</a><a href="#M15-L03"><small>Следующий раздел</small>M15-L03. Синтез и доставка →</a></nav></article><article class="material" id="M15-L03" data-title="M15-L03. Синтез и доставка" data-short-title="Синтез и доставка" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Синтез и доставка</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L03--объяснение">Объяснение</a></li><li><a href="#M15-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L03--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M15-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M15">Модуль и домашняя работа</a> · <a href="#M15-SOLUTIONS--m15-l02">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M15-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L01"><small>Предыдущий раздел</small>← M15-L01. Аудио и речь</a><a href="#M15-L03"><small>Следующий раздел</small>M15-L03. Синтез и доставка →</a></nav></article><article class="material" id="M15-L03" data-title="M15-L03. Синтез и доставка" data-short-title="Синтез и доставка" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Синтез и доставка</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L03--объяснение">Объяснение</a></li><li><a href="#M15-L03--аналогия-отправлено-доставлено-прочитано">Аналогия: отправлено, доставлено, прочитано</a></li><li><a href="#M15-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L03--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M15-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, Vosk 0.3.45 и vosk-model-small-ru-0.22; синтез — Windows System.Speech с голосом Microsoft Irina Desktop · проверено 04.11.2026 · источник: <a href="https://learn.microsoft.com/dotnet/api/system.speech.synthesis" target="_blank" rel="noopener noreferrer" class="external-link">System.Speech.Synthesis</a></p>
 </blockquote>
@@ -15728,6 +15810,47 @@ print(text)
 <p>При измерении качества проверь слышимость, разборчивость, правильность технических терминов и управление громкостью. Не выводи качество по размеру WAV или отсутствию исключения. Для самостоятельного обучения достаточно прослушать несколько фраз с SQL, API и отрицаниями и сохранить конкретные наблюдения. Человеческая оценка должна быть названа человеческой, а автоматические технические проверки — техническими.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M15-L03-desktop.svg" target="_blank" data-figure="course/assets/responsive/M15-L03-desktop.svg" aria-label="Увеличить рисунок: Текст ответа; Разговорная версия; TTS создаёт WAV; Доставка клиенту; Проверка turn_id; Звук действительно начался"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M15-L03-mobile.svg"><img src="course/assets/responsive/M15-L03-desktop.svg" alt="Текст ответа; Разговорная версия; TTS создаёт WAV; Доставка клиенту; Проверка turn_id; Звук действительно начался" loading="lazy"></picture></a><span class="figure-hint">Сопоставление понятий; строки не означают поток выполнения. · Открыть крупнее ↗</span></p>
 <p>Сопоставь подписи с примером: объясни величины и укажи, какие отношения показаны на рисунке.</p>
+<h2 id="M15-L03--аналогия-отправлено-доставлено-прочитано">Аналогия: отправлено, доставлено, прочитано</h2>
+<p>Как похоже: у письма есть разные статусы — отправлено сервером, доставлено в ящик, открыто человеком. Только последний значит, что его действительно увидели. Вместо HTML-письма иногда шлют короткую SMS: форма проще, смысл тот же. А пуш «заказ в пути» не показывают, если заказ уже отменён.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>WAV создан</td>
+  <td>Письмо отправлено сервером</td>
+</tr>
+<tr>
+  <td>Файл доставлен клиенту</td>
+  <td>Письмо доставлено в ящик</td>
+</tr>
+<tr>
+  <td>Звук начал играть</td>
+  <td>Письмо открыто: только это значит, что его увидели</td>
+</tr>
+<tr>
+  <td>Разговорная версия текста</td>
+  <td>SMS вместо HTML-письма: короче, но смысл тот же</td>
+</tr>
+<tr>
+  <td>Проверка turn_id перед воспроизведением</td>
+  <td>Пуш «заказ в пути» не показывают, если заказ уже отменён</td>
+</tr>
+<tr>
+  <td>Синтез по предложениям</td>
+  <td>Длинное письмо частями: первая часть быстрее, связность хуже</td>
+</tr>
+<tr>
+  <td>Набор голосов зависит от Windows</td>
+  <td>Шрифты на машине получателя: письмо выглядит по-разному</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> письмо можно открыть позже, и оно ничего не потеряет. Голосовой ответ живёт внутри разговора: вопрос, прозвучавший с опозданием, мешает уже идущему ходу, поэтому устаревший звук не откладывают, а отбрасывают. И письмо читают глазами, а синтезированную речь могут не расслышать — разборчивость проверяют прослушиванием.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M15-L03--разобранный-пример">Разобранный пример</h2>
 <p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса (например, в ячейке Jupyter). Для примеров M15 сначала создай <code>question.wav</code> запуском лабораторной.</p>
 <p>Функция synthesize_wav возвращает путь к настоящему файлу. В контрольном запуске создание вопроса заняло 1,529 с, а длина звука составила 4,505 с. Эти величины описывают разные процессы.</p>
@@ -15763,7 +15886,7 @@ path = synthesize_wav('Объясните, зачем нужна транзак�
 <li><a href="labs/M15/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M15">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M15">Модуль и домашняя работа</a> · <a href="#M15-SOLUTIONS--m15-l03">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M15-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L02"><small>Предыдущий раздел</small>← M15-L02. Распознавание и сегменты</a><a href="#M15-L04"><small>Следующий раздел</small>M15-L04. Поток и перебивание →</a></nav></article><article class="material" id="M15-L04" data-title="M15-L04. Поток и перебивание" data-short-title="Поток и перебивание" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Поток и перебивание</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L04--объяснение">Объяснение</a></li><li><a href="#M15-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L04--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M15-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M15">Модуль и домашняя работа</a> · <a href="#M15-SOLUTIONS--m15-l03">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M15-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L02"><small>Предыдущий раздел</small>← M15-L02. Распознавание и сегменты</a><a href="#M15-L04"><small>Следующий раздел</small>M15-L04. Поток и перебивание →</a></nav></article><article class="material" id="M15-L04" data-title="M15-L04. Поток и перебивание" data-short-title="Поток и перебивание" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Поток и перебивание</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L04--объяснение">Объяснение</a></li><li><a href="#M15-L04--аналогия-устаревший-ответ-fetch-в-react">Аналогия: устаревший ответ fetch в React</a></li><li><a href="#M15-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L04--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M15-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, Vosk 0.3.45 и vosk-model-small-ru-0.22; синтез — Windows System.Speech с голосом Microsoft Irina Desktop; в браузере — fetch и AbortController · проверено 04.11.2026 · источник: <a href="https://developer.mozilla.org/docs/Web/API/AbortController" target="_blank" rel="noopener noreferrer" class="external-link">MDN: AbortController</a></p>
 </blockquote>
@@ -15885,6 +16008,47 @@ draw();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
 "></iframe><p><a href="course/visuals/M15.html" target="_blank">Открыть опыт отдельно на весь экран</a></p></section>
 <p>Сопоставь подписи с примером: объясни величины и укажи, какие отношения показаны на рисунке.</p>
+<h2 id="M15-L04--аналогия-устаревший-ответ-fetch-в-react">Аналогия: устаревший ответ fetch в React</h2>
+<p>Как похоже: пользователь вводит новый поисковый запрос, пока старый ещё грузится. Если старый ответ придёт позже нового и обновит экран, пользователь увидит не то, что искал. Поэтому в эффекте React каждый запрос помечают, а в cleanup игнорируют ответы устаревших запросов и отписываются от подписок. Отмена fetch через AbortController только прекращает ожидание: сервер может доработать запрос до конца.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>turn_id</td>
+  <td>Метка запроса в эффекте React</td>
+</tr>
+<tr>
+  <td>Машина состояний хода</td>
+  <td>Состояния запроса: idle, loading, success, cancelled</td>
+</tr>
+<tr>
+  <td>Barge-in</td>
+  <td>Новый поиск, пока старый ещё грузится</td>
+</tr>
+<tr>
+  <td>Поздний фрагмент отменённого хода</td>
+  <td>Ответ старого fetch, пришедший после нового: его игнорируют</td>
+</tr>
+<tr>
+  <td>Очистка очереди при отмене</td>
+  <td>Отписка от подписок в cleanup эффекта</td>
+</tr>
+<tr>
+  <td>AbortController не останавливает сервер</td>
+  <td>Браузер перестал ждать, а сервер дорабатывает запрос</td>
+</tr>
+<tr>
+  <td>Сначала завершённая реплика, потом поток</td>
+  <td>Сначала простой запрос-ответ, стриминг — после проверки порядка событий</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> проигнорированный ответ fetch просто не обновит экран. Уже начавшийся звук нужно физически остановить, а следующий кусок в буфере проигрывателя удалить — иначе он прозвучит. И фоновое вычисление отменённого хода продолжает занимать локальный CPU и замедляет новый ход, даже если его результат будет отброшен.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M15-L04--разобранный-пример">Разобранный пример</h2>
 <p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса (например, в ячейке Jupyter). Для примеров M15 сначала создай <code>question.wav</code> запуском лабораторной.</p>
 <p>Последовательность: ход 7 начал TTS; пользователь нажал «прервать»; активным стал ход 8; через 200 мс пришёл аудиофрагмент 7. Он должен быть отброшен.</p>
@@ -15921,7 +16085,7 @@ assert accept_chunk(8, 8, {7})
 <li><a href="labs/M15/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M15">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M15">Модуль и домашняя работа</a> · <a href="#M15-SOLUTIONS--m15-l04">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M15-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L03"><small>Предыдущий раздел</small>← M15-L03. Синтез и доставка</a><a href="#M15-L05"><small>Следующий раздел</small>M15-L05. Речевое оценивание →</a></nav></article><article class="material" id="M15-L05" data-title="M15-L05. Речевое оценивание" data-short-title="Речевое оценивание" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Речевое оценивание</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L05--объяснение">Объяснение</a></li><li><a href="#M15-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L05--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M15-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M15">Модуль и домашняя работа</a> · <a href="#M15-SOLUTIONS--m15-l04">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M15-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L03"><small>Предыдущий раздел</small>← M15-L03. Синтез и доставка</a><a href="#M15-L05"><small>Следующий раздел</small>M15-L05. Речевое оценивание →</a></nav></article><article class="material" id="M15-L05" data-title="M15-L05. Речевое оценивание" data-short-title="Речевое оценивание" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Речевое оценивание</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L05--объяснение">Объяснение</a></li><li><a href="#M15-L05--аналогия-word-diff-двух-текстов">Аналогия: word-diff двух текстов</a></li><li><a href="#M15-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L05--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M15-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, Vosk 0.3.45 и vosk-model-small-ru-0.22; синтез — Windows System.Speech с голосом Microsoft Irina Desktop · проверено 04.11.2026 · источник: <a href="https://alphacephei.com/vosk/models" target="_blank" rel="noopener noreferrer" class="external-link">модели Vosk</a></p>
 </blockquote>
@@ -15937,6 +16101,47 @@ assert accept_chunk(8, 8, {7})
 <p>Для агрегирования WER различай среднее по записям и общее число ошибок, делённое на общее число слов. При втором способе длинные записи имеют больший вес. Если одна короткая запись дала один промах из двух слов, а длинная — один из двадцати, среднее по записям равно 0,275, а объединённая оценка — 2/22≈0,091. Обе величины допустимы, если выбранный смысл и знаменатель явно указаны.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M15-L05-desktop.svg" target="_blank" data-figure="course/assets/responsive/M15-L05-desktop.svg" aria-label="Увеличить рисунок: S: замены; D: удаления; I: вставки; N: слова эталона; WER = (S+D+I)/N; Смысл проверяется отдельно"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M15-L05-mobile.svg"><img src="course/assets/responsive/M15-L05-desktop.svg" alt="S: замены; D: удаления; I: вставки; N: слова эталона; WER = (S+D+I)/N; Смысл проверяется отдельно" loading="lazy"></picture></a><span class="figure-hint">WER = 1/4 = 0.25. Пропуск отрицания — отдельная критическая ошибка. · Открыть крупнее ↗</span></p>
 <p>Сопоставь подписи с примером: объясни величины и укажи, какие отношения показаны на рисунке.</p>
+<h2 id="M15-L05--аналогия-word-diff-двух-текстов">Аналогия: word-diff двух текстов</h2>
+<p>Как похоже: git diff по словам показывает изменённые, удалённые и добавленные слова. Число правок, делённое на длину эталона, — это и есть WER. Если добавлено больше, чем было слов в эталоне, правок больше длины, и доля превышает 1. А изменение одного символа в конфиге — false на true — короткий diff с огромными последствиями.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>WER = (S + D + I)/N</td>
+  <td>Число правок в word-diff, делённое на длину эталона</td>
+</tr>
+<tr>
+  <td>Замены, удаления, вставки</td>
+  <td>Изменённые, удалённые и добавленные слова</td>
+</tr>
+<tr>
+  <td>WER больше 1</td>
+  <td>Добавлено больше слов, чем было в эталоне</td>
+</tr>
+<tr>
+  <td>Нормализация текста</td>
+  <td>Сравнение без учёта регистра и пунктуации: правило фиксируют до сравнения</td>
+</tr>
+<tr>
+  <td>Пропущенное «не»</td>
+  <td>Одно изменение в конфиге: false → true</td>
+</tr>
+<tr>
+  <td>Среднее по записям против общего WER</td>
+  <td>Среднее по файлам против доли правок во всём репозитории</td>
+</tr>
+<tr>
+  <td>Задержка от конца речи до звука</td>
+  <td>Время до первого байта ответа, а не время полной генерации</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> diff двух файлов однозначен, а произношение — нет: «SQL» и «эс кью эл» звучат одинаково, но дают разные слова, поэтому решение о нормализации — часть метрики. И строка конфига либо верна, либо нет, а вес ошибки в речи зависит от смысла: лишнее «ну» почти безвредно, пропущенное «не» переворачивает ответ.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M15-L05--разобранный-пример">Разобранный пример</h2>
 <p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса (например, в ячейке Jupyter). Для примеров M15 сначала создай <code>question.wav</code> запуском лабораторной.</p>
 <p>Эталон «я знаю sql», гипотеза «я знаю» дают одно удаление при N=3: WER=1/3. Для эталона «а» и гипотезы «а б в» две вставки дают WER=2. В проверенном TTS→ASR опыте M15 наблюдались две ошибки на семи эталонных словах: WER≈0,286.</p>
@@ -15973,7 +16178,7 @@ assert wer('а', 'а б в') == 2.0
 <li><a href="labs/M15/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M15">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M15">Модуль и домашняя работа</a> · <a href="#M15-SOLUTIONS--m15-l05">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M15-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L04"><small>Предыдущий раздел</small>← M15-L04. Поток и перебивание</a><a href="#M15-L06"><small>Следующий раздел</small>M15-L06. От WAV к частичным гипотезам и отменяемым фрагментам →</a></nav></article><article class="material" id="M15-L06" data-title="M15-L06. От WAV к частичным гипотезам и отменяемым фрагментам" data-short-title="От WAV к частичным гипотезам и отменяемым фрагментам" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>От WAV к частичным гипотезам и отменяемым фрагментам</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L06--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L06--объяснение">Объяснение</a></li><li><a href="#M15-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L06--самостоятельная-задача-a-m15-l06-a">Самостоятельная задача A — M15-L06-A</a></li><li><a href="#M15-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L06--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия 1.1.0. До урока: M15-L05. Начальный ориентир: 210 минут вместе с практикой; измеренное время записывай отдельно.</p>
+<div class="practice-note"><a href="#M15">Модуль и домашняя работа</a> · <a href="#M15-SOLUTIONS--m15-l05">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M15-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L04"><small>Предыдущий раздел</small>← M15-L04. Поток и перебивание</a><a href="#M15-L06"><small>Следующий раздел</small>M15-L06. От WAV к частичным гипотезам и отменяемым фрагментам →</a></nav></article><article class="material" id="M15-L06" data-title="M15-L06. От WAV к частичным гипотезам и отменяемым фрагментам" data-short-title="От WAV к частичным гипотезам и отменяемым фрагментам" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>От WAV к частичным гипотезам и отменяемым фрагментам</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L06--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L06--объяснение">Объяснение</a></li><li><a href="#M15-L06--аналогия-tcp-поток-и-потоковый-парсер">Аналогия: TCP-поток и потоковый парсер</a></li><li><a href="#M15-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L06--самостоятельная-задача-a-m15-l06-a">Самостоятельная задача A — M15-L06-A</a></li><li><a href="#M15-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L06--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия 1.1.0. До урока: M15-L05. Начальный ориентир: 210 минут вместе с практикой; измеренное время записывай отдельно.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, Vosk 0.3.45 и vosk-model-small-ru-0.22; синтез — Windows System.Speech с голосом Microsoft Irina Desktop · проверено 04.11.2026 · источник: <a href="https://alphacephei.com/vosk/models" target="_blank" rel="noopener noreferrer" class="external-link">модели Vosk</a></p>
 </blockquote>
@@ -16047,6 +16252,51 @@ $(&#x27;pause&#x27;).addEventListener(&#x27;input&#x27;,draw);draw();&lt;/script
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe><p><a href="course/visuals/M15-L06.html" target="_blank">Открыть опыт отдельно на весь экран</a></p></section>
+<h2 id="M15-L06--аналогия-tcp-поток-и-потоковый-парсер">Аналогия: TCP-поток и потоковый парсер</h2>
+<p>Как похоже: границы TCP-пакетов не совпадают с границами сообщений, поэтому потоковый парсер помнит недочитанный хвост прошлого куска. Парсить каждый пакет как отдельный JSON бессмысленно. Пока сообщение не закрыто, индикатор прогресса показывает предварительное значение. А после сброса кэша записи старого поколения отбрасывают по номеру поколения.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Блок 100 мс = 3200 байт</td>
+  <td>Пакет TCP: его граница не совпадает с границей сообщения</td>
+</tr>
+<tr>
+  <td>AcceptWaveform с состоянием между вызовами</td>
+  <td>Потоковый парсер, который помнит хвост прошлого куска</td>
+</tr>
+<tr>
+  <td>Распознавать каждый блок отдельно</td>
+  <td>Парсить каждый пакет как отдельный JSON</td>
+</tr>
+<tr>
+  <td>PartialResult</td>
+  <td>Предварительное значение прогресса: ещё изменится</td>
+</tr>
+<tr>
+  <td>FinalResult на endpoint</td>
+  <td>Сообщение закрыто разделителем</td>
+</tr>
+<tr>
+  <td>500 мс тишины после речи</td>
+  <td>Таймаут простоя: данных нет — сообщение считается законченным</td>
+</tr>
+<tr>
+  <td>Эпоха хода в очереди звука</td>
+  <td>Номер поколения кэша: после сброса старые записи отбрасывают</td>
+</tr>
+<tr>
+  <td>at_ms — время в аудио</td>
+  <td>Позиция в файле, а не время обработки</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> разделитель сообщений в протоколе однозначен, а конец реплики угадывают по паузе: человек может задуматься посреди фразы, и сегмент оборвётся. И предварительное значение протокола только растёт, а гипотеза ASR может переписать уже показанные слова.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M15-L06--разобранный-пример">Разобранный пример</h2>
 <h3 id="M15-L06--числа-и-запуск">Числа и запуск</h3>
 <pre><code class="language-python">rate, milliseconds, bytes_per_sample = 16000, 100, 2
