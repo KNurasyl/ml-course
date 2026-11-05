@@ -1181,5 +1181,12 @@
     "path": "course/lessons/M09-L07X.md",
     "version": "1.1.0",
     "status": "ready"
+  },
+  "M09-L08X": {
+    "id": "M09-L08X",
+    "title": "M09-L08X. Структурированный ответ: JSON Schema и грамматики",
+    "path": "course/lessons/M09-L08X.md",
+    "version": "1.1.0",
+    "status": "ready"
   }
 }

@@ -1994,6 +1994,10 @@
         {
           "id": "M09-C17",
           "description": "Поднять локальную модель за OpenAI-совместимым API через llama.cpp, прочитать состав GGUF и измерить на CPU TTFT, prefill, генерацию и пик памяти для моделей 0.5B и 4B в сравнении с transformers float32."
+        },
+        {
+          "id": "M09-C18",
+          "description": "Получить от локальной модели объект по контракту через prompt, JSON-режим, JSON Schema, грамматику GBNF и проверку с повтором, измерить отдельно долю ответов, прошедших контракт, и долю верных оценок."
         }
       ],
       "lessons": [
@@ -2162,6 +2166,33 @@
             "practice_minutes": 100,
             "self_check_minutes": 30,
             "setup_minutes": "separate; llama.cpp binary 24 MB and GGUF files about 3.9 GB",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M09-L08X",
+          "title": "Структурированный ответ: JSON Schema и грамматики",
+          "path": "course/lessons/M09-L08X.md",
+          "prerequisites": [
+            "M09-L07X"
+          ],
+          "estimated_minutes": 150,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Контракт M09-L05 на 24 ответах с эталонной оценкой: prompt, json_object, json_schema, GBNF и повтор на 0.5B, prompt и схема на 4B; разбор, схема, контракт, верные оценки, противоречия",
+          "assessment": "Таблица разбора, схемы, контракта и верных оценок по режимам, распределение оценок по эталону и вывод в пределах набора",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M09-C18"
+          ],
+          "extension": "1.2.0",
+          "required": false,
+          "workload": {
+            "reading_minutes": 40,
+            "practice_minutes": 80,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; uses the llama.cpp binary and GGUF files of M09-L07X",
             "estimate_status": "planning_hypothesis_not_measured"
           },
           "assessment_policy": "course/assessment.md"

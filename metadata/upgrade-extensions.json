@@ -6,6 +6,7 @@
     "labs/M10/ru_embedders.py",
     "labs/M10/vector_store.py",
     "labs/M10/rerank.py",
-    "labs/M09/llama_serving.py"
+    "labs/M09/llama_serving.py",
+    "labs/M09/structured_output.py"
   ]
 }

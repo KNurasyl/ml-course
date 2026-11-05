@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="450" viewBox="0 0 760 450" role="img" aria-labelledby="title desc">
+<title id="title">Форма гарантирована, суждение — нет</title>
+<desc id="desc">Из 24 ответов кандидатов: Qwen2.5-0.5B прошёл контракт в 21 случае только с просьбой в prompt, в 24 с json_object, json_schema и GBNF и в 21 с повтором; верная оценка — 9, 9, 9, 8 и 9 случаев, на уровне правила «всегда 2», которое даёт 8. Qwen3.5-4B прошёл контракт 24 раза с схемой и без и дал верную оценку в 18 случаях. Внизу — противоречие отзыва и оценки и поведение повтора.</desc>
+<rect width="760" height="450" fill="white"/>
+<text x="16" y="34" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650">Форма гарантирована, суждение — нет</text>
+<rect x="16" y="56" width="728" height="284" rx="6" fill="#eef4fc" stroke="#245bba"/>
+<text x="30" y="80" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600">Из 24 ответов кандидатов: прошли контракт и получили верную оценку</text>
+<rect x="30" y="92" width="10" height="10" fill="#245bba"/>
+<text x="45" y="101" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12">прошёл контракт</text>
+<rect x="160" y="92" width="10" height="10" fill="#087e82"/>
+<text x="175" y="101" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12">оценка совпала с эталоном</text>
+<path d="M352,97 H372" stroke="#a65c12" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="378" y="101" fill="#a65c12" font-family="Segoe UI,Arial,sans-serif" font-size="12">правило «всегда 2» — 8 верных</text>
+<path d="M330,110 V322" stroke="#a65c12" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="30" y="128" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">0.5B · только prompt</text>
+<rect x="210" y="116" width="315" height="10" fill="#245bba"/><text x="531" y="125" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">21</text>
+<rect x="210" y="128" width="135" height="10" fill="#087e82"/><text x="351" y="137" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">9</text>
+<text x="30" y="158" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">0.5B · json_object</text>
+<rect x="210" y="146" width="360" height="10" fill="#245bba"/><text x="576" y="155" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">24</text>
+<rect x="210" y="158" width="135" height="10" fill="#087e82"/><text x="351" y="167" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">9</text>
+<text x="30" y="188" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">0.5B · json_schema</text>
+<rect x="210" y="176" width="360" height="10" fill="#245bba"/><text x="576" y="185" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">24</text>
+<rect x="210" y="188" width="135" height="10" fill="#087e82"/><text x="351" y="197" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">9</text>
+<text x="30" y="218" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">0.5B · GBNF</text>
+<rect x="210" y="206" width="360" height="10" fill="#245bba"/><text x="576" y="215" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">24</text>
+<rect x="210" y="218" width="120" height="10" fill="#087e82"/><text x="336" y="227" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">8</text>
+<text x="30" y="248" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">0.5B · повтор с причиной</text>
+<rect x="210" y="236" width="315" height="10" fill="#245bba"/><text x="531" y="245" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">21</text>
+<rect x="210" y="248" width="135" height="10" fill="#087e82"/><text x="351" y="257" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">9</text>
+<text x="30" y="278" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">4B · только prompt</text>
+<rect x="210" y="266" width="360" height="10" fill="#245bba"/><text x="576" y="275" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">24</text>
+<rect x="210" y="278" width="270" height="10" fill="#087e82"/><text x="486" y="287" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="600">18</text>
+<text x="30" y="308" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">4B · json_schema</text>
+<rect x="210" y="296" width="360" height="10" fill="#245bba"/><text x="576" y="305" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">24</text>
+<rect x="210" y="308" width="270" height="10" fill="#087e82"/><text x="486" y="317" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11" font-weight="600">18</text>
+<text x="610" y="190" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12">ограничение</text>
+<text x="610" y="206" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12">чинит форму,</text>
+<text x="610" y="222" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12">оценку — нет</text>
+<rect x="16" y="352" width="728" height="56" rx="6" fill="#fff3e5" stroke="#a65c12"/>
+<text x="30" y="375" fill="#a65c12" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600">0.5B под GBNF поставил 2 всем 24 ответам — и с отзывом «Ответ кандидата не верен.»</text>
+<text x="30" y="396" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">Повтор с причиной менял оценку 2 → 1 → 0, а формат оставлял прежним; у 4B ответы со схемой и без одинаковы</text>
+<text x="16" y="434" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="13">Авторский прогон 06.11.2026, llama.cpp b11803, жадная генерация; эталонные оценки поставил автор курса.</text>
+</svg>

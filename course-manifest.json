@@ -674,6 +674,13 @@
       "version": "1.1.0",
       "status": "ready"
     },
+    "M09-L08X": {
+      "id": "M09-L08X",
+      "title": "M09-L08X. Структурированный ответ: JSON Schema и грамматики",
+      "path": "course/lessons/M09-L08X.md",
+      "version": "1.1.0",
+      "status": "ready"
+    },
     "M10-L01": {
       "id": "M10-L01",
       "title": "M10-L01. Документ и фрагмент",
@@ -1303,6 +1310,7 @@
       "M09-L05",
       "M09-L06",
       "M09-L07X",
+      "M09-L08X",
       "M10-L01",
       "M10-L02",
       "M10-L03",
@@ -1759,7 +1767,8 @@
         "M09-L04",
         "M09-L05",
         "M09-L06",
-        "M09-L07X"
+        "M09-L07X",
+        "M09-L08X"
       ],
       "homework_id": "M09-HW01",
       "exercise": {
@@ -3508,6 +3517,30 @@
         "practice_minutes": 100,
         "self_check_minutes": 30,
         "setup_minutes": "separate; llama.cpp binary 24 MB and GGUF files about 3.9 GB",
+        "estimate_status": "planning_hypothesis_not_measured"
+      },
+      "pilot_sessions": []
+    },
+    {
+      "id": "M09-L08X",
+      "title": "Структурированный ответ: JSON Schema и грамматики",
+      "version": "1.1.0",
+      "module_id": "M09",
+      "material_key": "M09-L08X",
+      "path": "course/lessons/M09-L08X.md",
+      "scope": "complete_lesson",
+      "material_status": "ready",
+      "prerequisites": [
+        "M09-L07X"
+      ],
+      "outcome_ids": [
+        "M09-C18"
+      ],
+      "workload": {
+        "reading_minutes": 40,
+        "practice_minutes": 80,
+        "self_check_minutes": 30,
+        "setup_minutes": "separate; uses the llama.cpp binary and GGUF files of M09-L07X",
         "estimate_status": "planning_hypothesis_not_measured"
       },
       "pilot_sessions": []
