@@ -1,0 +1,1348 @@
+{
+ "note": "Скрытые случаи проверки. По правилам самопроверки ученик их не открывает: ожидаемые значения посчитаны отдельным генератором (NumPy по сценариям и прямое применение правил допуска) независимо от эталона.",
+ "cases": [
+  {
+   "baseline": [
+    2,
+    2,
+    0,
+    1,
+    0,
+    1,
+    1
+   ],
+   "candidate": [
+    2,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   "scenarios": [
+    "s",
+    "p",
+    "t",
+    "t",
+    "s",
+    "p",
+    "r"
+   ],
+   "resamples": [
+    [
+     1,
+     2,
+     3,
+     3
+    ],
+    [
+     1,
+     1,
+     0,
+     3
+    ],
+    [
+     0,
+     1,
+     1,
+     1
+    ],
+    [
+     2,
+     1,
+     2,
+     1
+    ],
+    [
+     3,
+     3,
+     2,
+     1
+    ],
+    [
+     2,
+     3,
+     1,
+     0
+    ],
+    [
+     3,
+     1,
+     0,
+     3
+    ],
+    [
+     0,
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     0,
+     3,
+     3
+    ],
+    [
+     2,
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     3,
+     3,
+     2
+    ],
+    [
+     1,
+     2,
+     1,
+     2
+    ],
+    [
+     1,
+     2,
+     0,
+     3
+    ],
+    [
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     1,
+     3,
+     2,
+     2
+    ],
+    [
+     2,
+     0,
+     3,
+     0
+    ],
+    [
+     3,
+     1,
+     0,
+     3
+    ],
+    [
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     2,
+     0
+    ],
+    [
+     0,
+     1,
+     3,
+     0
+    ],
+    [
+     3,
+     1,
+     3,
+     2
+    ],
+    [
+     2,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     2,
+     1
+    ],
+    [
+     0,
+     1,
+     3,
+     2
+    ],
+    [
+     0,
+     2,
+     2,
+     1
+    ]
+   ],
+   "level": 0.9,
+   "bootstrap": {
+    "mean_delta": -0.25,
+    "case_delta": -0.2857142857142857,
+    "low": -0.47500000000000003,
+    "high": -0.125
+   },
+   "rows": [
+    {
+     "case_id": "h0-0",
+     "grounded": 1,
+     "useful": 2,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h0-1",
+     "grounded": 1,
+     "useful": 2,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h0-2",
+     "grounded": 2,
+     "useful": 2,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h0-3",
+     "grounded": 2,
+     "useful": 1,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h0-4",
+     "grounded": 1,
+     "useful": 2,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h0-5",
+     "grounded": 2,
+     "useful": 2,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h0-6",
+     "grounded": 2,
+     "useful": 1,
+     "critical": false,
+     "fallback": true
+    },
+    {
+     "case_id": "h0-7",
+     "grounded": 1,
+     "useful": 1,
+     "critical": false,
+     "fallback": false
+    }
+   ],
+   "blockers": []
+  },
+  {
+   "baseline": [
+    2,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "candidate": [
+    1,
+    0,
+    2,
+    2,
+    1,
+    1,
+    0
+   ],
+   "scenarios": [
+    "q",
+    "t",
+    "t",
+    "r",
+    "s",
+    "p",
+    "r"
+   ],
+   "resamples": [
+    [
+     4,
+     0,
+     1,
+     2,
+     2
+    ],
+    [
+     4,
+     4,
+     3,
+     1,
+     0
+    ],
+    [
+     2,
+     0,
+     2,
+     0,
+     1
+    ],
+    [
+     0,
+     4,
+     2,
+     2,
+     4
+    ],
+    [
+     0,
+     3,
+     3,
+     3,
+     1
+    ],
+    [
+     1,
+     3,
+     3,
+     0,
+     1
+    ],
+    [
+     3,
+     1,
+     1,
+     3,
+     3
+    ],
+    [
+     3,
+     4,
+     4,
+     4,
+     0
+    ]
+   ],
+   "level": 0.9,
+   "bootstrap": {
+    "mean_delta": 0.4,
+    "case_delta": 0.5714285714285714,
+    "low": 0.06999999999999999,
+    "high": 0.8599999999999998
+   },
+   "rows": [
+    {
+     "case_id": "h1-0",
+     "grounded": 0,
+     "useful": 0,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h1-1",
+     "grounded": 2,
+     "useful": 0,
+     "critical": false,
+     "fallback": true
+    },
+    {
+     "case_id": "h1-2",
+     "grounded": 0,
+     "useful": 1,
+     "critical": false,
+     "fallback": true
+    },
+    {
+     "case_id": "h1-3",
+     "grounded": 1,
+     "useful": 2,
+     "critical": false,
+     "fallback": true
+    },
+    {
+     "case_id": "h1-4",
+     "grounded": 0,
+     "useful": 1,
+     "critical": false,
+     "fallback": true
+    }
+   ],
+   "blockers": [
+    "insufficient_grounding",
+    "insufficient_usefulness",
+    "model_observation_coverage_below_half"
+   ]
+  },
+  {
+   "baseline": [
+    1,
+    1
+   ],
+   "candidate": [
+    0,
+    1
+   ],
+   "scenarios": [
+    "q",
+    "q"
+   ],
+   "resamples": [
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ]
+   ],
+   "level": 0.8,
+   "bootstrap": {
+    "mean_delta": -0.5,
+    "case_delta": -0.5,
+    "low": -0.5,
+    "high": -0.5
+   },
+   "rows": [
+    {
+     "case_id": "h2-0",
+     "grounded": 2,
+     "useful": 2,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h2-1",
+     "grounded": 2,
+     "useful": 2,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h2-2",
+     "grounded": 2,
+     "useful": 1,
+     "critical": false,
+     "fallback": true
+    }
+   ],
+   "blockers": []
+  },
+  {
+   "baseline": [
+    2,
+    2,
+    2,
+    1,
+    2,
+    1,
+    2,
+    2,
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   "candidate": [
+    0,
+    0,
+    1,
+    2,
+    1,
+    0,
+    0,
+    1,
+    1,
+    2,
+    2,
+    0,
+    2
+   ],
+   "scenarios": [
+    "r",
+    "q",
+    "r",
+    "q",
+    "t",
+    "q",
+    "t",
+    "r",
+    "r",
+    "r",
+    "r",
+    "r",
+    "r"
+   ],
+   "resamples": [
+    [
+     0,
+     2,
+     0
+    ],
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     0,
+     2
+    ],
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     1,
+     0,
+     2
+    ],
+    [
+     2,
+     2,
+     2
+    ],
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     2,
+     2,
+     2
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     2,
+     0,
+     2
+    ],
+    [
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     0,
+     0,
+     2
+    ],
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     2,
+     2,
+     1
+    ],
+    [
+     1,
+     0,
+     2
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     2,
+     2
+    ],
+    [
+     2,
+     2,
+     1
+    ],
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     2,
+     2
+    ]
+   ],
+   "level": 0.8,
+   "bootstrap": {
+    "mean_delta": -0.6805555555555555,
+    "case_delta": -0.3076923076923077,
+    "low": -1.222222222222222,
+    "high": -0.21805555555555572
+   },
+   "rows": [
+    {
+     "case_id": "h3-0",
+     "grounded": 1,
+     "useful": 2,
+     "critical": true,
+     "fallback": true
+    },
+    {
+     "case_id": "h3-1",
+     "grounded": 0,
+     "useful": 0,
+     "critical": false,
+     "fallback": true
+    },
+    {
+     "case_id": "h3-2",
+     "grounded": 2,
+     "useful": 1,
+     "critical": false,
+     "fallback": true
+    },
+    {
+     "case_id": "h3-3",
+     "grounded": 0,
+     "useful": 2,
+     "critical": false,
+     "fallback": true
+    },
+    {
+     "case_id": "h3-4",
+     "grounded": 0,
+     "useful": 0,
+     "critical": false,
+     "fallback": true
+    },
+    {
+     "case_id": "h3-5",
+     "grounded": 2,
+     "useful": 1,
+     "critical": false,
+     "fallback": true
+    },
+    {
+     "case_id": "h3-6",
+     "grounded": 0,
+     "useful": 1,
+     "critical": false,
+     "fallback": true
+    },
+    {
+     "case_id": "h3-7",
+     "grounded": 2,
+     "useful": 1,
+     "critical": false,
+     "fallback": false
+    }
+   ],
+   "blockers": [
+    "candidate_has_critical_errors",
+    "insufficient_grounding",
+    "model_observation_coverage_below_half"
+   ]
+  },
+  {
+   "baseline": [
+    0,
+    1,
+    2,
+    2,
+    1,
+    0,
+    1,
+    1
+   ],
+   "candidate": [
+    2,
+    2,
+    0,
+    0,
+    2,
+    2,
+    0,
+    2
+   ],
+   "scenarios": [
+    "s",
+    "s",
+    "s",
+    "q",
+    "q",
+    "p",
+    "s",
+    "q"
+   ],
+   "resamples": [
+    [
+     1,
+     0,
+     2
+    ],
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     1,
+     2,
+     0
+    ],
+    [
+     1,
+     1,
+     2
+    ],
+    [
+     1,
+     0,
+     2
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     1,
+     1,
+     1
+    ],
+    [
+     2,
+     2,
+     0
+    ],
+    [
+     2,
+     2,
+     1
+    ],
+    [
+     2,
+     2,
+     2
+    ],
+    [
+     0,
+     0,
+     2
+    ],
+    [
+     0,
+     2,
+     2
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     2,
+     1,
+     0
+    ],
+    [
+     0,
+     2,
+     1
+    ],
+    [
+     0,
+     0,
+     2
+    ],
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     2,
+     1,
+     2
+    ]
+   ],
+   "level": 0.9,
+   "bootstrap": {
+    "mean_delta": 0.6666666666666666,
+    "case_delta": 0.25,
+    "low": 0.0,
+    "high": 1.3999999999999986
+   },
+   "rows": [
+    {
+     "case_id": "h4-0",
+     "grounded": 1,
+     "useful": 1,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h4-1",
+     "grounded": 1,
+     "useful": 2,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h4-2",
+     "grounded": 2,
+     "useful": 2,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h4-3",
+     "grounded": 1,
+     "useful": 2,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h4-4",
+     "grounded": 1,
+     "useful": 2,
+     "critical": false,
+     "fallback": true
+    },
+    {
+     "case_id": "h4-5",
+     "grounded": 2,
+     "useful": 1,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h4-6",
+     "grounded": 2,
+     "useful": 2,
+     "critical": false,
+     "fallback": true
+    },
+    {
+     "case_id": "h4-7",
+     "grounded": 1,
+     "useful": 1,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h4-8",
+     "grounded": 1,
+     "useful": 2,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h4-9",
+     "grounded": 1,
+     "useful": 2,
+     "critical": false,
+     "fallback": false
+    }
+   ],
+   "blockers": [
+    "insufficient_grounding"
+   ]
+  },
+  {
+   "baseline": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0,
+    2,
+    1,
+    2,
+    0,
+    1
+   ],
+   "candidate": [
+    2,
+    2,
+    0,
+    0,
+    0,
+    1,
+    2,
+    0,
+    1,
+    1,
+    2,
+    1,
+    1
+   ],
+   "scenarios": [
+    "s",
+    "r",
+    "r",
+    "q",
+    "s",
+    "s",
+    "q",
+    "r",
+    "t",
+    "s",
+    "s",
+    "r",
+    "t"
+   ],
+   "resamples": [
+    [
+     3,
+     1,
+     2,
+     2
+    ],
+    [
+     2,
+     3,
+     0,
+     0
+    ],
+    [
+     2,
+     2,
+     3,
+     0
+    ],
+    [
+     1,
+     0,
+     1,
+     0
+    ],
+    [
+     2,
+     1,
+     3,
+     1
+    ],
+    [
+     3,
+     0,
+     2,
+     3
+    ],
+    [
+     0,
+     0,
+     0,
+     3
+    ],
+    [
+     0,
+     2,
+     2,
+     3
+    ],
+    [
+     2,
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     0,
+     1
+    ],
+    [
+     2,
+     3,
+     1,
+     1
+    ],
+    [
+     0,
+     0,
+     2,
+     2
+    ],
+    [
+     3,
+     0,
+     2,
+     2
+    ],
+    [
+     2,
+     1,
+     3,
+     2
+    ],
+    [
+     1,
+     3,
+     3,
+     2
+    ],
+    [
+     0,
+     1,
+     3,
+     0
+    ],
+    [
+     1,
+     2,
+     1,
+     3
+    ],
+    [
+     0,
+     2,
+     0,
+     0
+    ],
+    [
+     2,
+     3,
+     0,
+     1
+    ],
+    [
+     2,
+     0,
+     2,
+     1
+    ],
+    [
+     2,
+     0,
+     0,
+     1
+    ],
+    [
+     3,
+     0,
+     2,
+     0
+    ],
+    [
+     0,
+     1,
+     3,
+     2
+    ],
+    [
+     3,
+     2,
+     0,
+     0
+    ],
+    [
+     3,
+     3,
+     1,
+     0
+    ],
+    [
+     3,
+     0,
+     2,
+     3
+    ],
+    [
+     3,
+     2,
+     3,
+     3
+    ],
+    [
+     0,
+     0,
+     2,
+     2
+    ],
+    [
+     3,
+     1,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     3,
+     1
+    ],
+    [
+     2,
+     0,
+     1,
+     2
+    ],
+    [
+     1,
+     2,
+     0,
+     1
+    ],
+    [
+     0,
+     3,
+     3,
+     2
+    ],
+    [
+     3,
+     1,
+     1,
+     3
+    ],
+    [
+     2,
+     2,
+     1,
+     1
+    ],
+    [
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     3,
+     2,
+     2
+    ]
+   ],
+   "level": 0.8,
+   "bootstrap": {
+    "mean_delta": 0.3625,
+    "case_delta": 0.38461538461538464,
+    "low": 0.04999999999999999,
+    "high": 0.675
+   },
+   "rows": [
+    {
+     "case_id": "h5-0",
+     "grounded": 0,
+     "useful": 0,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h5-1",
+     "grounded": 2,
+     "useful": 1,
+     "critical": false,
+     "fallback": true
+    },
+    {
+     "case_id": "h5-2",
+     "grounded": 2,
+     "useful": 0,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h5-3",
+     "grounded": 1,
+     "useful": 1,
+     "critical": false,
+     "fallback": true
+    },
+    {
+     "case_id": "h5-4",
+     "grounded": 2,
+     "useful": 0,
+     "critical": false,
+     "fallback": false
+    },
+    {
+     "case_id": "h5-5",
+     "grounded": 1,
+     "useful": 0,
+     "critical": false,
+     "fallback": true
+    }
+   ],
+   "blockers": [
+    "insufficient_grounding",
+    "insufficient_usefulness"
+   ]
+  }
+ ]
+}

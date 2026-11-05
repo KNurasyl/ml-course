@@ -1812,7 +1812,22 @@
         "checker": "exercises/M11/check.py",
         "solution": "solutions/exercises/M11/solution.py"
       },
-      "extra_exercises": [],
+      "extra_exercises": [
+        {
+          "id": "M11-ex02",
+          "starter": "exercises/M11/ex02_agreement.py",
+          "checker": "exercises/M11/check_ex02.py",
+          "solution": "solutions/exercises/M11/ex02_agreement.py",
+          "hidden_cases": "tests/hidden/M11_ex02.json"
+        },
+        {
+          "id": "M11-ex03",
+          "starter": "exercises/M11/ex03_release.py",
+          "checker": "exercises/M11/check_ex03.py",
+          "solution": "solutions/exercises/M11/ex03_release.py",
+          "hidden_cases": "tests/hidden/M11_ex03.json"
+        }
+      ],
       "assessment_policy": "course/assessment.md"
     },
     {

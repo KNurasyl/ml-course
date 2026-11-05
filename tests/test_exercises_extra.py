@@ -74,6 +74,16 @@ MISTAKES = [
     ("M10", "ex03", 'elif chunk["text"] in texts:', "elif False:", "дубликат"),
     ("M10", "ex03", 'if document not in active_versions or active_versions[document] != chunk["version"]:',
      'if active_versions.get(document, chunk["version"]) != chunk["version"]:', "отбор контекста"),
+    ("M11", "ex02", '"accuracy_answered": correct / answered', '"accuracy_answered": correct / n', "accuracy_answered"),
+    ("M11", "ex02", '"appropriate_refusals": appropriate / refusals', '"appropriate_refusals": appropriate / n',
+     "appropriate_refusals"),
+    ("M11", "ex02", '"correct_over_all": matches / n', '"correct_over_all": matches / len(valid)', "в знаменателе"),
+    ("M11", "ex02", "share_a[label] * share_b[label]", "share_a[label] * share_a[label]", "kappa"),
+    ("M11", "ex03", '"mean_delta": float(means.mean())', '"mean_delta": sum(deltas) / len(deltas)', "mean_delta"),
+    ("M11", "ex03", "[(1 - level) / 2, (1 + level) / 2]", "[1 - level, level]", "low"),
+    ("M11", "ex03", 'row["useful"] >= 1 for row', 'row["useful"] >= 2 for row', "blockers"),
+    ("M11", "ex03", "if fallback_share > max_fallback_share:", "if fallback_share >= max_fallback_share:",
+     "ровно у половины"),
 ]
 
 
