@@ -46,7 +46,7 @@ def main():
                 tasks += [(f"{mid}-{number}-reference", [checker_path, f"solutions/exercises/{mid}/{starter.name}"], True),
                           (f"{mid}-{number}-empty-rejected", [checker_path, starter_path], False)]
     if not args.contracts_only:
-        for name in ("foundations", "llm", "product", "root"):
+        for name in ("foundations", "llm", "product", "root", "extensions"):  # extensions: optional 1.2.0 labs
             meta = json.loads((ROOT / f"metadata/upgrade-{name}.json").read_text(encoding="utf-8"))
             commands = meta.get("new_lab_commands", meta.get("lab_commands", []))
             for i, command in enumerate(commands, 1):
