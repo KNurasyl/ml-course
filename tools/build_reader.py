@@ -90,7 +90,7 @@ class CourseRenderer(mistune.HTMLRenderer):
             raise ValueError(f"Broken link in {self.source.relative_to(self.root)}: {url}")
         if local in self.path_ids:
             material = self.path_ids[local]
-            if material.endswith("-SOLUTIONS") and not parsed.fragment and re.fullmatch(r"M\d{2}-L\d{2}", self.material_id):
+            if material.endswith("-SOLUTIONS") and not parsed.fragment and re.fullmatch(r"M\d{2}-L\d{2}X?", self.material_id):
                 heading = next((line[3:].strip() for line in local.read_text(encoding="utf-8").splitlines()
                                 if line.startswith("## ") and self.material_id in line), None)
                 if heading:
@@ -184,7 +184,7 @@ def lesson_order(root: Path, registry: dict) -> dict[str, list[str]]:
     if path.exists():
         curriculum = json.loads(path.read_text(encoding="utf-8"))
         return {m["id"]: [l["id"] for l in m["lessons"] if l["id"] in registry] for m in curriculum["modules"]}
-    return {mid: sorted(k for k in registry if re.fullmatch(mid + r"-L\d{2}", k)) for mid in MODULE_IDS}
+    return {mid: sorted(k for k in registry if re.fullmatch(mid + r"-L\d{2}X?", k)) for mid in MODULE_IDS}
 
 
 def ordered_materials(registry: dict, root: Path = ROOT) -> list[str]:
@@ -202,7 +202,7 @@ def fold_answers(content: str) -> str:
         anchor = f' id="{identifier.group(1)}"' if identifier else ""
         if not text_only(match.group(3)).strip():
             return f'<h2{anchor}>{match.group(2)}</h2>'
-        task = re.search(r'M\d{2}-L\d{2}|M\d{2}-HW\d{2}|P\d{2}(?:-HW\d{2})?|D00', text_only(match.group(2)))
+        task = re.search(r'M\d{2}-L\d{2}X?|M\d{2}-HW\d{2}|P\d{2}(?:-HW\d{2})?|D00', text_only(match.group(2)))
         actions = ''
         if task:
             key = task.group(0)
@@ -267,7 +267,7 @@ def display_status(key: str) -> tuple[str, str]:
         return "Готовое занятие", "ready"
     if key in MODULE_IDS:
         return "Модуль и домашняя работа", "ready"
-    if re.fullmatch(r"M\d{2}-L\d{2}", key):
+    if re.fullmatch(r"M\d{2}-L\d{2}X?", key):
         return "Урок · Теория и практика", "ready"
     if key == "MENTOR-KEYS" or key.endswith("-SOLUTIONS"):
         return "После своей попытки", "answer"
@@ -283,7 +283,7 @@ def display_id(key: str) -> str:
 
 def nav_item(key: str, item: dict) -> str:
     short = re.sub(rf"^{re.escape(key)}\s*[:.·—–-]?\s*", "", item["title"]).strip()
-    marker = key if key in PILOT_IDS or key in MODULE_IDS else (key.split('-')[-1] if re.fullmatch(r'M\d{2}-L\d{2}', key) else {"HOME": "01", "DIAGNOSTIC": "02"}.get(key, "•"))
+    marker = key if key in PILOT_IDS or key in MODULE_IDS else (key.split('-')[-1] if re.fullmatch(r'M\d{2}-L\d{2}X?', key) else {"HOME": "01", "DIAGNOSTIC": "02"}.get(key, "•"))
     return f'<li data-key="{escape(key)}"><a href="#{escape(key)}" data-material="{escape(key)}"><span class="nav-marker">{escape(marker)}</span><span>{escape(short)}</span></a></li>'
 
 
@@ -380,7 +380,7 @@ def build(root: Path) -> tuple[str, int]:
         body = re.sub(r'<p><code>([^<]+)</code></p>', r'<p class="formula"><code>\1</code></p>', body)
         body = body.replace("<table>", '<div class="table-wrap"><table>').replace("</table>", "</table></div>")
         intro, outline = '', ''
-        is_lesson = bool(re.fullmatch(r"M\d{2}-L\d{2}", key))
+        is_lesson = bool(re.fullmatch(r"M\d{2}-L\d{2}X?", key))
         if is_lesson or key in PILOT_IDS:
             body, intro, outline = lesson_presentation(body, key)
         else:
@@ -395,7 +395,7 @@ def build(root: Path) -> tuple[str, int]:
         module_id = key.split("-")[0]
         if key in MODULE_IDS and (root / f"course/visuals/{key}.html").exists():
             body += f'<h2>Попробуй изменить параметры</h2>' + experiment_frame(root, f'course/visuals/{key}.html', f'Интерактивная демонстрация {key}') + f'<p><a href="course/visuals/{key}.html" target="_blank">Открыть демонстрацию отдельно</a></p>'
-        if re.fullmatch(r"M\d{2}-L\d{2}", key):
+        if re.fullmatch(r"M\d{2}-L\d{2}X?", key):
             body = inline_experiment(root, key, body)
             solution_target, _ = renderer.destination(f"../../solutions/modules/{module_id}.md")
             body += f'<div class="practice-note"><a href="#{module_id}">Модуль и домашняя работа</a> · <a href="{solution_target}">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div>'

@@ -39,7 +39,9 @@ def write(course, text, lesson_id="M00-L01"):
 
 def test_course_lessons_follow_template():
     result = linter.lint(SOURCE)
-    assert result["lessons"] == 103 and result["errors"] == []
+    # 103 lessons of 1.1.0 plus the optional 1.2.0 extension lessons (IDs ending in X).
+    lessons = sorted((SOURCE / "course/lessons").glob("*.md"))
+    assert result["lessons"] == len(lessons) >= 103 and result["errors"] == []
 
 
 def test_canonical_lesson_passes_and_result_paragraph_counts(course):

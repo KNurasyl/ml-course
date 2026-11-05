@@ -152,6 +152,14 @@ def test_real_new_transformer_lesson_has_an_individual_disclosure():
     assert "M08-L07" not in keys[target[1:]][1], "Opening residual must not reveal the next forward task"
 
 
+def test_extension_lesson_ids_with_x_are_lessons_and_answers_return_to_them():
+    folded = reader.fold_answers('<h2 id="M10-SOLUTIONS--m10-l07x-a">M10-L07X-A</h2><p>Ключ</p>')
+    assert 'href="#M10-L07X"' in folded and 'href="#M10-L07"' not in folded
+    assert reader.nav_item("M10-L07X", {"title": "M10-L07X. Эмбеддеры"}).count(">L07X<") == 1
+    order = reader.lesson_order(ROOT, json.loads((ROOT / "metadata/material-registry.json").read_text(encoding="utf-8")))
+    assert order["M10"][-1] == "M10-L07X"
+
+
 @pytest.mark.parametrize("relative", ["metadata/lesson-visuals.json", "curriculum.json"])
 def test_fingerprint_changes_when_mapping_or_pedagogical_order_changes(small_course, relative):
     root, _ = small_course

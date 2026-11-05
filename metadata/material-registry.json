@@ -1153,5 +1153,12 @@
     "path": "progress/dashboard.md",
     "version": "1.1.0",
     "status": "ready"
+  },
+  "M10-L07X": {
+    "id": "M10-L07X",
+    "title": "M10-L07X. Эмбеддеры для русского языка",
+    "path": "course/lessons/M10-L07X.md",
+    "version": "1.1.0",
+    "status": "ready"
   }
 }

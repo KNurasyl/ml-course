@@ -14,5 +14,53 @@
   "tts": {
     "engine": "Windows System.Speech",
     "voice": "Microsoft Irina Desktop"
-  }
+  },
+  "embedders": [
+    {
+      "name": "USER-bge-m3",
+      "repo_id": "deepvk/USER-bge-m3",
+      "revision": "0cc6cfe48e260fb0474c753087a69369e88709ae",
+      "path": "models/USER-bge-m3",
+      "license": "Apache-2.0",
+      "weights_bytes": 1436151696,
+      "allow_patterns": [
+        "*.json",
+        "*.safetensors",
+        "sentencepiece.bpe.model",
+        "README.md",
+        "LICENSE"
+      ]
+    },
+    {
+      "name": "bge-m3",
+      "repo_id": "BAAI/bge-m3",
+      "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+      "path": "models/bge-m3",
+      "license": "MIT",
+      "weights_bytes": 2271145830,
+      "allow_patterns": [
+        "*.json",
+        "pytorch_model.bin",
+        "sentencepiece.bpe.model",
+        "README.md",
+        "LICENSE"
+      ]
+    },
+    {
+      "name": "Qwen3-Embedding-0.6B",
+      "repo_id": "Qwen/Qwen3-Embedding-0.6B",
+      "revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+      "path": "models/Qwen3-Embedding-0.6B",
+      "license": "Apache-2.0",
+      "weights_bytes": 1191586416,
+      "allow_patterns": [
+        "*.json",
+        "*.safetensors",
+        "merges.txt",
+        "vocab.json",
+        "README.md",
+        "LICENSE"
+      ]
+    }
+  ]
 }

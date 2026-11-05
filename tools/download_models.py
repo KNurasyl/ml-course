@@ -41,14 +41,27 @@ def language():
     print(f"LLM ready: {directory}")
 
 
+def embedders():
+    """Optional 1.2.0 extension (M10-L07X): Russian-capable embedders, each over 1 GB, pinned to a revision."""
+    from huggingface_hub import snapshot_download
+    for config in json.loads((ROOT / "metadata/reference-models.json").read_text(encoding="utf-8"))["embedders"]:
+        directory = ROOT / config["path"]
+        snapshot_download(repo_id=config["repo_id"], revision=config["revision"], local_dir=directory,
+            allow_patterns=config["allow_patterns"], ignore_patterns=["onnx/*", "*.pt", "*.onnx*"])
+        print(f"Embedder ready: {directory}")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--speech", action="store_true")
     parser.add_argument("--llm", action="store_true")
+    parser.add_argument("--embedders", action="store_true", help="optional M10-L07X models, about 4.9 GB in total")
     args = parser.parse_args()
-    if not args.speech and not args.llm:
-        parser.error("Укажи --speech и/или --llm")
+    if not args.speech and not args.llm and not args.embedders:
+        parser.error("Укажи --speech, --llm и/или --embedders")
     if args.speech:
         speech()
     if args.llm:
         language()
+    if args.embedders:
+        embedders()
