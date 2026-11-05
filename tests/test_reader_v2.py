@@ -157,7 +157,8 @@ def test_extension_lesson_ids_with_x_are_lessons_and_answers_return_to_them():
     assert 'href="#M10-L07X"' in folded and 'href="#M10-L07"' not in folded
     assert reader.nav_item("M10-L07X", {"title": "M10-L07X. Эмбеддеры"}).count(">L07X<") == 1
     order = reader.lesson_order(ROOT, json.loads((ROOT / "metadata/material-registry.json").read_text(encoding="utf-8")))
-    assert order["M10"][-1] == "M10-L07X"
+    m10 = order["M10"]  # extension lessons follow the base lessons in curriculum order
+    assert m10.index("M10-L07X") == m10.index("M10-L06") + 1 and m10.index("M10-L08X") == m10.index("M10-L07X") + 1
 
 
 @pytest.mark.parametrize("relative", ["metadata/lesson-visuals.json", "curriculum.json"])

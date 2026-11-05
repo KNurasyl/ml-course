@@ -3,6 +3,7 @@
   "note": "Optional extension labs added in 1.2.0 (IMPROVEMENT_PLAN.md, phase 3). Each runs locally on CPU without network once its models are present.",
   "new_lab_commands": [
     "labs/M10/bm25_hybrid.py",
-    "labs/M10/ru_embedders.py"
+    "labs/M10/ru_embedders.py",
+    "labs/M10/vector_store.py"
   ]
 }

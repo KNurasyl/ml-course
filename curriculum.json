@@ -2211,6 +2211,10 @@
         {
           "id": "M10-C17",
           "description": "Сравнить эмбеддеры для русского языка на одном пайплайне по Recall@N и MRR и обосновать выбор с учётом стоимости."
+        },
+        {
+          "id": "M10-C18",
+          "description": "Сохранить векторы с метаданными и именем эмбеддера в sqlite-vec или pgvector, сверить поиск с точным эталоном в памяти по recall@k и выбрать точный перебор, HNSW или IVFFlat с учётом фильтров, памяти и задержки."
         }
       ],
       "lessons": [
@@ -2381,6 +2385,33 @@
             "practice_minutes": 105,
             "self_check_minutes": 30,
             "setup_minutes": "separate; model download about 4.9 GB",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M10-L08X",
+          "title": "Векторное хранилище",
+          "path": "course/lessons/M10-L08X.md",
+          "prerequisites": [
+            "M10-L07X"
+          ],
+          "estimated_minutes": 180,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Хранилища sqlite-vec и pgvector против точного эталона в памяти: recall@k, число строк с фильтром, HNSW и IVFFlat на 20 000 векторов, защита от чужого эмбеддера",
+          "assessment": "Таблица recall@k, числа строк, задержки и размера, план EXPLAIN и вывод в пределах данных",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M10-C18"
+          ],
+          "extension": "1.2.0",
+          "required": false,
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 105,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; pgvector build about 1 minute, optional",
             "estimate_status": "planning_hypothesis_not_measured"
           },
           "assessment_policy": "course/assessment.md"

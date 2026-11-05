@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="f46da421e4dbd7c37e02a15659a777cabfbe8d59a6c2fbefacf511a041ef5e6e"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="2c69998a2b4ac698a04bbab1138090fe68f710c23e58c90b0d108644b4e3e71a"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -33,7 +33,7 @@
 <section class="nav-group"><details class="nav-module"><summary>M07 Нейросети и PyTorch</summary><ul><li data-key="M07"><a href="#M07" data-material="M07"><span class="nav-marker">M07</span><span>Нейросети и PyTorch</span></a></li><li data-key="M07-L01"><a href="#M07-L01" data-material="M07-L01"><span class="nav-marker">L01</span><span>Линейный слой и нелинейность</span></a></li><li data-key="M07-L02"><a href="#M07-L02" data-material="M07-L02"><span class="nav-marker">L02</span><span>Autograd и обратный проход</span></a></li><li data-key="M07-L03"><a href="#M07-L03" data-material="M07-L03"><span class="nav-marker">L03</span><span>Цикл обучения</span></a></li><li data-key="M07-L04"><a href="#M07-L04" data-material="M07-L04"><span class="nav-marker">L04</span><span>Проверка и диагностика</span></a></li><li data-key="M07-L05"><a href="#M07-L05" data-material="M07-L05"><span class="nav-marker">L05</span><span>Сохранение и воспроизведение</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M08 NLP и Transformer</summary><ul><li data-key="M08"><a href="#M08" data-material="M08"><span class="nav-marker">M08</span><span>NLP и Transformer</span></a></li><li data-key="M08-L01"><a href="#M08-L01" data-material="M08-L01"><span class="nav-marker">L01</span><span>Текст и токены</span></a></li><li data-key="M08-L02"><a href="#M08-L02" data-material="M08-L02"><span class="nav-marker">L02</span><span>Embeddings</span></a></li><li data-key="M08-L03"><a href="#M08-L03" data-material="M08-L03"><span class="nav-marker">L03</span><span>Attention</span></a></li><li data-key="M08-L04"><a href="#M08-L04" data-material="M08-L04"><span class="nav-marker">L04</span><span>Позиции и causal mask</span></a></li><li data-key="M08-L06"><a href="#M08-L06" data-material="M08-L06"><span class="nav-marker">L06</span><span>Residual и LayerNorm: сохранить путь и выровнять масштаб</span></a></li><li data-key="M08-L07"><a href="#M08-L07" data-material="M08-L07"><span class="nav-marker">L07</span><span>Полный forward Transformer-блока</span></a></li><li data-key="M08-L05"><a href="#M08-L05" data-material="M08-L05"><span class="nav-marker">L05</span><span>Мини-языковая модель</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M09 Применение и запуск LLM</summary><ul><li data-key="M09"><a href="#M09" data-material="M09"><span class="nav-marker">M09</span><span>Применение и запуск LLM</span></a></li><li data-key="M09-L01"><a href="#M09-L01" data-material="M09-L01"><span class="nav-marker">L01</span><span>Сообщения и шаблон диалога</span></a></li><li data-key="M09-L02"><a href="#M09-L02" data-material="M09-L02"><span class="nav-marker">L02</span><span>Контекст и история</span></a></li><li data-key="M09-L03"><a href="#M09-L03" data-material="M09-L03"><span class="nav-marker">L03</span><span>Генерация и ограничения</span></a></li><li data-key="M09-L04"><a href="#M09-L04" data-material="M09-L04"><span class="nav-marker">L04</span><span>Локальный инференс и память</span></a></li><li data-key="M09-L05"><a href="#M09-L05" data-material="M09-L05"><span class="nav-marker">L05</span><span>Контракт ответа</span></a></li><li data-key="M09-L06"><a href="#M09-L06" data-material="M09-L06"><span class="nav-marker">L06</span><span>Выбрать локальную конфигурацию по измерениям</span></a></li></ul></details></section>
-<section class="nav-group"><details class="nav-module"><summary>M10 RAG и поиск</summary><ul><li data-key="M10"><a href="#M10" data-material="M10"><span class="nav-marker">M10</span><span>RAG и поиск</span></a></li><li data-key="M10-L01"><a href="#M10-L01" data-material="M10-L01"><span class="nav-marker">L01</span><span>Документ и фрагмент</span></a></li><li data-key="M10-L02"><a href="#M10-L02" data-material="M10-L02"><span class="nav-marker">L02</span><span>Лексический и векторный поиск</span></a></li><li data-key="M10-L03"><a href="#M10-L03" data-material="M10-L03"><span class="nav-marker">L03</span><span>Гибридный поиск и reranking</span></a></li><li data-key="M10-L04"><a href="#M10-L04" data-material="M10-L04"><span class="nav-marker">L04</span><span>Контекст и подтверждение ответа</span></a></li><li data-key="M10-L05"><a href="#M10-L05" data-material="M10-L05"><span class="nav-marker">L05</span><span>Диагностика и обновления</span></a></li><li data-key="M10-L06"><a href="#M10-L06" data-material="M10-L06"><span class="nav-marker">L06</span><span>Диагностировать русский RAG по трассе ошибки</span></a></li><li data-key="M10-L07X"><a href="#M10-L07X" data-material="M10-L07X"><span class="nav-marker">L07X</span><span>Эмбеддеры для русского языка</span></a></li></ul></details></section>
+<section class="nav-group"><details class="nav-module"><summary>M10 RAG и поиск</summary><ul><li data-key="M10"><a href="#M10" data-material="M10"><span class="nav-marker">M10</span><span>RAG и поиск</span></a></li><li data-key="M10-L01"><a href="#M10-L01" data-material="M10-L01"><span class="nav-marker">L01</span><span>Документ и фрагмент</span></a></li><li data-key="M10-L02"><a href="#M10-L02" data-material="M10-L02"><span class="nav-marker">L02</span><span>Лексический и векторный поиск</span></a></li><li data-key="M10-L03"><a href="#M10-L03" data-material="M10-L03"><span class="nav-marker">L03</span><span>Гибридный поиск и reranking</span></a></li><li data-key="M10-L04"><a href="#M10-L04" data-material="M10-L04"><span class="nav-marker">L04</span><span>Контекст и подтверждение ответа</span></a></li><li data-key="M10-L05"><a href="#M10-L05" data-material="M10-L05"><span class="nav-marker">L05</span><span>Диагностика и обновления</span></a></li><li data-key="M10-L06"><a href="#M10-L06" data-material="M10-L06"><span class="nav-marker">L06</span><span>Диагностировать русский RAG по трассе ошибки</span></a></li><li data-key="M10-L07X"><a href="#M10-L07X" data-material="M10-L07X"><span class="nav-marker">L07X</span><span>Эмбеддеры для русского языка</span></a></li><li data-key="M10-L08X"><a href="#M10-L08X" data-material="M10-L08X"><span class="nav-marker">L08X</span><span>Векторное хранилище</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M11 Оценивание LLM-систем</summary><ul><li data-key="M11"><a href="#M11" data-material="M11"><span class="nav-marker">M11</span><span>Оценивание LLM-систем</span></a></li><li data-key="M11-L01"><a href="#M11-L01" data-material="M11-L01"><span class="nav-marker">L01</span><span>Что именно оцениваем</span></a></li><li data-key="M11-L02"><a href="#M11-L02" data-material="M11-L02"><span class="nav-marker">L02</span><span>Набор примеров и разметка</span></a></li><li data-key="M11-L03"><a href="#M11-L03" data-material="M11-L03"><span class="nav-marker">L03</span><span>HR и технические рубрики</span></a></li><li data-key="M11-L04"><a href="#M11-L04" data-material="M11-L04"><span class="nav-marker">L04</span><span>Модель как оценщик</span></a></li><li data-key="M11-L05"><a href="#M11-L05" data-material="M11-L05"><span class="nav-marker">L05</span><span>Регрессии и отчёт</span></a></li><li data-key="M11-L06"><a href="#M11-L06" data-material="M11-L06"><span class="nav-marker">L06</span><span>От реальных ответов к парному сравнению систем</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M12 Обучение и адаптация моделей</summary><ul><li data-key="M12"><a href="#M12" data-material="M12"><span class="nav-marker">M12</span><span>Обучение и адаптация моделей</span></a></li><li data-key="M12-L01"><a href="#M12-L01" data-material="M12-L01"><span class="nav-marker">L01</span><span>Выбор вмешательства</span></a></li><li data-key="M12-L02"><a href="#M12-L02" data-material="M12-L02"><span class="nav-marker">L02</span><span>Данные для адаптации</span></a></li><li data-key="M12-L03"><a href="#M12-L03" data-material="M12-L03"><span class="nav-marker">L03</span><span>Малое обучение с нуля</span></a></li><li data-key="M12-L04"><a href="#M12-L04" data-material="M12-L04"><span class="nav-marker">L04</span><span>Дообучение и адаптеры</span></a></li><li data-key="M12-L05"><a href="#M12-L05" data-material="M12-L05"><span class="nav-marker">L05</span><span>Сравнение до и после</span></a></li><li data-key="M12-L06"><a href="#M12-L06" data-material="M12-L06"><span class="nav-marker">L06</span><span>Из диалога в обучающий пример: токены и маска потерь</span></a></li><li data-key="M12-L07"><a href="#M12-L07" data-material="M12-L07"><span class="nav-marker">L07</span><span>Настоящий малый SFT: адаптер, checkpoint и регрессии</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M13 MLOps и LLMOps</summary><ul><li data-key="M13"><a href="#M13" data-material="M13"><span class="nav-marker">M13</span><span>MLOps и LLMOps</span></a></li><li data-key="M13-L01"><a href="#M13-L01" data-material="M13-L01"><span class="nav-marker">L01</span><span>Версия эксперимента и релиза</span></a></li><li data-key="M13-L02"><a href="#M13-L02" data-material="M13-L02"><span class="nav-marker">L02</span><span>Упаковка и контракт</span></a></li><li data-key="M13-L03"><a href="#M13-L03" data-material="M13-L03"><span class="nav-marker">L03</span><span>Регрессионные проверки</span></a></li><li data-key="M13-L04"><a href="#M13-L04" data-material="M13-L04"><span class="nav-marker">L04</span><span>Наблюдаемость и нагрузка</span></a></li><li data-key="M13-L05"><a href="#M13-L05" data-material="M13-L05"><span class="nav-marker">L05</span><span>Неудачный релиз и восстановление</span></a></li><li data-key="M13-L06"><a href="#M13-L06" data-material="M13-L06"><span class="nav-marker">L06</span><span>Очередь, дедлайн и восстановление HTTP-сервиса</span></a></li></ul></details></section>
@@ -10111,6 +10111,7 @@ assert not valid('{&quot;feedback&quot;:&quot;&quot;,&quot;score&quot;:2}')
 <li><a href="#M10-L05">M10-L05. Диагностика и обновления</a></li>
 <li><a href="#M10-L06">M10-L06. Диагностировать русский RAG по трассе ошибки</a></li>
 <li><a href="#M10-L07X">M10-L07X. Эмбеддеры для русского языка</a> — расширение 1.2.0, не входит в обязательный минимум; нужны модели около 4.9 ГБ</li>
+<li><a href="#M10-L08X">M10-L08X. Векторное хранилище</a> — расширение 1.2.0, не входит в обязательный минимум; нужен пакет sqlite-vec, pgvector по желанию</li>
 </ol>
 <p>После каждого урока сначала выполни самостоятельную задачу. Открой решение только после своей попытки. Проходить весь модуль за один день не требуется: при 4–5 часах в день чередуй чтение, расчёты, программирование и воспроизведение по памяти.</p>
 <p>Если ты уже делал RAG и интеграции LLM, модуль можно пройти по <a href="#FAST-TRACK-LLM">быстрому входу</a>: сначала домашняя работа, затем уроки только по пунктам рубрики, оценённым ниже 2.</p>
@@ -11308,7 +11309,405 @@ print(round(81_920_000 / 2**20, 1), 'MiB')
 <li><a href="https://arxiv.org/abs/2504.12879" target="_blank" rel="noopener noreferrer" class="external-link">RusBEIR</a> — русские наборы для сравнения лексических и нейросетевых моделей поиска (на английском)</li>
 </ul>
 <p>Корпус, набор запросов <code>ru-embed-1</code> и численные наблюдения созданы для курса; внешние тексты не копировались в учебные данные.</p>
-<div class="practice-note"><a href="#M10">Модуль и домашняя работа</a> · <a href="#M10-SOLUTIONS--m10-l07x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M10-L07X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L06"><small>Предыдущий раздел</small>← M10-L06. Диагностировать русский RAG по трассе ошибки</a><a href="#M11"><small>Следующий раздел</small>M11 Оценивание LLM-систем →</a></nav></article><article class="material" id="M11" data-title="M11 Оценивание LLM-систем" data-short-title="Оценивание LLM-систем" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Оценивание LLM-систем</h1></header><div class="article-layout"><div class="body-content"><p>Модуль завершает переход от демонстрации к проверяемому качеству. HR и технические ответы получают разные рубрики; модельный judge проходит проверку, а релиз сравнивается по одинаковым случаям с анализом регрессий.</p>
+<div class="practice-note"><a href="#M10">Модуль и домашняя работа</a> · <a href="#M10-SOLUTIONS--m10-l07x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M10-L07X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L06"><small>Предыдущий раздел</small>← M10-L06. Диагностировать русский RAG по трассе ошибки</a><a href="#M10-L08X"><small>Следующий раздел</small>M10-L08X. Векторное хранилище →</a></nav></article><article class="material" id="M10-L08X" data-title="M10-L08X. Векторное хранилище" data-short-title="Векторное хранилище" data-kind="ready" data-module="M10"><header class="material-head"><div class="eyebrow"><span class="material-id">M10-L08X</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Векторное хранилище</h1><p class="outcome"><strong>После урока:</strong> сохранить векторы фрагментов в хранилище вместе с метаданными и именем эмбеддера, проверить его поиск против точного эталона в памяти по recall@k и выбрать между точным перебором, HNSW и IVFFlat с учётом фильтров, памяти и задержки.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L02, M10-L05, M10-L07X. Лабораторная берёт векторы USER-bge-m3 из M10-L07X, а без него — MiniLM из M10-L02. Путь без сервера требует только пакет sqlite-vec из <code>requirements-optional.in</code>. Путь с pgvector требует PostgreSQL 18 и компилятор C++ из Visual Studio либо сервер, где pgvector уже установлен. Ориентир времени — 180 минут чтения, прогона и разбора; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M10-L08X--объяснение">Объяснение</a></li><li><a href="#M10-L08X--аналогия-индекс-в-postgresql">Аналогия: индекс в PostgreSQL</a></li><li><a href="#M10-L08X--разобранный-пример">Разобранный пример</a></li><li><a href="#M10-L08X--схема">Схема</a></li><li><a href="#M10-L08X--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M10-L08X--самостоятельная-задача-a-m10-l08x-a">Самостоятельная задача A — M10-L08X-A</a></li><li><a href="#M10-L08X--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M10-L08X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M10-L08X--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M10-L08X--карточка-урока">Карточка урока</a></li><li><a href="#M10-L08X--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Урок дополняет модуль, не входит в обязательный минимум 1.1.0.</p>
+
+
+<blockquote>
+<p><strong>Версии и дата проверки:</strong> Python 3.11.9, sqlite-vec 0.1.9 (SQLite 3.45.1), pgvector 0.8.7 в PostgreSQL 18.3, сборка MSVC из Visual Studio 2026; эмбеддер USER-bge-m3 (ревизия 0cc6cfe) · проверено 05.11.2026 · источник: <a href="https://github.com/pgvector/pgvector/blob/v0.8.7/README.md" target="_blank" rel="noopener noreferrer" class="external-link">README pgvector 0.8.7</a></p>
+</blockquote>
+<h2 id="M10-L08X--объяснение">Объяснение</h2>
+<p>До сих пор курс держал векторы в массиве NumPy и искал перебором: <code>scores = q @ V.T</code>, затем сортировка. Для 72 фрагментов это правильное решение: 72 · 1024 · 4 = 294 912 байт и меньше миллисекунды на запрос. Хранилище нужно, когда появляется хотя бы одно из четырёх требований. Векторы должны пережить перезапуск процесса: USER-bge-m3 загружается и кодирует 72 фрагмента и 64 запроса за 17 секунд на CPU, а миллион фрагментов — за часы. Вместе со сходством нужно фильтровать по правам, клиенту или версии документа. Данные меняются, и вставка или удаление не должны перестраивать всё. Наконец, полный перебор становится слишком медленным, и нужен приблизительный индекс. По сути хранилище — таблица «id, вектор, метаданные, текст или ссылка на него» и одна операция: найти k ближайших векторов.</p>
+<p>Расстояние задаётся явно. В pgvector три основных оператора: <code>&lt;-&gt;</code> — евклидово расстояние, <code>&lt;#&gt;</code> — скалярное произведение со знаком минус, <code>&lt;=&gt;</code> — косинусное расстояние, то есть 1 − cos. Для векторов единичной длины порядок у всех трёх одинаковый, потому что ‖a − b‖² = 2 − 2 · cos. Индекс строится под один оператор: класс <code>vector_cosine_ops</code> обслуживает только <code>&lt;=&gt;</code>, и запрос с другим оператором этот индекс не использует. В sqlite-vec метрика объявляется при создании таблицы: <code>distance_metric=cosine</code>.</p>
+<p>Точный поиск сравнивает запрос с каждой строкой и возвращает настоящие k ближайших; его цена растёт как N · d умножений на запрос. Приблизительные индексы, ANN, отвечают быстрее, но иногда пропускают настоящих соседей. HNSW строит многослойный граф: на каждом слое у вектора до m связей с близкими (по умолчанию 16), а при построении индекс просматривает ef_construction кандидатов (по умолчанию 64). Поиск идёт по графу жадно и держит список из ef_search лучших кандидатов, по умолчанию 40: больше кандидатов — выше точность и дольше запрос. IVFFlat разбивает векторы на lists кластеров алгоритмом k-means по уже загруженным данным, и запрос просматривает probes ближайших кластеров, по умолчанию один. README pgvector советует начинать с lists = rows / 1000 до миллиона строк и probes ≈ √lists, а индекс строить после загрузки данных. Качество приблизительного индекса меряют recall@k: какая доля строк точного top-k попала в ответ индекса.</p>
+<p>Главная ловушка — фильтр. Запрос <code>WHERE grp = $2 ORDER BY embedding &lt;=&gt; $1 LIMIT 10</code> с HNSW работает так: индекс отдаёт ef_search кандидатов по сходству, и только потом WHERE отбрасывает чужие строки. Если группа занимает 1 % таблицы, из 40 кандидатов в среднем останется 0.4 строки, и запрос вернёт меньше строк, чем LIMIT, без всякой ошибки. pgvector 0.8 добавил итеративный просмотр индекса: <code>hnsw.iterative_scan</code> продолжает обход, пока не наберёт нужное число строк или не дойдёт до <code>hnsw.max_scan_tuples</code>. Для очень избирательных фильтров проще обычный B-tree по колонке фильтра и точный перебор немногих подходящих строк; при немногих значениях фильтра README предлагает частичные индексы, а при многих и для изоляции клиентов — секционирование таблицы. В sqlite-vec колонки метаданных проверяются во время перебора, поэтому k строк вернутся, если в группе они есть. Права доступа проверяют до поиска или во время него, но не после: иначе пользователь получит пустой ответ или, хуже, чужие фрагменты, если фильтр забыли.</p>
+<p>Хранилище должно помнить модель. Векторы разных моделей лежат в разных пространствах, это было в M10-L05 и M10-L07X. Чужую размерность хранилище поймает само: колонка <code>vector(1024)</code> в PostgreSQL не примет вектор длины 384, а sqlite-vec ответит ошибкой <code>Dimension mismatch</code>. Но у USER-bge-m3, bge-m3 и Qwen3-Embedding-0.6B размерность одинаковая — 1024, и векторы любой из них лягут в одно хранилище молча. Поэтому рядом с векторами хранят имя и ревизию эмбеддера и отказываются принимать запросы от другой модели. Это та же версия RAG из M10-L05, только записанная в самом хранилище.</p>
+<p>Основной путь для того, кто уже работает с PostgreSQL, — pgvector. Векторы лежат рядом с остальными данными сервиса, и для них действуют те же транзакции, JOIN с таблицами прав, резервные копии и миграции. Путь без сервера — sqlite-vec: расширение SQLite, которое работает внутри процесса и хранит всё в одном файле. Стабильная версия 0.1.9 умеет только точный перебор с фильтром по метаданным; ANN-индексы есть в альфа-версиях 0.1.10. Эталоном в тестах остаётся точный поиск в памяти: на одних и тех же векторах любое хранилище обязано вернуть тот же top-k.</p>
+<p>Чтобы попробовать pgvector без прав администратора и не трогая установленный сервер, лабораторная собирает pgvector 0.8.7 из исходников в папку проекта. Затем она поднимает отдельный учебный кластер PostgreSQL 18 на 127.0.0.1:55433. Параметры PostgreSQL 18 <code>extension_control_path</code> и <code>dynamic_library_path</code> позволяют подключить расширение из любой папки. Учебный кластер пускает локальные подключения без пароля — только для синтетических данных курса и никогда для настоящих.</p>
+<p><a class="figure-expand" href="course/assets/M10-L08X.svg" target="_blank" data-figure="course/assets/M10-L08X.svg" aria-label="Увеличить рисунок: Индекс ускоряет, фильтр может обнулить ответ"><picture><img src="course/assets/M10-L08X.svg" alt="Индекс ускоряет, фильтр может обнулить ответ" loading="lazy"></picture></a><span class="figure-hint">Индекс ускоряет, фильтр может обнулить ответ · Открыть крупнее ↗</span></p>
+<h2 id="M10-L08X--аналогия-индекс-в-postgresql">Аналогия: индекс в PostgreSQL</h2>
+<p>Как похоже: векторное хранилище — таблица с индексом. Без индекса запрос <code>ORDER BY embedding &lt;=&gt; $1 LIMIT 10</code> читает всю таблицу и сортирует, как Seq Scan с сортировкой по любой колонке. HNSW ускоряет его так же, как B-tree ускоряет <code>ORDER BY created_at LIMIT 10</code>. Планировщик сам решает, брать ли индекс, а EXPLAIN показывает решение: на таблице из 72 строк он честно выберет Seq Scan.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Точный перебор</td>
+  <td>Seq Scan с сортировкой</td>
+</tr>
+<tr>
+  <td>HNSW или IVFFlat</td>
+  <td>Индекс под ORDER BY с LIMIT</td>
+</tr>
+<tr>
+  <td>ef_search и probes</td>
+  <td>Параметры сессии через SET, которые меняют работу плана</td>
+</tr>
+<tr>
+  <td>Колонка метаданных и фильтр</td>
+  <td>WHERE рядом с ORDER BY</td>
+</tr>
+<tr>
+  <td>Имя и ревизия эмбеддера в хранилище</td>
+  <td>Версия схемы в таблице миграций</td>
+</tr>
+<tr>
+  <td>Эталон в памяти</td>
+  <td>Тестовый запрос с заранее известным ответом</td>
+</tr>
+<tr>
+  <td>recall@k</td>
+  <td>Доля правильных строк в ответе запроса</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> B-tree возвращает ровно те строки, что и Seq Scan: индекс меняет скорость, но не ответ. HNSW и IVFFlat приблизительны — с индексом ответ может отличаться от точного, и EXPLAIN этого не покажет; заметить можно только сверкой с эталоном. С фильтром разница ещё резче: B-tree вместе с WHERE отдаёт все подходящие строки, а HNSW вместе с WHERE может вернуть меньше строк, чем LIMIT, или ни одной.</p>
+<section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M10-L08X--разобранный-пример">Разобранный пример</h2>
+<p>Косинусное расстояние между a = [1, 0, 0] и b = [0.9, 0.1, 0]: cos = 0.9 / √0.82 ≈ 0.993884, расстояние 1 − cos ≈ 0.006116. Ровно это число вернули и <code>'[1,0,0]'::vector &lt;=&gt; '[0.9,0.1,0]'::vector</code> в pgvector, и KNN-запрос sqlite-vec.</p>
+<p>Recall@k = |top-k индекса ∩ top-k эталона| / k. Если индекс вернул 10 строк и 9 из них есть в точном top-10, recall@10 = 9 / 10 = 0.9. Если с фильтром он вернул одну строку и она верная, recall@10 = 1 / 10 = 0.1, хотя «ошибочных» строк в ответе нет.</p>
+<p>Размер: 72 вектора по 1024 числа float32 — 294 912 байт. Файл sqlite-vec с ними занял 4 280 320 байт: таблица vec0 выделяет место блоками по <code>chunk_size</code> = 1024 векторов, и один блок — 1024 · 1024 · 4 = 4 194 304 байт. Миллион векторов d = 1024 во float32 занимает 4 096 000 000 байт, около 3.8 ГиБ, без учёта индекса. Ожидаемое число строк с фильтром: ef_search · доля группы = 40 · 0.01 = 0.4.</p>
+<pre><code class="language-python">import numpy as np
+
+a, b = np.array([1.0, 0, 0]), np.array([0.9, 0.1, 0])
+distance = 1 - a @ b / (np.linalg.norm(a) * np.linalg.norm(b))
+assert round(float(distance), 6) == 0.006116
+reference, index = set(range(10)), set(range(9)) | {42}
+assert len(reference &amp; index) / 10 == 0.9
+assert 72 * 1024 * 4 == 294_912 and 1024 * 1024 * 4 == 4_194_304
+assert 1_000_000 * 1024 * 4 == 4_096_000_000
+print(round(40 * 0.01, 2), 'строки из 10 ожидается после фильтра')
+</code></pre>
+<p>Тот же поиск в SQL — для того, кто знает PostgreSQL, это обычная таблица и обычный индекс:</p>
+<pre><code class="language-sql">create extension if not exists vector;
+create table chunks (id int primary key, grp text not null, embedding vector(1024) not null);
+create index on chunks using hnsw (embedding vector_cosine_ops);
+set hnsw.ef_search = 100;
+select id, embedding &lt;=&gt; $1 as distance from chunks where grp = $2 order by embedding &lt;=&gt; $1 limit 5;
+</code></pre>
+<h3 id="M10-L08X--авторский-прогон-05-11-2026">Авторский прогон 05.11.2026</h3>
+<p>CPU, данные из <code>artifacts/M10/vector_store/report.json</code>. Время pgvector измерено внутри сервера функцией PL/pgSQL, время sqlite-vec — вызовом из Python; это поведение хранилищ и индексов, а не сравнение продуктов.</p>
+<p>Курс: 72 фрагмента 24 документов, векторы USER-bge-m3 (d = 1024), 64 запроса из M10-L07X, k = 5.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Хранилище</th>
+  <th>Совпадение с эталоном</th>
+  <th>Медиана на запрос</th>
+  <th>Размер</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>sqlite-vec после закрытия и открытия файла</td>
+  <td>recall@5 = 1.000, порядок совпал в 64 из 64</td>
+  <td>4.7 мс</td>
+  <td>файл 4 280 320 байт</td>
+</tr>
+<tr>
+  <td>pgvector без индекса</td>
+  <td>recall@5 = 1.000, порядок 64 из 64</td>
+  <td>0.22 мс</td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>pgvector с индексом HNSW</td>
+  <td>recall@5 = 1.000; план Seq Scan — для 72 строк планировщик индекс не взял</td>
+  <td>0.23 мс</td>
+  <td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p>Расхождение расстояний с эталоном не больше 8 · 10⁻⁷ — это точность float32. Запрос вектором длины 512 sqlite-vec отклонил: «Expected 1024 dimensions but received 512». Запросы двух других моделей той же размерности хранилище отклонило по записанному имени эмбеддера. Затем лабораторная посчитала, что вернул бы поиск без этой проверки:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Векторы запросов</th>
+  <th>Перефразирование, 24</th>
+  <th>С термином, 24</th>
+  <th>Запросы 1.1.0, 12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>USER-bge-m3, как у хранилища</td>
+  <td>19</td>
+  <td>24</td>
+  <td>12</td>
+</tr>
+<tr>
+  <td>bge-m3 — исходная модель USER-bge-m3</td>
+  <td>20</td>
+  <td>24</td>
+  <td>12</td>
+</tr>
+<tr>
+  <td>Qwen3-Embedding-0.6B — неродственная модель</td>
+  <td>2</td>
+  <td>1</td>
+  <td>0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Неожиданное наблюдение: запросы bge-m3 к векторам USER-bge-m3 нашли нужный документ не хуже своих, потому что USER-bge-m3 дообучен из bge-m3 и пространство почти не сдвинулось. Это не делает смену модели безопасной: неродственная модель той же размерности дала 2 попадания из 24, почти случайный уровень, и ни одной ошибки.</p>
+<p>Синтетика: 20 000 векторов d = 128 вокруг 64 центров, 200 запросов, k = 10, группа фильтра — около 1 % строк.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Вариант</th>
+  <th>recall@10</th>
+  <th>Строк в ответе</th>
+  <th>Медиана, мс</th>
+  <th>План</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>NumPy, точный перебор пакетом</td>
+  <td>1.000</td>
+  <td>10</td>
+  <td>1.77</td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>sqlite-vec, точный перебор</td>
+  <td>1.000</td>
+  <td>10</td>
+  <td>10.4</td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>sqlite-vec, фильтр по группе</td>
+  <td>1.000</td>
+  <td>10</td>
+  <td>8.7</td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>pgvector без индекса</td>
+  <td>1.000</td>
+  <td>10</td>
+  <td>4.58</td>
+  <td>Seq Scan</td>
+</tr>
+<tr>
+  <td>HNSW, ef_search = 10</td>
+  <td>0.934</td>
+  <td>10</td>
+  <td>0.17</td>
+  <td>Index Scan</td>
+</tr>
+<tr>
+  <td>HNSW, ef_search = 40, по умолчанию</td>
+  <td>0.999</td>
+  <td>10</td>
+  <td>0.24</td>
+  <td>Index Scan</td>
+</tr>
+<tr>
+  <td>HNSW, ef_search = 100</td>
+  <td>1.000</td>
+  <td>10</td>
+  <td>0.30</td>
+  <td>Index Scan</td>
+</tr>
+<tr>
+  <td>HNSW, ef_search = 200</td>
+  <td>1.000</td>
+  <td>10</td>
+  <td>0.42</td>
+  <td>Index Scan</td>
+</tr>
+<tr>
+  <td>IVFFlat, lists = 20, probes = 1</td>
+  <td>1.000</td>
+  <td>10</td>
+  <td>0.31</td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>IVFFlat, probes = 4</td>
+  <td>1.000</td>
+  <td>10</td>
+  <td>1.06</td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>IVFFlat, probes = 20</td>
+  <td>1.000</td>
+  <td>10</td>
+  <td>4.19</td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>Фильтр 1 %: HNSW с настройками по умолчанию</td>
+  <td>0.050</td>
+  <td>0.49</td>
+  <td>0.25</td>
+  <td>Index Scan</td>
+</tr>
+<tr>
+  <td>Фильтр 1 %: HNSW и iterative_scan = relaxed_order</td>
+  <td>0.939</td>
+  <td>10</td>
+  <td>3.0</td>
+  <td>Index Scan</td>
+</tr>
+<tr>
+  <td>Фильтр 1 %: B-tree по группе</td>
+  <td>1.000</td>
+  <td>10</td>
+  <td>0.20</td>
+  <td>Bitmap Index Scan</td>
+</tr>
+<tr>
+  <td>Почти без кластеров: HNSW, ef_search = 10, 40, 100</td>
+  <td>0.244, 0.536, 0.764</td>
+  <td>10</td>
+  <td>0.27–1.02</td>
+  <td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p>Прочерк в колонке плана значит, что для этого варианта план не записывался. HNSW с настройками по умолчанию нашёл 99.9 % настоящих соседей в 19 раз быстрее полного перебора. При ef_search = 10 он потерял около 7 % строк. Индекс HNSW занял 16 654 336 байт — больше самой таблицы (11 829 248 байт) — и строился 1.3 секунды; IVFFlat занял 11 051 008 байт и строился 0.24 секунды. IVFFlat нашёл всех соседей уже с одним probe, потому что у данных 64 чётких кластера. На почти бесструктурных данных тот же HNSW при ef_search = 100 вернул только 76 % строк. Recall зависит от данных, поэтому его меряют на своих векторах.</p>
+<p>Главный результат — фильтр. При существующем HNSW планировщик сам выбрал его для запроса с WHERE и вернул в среднем 0.49 строки вместо 10, без ошибки и предупреждения. Итеративный просмотр вернул 10 строк за 3 мс. B-tree по группе дал точный ответ за 0.2 мс: в группе около 200 строк, и перебрать их дешевле, чем идти по графу. HNSW строится со случайными уровнями, поэтому повторный прогон даёт близкие, но не те же числа: в двух авторских прогонах recall при ef_search = 10 был 0.933 и 0.941.</p>
+<h3 id="M10-L08X--какое-хранилище-выбрать">Какое хранилище выбрать</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Хранилище</th>
+  <th>Как запускается</th>
+  <th>Индекс</th>
+  <th>Фильтр</th>
+  <th>Когда брать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>pgvector, лицензия PostgreSQL</td>
+  <td>Расширение PostgreSQL, работает в сервере базы</td>
+  <td>Точный перебор, HNSW, IVFFlat</td>
+  <td>Обычный WHERE; с ANN — iterative scan, B-tree или частичный индекс</td>
+  <td>Данные сервиса уже в PostgreSQL, нужны транзакции, JOIN с правами и общие резервные копии</td>
+</tr>
+<tr>
+  <td>sqlite-vec, MIT или Apache-2.0</td>
+  <td>Расширение SQLite внутри процесса, один файл</td>
+  <td>Точный перебор в 0.1.9; ANN — в альфа-версиях 0.1.10</td>
+  <td>Колонки метаданных и partition key проверяются во время перебора</td>
+  <td>Локальное приложение, тесты, учебные данные без сервера</td>
+</tr>
+<tr>
+  <td>Qdrant, Apache-2.0</td>
+  <td>Отдельный сервер в Docker или облаке; в Python-клиенте есть локальный режим без сервера для разработки и тестов</td>
+  <td>HNSW — единственный индекс плотных векторов</td>
+  <td>Payload-индексы по полям; по ним планировщик оценивает строгость фильтра и выбирает стратегию поиска</td>
+  <td>Отдельный векторный сервис с фильтрами под нагрузкой</td>
+</tr>
+<tr>
+  <td>LanceDB, Apache-2.0</td>
+  <td>Встраиваемая библиотека в процессе, данные на диске или в объектном хранилище; есть серверная Enterprise-версия</td>
+  <td>Без индекса — точный перебор; IVF, в том числе с квантованием, и IVF_HNSW</td>
+  <td>Prefilter по умолчанию; postfilter может вернуть меньше limit строк</td>
+  <td>Колоночные и мультимодальные данные без отдельного сервера</td>
+</tr>
+<tr>
+  <td>Chroma, Apache-2.0</td>
+  <td>В процессе через PersistentClient, сервер через <code>chroma run</code> или Docker, облако</td>
+  <td>HNSW</td>
+  <td>where по метаданным</td>
+  <td>Быстрый прототип RAG; функция эмбеддингов по умолчанию — английская all-MiniLM-L6-v2, её файлы скачиваются автоматически, поэтому для русского текста и работы без сети задают свою</td>
+</tr>
+</tbody>
+</table></div>
+<p>Таблица описывает способ запуска и возможности по официальной документации на 05.11.2026, а не скорость: Qdrant, LanceDB и Chroma в курсе не запускались, и обязательных зависимостей для них нет. Перед выбором любое хранилище проверяют тем же способом, что в лабораторной: эталон в памяти, recall@k, число строк с фильтром, план или его аналог.</p>
+</section><h2 id="M10-L08X--схема">Схема</h2>
+<figure class="diagram"><pre class="mermaid">flowchart TD
+    C[&quot;Фрагменты&quot;] --&gt; E[&quot;Эмбеддер X и его ревизия&quot;]
+    E --&gt; S[&quot;Хранилище: id, вектор, группа, имя эмбеддера&quot;]
+    Q[&quot;Запрос&quot;] --&gt; QE[&quot;Тот же эмбеддер X&quot;]
+    QE --&gt; G[&quot;Проверка: модель и размерность совпадают&quot;]
+    S --&gt; G
+    G --&gt; F[&quot;Фильтр прав и группы до или во время поиска&quot;]
+    F --&gt; K[&quot;Точный перебор или HNSW, IVFFlat: top-k&quot;]
+    K --&gt; R[&quot;Сверка с эталоном в памяти: recall@k и число строк&quot;]
+    classDef main fill:#e8f0fe,stroke:#245bba,stroke-width:2px,color:#182b3a
+    class G,F,R main
+</pre></figure>
+<p>Путь запроса к векторному хранилищу. Фрагменты и запрос кодирует одна и та же модель, а хранилище записывает её имя рядом с векторами. Выделены три проверки, которых нет у массива в памяти. Первая — совпадение модели: одинаковая размерность ещё не гарантирует одно пространство. Вторая — фильтр до или во время поиска, а не после него: иначе ANN-индекс вернёт меньше строк, чем просили. Третья — сверка с точным эталоном по recall@k и числу строк, без которой приблизительный индекс выглядит точным.</p>
+<section class="lesson-stage" data-stage="practice"><span class="stage-label">Пробуем с поддержкой</span><h2 id="M10-L08X--практика-с-поддержкой">Практика с поддержкой</h2>
+<p><strong>Предскажи до запуска.</strong> Прежде чем запускать код или пересчитывать пример, запиши ожидаемый вывод: числа, формы массивов, порядок или текст. После запуска сравни с фактическим и объясни каждое расхождение.</p>
+<p>Путь без сервера — установи пакет в <code>.venv</code> и запусти лабораторную без PostgreSQL:</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m pip install -r requirements-optional.in
+.\.venv\Scripts\python.exe labs\M10\vector_store.py --no-pg
+</code></pre>
+<p>Путь с pgvector — собери расширение, подними учебный кластер, запусти лабораторную и останови кластер:</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe labs\M10\pg_local.py build
+.\.venv\Scripts\python.exe labs\M10\pg_local.py init
+.\.venv\Scripts\python.exe labs\M10\pg_local.py start
+.\.venv\Scripts\python.exe labs\M10\vector_store.py
+.\.venv\Scripts\python.exe labs\M10\pg_local.py stop
+</code></pre>
+<p><code>build</code> один раз скачивает исходники pgvector 0.8.7 (около 220 КБ, контрольная сумма проверяется) и компилирует их компилятором из Visual Studio с компонентом «Разработка классических приложений на C++». <code>init</code> требует PostgreSQL 18; файлы кластера лежат в <code>artifacts/M10/pgdata</code>. Если pgvector уже установлен в твоём сервере, передай <code>--pg-conninfo &quot;host=localhost port=5432 user=... dbname=...&quot;</code> без пароля: пароль libpq берёт из файла pgpass. Лабораторная работает только в схеме <code>m10_l08x</code> и пересоздаёт там свои таблицы.</p>
+<p>До запуска запиши три предсказания: сколько строк вернёт HNSW с фильтром на 1 % строк, каким будет recall@10 при ef_search = 10 и сколько байт займёт файл sqlite-vec с 72 векторами. После запуска открой отчёт и найди поле <code>plan</code> у каждого варианта: где планировщик выбрал Seq Scan и почему. Подключись к учебному кластеру через <code>psql &quot;host=127.0.0.1 port=55433 user=course dbname=postgres&quot;</code> и выполни EXPLAIN для запроса с фильтром сначала с индексом HNSW, затем после <code>drop index</code>.</p>
+</section><section class="lesson-stage" data-stage="task"><span class="stage-label">Твоя попытка</span><h2 id="M10-L08X--самостоятельная-задача-a-m10-l08x-a">Самостоятельная задача A — M10-L08X-A</h2>
+<p>В копии лабораторной добавь в синтетическую часть HNSW с m = 8 и m = 32 при ef_construction = 64. Для каждого m измерь recall@10 и медиану времени при ef_search = 10 и 40, размер индекса и время построения. Гипотезу запиши до запуска. Выбери настройку для сервиса, которому нужен recall@10 не ниже 0.99 при минимальной задержке, и объясни, почему этот выбор нельзя перенести на свои векторы без проверки. Если PostgreSQL недоступен, выполни офлайн-вариант на sqlite-vec. Сравни колонку метаданных <code>grp</code> и <code>grp text partition key</code> на 20 000 векторах: время с фильтром и без, совпадение с эталоном и размер файла.</p>
+<p>Первая попытка — без готового решения. Сохрани код, таблицу и объяснение в <code>submissions/M10-L08X/</code>. AI может пояснять термины и помогать искать ошибку; запиши полученную помощь.</p>
+</section><details class="hints" id="M10-L08X--подсказки-по-очереди"><summary>Подсказки по очереди</summary><div>
+<ol>
+<li>Для каждого m удаляй прежний индекс и создавай новый: <code>create index ... using hnsw (embedding vector_cosine_ops) with (m = 8, ef_construction = 64)</code>.</li>
+<li>Recall считай против <code>exact_topk</code> из лабораторной — точного эталона в памяти, а не против другого индекса.</li>
+<li>Время построения и recall меряй хотя бы дважды: HNSW строится со случайными уровнями, и разница меньше разброса между прогонами ничего не доказывает.</li>
+</ol>
+</div></details>
+<h2 id="M10-L08X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</h2>
+<p>Ошибка: считать HNSW точным и проверять хранилище на пяти удачных запросах. Ошибка: сравнивать время sqlite-vec из Python со временем внутри PostgreSQL как одну величину. Ошибка: фильтровать после ANN-поиска и не проверять число строк в ответе. Ошибка: запустить кластер без пароля с настоящими данными. Ошибка: сменить эмбеддер и оставить старые векторы, потому что размерность совпала. Критерий: таблица recall@k, числа строк, задержки и размера, план EXPLAIN и вывод, который не выходит за пределы данных.</p>
+<p>После попытки сверь результат с <a href="#M10-SOLUTIONS--m10-l08x-a">решением M10-L08X-A</a>.</p>
+<section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M10-L08X--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
+<p><strong>B — фильтр и LIMIT.</strong> В таблице 2 000 000 фрагментов 400 клиентов, у каждого поровну, строки клиентов перемешаны. Есть HNSW-индекс, ef_search = 40, запрос <code>WHERE tenant = $2 ORDER BY embedding &lt;=&gt; $1 LIMIT 10</code>. Сколько строк в среднем вернёт запрос без итеративного просмотра? Назови три способа исправить ответ и цену каждого.</p>
+<p><strong>C — через 7–10 дней.</strong> Сервис хранит 300 000 фрагментов и переходит с модели d = 768 на модель d = 1024. Посчитай размер векторов во float32 до и после. Объясни, что произойдёт с колонкой <code>vector(768)</code> и HNSW-индексом и как проверить новый индекс до переключения. Почему проверка размерности не защищает при переходе на другую модель с той же размерностью?</p>
+<p>Сначала сохрани собственное решение B/C, затем сверь <a href="#M10-SOLUTIONS--m10-l08x-b-c">отдельный ключ M10-L08X-B-C</a>. Отметь помощь; отложенную проверку засчитывай только после фактической новой попытки.</p>
+</section><h2 id="M10-L08X--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Хранилище — таблица с id, вектором, метаданными и именем эмбеддера; любой его поиск сверяют с точным эталоном в памяти по recall@k на зафиксированных запросах; приблизительный индекс выбирают по recall, задержке и памяти, а фильтр проверяют по числу возвращённых строк</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>recall@k — доля строк точного top-k в ответе индекса; ef_search — число кандидатов HNSW, по умолчанию 40; probes — число просмотренных кластеров IVFFlat, по умолчанию 1; оператор <code>&lt;=&gt;</code> — косинусное расстояние 1 − cos; векторы занимают N · d · 4 байта во float32</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Когда векторы должны пережить перезапуск, фильтроваться по правам и обновляться. Пример: 20 000 векторов d = 128 — 10 240 000 байт; точный перебор в PostgreSQL — 4.6 мс, HNSW при ef_search = 40 — 0.24 мс и recall@10 = 0.999, но с фильтром на 1 % строк тот же HNSW вернул в среднем 0.49 строки вместо 10</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Считать ANN-индекс точным: не сверять его с эталоном, фильтровать после поиска без проверки числа строк или оставить векторы старой модели при смене эмбеддера той же размерности</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M10-L08X--источники-и-углубление">Источники и углубление</h2>
+<ul>
+<li><a href="https://github.com/pgvector/pgvector/blob/v0.8.7/README.md" target="_blank" rel="noopener noreferrer" class="external-link">README pgvector 0.8.7</a> — операторы расстояния, HNSW, IVFFlat, итеративный просмотр индекса и фильтрация (на английском)</li>
+<li><a href="https://arxiv.org/abs/1603.09320" target="_blank" rel="noopener noreferrer" class="external-link">Malkov, Yashunin: Efficient and robust approximate nearest neighbor search using HNSW graphs</a> — статья об иерархических графах HNSW (на английском)</li>
+<li><a href="https://www.postgresql.org/docs/18/runtime-config-client.html#GUC-EXTENSION-CONTROL-PATH" target="_blank" rel="noopener noreferrer" class="external-link">PostgreSQL 18: extension_control_path</a> — расширения из каталога вне установки сервера (на английском)</li>
+<li><a href="https://alexgarcia.xyz/sqlite-vec/features/vec0.html" target="_blank" rel="noopener noreferrer" class="external-link">sqlite-vec: метаданные в таблицах vec0</a> — колонки метаданных, partition key и KNN-запросы (на английском)</li>
+<li><a href="https://qdrant.tech/documentation/concepts/indexing/" target="_blank" rel="noopener noreferrer" class="external-link">Qdrant: индексация</a> — HNSW, payload-индексы и filterable HNSW (на английском)</li>
+<li><a href="https://lancedb.com/docs/search/filtering/" target="_blank" rel="noopener noreferrer" class="external-link">LanceDB: фильтрация</a> — prefilter и postfilter и почему postfilter возвращает меньше строк (на английском)</li>
+<li><a href="https://docs.trychroma.com/docs/embeddings/embedding-functions" target="_blank" rel="noopener noreferrer" class="external-link">Chroma: функции эмбеддингов</a> — функция по умолчанию all-MiniLM-L6-v2 и автоматическая загрузка её файлов (на английском)</li>
+</ul>
+<p>Синтетические данные, численные наблюдения и код лабораторной созданы для курса; внешние тексты не копировались в учебные данные. Размер блока vec0 по умолчанию (1024 вектора) взят из исходного кода sqlite-vec 0.1.9.</p>
+<div class="practice-note"><a href="#M10">Модуль и домашняя работа</a> · <a href="#M10-SOLUTIONS--m10-l08x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M10-L08X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L07X"><small>Предыдущий раздел</small>← M10-L07X. Эмбеддеры для русского языка</a><a href="#M11"><small>Следующий раздел</small>M11 Оценивание LLM-систем →</a></nav></article><article class="material" id="M11" data-title="M11 Оценивание LLM-систем" data-short-title="Оценивание LLM-систем" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Оценивание LLM-систем</h1></header><div class="article-layout"><div class="body-content"><p>Модуль завершает переход от демонстрации к проверяемому качеству. HR и технические ответы получают разные рубрики; модельный judge проходит проверку, а релиз сравнивается по одинаковым случаям с анализом регрессий.</p>
 <h2 id="M11--порядок-занятий">Порядок занятий</h2>
 <ol>
 <li><a href="#M11-L01">M11-L01. Что именно оцениваем</a></li>
@@ -11450,7 +11849,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M11.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M11.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L07X"><small>Предыдущий раздел</small>← M10-L07X. Эмбеддеры для русского языка</a><a href="#M11-L01"><small>Следующий раздел</small>M11-L01. Что именно оцениваем →</a></nav></article><article class="material" id="M11-L01" data-title="M11-L01. Что именно оцениваем" data-short-title="Что именно оцениваем" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Что именно оцениваем</h1><p class="outcome"><strong>После урока:</strong> Выбрать критерии для конкретной функции тренажёра и объяснить исключённые критерии.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L05, M04-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L01--объяснение">Объяснение</a></li><li><a href="#M11-L01--аналогия-метрики-api-с-rate-limiter">Аналогия: метрики API с rate limiter</a></li><li><a href="#M11-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M11-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L01--самостоятельная-задача-a-m11-l01-a">Самостоятельная задача A — M11-L01-A</a></li><li><a href="#M11-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M11-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L01--карточка-урока">Карточка урока</a></li><li><a href="#M11-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+"></iframe><p><a href="course/visuals/M11.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M11.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L08X"><small>Предыдущий раздел</small>← M10-L08X. Векторное хранилище</a><a href="#M11-L01"><small>Следующий раздел</small>M11-L01. Что именно оцениваем →</a></nav></article><article class="material" id="M11-L01" data-title="M11-L01. Что именно оцениваем" data-short-title="Что именно оцениваем" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Что именно оцениваем</h1><p class="outcome"><strong>После урока:</strong> Выбрать критерии для конкретной функции тренажёра и объяснить исключённые критерии.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L05, M04-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L01--объяснение">Объяснение</a></li><li><a href="#M11-L01--аналогия-метрики-api-с-rate-limiter">Аналогия: метрики API с rate limiter</a></li><li><a href="#M11-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M11-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L01--самостоятельная-задача-a-m11-l01-a">Самостоятельная задача A — M11-L01-A</a></li><li><a href="#M11-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M11-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L01--карточка-урока">Карточка урока</a></li><li><a href="#M11-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, NumPy 2.4.6, scikit-learn 1.9.1 · проверено 04.11.2026 · источник: <a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: оценка моделей</a></p>
@@ -19792,7 +20191,13 @@ assert not accept_result(3,2)
 <nav class="answer-actions" aria-label="После самопроверки"><a href="#M10-L07X" data-return-task="M10-L07X">← Вернуться к задаче</a><a href="#M10-L07X" data-return-retry="M10-L07X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M10-SOLUTIONS--m10-l07x-b-c"><summary>Ответ: M10-L07X-B-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M10-L07X" data-return-task="M10-L07X">← Вернуться к задаче</a><a href="#M10-L07X" data-return-retry="M10-L07X">Новый вариант B / C →</a></nav>
 <p>B: модель X — Recall@1 = 2/4 = 0.5, Recall@3 = 2/4 = 0.5, MRR = (1 + 1 + 1/5 + 0)/4 = 0.55; модель Y — Recall@1 = 0, Recall@3 = 4/4 = 1, MRR = 4 · 0.5 / 4 = 0.5. Для подсказок, где пользователь видит только первый результат, лучше X: половина первых мест против ни одного. Для RAG с тремя фрагментами в контексте лучше Y: нужный документ всегда попадает в контекст, а у X в половине запросов его нет совсем. MRR почти одинаков и сам по себе этот выбор не подсказал бы.</p>
 <p>C: индекс модели A — 200 000 · 1024 · 4 = 819 200 000 байт, около 781 МиБ; модели B — 307 200 000 байт, около 293 МиБ. С весами 1.2 и 0.4 ГБ обе помещаются в 16 ГБ, но до выбора нужно измерить время кодирования запроса и всего корпуса на CPU, пиковую память процесса и устойчивость разницы: 3 запроса из 60 — 0.05, это может быть случайностью набора; помогут новые вопросы или bootstrap по запросам и разбор, какие именно ошибки исчезли. При переходе с B на A старый индекс непригоден: векторы B лежат в другом пространстве и имеют другую размерность. Нужно перекодировать все 200 000 фрагментов моделью A, построить новый индекс, проверить известные релевантные пары и атомарно переключить комплект, в котором encoder запросов и индекс совпадают, как в M10-L05.</p>
-<nav class="answer-actions" aria-label="После самопроверки"><a href="#M10-L07X" data-return-task="M10-L07X">← Вернуться к задаче</a><a href="#M10-L07X" data-return-retry="M10-L07X">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M10.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M10"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M11-SOLUTIONS" data-title="M11. Решения для самопроверки" data-short-title="M11. Решения для самопроверки" data-kind="answer" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M11. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Открывай после собственной попытки. Если ты изучил ключ до решения, новая задача из раздела повторения обязательна для проверки самостоятельности. Числа в учебных примерах не являются оценкой реальных кандидатов.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M10-L07X" data-return-task="M10-L07X">← Вернуться к задаче</a><a href="#M10-L07X" data-return-retry="M10-L07X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M10-SOLUTIONS--m10-l08x-a"><summary>Ответ: M10-L08X-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M10-L08X" data-return-task="M10-L08X">← Вернуться к задаче</a><a href="#M10-L08X" data-return-retry="M10-L08X">Новый вариант B / C →</a></nav>
+<p>Числа зависят от прогона: HNSW строится со случайными уровнями, поэтому ключ проверяет ход решения и направление выводов. Авторская проверка 05.11.2026 на той же синтетике (20 000 векторов d = 128, 200 запросов, k = 10), по два построения на каждое m: m = 8 — построение 0.7 с, индекс 14 909 440 байт, recall@10 0.72–0.73 при ef_search = 10 и 0.96–0.97 при 40; m = 16 — 1.2 с, около 16.65 млн байт, 0.91–0.92 и 0.985–0.999; m = 32 — 2.9 с, около 20.58 млн байт, 0.97–0.98 и 0.995–1.000. Медиана при ef_search = 40 росла с 0.19–0.22 мс до 0.26 мс. Требованию recall@10 не ниже 0.99 m = 8 не удовлетворяет. m = 16 при ef_search = 40 — на границе: одно построение дало 0.985, поэтому нужен ef_search = 100 (в основном прогоне 1.000 за 0.30 мс). m = 32 при ef_search = 40 прошёл в обоих построениях за 0.26 мс, но индекс на 24 % больше и строится в 2.4 раза дольше. Выбор между этими двумя вариантами зависит от того, что дороже — память и время построения или задержка. Перенести вывод на свои векторы нельзя: на почти бесструктурных данных тот же HNSW при ef_search = 100 нашёл 76 % соседей, а один прогон с разницей меньше разброса между построениями ничего не доказывает.</p>
+<p>Офлайн-вариант (sqlite-vec, база в памяти, те же 20 000 векторов и 100 групп по 1 %): колонка метаданных — 3.8 мс без фильтра и 1.3 мс с фильтром; partition key — 10.9 мс без фильтра и 0.14 мс с фильтром; recall@10 = 1.000 везде, потому что перебор точный. Файл с колонкой метаданных занял 11 325 440 байт, с partition key — 53 649 408: каждая из 100 групп получила собственный блок на 1024 вектора, это 100 · 1024 · 128 · 4 = 52 428 800 байт. Partition key окупается, когда почти каждый запрос фильтрует по ключу и на одно значение приходятся сотни векторов, как советует документация; здесь около 200 векторов на значение, и запрос без фильтра платит за дробление. Время из базы в памяти меньше, чем у файла в лабораторной, поэтому варианты сравнивают в одной постановке. Критическая ошибка — считать recall против другого индекса, а не против точного эталона, или делать вывод по одному построению.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M10-L08X" data-return-task="M10-L08X">← Вернуться к задаче</a><a href="#M10-L08X" data-return-retry="M10-L08X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M10-SOLUTIONS--m10-l08x-b-c"><summary>Ответ: M10-L08X-B-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M10-L08X" data-return-task="M10-L08X">← Вернуться к задаче</a><a href="#M10-L08X" data-return-retry="M10-L08X">Новый вариант B / C →</a></nav>
+<p>B: доля клиента — 1/400 = 0.25 %, поэтому из 40 кандидатов HNSW в среднем подойдёт 40 · 0.0025 = 0.1 строки. Вероятность получить ноль строк — (1 − 0.0025)^40 ≈ 0.90, то есть девять запросов из десяти вернут пустой ответ без ошибки. Три способа исправить. Первый — <code>SET hnsw.iterative_scan = strict_order</code> или <code>relaxed_order</code>: индекс просматривает больше кандидатов, пока не наберёт 10 строк или не дойдёт до <code>hnsw.max_scan_tuples</code> (по умолчанию 20 000; среди 20 000 просмотренных ожидается около 50 строк клиента). Цена — задержка: в лабораторной с группой 1 % она выросла с 0.25 до 3.0 мс, а recall остался приблизительным (0.939). Второй — B-tree по tenant и точный перебор строк клиента: у каждого 5 000 строк, ответ точный, но цена запроса растёт с размером клиента, и по EXPLAIN нужно проверить, что планировщик выбрал этот путь. Третий — секционирование таблицы по клиенту (PARTITION BY LIST или отдельные таблицы) со своим HNSW в каждой секции: поиск идёт только по данным клиента, но 400 секций и индексов усложняют миграции, построение и память. Для 400 клиентов разумный старт — второй или третий способ; первый годится как страховка, но не как основной механизм изоляции.</p>
+<p>C: до перехода векторы занимают 300 000 · 768 · 4 = 921 600 000 байт, около 879 МиБ, после — 300 000 · 1024 · 4 = 1 228 800 000 байт, около 1172 МиБ, на треть больше, без учёта индекса. Колонка <code>vector(768)</code> не примет вектор длины 1024, а HNSW-индекс привязан к этой колонке: нужна новая колонка или таблица <code>vector(1024)</code>. Затем весь корпус перекодируют новой моделью, индекс строят после загрузки и рядом записывают имя и ревизию эмбеддера. До переключения проверяют, что EXPLAIN показывает индекс, recall@k индекса против точного перебора на зафиксированных запросах, качество на размеченных запросах против старой версии и число строк для запросов с фильтром. Переключают атомарно весь комплект — эмбеддер запросов и индекс, как в M10-L05, — и оставляют старый комплект для отката. При переходе на модель той же размерности ни колонка, ни индекс ошибки не дадут: в лабораторной запросы Qwen3-Embedding-0.6B к векторам USER-bge-m3 нашли нужный документ первым в 2 перефразированных вопросах из 24 и не вызвали ни одной ошибки. Защищает только записанное имя эмбеддера и отказ принимать запросы от другой модели.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M10-L08X" data-return-task="M10-L08X">← Вернуться к задаче</a><a href="#M10-L08X" data-return-retry="M10-L08X">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M10.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M10"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M11-SOLUTIONS" data-title="M11. Решения для самопроверки" data-short-title="M11. Решения для самопроверки" data-kind="answer" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M11. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Открывай после собственной попытки. Если ты изучил ключ до решения, новая задача из раздела повторения обязательна для проверки самостоятельности. Числа в учебных примерах не являются оценкой реальных кандидатов.</p>
 <details class="answer-key" id="M11-SOLUTIONS--m11-l01-a"><summary>Ответ: M11-L01-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L01" data-return-task="M11-L01">← Вернуться к задаче</a><a href="#M11-L01" data-return-retry="M11-L01">Новый вариант B / C →</a></nav>
 <p>Coverage=32/40=0,8; correctness=24/32=0,75; correct/total=24/40=0,6; уместные отказы=6/8=0,75. Если успех заранее определён как корректный ответ либо уместный отказ, успех=(24+6)/40=0,75, но его нужно показывать рядом с coverage. Gate1: не одобрять заранее заданное критическое заблуждение о SQL. Gate2: не приписывать подтверждение отсутствующему источнику. Прохождение означает отсутствие этих ошибок на данном наборе и версии, а не универсальную безошибочность.</p>
 <nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L01" data-return-task="M11-L01">← Вернуться к задаче</a><a href="#M11-L01" data-return-retry="M11-L01">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M11-SOLUTIONS--m11-l02-a"><summary>Ответ: M11-L02-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L02" data-return-task="M11-L02">← Вернуться к задаче</a><a href="#M11-L02" data-return-retry="M11-L02">Новый вариант B / C →</a></nav>
@@ -21684,7 +22089,7 @@ assert not accept_result(3,2)
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 104 из 104 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 105 из 105 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -22151,6 +22556,13 @@ assert not accept_result(3,2)
 <li><strong>Смысл величин.</strong> Recall@N — доля релевантных среди первых N, MRR — средний 1/ранг первого релевантного; один запрос из 24 — шаг 1/24 ≈ 0.04; CLS, mean и last token — разные свёртки, и чужая свёртка портит векторы без ошибки; сходство ближайшего не откалибровано, порог между моделями не переносится.</li>
 <li><strong>Когда применять.</strong> При выборе эмбеддера для русского RAG. Пример: 100 000 фрагментов при d = 1024 занимают 100 000 · 1024 · 4 = 409 600 000 байт, около 391 МиБ, при d = 384 — около 146 МиБ; разница моделей в два запроса из 24 (≈ 0.08) на синтетическом наборе — повод проверить на своих данных, а не готовый вывод.</li>
 <li><strong>Главная ошибка.</strong> Выбрать модель по названию или одному удачному запросу либо оставить старый индекс после смены эмбеддера.</li>
+</ul>
+<h3 id="CHEATSHEET--m10-l08x-векторное-хранилище"><a href="#M10-L08X">M10-L08X. Векторное хранилище</a></h3>
+<ul>
+<li><strong>Правило.</strong> Хранилище — таблица с id, вектором, метаданными и именем эмбеддера; любой его поиск сверяют с точным эталоном в памяти по recall@k на зафиксированных запросах; приблизительный индекс выбирают по recall, задержке и памяти, а фильтр проверяют по числу возвращённых строк.</li>
+<li><strong>Смысл величин.</strong> recall@k — доля строк точного top-k в ответе индекса; ef_search — число кандидатов HNSW, по умолчанию 40; probes — число просмотренных кластеров IVFFlat, по умолчанию 1; оператор <code>&lt;=&gt;</code> — косинусное расстояние 1 − cos; векторы занимают N · d · 4 байта во float32.</li>
+<li><strong>Когда применять.</strong> Когда векторы должны пережить перезапуск, фильтроваться по правам и обновляться. Пример: 20 000 векторов d = 128 — 10 240 000 байт; точный перебор в PostgreSQL — 4.6 мс, HNSW при ef_search = 40 — 0.24 мс и recall@10 = 0.999, но с фильтром на 1 % строк тот же HNSW вернул в среднем 0.49 строки вместо 10.</li>
+<li><strong>Главная ошибка.</strong> Считать ANN-индекс точным: не сверять его с эталоном, фильтровать после поиска без проверки числа строк или оставить векторы старой модели при смене эмбеддера той же размерности.</li>
 </ul>
 <h2 id="CHEATSHEET--m11-оценивание-llm-систем">M11. Оценивание LLM-систем</h2>
 <h3 id="CHEATSHEET--m11-l01-что-именно-оцениваем"><a href="#M11-L01">M11-L01. Что именно оцениваем</a></h3>

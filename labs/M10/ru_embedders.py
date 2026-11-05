@@ -73,6 +73,11 @@ def encoder_config(path):
     return {'pooling':mode,'query_prompt':prompts.get('query',''),'document_prompt':prompts.get('document','')}
 
 def encode(path,documents,queries,max_length=512,batch=8):
+    doc_vectors,query_vectors,info=embed(path,documents,queries,max_length,batch)
+    return query_vectors@doc_vectors.T,info
+
+def embed(path,documents,queries,max_length=512,batch=8):
+    """L2-normalized float32 document and query vectors; also used by the vector store lab (T34)."""
     config=encoder_config(path);started=time.perf_counter()
     tokenizer=AutoTokenizer.from_pretrained(path,local_files_only=True)
     if config['pooling']=='lasttoken':tokenizer.padding_side='left'
@@ -88,8 +93,8 @@ def encode(path,documents,queries,max_length=512,batch=8):
         return np.concatenate(out)
     doc_vectors=vectors(documents,config['document_prompt']);query_vectors=vectors(queries,config['query_prompt'])
     timing={'load_seconds':loaded-started,'encode_seconds':time.perf_counter()-loaded}
-    del model;gc.collect()
-    return query_vectors@doc_vectors.T,{**config,'dimension':int(doc_vectors.shape[1]),**timing}
+    model=None;gc.collect() # release the weights; vectors() above is a closure over model, so no del
+    return doc_vectors,query_vectors,{**config,'dimension':int(doc_vectors.shape[1]),**timing}
 
 def recall_at(ranked_docs,gold,n):
     return len(set(ranked_docs[:n])&set(gold))/len(set(gold))

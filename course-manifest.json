@@ -716,6 +716,13 @@
       "version": "1.1.0",
       "status": "ready"
     },
+    "M10-L08X": {
+      "id": "M10-L08X",
+      "title": "M10-L08X. Векторное хранилище",
+      "path": "course/lessons/M10-L08X.md",
+      "version": "1.1.0",
+      "status": "ready"
+    },
     "M11-L01": {
       "id": "M11-L01",
       "title": "M11-L01. Что именно оцениваем",
@@ -1288,6 +1295,7 @@
       "M10-L05",
       "M10-L06",
       "M10-L07X",
+      "M10-L08X",
       "M11-L01",
       "M11-L02",
       "M11-L03",
@@ -1766,7 +1774,8 @@
         "M10-L04",
         "M10-L05",
         "M10-L06",
-        "M10-L07X"
+        "M10-L07X",
+        "M10-L08X"
       ],
       "homework_id": "M10-HW01",
       "exercise": {
@@ -3629,6 +3638,30 @@
         "practice_minutes": 105,
         "self_check_minutes": 30,
         "setup_minutes": "separate; model download about 4.9 GB",
+        "estimate_status": "planning_hypothesis_not_measured"
+      },
+      "pilot_sessions": []
+    },
+    {
+      "id": "M10-L08X",
+      "title": "Векторное хранилище",
+      "version": "1.1.0",
+      "module_id": "M10",
+      "material_key": "M10-L08X",
+      "path": "course/lessons/M10-L08X.md",
+      "scope": "complete_lesson",
+      "material_status": "ready",
+      "prerequisites": [
+        "M10-L07X"
+      ],
+      "outcome_ids": [
+        "M10-C18"
+      ],
+      "workload": {
+        "reading_minutes": 45,
+        "practice_minutes": 105,
+        "self_check_minutes": 30,
+        "setup_minutes": "separate; pgvector build about 1 minute, optional",
         "estimate_status": "planning_hypothesis_not_measured"
       },
       "pilot_sessions": []
