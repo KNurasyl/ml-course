@@ -51,17 +51,30 @@ def embedders():
         print(f"Embedder ready: {directory}")
 
 
+def rerankers():
+    """Optional 1.2.0 extension (M10-L03, T35): cross-encoder reranker over 1 GB, pinned to a revision."""
+    from huggingface_hub import snapshot_download
+    for config in json.loads((ROOT / "metadata/reference-models.json").read_text(encoding="utf-8"))["rerankers"]:
+        directory = ROOT / config["path"]
+        snapshot_download(repo_id=config["repo_id"], revision=config["revision"], local_dir=directory,
+            allow_patterns=config["allow_patterns"])
+        print(f"Reranker ready: {directory}")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--speech", action="store_true")
     parser.add_argument("--llm", action="store_true")
     parser.add_argument("--embedders", action="store_true", help="optional M10-L07X models, about 4.9 GB in total")
+    parser.add_argument("--rerankers", action="store_true", help="optional M10-L03 cross-encoder, about 2.3 GB")
     args = parser.parse_args()
-    if not args.speech and not args.llm and not args.embedders:
-        parser.error("Укажи --speech, --llm и/или --embedders")
+    if not args.speech and not args.llm and not args.embedders and not args.rerankers:
+        parser.error("Укажи --speech, --llm, --embedders и/или --rerankers")
     if args.speech:
         speech()
     if args.llm:
         language()
     if args.embedders:
         embedders()
+    if args.rerankers:
+        rerankers()

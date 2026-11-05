@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="450" viewBox="0 0 760 450" role="img" aria-labelledby="title desc">
+<title id="title">Кросс-энкодер переставляет только пул</title>
+<desc id="desc">Слева — сколько из 24 перефразированных вопросов получили нужный документ первым после трёх первых стадий: порядок первой стадии, эвристика 1.1.0 и cross-encoder. RRF TF-IDF и BM25: 11, 12 и 22 при 23 вопросах с документом в пуле. MiniLM: 4, 8 и 15 при 17 в пуле. USER-bge-m3: 19, 18 и 22 при 23 в пуле. Справа — медиана задержки cross-encoder на CPU в 4 потока: 1.2, 2.5, 4.9 и 9.9 секунды для 5, 10, 20 и 40 пар. Внизу — перебор всех 72 фрагментов и порог по sigmoid.</desc>
+<rect width="760" height="450" fill="white"/>
+<text x="16" y="34" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650">Кросс-энкодер переставляет только пул</text>
+<rect x="16" y="56" width="460" height="284" rx="6" fill="#eef4fc" stroke="#245bba"/>
+<text x="30" y="80" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600">Нужный документ первым, из 24 перефразированных</text>
+<rect x="30" y="92" width="10" height="10" fill="#245bba"/>
+<text x="45" y="101" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12">первая стадия</text>
+<rect x="140" y="92" width="10" height="10" fill="#a65c12"/>
+<text x="155" y="101" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12">эвристика 1.1.0</text>
+<rect x="262" y="92" width="10" height="10" fill="#087e82"/>
+<text x="277" y="101" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12">cross-encoder</text>
+<text x="370" y="101" fill="#a65c12" font-family="Segoe UI,Arial,sans-serif" font-size="12">┆ в пуле</text>
+<text x="30" y="128" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600">RRF TF-IDF и BM25</text>
+<rect x="30" y="136" width="110" height="12" fill="#245bba"/>
+<rect x="30" y="152" width="120" height="12" fill="#a65c12"/>
+<rect x="30" y="168" width="220" height="12" fill="#087e82"/>
+<text x="286" y="147" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12">11</text>
+<text x="286" y="163" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12">12</text>
+<text x="286" y="179" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="600">22</text>
+<path d="M260,132 V184" stroke="#a65c12" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="318" y="163" fill="#a65c12" font-family="Segoe UI,Arial,sans-serif" font-size="12">в пуле 23</text>
+<text x="30" y="200" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600">MiniLM, английская модель</text>
+<rect x="30" y="208" width="40" height="12" fill="#245bba"/>
+<rect x="30" y="224" width="80" height="12" fill="#a65c12"/>
+<rect x="30" y="240" width="150" height="12" fill="#087e82"/>
+<text x="286" y="219" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12">4</text>
+<text x="286" y="235" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12">8</text>
+<text x="286" y="251" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="600">15</text>
+<path d="M200,204 V256" stroke="#a65c12" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="318" y="235" fill="#a65c12" font-family="Segoe UI,Arial,sans-serif" font-size="12">в пуле 17 — потолок</text>
+<text x="30" y="272" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600">USER-bge-m3</text>
+<rect x="30" y="280" width="190" height="12" fill="#245bba"/>
+<rect x="30" y="296" width="180" height="12" fill="#a65c12"/>
+<rect x="30" y="312" width="220" height="12" fill="#087e82"/>
+<text x="286" y="291" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12">19</text>
+<text x="286" y="307" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12">18</text>
+<text x="286" y="323" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="600">22</text>
+<path d="M260,276 V328" stroke="#a65c12" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="318" y="307" fill="#a65c12" font-family="Segoe UI,Arial,sans-serif" font-size="12">в пуле 23</text>
+<rect x="496" y="56" width="248" height="284" rx="6" fill="#fff3e5" stroke="#a65c12"/>
+<text x="510" y="80" fill="#a65c12" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600">Задержка на CPU, 4 потока</text>
+<text x="510" y="98" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12">медиана по 16 запросам</text>
+<text x="510" y="132" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="14">N = 5</text>
+<rect x="570" y="120" width="15" height="16" fill="#087e82"/>
+<text x="593" y="133" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="14">1.2 с</text>
+<text x="510" y="172" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="14">N = 10</text>
+<rect x="570" y="160" width="30" height="16" fill="#087e82"/>
+<text x="608" y="173" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="14">2.5 с</text>
+<text x="510" y="212" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="14">N = 20</text>
+<rect x="570" y="200" width="60" height="16" fill="#087e82"/>
+<text x="638" y="213" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600">4.9 с</text>
+<text x="510" y="252" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="14">N = 40</text>
+<rect x="570" y="240" width="120" height="16" fill="#087e82"/>
+<text x="698" y="253" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="14">9.9 с</text>
+<text x="510" y="292" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="14">≈ 4 пары в секунду</text>
+<text x="510" y="314" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="13">время растёт линейно с N</text>
+<rect x="16" y="356" width="728" height="54" rx="6" fill="#edf8f7" stroke="#087e82"/>
+<text x="30" y="379" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600">Все 72 фрагмента без первой стадии: 23 из 24, но это 72 пары — около 17 с на запрос</text>
+<text x="30" y="400" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">Порог 0.5 по sigmoid отбросил бы 25 из 60 вопросов с ответом: оценка не откалибрована</text>
+<text x="16" y="436" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="13">Авторский прогон 05.11.2026, CPU, синтетический корпус: один вопрос из 24 — шаг 0.04.</text>
+</svg>

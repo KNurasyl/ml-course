@@ -62,5 +62,21 @@
         "LICENSE"
       ]
     }
+  ],
+  "rerankers": [
+    {
+      "name": "bge-reranker-v2-m3",
+      "repo_id": "BAAI/bge-reranker-v2-m3",
+      "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+      "path": "models/bge-reranker-v2-m3",
+      "license": "Apache-2.0",
+      "weights_bytes": 2271071852,
+      "allow_patterns": [
+        "*.json",
+        "model.safetensors",
+        "sentencepiece.bpe.model",
+        "README.md"
+      ]
+    }
   ]
 }

@@ -1167,5 +1167,12 @@
     "path": "course/lessons/M10-L08X.md",
     "version": "1.1.0",
     "status": "ready"
+  },
+  "M10-L09X": {
+    "id": "M10-L09X",
+    "title": "M10-L09X. Кросс-энкодер для reranking",
+    "path": "course/lessons/M10-L09X.md",
+    "version": "1.1.0",
+    "status": "ready"
   }
 }

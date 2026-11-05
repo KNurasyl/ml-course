@@ -4,6 +4,7 @@
   "new_lab_commands": [
     "labs/M10/bm25_hybrid.py",
     "labs/M10/ru_embedders.py",
-    "labs/M10/vector_store.py"
+    "labs/M10/vector_store.py",
+    "labs/M10/rerank.py"
   ]
 }
