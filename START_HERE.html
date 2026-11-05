@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="c156512378a86af1e898907583d71c2507cba0def6b454b70846ca6b6bc782c5"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="4fd01a96d43614a2f8c5319b0520654c6ce78d87d8c58873f5daec9ada832009"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -15727,7 +15727,8 @@ with wave.open('artifacts/M15/question.wav', 'rb') as audio:
 </table></div>
 <h2 id="M15-L01--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://docs.python.org/3/library/wave.html" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://docs.python.org/3/library/wave.html" target="_blank" rel="noopener noreferrer" class="external-link">Python: wave — чтение и запись WAV</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Audio_concepts" target="_blank" rel="noopener noreferrer" class="external-link">MDN: Digital audio concepts</a> — частота дискретизации, разрядность, каналы и объём несжатого звука (на английском)</li>
 <li><a href="labs/M15/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M15">Оглавление модуля</a></p>
@@ -15845,7 +15846,9 @@ print(text)
 </table></div>
 <h2 id="M15-L02--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://alphacephei.com/vosk/install" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://alphacephei.com/vosk/install" target="_blank" rel="noopener noreferrer" class="external-link">Vosk: установка</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://github.com/alphacep/vosk-api" target="_blank" rel="noopener noreferrer" class="external-link">Vosk API на GitHub</a> — офлайн-распознавание с потоковым API и примерами для Python (на английском)</li>
+<li><a href="https://github.com/snakers4/silero-vad" target="_blank" rel="noopener noreferrer" class="external-link">Silero VAD</a> — предобученный детектор речевой активности, альтернатива порогу по энергии; подходит ли он, проверяют на своих записях (на английском)</li>
 <li><a href="labs/M15/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M15">Оглавление модуля</a></p>
@@ -15963,7 +15966,9 @@ path = synthesize_wav('Объясните, зачем нужна транзак�
 </table></div>
 <h2 id="M15-L03--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.speech.synthesis.speechsynthesizer" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.speech.synthesis.speechsynthesizer" target="_blank" rel="noopener noreferrer" class="external-link">Microsoft Learn: класс SpeechSynthesizer (System.Speech.Synthesis)</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Autoplay" target="_blank" rel="noopener noreferrer" class="external-link">MDN: Autoplay guide for media and Web Audio APIs</a> — когда браузер блокирует автоматическое воспроизведение звука (на английском)</li>
+<li><a href="https://www.w3.org/TR/speech-synthesis11/" target="_blank" rel="noopener noreferrer" class="external-link">W3C: Speech Synthesis Markup Language 1.1</a> — разметка для синтеза: say-as для чисел и сокращений, паузы, ударение (на английском)</li>
 <li><a href="labs/M15/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M15">Оглавление модуля</a></p>
@@ -16203,7 +16208,9 @@ assert accept_chunk(8, 8, {7})
 </table></div>
 <h2 id="M15-L04--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/AbortController" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/AbortController" target="_blank" rel="noopener noreferrer" class="external-link">MDN: AbortController</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://react.dev/learn/synchronizing-with-effects" target="_blank" rel="noopener noreferrer" class="external-link">React: Synchronizing with Effects</a> — гонка запросов в эффекте и как игнорировать ответ устаревшего запроса (на английском)</li>
+<li><a href="https://docs.python.org/3.11/library/asyncio-task.html#task-cancellation" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: Task Cancellation</a> — как отменяется задача asyncio и что видит отменяемый код (на английском)</li>
 <li><a href="labs/M15/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M15">Оглавление модуля</a></p>
@@ -16323,7 +16330,8 @@ assert wer('а', 'а б в') == 2.0
 </table></div>
 <h2 id="M15-L05--источники-и-углубление">Источники и углубление</h2>
 <ul>
-<li><a href="https://alphacephei.com/vosk/models" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://alphacephei.com/vosk/models" target="_blank" rel="noopener noreferrer" class="external-link">Vosk: модели и столбец Word error rate/Speed</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
+<li><a href="https://github.com/jitsi/jiwer" target="_blank" rel="noopener noreferrer" class="external-link">jiwer</a> — библиотека для WER, MER, WIL и CER: удобно сверить свой подсчёт (на английском)</li>
 <li><a href="labs/M15/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M15">Оглавление модуля</a></p>
@@ -16516,6 +16524,7 @@ assert frames == 1600 and frames * bytes_per_sample == 3200
 </table></div>
 <h2 id="M15-L06--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://github.com/alphacep/vosk-api/blob/master/python/example/test_simple.py" target="_blank" rel="noopener noreferrer" class="external-link">Официальный пример Vosk</a>, <a href="https://docs.python.org/3.11/library/wave.html" target="_blank" rel="noopener noreferrer" class="external-link">wave Python 3.11</a>. Тестовые фразы синтезированы для курса; это не оценка реальных голосов и шумов.</p>
+<p>Для углубления: <a href="https://github.com/wiseman/py-webrtcvad" target="_blank" rel="noopener noreferrer" class="external-link">py-webrtcvad</a> — детектор речевой активности WebRTC: 16-битный моно PCM с частотой 8000, 16000, 32000 или 48000 Гц, кадры по 10, 20 или 30 мс и режим агрессивности от 0 до 3 (на английском).</p>
 <div class="practice-note"><a href="#M15">Модуль и домашняя работа</a> · <a href="#M15-SOLUTIONS--m15-l06-a-b-c">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M15-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L05"><small>Предыдущий раздел</small>← M15-L05. Речевое оценивание</a><a href="#M16"><small>Следующий раздел</small>M16 Итоговый продукт и защита →</a></nav></article><article class="material" id="M16" data-title="M16 Итоговый продукт и защита" data-short-title="Итоговый продукт и защита" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Итоговый продукт и защита</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: Все предыдущие модули; есть рабочие артефакты и самостоятельные попытки.</p>
 <h2 id="M16--уроки-и-практические-ступени">Уроки и практические ступени</h2>
 <ol>
