@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="70d42e359622fa4772c6cc75051bc3999e6287939b54215a3d070fdae7487df8"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="732aceb91d2a7384dd3e5a4216537d126be41a6b92655259f0cc19bfdd8b8b36"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -9254,7 +9254,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M09.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M09.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L05"><small>Предыдущий раздел</small>← M08-L05. Мини-языковая модель</a><a href="#M09-L01"><small>Следующий раздел</small>M09-L01. Сообщения и шаблон диалога →</a></nav></article><article class="material" id="M09-L01" data-title="M09-L01. Сообщения и шаблон диалога" data-short-title="Сообщения и шаблон диалога" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сообщения и шаблон диалога</h1><p class="outcome"><strong>После урока:</strong> Объяснить, почему один и тот же текст при разных шаблонах может давать разные результаты.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L01--объяснение">Объяснение</a></li><li><a href="#M09-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L01--самостоятельная-задача-a-m09-l01-a">Самостоятельная задача A — M09-L01-A</a></li><li><a href="#M09-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+"></iframe><p><a href="course/visuals/M09.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M09.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L05"><small>Предыдущий раздел</small>← M08-L05. Мини-языковая модель</a><a href="#M09-L01"><small>Следующий раздел</small>M09-L01. Сообщения и шаблон диалога →</a></nav></article><article class="material" id="M09-L01" data-title="M09-L01. Сообщения и шаблон диалога" data-short-title="Сообщения и шаблон диалога" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сообщения и шаблон диалога</h1><p class="outcome"><strong>После урока:</strong> Объяснить, почему один и тот же текст при разных шаблонах может давать разные результаты.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L01--объяснение">Объяснение</a></li><li><a href="#M09-L01--аналогия-query-builder-и-диалект-sql">Аналогия: query builder и диалект SQL</a></li><li><a href="#M09-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L01--самостоятельная-задача-a-m09-l01-a">Самостоятельная задача A — M09-L01-A</a></li><li><a href="#M09-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu, transformers 4.57.6, huggingface-hub 0.36.2; модель SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 04.11.2026 · источник: <a href="https://huggingface.co/docs/transformers/v4.57.6/chat_templating" target="_blank" rel="noopener noreferrer" class="external-link">Transformers 4.57.6: chat templates</a></p>
@@ -9269,6 +9269,47 @@ draw();
 <p>Для первого локального опыта используется SmolLM2-135M-Instruct с зафиксированной ревизией. Это настоящая небольшая языковая модель с обученными весами, а не шаблон ответов. Она выбрана для доступного CPU-эксперимента, а не как доказанно качественный русскоязычный интервьюер. Основные короткие тесты делаются на английском, ограничения русского проверяются отдельно. Смысл урока — воспроизводимо собрать запрос и проследить токены до генерации.</p>
 <p>Храни вместе с результатом model_id, revision, версию tokenizer, фактические messages и настройки шаблона. Тогда изменение ответа можно связать с изменением входа или модели. Скриншот красивого диалога без этого контекста непригоден для инженерного сравнения.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M09-L01-desktop.svg" target="_blank" data-figure="course/assets/responsive/M09-L01-desktop.svg" aria-label="Увеличить рисунок: Сообщения и шаблон диалога: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M09-L01-mobile.svg"><img src="course/assets/responsive/M09-L01-desktop.svg" alt="Сообщения и шаблон диалога: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M09-L01--аналогия-query-builder-и-диалект-sql">Аналогия: query builder и диалект SQL</h2>
+<p>Как похоже: в Knex или Prisma запрос собирают как объект, а компилятор превращает его в SQL конкретной СУБД: кавычки, LIMIT и параметры у PostgreSQL и MySQL записываются по-разному. Messages — такой же объект, а chat template — компилятор под конкретную модель. Посмотреть фактический вход до генерации — как вызвать <code>.toString()</code> у запроса Knex перед выполнением.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>messages с ролями</td>
+  <td>Объект запроса в query builder</td>
+</tr>
+<tr>
+  <td>Chat template модели</td>
+  <td>Компилятор SQL под конкретную СУБД</td>
+</tr>
+<tr>
+  <td>Маркеры ролей и границ</td>
+  <td>Синтаксис диалекта: кавычки, LIMIT, плейсхолдеры</td>
+</tr>
+<tr>
+  <td>Шаблон другой модели</td>
+  <td>SQL одной СУБД, отправленный в другую</td>
+</tr>
+<tr>
+  <td>tokenize=False</td>
+  <td><code>.toString()</code>: прочитать фактический запрос до выполнения</td>
+</tr>
+<tr>
+  <td>Повторное добавление special tokens</td>
+  <td>Двойное экранирование строки</td>
+</tr>
+<tr>
+  <td>Модель видит только переданную историю</td>
+  <td>Stateless HTTP: сервер знает только то, что пришло в текущем запросе</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> SQL чужого диалекта обычно падает с синтаксической ошибкой, а модель с чужим шаблоном молча выдаёт текст похуже — сбой нужно искать сравнением, а не по исключению. В SQL параметры отделены от кода привязкой, и это защищает от инъекции. После шаблона роли и документы становятся одной последовательностью токенов: отдельного канала данных нет, поэтому разделитель не гарантирует защиту от prompt injection.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M09-L01--разобранный-пример">Разобранный пример</h2>
 <pre><code class="language-python">from transformers import AutoTokenizer
 tokenizer = AutoTokenizer.from_pretrained(
@@ -9309,7 +9350,7 @@ print(len(ids))
 <li><a href="https://huggingface.co/docs/transformers/main_classes/text_generation" target="_blank" rel="noopener noreferrer" class="external-link">Transformers: генерация</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M09">Модуль и домашняя работа</a> · <a href="#M09-SOLUTIONS--m09-l01-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M09-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09"><small>Предыдущий раздел</small>← M09 Применение и запуск LLM</a><a href="#M09-L02"><small>Следующий раздел</small>M09-L02. Контекст и история →</a></nav></article><article class="material" id="M09-L02" data-title="M09-L02. Контекст и история" data-short-title="Контекст и история" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Контекст и история</h1><p class="outcome"><strong>После урока:</strong> Выбрать, что удалить или сжать при превышении бюджета, сохранив назначение диалога.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L01. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L02--объяснение">Объяснение</a></li><li><a href="#M09-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L02--самостоятельная-задача-a-m09-l02-a">Самостоятельная задача A — M09-L02-A</a></li><li><a href="#M09-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M09">Модуль и домашняя работа</a> · <a href="#M09-SOLUTIONS--m09-l01-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M09-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09"><small>Предыдущий раздел</small>← M09 Применение и запуск LLM</a><a href="#M09-L02"><small>Следующий раздел</small>M09-L02. Контекст и история →</a></nav></article><article class="material" id="M09-L02" data-title="M09-L02. Контекст и история" data-short-title="Контекст и история" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Контекст и история</h1><p class="outcome"><strong>После урока:</strong> Выбрать, что удалить или сжать при превышении бюджета, сохранив назначение диалога.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L01. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L02--объяснение">Объяснение</a></li><li><a href="#M09-L02--аналогия-сообщение-для-stateless-воркера">Аналогия: сообщение для stateless-воркера</a></li><li><a href="#M09-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L02--самостоятельная-задача-a-m09-l02-a">Самостоятельная задача A — M09-L02-A</a></li><li><a href="#M09-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu, transformers 4.57.6, huggingface-hub 0.36.2; модель SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 04.11.2026 · источник: <a href="https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">карточка SmolLM2-135M-Instruct</a></p>
@@ -9431,6 +9472,47 @@ draw();
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
 "></iframe><p><a href="course/visuals/M09.html" target="_blank">Открыть опыт отдельно на весь экран</a></p></section>
+<h2 id="M09-L02--аналогия-сообщение-для-stateless-воркера">Аналогия: сообщение для stateless-воркера</h2>
+<p>Как похоже: продюсер кладёт в очередь сообщение, а воркер знает только то, что в нём лежит: таблицы в базе он не видит, пока данные не вложили. У брокера есть лимит размера сообщения. Если история не помещается, продюсер выбрасывает старые записи по правилу, а не обрезает строку посередине.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Контекст</td>
+  <td>Сообщение в очереди: воркер знает только его содержимое</td>
+</tr>
+<tr>
+  <td>Веса модели</td>
+  <td>Код воркера: не меняется от содержимого сообщения</td>
+</tr>
+<tr>
+  <td>Сохранённая история диалога</td>
+  <td>Таблица в базе: недоступна, пока продюсер не вложил данные</td>
+</tr>
+<tr>
+  <td>Лимит C</td>
+  <td>Предельный размер сообщения у брокера</td>
+</tr>
+<tr>
+  <td>Подсчёт после шаблона</td>
+  <td>Проверять размер сериализованного сообщения, а не сумму полей до сериализации</td>
+</tr>
+<tr>
+  <td>Удаление старой пары целиком</td>
+  <td>Удаление родительской записи вместе с дочерней: без «осиротевших» ответов</td>
+</tr>
+<tr>
+  <td>Summary истории</td>
+  <td>Агрегат вместо сырых строк: компактнее, но детали не восстановить</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> ответ воркера уходит отдельным сообщением, а сгенерированные токены дописываются в ту же последовательность и тратят тот же лимит C — поэтому резерв N_new планируют заранее. Воркер одинаково читает каждый байт сообщения. Модель может пропустить факт в середине длинного контекста, поэтому больший лимит не означает лучшего использования информации.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M09-L02--разобранный-пример">Разобранный пример</h2>
 <p>Пусть C=512. Инструкция занимает 60 токенов, история 180, документы 200, новый вопрос 40, служебные маркеры 20: prompt=500. При резерве ответа 64 требуется 564, превышение 52. Удаление 80 токенов старой полной пары даст prompt420 и общий бюджет 484.</p>
 <pre><code class="language-python">parts = dict(system=60, history=180, documents=200, question=40, markers=20)
@@ -9467,7 +9549,7 @@ assert sum(parts.values()) + 64 == 484
 <li><a href="https://huggingface.co/docs/transformers/main_classes/text_generation" target="_blank" rel="noopener noreferrer" class="external-link">Transformers: генерация</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M09">Модуль и домашняя работа</a> · <a href="#M09-SOLUTIONS--m09-l02-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M09-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L01"><small>Предыдущий раздел</small>← M09-L01. Сообщения и шаблон диалога</a><a href="#M09-L03"><small>Следующий раздел</small>M09-L03. Генерация и ограничения →</a></nav></article><article class="material" id="M09-L03" data-title="M09-L03. Генерация и ограничения" data-short-title="Генерация и ограничения" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Генерация и ограничения</h1><p class="outcome"><strong>После урока:</strong> Отделить наблюдаемое изменение поведения от предположения об улучшении.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L02. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 140 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L03--объяснение">Объяснение</a></li><li><a href="#M09-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L03--самостоятельная-задача-a-m09-l03-a">Самостоятельная задача A — M09-L03-A</a></li><li><a href="#M09-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M09">Модуль и домашняя работа</a> · <a href="#M09-SOLUTIONS--m09-l02-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M09-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L01"><small>Предыдущий раздел</small>← M09-L01. Сообщения и шаблон диалога</a><a href="#M09-L03"><small>Следующий раздел</small>M09-L03. Генерация и ограничения →</a></nav></article><article class="material" id="M09-L03" data-title="M09-L03. Генерация и ограничения" data-short-title="Генерация и ограничения" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Генерация и ограничения</h1><p class="outcome"><strong>После урока:</strong> Отделить наблюдаемое изменение поведения от предположения об улучшении.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L02. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 140 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L03--объяснение">Объяснение</a></li><li><a href="#M09-L03--аналогия-взвешенная-балансировка-нагрузки">Аналогия: взвешенная балансировка нагрузки</a></li><li><a href="#M09-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L03--самостоятельная-задача-a-m09-l03-a">Самостоятельная задача A — M09-L03-A</a></li><li><a href="#M09-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu, transformers 4.57.6, huggingface-hub 0.36.2; модель SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 04.11.2026 · источник: <a href="https://huggingface.co/docs/transformers/v4.57.6/main_classes/text_generation" target="_blank" rel="noopener noreferrer" class="external-link">Transformers 4.57.6: генерация</a></p>
@@ -9482,6 +9564,47 @@ assert sum(parts.values()) + 64 == 484
 <p>Seed управляет генератором случайных чисел, но не является универсальной гарантией побитовой воспроизводимости между устройствами и версиями. Записывай окружение и выводы с ограничениями. Для deterministic greedy можно сравнивать сохранённые ответы, однако даже такое поведение нужно проверять после смены библиотек или реализации attention.</p>
 <p>В голосовом тренажёре длинные ответы ухудшают удобство диалога и увеличивают время синтеза. Поэтому задачу удобно ограничить: один вопрос или одно замечание за ход, итоговый отчёт отдельно. Это продуктовая структура, поддержанная инструкцией и проверкой длины; она надёжнее ожидания, что изменение temperature само сделает беседу естественной.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M09-L03-desktop.svg" target="_blank" data-figure="course/assets/responsive/M09-L03-desktop.svg" aria-label="Увеличить рисунок: Генерация и ограничения: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M09-L03-mobile.svg"><img src="course/assets/responsive/M09-L03-desktop.svg" alt="Генерация и ограничения: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M09-L03--аналогия-взвешенная-балансировка-нагрузки">Аналогия: взвешенная балансировка нагрузки</h2>
+<p>Как похоже: балансировщик выбирает сервер по весам. Greedy похож на правило «всегда самый тяжёлый вес», sampling — на взвешенный случайный выбор. Temperature выравнивает или заостряет веса, top-k оставляет в пуле k лучших серверов, top-p — минимальный набор, покрывающий долю p всей ёмкости. Фиксированный seed — как фиксированный генератор случайных чисел в тесте маршрутизации.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Распределение следующего токена</td>
+  <td>Веса серверов в пуле</td>
+</tr>
+<tr>
+  <td>Greedy: argmax</td>
+  <td>Всегда отправлять на сервер с наибольшим весом</td>
+</tr>
+<tr>
+  <td>Sampling</td>
+  <td>Взвешенный случайный выбор сервера</td>
+</tr>
+<tr>
+  <td>Temperature T &gt; 1</td>
+  <td>Выровнять веса: нагрузка распределяется ровнее</td>
+</tr>
+<tr>
+  <td>Top-k и top-p</td>
+  <td>Оставить k лучших серверов или минимальный набор с долей ёмкости p</td>
+</tr>
+<tr>
+  <td>Repetition penalty</td>
+  <td>Штраф за сервер, выбранный недавно</td>
+</tr>
+<tr>
+  <td>Seed</td>
+  <td>Фиксированный генератор в тесте маршрутизации</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> любой сервер пула вернёт тот же правильный ответ — выбор влияет только на нагрузку. В генерации каждый выбранный токен становится частью ответа и входом следующего шага, поэтому одна случайная развилка меняет весь дальнейший текст. Веса балансировщика задаёт конфигурация, а распределение токенов модель заново вычисляет на каждом шаге по префиксу.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M09-L03--разобранный-пример">Разобранный пример</h2>
 <p>Пусть вероятности токенов после softmax равны[0,6;0,25;0,1;0,05]. Top-k при k=2 оставит первые два, новые вероятности[0,6/0,85;0,25/0,85]≈[0,7059;0,2941]. Top-p=0,8 тоже оставит первые два, поскольку 0,6&lt;0,8, а 0,85≥0,8. При top-p=0,95 останутся первые три.</p>
 <pre><code class="language-python">p = [.6,.25,.1,.05]
@@ -9518,7 +9641,7 @@ print([round(x,4) for x in normalized])  # [0.7059,0.2941]
 <li><a href="https://huggingface.co/docs/transformers/main_classes/text_generation" target="_blank" rel="noopener noreferrer" class="external-link">Transformers: генерация</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M09">Модуль и домашняя работа</a> · <a href="#M09-SOLUTIONS--m09-l03-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M09-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L02"><small>Предыдущий раздел</small>← M09-L02. Контекст и история</a><a href="#M09-L04"><small>Следующий раздел</small>M09-L04. Локальный инференс и память →</a></nav></article><article class="material" id="M09-L04" data-title="M09-L04. Локальный инференс и память" data-short-title="Локальный инференс и память" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Локальный инференс и память</h1><p class="outcome"><strong>После урока:</strong> Объяснить различие памяти весов, промежуточных вычислений и контекста; предложить облегчённый запуск.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L03. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L04--объяснение">Объяснение</a></li><li><a href="#M09-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L04--самостоятельная-задача-a-m09-l04-a">Самостоятельная задача A — M09-L04-A</a></li><li><a href="#M09-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M09">Модуль и домашняя работа</a> · <a href="#M09-SOLUTIONS--m09-l03-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M09-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L02"><small>Предыдущий раздел</small>← M09-L02. Контекст и история</a><a href="#M09-L04"><small>Следующий раздел</small>M09-L04. Локальный инференс и память →</a></nav></article><article class="material" id="M09-L04" data-title="M09-L04. Локальный инференс и память" data-short-title="Локальный инференс и память" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Локальный инференс и память</h1><p class="outcome"><strong>После урока:</strong> Объяснить различие памяти весов, промежуточных вычислений и контекста; предложить облегчённый запуск.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L03. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L04--объяснение">Объяснение</a></li><li><a href="#M09-L04--аналогия-деплой-сервиса-на-машину-с-ограниченной-ram">Аналогия: деплой сервиса на машину с ограниченной RAM</a></li><li><a href="#M09-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L04--самостоятельная-задача-a-m09-l04-a">Самостоятельная задача A — M09-L04-A</a></li><li><a href="#M09-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu, transformers 4.57.6, huggingface-hub 0.36.2; модель SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 04.11.2026 · источник: <a href="https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">карточка SmolLM2-135M-Instruct</a></p>
@@ -9533,6 +9656,47 @@ print([round(x,4) for x in normalized])  # [0.7059,0.2941]
 <p>В нашем запуске закреплены repository и commit revision; файлы скачиваются один раз из официального Hugging Face Hub, затем local_files_only=True запрещает неявную сетевую загрузку. Лицензия карточки Apache2.0 сохраняется вместе с происхождением. Скачивание около 272MB относится к файлам конкретной ревизии, а не ко всем возможным весам этого семейства.</p>
 <p>Главный результат — честный отчёт: какое оборудование и версии использованы, что фактически поместилось, сколько заняла загрузка и генерация, какие ответы получены. Даже успешный запуск не доказывает пригодность маленькой английской модели для русского голосового интервью. Качество и задержка полного продукта проверяются отдельно.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M09-L04-desktop.svg" target="_blank" data-figure="course/assets/responsive/M09-L04-desktop.svg" aria-label="Увеличить рисунок: Локальный инференс и память: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M09-L04-mobile.svg"><img src="course/assets/responsive/M09-L04-desktop.svg" alt="Локальный инференс и память: численная схема" loading="lazy"></picture></a><span class="figure-hint">Локальный инференс и память: численная схема · Открыть крупнее ↗</span></p>
+<h2 id="M09-L04--аналогия-деплой-сервиса-на-машину-с-ограниченной-ram">Аналогия: деплой сервиса на машину с ограниченной RAM</h2>
+<p>Как похоже: размер Docker-образа не равен RSS работающего контейнера. Память сервиса — это загруженные данные, рантайм, временные буферы запросов и состояние каждого соединения. Веса LLM похожи на большой справочник, загружаемый при старте. KV-cache — на буфер сессии, растущий с длиной диалога и числом одновременных клиентов. Квантование напоминает хранение цены в целых единицах с масштабом.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Веса N·b</td>
+  <td>Справочник, загружаемый в память при старте</td>
+</tr>
+<tr>
+  <td>Файл safetensors против памяти процесса</td>
+  <td>Размер образа против RSS контейнера</td>
+</tr>
+<tr>
+  <td>Активации и буферы библиотек</td>
+  <td>Временные аллокации на запрос и рантайм</td>
+</tr>
+<tr>
+  <td>KV-cache 2·L·T·H_kv·D_head·b·B</td>
+  <td>Буфер сессии: растёт с длиной диалога и числом клиентов</td>
+</tr>
+<tr>
+  <td>q = round(w/s), ŵ = s·q</td>
+  <td>Цена в целых единицах с масштабом: округление теряет остаток</td>
+</tr>
+<tr>
+  <td>Cold load</td>
+  <td>Cold start serverless-функции</td>
+</tr>
+<tr>
+  <td>TTFT</td>
+  <td>TTFB: время до первого байта меряют отдельно, а не делят общее время</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> масштаб цены выбирают так, чтобы копейки сохранялись точно, а квантование весов намеренно теряет точность. Ошибка каждого веса ограничена, но её влияние на текст не предсказать арифметикой — его показывают только измерения ответов. И буфер сессии сервиса обычно не зависит от числа слоёв, а KV-cache хранит ключи и значения в каждом слое.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M09-L04--разобранный-пример">Разобранный пример</h2>
 <p>Для условных L=12,T=512,H_kv=4,D_head=16,B=1,b=4 память кеша равна 2·12·512·4·16·4=3 145 728 байт=3MiB. Удвоение T удвоит этот кеш при неизменных остальных параметрах.</p>
 <pre><code class="language-python">kv_bytes = 2*12*512*4*16*4
@@ -9570,7 +9734,7 @@ print([round(w,2) for w in reconstructed])  # [-0.3,0.0,0.3]
 <li><a href="https://github.com/ggml-org/llama.cpp" target="_blank" rel="noopener noreferrer" class="external-link">llama.cpp: официальный backend</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M09">Модуль и домашняя работа</a> · <a href="#M09-SOLUTIONS--m09-l04-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M09-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L03"><small>Предыдущий раздел</small>← M09-L03. Генерация и ограничения</a><a href="#M09-L05"><small>Следующий раздел</small>M09-L05. Контракт ответа →</a></nav></article><article class="material" id="M09-L05" data-title="M09-L05. Контракт ответа" data-short-title="Контракт ответа" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Контракт ответа</h1><p class="outcome"><strong>После урока:</strong> Показать поведение приложения при пустом ответе, таймауте и нарушении формата.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 140 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L05--объяснение">Объяснение</a></li><li><a href="#M09-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L05--самостоятельная-задача-a-m09-l05-a">Самостоятельная задача A — M09-L05-A</a></li><li><a href="#M09-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M09">Модуль и домашняя работа</a> · <a href="#M09-SOLUTIONS--m09-l04-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M09-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L03"><small>Предыдущий раздел</small>← M09-L03. Генерация и ограничения</a><a href="#M09-L05"><small>Следующий раздел</small>M09-L05. Контракт ответа →</a></nav></article><article class="material" id="M09-L05" data-title="M09-L05. Контракт ответа" data-short-title="Контракт ответа" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Контракт ответа</h1><p class="outcome"><strong>После урока:</strong> Показать поведение приложения при пустом ответе, таймауте и нарушении формата.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 140 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L05--объяснение">Объяснение</a></li><li><a href="#M09-L05--аналогия-валидация-dto-в-nestjs">Аналогия: валидация DTO в NestJS</a></li><li><a href="#M09-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L05--самостоятельная-задача-a-m09-l05-a">Самостоятельная задача A — M09-L05-A</a></li><li><a href="#M09-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu, transformers 4.57.6, huggingface-hub 0.36.2; модель SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 04.11.2026 · источник: <a href="https://huggingface.co/docs/transformers/v4.57.6/main_classes/text_generation" target="_blank" rel="noopener noreferrer" class="external-link">Transformers 4.57.6: генерация</a></p>
@@ -9585,6 +9749,47 @@ print([round(w,2) for w in reconstructed])  # [-0.3,0.0,0.3]
 <p>Валидация также защищает состояние диалога. Ответ может быть формально правильным, но относиться к старому generation_id после отмены. Проверка актуальности из M06 выполняется до публикации результата. Вызов инструмента, предложенный моделью, не должен автоматически исполняться только потому, что JSON распарсился; для него существует отдельный список разрешённых действий и параметров в M14.</p>
 <p>Хороший тестовый набор контракта включает правильный объект, пустую строку, нечисловой score, boolean, выход за диапазон, лишний ключ, оборванный JSON и устаревший результат. Эти случаи можно проверить без LLM, что делает защиту воспроизводимой. Затем реальная модель показывает, как часто такая защита срабатывает на выбранных запросах. Частота на малом наборе остаётся наблюдением, а не гарантией поведения.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M09-L05-desktop.svg" target="_blank" data-figure="course/assets/responsive/M09-L05-desktop.svg" aria-label="Увеличить рисунок: Контракт ответа: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M09-L05-mobile.svg"><img src="course/assets/responsive/M09-L05-desktop.svg" alt="Контракт ответа: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M09-L05--аналогия-валидация-dto-в-nestjs">Аналогия: валидация DTO в NestJS</h2>
+<p>Как похоже: тело запроса от клиента — недоверенный вход, пока ValidationPipe или zod-схема его не проверили. Ответ модели — такой же внешний вход. JSON.parse проверяет синтаксис, схема — ключи и типы, сервис — бизнес-правила, guard — право на действие. Таймаут платёжного шлюза не означает «карта отклонена», так и сбой модели не означает слабый ответ кандидата.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Ответ модели</td>
+  <td>Тело запроса от клиента: недоверенный вход</td>
+</tr>
+<tr>
+  <td>json.loads</td>
+  <td>JSON.parse: только синтаксис</td>
+</tr>
+<tr>
+  <td>Ровно feedback и score</td>
+  <td>Строгая схема без лишних полей: forbidNonWhitelisted или zod <code>.strict()</code></td>
+</tr>
+<tr>
+  <td>type(score) is int</td>
+  <td><code>z.number().int()</code> вместо <code>z.coerce.number()</code>: без молчаливого приведения true к 1</td>
+</tr>
+<tr>
+  <td>Ограниченный повтор и fallback</td>
+  <td>Retry с лимитом и circuit breaker, а не бесконечный ретрай</td>
+</tr>
+<tr>
+  <td>Таймаут не равен score 0</td>
+  <td>503 платёжного шлюза — не «карта отклонена»</td>
+</tr>
+<tr>
+  <td>Ответ для старого turn_id</td>
+  <td>Ответ устаревшего fetch в React, который отбрасывают после смены запроса</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> клиент API нарушает контракт из-за конкретной ошибки в коде, и её можно исправить один раз. Модель нарушает формат вероятностно: тот же запрос может пройти и не пройти в разных запусках. А валидный по схеме объект может содержать неверное утверждение — его смысл схема не проверяет, для этого нужна оценка из M11.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M09-L05--разобранный-пример">Разобранный пример</h2>
 <pre><code class="language-python">import json
 def valid(text):
@@ -9625,7 +9830,7 @@ assert not valid('{&quot;feedback&quot;:&quot;&quot;,&quot;score&quot;:2}')
 <li><a href="https://huggingface.co/docs/transformers/main_classes/text_generation" target="_blank" rel="noopener noreferrer" class="external-link">Transformers: генерация</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M09">Модуль и домашняя работа</a> · <a href="#M09-SOLUTIONS--m09-l05-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M09-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L04"><small>Предыдущий раздел</small>← M09-L04. Локальный инференс и память</a><a href="#M09-L06"><small>Следующий раздел</small>M09-L06. Выбрать локальную конфигурацию по измерениям →</a></nav></article><article class="material" id="M09-L06" data-title="M09-L06. Выбрать локальную конфигурацию по измерениям" data-short-title="Выбрать локальную конфигурацию по измерениям" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Выбрать локальную конфигурацию по измерениям</h1><p class="outcome"><strong>После урока:</strong> сравнить float32 и динамическое int8 на одной небольшой модели, не перепутав размер весов, RAM, скорость и качество.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L04–L05. Практика требует уже загруженной SmolLM2-135M-Instruct. CPU, без нового скачивания. План: 45 минут объяснения, 60–120 минут прогона и разбора, 60 минут самостоятельной проверки.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L06--объяснение">Объяснение</a></li><li><a href="#M09-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L06--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M09-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L06--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M09">Модуль и домашняя работа</a> · <a href="#M09-SOLUTIONS--m09-l05-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M09-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M09-L04"><small>Предыдущий раздел</small>← M09-L04. Локальный инференс и память</a><a href="#M09-L06"><small>Следующий раздел</small>M09-L06. Выбрать локальную конфигурацию по измерениям →</a></nav></article><article class="material" id="M09-L06" data-title="M09-L06. Выбрать локальную конфигурацию по измерениям" data-short-title="Выбрать локальную конфигурацию по измерениям" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Выбрать локальную конфигурацию по измерениям</h1><p class="outcome"><strong>После урока:</strong> сравнить float32 и динамическое int8 на одной небольшой модели, не перепутав размер весов, RAM, скорость и качество.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M09-L04–L05. Практика требует уже загруженной SmolLM2-135M-Instruct. CPU, без нового скачивания. План: 45 минут объяснения, 60–120 минут прогона и разбора, 60 минут самостоятельной проверки.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L06--объяснение">Объяснение</a></li><li><a href="#M09-L06--аналогия-нагрузочный-тест-двух-сборок-сервиса">Аналогия: нагрузочный тест двух сборок сервиса</a></li><li><a href="#M09-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L06--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M09-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L06--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu, transformers 4.57.6, huggingface-hub 0.36.2; модель SmolLM2-135M-Instruct (ревизия 12fd25f); dynamic int8 из torch.ao, psutil 7.2.2 · проверено 04.11.2026 · источник: <a href="https://docs.pytorch.org/docs/2.15/generated/torch.ao.quantization.quantize_dynamic.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch 2.15: dynamic quantization</a></p>
@@ -9640,6 +9845,47 @@ assert not valid('{&quot;feedback&quot;:&quot;&quot;,&quot;score&quot;:2}')
 <p>Одинаковыми должны быть revision модели, tokenizer, запросы, режим greedy, лимит новых токенов, число CPU-потоков и процедура прогрева. Разная длина фактически сгенерированного ответа остаётся возможной — квантование меняет числа. Поэтому сохраняй и время, и число токенов, и сам текст.</p>
 <p>Преобразование int8 начинается после загрузки float32. Пиковая память этого пути может быть выше ожидаемой, хотя готовое состояние компактнее. Это честный результат данной процедуры. Он не измеряет загрузку заранее подготовленного квантованного файла другим runtime.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M09-L06-desktop.svg" target="_blank" data-figure="course/assets/responsive/M09-L06-desktop.svg" aria-label="Увеличить рисунок: Раздельные измерения артефакта, процесса и ответа"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M09-L06-mobile.svg"><img src="course/assets/responsive/M09-L06-desktop.svg" alt="Раздельные измерения артефакта, процесса и ответа" loading="lazy"></picture></a><span class="figure-hint">Не складывай и не подменяй эти измерения. · Открыть крупнее ↗</span></p>
+<h2 id="M09-L06--аналогия-нагрузочный-тест-двух-сборок-сервиса">Аналогия: нагрузочный тест двух сборок сервиса</h2>
+<p>Как похоже: две сборки сервиса сравнивают в чистых контейнерах с одинаковым профилем нагрузки, а не по очереди в одном процессе с прогретым кэшем. Пик памяти из мониторинга виден с точностью интервала опроса. Правило выбора — SLO — фиксируют до теста. Оптимизацию, которая ускорила сервис, но поменяла ответы, проверяют регрессионными тестами.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Новый процесс на конфигурацию</td>
+  <td>Чистый контейнер на каждую сборку</td>
+</tr>
+<tr>
+  <td>Одинаковые запросы, greedy, потоки, прогрев</td>
+  <td>Одинаковый профиль нагрузки в k6</td>
+</tr>
+<tr>
+  <td>Сумма RSS дерева процессов</td>
+  <td>docker stats по контейнеру, включая дочерние процессы</td>
+</tr>
+<tr>
+  <td>Пик по замерам каждые 30 мс</td>
+  <td>Prometheus со scrape_interval: короткий всплеск между опросами не виден</td>
+</tr>
+<tr>
+  <td>Пик при преобразовании после загрузки float32</td>
+  <td>Миграция с перезаписью таблицы: на время нужны обе копии</td>
+</tr>
+<tr>
+  <td>Правило выбора до запуска</td>
+  <td>SLO, зафиксированный до нагрузочного теста</td>
+</tr>
+<tr>
+  <td>Ответы int8 отличаются от float32</td>
+  <td>Оптимизация поменяла ответы API: нужны регрессионные тесты</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> две сборки одного кода возвращают одинаковые ответы, и сравнение сводится к ресурсам. Квантование меняет сами вычисления, поэтому ответы сравнивают по рубрике, а не на побайтовое совпадение. А три запроса — не нагрузочный тест: это диагностические случаи без статистики.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M09-L06--разобранный-пример">Разобранный пример</h2>
 <h3 id="M09-L06--запуск-и-наблюдаемый-результат">Запуск и наблюдаемый результат</h3>
 <pre><code class="language-powershell">.\.venv\Scripts\python.exe labs\M09\benchmark.py
