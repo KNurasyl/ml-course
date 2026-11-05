@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="3637255ec98404eba3c8c1c5da5169a7d620c6794d33ab9e0dde439dd2610507"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="2c87e9e5e6d8cceb370db7e910302999537f34e5ba0781011cb69fd4ff4f7a89"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -13414,7 +13414,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M13.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M13.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L07"><small>Предыдущий раздел</small>← M12-L07. Настоящий малый SFT: адаптер, checkpoint и регрессии</a><a href="#M13-L01"><small>Следующий раздел</small>M13-L01. Версия эксперимента и релиза →</a></nav></article><article class="material" id="M13-L01" data-title="M13-L01. Версия эксперимента и релиза" data-short-title="Версия эксперимента и релиза" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Версия эксперимента и релиза</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M13-L01--объяснение">Объяснение</a></li><li><a href="#M13-L01--аналогия-package-lock-json-и-digest-образа">Аналогия: package-lock.json и digest образа</a></li><li><a href="#M13-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M13-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+"></iframe><p><a href="course/visuals/M13.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M13.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L07"><small>Предыдущий раздел</small>← M12-L07. Настоящий малый SFT: адаптер, checkpoint и регрессии</a><a href="#M13-L01"><small>Следующий раздел</small>M13-L01. Версия эксперимента и релиза →</a></nav></article><article class="material" id="M13-L01" data-title="M13-L01. Версия эксперимента и релиза" data-short-title="Версия эксперимента и релиза" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Версия эксперимента и релиза</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M13-L01--объяснение">Объяснение</a></li><li><a href="#M13-L01--аналогия-package-lock-json-и-digest-образа">Аналогия: package-lock.json и digest образа</a></li><li><a href="#M13-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M13-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L01--карточка-урока">Карточка урока</a></li><li><a href="#M13-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/hashlib.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: hashlib</a></p>
 </blockquote>
@@ -13499,13 +13499,40 @@ print(hashlib.sha256(payload).hexdigest())
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M13-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: commit=abc не менялся, corpus.txt обновился с «лимит 10» на «лимит 20». Какие версии сохранять? C через неделю: JSON {&quot;b&quot;:2,&quot;a&quot;:1} и {&quot;a&quot;:1,&quot;b&quot;:2}; что именно сравнивает канонический hash?</p>
 <p>Сохрани новую попытку до просмотра <a href="#M13-SOLUTIONS--m13-l01-b-c">ключа B/C</a>.</p>
-</section><h2 id="M13-L01--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M13-L01--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Релиз — согласованный комплект: код, данные, веса, токенизатор, prompt, индекс, параметры генерации и рубрика с хешами в манифесте; release_id сопровождает каждый ответ; «latest» не является версией; JSON перед хешем канонизируют (sort_keys и фиксированные separators)</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>SHA-256 ловит изменение байтов, но не подтверждает качество; по хешу нельзя восстановить файл, поэтому файл хранят рядом с идентификатором; experiment_id — откуда решение, release_id — что обслуживало запрос; уровень воспроизводимости — битовый, численный или инженерный — выбирают заранее</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При выпуске и разборе жалоб. Пример: строка происхождения хода интервью — session_id, turn_id, release_id, модель ASR, модель диалога, версии prompt, базы знаний и голоса: жалобу «вчера было верно» связывают с конкретным изменением, не храня сам голос</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Сохранить только git commit приложения или считать совпадение хеша доказательством качества</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M13-L01--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://docs.python.org/3/library/hashlib.html" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M13/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M13">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13"><small>Предыдущий раздел</small>← M13 MLOps и LLMOps</a><a href="#M13-L02"><small>Следующий раздел</small>M13-L02. Упаковка и контракт →</a></nav></article><article class="material" id="M13-L02" data-title="M13-L02. Упаковка и контракт" data-short-title="Упаковка и контракт" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Упаковка и контракт</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M13-L02--объяснение">Объяснение</a></li><li><a href="#M13-L02--аналогия-dto-валидация-на-границе-сервиса">Аналогия: DTO-валидация на границе сервиса</a></li><li><a href="#M13-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L02--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M13-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13"><small>Предыдущий раздел</small>← M13 MLOps и LLMOps</a><a href="#M13-L02"><small>Следующий раздел</small>M13-L02. Упаковка и контракт →</a></nav></article><article class="material" id="M13-L02" data-title="M13-L02. Упаковка и контракт" data-short-title="Упаковка и контракт" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Упаковка и контракт</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M13-L02--объяснение">Объяснение</a></li><li><a href="#M13-L02--аналогия-dto-валидация-на-границе-сервиса">Аналогия: DTO-валидация на границе сервиса</a></li><li><a href="#M13-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L02--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M13-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L02--карточка-урока">Карточка урока</a></li><li><a href="#M13-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; Docker — опционально, версия не проверялась · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/json.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: json</a></p>
 </blockquote>
@@ -13599,13 +13626,40 @@ for invalid in [True, float('nan'), '2']:
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M13-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: добавить optional language со значением по умолчанию ru; проверить отсутствует, ru, en, null, 4. C через неделю: turn_id=true, хотя Python считает bool подклассом int; должен ли запрос пройти?</p>
 <p>Сохрани новую попытку до просмотра <a href="#M13-SOLUTIONS--m13-l02-b-c">ключа B/C</a>.</p>
-</section><h2 id="M13-L02--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M13-L02--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Контракт: типы, единицы, длины, версия схемы, обработка пустых значений и лишних полей, машинно различимые ошибки; проверка до дорогого вычисления; bool отвергают отдельно, NaN и бесконечности — через math.isfinite</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>В Python bool — подкласс int, а NaN и inf имеют тип float; HTTP 200 сообщает об обработанном запросе, а не об успехе модели; виртуальное окружение изолирует Python-зависимости, но не драйверы и не системный голос; контейнер переносит процесс, но не делает модель точнее</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При проектировании входа сервиса. Пример: поле duration_ms = 1500 допустимо, а 1.5 — синтаксически число, но, вероятно, секунды: единица в имени поля и допустимый диапазон делают ошибку видимой; True и float(&quot;inf&quot;) отклоняются до вычисления</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Пропустить True как число 1 или вернуть убедительный текст с HTTP 200, когда модель не справилась</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M13-L02--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://json-schema.org/understanding-json-schema/reference/object" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M13/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M13">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l02">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L01"><small>Предыдущий раздел</small>← M13-L01. Версия эксперимента и релиза</a><a href="#M13-L03"><small>Следующий раздел</small>M13-L03. Регрессионные проверки →</a></nav></article><article class="material" id="M13-L03" data-title="M13-L03. Регрессионные проверки" data-short-title="Регрессионные проверки" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Регрессионные проверки</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M13-L03--объяснение">Объяснение</a></li><li><a href="#M13-L03--аналогия-мутационное-тестирование">Аналогия: мутационное тестирование</a></li><li><a href="#M13-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L03--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M13-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l02">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L01"><small>Предыдущий раздел</small>← M13-L01. Версия эксперимента и релиза</a><a href="#M13-L03"><small>Следующий раздел</small>M13-L03. Регрессионные проверки →</a></nav></article><article class="material" id="M13-L03" data-title="M13-L03. Регрессионные проверки" data-short-title="Регрессионные проверки" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Регрессионные проверки</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M13-L03--объяснение">Объяснение</a></li><li><a href="#M13-L03--аналогия-мутационное-тестирование">Аналогия: мутационное тестирование</a></li><li><a href="#M13-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L03--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M13-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L03--карточка-урока">Карточка урока</a></li><li><a href="#M13-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/unittest.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: unittest</a></p>
 </blockquote>
@@ -13690,13 +13744,40 @@ for weight, bias in [(2, 1), (20, 1)]:
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M13-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: функция верна на x=0,2,-2, но возвращает 0 при |x|&gt;100. Добавь минимальный обнаруживающий тест. C через неделю: JSON содержит корректный факт «индекс занимает место», но оценка HR-конкретности основана на этом факте; какой уровень проверки обнаружит ошибку?</p>
 <p>Сохрани новую попытку до просмотра <a href="#M13-SOLUTIONS--m13-l03-b-c">ключа B/C</a>.</p>
-</section><h2 id="M13-L03--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M13-L03--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Каждый тест проверяет конкретное свойство и отличает определённый неверный вариант программы; уровни: контракт, численная формула, поведение модели по рубрике, интеграция; canary запускают до переключения и после; тестовый набор версионируют вместе с release_id</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Тест формы ловит неправильные поля, но не смысл; canary — малый фиксированный набор контрольных входов, а не доказательство качества; для LLM проверяют свойства — схему, обязательные факты, отсутствие неподтверждённого, — а не точный текст; новую версию набора нельзя сравнивать со старым результатом без повторного прогона обеих систем</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При добавлении проверки в выпуск. Пример: тест «в ответе есть поле score» пройдёт и тогда, когда оценщик всегда ставит 2; тест «на эталонном слабом ответе score = 0» отличает этот дефект</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Называть проверку наличия словаря проверкой поведения или сравнивать результаты по разным версиям тестового набора</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M13-L03--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://docs.python.org/3/library/unittest.html" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M13/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M13">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l03">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L02"><small>Предыдущий раздел</small>← M13-L02. Упаковка и контракт</a><a href="#M13-L04"><small>Следующий раздел</small>M13-L04. Наблюдаемость и нагрузка →</a></nav></article><article class="material" id="M13-L04" data-title="M13-L04. Наблюдаемость и нагрузка" data-short-title="Наблюдаемость и нагрузка" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Наблюдаемость и нагрузка</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M13-L04--объяснение">Объяснение</a></li><li><a href="#M13-L04--аналогия-очередь-на-кассе">Аналогия: очередь на кассе</a></li><li><a href="#M13-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L04--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M13-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l03">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L02"><small>Предыдущий раздел</small>← M13-L02. Упаковка и контракт</a><a href="#M13-L04"><small>Следующий раздел</small>M13-L04. Наблюдаемость и нагрузка →</a></nav></article><article class="material" id="M13-L04" data-title="M13-L04. Наблюдаемость и нагрузка" data-short-title="Наблюдаемость и нагрузка" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Наблюдаемость и нагрузка</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M13-L04--объяснение">Объяснение</a></li><li><a href="#M13-L04--аналогия-очередь-на-кассе">Аналогия: очередь на кассе</a></li><li><a href="#M13-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L04--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M13-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L04--карточка-урока">Карточка урока</a></li><li><a href="#M13-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/statistics.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: statistics</a></p>
 </blockquote>
@@ -13784,13 +13865,40 @@ p95 = values[math.ceil(.95 * len(values)) - 1]
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M13-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: сравни A=[500]*20 и B=[400]*18+[1400]*2 по среднему и nearest-rank p95. C через неделю: к каждому наблюдению B добавились 100 мс сети; пересчитай обе метрики и укажи, как не обвинить модель.</p>
 <p>Сохрани новую попытку до просмотра <a href="#M13-SOLUTIONS--m13-l04-b-c">ключа B/C</a>.</p>
-</section><h2 id="M13-L04--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M13-L04--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Лог — событие, метрика — агрегат, трассировка — этапы одного запроса; длительности меряют монотонными часами (perf_counter) с единицей в имени поля; nearest-rank p95 — элемент номер ceil(0.95·n) после сортировки; число измерений указывают всегда</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Среднее скрывает редкие долгие запросы, медиана описывает центральный случай, p95 при малом n почти совпадает с максимумом; полная задержка = очередь + этапы обработки; последовательные вызовы внутри процесса не показывают поведение при одновременных пользователях</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При разборе медленных ответов. Пример: 10 замеров [20, 22, 25, 30, 31, 33, 40, 45, 50, 300] мс — среднее 59.6, медиана 32, nearest-rank p90 = 50, а p95 = 10-й элемент = 300: хвост виден только в высоком квантиле</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Ускорять модель, когда время уходит на очередь, или сообщать p95 без числа измерений</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M13-L04--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://docs.python.org/3/library/time.html#time.perf_counter" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M13/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M13">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l04">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L03"><small>Предыдущий раздел</small>← M13-L03. Регрессионные проверки</a><a href="#M13-L05"><small>Следующий раздел</small>M13-L05. Неудачный релиз и восстановление →</a></nav></article><article class="material" id="M13-L05" data-title="M13-L05. Неудачный релиз и восстановление" data-short-title="Неудачный релиз и восстановление" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Неудачный релиз и восстановление</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M13-L05--объяснение">Объяснение</a></li><li><a href="#M13-L05--аналогия-откат-миграции-базы-данных">Аналогия: откат миграции базы данных</a></li><li><a href="#M13-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L05--схема">Схема</a></li><li><a href="#M13-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L05--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M13-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l04">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L03"><small>Предыдущий раздел</small>← M13-L03. Регрессионные проверки</a><a href="#M13-L05"><small>Следующий раздел</small>M13-L05. Неудачный релиз и восстановление →</a></nav></article><article class="material" id="M13-L05" data-title="M13-L05. Неудачный релиз и восстановление" data-short-title="Неудачный релиз и восстановление" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Неудачный релиз и восстановление</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M13-L05--объяснение">Объяснение</a></li><li><a href="#M13-L05--аналогия-откат-миграции-базы-данных">Аналогия: откат миграции базы данных</a></li><li><a href="#M13-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L05--схема">Схема</a></li><li><a href="#M13-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L05--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M13-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L05--карточка-урока">Карточка урока</a></li><li><a href="#M13-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; Docker — опционально, версия не проверялась · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/hashlib.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: hashlib</a></p>
 </blockquote>
@@ -14005,13 +14113,40 @@ print(active['version'])  # 1.0
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M13-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: доступен код A, но удалён индекс schema1; исходные документы v1 сохранились. Возможен ли мгновенный откат? C через неделю: во время переключения уже выполняется запрос release B; какой комплект он должен использовать?</p>
 <p>Сохрани новую попытку до просмотра <a href="#M13-SOLUTIONS--m13-l05-b-c">ключа B/C</a>.</p>
-</section><h2 id="M13-L05--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M13-L05--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Единица переключения и отката — совместимый комплект по манифесту; условия отказа и путь восстановления записывают до выпуска; кандидата проверяют вне активного сервиса и переключают указатель только после успеха; после отката повторяют контрольные запросы через путь клиента</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Readiness — процесс загрузил ресурсы и принимает запросы, quality — ответы верны; удалённый столбец или перезаписанный индекс старый код не вернёт, поэтому снимок сохраняют до выпуска; разбор инцидента описывает факты и то, почему проверки не остановили изменение</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При выпуске новой версии. Пример: порог отказа задан заранее — canary 3 из 3 и не больше 1% ошибок за первые 500 запросов; после переключения 9 ошибок из 500 = 1.8% — откат всего комплекта и повторная проверка release_id и ответа через API</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Заменить только файл модели и объявить систему исправленной или считать зелёный health check доказательством правильных ответов</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M13-L05--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://docs.docker.com/build/building/best-practices/" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M13/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M13">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l05">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L04"><small>Предыдущий раздел</small>← M13-L04. Наблюдаемость и нагрузка</a><a href="#M13-L06"><small>Следующий раздел</small>M13-L06. Очередь, дедлайн и восстановление HTTP-сервиса →</a></nav></article><article class="material" id="M13-L06" data-title="M13-L06. Очередь, дедлайн и восстановление HTTP-сервиса" data-short-title="Очередь, дедлайн и восстановление HTTP-сервиса" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Очередь, дедлайн и восстановление HTTP-сервиса</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L06--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M13-L06--объяснение">Объяснение</a></li><li><a href="#M13-L06--аналогия-пул-соединений-с-базой">Аналогия: пул соединений с базой</a></li><li><a href="#M13-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L06--схема">Схема</a></li><li><a href="#M13-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L06--самостоятельная-задача-a-m13-l06-a">Самостоятельная задача A — M13-L06-A</a></li><li><a href="#M13-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L06--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия 1.1.0. До урока: M13-L05. Начальный ориентир: 210 минут вместе с практикой; измеренное время записывай отдельно.</p>
+<div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l05">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L04"><small>Предыдущий раздел</small>← M13-L04. Наблюдаемость и нагрузка</a><a href="#M13-L06"><small>Следующий раздел</small>M13-L06. Очередь, дедлайн и восстановление HTTP-сервиса →</a></nav></article><article class="material" id="M13-L06" data-title="M13-L06. Очередь, дедлайн и восстановление HTTP-сервиса" data-short-title="Очередь, дедлайн и восстановление HTTP-сервиса" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Очередь, дедлайн и восстановление HTTP-сервиса</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L06--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M13-L06--объяснение">Объяснение</a></li><li><a href="#M13-L06--аналогия-пул-соединений-с-базой">Аналогия: пул соединений с базой</a></li><li><a href="#M13-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L06--схема">Схема</a></li><li><a href="#M13-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L06--самостоятельная-задача-a-m13-l06-a">Самостоятельная задача A — M13-L06-A</a></li><li><a href="#M13-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L06--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L06--карточка-урока">Карточка урока</a></li><li><a href="#M13-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия 1.1.0. До урока: M13-L05. Начальный ориентир: 210 минут вместе с практикой; измеренное время записывай отдельно.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека (http.server, urllib, concurrent.futures) · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/http.server.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: http.server</a></p>
 </blockquote>
@@ -14169,7 +14304,34 @@ document.querySelectorAll(&#x27;input&#x27;).forEach(el=&gt;el.addEventListener(
 </div></details>
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M13-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>Вариант B: вместимость 1, worker=1, compute=60, wait=1000, два клиента. Вариант C через неделю: вместимость 3, compute=60, wait=150, три клиента. Для каждого покажи, какое именно ограничение стало решающим. <a href="#M13-SOLUTIONS--m13-l06-a-b-c">Отдельный разбор</a> содержит числа и ограничения интерпретации.</p>
-</section><h2 id="M13-L06--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M13-L06--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Семафор вместимости решает, принят ли запрос (иначе сразу 503 queue_full); принятый ждёт worker не дольше дедлайна (иначе 504 queue_deadline до вычисления); вычисление идёт под lock worker; в finally освобождают место, а worker — только если он захвачен</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Вместимость включает выполняющийся запрос; client_ms ≈ queue_ms + compute_ms плюс накладные расходы, поэтому рост клиентского времени не означает замедления модели; таймаут клиента не останавливает вычисление на сервере; восстановление — новый процесс из сохранённого релиза с проверкой schema и canary</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При ограничении нагрузки на CPU-сервис. Пример: вместимость 2, compute 50 мс, дедлайн ожидания 30 мс, три одновременных запроса — третий сразу получает 503, второй ждёт worker и примерно через 30 мс получает 504 queue_deadline, первый получает 200 примерно через 50 мс</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Считать выросшее клиентское время замедлением модели или освобождать worker, который запрос не захватил</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M13-L06--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://docs.python.org/3.11/library/http.server.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: HTTPServer</a>, <a href="https://docs.python.org/3.11/library/threading.html" target="_blank" rel="noopener noreferrer" class="external-link">threading и семафоры</a>. Формулы очереди здесь — расчёт для заданного детерминированного расписания, а не универсальная теория очередей.</p>
 <div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l06-a-b-c">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L05"><small>Предыдущий раздел</small>← M13-L05. Неудачный релиз и восстановление</a><a href="#M14"><small>Следующий раздел</small>M14 Агенты и инструменты →</a></nav></article><article class="material" id="M14" data-title="M14 Агенты и инструменты" data-short-title="Агенты и инструменты" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Агенты и инструменты</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: M10, M11 и M13: поиск, оценивание и эксплуатация.</p>
 <h2 id="M14--уроки-и-практические-ступени">Уроки и практические ступени</h2>
@@ -19789,7 +19951,7 @@ assert not accept_result(3,2)
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 77 из 103 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 83 из 103 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -20342,6 +20504,49 @@ assert not accept_result(3,2)
 <li><strong>Смысл величин.</strong> α/rank — масштаб добавки; hash базы подтверждает, что веса не менялись, но не отсутствие регрессий: выход зависит от адаптера; teacher-forced NLL и свободный диалог — разные проверки; набор old ловит регрессию старого поведения.</li>
 <li><strong>Когда применять.</strong> При малом SFT на CPU. Пример: Linear с in = 576 и out = 192, rank 4 — A 4×576 и B 192×4, всего 2304 + 768 = 3072 обучаемых числа вместо 110 592; α = 16 даёт множитель 4.</li>
 <li><strong>Главная ошибка.</strong> Выпустить по снижению check NLL, не читая генераций, или молча пропустить несовпавшие веса при загрузке.</li>
+</ul>
+<h2 id="CHEATSHEET--m13-mlops-и-llmops">M13. MLOps и LLMOps</h2>
+<h3 id="CHEATSHEET--m13-l01-версия-эксперимента-и-релиза"><a href="#M13-L01">M13-L01. Версия эксперимента и релиза</a></h3>
+<ul>
+<li><strong>Правило.</strong> Релиз — согласованный комплект: код, данные, веса, токенизатор, prompt, индекс, параметры генерации и рубрика с хешами в манифесте; release_id сопровождает каждый ответ; «latest» не является версией; JSON перед хешем канонизируют (sort_keys и фиксированные separators).</li>
+<li><strong>Смысл величин.</strong> SHA-256 ловит изменение байтов, но не подтверждает качество; по хешу нельзя восстановить файл, поэтому файл хранят рядом с идентификатором; experiment_id — откуда решение, release_id — что обслуживало запрос; уровень воспроизводимости — битовый, численный или инженерный — выбирают заранее.</li>
+<li><strong>Когда применять.</strong> При выпуске и разборе жалоб. Пример: строка происхождения хода интервью — session_id, turn_id, release_id, модель ASR, модель диалога, версии prompt, базы знаний и голоса: жалобу «вчера было верно» связывают с конкретным изменением, не храня сам голос.</li>
+<li><strong>Главная ошибка.</strong> Сохранить только git commit приложения или считать совпадение хеша доказательством качества.</li>
+</ul>
+<h3 id="CHEATSHEET--m13-l02-упаковка-и-контракт"><a href="#M13-L02">M13-L02. Упаковка и контракт</a></h3>
+<ul>
+<li><strong>Правило.</strong> Контракт: типы, единицы, длины, версия схемы, обработка пустых значений и лишних полей, машинно различимые ошибки; проверка до дорогого вычисления; bool отвергают отдельно, NaN и бесконечности — через math.isfinite.</li>
+<li><strong>Смысл величин.</strong> В Python bool — подкласс int, а NaN и inf имеют тип float; HTTP 200 сообщает об обработанном запросе, а не об успехе модели; виртуальное окружение изолирует Python-зависимости, но не драйверы и не системный голос; контейнер переносит процесс, но не делает модель точнее.</li>
+<li><strong>Когда применять.</strong> При проектировании входа сервиса. Пример: поле duration_ms = 1500 допустимо, а 1.5 — синтаксически число, но, вероятно, секунды: единица в имени поля и допустимый диапазон делают ошибку видимой; True и float(&quot;inf&quot;) отклоняются до вычисления.</li>
+<li><strong>Главная ошибка.</strong> Пропустить True как число 1 или вернуть убедительный текст с HTTP 200, когда модель не справилась.</li>
+</ul>
+<h3 id="CHEATSHEET--m13-l03-регрессионные-проверки"><a href="#M13-L03">M13-L03. Регрессионные проверки</a></h3>
+<ul>
+<li><strong>Правило.</strong> Каждый тест проверяет конкретное свойство и отличает определённый неверный вариант программы; уровни: контракт, численная формула, поведение модели по рубрике, интеграция; canary запускают до переключения и после; тестовый набор версионируют вместе с release_id.</li>
+<li><strong>Смысл величин.</strong> Тест формы ловит неправильные поля, но не смысл; canary — малый фиксированный набор контрольных входов, а не доказательство качества; для LLM проверяют свойства — схему, обязательные факты, отсутствие неподтверждённого, — а не точный текст; новую версию набора нельзя сравнивать со старым результатом без повторного прогона обеих систем.</li>
+<li><strong>Когда применять.</strong> При добавлении проверки в выпуск. Пример: тест «в ответе есть поле score» пройдёт и тогда, когда оценщик всегда ставит 2; тест «на эталонном слабом ответе score = 0» отличает этот дефект.</li>
+<li><strong>Главная ошибка.</strong> Называть проверку наличия словаря проверкой поведения или сравнивать результаты по разным версиям тестового набора.</li>
+</ul>
+<h3 id="CHEATSHEET--m13-l04-наблюдаемость-и-нагрузка"><a href="#M13-L04">M13-L04. Наблюдаемость и нагрузка</a></h3>
+<ul>
+<li><strong>Правило.</strong> Лог — событие, метрика — агрегат, трассировка — этапы одного запроса; длительности меряют монотонными часами (perf_counter) с единицей в имени поля; nearest-rank p95 — элемент номер ceil(0.95·n) после сортировки; число измерений указывают всегда.</li>
+<li><strong>Смысл величин.</strong> Среднее скрывает редкие долгие запросы, медиана описывает центральный случай, p95 при малом n почти совпадает с максимумом; полная задержка = очередь + этапы обработки; последовательные вызовы внутри процесса не показывают поведение при одновременных пользователях.</li>
+<li><strong>Когда применять.</strong> При разборе медленных ответов. Пример: 10 замеров [20, 22, 25, 30, 31, 33, 40, 45, 50, 300] мс — среднее 59.6, медиана 32, nearest-rank p90 = 50, а p95 = 10-й элемент = 300: хвост виден только в высоком квантиле.</li>
+<li><strong>Главная ошибка.</strong> Ускорять модель, когда время уходит на очередь, или сообщать p95 без числа измерений.</li>
+</ul>
+<h3 id="CHEATSHEET--m13-l05-неудачный-релиз-и-восстановление"><a href="#M13-L05">M13-L05. Неудачный релиз и восстановление</a></h3>
+<ul>
+<li><strong>Правило.</strong> Единица переключения и отката — совместимый комплект по манифесту; условия отказа и путь восстановления записывают до выпуска; кандидата проверяют вне активного сервиса и переключают указатель только после успеха; после отката повторяют контрольные запросы через путь клиента.</li>
+<li><strong>Смысл величин.</strong> Readiness — процесс загрузил ресурсы и принимает запросы, quality — ответы верны; удалённый столбец или перезаписанный индекс старый код не вернёт, поэтому снимок сохраняют до выпуска; разбор инцидента описывает факты и то, почему проверки не остановили изменение.</li>
+<li><strong>Когда применять.</strong> При выпуске новой версии. Пример: порог отказа задан заранее — canary 3 из 3 и не больше 1% ошибок за первые 500 запросов; после переключения 9 ошибок из 500 = 1.8% — откат всего комплекта и повторная проверка release_id и ответа через API.</li>
+<li><strong>Главная ошибка.</strong> Заменить только файл модели и объявить систему исправленной или считать зелёный health check доказательством правильных ответов.</li>
+</ul>
+<h3 id="CHEATSHEET--m13-l06-очередь-дедлайн-и-восстановление-http-сервиса"><a href="#M13-L06">M13-L06. Очередь, дедлайн и восстановление HTTP-сервиса</a></h3>
+<ul>
+<li><strong>Правило.</strong> Семафор вместимости решает, принят ли запрос (иначе сразу 503 queue_full); принятый ждёт worker не дольше дедлайна (иначе 504 queue_deadline до вычисления); вычисление идёт под lock worker; в finally освобождают место, а worker — только если он захвачен.</li>
+<li><strong>Смысл величин.</strong> Вместимость включает выполняющийся запрос; client_ms ≈ queue_ms + compute_ms плюс накладные расходы, поэтому рост клиентского времени не означает замедления модели; таймаут клиента не останавливает вычисление на сервере; восстановление — новый процесс из сохранённого релиза с проверкой schema и canary.</li>
+<li><strong>Когда применять.</strong> При ограничении нагрузки на CPU-сервис. Пример: вместимость 2, compute 50 мс, дедлайн ожидания 30 мс, три одновременных запроса — третий сразу получает 503, второй ждёт worker и примерно через 30 мс получает 504 queue_deadline, первый получает 200 примерно через 50 мс.</li>
+<li><strong>Главная ошибка.</strong> Считать выросшее клиентское время замедлением модели или освобождать worker, который запрос не захватил.</li>
 </ul>
 </div></div><footer class="source-note">Исходный текст: <code>course/cheatsheet.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#FAST-TRACK-LLM"><small>Предыдущий раздел</small>← Быстрый вход в M09–M11 для тех, кто уже делал RAG</a><a href="#REVIEW-SCHEDULE"><small>Следующий раздел</small>Расписание повторения →</a></nav></article><article class="material" id="REVIEW-SCHEDULE" data-title="Расписание повторения" data-short-title="Расписание повторения" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">REVIEW-SCHEDULE</span><span class="badge reference">Материал курса</span></div><h1>Расписание повторения</h1></header><div class="article-layout"><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Правило дополняет <a href="#MENTOR--отложенная-проверка">отложенную проверку</a> из учебного цикла: даты повторений считаются по журналу, а сами повторения смешивают задачи разных модулей.</p>
 <h2 id="REVIEW-SCHEDULE--правило-1-3-7-21">Правило 1–3–7–21</h2>
