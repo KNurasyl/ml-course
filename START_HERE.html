@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="2b700d0223cd28c4c389d8bd5b8703fa0776298f994b6db2b3d7659e3c23bebe"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="eb408197893574a423cae78287985686780ac829c3b2add54a7b2f82e9b48121"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -16708,7 +16708,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M16.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M16.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L06"><small>Предыдущий раздел</small>← M15-L06. От WAV к частичным гипотезам и отменяемым фрагментам</a><a href="#M16-L01"><small>Следующий раздел</small>M16-L01. Требования и две рубрики →</a></nav></article><article class="material" id="M16-L01" data-title="M16-L01. Требования и две рубрики" data-short-title="Требования и две рубрики" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Требования и две рубрики</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L01--объяснение">Объяснение</a></li><li><a href="#M16-L01--аналогия-техзадание-с-двумя-независимыми-ревью">Аналогия: техзадание с двумя независимыми ревью</a></li><li><a href="#M16-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M16-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M16-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M16-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M16-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+"></iframe><p><a href="course/visuals/M16.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M16.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L06"><small>Предыдущий раздел</small>← M15-L06. От WAV к частичным гипотезам и отменяемым фрагментам</a><a href="#M16-L01"><small>Следующий раздел</small>M16-L01. Требования и две рубрики →</a></nav></article><article class="material" id="M16-L01" data-title="M16-L01. Требования и две рубрики" data-short-title="Требования и две рубрики" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Требования и две рубрики</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L01--объяснение">Объяснение</a></li><li><a href="#M16-L01--аналогия-техзадание-с-двумя-независимыми-ревью">Аналогия: техзадание с двумя независимыми ревью</a></li><li><a href="#M16-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M16-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M16-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M16-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M16-L01--карточка-урока">Карточка урока</a></li><li><a href="#M16-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; продукт курса — Qwen2.5-0.5B-Instruct (ревизия 7ae5576) через transformers 4.57.6 и PyTorch 2.15.0+cpu, поиск TF-IDF из scikit-learn 1.9.1, Vosk 0.3.45 и vosk-model-small-ru-0.22, Windows System.Speech с голосом Microsoft Irina Desktop · проверено 04.11.2026 · источник: <a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">карточка Qwen2.5-0.5B-Instruct</a></p>
 </blockquote>
@@ -16900,13 +16900,40 @@ draw();
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M16-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: ответ «индекс всегда ускоряет все запросы» уверенно и подробно оформлен. Можно ли компенсировать ошибку ясностью? C через неделю: HR-ответ краткий, но содержит конкретное личное действие; следует ли автоматически снизить конкретность за длину?</p>
 <p>Сохрани новую попытку до просмотра <a href="#M16-SOLUTIONS--m16-l01-b-c">ключа B/C</a>.</p>
-</section><h2 id="M16-L01--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M16-L01--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Требования описывают учебный результат и взаимодействие; HR оценивают по ясности, конкретности и аргументации, технику — по корректности, компромиссам и проверке; каждый балл 0–2 сопровождается фрагментом ответа и следующим упражнением; критическая ошибка блокирует при любой сумме</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Уровни рубрики — наблюдаемые признаки, а не мера ценности человека; продукт не обещает распознавать эмоции, личность или уровень по голосу; ограничения оборудования и текстовый режим — часть требований; изменение обещаний меняет набор приёмочных проверок</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При фиксации границ продукта. Пример: HR-ответ «Я перевёл выгрузку отчётов на пакетную обработку и сравнил время до и после на копии базы» — конкретность 2: личное действие и способ проверки; технический ответ «Кэш снимает нагрузку» без условий инвалидации — корректность 1, проверка 0</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Свести все измерения в одну сумму без правил блокировки или оценивать человека вместо содержания ответа</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M16-L01--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M16/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M16">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M16">Модуль и домашняя работа</a> · <a href="#M16-SOLUTIONS--m16-l01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M16-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M16"><small>Предыдущий раздел</small>← M16 Итоговый продукт и защита</a><a href="#M16-L06"><small>Следующий раздел</small>M16-L06. Обратная связь с проверяемыми основаниями →</a></nav></article><article class="material" id="M16-L06" data-title="M16-L06. Обратная связь с проверяемыми основаниями" data-short-title="Обратная связь с проверяемыми основаниями" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Обратная связь с проверяемыми основаниями</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L06--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L06--объяснение">Объяснение</a></li><li><a href="#M16-L06--аналогия-выпадающий-список-вместо-свободного-ввода">Аналогия: выпадающий список вместо свободного ввода</a></li><li><a href="#M16-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M16-L06--схема">Схема</a></li><li><a href="#M16-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L06--самостоятельная-задача-a-m16-l06-a">Самостоятельная задача A — M16-L06-A</a></li><li><a href="#M16-L06--подсказки-по-очереди-новая-и-отложенная-проверка">Подсказки по очереди; новая и отложенная проверка</a></li><li><a href="#M16-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия 1.1.0. До урока: M16-L01. Начальный ориентир: 180 минут вместе с практикой; измеренное время записывай отдельно.</p>
+<div class="practice-note"><a href="#M16">Модуль и домашняя работа</a> · <a href="#M16-SOLUTIONS--m16-l01">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M16-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M16"><small>Предыдущий раздел</small>← M16 Итоговый продукт и защита</a><a href="#M16-L06"><small>Следующий раздел</small>M16-L06. Обратная связь с проверяемыми основаниями →</a></nav></article><article class="material" id="M16-L06" data-title="M16-L06. Обратная связь с проверяемыми основаниями" data-short-title="Обратная связь с проверяемыми основаниями" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Обратная связь с проверяемыми основаниями</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L06--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L06--объяснение">Объяснение</a></li><li><a href="#M16-L06--аналогия-выпадающий-список-вместо-свободного-ввода">Аналогия: выпадающий список вместо свободного ввода</a></li><li><a href="#M16-L06--разобранный-пример">Разобранный пример</a></li><li><a href="#M16-L06--схема">Схема</a></li><li><a href="#M16-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L06--самостоятельная-задача-a-m16-l06-a">Самостоятельная задача A — M16-L06-A</a></li><li><a href="#M16-L06--подсказки-по-очереди-новая-и-отложенная-проверка">Подсказки по очереди; новая и отложенная проверка</a></li><li><a href="#M16-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L06--карточка-урока">Карточка урока</a></li><li><a href="#M16-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия 1.1.0. До урока: M16-L01. Начальный ориентир: 180 минут вместе с практикой; измеренное время записывай отдельно.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, transformers 4.57.6, PyTorch 2.15.0+cpu; модель Qwen2.5-0.5B-Instruct (ревизия 7ae5576) · проверено 04.11.2026 · источник: <a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">карточка Qwen2.5-0.5B-Instruct</a></p>
 </blockquote>
@@ -17053,9 +17080,36 @@ assert not validate_observations(raw, 'hr', answer)['valid']
 </div></details>
 <h2 id="M16-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</h2>
 <p>Работа завершена, когда сохранены обе версии вывода, отказ правильно назван правилом, нет известных критических регрессий на подготовленных проверочных случаях, а ограничения ручной разметки описаны. Это не гарантия отсутствия любой будущей ошибки.</p>
+<h2 id="M16-L06--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Три уровня проверки: синтаксис и схема → существование выбранного фрагмента в текущем ответе → смысл (критерий и следующий шаг); пользователю показывают цитату из исходного фрагмента, а не свободный вывод модели; при провале — явный отказ и заранее заданный вопрос как правило приложения</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Bounded candidate: приложение строит допустимые JSON-комбинации, prefix_allowed_tokens_fn разрешает только их — формат обеспечивает программа; raw_output, display_text и fallback_used хранят раздельно; отказ предотвращает ложное сообщение, но уменьшает покрытие полезной обратной связью</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При публикации обратной связи. Пример: ответ «Я не настраивал репликацию, но читал документацию» разбит на два фрагмента; модель выбрала первый и criterion = action — цитата существует, уровень 2 пройден, но «не настраивал» не подтверждает действия: уровень 3 провален при ручной разметке</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Считать существование цитаты подтверждением смысла или выдавать защиту приложения за улучшение модели</td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="M16-L06--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://docs.python.org/3.11/library/json.html" target="_blank" rel="noopener noreferrer" class="external-link">JSON Python 3.11</a>, <a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">карточка модели</a>, <a href="https://huggingface.co/docs/transformers/v4.57.1/en/main_classes/text_generation" target="_blank" rel="noopener noreferrer" class="external-link">Transformers: управление генерацией</a>. Политика публикации и примеры — собственный материал курса.</p>
-<div class="practice-note"><a href="#M16">Модуль и домашняя работа</a> · <a href="#M16-SOLUTIONS--m16-l06-a-b-c">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M16-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M16-L01"><small>Предыдущий раздел</small>← M16-L01. Требования и две рубрики</a><a href="#M16-L07"><small>Следующий раздел</small>M16-L07. Состояние интервью и ограниченные уточнения →</a></nav></article><article class="material" id="M16-L07" data-title="M16-L07. Состояние интервью и ограниченные уточнения" data-short-title="Состояние интервью и ограниченные уточнения" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L07</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Состояние интервью и ограниченные уточнения</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L07--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L07--объяснение">Объяснение</a></li><li><a href="#M16-L07--аналогия-пошаговая-форма-оформления-заказа">Аналогия: пошаговая форма оформления заказа</a></li><li><a href="#M16-L07--разобранный-пример-переход">Разобранный пример — переход</a></li><li><a href="#M16-L07--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L07--самостоятельная-задача-a-m16-l07-a">Самостоятельная задача A — M16-L07-A</a></li><li><a href="#M16-L07--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L07--подсказки-по-очереди-новая-и-отложенная-проверка">Подсказки по очереди; новая и отложенная проверка</a></li><li><a href="#M16-L07--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия 1.1.0. До урока: M16-L06. Начальный ориентир: 180 минут вместе с практикой; измеренное время записывай отдельно.</p>
+<div class="practice-note"><a href="#M16">Модуль и домашняя работа</a> · <a href="#M16-SOLUTIONS--m16-l06-a-b-c">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M16-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M16-L01"><small>Предыдущий раздел</small>← M16-L01. Требования и две рубрики</a><a href="#M16-L07"><small>Следующий раздел</small>M16-L07. Состояние интервью и ограниченные уточнения →</a></nav></article><article class="material" id="M16-L07" data-title="M16-L07. Состояние интервью и ограниченные уточнения" data-short-title="Состояние интервью и ограниченные уточнения" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L07</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Состояние интервью и ограниченные уточнения</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L07--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L07--объяснение">Объяснение</a></li><li><a href="#M16-L07--аналогия-пошаговая-форма-оформления-заказа">Аналогия: пошаговая форма оформления заказа</a></li><li><a href="#M16-L07--разобранный-пример-переход">Разобранный пример — переход</a></li><li><a href="#M16-L07--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L07--самостоятельная-задача-a-m16-l07-a">Самостоятельная задача A — M16-L07-A</a></li><li><a href="#M16-L07--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L07--подсказки-по-очереди-новая-и-отложенная-проверка">Подсказки по очереди; новая и отложенная проверка</a></li><li><a href="#M16-L07--карточка-урока">Карточка урока</a></li><li><a href="#M16-L07--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия 1.1.0. До урока: M16-L06. Начальный ориентир: 180 минут вместе с практикой; измеренное время записывай отдельно.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека (http.server) · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/http.server.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: http.server</a></p>
 </blockquote>
@@ -17196,9 +17250,36 @@ assert (s.topic_index,s.turn,s.clarification) == (1,2,False)
 <details class="hints" id="M16-L07--подсказки-по-очереди-новая-и-отложенная-проверка"><summary>Подсказки по очереди; новая и отложенная проверка</summary><div>
 <p>Вместо bool потребуется счётчик уточнений. Максимум ответов на тему равен 1+limit. Повтор B: две темы, limit=0. Через неделю C: пользователь возвращается после перезапуска; предложи сериализацию и две проверки совместимости версии состояния. Не называй восстановление sessionStorage восстановлением серверной памяти. <a href="#M16-SOLUTIONS--m16-l07-a-b-c">Ключи</a>.</p>
 </div></details>
+<h2 id="M16-L07--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Состояние интервью: topic_index выбирает тему, turn растёт с каждой принятой операцией, отдельно хранится уточнение; не больше одного уточнения на тему; явный отказ — переход к следующей теме; prepare до генерации, commit после успеха; повтор с тем же turn отклоняется</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Ответов на тему от 1 до 1 + limit, поэтому автомат конечен; «короткий = неполный» — эвристика, а не оценка компетентности; история нужна хранилищу и следующему вызову модели, но непроверенный отзыв не становится фактом о кандидате; память процесса — не долговременное хранилище</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При проектировании интервью. Пример: четыре темы, ответы «коротко, подробно, отказ, коротко, подробно, подробно» — тема 0 с уточнением, тема 1 закрыта отказом, тема 2 с уточнением, тема 3 сразу; после шестого ответа topic_index = 4, turn = 6, интервью завершено</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Использовать номер HTTP-операции как номер темы или бесконечно просить уточнить после отказа</td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="M16-L07--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://docs.python.org/3.11/library/dataclasses.html" target="_blank" rel="noopener noreferrer" class="external-link">Python dataclasses</a>, собственная спецификация конечного интервью в projects/interview_trainer/core.py.</p>
-<div class="practice-note"><a href="#M16">Модуль и домашняя работа</a> · <a href="#M16-SOLUTIONS--m16-l07-a-b-c">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M16-L07.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M16-L06"><small>Предыдущий раздел</small>← M16-L06. Обратная связь с проверяемыми основаниями</a><a href="#M16-L02"><small>Следующий раздел</small>M16-L02. Интеграция и независимая проверка →</a></nav></article><article class="material" id="M16-L02" data-title="M16-L02. Интеграция и независимая проверка" data-short-title="Интеграция и независимая проверка" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Интеграция и независимая проверка</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L02--объяснение">Объяснение</a></li><li><a href="#M16-L02--аналогия-e2e-тесты-микросервисов-и-mock-платёжного-шлюза">Аналогия: e2e-тесты микросервисов и mock платёжного шлюза</a></li><li><a href="#M16-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M16-L02--схема">Схема</a></li><li><a href="#M16-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L02--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M16-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M16-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M16-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M16">Модуль и домашняя работа</a> · <a href="#M16-SOLUTIONS--m16-l07-a-b-c">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M16-L07.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M16-L06"><small>Предыдущий раздел</small>← M16-L06. Обратная связь с проверяемыми основаниями</a><a href="#M16-L02"><small>Следующий раздел</small>M16-L02. Интеграция и независимая проверка →</a></nav></article><article class="material" id="M16-L02" data-title="M16-L02. Интеграция и независимая проверка" data-short-title="Интеграция и независимая проверка" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Интеграция и независимая проверка</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L02--объяснение">Объяснение</a></li><li><a href="#M16-L02--аналогия-e2e-тесты-микросервисов-и-mock-платёжного-шлюза">Аналогия: e2e-тесты микросервисов и mock платёжного шлюза</a></li><li><a href="#M16-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M16-L02--схема">Схема</a></li><li><a href="#M16-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L02--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M16-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M16-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M16-L02--карточка-урока">Карточка урока</a></li><li><a href="#M16-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; продукт курса — Qwen2.5-0.5B-Instruct (ревизия 7ae5576) через transformers 4.57.6 и PyTorch 2.15.0+cpu, поиск TF-IDF из scikit-learn 1.9.1, Vosk 0.3.45 и vosk-model-small-ru-0.22, Windows System.Speech с голосом Microsoft Irina Desktop · проверено 04.11.2026 · источник: <a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">карточка Qwen2.5-0.5B-Instruct</a></p>
 </blockquote>
@@ -17292,13 +17373,40 @@ assert (s.topic_index,s.turn,s.clarification) == (1,2,False)
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M16-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: новый вопрос «Почему кэш может отдавать устаревшие данные?». HTTP 200, ASR точен, модель утверждает «кэш всегда актуален». Какие проверки прошли? C через неделю: ответ верен, но TTS проиграл предыдущий ход.</p>
 <p>Сохрани новую попытку до просмотра <a href="#M16-SOLUTIONS--m16-l02-b-c">ключа B/C</a>.</p>
-</section><h2 id="M16-L02--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M16-L02--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Сначала минимальный сквозной путь (сессия, вопрос, ответ, обратная связь, завершение), затем голос; после первой ошибки меняют один компонент; итоговые случаи независимы от настройки; отчёт разделяет ожидаемое, наблюдаемое и вывод</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Интеграционные факты — путь пройден, форматы и ID согласованы, отказ даёт понятное состояние; оценка качества — полезность и правильность совета, отдельно и вручную; заглушка вместо модели не доказывает работу реальной LLM; синтетический WAV не заменяет проверку микрофона</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При сборке продукта. Пример: случай «пустой ответ в текстовом режиме» — ожидаемое: понятное сообщение и тот же вопрос; наблюдаемое: сообщение показано, turn не изменился; вывод: интеграция пройдена, а полезность совета этим случаем не проверена</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Засчитать HTTP 200 или лабораторный JSON как проверку качества или отметить пройденным то, что не запускали</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M16-L02--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://docs.python.org/3/library/unittest.html" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M16/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M16">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M16">Модуль и домашняя работа</a> · <a href="#M16-SOLUTIONS--m16-l02">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M16-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M16-L07"><small>Предыдущий раздел</small>← M16-L07. Состояние интервью и ограниченные уточнения</a><a href="#M16-L03"><small>Следующий раздел</small>M16-L03. Пилот продукта →</a></nav></article><article class="material" id="M16-L03" data-title="M16-L03. Пилот продукта" data-short-title="Пилот продукта" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Пилот продукта</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L03--объяснение">Объяснение</a></li><li><a href="#M16-L03--аналогия-dogfooding-против-юзабилити-теста">Аналогия: dogfooding против юзабилити-теста</a></li><li><a href="#M16-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M16-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L03--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M16-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M16-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M16-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M16">Модуль и домашняя работа</a> · <a href="#M16-SOLUTIONS--m16-l02">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M16-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M16-L07"><small>Предыдущий раздел</small>← M16-L07. Состояние интервью и ограниченные уточнения</a><a href="#M16-L03"><small>Следующий раздел</small>M16-L03. Пилот продукта →</a></nav></article><article class="material" id="M16-L03" data-title="M16-L03. Пилот продукта" data-short-title="Пилот продукта" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Пилот продукта</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L03--объяснение">Объяснение</a></li><li><a href="#M16-L03--аналогия-dogfooding-против-юзабилити-теста">Аналогия: dogfooding против юзабилити-теста</a></li><li><a href="#M16-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M16-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L03--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M16-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M16-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M16-L03--карточка-урока">Карточка урока</a></li><li><a href="#M16-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; продукт курса — Qwen2.5-0.5B-Instruct (ревизия 7ae5576) через transformers 4.57.6 и PyTorch 2.15.0+cpu, поиск TF-IDF из scikit-learn 1.9.1, Vosk 0.3.45 и vosk-model-small-ru-0.22, Windows System.Speech с голосом Microsoft Irina Desktop · проверено 04.11.2026 · источник: <a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">карточка Qwen2.5-0.5B-Instruct</a></p>
 </blockquote>
@@ -17380,13 +17488,40 @@ assert (s.topic_index,s.turn,s.clarification) == (1,2,False)
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M16-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: автор запустил все тесты, участников ещё нет. Какие из утверждений «запускается», «понятен интерфейс», «помогает улучшить ответ» доказаны? C через неделю: один знакомый прошёл с постоянными подсказками автора.</p>
 <p>Сохрани новую попытку до просмотра <a href="#M16-SOLUTIONS--m16-l03-b-c">ключа B/C</a>.</p>
-</section><h2 id="M16-L03--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M16-L03--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Пилот проверяет конкретные вопросы на реальных участниках: одинаковые задания, наблюдение без диктовки кликов, отметка любой помощи; согласие на участие отдельно от согласия на публикацию; неизмеренное поле — null, а не 0</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Авторский запуск находит очевидные ошибки, но автор знает путь и обходит неудобства; малый пилот находит серьёзные проблемы, но не даёт статистики по аудитории; проблемы ранжируют по ущербу и воспроизводимости; после исправления нужна повторная проверка</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При планировании пилота. Пример: из 4 участников 3 нашли кнопку остановки без подсказки, 1 — после подсказки модератора; в отчёте «самостоятельно 3/4, с помощью 1/4» и вывод: проблема видимости есть, но о доле всей аудитории четыре человека не говорят</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Выдать авторскую репетицию за пилот или придумать ответы участников, которых не было</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M16-L03--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M16/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M16">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M16">Модуль и домашняя работа</a> · <a href="#M16-SOLUTIONS--m16-l03">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M16-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M16-L02"><small>Предыдущий раздел</small>← M16-L02. Интеграция и независимая проверка</a><a href="#M16-L04"><small>Следующий раздел</small>M16-L04. Защита архитектуры и отказа →</a></nav></article><article class="material" id="M16-L04" data-title="M16-L04. Защита архитектуры и отказа" data-short-title="Защита архитектуры и отказа" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Защита архитектуры и отказа</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L04--объяснение">Объяснение</a></li><li><a href="#M16-L04--аналогия-выбор-инстанса-и-тарифа-в-облаке">Аналогия: выбор инстанса и тарифа в облаке</a></li><li><a href="#M16-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M16-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L04--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M16-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M16-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M16-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M16">Модуль и домашняя работа</a> · <a href="#M16-SOLUTIONS--m16-l03">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M16-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M16-L02"><small>Предыдущий раздел</small>← M16-L02. Интеграция и независимая проверка</a><a href="#M16-L04"><small>Следующий раздел</small>M16-L04. Защита архитектуры и отказа →</a></nav></article><article class="material" id="M16-L04" data-title="M16-L04. Защита архитектуры и отказа" data-short-title="Защита архитектуры и отказа" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Защита архитектуры и отказа</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L04--объяснение">Объяснение</a></li><li><a href="#M16-L04--аналогия-выбор-инстанса-и-тарифа-в-облаке">Аналогия: выбор инстанса и тарифа в облаке</a></li><li><a href="#M16-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M16-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L04--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M16-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M16-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M16-L04--карточка-урока">Карточка урока</a></li><li><a href="#M16-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; продукт курса — Qwen2.5-0.5B-Instruct (ревизия 7ae5576) через transformers 4.57.6 и PyTorch 2.15.0+cpu, поиск TF-IDF из scikit-learn 1.9.1, Vosk 0.3.45 и vosk-model-small-ru-0.22, Windows System.Speech с голосом Microsoft Irina Desktop · проверено 04.11.2026 · источник: <a href="https://alphacephei.com/vosk/models" target="_blank" rel="noopener noreferrer" class="external-link">модели Vosk</a></p>
 </blockquote>
@@ -17464,13 +17599,40 @@ assert (s.topic_index,s.turn,s.clarification) == (1,2,False)
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M16-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: требование — два одновременных пользователя вместо одного. Назови три обязательных изменения/проверки. C через неделю: после перезапуска надо восстановить незавершённую сессию.</p>
 <p>Сохрани новую попытку до просмотра <a href="#M16-SOLUTIONS--m16-l04-b-c">ключа B/C</a>.</p>
-</section><h2 id="M16-L04--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M16-L04--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Каждое важное решение записывают как контекст → варианты → выбор → последствия → условие пересмотра и подкрепляют измерением из проекта; поток данных и границы состояния показывают на одном запросе от микрофона до звука; отказ демонстрируют на безопасной копии с восстановлением</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Ограничения — 32 ГБ RAM, малая VRAM, Windows, бесплатный путь — делают маленькую модель и CPU-распознавание рациональными, но не обещают скорости; неизмеренное называют ограничением и предлагают опыт; лабораторный rollback и отказ продукта — разные сценарии</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При подготовке защиты. Пример решения: поиск источников — TF-IDF, а не векторная база: локально и объяснимо; последствие — перефразированные вопросы могут промахиваться; пересмотр — если Recall@3 на новых вопросах окажется ниже заранее заданного порога</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Перечислять модные библиотеки вместо решений или ссылаться на чужие бенчмарки вместо собственных измерений</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M16-L04--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://docs.docker.com/build/building/best-practices/" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M16/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M16">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M16">Модуль и домашняя работа</a> · <a href="#M16-SOLUTIONS--m16-l04">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M16-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M16-L03"><small>Предыдущий раздел</small>← M16-L03. Пилот продукта</a><a href="#M16-L05"><small>Следующий раздел</small>M16-L05. Портфолио и профессиональная проверка →</a></nav></article><article class="material" id="M16-L05" data-title="M16-L05. Портфолио и профессиональная проверка" data-short-title="Портфолио и профессиональная проверка" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Портфолио и профессиональная проверка</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L05--объяснение">Объяснение</a></li><li><a href="#M16-L05--аналогия-readme-и-changelog-open-source-библиотеки">Аналогия: README и changelog open-source библиотеки</a></li><li><a href="#M16-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M16-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L05--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M16-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M16-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M16-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+<div class="practice-note"><a href="#M16">Модуль и домашняя работа</a> · <a href="#M16-SOLUTIONS--m16-l04">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M16-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M16-L03"><small>Предыдущий раздел</small>← M16-L03. Пилот продукта</a><a href="#M16-L05"><small>Следующий раздел</small>M16-L05. Портфолио и профессиональная проверка →</a></nav></article><article class="material" id="M16-L05" data-title="M16-L05. Портфолио и профессиональная проверка" data-short-title="Портфолио и профессиональная проверка" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Портфолио и профессиональная проверка</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L05--объяснение">Объяснение</a></li><li><a href="#M16-L05--аналогия-readme-и-changelog-open-source-библиотеки">Аналогия: README и changelog open-source библиотеки</a></li><li><a href="#M16-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M16-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L05--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M16-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M16-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M16-L05--карточка-урока">Карточка урока</a></li><li><a href="#M16-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; продукт курса — Qwen2.5-0.5B-Instruct (ревизия 7ae5576) через transformers 4.57.6 и PyTorch 2.15.0+cpu, поиск TF-IDF из scikit-learn 1.9.1, Vosk 0.3.45 и vosk-model-small-ru-0.22, Windows System.Speech с голосом Microsoft Irina Desktop · проверено 04.11.2026 · источник: <a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">карточка Qwen2.5-0.5B-Instruct</a></p>
 </blockquote>
@@ -17553,13 +17715,40 @@ RAG evaluation → набор retrieval cases → новые вопросы → 
 <section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M16-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
 <p>B: новая тема — транзакции, и один старый SQL-case стал ошибочным. Можно ли публиковать по выросшему общему среднему? C через две недели: импорт сессии schema2 в программу, читающую schema1.</p>
 <p>Сохрани новую попытку до просмотра <a href="#M16-SOLUTIONS--m16-l05-b-c">ключа B/C</a>.</p>
-</section><h2 id="M16-L05--источники-и-углубление">Источники и углубление</h2>
+</section><h2 id="M16-L05--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Портфолио позволяет другому разработчику понять задачу, запустить ограниченный пример и проверить утверждения; каждое число — с задачей, знаменателем и способом измерения; своя работа отделена от готовых компонентов; известные ограничения указаны</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Завершение курса не присваивает грейд, карьерная готовность оценивается отдельно; самостоятельность подтверждает новая задача, а не понимание готового эталона; карта «требование вакансии → артефакт → проверка → пробел» выбирает следующую практику</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При оформлении README и резюме. Пример: вместо «умный HR с высокой точностью» — «две рубрики, N независимых случаев, задержка измерена на CPU в условиях X, найдена и исправлена регрессия отмены звука», где N и X взяты из отчётов</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Написать «качество 95%» без знаменателя и способа разметки или выдать запуск эталона за собственную работу</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M16-L05--источники-и-углубление">Источники и углубление</h2>
 <ul>
 <li><a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes" target="_blank" rel="noopener noreferrer" class="external-link">Официальная документация по теме</a> — сверяй контракт и определения, не копируй внешний пример вместо самостоятельной работы.</li>
 <li><a href="labs/M16/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M16">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M16">Модуль и домашняя работа</a> · <a href="#M16-SOLUTIONS--m16-l05">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M16-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M16-L04"><small>Предыдущий раздел</small>← M16-L04. Защита архитектуры и отказа</a><a href="#M16-L08"><small>Следующий раздел</small>M16-L08. Самостоятельная сборка и защита нового требования →</a></nav></article><article class="material" id="M16-L08" data-title="M16-L08. Самостоятельная сборка и защита нового требования" data-short-title="Самостоятельная сборка и защита нового требования" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L08</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Самостоятельная сборка и защита нового требования</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L08--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L08--объяснение">Объяснение</a></li><li><a href="#M16-L08--аналогия-сохранение-документа-в-редакторе">Аналогия: сохранение документа в редакторе</a></li><li><a href="#M16-L08--самостоятельная-задача-a-основная-работа-m16-hw01">Самостоятельная задача A — основная работа M16-HW01</a></li><li><a href="#M16-L08--критерии-и-типичные-ошибки-порядок-проверки">Критерии и типичные ошибки — порядок проверки</a></li><li><a href="#M16-L08--разобранный-пример-технический">Разобранный пример — технический</a></li><li><a href="#M16-L08--схема">Схема</a></li><li><a href="#M16-L08--подсказки-по-очереди-новая-и-отложенная-проверка">Подсказки по очереди; новая и отложенная проверка</a></li><li><a href="#M16-L08--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия 1.1.0. До урока: M16-L05 и M16-L07. Начальный ориентир: 300 минут вместе с практикой; измеренное время записывай отдельно.</p>
+<div class="practice-note"><a href="#M16">Модуль и домашняя работа</a> · <a href="#M16-SOLUTIONS--m16-l05">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M16-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M16-L04"><small>Предыдущий раздел</small>← M16-L04. Защита архитектуры и отказа</a><a href="#M16-L08"><small>Следующий раздел</small>M16-L08. Самостоятельная сборка и защита нового требования →</a></nav></article><article class="material" id="M16-L08" data-title="M16-L08. Самостоятельная сборка и защита нового требования" data-short-title="Самостоятельная сборка и защита нового требования" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L08</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Самостоятельная сборка и защита нового требования</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L08--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L08--объяснение">Объяснение</a></li><li><a href="#M16-L08--аналогия-сохранение-документа-в-редакторе">Аналогия: сохранение документа в редакторе</a></li><li><a href="#M16-L08--самостоятельная-задача-a-основная-работа-m16-hw01">Самостоятельная задача A — основная работа M16-HW01</a></li><li><a href="#M16-L08--критерии-и-типичные-ошибки-порядок-проверки">Критерии и типичные ошибки — порядок проверки</a></li><li><a href="#M16-L08--разобранный-пример-технический">Разобранный пример — технический</a></li><li><a href="#M16-L08--схема">Схема</a></li><li><a href="#M16-L08--подсказки-по-очереди-новая-и-отложенная-проверка">Подсказки по очереди; новая и отложенная проверка</a></li><li><a href="#M16-L08--карточка-урока">Карточка урока</a></li><li><a href="#M16-L08--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия 1.1.0. До урока: M16-L05 и M16-L07. Начальный ориентир: 300 минут вместе с практикой; измеренное время записывай отдельно.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; продукт курса — Qwen2.5-0.5B-Instruct (ревизия 7ae5576) через transformers 4.57.6 и PyTorch 2.15.0+cpu, поиск TF-IDF из scikit-learn 1.9.1, Vosk 0.3.45 и vosk-model-small-ru-0.22, Windows System.Speech с голосом Microsoft Irina Desktop · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/http.server.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: http.server</a></p>
 </blockquote>
@@ -17708,6 +17897,33 @@ document.querySelectorAll(&#x27;input&#x27;).forEach(el=&gt;el.addEventListener(
 <p>Сначала воспроизведи отказ на двух строках истории, затем добавь файловый протокол, затем подключи UI. Вариант B: пользователь экспортировал файл и пытается импортировать чужой mode; явно проверь совместимость. Отложенная задача C: изменился порядок тем новой версии программы. Объясни, почему одного числового topic_index мало, и предложи стабильные topic_id с миграцией либо явным отказом.</p>
 <p>Защита — пять минут объяснения пути одного запроса и одного сбоя, затем небольшое изменение без открытого эталона. Проходные условия: продукт запускается; обязательные сценарии выполнены; критических ошибок в проверочном наборе нет; механизм объяснён; новый случай решён самостоятельно. Реальный пилот с участниками помечается отдельно: если участников пока нет, подготовь протокол и не выдумывай их ответы.</p>
 </div></details>
+<h2 id="M16-L08--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Собирать по ступеням с приёмкой каждой: текстовый путь → источники → проверяемая обратная связь → голос → отмена и восстановление; состояние с version пишут во временный файл и подменяют атомарно через os.replace; повтор принятого turn возвращает снимок без генерации</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Техническая приёмка (нет дублей, формат, отмена, восстановление) и качество (полезность HR-совета, правильность техники) — две оси; сбой до замены оставляет старую целую версию, после — новую; протокол рассчитан на один процесс и не обещает exactly-once для внешних эффектов</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При защите нового требования. Пример: сессия сохранена после turn = 4, и сервер упал во время записи временного файла — после перезапуска читается прежний целый файл с turn = 4; файл с version = 3 при поддержке только версии 2 даёт понятный отказ, а не пустую историю</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Подключить всё сразу без ступенчатой приёмки или тихо обнулить историю при неизвестной version файла</td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="M16-L08--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://docs.python.org/3.11/library/pathlib.html" target="_blank" rel="noopener noreferrer" class="external-link">Python pathlib</a>, <a href="https://docs.python.org/3.11/library/os.html#os.replace" target="_blank" rel="noopener noreferrer" class="external-link">os.replace</a>. Проверка портфолио не присваивает автоматически профессиональный грейд.</p>
 <p><a href="course/visuals/M16-L08.html">Интерактивная проверка условий</a>.</p>
@@ -21235,7 +21451,7 @@ assert not accept_result(3,2)
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 95 из 103 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 103 из 103 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -21917,6 +22133,63 @@ assert not accept_result(3,2)
 <li><strong>Смысл величин.</strong> Блок — способ доставки, а не слово: отсчётов в блоке = частота · длительность; endpoint учебного baseline — 500 мс блоков с RMS ниже 300 после речи, он чувствителен к шуму и громкости; at_ms — время в аудио, а не задержка вычисления.</li>
 <li><strong>Когда применять.</strong> При потоковом распознавании. Пример: блоки по 20 мс при 16 кГц mono PCM16 — 320 отсчётов, 640 байт; при пороге 500 мс сегмент закроется после 25 тихих блоков подряд.</li>
 <li><strong>Главная ошибка.</strong> Распознавать каждый блок как отдельный файл, записывать partial в историю как окончательные ответы или выдавать at_ms за скорость модели.</li>
+</ul>
+<h2 id="CHEATSHEET--m16-итоговый-продукт-и-защита">M16. Итоговый продукт и защита</h2>
+<h3 id="CHEATSHEET--m16-l01-требования-и-две-рубрики"><a href="#M16-L01">M16-L01. Требования и две рубрики</a></h3>
+<ul>
+<li><strong>Правило.</strong> Требования описывают учебный результат и взаимодействие; HR оценивают по ясности, конкретности и аргументации, технику — по корректности, компромиссам и проверке; каждый балл 0–2 сопровождается фрагментом ответа и следующим упражнением; критическая ошибка блокирует при любой сумме.</li>
+<li><strong>Смысл величин.</strong> Уровни рубрики — наблюдаемые признаки, а не мера ценности человека; продукт не обещает распознавать эмоции, личность или уровень по голосу; ограничения оборудования и текстовый режим — часть требований; изменение обещаний меняет набор приёмочных проверок.</li>
+<li><strong>Когда применять.</strong> При фиксации границ продукта. Пример: HR-ответ «Я перевёл выгрузку отчётов на пакетную обработку и сравнил время до и после на копии базы» — конкретность 2: личное действие и способ проверки; технический ответ «Кэш снимает нагрузку» без условий инвалидации — корректность 1, проверка 0.</li>
+<li><strong>Главная ошибка.</strong> Свести все измерения в одну сумму без правил блокировки или оценивать человека вместо содержания ответа.</li>
+</ul>
+<h3 id="CHEATSHEET--m16-l06-обратная-связь-с-проверяемыми-основаниями"><a href="#M16-L06">M16-L06. Обратная связь с проверяемыми основаниями</a></h3>
+<ul>
+<li><strong>Правило.</strong> Три уровня проверки: синтаксис и схема → существование выбранного фрагмента в текущем ответе → смысл (критерий и следующий шаг); пользователю показывают цитату из исходного фрагмента, а не свободный вывод модели; при провале — явный отказ и заранее заданный вопрос как правило приложения.</li>
+<li><strong>Смысл величин.</strong> Bounded candidate: приложение строит допустимые JSON-комбинации, prefix_allowed_tokens_fn разрешает только их — формат обеспечивает программа; raw_output, display_text и fallback_used хранят раздельно; отказ предотвращает ложное сообщение, но уменьшает покрытие полезной обратной связью.</li>
+<li><strong>Когда применять.</strong> При публикации обратной связи. Пример: ответ «Я не настраивал репликацию, но читал документацию» разбит на два фрагмента; модель выбрала первый и criterion = action — цитата существует, уровень 2 пройден, но «не настраивал» не подтверждает действия: уровень 3 провален при ручной разметке.</li>
+<li><strong>Главная ошибка.</strong> Считать существование цитаты подтверждением смысла или выдавать защиту приложения за улучшение модели.</li>
+</ul>
+<h3 id="CHEATSHEET--m16-l07-состояние-интервью-и-ограниченные-уточнения"><a href="#M16-L07">M16-L07. Состояние интервью и ограниченные уточнения</a></h3>
+<ul>
+<li><strong>Правило.</strong> Состояние интервью: topic_index выбирает тему, turn растёт с каждой принятой операцией, отдельно хранится уточнение; не больше одного уточнения на тему; явный отказ — переход к следующей теме; prepare до генерации, commit после успеха; повтор с тем же turn отклоняется.</li>
+<li><strong>Смысл величин.</strong> Ответов на тему от 1 до 1 + limit, поэтому автомат конечен; «короткий = неполный» — эвристика, а не оценка компетентности; история нужна хранилищу и следующему вызову модели, но непроверенный отзыв не становится фактом о кандидате; память процесса — не долговременное хранилище.</li>
+<li><strong>Когда применять.</strong> При проектировании интервью. Пример: четыре темы, ответы «коротко, подробно, отказ, коротко, подробно, подробно» — тема 0 с уточнением, тема 1 закрыта отказом, тема 2 с уточнением, тема 3 сразу; после шестого ответа topic_index = 4, turn = 6, интервью завершено.</li>
+<li><strong>Главная ошибка.</strong> Использовать номер HTTP-операции как номер темы или бесконечно просить уточнить после отказа.</li>
+</ul>
+<h3 id="CHEATSHEET--m16-l02-интеграция-и-независимая-проверка"><a href="#M16-L02">M16-L02. Интеграция и независимая проверка</a></h3>
+<ul>
+<li><strong>Правило.</strong> Сначала минимальный сквозной путь (сессия, вопрос, ответ, обратная связь, завершение), затем голос; после первой ошибки меняют один компонент; итоговые случаи независимы от настройки; отчёт разделяет ожидаемое, наблюдаемое и вывод.</li>
+<li><strong>Смысл величин.</strong> Интеграционные факты — путь пройден, форматы и ID согласованы, отказ даёт понятное состояние; оценка качества — полезность и правильность совета, отдельно и вручную; заглушка вместо модели не доказывает работу реальной LLM; синтетический WAV не заменяет проверку микрофона.</li>
+<li><strong>Когда применять.</strong> При сборке продукта. Пример: случай «пустой ответ в текстовом режиме» — ожидаемое: понятное сообщение и тот же вопрос; наблюдаемое: сообщение показано, turn не изменился; вывод: интеграция пройдена, а полезность совета этим случаем не проверена.</li>
+<li><strong>Главная ошибка.</strong> Засчитать HTTP 200 или лабораторный JSON как проверку качества или отметить пройденным то, что не запускали.</li>
+</ul>
+<h3 id="CHEATSHEET--m16-l03-пилот-продукта"><a href="#M16-L03">M16-L03. Пилот продукта</a></h3>
+<ul>
+<li><strong>Правило.</strong> Пилот проверяет конкретные вопросы на реальных участниках: одинаковые задания, наблюдение без диктовки кликов, отметка любой помощи; согласие на участие отдельно от согласия на публикацию; неизмеренное поле — null, а не 0.</li>
+<li><strong>Смысл величин.</strong> Авторский запуск находит очевидные ошибки, но автор знает путь и обходит неудобства; малый пилот находит серьёзные проблемы, но не даёт статистики по аудитории; проблемы ранжируют по ущербу и воспроизводимости; после исправления нужна повторная проверка.</li>
+<li><strong>Когда применять.</strong> При планировании пилота. Пример: из 4 участников 3 нашли кнопку остановки без подсказки, 1 — после подсказки модератора; в отчёте «самостоятельно 3/4, с помощью 1/4» и вывод: проблема видимости есть, но о доле всей аудитории четыре человека не говорят.</li>
+<li><strong>Главная ошибка.</strong> Выдать авторскую репетицию за пилот или придумать ответы участников, которых не было.</li>
+</ul>
+<h3 id="CHEATSHEET--m16-l04-защита-архитектуры-и-отказа"><a href="#M16-L04">M16-L04. Защита архитектуры и отказа</a></h3>
+<ul>
+<li><strong>Правило.</strong> Каждое важное решение записывают как контекст → варианты → выбор → последствия → условие пересмотра и подкрепляют измерением из проекта; поток данных и границы состояния показывают на одном запросе от микрофона до звука; отказ демонстрируют на безопасной копии с восстановлением.</li>
+<li><strong>Смысл величин.</strong> Ограничения — 32 ГБ RAM, малая VRAM, Windows, бесплатный путь — делают маленькую модель и CPU-распознавание рациональными, но не обещают скорости; неизмеренное называют ограничением и предлагают опыт; лабораторный rollback и отказ продукта — разные сценарии.</li>
+<li><strong>Когда применять.</strong> При подготовке защиты. Пример решения: поиск источников — TF-IDF, а не векторная база: локально и объяснимо; последствие — перефразированные вопросы могут промахиваться; пересмотр — если Recall@3 на новых вопросах окажется ниже заранее заданного порога.</li>
+<li><strong>Главная ошибка.</strong> Перечислять модные библиотеки вместо решений или ссылаться на чужие бенчмарки вместо собственных измерений.</li>
+</ul>
+<h3 id="CHEATSHEET--m16-l05-портфолио-и-профессиональная-проверка"><a href="#M16-L05">M16-L05. Портфолио и профессиональная проверка</a></h3>
+<ul>
+<li><strong>Правило.</strong> Портфолио позволяет другому разработчику понять задачу, запустить ограниченный пример и проверить утверждения; каждое число — с задачей, знаменателем и способом измерения; своя работа отделена от готовых компонентов; известные ограничения указаны.</li>
+<li><strong>Смысл величин.</strong> Завершение курса не присваивает грейд, карьерная готовность оценивается отдельно; самостоятельность подтверждает новая задача, а не понимание готового эталона; карта «требование вакансии → артефакт → проверка → пробел» выбирает следующую практику.</li>
+<li><strong>Когда применять.</strong> При оформлении README и резюме. Пример: вместо «умный HR с высокой точностью» — «две рубрики, N независимых случаев, задержка измерена на CPU в условиях X, найдена и исправлена регрессия отмены звука», где N и X взяты из отчётов.</li>
+<li><strong>Главная ошибка.</strong> Написать «качество 95%» без знаменателя и способа разметки или выдать запуск эталона за собственную работу.</li>
+</ul>
+<h3 id="CHEATSHEET--m16-l08-самостоятельная-сборка-и-защита-нового-требования"><a href="#M16-L08">M16-L08. Самостоятельная сборка и защита нового требования</a></h3>
+<ul>
+<li><strong>Правило.</strong> Собирать по ступеням с приёмкой каждой: текстовый путь → источники → проверяемая обратная связь → голос → отмена и восстановление; состояние с version пишут во временный файл и подменяют атомарно через os.replace; повтор принятого turn возвращает снимок без генерации.</li>
+<li><strong>Смысл величин.</strong> Техническая приёмка (нет дублей, формат, отмена, восстановление) и качество (полезность HR-совета, правильность техники) — две оси; сбой до замены оставляет старую целую версию, после — новую; протокол рассчитан на один процесс и не обещает exactly-once для внешних эффектов.</li>
+<li><strong>Когда применять.</strong> При защите нового требования. Пример: сессия сохранена после turn = 4, и сервер упал во время записи временного файла — после перезапуска читается прежний целый файл с turn = 4; файл с version = 3 при поддержке только версии 2 даёт понятный отказ, а не пустую историю.</li>
+<li><strong>Главная ошибка.</strong> Подключить всё сразу без ступенчатой приёмки или тихо обнулить историю при неизвестной version файла.</li>
 </ul>
 </div></div><footer class="source-note">Исходный текст: <code>course/cheatsheet.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#FAST-TRACK-LLM"><small>Предыдущий раздел</small>← Быстрый вход в M09–M11 для тех, кто уже делал RAG</a><a href="#REVIEW-SCHEDULE"><small>Следующий раздел</small>Расписание повторения →</a></nav></article><article class="material" id="REVIEW-SCHEDULE" data-title="Расписание повторения" data-short-title="Расписание повторения" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">REVIEW-SCHEDULE</span><span class="badge reference">Материал курса</span></div><h1>Расписание повторения</h1></header><div class="article-layout"><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Правило дополняет <a href="#MENTOR--отложенная-проверка">отложенную проверку</a> из учебного цикла: даты повторений считаются по журналу, а сами повторения смешивают задачи разных модулей.</p>
 <h2 id="REVIEW-SCHEDULE--правило-1-3-7-21">Правило 1–3–7–21</h2>
