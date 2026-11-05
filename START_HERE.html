@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="0acbf1058e0bcc1e4e936c699a701656fccbfbc3bbd58adb7bc33874ce0c98ea"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="9be0ca8b4af639207adb85a36af1a75a84b7202bdf33385aa4fcf590c192544f"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -11235,7 +11235,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M11.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M11.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L06"><small>Предыдущий раздел</small>← M10-L06. Диагностировать русский RAG по трассе ошибки</a><a href="#M11-L01"><small>Следующий раздел</small>M11-L01. Что именно оцениваем →</a></nav></article><article class="material" id="M11-L01" data-title="M11-L01. Что именно оцениваем" data-short-title="Что именно оцениваем" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Что именно оцениваем</h1><p class="outcome"><strong>После урока:</strong> Выбрать критерии для конкретной функции тренажёра и объяснить исключённые критерии.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L05, M04-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L01--объяснение">Объяснение</a></li><li><a href="#M11-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M11-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L01--самостоятельная-задача-a-m11-l01-a">Самостоятельная задача A — M11-L01-A</a></li><li><a href="#M11-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M11-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+"></iframe><p><a href="course/visuals/M11.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M11.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M10-L06"><small>Предыдущий раздел</small>← M10-L06. Диагностировать русский RAG по трассе ошибки</a><a href="#M11-L01"><small>Следующий раздел</small>M11-L01. Что именно оцениваем →</a></nav></article><article class="material" id="M11-L01" data-title="M11-L01. Что именно оцениваем" data-short-title="Что именно оцениваем" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Что именно оцениваем</h1><p class="outcome"><strong>После урока:</strong> Выбрать критерии для конкретной функции тренажёра и объяснить исключённые критерии.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M10-L05, M04-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L01--объяснение">Объяснение</a></li><li><a href="#M11-L01--аналогия-метрики-api-с-rate-limiter">Аналогия: метрики API с rate limiter</a></li><li><a href="#M11-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M11-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L01--самостоятельная-задача-a-m11-l01-a">Самостоятельная задача A — M11-L01-A</a></li><li><a href="#M11-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M11-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, NumPy 2.4.6, scikit-learn 1.9.1 · проверено 04.11.2026 · источник: <a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: оценка моделей</a></p>
@@ -11250,6 +11250,47 @@ draw();
 <p>Оценочный набор должен представлять предполагаемое использование: HR и backend отдельно, обычные и трудные ответы, краткие и длинные, отсутствие данных, противоречие и запрос уточнения. Если в наборе только идеально сформулированные ответы, итоговая метрика не описывает живую тренировку. При этом размер набора и способ отбора ограничивают уверенность: двадцать авторских примеров — проверка механики и конкретных случаев, а не исследование всего рынка.</p>
 <p>Практический результат урока — таблица «функция → наблюдаемое свойство → способ проверки → действие». Такая таблица делает эксперимент управляемым. При изменении только формата JSON в первую очередь проверяется контракт, но критические содержательные случаи также остаются в регрессии. При изменении RAG отдельно проверяется поиск и генерация, чтобы улучшение одного компонента не скрыло ухудшение другого.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M11-L01-desktop.svg" target="_blank" data-figure="course/assets/responsive/M11-L01-desktop.svg" aria-label="Увеличить рисунок: Что именно оцениваем: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M11-L01-mobile.svg"><img src="course/assets/responsive/M11-L01-desktop.svg" alt="Что именно оцениваем: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M11-L01--аналогия-метрики-api-с-rate-limiter">Аналогия: метрики API с rate limiter</h2>
+<p>Как похоже: сервис, который отвечает 429 на тяжёлые запросы, показывает почти нулевую долю ошибок среди обслуженных — он просто не берётся за трудное. Поэтому в мониторинге отдельно смотрят долю обслуженных запросов, долю успешных среди них и долю пришедших запросов, получивших верный результат. Ответ 404 на несуществующий ресурс — правильный исход, а не сбой. А ответ, прошедший схему OpenAPI, ещё не означает верные данные внутри.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Coverage</td>
+  <td>Доля запросов, которые сервис обслужил, а не отклонил</td>
+</tr>
+<tr>
+  <td>Accuracy среди отвеченных</td>
+  <td>Доля успешных ответов среди обслуженных</td>
+</tr>
+<tr>
+  <td>Correct / total</td>
+  <td>Доля всех пришедших запросов, получивших верный результат</td>
+</tr>
+<tr>
+  <td>Уместный отказ</td>
+  <td>404 на несуществующий ресурс</td>
+</tr>
+<tr>
+  <td>Стратегия «всегда отказываться»</td>
+  <td>Сервис, отвечающий 503 на всё: ошибок обработки нет, пользы тоже</td>
+</tr>
+<tr>
+  <td>Валидный JSON вместо технической точности</td>
+  <td>Ответ проходит схему OpenAPI, но сумма в нём неверна</td>
+</tr>
+<tr>
+  <td>Release gate на критические случаи</td>
+  <td>Smoke-тест платёжного сценария, блокирующий деплой</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> правильность HTTP-ответа обычно проверяется автоматически по контракту и данным. «Корректность» ответа тренажёра — суждение по рубрике, у которого есть собственная ошибка и согласие оценщиков (M11-L02). И 404 правилен, когда ресурса точно нет, а уместность отказа можно установить только по разметке: без неё неизвестно, был ли ответ в базе.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M11-L01--разобранный-пример">Разобранный пример</h2>
 <p>Из 20 запросов система ответила на 15, из них 12 ответов корректны. Accuracy среди отвеченных =12/15=0,8. Coverage=15/20=0,75. Доля запросов с корректным ответом =12/20=0,6. Это три разных свойства.</p>
 <pre><code class="language-python">total, answered, correct = 20,15,12
@@ -11284,7 +11325,7 @@ assert correct/total == .6
 <li><a href="https://arxiv.org/abs/2306.05685" target="_blank" rel="noopener noreferrer" class="external-link">Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M11">Модуль и домашняя работа</a> · <a href="#M11-SOLUTIONS--m11-l01-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M11-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11"><small>Предыдущий раздел</small>← M11 Оценивание LLM-систем</a><a href="#M11-L02"><small>Следующий раздел</small>M11-L02. Набор примеров и разметка →</a></nav></article><article class="material" id="M11-L02" data-title="M11-L02. Набор примеров и разметка" data-short-title="Набор примеров и разметка" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Набор примеров и разметка</h1><p class="outcome"><strong>После урока:</strong> Объяснить, как набор отделён от примеров настройки.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M11-L01. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L02--объяснение">Объяснение</a></li><li><a href="#M11-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M11-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L02--самостоятельная-задача-a-m11-l02-a">Самостоятельная задача A — M11-L02-A</a></li><li><a href="#M11-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M11-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M11">Модуль и домашняя работа</a> · <a href="#M11-SOLUTIONS--m11-l01-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M11-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11"><small>Предыдущий раздел</small>← M11 Оценивание LLM-систем</a><a href="#M11-L02"><small>Следующий раздел</small>M11-L02. Набор примеров и разметка →</a></nav></article><article class="material" id="M11-L02" data-title="M11-L02. Набор примеров и разметка" data-short-title="Набор примеров и разметка" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Набор примеров и разметка</h1><p class="outcome"><strong>После урока:</strong> Объяснить, как набор отделён от примеров настройки.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M11-L01. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L02--объяснение">Объяснение</a></li><li><a href="#M11-L02--аналогия-тесты-ревью-и-история-git">Аналогия: тесты, ревью и история git</a></li><li><a href="#M11-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M11-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L02--самостоятельная-задача-a-m11-l02-a">Самостоятельная задача A — M11-L02-A</a></li><li><a href="#M11-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M11-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, NumPy 2.4.6, scikit-learn 1.9.1 · проверено 04.11.2026 · источник: <a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: оценка моделей</a></p>
@@ -11406,6 +11447,51 @@ draw();
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
 "></iframe><p><a href="course/visuals/M11.html" target="_blank">Открыть опыт отдельно на весь экран</a></p></section>
+<h2 id="M11-L02--аналогия-тесты-ревью-и-история-git">Аналогия: тесты, ревью и история git</h2>
+<p>Как похоже: тесты, которые запускаешь при каждой правке, — это development-набор; приёмочные тесты заказчика, которые нельзя подгонять под код, — test-набор. Если менять код, глядя на ожидаемые значения конкретного теста, тест перестаёт проверять. Два ревьюера, которые почти всегда ставят approve, часто совпадают просто по привычке — согласие нужно сравнивать со случайным. А итоговое решение после спора похоже на merge-коммит: в истории остаются обе исходные версии.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Development-набор</td>
+  <td>Тесты, которые запускаешь при каждой правке</td>
+</tr>
+<tr>
+  <td>Test-набор</td>
+  <td>Приёмочные тесты, которые не подгоняют под код</td>
+</tr>
+<tr>
+  <td>Многократная настройка по test</td>
+  <td>Правка кода под ожидаемые значения конкретного теста</td>
+</tr>
+<tr>
+  <td>Перефразирования одного сценария</td>
+  <td>Один баг, заведённый тремя тикетами: исправив его, закроешь все три</td>
+</tr>
+<tr>
+  <td>Разделение по scenario_id</td>
+  <td>Все тикеты одного бага — в одной итерации, а не в разных</td>
+</tr>
+<tr>
+  <td>Cohen's kappa</td>
+  <td>Согласие двух ревьюеров с поправкой на то, что оба почти всегда ставят approve</td>
+</tr>
+<tr>
+  <td>Adjudicated label рядом с исходными метками</td>
+  <td>Merge-коммит: итоговая версия, а оба родителя остаются в истории</td>
+</tr>
+<tr>
+  <td>rubric_version</td>
+  <td>Версия схемы данных: правило изменилось — затронутые записи пересчитывают явно</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> тест проверяет детерминированный код, и ожидаемое значение у него одно. У открытого ответа бывает несколько корректных формулировок, поэтому эталон — список свойств, а не одна строка. И ревьюеры смотрят на один diff, а оценщики расходятся ещё и потому, что инструкция неоднозначна: разногласие — повод уточнить рубрику, а не только выбрать победителя.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M11-L02--разобранный-пример">Разобранный пример</h2>
 <p>Два оценщика дали метки A=[1,1,0,0], B=[1,0,0,0]. Совпадений3/4=0,75. Доли единиц: A0,5, B0,25. Случайное ожидаемое согласие по маргиналам p_e=0,5·0,25+0,5·0,75=0,5. Kappa=(0,75−0,5)/(1−0,5)=0,5.</p>
 <pre><code class="language-python">from sklearn.metrics import cohen_kappa_score
@@ -11438,7 +11524,7 @@ assert cohen_kappa_score([1,1,0,0],[1,0,0,0]) == .5
 <li><a href="https://arxiv.org/abs/2306.05685" target="_blank" rel="noopener noreferrer" class="external-link">Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M11">Модуль и домашняя работа</a> · <a href="#M11-SOLUTIONS--m11-l02-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M11-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L01"><small>Предыдущий раздел</small>← M11-L01. Что именно оцениваем</a><a href="#M11-L03"><small>Следующий раздел</small>M11-L03. HR и технические рубрики →</a></nav></article><article class="material" id="M11-L03" data-title="M11-L03. HR и технические рубрики" data-short-title="HR и технические рубрики" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>HR и технические рубрики</h1><p class="outcome"><strong>После урока:</strong> Оценить два разных хороших ответа без требования одной дословной формулировки.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M11-L02. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 140 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L03--объяснение">Объяснение</a></li><li><a href="#M11-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M11-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L03--самостоятельная-задача-a-m11-l03-a">Самостоятельная задача A — M11-L03-A</a></li><li><a href="#M11-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M11-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M11">Модуль и домашняя работа</a> · <a href="#M11-SOLUTIONS--m11-l02-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M11-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L01"><small>Предыдущий раздел</small>← M11-L01. Что именно оцениваем</a><a href="#M11-L03"><small>Следующий раздел</small>M11-L03. HR и технические рубрики →</a></nav></article><article class="material" id="M11-L03" data-title="M11-L03. HR и технические рубрики" data-short-title="HR и технические рубрики" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>HR и технические рубрики</h1><p class="outcome"><strong>После урока:</strong> Оценить два разных хороших ответа без требования одной дословной формулировки.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M11-L02. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 140 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L03--объяснение">Объяснение</a></li><li><a href="#M11-L03--аналогия-чек-лист-код-ревью">Аналогия: чек-лист код-ревью</a></li><li><a href="#M11-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M11-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L03--самостоятельная-задача-a-m11-l03-a">Самостоятельная задача A — M11-L03-A</a></li><li><a href="#M11-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M11-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, NumPy 2.4.6, scikit-learn 1.9.1 · проверено 04.11.2026 · источник: <a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: оценка моделей</a></p>
@@ -11453,6 +11539,47 @@ assert cohen_kappa_score([1,1,0,0],[1,0,0,0]) == .5
 <p>Эталонные ответы должны представлять разнообразие форм. Один человек объяснит атомарность через банковский перевод, другой — через набор изменений заказа. Оба могут быть корректны. Рубрика ищет смысловые свойства, а не наличие конкретных слов. Простая проверка ключевых слов полезна как диагностический baseline, но фраза «rollback не отменяет изменения» содержит нужный термин и противоположный смысл.</p>
 <p>При самопроверке сначала оцени каждый критерий независимо и приведи цитату короткого наблюдаемого фрагмента собственного примера. Затем проверь критические ошибки и только после этого формулируй общий вывод. Если критерий невозможно применить без догадки, запиши недостаток информации. Такая дисциплина подготавливает честное сравнение ручной оценки и LLM-оценщика.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M11-L03-desktop.svg" target="_blank" data-figure="course/assets/responsive/M11-L03-desktop.svg" aria-label="Увеличить рисунок: HR и технические рубрики: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M11-L03-mobile.svg"><img src="course/assets/responsive/M11-L03-desktop.svg" alt="HR и технические рубрики: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M11-L03--аналогия-чек-лист-код-ревью">Аналогия: чек-лист код-ревью</h2>
+<p>Как похоже: хороший ревьюер оценивает читаемость, корректность и тесты отдельно, а не ставит одну общую «пятёрку». Две разные реализации могут пройти одни тесты: проверяется поведение, а не совпадение текста. Уязвимость блокирует merge при любом стиле. А комментарий ревью указывает строку, объясняет проблему и предлагает, что попробовать, — и обсуждает diff, а не автора.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Рубрика с независимыми критериями</td>
+  <td>Чек-лист ревью: читаемость, корректность и тесты отдельно</td>
+</tr>
+<tr>
+  <td>Два разных хороших ответа</td>
+  <td>Две реализации, прошедшие одни тесты</td>
+</tr>
+<tr>
+  <td>Проверка ключевых слов</td>
+  <td>grep по «rollback»: найдёт и фразу «rollback не отменяет изменения»</td>
+</tr>
+<tr>
+  <td>Критическое заблуждение</td>
+  <td>Уязвимость: блокирует merge при любом стиле</td>
+</tr>
+<tr>
+  <td>Нет доказательства знания против доказанной ошибки</td>
+  <td>«Теста на этот случай нет» против «тест падает»</td>
+</tr>
+<tr>
+  <td>Наблюдение → объяснение → следующий шаг</td>
+  <td>Комментарий ревью: строка, почему это проблема, что попробовать</td>
+</tr>
+<tr>
+  <td>Оценка ответа, а не личности</td>
+  <td>Ревьюят diff, а не автора</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> у кода есть исполняемые тесты, которые объективно падают или проходят. Ясность, конкретность и аргументацию HR-ответа оценивают суждением, и два честных оценщика могут поставить разные баллы. И код можно вернуть на доработку сколько угодно раз, а интервью — разговор, где уточняющий вопрос сам меняет следующий ответ кандидата.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M11-L03--разобранный-пример">Разобранный пример</h2>
 <p>HR-ответ: «В API часто повторялись запросы. Я добавил idempotency key и тест повторной доставки. После релиза число дублей в нашем журнале за неделю снизилось с12 до1; другие причины тоже могли повлиять». Ясность2, конкретность2, аргументация2: контекст, действие и измеренный результат связаны, причинная уверенность ограничена.</p>
 <p>Технический ответ: «Транзакция объединяет операции; либо фиксируются все её изменения, либо при откате они не сохраняются». Для вопроса об атомарности корректность2. Для вопроса о всех свойствахACID полнота ограничена, потому что остальные свойства не раскрыты. Оценка зависит от задания, а не только от текста.</p>
@@ -11481,7 +11608,7 @@ assert cohen_kappa_score([1,1,0,0],[1,0,0,0]) == .5
 <li><a href="https://arxiv.org/abs/2306.05685" target="_blank" rel="noopener noreferrer" class="external-link">Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M11">Модуль и домашняя работа</a> · <a href="#M11-SOLUTIONS--m11-l03-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M11-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L02"><small>Предыдущий раздел</small>← M11-L02. Набор примеров и разметка</a><a href="#M11-L04"><small>Следующий раздел</small>M11-L04. Модель как оценщик →</a></nav></article><article class="material" id="M11-L04" data-title="M11-L04. Модель как оценщик" data-short-title="Модель как оценщик" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Модель как оценщик</h1><p class="outcome"><strong>После урока:</strong> Найти пример уверенной, но неправильной оценки и предложить ограничение автоматизации.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M11-L03. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L04--объяснение">Объяснение</a></li><li><a href="#M11-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M11-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L04--самостоятельная-задача-a-m11-l04-a">Самостоятельная задача A — M11-L04-A</a></li><li><a href="#M11-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M11-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M11">Модуль и домашняя работа</a> · <a href="#M11-SOLUTIONS--m11-l03-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M11-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L02"><small>Предыдущий раздел</small>← M11-L02. Набор примеров и разметка</a><a href="#M11-L04"><small>Следующий раздел</small>M11-L04. Модель как оценщик →</a></nav></article><article class="material" id="M11-L04" data-title="M11-L04. Модель как оценщик" data-short-title="Модель как оценщик" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Модель как оценщик</h1><p class="outcome"><strong>После урока:</strong> Найти пример уверенной, но неправильной оценки и предложить ограничение автоматизации.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M11-L03. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L04--объяснение">Объяснение</a></li><li><a href="#M11-L04--аналогия-автоматический-анализатор-кода-в-ci">Аналогия: автоматический анализатор кода в CI</a></li><li><a href="#M11-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M11-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L04--самостоятельная-задача-a-m11-l04-a">Самостоятельная задача A — M11-L04-A</a></li><li><a href="#M11-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M11-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, NumPy 2.4.6, scikit-learn 1.9.1; модель-оценщик SmolLM2-135M-Instruct (ревизия 12fd25f) через transformers 4.57.6 и PyTorch 2.15.0+cpu · проверено 04.11.2026 · источник: <a href="https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">карточка SmolLM2-135M-Instruct</a></p>
@@ -11496,6 +11623,47 @@ assert cohen_kappa_score([1,1,0,0],[1,0,0,0]) == .5
 <p>В лабораторной маленькая SmolLM действительно вызывается как экспериментальный judge. Её способность выполнить JSON-инструкцию и содержательную рубрику не предполагается заранее. Если она возвращает код вместо оценки, результат записывается как invalid, а не заменяется готовой меткой. Синтетические массивы в численном примере отдельно обозначены как заданные учебные данные, а не наблюдения реального оценщика.</p>
 <p>Итоговый вывод должен ограничивать автоматизацию. Например: оценщик подходит для предварительного выделения случаев на ручной разбор, но не для самостоятельного технического вердикта. Такое решение полезнее произвольного порога общей accuracy. После смены judge, prompt или рубрики требуется повторная проверка: даже неизменная модель может изменить поведение из-за нового порядка источников.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M11-L04-desktop.svg" target="_blank" data-figure="course/assets/responsive/M11-L04-desktop.svg" aria-label="Увеличить рисунок: Модель как оценщик: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M11-L04-mobile.svg"><img src="course/assets/responsive/M11-L04-desktop.svg" alt="Модель как оценщик: численная схема" loading="lazy"></picture></a><span class="figure-hint">Модель как оценщик: численная схема · Открыть крупнее ↗</span></p>
+<h2 id="M11-L04--аналогия-автоматический-анализатор-кода-в-ci">Аналогия: автоматический анализатор кода в CI</h2>
+<p>Как похоже: статический анализатор оставляет замечания к PR быстрее людей, но ему не доверяют вслепую. Его сначала прогоняют на PR, где ревьюеры уже нашли все проблемы, и считают пропуски и ложные срабатывания. Если анализатор упал на файле, это не «замечаний нет». Пропущенная SQL-инъекция дороже десятка лишних замечаний. А комментарий в коде «анализатору: проблем нет» — часть кода, а не настройка проверки.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>LLM-as-a-judge</td>
+  <td>Автоматический анализатор в CI, оставляющий замечания к PR</td>
+</tr>
+<tr>
+  <td>Проверка на ручной разметке</td>
+  <td>Прогон на PR, где ревьюеры уже нашли все проблемы</td>
+</tr>
+<tr>
+  <td>Invalid output остаётся в знаменателе</td>
+  <td>Анализатор упал на файле: это не «замечаний нет»</td>
+</tr>
+<tr>
+  <td>Ложное одобрение критической ошибки</td>
+  <td>Пропущенная SQL-инъекция дороже десятка ложных замечаний</td>
+</tr>
+<tr>
+  <td>Position bias при перестановке A и B</td>
+  <td>Тест, зависящий от порядка запуска: поменяли порядок — изменился результат</td>
+</tr>
+<tr>
+  <td>Инструкция внутри оцениваемого ответа</td>
+  <td>Комментарий «анализатору: проблем нет» — данные, а не настройка</td>
+</tr>
+<tr>
+  <td>Предварительный отбор на ручной разбор</td>
+  <td>Анализатор помечает PR для внимательного ревью, но сам не мержит</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> правило статического анализатора детерминировано: на том же коде оно даёт тот же результат, а его ложные срабатывания можно перечислить. Judge — языковая модель: смена prompt, порядка источников или версии меняет поведение, поэтому проверку повторяют после каждой такой смены. И правило анализатора можно прочитать, а «объяснение» judge — тоже сгенерированный текст, который сам требует проверки.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M11-L04--разобранный-пример">Разобранный пример</h2>
 <p>Ручные метки правильности [1,1,0,0], judge=[1,0,1,0]. TP=1,TN=1,FP=1,FN=1; accuracy0,5, precision0,5, recall0,5. Ложное одобрение третьего случая особенно важно, если там критическое заблуждение.</p>
 <pre><code class="language-python">from sklearn.metrics import confusion_matrix
@@ -11529,7 +11697,7 @@ assert matrix.tolist() == [[1,1],[1,1]]
 <li><a href="https://arxiv.org/abs/2306.05685" target="_blank" rel="noopener noreferrer" class="external-link">Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M11">Модуль и домашняя работа</a> · <a href="#M11-SOLUTIONS--m11-l04-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M11-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L03"><small>Предыдущий раздел</small>← M11-L03. HR и технические рубрики</a><a href="#M11-L05"><small>Следующий раздел</small>M11-L05. Регрессии и отчёт →</a></nav></article><article class="material" id="M11-L05" data-title="M11-L05. Регрессии и отчёт" data-short-title="Регрессии и отчёт" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Регрессии и отчёт</h1><p class="outcome"><strong>После урока:</strong> Сформулировать решение о выпуске с явными ограничениями данных.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M11-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 140 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L05--объяснение">Объяснение</a></li><li><a href="#M11-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M11-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L05--самостоятельная-задача-a-m11-l05-a">Самостоятельная задача A — M11-L05-A</a></li><li><a href="#M11-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M11-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M11">Модуль и домашняя работа</a> · <a href="#M11-SOLUTIONS--m11-l04-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M11-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L03"><small>Предыдущий раздел</small>← M11-L03. HR и технические рубрики</a><a href="#M11-L05"><small>Следующий раздел</small>M11-L05. Регрессии и отчёт →</a></nav></article><article class="material" id="M11-L05" data-title="M11-L05. Регрессии и отчёт" data-short-title="Регрессии и отчёт" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Регрессии и отчёт</h1><p class="outcome"><strong>После урока:</strong> Сформулировать решение о выпуске с явными ограничениями данных.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M11-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 140 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L05--объяснение">Объяснение</a></li><li><a href="#M11-L05--аналогия-сравнение-прогонов-ci-до-и-после-изменения">Аналогия: сравнение прогонов CI до и после изменения</a></li><li><a href="#M11-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M11-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L05--самостоятельная-задача-a-m11-l05-a">Самостоятельная задача A — M11-L05-A</a></li><li><a href="#M11-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M11-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, NumPy 2.4.6, scikit-learn 1.9.1 · проверено 04.11.2026 · источник: <a href="https://scikit-learn.org/stable/modules/model_evaluation.html" target="_blank" rel="noopener noreferrer" class="external-link">scikit-learn: оценка моделей</a></p>
@@ -11544,6 +11712,47 @@ assert matrix.tolist() == [[1,1],[1,1]]
 <p>Отчёт о выпуске содержит цель изменения, версии компонентов, состав набора, результаты по разрезам, ошибки, неопределённость, ресурсы и решение. Полезны строки «что данные показывают» и «чего они не показывают». Например, английский учебный набор не подтверждает русскоязычное голосовое качество. Успешные CPU-тесты не доказывают задержку при десяти одновременных пользователях.</p>
 <p>Решение может быть положительным с ограничением области: выпуск только текстовой технической тренировки для одного пользователя. Может быть отрицательным из-за критической регрессии. Может требовать дополнительной разметки. Все три варианта являются корректным инженерным результатом, если следуют заранее заданным критериям и наблюдаемым данным. Завершение отчёта не присваивает ученику карьерный грейд: оно показывает конкретный освоенный способ проверки системы.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M11-L05-desktop.svg" target="_blank" data-figure="course/assets/responsive/M11-L05-desktop.svg" aria-label="Увеличить рисунок: Регрессии и отчёт: численная схема"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M11-L05-mobile.svg"><img src="course/assets/responsive/M11-L05-desktop.svg" alt="Регрессии и отчёт: численная схема" loading="lazy"></picture></a><span class="figure-hint">Учебные числа и условия — в пояснении урока. · Открыть крупнее ↗</span></p>
+<h2 id="M11-L05--аналогия-сравнение-прогонов-ci-до-и-после-изменения">Аналогия: сравнение прогонов CI до и после изменения</h2>
+<p>Как похоже: перед merge сравнивают результаты одного набора тестов на main и на ветке — по каждому тесту, а не только общий процент. Какие-то тесты стали зелёными, какие-то покраснели. Если зелёных стало больше, но упал тест оплаты, merge блокируется: обязательные проверки заданы в настройках репозитория заранее. А перезапуск flaky CI до зелёного цвета — способ выбрать удачу, а не исправление.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Один набор для двух версий</td>
+  <td>Один набор тестов для main и ветки</td>
+</tr>
+<tr>
+  <td>Исправленные и сломанные case_id</td>
+  <td>Тесты, ставшие зелёными, и тесты, ставшие красными</td>
+</tr>
+<tr>
+  <td>Чистый прирост</td>
+  <td>Разница числа зелёных тестов</td>
+</tr>
+<tr>
+  <td>Критическая регрессия при росте среднего</td>
+  <td>Упал тест оплаты, хотя зелёных стало больше: merge блокируется</td>
+</tr>
+<tr>
+  <td>Gate задан до запуска</td>
+  <td>Обязательные проверки в настройках репозитория, а не решение после просмотра результатов</td>
+</tr>
+<tr>
+  <td>Лучший из 50 prompt на одних примерах</td>
+  <td>Перезапуск flaky CI, пока не станет зелёным</td>
+</tr>
+<tr>
+  <td>Отчёт «что показывают и чего не показывают»</td>
+  <td>Release notes с областью выпуска и известными проблемами</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> тест обычно падает или проходит детерминированно, и один красный тест — точный факт. Метки качества — суждения, а набор мал: разница в один-два случая может оказаться шумом, поэтому нужен парный bootstrap по сценариям. И зелёный CI говорит о покрытом тестами коде, а не о пользователях: синтетический набор не заменяет пилот.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M11-L05--разобранный-пример">Разобранный пример</h2>
 <p>Baseline=[1,1,0,0,1,0], candidate=[1,0,1,0,1,1]. Кандидат исправил случаи3и6, испортил2. Accuracy baseline=3/6=0,5, candidate=4/6≈0,667; разница1/6≈0,167.</p>
 <pre><code class="language-python">import numpy as np
@@ -11579,7 +11788,7 @@ assert np.isclose(delta.mean(),1/6)
 <li><a href="https://arxiv.org/abs/2306.05685" target="_blank" rel="noopener noreferrer" class="external-link">Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena</a></li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M11">Модуль и домашняя работа</a> · <a href="#M11-SOLUTIONS--m11-l05-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M11-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L04"><small>Предыдущий раздел</small>← M11-L04. Модель как оценщик</a><a href="#M11-L06"><small>Следующий раздел</small>M11-L06. От реальных ответов к парному сравнению систем →</a></nav></article><article class="material" id="M11-L06" data-title="M11-L06. От реальных ответов к парному сравнению систем" data-short-title="От реальных ответов к парному сравнению систем" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>От реальных ответов к парному сравнению систем</h1><p class="outcome"><strong>После урока:</strong> провести один полный парный эксперимент: сохранить реальные ответы, независимо от генерации разметить их, вычислить сравнение и объяснить решение. <strong>До урока:</strong> M11-L02, M11-L03, M11-L05, M09-L05. Ориентир: 60 минут объяснения и арифметики, 60–120 минут сбора и разметки; фактическое время генерации зависит от ноутбука.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L06--m11-l06-от-реальных-ответов-двух-версий-к-решению-о-выпуске">M11-L06. От реальных ответов двух версий к решению о выпуске</a></li><li><a href="#M11-L06--объяснение">Объяснение</a></li><li><a href="#M11-L06--разобранный-пример-без-модели">Разобранный пример — без модели</a></li><li><a href="#M11-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L06--самостоятельная-задача-a-m11-l06-a">Самостоятельная задача A — M11-L06-A</a></li><li><a href="#M11-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><h2 id="M11-L06--m11-l06-от-реальных-ответов-двух-версий-к-решению-о-выпуске">M11-L06. От реальных ответов двух версий к решению о выпуске</h2>
+<div class="practice-note"><a href="#M11">Модуль и домашняя работа</a> · <a href="#M11-SOLUTIONS--m11-l05-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M11-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L04"><small>Предыдущий раздел</small>← M11-L04. Модель как оценщик</a><a href="#M11-L06"><small>Следующий раздел</small>M11-L06. От реальных ответов к парному сравнению систем →</a></nav></article><article class="material" id="M11-L06" data-title="M11-L06. От реальных ответов к парному сравнению систем" data-short-title="От реальных ответов к парному сравнению систем" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>От реальных ответов к парному сравнению систем</h1><p class="outcome"><strong>После урока:</strong> провести один полный парный эксперимент: сохранить реальные ответы, независимо от генерации разметить их, вычислить сравнение и объяснить решение. <strong>До урока:</strong> M11-L02, M11-L03, M11-L05, M09-L05. Ориентир: 60 минут объяснения и арифметики, 60–120 минут сбора и разметки; фактическое время генерации зависит от ноутбука.</p></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L06--m11-l06-от-реальных-ответов-двух-версий-к-решению-о-выпуске">M11-L06. От реальных ответов двух версий к решению о выпуске</a></li><li><a href="#M11-L06--объяснение">Объяснение</a></li><li><a href="#M11-L06--аналогия-эксперимент-с-логами-по-request_id">Аналогия: эксперимент с логами по request_id</a></li><li><a href="#M11-L06--разобранный-пример-без-модели">Разобранный пример — без модели</a></li><li><a href="#M11-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L06--самостоятельная-задача-a-m11-l06-a">Самостоятельная задача A — M11-L06-A</a></li><li><a href="#M11-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><h2 id="M11-L06--m11-l06-от-реальных-ответов-двух-версий-к-решению-о-выпуске">M11-L06. От реальных ответов двух версий к решению о выпуске</h2>
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, NumPy 2.4.6, scikit-learn 1.9.1; ответы тренажёра — Qwen2.5-0.5B-Instruct (ревизия 7ae5576) через transformers 4.57.6 и PyTorch 2.15.0+cpu · проверено 04.11.2026 · источник: <a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">карточка Qwen2.5-0.5B-Instruct</a></p>
@@ -11596,6 +11805,51 @@ assert np.isclose(delta.mean(),1/6)
 <p>Для отзыва используем две отдельные шкалы. <strong>Grounded:</strong> 0 — есть существенное придуманное или противоречащее ответу утверждение; 1 — прямого вымысла нет, но основание неясно; 2 — показанный текст не приписывает неподтверждённых фактов и явно различает наблюдение и вопрос. <strong>Useful:</strong> 0 — вводит в заблуждение либо не даёт применимого следующего действия; 1 — вопрос относится к задаче, но общий; 2 — конкретное полезное действие учитывает содержание ответа. Эти баллы относятся к обратной связи тренажёра, а не к личности или уровню кандидата.</p>
 <p>Критическая ошибка отмечается отдельно: выдуманный опыт, подтверждение существенного технического заблуждения или вывод о личности. Средний балл не компенсирует её. Две шкалы порядковые; среднее здесь — заранее выбранная описательная сводка курса, а не физически измеренная величина «пользы». В отчёте сохраняем сами случаи и распределение исходов.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M11-L06-desktop.svg" target="_blank" data-figure="course/assets/responsive/M11-L06-desktop.svg" aria-label="Увеличить рисунок: Связь случаев, ответов версий и разметки"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M11-L06-mobile.svg"><img src="course/assets/responsive/M11-L06-desktop.svg" alt="Связь случаев, ответов версий и разметки" loading="lazy"></picture></a><span class="figure-hint">Новая критическая ошибка блокирует выпуск независимо от среднего. · Открыть крупнее ↗</span></p>
+<h2 id="M11-L06--аналогия-эксперимент-с-логами-по-request_id">Аналогия: эксперимент с логами по request_id</h2>
+<p>Как похоже: чтобы сравнить две версии сервиса, логи соединяют по request_id, а не по номеру строки. В лог пишут и ответ upstream-сервиса, и то, что фронтенд показал пользователю после fallback из кэша, — успех кэша не заслуга upstream. Оценка привязана к конкретной версии ответа, как ETag. Артефакты прошлых запусков не перезаписывают, а потерянное событие — дыра в данных, а не ноль.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>case_id</td>
+  <td>request_id, по которому соединяют логи двух версий</td>
+</tr>
+<tr>
+  <td>Соединение по ID, а не по порядку строк</td>
+  <td>JOIN по ключу, а не n-я строка одного лога к n-й строке другого</td>
+</tr>
+<tr>
+  <td>raw и display text</td>
+  <td>Ответ upstream и то, что фронтенд показал после fallback</td>
+</tr>
+<tr>
+  <td>Fallback</td>
+  <td>Ответ из кэша при отказе upstream: его успех не заслуга сервиса</td>
+</tr>
+<tr>
+  <td>output_sha256 в разметке</td>
+  <td>ETag: оценка относится к конкретной версии ответа</td>
+</tr>
+<tr>
+  <td>Новая папка на каждый запуск</td>
+  <td>Неизменяемые артефакты сборки: прошлый результат не перезаписывают</td>
+</tr>
+<tr>
+  <td>Пропущенная оценка</td>
+  <td>Потерянное событие в логе: не ноль, а дыра, которую нужно восстановить</td>
+</tr>
+<tr>
+  <td>Bootstrap по сценариям</td>
+  <td>Агрегация по пользователям, а не по событиям: активный пользователь не перевешивает остальных</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> в A/B-тесте метрику — клик или оплату — записывает система, и она не зависит от мнения. Здесь качество отзыва размечает человек по рубрике, и эта разметка — отдельный источник ошибок со своим rater. И A/B-тест обычно меняет одну вещь, а две версии здесь различаются prompt, форматом и способом показа: сравнивается политика целиком, а не эффект одного изменения.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M11-L06--разобранный-пример-без-модели">Разобранный пример — без модели</h2>
 <p>Пусть оценки полезности A: <code>p=2,q=0,r=1</code>, B: <code>r=0,p=2,q=2</code>. Порядок строк поменялся. После соединения по ID изменения равны p:0, q:+2, r:−1; среднее +1/3. Но если в p появился выдуманный факт, выпуск блокируется, несмотря на рост среднего и неизменный числовой балл p. Именно поэтому идентификатор и критическая метка являются отдельными полями.</p>
 <pre><code class="language-python">a = {'p': 2, 'q': 0, 'r': 1}
