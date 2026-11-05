@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="54dbdb10fcf634c27487c503473fba8813ea2037a3aa7aac07c867b73fd59a4c"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="efff35f63c1111305ea15c2d5a6e53ca15b0a888a38b12ca9309d1dfae464aff"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -12269,7 +12269,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M12.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M12.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L06"><small>Предыдущий раздел</small>← M11-L06. От реальных ответов к парному сравнению систем</a><a href="#M12-L01"><small>Следующий раздел</small>M12-L01. Выбор вмешательства →</a></nav></article><article class="material" id="M12-L01" data-title="M12-L01. Выбор вмешательства" data-short-title="Выбор вмешательства" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Выбор вмешательства</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M12-L01--объяснение">Объяснение</a></li><li><a href="#M12-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0.</p>
+"></iframe><p><a href="course/visuals/M12.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M12.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L06"><small>Предыдущий раздел</small>← M11-L06. От реальных ответов к парному сравнению систем</a><a href="#M12-L01"><small>Следующий раздел</small>M12-L01. Выбор вмешательства →</a></nav></article><article class="material" id="M12-L01" data-title="M12-L01. Выбор вмешательства" data-short-title="Выбор вмешательства" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Выбор вмешательства</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M12-L01--объяснение">Объяснение</a></li><li><a href="#M12-L01--аналогия-баг-в-сервисе-конфиг-данные-или-код">Аналогия: баг в сервисе — конфиг, данные или код</a></li><li><a href="#M12-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu; предобученные модели не используются — учебная биграммная модель курса · проверено 04.11.2026 · источник: <a href="https://docs.pytorch.org/docs/2.15/nn.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch 2.15: torch.nn</a></p>
 </blockquote>
@@ -12283,6 +12283,47 @@ draw();
 <p>Начинай выбор с наблюдаемой ошибки. Запиши вход, ожидаемый результат, фактический ответ и причину расхождения. Затем предложи минимальный эксперимент, различающий причины. Если модель правильно отвечает при вручную подставленном документе, проблема вероятнее находится в поиске или комплектовании контекста. Если ответ неверен даже с коротким однозначным источником, проверь понимание инструкции, способности модели и рубрику.</p>
 <p>В тренажёре интервью эти вмешательства могут сочетаться. Сценарий беседы задаёт код, формулировку уточняющего вопроса предлагает модель, технические объяснения опираются на источники. Такое разделение позволяет измерить изменение каждого компонента. Не называй решение лучшим только потому, что в нём присутствует обучение: сложность должна окупаться измеримым результатом.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M12-L01-desktop.svg" target="_blank" data-figure="course/assets/responsive/M12-L01-desktop.svg" aria-label="Увеличить рисунок: Ошибка формата; Инструкция и схема; Ошибка знания; Документ и поиск; Ошибка поведения; Примеры и адаптация"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M12-L01-mobile.svg"><img src="course/assets/responsive/M12-L01-desktop.svg" alt="Ошибка формата; Инструкция и схема; Ошибка знания; Документ и поиск; Ошибка поведения; Примеры и адаптация" loading="lazy"></picture></a><span class="figure-hint">После изменения — тот же независимый набор и анализ новых ошибок. · Открыть крупнее ↗</span></p>
+<h2 id="M12-L01--аналогия-баг-в-сервисе-конфиг-данные-или-код">Аналогия: баг в сервисе — конфиг, данные или код</h2>
+<p>Как похоже: прежде чем переписывать код, инженер проверяет, не в конфиге ли дело и не устарел ли справочник в базе. Изменить конфиг или feature flag можно без релиза. Обновить справочник — тоже без изменения кода. Новая сборка — самый дорогой путь, и она может сломать то, что работало. А чтобы отделить ошибку данных от ошибки кода, баг воспроизводят на заведомо верной фикстуре.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Prompting</td>
+  <td>Изменить конфиг или feature flag без нового релиза</td>
+</tr>
+<tr>
+  <td>RAG</td>
+  <td>Обновить справочник в базе: код прежний, данные свежие</td>
+</tr>
+<tr>
+  <td>SFT</td>
+  <td>Изменить код и выкатить сборку: дорого и может сломать старое</td>
+</tr>
+<tr>
+  <td>Ручная подстановка верного документа</td>
+  <td>Воспроизвести баг на заведомо верной фикстуре</td>
+</tr>
+<tr>
+  <td>Нарушение формата при верных данных</td>
+  <td>Ответ не проходит схему: правят сериализацию, а не базу</td>
+</tr>
+<tr>
+  <td>Устаревший факт в ответе</td>
+  <td>Кэш отдаёт старую версию справочника</td>
+</tr>
+<tr>
+  <td>Адаптер при замороженной базе</td>
+  <td>Плагин поверх неизменного ядра: ядро цело, но поведение системы меняется</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> новая сборка меняет поведение по написанным правилам, и изменение видно в diff. SFT меняет статистическую склонность: редкий факт может не усвоиться, а старое поведение ухудшиться там, где никакого diff нет. И обновлённый справочник база вернёт точно, а модель с RAG может проигнорировать найденный фрагмент — поиск и использование найденного проверяют отдельно.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M12-L01--разобранный-пример">Разобранный пример</h2>
 <p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса (например, в ячейке Jupyter).</p>
 <p>На учебном наборе из двадцати одинаковых запросов базовая система возвращает корректный JSON в 12 случаях, инструкция с примером — в 18, адаптированная версия — в 19. Доли равны 0,60; 0,90; 0,95. Разница между последними вариантами составляет один ответ. Это полезное наблюдение, но недостаточная основа для уверенного общего вывода. Сначала изучи именно этот ответ, повтори генерацию и проверь новые запросы.</p>
@@ -12317,7 +12358,7 @@ print({name: n / 20 for name, n in counts.items()})
 <li><a href="labs/M12/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M12">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l01-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12"><small>Предыдущий раздел</small>← M12 Обучение и адаптация моделей</a><a href="#M12-L02"><small>Следующий раздел</small>M12-L02. Данные для адаптации →</a></nav></article><article class="material" id="M12-L02" data-title="M12-L02. Данные для адаптации" data-short-title="Данные для адаптации" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Данные для адаптации</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M12-L02--объяснение">Объяснение</a></li><li><a href="#M12-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L02--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0.</p>
+<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l01-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L01.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12"><small>Предыдущий раздел</small>← M12 Обучение и адаптация моделей</a><a href="#M12-L02"><small>Следующий раздел</small>M12-L02. Данные для адаптации →</a></nav></article><article class="material" id="M12-L02" data-title="M12-L02. Данные для адаптации" data-short-title="Данные для адаптации" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L02</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Данные для адаптации</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L02--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M12-L02--объяснение">Объяснение</a></li><li><a href="#M12-L02--аналогия-тестовая-выборка-по-клиентам-а-не-по-строкам">Аналогия: тестовая выборка по клиентам, а не по строкам</a></li><li><a href="#M12-L02--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L02--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L02--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L02--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L02--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L02--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L02--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu; предобученные модели не используются — учебная биграммная модель курса · проверено 04.11.2026 · источник: <a href="https://docs.pytorch.org/docs/2.15/nn.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch 2.15: torch.nn</a></p>
 </blockquote>
@@ -12331,6 +12372,47 @@ print({name: n / 20 for name, n in counts.items()})
 <p>Проверь баланс не только по числу строк. Сто коротких примеров и один огромный диалог дают разное число токенов и могут по-разному влиять на оптимизацию. Дубликаты увеличивают вес конкретного поведения. Длинная часть переписки может обрезаться, и в обучение попадёт ответ без необходимого вопроса. Поэтому сохрани статистику длины, долю обрезанных записей и несколько результатов после токенизации.</p>
 <p>Происхождение нужно для исправления ошибок и понимания разрешённого использования. В обязательной лабораторной применяются синтетические строки, созданные кодом курса. Они не содержат персональных данных и не представляют реальный язык. Для собственного корпуса интервью используй придуманные ответы либо согласованные обезличенные материалы. Не объявляй синтетический набор репрезентативным для всех кандидатов: в нём обычно меньше шума, противоречий и разнообразия.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M12-L02-desktop.svg" target="_blank" data-figure="course/assets/responsive/M12-L02-desktop.svg" aria-label="Увеличить рисунок: Сессия A: A1 A2; Сессия B: B1 B2; Train: A + B; Сессия C: C1 C2; Test: C; Пересечение групп = 0"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M12-L02-mobile.svg"><img src="course/assets/responsive/M12-L02-desktop.svg" alt="Сессия A: A1 A2; Сессия B: B1 B2; Train: A + B; Сессия C: C1 C2; Test: C; Пересечение групп = 0" loading="lazy"></picture></a><span class="figure-hint">Строки одной сессии нельзя распределять по разным частям. · Открыть крупнее ↗</span></p>
+<h2 id="M12-L02--аналогия-тестовая-выборка-по-клиентам-а-не-по-строкам">Аналогия: тестовая выборка по клиентам, а не по строкам</h2>
+<p>Как похоже: в multi-tenant сервисе проверку на «новом клиенте» честно делают, только если данные этого клиента целиком не попали в разработку. Если разложить строки одного клиента по обеим частям, тест покажет запомненное, а не перенос. Ожидаемый ответ в контрактном тесте не должен содержать поле, которого в базе не было. А у каждой строки должна быть известна родословная: откуда она и можно ли её использовать.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Пример: вход и целевой ответ</td>
+  <td>Пара «запрос → ожидаемый ответ» в контрактном тесте</td>
+</tr>
+<tr>
+  <td>Target с фактом, которого нет во входе</td>
+  <td>Ожидаемый ответ с полем, которого не было в базе: тест учит выдумывать</td>
+</tr>
+<tr>
+  <td>group_id и split по группам</td>
+  <td>Разделение по tenant: данные одного клиента целиком в одной части</td>
+</tr>
+<tr>
+  <td>Перефразировки одного вопроса в train и test</td>
+  <td>Один запрос с переставленными параметрами и в разработке, и в проверке</td>
+</tr>
+<tr>
+  <td>Train, validation, test</td>
+  <td>Разработка, staging и приёмка, которую не подгоняют</td>
+</tr>
+<tr>
+  <td>Происхождение записи</td>
+  <td>Data lineage: откуда строка и можно ли её использовать</td>
+</tr>
+<tr>
+  <td>Обрезанный длинный диалог</td>
+  <td>Обрезанный лог, где ответ остался без запроса</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> дубликат в фикстурах находится точным сравнением. Перефразировка совпадает только по смыслу, и проверка group_id ловит её, лишь если группы заданы верно. И контрактный тест проверяет точный ответ, а обучающий пример задаёт статистическую склонность: десять одинаковых записей усиливают поведение, а не просто повторяют проверку.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M12-L02--разобранный-пример">Разобранный пример</h2>
 <p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса (например, в ячейке Jupyter).</p>
 <p>Пусть есть шесть записей: A1, A2 относятся к сессии A; B1, B2 — к B; C1, C2 — к C. Разделение A1/B1/C1 против A2/B2/C2 даёт три общие группы. Вариант train=A+B, test=C не имеет пересечения групп, хотя проверяет лишь одну независимую сессию.</p>
@@ -12366,7 +12448,7 @@ assert train_groups.isdisjoint(test_groups)
 <li><a href="labs/M12/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M12">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l02-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L01"><small>Предыдущий раздел</small>← M12-L01. Выбор вмешательства</a><a href="#M12-L03"><small>Следующий раздел</small>M12-L03. Малое обучение с нуля →</a></nav></article><article class="material" id="M12-L03" data-title="M12-L03. Малое обучение с нуля" data-short-title="Малое обучение с нуля" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Малое обучение с нуля</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M12-L03--объяснение">Объяснение</a></li><li><a href="#M12-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L03--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0.</p>
+<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l02-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L02.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L01"><small>Предыдущий раздел</small>← M12-L01. Выбор вмешательства</a><a href="#M12-L03"><small>Следующий раздел</small>M12-L03. Малое обучение с нуля →</a></nav></article><article class="material" id="M12-L03" data-title="M12-L03. Малое обучение с нуля" data-short-title="Малое обучение с нуля" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L03</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Малое обучение с нуля</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L03--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M12-L03--объяснение">Объяснение</a></li><li><a href="#M12-L03--аналогия-следующая-страница-по-логам-переходов">Аналогия: следующая страница по логам переходов</a></li><li><a href="#M12-L03--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L03--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L03--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L03--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L03--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L03--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L03--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu; предобученные модели не используются — учебная биграммная модель курса · проверено 04.11.2026 · источник: <a href="https://docs.pytorch.org/docs/2.15/nn.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch 2.15: torch.nn</a></p>
 </blockquote>
@@ -12380,6 +12462,47 @@ assert train_groups.isdisjoint(test_groups)
 <p>Цикл обучения очищает старые градиенты, вычисляет предсказания, считает потерю, запускает backward и обновляет параметры. Проверка выполняется без изменения весов на новых полных строках большей длины. Это проверка переноса внутри искусственной грамматики, а не доказательство понимания русского языка. Сам факт различия полных строк не делает токенные переходы новыми: именно повторяющиеся переходы модель и должна обобщить.</p>
 <p>Сохраняй алфавит вместе с весами. Перестановка индексов символов при загрузке сохранит форму матрицы, но изменит смысл каждой строки и столбца. Воспроизводимость требует не только seed, но и одинаковой кодировки данных, порядка обработки и версии библиотеки. Незначительные расхождения float допустимы; отсутствие уменьшения независимой ошибки требует расследования.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M12-L03-desktop.svg" target="_blank" data-figure="course/assets/responsive/M12-L03-desktop.svg" aria-label="Увеличить рисунок: ^ → a; a → b; b → a или $; 5 входных символов; 5 выходных логитов; 25 обучаемых чисел"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M12-L03-mobile.svg"><img src="course/assets/responsive/M12-L03-desktop.svg" alt="^ → a; a → b; b → a или $; 5 входных символов; 5 выходных логитов; 25 обучаемых чисел" loading="lazy"></picture></a><span class="figure-hint">Transformer получает доступный контекст через attention; биграмма его не видит. · Открыть крупнее ↗</span></p>
+<h2 id="M12-L03--аналогия-следующая-страница-по-логам-переходов">Аналогия: следующая страница по логам переходов</h2>
+<p>Как похоже: по логам сайта можно предсказывать следующую страницу только по текущей, без истории сессии. Получается таблица «откуда → куда» с долями переходов. С корзины одни уходят на оплату, другие продолжают покупки — по одной текущей странице этого не угадать, сколько ни собирай логов. Биграммная модель делает то же с символами: видит только предыдущий.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Биграмма: следующий символ по предыдущему</td>
+  <td>Следующая страница по текущей, без истории сессии</td>
+</tr>
+<tr>
+  <td>Матрица логитов 5×5</td>
+  <td>Таблица «откуда → куда» с весами переходов</td>
+</tr>
+<tr>
+  <td>Softmax строки</td>
+  <td>Доли переходов с одной страницы, в сумме 1</td>
+</tr>
+<tr>
+  <td>Конфликт b→a и b→$</td>
+  <td>С корзины одни идут на оплату, другие продолжают покупки</td>
+</tr>
+<tr>
+  <td>Cross entropy</td>
+  <td>Штраф −ln доли, которую таблица дала реальному переходу</td>
+</tr>
+<tr>
+  <td>Heldout-строки другой длины</td>
+  <td>Сессии другой длины из логов следующего дня</td>
+</tr>
+<tr>
+  <td>Алфавит рядом с весами</td>
+  <td>Справочник ID страниц: переставишь ID — таблица потеряет смысл</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> таблицу переходов по логам можно просто посчитать, а модель приходит к тем же долям градиентным спуском — и в большой модели, где контекст длинный, счётом уже не обойтись. И страница — понятная единица, а символ смысла не несёт: учебный алфавит показывает механизм обучения, а не понимание языка.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M12-L03--разобранный-пример">Разобранный пример</h2>
 <p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса (например, в ячейке Jupyter).</p>
 <p>Запусти лабораторную M12 из корня репозитория. На проверенном CPU запуске с seed=17 первоначальная ошибка старой грамматики равна 1,60944, после обучения — 0,16638. Это измеренный результат конкретной версии, а не обязательное точное равенство для каждого компьютера.</p>
@@ -12429,7 +12552,7 @@ assert after &lt; before
 <li><a href="labs/M12/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M12">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l03-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L02"><small>Предыдущий раздел</small>← M12-L02. Данные для адаптации</a><a href="#M12-L04"><small>Следующий раздел</small>M12-L04. Дообучение и адаптеры →</a></nav></article><article class="material" id="M12-L04" data-title="M12-L04. Дообучение и адаптеры" data-short-title="Дообучение и адаптеры" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Дообучение и адаптеры</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M12-L04--объяснение">Объяснение</a></li><li><a href="#M12-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L04--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0.</p>
+<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l03-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L03.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L02"><small>Предыдущий раздел</small>← M12-L02. Данные для адаптации</a><a href="#M12-L04"><small>Следующий раздел</small>M12-L04. Дообучение и адаптеры →</a></nav></article><article class="material" id="M12-L04" data-title="M12-L04. Дообучение и адаптеры" data-short-title="Дообучение и адаптеры" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L04</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Дообучение и адаптеры</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L04--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M12-L04--объяснение">Объяснение</a></li><li><a href="#M12-L04--аналогия-слой-поверх-базового-docker-образа">Аналогия: слой поверх базового Docker-образа</a></li><li><a href="#M12-L04--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L04--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L04--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L04--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L04--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L04--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L04--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu; предобученные модели не используются — учебная биграммная модель курса · проверено 04.11.2026 · источник: <a href="https://docs.pytorch.org/docs/2.15/nn.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch 2.15: torch.nn</a></p>
 </blockquote>
@@ -12550,6 +12673,43 @@ draw();
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
 "></iframe><p><a href="course/visuals/M12.html" target="_blank">Открыть опыт отдельно на весь экран</a></p></section>
+<h2 id="M12-L04--аналогия-слой-поверх-базового-docker-образа">Аналогия: слой поверх базового Docker-образа</h2>
+<p>Как похоже: базовый образ хранится только для чтения, а изменения пишутся в тонкий слой поверх него. Файловая система контейнера — это образ плюс слой. Слой весит гораздо меньше образа, и его можно убрать, вернувшись к базе. Но контейнер со слоем ведёт себя иначе, даже если сам образ не изменился ни на байт.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>W заморожена</td>
+  <td>Базовый образ только для чтения</td>
+</tr>
+<tr>
+  <td>Адаптер A·B</td>
+  <td>Тонкий слой поверх образа</td>
+</tr>
+<tr>
+  <td>W эфф = W + A·B</td>
+  <td>Файловая система контейнера: образ плюс слой</td>
+</tr>
+<tr>
+  <td>r(d + k) обучаемых чисел</td>
+  <td>Размер слоя, а не всего образа</td>
+</tr>
+<tr>
+  <td>Отключить адаптер</td>
+  <td>Запустить контейнер без слоя и вернуться к базе</td>
+</tr>
+<tr>
+  <td>Регрессия при неизменной W</td>
+  <td>Образ цел, а контейнер со слоем работает иначе</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> слой может заменить любой файл целиком, а адаптер ранга r меняет матрицу лишь в r независимых направлениях — ранг ограничивает, какие изменения вообще достижимы. И слой не требует перечитывать образ при каждом запросе, а прямой проход через замороженную базу выполняется всегда: активации и вычисления остаются, экономия касается только обучаемых весов и состояния оптимизатора.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M12-L04--разобранный-пример">Разобранный пример</h2>
 <p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса (например, в ячейке Jupyter).</p>
 <p>Для d=4, k=3, r=1 полная матрица содержит 12 чисел, адаптер —7. Пусть A=[1,0,−1,2]ᵀ, B=[0,1,2]. Тогда добавка по строкам равна [0,1,2], [0,0,0], [0,−1,−2], [0,2,4]. Все ненулевые строки пропорциональны, поэтому ранг не превышает 1.</p>
@@ -12594,7 +12754,7 @@ assert torch.equal(W, W_before)
 <li><a href="labs/M12/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M12">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l04-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L03"><small>Предыдущий раздел</small>← M12-L03. Малое обучение с нуля</a><a href="#M12-L05"><small>Следующий раздел</small>M12-L05. Сравнение до и после →</a></nav></article><article class="material" id="M12-L05" data-title="M12-L05. Сравнение до и после" data-short-title="Сравнение до и после" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сравнение до и после</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M12-L05--объяснение">Объяснение</a></li><li><a href="#M12-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L05--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0.</p>
+<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l04-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L04.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L03"><small>Предыдущий раздел</small>← M12-L03. Малое обучение с нуля</a><a href="#M12-L05"><small>Следующий раздел</small>M12-L05. Сравнение до и после →</a></nav></article><article class="material" id="M12-L05" data-title="M12-L05. Сравнение до и после" data-short-title="Сравнение до и после" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L05</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сравнение до и после</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L05--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M12-L05--объяснение">Объяснение</a></li><li><a href="#M12-L05--аналогия-guardrail-метрики-при-выкатке-оптимизации">Аналогия: guardrail-метрики при выкатке оптимизации</a></li><li><a href="#M12-L05--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L05--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L05--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L05--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L05--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L05--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L05--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu; предобученные модели не используются — учебная биграммная модель курса · проверено 04.11.2026 · источник: <a href="https://docs.pytorch.org/docs/2.15/nn.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch 2.15: torch.nn</a></p>
 </blockquote>
@@ -12608,6 +12768,47 @@ assert torch.equal(W, W_before)
 <p>Время и память также измеряются в конкретном окружении. Укажи CPU, версии, размер данных, число шагов и повторов. Не сравнивай холодный запуск одной модели с прогретым запуском другой. Для адаптера полезно различать время подготовки, обучения, загрузки и применения. Дополнительная сложность сопровождения может превышать выигрыш одного удачного ответа.</p>
 <p>Решение «не выпускать» является полноценным результатом. Оно показывает, что эксперимент обнаружил ограничение до воздействия на пользователей. Запиши, какой компонент можно оставить: подготовленные данные, тестовый набор, диагностику конкретной ошибки. Следующий шаг должен проверять новую гипотезу, например совместное обучение на старой и новой грамматике, а не бессрочно увеличивать число эпох.</p>
 <p><a class="figure-expand" href="course/assets/responsive/M12-L05-desktop.svg" target="_blank" data-figure="course/assets/responsive/M12-L05-desktop.svg" aria-label="Увеличить рисунок: Новая задача: 3,73 → 0,57; Старая задача: 0,17 → 11,99; Общий test фиксирован; Регрессия обнаружена; База сохранена; Выпуск отклонён"><picture><source media="(max-width: 600px)" srcset="course/assets/responsive/M12-L05-mobile.svg"><img src="course/assets/responsive/M12-L05-desktop.svg" alt="Новая задача: 3,73 → 0,57; Старая задача: 0,17 → 11,99; Общий test фиксирован; Регрессия обнаружена; База сохранена; Выпуск отклонён" loading="lazy"></picture></a><span class="figure-hint">Новая задача: 3,73 → 0,57; Старая задача: 0,17 → 11,99; Общий test фиксирован; Регрессия обнаружена; База сохранена; Выпуск отклонён · Открыть крупнее ↗</span></p>
+<h2 id="M12-L05--аналогия-guardrail-метрики-при-выкатке-оптимизации">Аналогия: guardrail-метрики при выкатке оптимизации</h2>
+<p>Как похоже: оптимизацию кэша выкатывают ради задержки нового эндпоинта, но заранее ставят guardrail-метрики на старые эндпоинты. Обе сборки сравнивают на одинаковом профиле нагрузки и не сравнивают холодный первый запрос с прогретым. Ошибки смотрят по каждому эндпоинту, а не средним по сервису. И откат канарейки — нормальный итог проверки, а не провал команды.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Основная метрика</td>
+  <td>Метрика, ради которой делали оптимизацию: задержка нового эндпоинта</td>
+</tr>
+<tr>
+  <td>Защитная метрика</td>
+  <td>Guardrail: ошибки и задержка старых эндпоинтов не хуже порога</td>
+</tr>
+<tr>
+  <td>Новая задача 3,73 → 0,57, старая 0,17 → 11,99</td>
+  <td>Новый эндпоинт ускорился, старый начал падать</td>
+</tr>
+<tr>
+  <td>Одинаковые входы для версий</td>
+  <td>Одинаковый профиль нагрузки для обеих сборок</td>
+</tr>
+<tr>
+  <td>Холодный против прогретого запуска</td>
+  <td>Первый запрос после деплоя против прогретого кэша</td>
+</tr>
+<tr>
+  <td>Числитель и знаменатель по группам</td>
+  <td>Ошибки по каждому эндпоинту, а не среднее по сервису</td>
+</tr>
+<tr>
+  <td>«Не выпускать»</td>
+  <td>Откат канарейки — нормальный итог проверки</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> эндпоинты сервиса — отдельный код, и регрессию старого можно починить, не трогая новый. У модели старое и новое поведение живут в одних весах: улучшение новой задачи само сдвигает старую, поэтому защитный набор нужен в каждом опыте. И guardrail сервиса меряют на живом трафике, а здесь — на маленьком авторском наборе, где ноль ошибок на трёх примерах ничего не гарантирует.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M12-L05--разобранный-пример">Разобранный пример</h2>
 <p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса (например, в ячейке Jupyter).</p>
 <p>Локальный контрольный запуск дал: новая грамматика до адаптации 3,73176, после 0,56625; старая до 0,16638, после 11,98950. Новая потеря уменьшилась примерно на 84,8%, но старая выросла примерно в 72 раза. Параметры базы сохранились; включённый адаптер всё равно вызвал сильную регрессию.</p>
@@ -12643,7 +12844,7 @@ print(round(new_gain, 3), round(old_ratio, 1))
 <li><a href="labs/M12/demo.py">Исполняемый пример модуля</a> — авторский код курса с явно указанными ограничениями.</li>
 </ul>
 <p><a href="#M12">Оглавление модуля</a></p>
-<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l05-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L04"><small>Предыдущий раздел</small>← M12-L04. Дообучение и адаптеры</a><a href="#M12-L06"><small>Следующий раздел</small>M12-L06. Из диалога в обучающий пример: токены и маска потерь →</a></nav></article><article class="material" id="M12-L06" data-title="M12-L06. Из диалога в обучающий пример: токены и маска потерь" data-short-title="Из диалога в обучающий пример: токены и маска потерь" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Из диалога в обучающий пример: токены и маска потерь</h1><p class="outcome"><strong>После урока:</strong> подготовить настоящий диалог для causal LM и доказать, что loss считается только по ответу assistant.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L05, M09-L01, M12-L02. Сначала завершить биграммный опыт M12-L03–L05. План: 45 минут объяснения, 90 минут токенизации и проверок, 45 минут новой задачи.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L06--объяснение">Объяснение</a></li><li><a href="#M12-L06--разобранный-пример-без-модели">Разобранный пример — без модели</a></li><li><a href="#M12-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L06--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L06--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l05-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L04"><small>Предыдущий раздел</small>← M12-L04. Дообучение и адаптеры</a><a href="#M12-L06"><small>Следующий раздел</small>M12-L06. Из диалога в обучающий пример: токены и маска потерь →</a></nav></article><article class="material" id="M12-L06" data-title="M12-L06. Из диалога в обучающий пример: токены и маска потерь" data-short-title="Из диалога в обучающий пример: токены и маска потерь" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L06</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Из диалога в обучающий пример: токены и маска потерь</h1><p class="outcome"><strong>После урока:</strong> подготовить настоящий диалог для causal LM и доказать, что loss считается только по ответу assistant.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L05, M09-L01, M12-L02. Сначала завершить биграммный опыт M12-L03–L05. План: 45 минут объяснения, 90 минут токенизации и проверок, 45 минут новой задачи.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L06--объяснение">Объяснение</a></li><li><a href="#M12-L06--аналогия-snapshot-тест-с-игнорируемыми-полями">Аналогия: snapshot-тест с игнорируемыми полями</a></li><li><a href="#M12-L06--разобранный-пример-без-модели">Разобранный пример — без модели</a></li><li><a href="#M12-L06--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L06--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L06--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L06--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L06--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu, transformers 4.57.6; токенизатор SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 04.11.2026 · источник: <a href="https://docs.pytorch.org/docs/2.15/generated/torch.nn.CrossEntropyLoss.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch 2.15: CrossEntropyLoss</a></p>
@@ -12660,6 +12861,47 @@ print(round(new_gain, 3), round(old_ratio, 1))
 <h3 id="M12-L06--шаблон-важнее-количества-символов">Шаблон важнее количества символов</h3>
 <p>Настоящий tokenizer добавляет границы ролей и специальные токены. Нельзя взять len(user_text) и использовать это число как длину token-prefix. Нужно применить тот же chat template к сообщениям system/user с add_generation_prompt=True, затем к полному диалогу с assistant. Начало полного списка ID должно точно совпасть с prefix. В лабораторной это явный assert: при другом tokenizer или template сначала исправляется граница, а не молча строится неверная маска.</p>
 <p>Если последовательность слишком длинная, слепое обрезание может оставить ответ без вопроса или только начало ответа. В учебном контракте такие записи отклоняются. Это ограниченная, но понятная политика; позднее можно реализовать сокращение полных сообщений. Максимальная длина всегда измеряется токенами.</p>
+<h2 id="M12-L06--аналогия-snapshot-тест-с-игнорируемыми-полями">Аналогия: snapshot-тест с игнорируемыми полями</h2>
+<p>Как похоже: snapshot-тест сравнивает тело ответа, а поля вроде эха запроса или временной метки помечает как игнорируемые — они есть в ответе, но не проверяются. Отдельно сетевой буфер помечает, какие байты настоящие, а какие — заполнение. Ответ на элемент t сверяют со следующим элементом, и индекс сдвигают ровно один раз: двойной сдвиг — классический off-by-one.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Labels = −100 на prefix</td>
+  <td>Игнорируемые поля snapshot-теста: запрос есть, но не сравнивается</td>
+</tr>
+<tr>
+  <td>Loss только на ответе assistant</td>
+  <td>Тест проверяет тело ответа, а не эхо запроса</td>
+</tr>
+<tr>
+  <td>attention_mask</td>
+  <td>Признак, какие байты буфера настоящие, а какие — заполнение</td>
+</tr>
+<tr>
+  <td>Сдвиг labels внутри модели</td>
+  <td>Ответ позиции t сверяют со следующим элементом: сдвиг один раз</td>
+</tr>
+<tr>
+  <td>Двойной сдвиг вручную</td>
+  <td>Off-by-one, применённый дважды: сравнение не с тем элементом</td>
+</tr>
+<tr>
+  <td>Prefix по chat template, а не по len(text)</td>
+  <td>Длину считают в байтах после сериализации, а не в символах исходной строки</td>
+</tr>
+<tr>
+  <td>Обрезка без конца ответа — отказ</td>
+  <td>Обрезанное тело — ошибка, а не «короткий ответ»</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> игнорируемое поле snapshot-теста ни на что не влияет, а замаскированный prefix модель продолжает читать: causal attention использует весь контекст, маска лишь убирает эти позиции из потерь. И ошибка в тесте видна как красный прогон, а неверная маска даёт уменьшающийся loss и тихо учит не тому.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M12-L06--разобранный-пример-без-модели">Разобранный пример — без модели</h2>
 <pre><code class="language-python">prefix = [11,12,13]
 answer = [21,22,2]
@@ -12688,7 +12930,7 @@ assert supervised_pairs == [(13,21),(21,22),(22,2)]
 <p>B: prefix длины 4, assistant только EOS. Явно опиши, допускает ли задача пустой текст. C через неделю: готовые labels уже сдвинуты вручную, а model делает сдвиг ещё раз. На IDs[1,2,3,4] покажи, какая ошибочная пара получается. Ответы в <a href="#M12-SOLUTIONS--m12-l06-a-настоящий-objective">ключах M12</a>.</p>
 </section><h2 id="M12-L06--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://huggingface.co/docs/transformers/v4.57.5/en/chat_templating" target="_blank" rel="noopener noreferrer" class="external-link">Transformers chat templates</a>, <a href="https://docs.pytorch.org/docs/2.15/generated/torch.nn.CrossEntropyLoss.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch CrossEntropyLoss</a>. Собственный код делает маскирование явно, чтобы не скрыть учебную цель внутри trainer/collator.</p>
-<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l06-a-настоящий-objective">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L05"><small>Предыдущий раздел</small>← M12-L05. Сравнение до и после</a><a href="#M12-L07"><small>Следующий раздел</small>M12-L07. Настоящий малый SFT: адаптер, checkpoint и регрессии →</a></nav></article><article class="material" id="M12-L07" data-title="M12-L07. Настоящий малый SFT: адаптер, checkpoint и регрессии" data-short-title="Настоящий малый SFT: адаптер, checkpoint и регрессии" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L07</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Настоящий малый SFT: адаптер, checkpoint и регрессии</h1><p class="outcome"><strong>После урока:</strong> обучить небольшой адаптер pretrained Transformer, восстановить его и сравнить старые и новые случаи без подмены неудачных ответов.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M12-L04–L06, M09-L05. CPU, SmolLM2-135M-Instruct уже находится локально. План: 60 минут объяснения, 90–180 минут опыта и анализа, 90 минут самостоятельного варианта.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L07--объяснение">Объяснение</a></li><li><a href="#M12-L07--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L07--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L07--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L07--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L07--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L07--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l06-a-настоящий-objective">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L05"><small>Предыдущий раздел</small>← M12-L05. Сравнение до и после</a><a href="#M12-L07"><small>Следующий раздел</small>M12-L07. Настоящий малый SFT: адаптер, checkpoint и регрессии →</a></nav></article><article class="material" id="M12-L07" data-title="M12-L07. Настоящий малый SFT: адаптер, checkpoint и регрессии" data-short-title="Настоящий малый SFT: адаптер, checkpoint и регрессии" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L07</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Настоящий малый SFT: адаптер, checkpoint и регрессии</h1><p class="outcome"><strong>После урока:</strong> обучить небольшой адаптер pretrained Transformer, восстановить его и сравнить старые и новые случаи без подмены неудачных ответов.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M12-L04–L06, M09-L05. CPU, SmolLM2-135M-Instruct уже находится локально. План: 60 минут объяснения, 90–180 минут опыта и анализа, 90 минут самостоятельного варианта.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L07--объяснение">Объяснение</a></li><li><a href="#M12-L07--аналогия-плагин-собранный-под-конкретную-версию-ядра">Аналогия: плагин, собранный под конкретную версию ядра</a></li><li><a href="#M12-L07--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L07--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L07--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L07--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L07--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L07--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu, transformers 4.57.6; базовая модель SmolLM2-135M-Instruct (ревизия 12fd25f), адаптер rank 4 · проверено 04.11.2026 · источник: <a href="https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">карточка SmolLM2-135M-Instruct</a></p>
@@ -12702,6 +12944,47 @@ assert supervised_pairs == [(13,21),(21,22),(22,2)]
 <h3 id="M12-L07--данные-и-заранее-выбранное-правило">Данные и заранее выбранное правило</h3>
 <p>В train12 английских синтетических ответов кандидата. Для расплывчатого ответа целевой текст — <code>CLARIFY: Name your own action.</code> Для ответа с действием и измерением — <code>NEXT: Explain one tradeoff.</code> Ещё четыре иных формулировки оставлены в check. Два общих вопроса, включая арифметический, образуют маленький old-набор для регрессий. Это демонстрация изменения формата поведения, а не доказательство качественного HR-анализа.</p>
 <p>Число шагов 24, seed 41 и learning rate 0.006 фиксируются до просмотра check. Правило допустимости по потерям: check NLL должен уменьшиться, а old NLL не должен превысить исходный более чем на 20%. Даже прохождение этого правила требует отдельно прочитать свободные генерации: teacher-forced NLL и реальный диалог — разные проверки. Малые наборы не дают сильного статистического вывода.</p>
+<h2 id="M12-L07--аналогия-плагин-собранный-под-конкретную-версию-ядра">Аналогия: плагин, собранный под конкретную версию ядра</h2>
+<p>Как похоже: плагин подключается к нескольким точкам расширения закрытого ядра, а ядро остаётся только для чтения и проверяется контрольной суммой. Рядом с плагином лежит манифест: под какую версию ядра он собран и куда подключается. Плагин под другую версию ABI загрузчик должен отвергнуть. А зелёные юнит-тесты плагина ещё не значат, что сквозной сценарий работает.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Адаптер в проекциях Q и V</td>
+  <td>Плагин в нескольких точках расширения ядра</td>
+</tr>
+<tr>
+  <td>Замороженная база и её SHA256</td>
+  <td>Ядро только для чтения с контрольной суммой</td>
+</tr>
+<tr>
+  <td>config.json рядом с adapter.pt</td>
+  <td>Манифест плагина: версия ядра, точки подключения, параметры</td>
+</tr>
+<tr>
+  <td>Rank 8 в checkpoint при rank 4 в загрузчике</td>
+  <td>Плагин под другую версию ABI: загрузка должна упасть, а не пропустить несовпавшее</td>
+</tr>
+<tr>
+  <td>Loss guard прошёл, а тип команды неверный</td>
+  <td>Юнит-тесты зелёные, сквозной сценарий падает</td>
+</tr>
+<tr>
+  <td>LIMIT на старых случаях</td>
+  <td>Плагин перехватил обработку, которую не должен был трогать</td>
+</tr>
+<tr>
+  <td>Отказ от выпуска</td>
+  <td>Плагин собирается, но в релиз не входит</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> плагин вызывается по явным правилам, и видно, какие запросы он обрабатывает. Адаптер добавляет поправку к каждому вычислению в выбранных слоях, поэтому влияет на все ответы сразу — отсюда регрессия на старых случаях. И несовместимость плагина ловит загрузчик, а слабое качество адаптера видно только по оценке ответов.</p>
 <section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M12-L07--разобранный-пример">Разобранный пример</h2>
 <h3 id="M12-L07--запуск-полного-опыта">Запуск полного опыта</h3>
 <pre><code class="language-powershell">.\.venv\Scripts\python.exe labs\M12\sft.py
