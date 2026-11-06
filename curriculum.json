@@ -3341,6 +3341,10 @@
         {
           "id": "M14-C17",
           "description": "Разобрать риски LLM-приложения по OWASP Top 10 (редакция 2025, с учётом редакции 2026) и измерить защиты от косвенной инъекции в RAG и избыточной агентности планировщика: разделение данных и инструкций с экранированием, фильтр ответа, allow-list инструментов по задаче и подтверждение необратимых действий."
+        },
+        {
+          "id": "M14-C18",
+          "description": "Написать MCP-сервер, который оборачивает существующие контракты инструментов, подключить планировщик как MCP-клиент, прочитать обмен на проводе и объяснить изменения ревизии MCP 2026-07-28: протокол без состояния, версия в _meta, server/discover, явные ручки состояния."
         }
       ],
       "lessons": [
@@ -3512,6 +3516,36 @@
             "practice_minutes": 90,
             "self_check_minutes": 40,
             "setup_minutes": "separate; frozen results need no model, re-running uses llama.cpp and GGUF of M09-L07X",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M14-L09X",
+          "title": "MCP: свой сервер инструментов",
+          "path": "course/lessons/M14-L09X.md",
+          "prerequisites": [
+            "M14-L02",
+            "M14-L03",
+            "M14-L06",
+            "M14-L08X"
+          ],
+          "estimated_minutes": 180,
+          "estimate_status": "planning_hypothesis",
+          "practice": "MCP-сервер «база вопросов собеседования» на Python SDK 2.3 поверх исполнителя M14 и data/interview; запись обмена по ревизиям 2026-07-28 и 2025-11-25; планировщик как MCP-клиент на 0.5B и 4B, схема ответа из inputSchema",
+          "assessment": "Разбор записи обмена, сверка прогона планировщика, ручка состояния для собеседования в протоколе без сессий",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M14-C18"
+          ],
+          "extension": "1.2.0",
+          "required": false,
+          "workload": {
+            "reading_minutes": 50,
+            "practice_minutes": 90,
+            "self_check_minutes": 40,
+            "setup_minutes": "separate; needs the optional mcp package; the planner run uses llama.cpp and GGUF of M09-L07X",
             "estimate_status": "planning_hypothesis_not_measured"
           },
           "assessment_policy": "course/assessment.md"

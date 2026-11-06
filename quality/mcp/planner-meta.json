@@ -1,0 +1,23 @@
+{
+  "task": "T42",
+  "models": {
+    "tiny": "qwen2.5-0.5b-instruct-q4_k_m",
+    "strong": "qwen3.5-4b-q4_k_m"
+  },
+  "llama_cpp": "b11803",
+  "status": {
+    "tiny": {
+      "state": "measured",
+      "minutes": 0.9
+    },
+    "strong": {
+      "state": "measured",
+      "minutes": 2.7
+    }
+  },
+  "mcp_sdk": "2.3.0",
+  "budget": 4,
+  "max_tokens": 200,
+  "decoding": "greedy, seed 17, JSON Schema built from the tools' input schemas",
+  "collected": "2026-11-07"
+}

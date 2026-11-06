@@ -15,6 +15,7 @@
     "labs/M14/injection_rag.py report",
     "labs/M14/agency.py report",
     "labs/M14/guardrails.py evaluate",
-    "labs/M14/guardrails.py replay"
+    "labs/M14/guardrails.py replay",
+    "labs/M14/mcp_planner.py report"
   ]
 }

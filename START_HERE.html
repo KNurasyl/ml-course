@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="ed83145edf2a2497e75f275211e82d0f4b3747b7deda085e4eaa039b53e170f2"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="14684563274c052a7aa58a94871075fe1a33afa61a8bdc681c570dd7a3049a60"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -37,7 +37,7 @@
 <section class="nav-group"><details class="nav-module"><summary>M11 Оценивание LLM-систем</summary><ul><li data-key="M11"><a href="#M11" data-material="M11"><span class="nav-marker">M11</span><span>Оценивание LLM-систем</span></a></li><li data-key="M11-L01"><a href="#M11-L01" data-material="M11-L01"><span class="nav-marker">L01</span><span>Что именно оцениваем</span></a></li><li data-key="M11-L02"><a href="#M11-L02" data-material="M11-L02"><span class="nav-marker">L02</span><span>Набор примеров и разметка</span></a></li><li data-key="M11-L03"><a href="#M11-L03" data-material="M11-L03"><span class="nav-marker">L03</span><span>HR и технические рубрики</span></a></li><li data-key="M11-L04"><a href="#M11-L04" data-material="M11-L04"><span class="nav-marker">L04</span><span>Модель как оценщик</span></a></li><li data-key="M11-L05"><a href="#M11-L05" data-material="M11-L05"><span class="nav-marker">L05</span><span>Регрессии и отчёт</span></a></li><li data-key="M11-L06"><a href="#M11-L06" data-material="M11-L06"><span class="nav-marker">L06</span><span>От реальных ответов к парному сравнению систем</span></a></li><li data-key="M11-L07X"><a href="#M11-L07X" data-material="M11-L07X"><span class="nav-marker">L07X</span><span>Error analysis как процесс</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M12 Обучение и адаптация моделей</summary><ul><li data-key="M12"><a href="#M12" data-material="M12"><span class="nav-marker">M12</span><span>Обучение и адаптация моделей</span></a></li><li data-key="M12-L01"><a href="#M12-L01" data-material="M12-L01"><span class="nav-marker">L01</span><span>Выбор вмешательства</span></a></li><li data-key="M12-L02"><a href="#M12-L02" data-material="M12-L02"><span class="nav-marker">L02</span><span>Данные для адаптации</span></a></li><li data-key="M12-L03"><a href="#M12-L03" data-material="M12-L03"><span class="nav-marker">L03</span><span>Малое обучение с нуля</span></a></li><li data-key="M12-L04"><a href="#M12-L04" data-material="M12-L04"><span class="nav-marker">L04</span><span>Дообучение и адаптеры</span></a></li><li data-key="M12-L05"><a href="#M12-L05" data-material="M12-L05"><span class="nav-marker">L05</span><span>Сравнение до и после</span></a></li><li data-key="M12-L06"><a href="#M12-L06" data-material="M12-L06"><span class="nav-marker">L06</span><span>Из диалога в обучающий пример: токены и маска потерь</span></a></li><li data-key="M12-L07"><a href="#M12-L07" data-material="M12-L07"><span class="nav-marker">L07</span><span>Настоящий малый SFT: адаптер, checkpoint и регрессии</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M13 MLOps и LLMOps</summary><ul><li data-key="M13"><a href="#M13" data-material="M13"><span class="nav-marker">M13</span><span>MLOps и LLMOps</span></a></li><li data-key="M13-L01"><a href="#M13-L01" data-material="M13-L01"><span class="nav-marker">L01</span><span>Версия эксперимента и релиза</span></a></li><li data-key="M13-L02"><a href="#M13-L02" data-material="M13-L02"><span class="nav-marker">L02</span><span>Упаковка и контракт</span></a></li><li data-key="M13-L03"><a href="#M13-L03" data-material="M13-L03"><span class="nav-marker">L03</span><span>Регрессионные проверки</span></a></li><li data-key="M13-L04"><a href="#M13-L04" data-material="M13-L04"><span class="nav-marker">L04</span><span>Наблюдаемость и нагрузка</span></a></li><li data-key="M13-L05"><a href="#M13-L05" data-material="M13-L05"><span class="nav-marker">L05</span><span>Неудачный релиз и восстановление</span></a></li><li data-key="M13-L06"><a href="#M13-L06" data-material="M13-L06"><span class="nav-marker">L06</span><span>Очередь, дедлайн и восстановление HTTP-сервиса</span></a></li><li data-key="M13-L07X"><a href="#M13-L07X" data-material="M13-L07X"><span class="nav-marker">L07X</span><span>Трассировка LLM-конвейера</span></a></li></ul></details></section>
-<section class="nav-group"><details class="nav-module"><summary>M14 Агенты и инструменты</summary><ul><li data-key="M14"><a href="#M14" data-material="M14"><span class="nav-marker">M14</span><span>Агенты и инструменты</span></a></li><li data-key="M14-L01"><a href="#M14-L01" data-material="M14-L01"><span class="nav-marker">L01</span><span>Сценарий и агентный цикл</span></a></li><li data-key="M14-L02"><a href="#M14-L02" data-material="M14-L02"><span class="nav-marker">L02</span><span>Контракт инструмента</span></a></li><li data-key="M14-L03"><a href="#M14-L03" data-material="M14-L03"><span class="nav-marker">L03</span><span>Состояние и границы доступа</span></a></li><li data-key="M14-L04"><a href="#M14-L04" data-material="M14-L04"><span class="nav-marker">L04</span><span>Ошибки и остановка</span></a></li><li data-key="M14-L05"><a href="#M14-L05" data-material="M14-L05"><span class="nav-marker">L05</span><span>Проверка агента</span></a></li><li data-key="M14-L06"><a href="#M14-L06" data-material="M14-L06"><span class="nav-marker">L06</span><span>Модель предлагает инструмент, исполнитель проверяет</span></a></li><li data-key="M14-L08X"><a href="#M14-L08X" data-material="M14-L08X"><span class="nav-marker">L08X</span><span>Безопасность LLM-приложений</span></a></li></ul></details></section>
+<section class="nav-group"><details class="nav-module"><summary>M14 Агенты и инструменты</summary><ul><li data-key="M14"><a href="#M14" data-material="M14"><span class="nav-marker">M14</span><span>Агенты и инструменты</span></a></li><li data-key="M14-L01"><a href="#M14-L01" data-material="M14-L01"><span class="nav-marker">L01</span><span>Сценарий и агентный цикл</span></a></li><li data-key="M14-L02"><a href="#M14-L02" data-material="M14-L02"><span class="nav-marker">L02</span><span>Контракт инструмента</span></a></li><li data-key="M14-L03"><a href="#M14-L03" data-material="M14-L03"><span class="nav-marker">L03</span><span>Состояние и границы доступа</span></a></li><li data-key="M14-L04"><a href="#M14-L04" data-material="M14-L04"><span class="nav-marker">L04</span><span>Ошибки и остановка</span></a></li><li data-key="M14-L05"><a href="#M14-L05" data-material="M14-L05"><span class="nav-marker">L05</span><span>Проверка агента</span></a></li><li data-key="M14-L06"><a href="#M14-L06" data-material="M14-L06"><span class="nav-marker">L06</span><span>Модель предлагает инструмент, исполнитель проверяет</span></a></li><li data-key="M14-L08X"><a href="#M14-L08X" data-material="M14-L08X"><span class="nav-marker">L08X</span><span>Безопасность LLM-приложений</span></a></li><li data-key="M14-L09X"><a href="#M14-L09X" data-material="M14-L09X"><span class="nav-marker">L09X</span><span>MCP: свой сервер инструментов</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M15 Речь и голосовой диалог</summary><ul><li data-key="M15"><a href="#M15" data-material="M15"><span class="nav-marker">M15</span><span>Речь и голосовой диалог</span></a></li><li data-key="M15-L01"><a href="#M15-L01" data-material="M15-L01"><span class="nav-marker">L01</span><span>Аудио и речь</span></a></li><li data-key="M15-L02"><a href="#M15-L02" data-material="M15-L02"><span class="nav-marker">L02</span><span>Распознавание и сегменты</span></a></li><li data-key="M15-L03"><a href="#M15-L03" data-material="M15-L03"><span class="nav-marker">L03</span><span>Синтез и доставка</span></a></li><li data-key="M15-L04"><a href="#M15-L04" data-material="M15-L04"><span class="nav-marker">L04</span><span>Поток и перебивание</span></a></li><li data-key="M15-L05"><a href="#M15-L05" data-material="M15-L05"><span class="nav-marker">L05</span><span>Речевое оценивание</span></a></li><li data-key="M15-L06"><a href="#M15-L06" data-material="M15-L06"><span class="nav-marker">L06</span><span>От WAV к частичным гипотезам и отменяемым фрагментам</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M16 Итоговый продукт и защита</summary><ul><li data-key="M16"><a href="#M16" data-material="M16"><span class="nav-marker">M16</span><span>Итоговый продукт и защита</span></a></li><li data-key="M16-L01"><a href="#M16-L01" data-material="M16-L01"><span class="nav-marker">L01</span><span>Требования и две рубрики</span></a></li><li data-key="M16-L06"><a href="#M16-L06" data-material="M16-L06"><span class="nav-marker">L06</span><span>Обратная связь с проверяемыми основаниями</span></a></li><li data-key="M16-L07"><a href="#M16-L07" data-material="M16-L07"><span class="nav-marker">L07</span><span>Состояние интервью и ограниченные уточнения</span></a></li><li data-key="M16-L02"><a href="#M16-L02" data-material="M16-L02"><span class="nav-marker">L02</span><span>Интеграция и независимая проверка</span></a></li><li data-key="M16-L03"><a href="#M16-L03" data-material="M16-L03"><span class="nav-marker">L03</span><span>Пилот продукта</span></a></li><li data-key="M16-L04"><a href="#M16-L04" data-material="M16-L04"><span class="nav-marker">L04</span><span>Защита архитектуры и отказа</span></a></li><li data-key="M16-L05"><a href="#M16-L05" data-material="M16-L05"><span class="nav-marker">L05</span><span>Портфолио и профессиональная проверка</span></a></li><li data-key="M16-L08"><a href="#M16-L08" data-material="M16-L08"><span class="nav-marker">L08</span><span>Самостоятельная сборка и защита нового требования</span></a></li></ul></details></section>
 <section class="nav-group"><h2>Ответы и самопроверка</h2><ul><li data-key="MENTOR-KEYS"><a href="#MENTOR-KEYS" data-material="MENTOR-KEYS"><span class="nav-marker">•</span><span>Ключи решений для самопроверки</span></a></li><li data-key="M00-SOLUTIONS"><a href="#M00-SOLUTIONS" data-material="M00-SOLUTIONS"><span class="nav-marker">•</span><span>M00. Решения для самопроверки</span></a></li><li data-key="M01-SOLUTIONS"><a href="#M01-SOLUTIONS" data-material="M01-SOLUTIONS"><span class="nav-marker">•</span><span>M01. Решения для самопроверки</span></a></li><li data-key="M02-SOLUTIONS"><a href="#M02-SOLUTIONS" data-material="M02-SOLUTIONS"><span class="nav-marker">•</span><span>M02. Решения для самопроверки</span></a></li><li data-key="M03-SOLUTIONS"><a href="#M03-SOLUTIONS" data-material="M03-SOLUTIONS"><span class="nav-marker">•</span><span>M03. Решения для самопроверки</span></a></li><li data-key="M04-SOLUTIONS"><a href="#M04-SOLUTIONS" data-material="M04-SOLUTIONS"><span class="nav-marker">•</span><span>M04. Решения для самопроверки</span></a></li><li data-key="M05-SOLUTIONS"><a href="#M05-SOLUTIONS" data-material="M05-SOLUTIONS"><span class="nav-marker">•</span><span>M05. Решения для самопроверки</span></a></li><li data-key="M06-SOLUTIONS"><a href="#M06-SOLUTIONS" data-material="M06-SOLUTIONS"><span class="nav-marker">•</span><span>M06. Решения для самопроверки</span></a></li><li data-key="M07-SOLUTIONS"><a href="#M07-SOLUTIONS" data-material="M07-SOLUTIONS"><span class="nav-marker">•</span><span>M07. Решения для самопроверки</span></a></li><li data-key="M08-SOLUTIONS"><a href="#M08-SOLUTIONS" data-material="M08-SOLUTIONS"><span class="nav-marker">•</span><span>M08. Решения для самопроверки</span></a></li><li data-key="M09-SOLUTIONS"><a href="#M09-SOLUTIONS" data-material="M09-SOLUTIONS"><span class="nav-marker">•</span><span>M09. Решения для самопроверки</span></a></li><li data-key="M10-SOLUTIONS"><a href="#M10-SOLUTIONS" data-material="M10-SOLUTIONS"><span class="nav-marker">•</span><span>M10. Решения для самопроверки</span></a></li><li data-key="M11-SOLUTIONS"><a href="#M11-SOLUTIONS" data-material="M11-SOLUTIONS"><span class="nav-marker">•</span><span>M11. Решения для самопроверки</span></a></li><li data-key="M12-SOLUTIONS"><a href="#M12-SOLUTIONS" data-material="M12-SOLUTIONS"><span class="nav-marker">•</span><span>M12. Решения для самопроверки</span></a></li><li data-key="M13-SOLUTIONS"><a href="#M13-SOLUTIONS" data-material="M13-SOLUTIONS"><span class="nav-marker">•</span><span>M13. Решения для самопроверки</span></a></li><li data-key="M14-SOLUTIONS"><a href="#M14-SOLUTIONS" data-material="M14-SOLUTIONS"><span class="nav-marker">•</span><span>M14. Решения для самопроверки</span></a></li><li data-key="M15-SOLUTIONS"><a href="#M15-SOLUTIONS" data-material="M15-SOLUTIONS"><span class="nav-marker">•</span><span>M15. Решения для самопроверки</span></a></li><li data-key="M16-SOLUTIONS"><a href="#M16-SOLUTIONS" data-material="M16-SOLUTIONS"><span class="nav-marker">•</span><span>M16. Решения для самопроверки</span></a></li></ul></section>
@@ -16351,6 +16351,7 @@ $env:OTEL_EXPORTER_OTLP_HEADERS = 'Authorization=Basic ' + [Convert]::ToBase64St
 <li><a href="#M14-L05">M14-L05. Проверка агента</a></li>
 <li><a href="#M14-L06">M14-L06. Модель предлагает инструмент, исполнитель проверяет</a></li>
 <li><a href="#M14-L08X">M14-L08X. Безопасность LLM-приложений</a> — расширение 1.2.0, не входит в обязательный минимум; замороженные результаты работают без моделей</li>
+<li><a href="#M14-L09X">M14-L09X. MCP: свой сервер инструментов</a> — расширение 1.2.0, не входит в обязательный минимум; нужен необязательный пакет mcp</li>
 </ol>
 <p>Проходи уроки по порядку. На каждый выделяй сначала чтение и восстановление схемы, затем пример и самостоятельную попытку. Начальный ориентир: уроки около 14.5 ч, домашняя работа 4–9 ч, установка и повторение учитываются отдельно. Это плановая гипотеза, а не измеренное время ученика. При математическом или техническом пробеле добавь повторение и сохрани фактическое время отдельно.</p>
 <h2 id="M14--новые-обязательные-ступени">Новые обязательные ступени</h2>
@@ -17791,7 +17792,266 @@ assert statuses[&quot;allow_list&quot;][1] == &quot;denied&quot; and statuses[&q
 </table></div>
 <h2 id="M14-L08X--источники-и-углубление">Источники и углубление</h2>
 <p>OWASP 2025: <a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/" target="_blank" rel="noopener noreferrer" class="external-link">LLM01 Prompt Injection</a>, <a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/" target="_blank" rel="noopener noreferrer" class="external-link">LLM06 Excessive Agency</a>, <a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener noreferrer" class="external-link">весь список</a>. Редакция 2026 года — пока по вторичному источнику: <a href="https://cloudsecurityalliance.org/blog/2026/10/21/the-owasp-top-10-for-llm-applications-2026-what-changed-and-why-it-matters" target="_blank" rel="noopener noreferrer" class="external-link">Cloud Security Alliance</a>. Для агентов — <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" target="_blank" rel="noopener noreferrer" class="external-link">OWASP Top 10 for Agentic Applications 2026</a>. Косвенная инъекция впервые описана в работе <a href="https://arxiv.org/abs/2302.12173" target="_blank" rel="noopener noreferrer" class="external-link">Greshake и соавторов, 2023</a>. Spotlighting и datamarking — <a href="https://arxiv.org/abs/2403.14720" target="_blank" rel="noopener noreferrer" class="external-link">Hines и соавторы, 2024</a>. Домен <code>.test</code> зарезервирован для испытаний — <a href="https://www.rfc-editor.org/rfc/rfc2606" target="_blank" rel="noopener noreferrer" class="external-link">RFC 2606</a>. Классификатор для guardrails — <a href="https://huggingface.co/protectai/deberta-v3-base-prompt-injection-v2" target="_blank" rel="noopener noreferrer" class="external-link">карточка protectai/deberta-v3-base-prompt-injection-v2</a>, проверка номера карты — <a href="https://en.wikipedia.org/wiki/Luhn_algorithm" target="_blank" rel="noopener noreferrer" class="external-link">алгоритм Луна</a>.</p>
-<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l08x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L08X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L06"><small>Предыдущий раздел</small>← M14-L06. Модель предлагает инструмент, исполнитель проверяет</a><a href="#M15"><small>Следующий раздел</small>M15 Речь и голосовой диалог →</a></nav></article><article class="material" id="M15" data-title="M15 Речь и голосовой диалог" data-short-title="Речь и голосовой диалог" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Речь и голосовой диалог</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: M09, M11 и M13: диалог, метрики и диагностика.</p>
+<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l08x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L08X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L06"><small>Предыдущий раздел</small>← M14-L06. Модель предлагает инструмент, исполнитель проверяет</a><a href="#M14-L09X"><small>Следующий раздел</small>M14-L09X. MCP: свой сервер инструментов →</a></nav></article><article class="material" id="M14-L09X" data-title="M14-L09X. MCP: свой сервер инструментов" data-short-title="MCP: свой сервер инструментов" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L09X</span><span class="badge ready">Урок · Теория и практика</span></div><h1>MCP: свой сервер инструментов</h1><p class="outcome"><strong>После урока:</strong> написать MCP-сервер «база вопросов собеседования», который оборачивает уже существующие контракты инструментов курса, и подключить к нему планировщик M14 как MCP-клиент. Нужно увидеть протокол на проводе и объяснить, что изменилось в ревизии спецификации 2026-07-28.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M14-L02, M14-L03, M14-L06, M14-L08X. Нужен пакет <code>mcp</code> (Python SDK 2.3.0, <code>requirements-optional.in</code>). Тесты и записи обмена работают без модели; прогон планировщика требует llama.cpp и GGUF из M09-L07X. Ориентир — 180 минут чтения, сервера и задачи; это плановая гипотеза, а не измеренное время.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L09X--объяснение">Объяснение</a></li><li><a href="#M14-L09X--аналогия-сервис-с-openapi">Аналогия: сервис с OpenAPI</a></li><li><a href="#M14-L09X--разобранный-пример">Разобранный пример</a></li><li><a href="#M14-L09X--схема">Схема</a></li><li><a href="#M14-L09X--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L09X--самостоятельная-задача-a-m14-l09x-a">Самостоятельная задача A — M14-L09X-A</a></li><li><a href="#M14-L09X--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M14-L09X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L09X--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M14-L09X--карточка-урока">Карточка урока</a></li><li><a href="#M14-L09X--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Урок дополняет модуль, не входит в обязательный минимум 1.1.0.</p>
+
+
+<blockquote>
+<p><strong>Версии и дата проверки:</strong> Python 3.11.9; MCP Python SDK 2.3.0 (mcp-types 2.3.0); спецификация MCP 2026-07-28 и прежняя 2025-11-25; llama.cpp b11803, Qwen2.5-0.5B-Instruct и Qwen3.5-4B в Q4_K_M · проверено 07.11.2026 · источник: <a href="https://modelcontextprotocol.io/specification/2026-07-28" target="_blank" rel="noopener noreferrer" class="external-link">MCP Specification 2026-07-28</a></p>
+</blockquote>
+<h2 id="M14-L09X--объяснение">Объяснение</h2>
+<h3 id="M14-L09X--что-такое-mcp">Что такое MCP</h3>
+<p>Model Context Protocol (MCP) — открытый протокол между приложением с моделью и сервером инструментов. Сообщения — JSON-RPC 2.0. Сервер предлагает три вида возможностей:</p>
+<ul>
+<li><strong>инструменты</strong> (tools) — функции с JSON Schema аргументов и результата, их вызывает модель через клиента;</li>
+<li><strong>ресурсы</strong> (resources) — данные по URI, их читает само приложение;</li>
+<li><strong>шаблоны prompt</strong> (prompts) — заготовки сообщений для пользователя.</li>
+</ul>
+<p>Транспорт бывает двух видов. stdio: клиент запускает сервер дочерним процессом, и сообщения идут строками JSON через stdin и stdout. Streamable HTTP: сервер работает отдельно и принимает POST. Один сервер обслуживает любых клиентов: IDE, чат-приложение, собственного агента. Каждому не нужен свой код интеграции.</p>
+<p>В M14 контракт инструмента был словарём в коде исполнителя. В MCP тот же контракт становится <code>inputSchema</code> инструмента, а исполнитель — сервером. Правило M14-L06 не меняется: модель предлагает вызов, а сервер проверяет аргументы и решает, что выполнить. Правило M14-L03 тоже остаётся: область доступа берётся из конфигурации сервера или проверенной личности клиента, а не из аргументов, которые пишет модель.</p>
+<h3 id="M14-L09X--сервер-курса">Сервер курса</h3>
+<p><code>labs/M14/mcp_server.py</code> написан на <code>MCPServer</code> из Python SDK 2.3; в версии 1 этот класс назывался <code>FastMCP</code>. Новых возможностей сервер не добавляет, он оборачивает существующие:</p>
+<ul>
+<li><code>read_document</code> вызывает исполнитель M14 (<code>labs/M14/demo.py</code>). Сессия задаётся флагом <code>--session</code> при запуске процесса, поэтому лишний аргумент <code>session</code> от модели ничего не расширит;</li>
+<li><code>search_questions</code> и <code>get_question</code> читают синтетические наборы <code>data/interview</code>: 12 вопросов backend и 8 вопросов HR;</li>
+<li>ресурс <code>interview://questions/{question_id}</code> отдаёт тот же вопрос по URI.</li>
+</ul>
+<p>Результаты описаны типами (<code>TypedDict</code>), поэтому у каждого инструмента есть <code>outputSchema</code>, а клиент получает <code>structuredContent</code>. Все инструменты только читают, это объявлено аннотациями <code>readOnlyHint</code> и <code>destructiveHint</code>. Ошибка «нет вопроса» возвращается через <code>ToolError</code>: модель видит понятный текст, а не трассировку. Список инструментов не меняется, пока процесс жив, поэтому сервер разрешает клиенту кешировать <code>tools/list</code> на час.</p>
+<h3 id="M14-L09X--что-изменилось-в-ревизии-2026-07-28">Что изменилось в ревизии 2026-07-28</h3>
+<p>Ревизия 2026-07-28 сделала MCP протоколом без состояния. Каждый запрос теперь самодостаточен: сервер не хранит протокольную сессию, и на любой запрос может ответить любой экземпляр сервера за балансировщиком. Основные изменения по <a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog" target="_blank" rel="noopener noreferrer" class="external-link">списку изменений спецификации</a>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Было в 2025-11-25</th>
+  <th>Стало в 2026-07-28</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Рукопожатие <code>initialize</code> и <code>notifications/initialized</code></td>
+  <td>Рукопожатия нет: версия протокола, возможности и имя клиента идут в <code>_meta</code> каждого запроса</td>
+</tr>
+<tr>
+  <td>Сессия <code>Mcp-Session-Id</code> в HTTP</td>
+  <td>Сессий нет; состояние между вызовами — явные ручки, которые выдаёт сервер и которые передают обычным аргументом</td>
+</tr>
+<tr>
+  <td>Версия согласуется один раз</td>
+  <td>Метод <code>server/discover</code> обязателен: сервер сообщает версии и возможности по запросу</td>
+</tr>
+<tr>
+  <td>Сервер сам спрашивает клиента (<code>sampling/createMessage</code>, <code>elicitation/create</code>, <code>roots/list</code>)</td>
+  <td>Многошаговый запрос: сервер отвечает <code>resultType: &quot;input_required&quot;</code>, клиент повторяет запрос с ответами</td>
+</tr>
+<tr>
+  <td>Результат без типа</td>
+  <td>У каждого результата <code>resultType</code>: <code>complete</code> или <code>input_required</code></td>
+</tr>
+<tr>
+  <td><code>resources/subscribe</code> и HTTP GET</td>
+  <td><code>subscriptions/listen</code> — один поток уведомлений по подписке</td>
+</tr>
+<tr>
+  <td><code>ping</code>, <code>logging/setLevel</code></td>
+  <td>Удалены; уровень логов задаётся в <code>_meta</code> запроса</td>
+</tr>
+<tr>
+  <td>Задачи (tasks) в ядре</td>
+  <td>Задачи вынесены в официальное расширение</td>
+</tr>
+<tr>
+  <td>Нет подсказок кеша</td>
+  <td><code>ttlMs</code> и <code>cacheScope</code> у списков и чтения ресурсов, <code>tools/list</code> в устойчивом порядке</td>
+</tr>
+</tbody>
+</table></div>
+<p>Python SDK 2.x поддерживает обе ревизии. Клиент по умолчанию сначала вызывает <code>server/discover</code>. Если старый сервер не отвечает на этот метод, клиент выполняет прежнее рукопожатие. Ветка SDK 1.x (1.30.0) осталась для старого кода. Ошибка «ресурс не найден» сменила код с −32002 на −32602 (Invalid Params).</p>
+<p><a class="figure-expand" href="course/assets/M14-L09X.svg" target="_blank" data-figure="course/assets/M14-L09X.svg" aria-label="Увеличить рисунок: Обмен сообщениями по ревизиям 2025-11-25 и 2026-07-28 и результаты планировщика через MCP"><picture><img src="course/assets/M14-L09X.svg" alt="Обмен сообщениями по ревизиям 2025-11-25 и 2026-07-28 и результаты планировщика через MCP" loading="lazy"></picture></a><span class="figure-hint">Обмен сообщениями по ревизиям 2025-11-25 и 2026-07-28 и результаты планировщика через MCP · Открыть крупнее ↗</span></p>
+<p>Сопоставь рисунок с записью обмена: где в каждой ревизии передаётся версия протокола и почему справа нет уведомления.</p>
+<h2 id="M14-L09X--аналогия-сервис-с-openapi">Аналогия: сервис с OpenAPI</h2>
+<p>Backend-разработчик видел это в микросервисах. Сервис публикует описание OpenAPI, клиент читает его и вызывает нужный endpoint с телом по схеме. MCP устроен так же, только endpoint выбирает модель.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>MCP-сервер</td>
+  <td>Микросервис</td>
+</tr>
+<tr>
+  <td><code>tools/list</code> с <code>inputSchema</code></td>
+  <td>Файл <code>openapi.json</code> со схемами запросов</td>
+</tr>
+<tr>
+  <td><code>tools/call</code></td>
+  <td>POST на endpoint</td>
+</tr>
+<tr>
+  <td><code>outputSchema</code> и <code>structuredContent</code></td>
+  <td>Схема ответа и тело JSON</td>
+</tr>
+<tr>
+  <td>stdio-сервер как дочерний процесс</td>
+  <td>Плагин, который приложение запускает само</td>
+</tr>
+<tr>
+  <td><code>_meta</code> с версией в каждом запросе (2026-07-28)</td>
+  <td>Заголовки авторизации и версии API в каждом запросе вместо sticky-сессии</td>
+</tr>
+<tr>
+  <td><code>ttlMs</code> у <code>tools/list</code></td>
+  <td><code>Cache-Control: max-age</code> у описания API</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> endpoint выбирает не программист, а модель, и выбирает по тексту описания. Описание инструмента становится частью prompt. Неточное описание даёт неверный вызов, а описание от чужого сервера — это непроверенный текст, через который возможна инъекция (T40). Аннотация <code>readOnlyHint</code> от чужого сервера — подсказка, а не гарантия: проверку прав и подтверждение действий клиент оставляет у себя.</p>
+<section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M14-L09X--разобранный-пример">Разобранный пример</h2>
+<p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса. Пакет <code>mcp</code> для него не нужен: пример читает замороженную запись настоящего обмена по ревизии 2026-07-28 и строит из полученного списка инструментов схему действия для модели.</p>
+<pre><code class="language-python">import json
+from pathlib import Path
+
+from jsonschema import Draft202012Validator
+
+lines = Path(&quot;quality/mcp/wire-auto.jsonl&quot;).read_text(encoding=&quot;utf-8&quot;).splitlines()
+messages = [json.loads(json.loads(line)[&quot;line&quot;]) for line in lines]
+assert [m.get(&quot;method&quot;, &quot;result&quot;) for m in messages] == [&quot;server/discover&quot;, &quot;result&quot;, &quot;tools/list&quot;, &quot;result&quot;, &quot;tools/call&quot;, &quot;result&quot;]
+meta = messages[0][&quot;params&quot;][&quot;_meta&quot;]
+assert meta[&quot;io.modelcontextprotocol/protocolVersion&quot;] == &quot;2026-07-28&quot;  # версия в каждом запросе, а не в рукопожатии
+listing = messages[3][&quot;result&quot;]
+assert listing[&quot;resultType&quot;] == &quot;complete&quot; and listing[&quot;ttlMs&quot;] == 3_600_000  # список можно хранить час
+tools = listing[&quot;tools&quot;]
+assert [t[&quot;name&quot;] for t in tools] == [&quot;search_questions&quot;, &quot;get_question&quot;, &quot;read_document&quot;]
+
+variants = [{&quot;type&quot;: &quot;object&quot;, &quot;additionalProperties&quot;: False, &quot;required&quot;: [&quot;tool&quot;, &quot;args&quot;],
+             &quot;properties&quot;: {&quot;tool&quot;: {&quot;const&quot;: t[&quot;name&quot;]}, &quot;args&quot;: dict(t[&quot;inputSchema&quot;], additionalProperties=False)}}
+            for t in tools]
+action = Draft202012Validator({&quot;anyOf&quot;: variants})
+assert action.is_valid({&quot;tool&quot;: &quot;read_document&quot;, &quot;args&quot;: {&quot;document_id&quot;: &quot;d1&quot;}})
+assert not action.is_valid({&quot;tool&quot;: &quot;read_document&quot;, &quot;args&quot;: {&quot;document_id&quot;: &quot;d2&quot;, &quot;session&quot;: &quot;s2&quot;}})  # права не аргумент
+assert not action.is_valid({&quot;tool&quot;: &quot;delete_document&quot;, &quot;args&quot;: {&quot;document_id&quot;: &quot;d1&quot;}})               # такого инструмента нет
+</code></pre>
+<p>Сервер сообщил модели, что вообще можно сделать. Схема из его <code>inputSchema</code> не даёт модели ни придумать инструмент, ни добавить аргумент, которого нет в контракте.</p>
+<h3 id="M14-L09X--авторский-прогон-07-11-2026">Авторский прогон 07.11.2026</h3>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m pip install -r requirements-optional.in
+.\.venv\Scripts\python.exe labs\M14\mcp_planner.py wire
+.\.venv\Scripts\python.exe labs\M14\mcp_planner.py report
+</code></pre>
+<p><strong>Обмен на проводе.</strong> <code>wire</code> дважды запускает настоящий сервер через прослушку stdio (<code>labs/M14/mcp_tap.py</code>). Клиент оба раза делает одно и то же: <code>list_tools</code> и один вызов <code>read_document</code>.</p>
+<ul>
+<li><strong>2026-07-28:</strong> <code>server/discover</code> → ответ, <code>tools/list</code> → ответ, <code>tools/call</code> → ответ. Это 3 запроса, и в каждом <code>_meta</code> несёт версию, возможности и имя клиента; в каждом ответе есть <code>serverInfo</code> и <code>resultType</code>.</li>
+<li><strong>2025-11-25:</strong> <code>initialize</code> → ответ, уведомление <code>notifications/initialized</code>, <code>tools/list</code> → ответ, <code>tools/call</code> → ответ. Это 3 запроса и уведомление, <code>_meta</code> нет.</li>
+</ul>
+<p>Ответ на <code>tools/list</code> по ревизии 2026-07-28 несёт <code>ttlMs</code> = 3 600 000 и <code>cacheScope</code> = <code>private</code>, как задал сервер. Результаты инструментов в обеих ревизиях одинаковы, и тест это проверяет.</p>
+<p><strong>Планировщик через MCP.</strong> Семь задач с проверкой кодом, модель получает инструменты из <code>tools/list</code>, клиент работает по stdio:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Показатель</th>
+  <th>0.5B</th>
+  <th>4B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Задач решено</td>
+  <td>0 из 7</td>
+  <td>6 из 7</td>
+</tr>
+<tr>
+  <td>Задач закончено</td>
+  <td>0 из 7</td>
+  <td>7 из 7</td>
+</tr>
+<tr>
+  <td>Вызовов инструментов</td>
+  <td>28</td>
+  <td>9</td>
+</tr>
+<tr>
+  <td>Вызовов с ошибкой</td>
+  <td>4</td>
+  <td>0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Что показал прогон:</p>
+<ul>
+<li><strong>0.5B вызывает инструменты, но не работает с ними.</strong> Схема не дала ей ошибиться в форме: все 28 вызовов — существующие инструменты с аргументами нужной формы. Но она повторяла один и тот же вызов до конца бюджета и ни разу не закончила. Запросы к поиску она писала транслитом («idem», «parametrizovaniye»), а <code>get_question</code> четыре раза вызвала с выдуманным id 1234567890. Схема проверяет форму, а не смысл: такой id сервер отклонил ошибкой.</li>
+<li><strong>4B справилась почти со всем за 9 вызовов.</strong> На каждую задачу ей хватило одного-трёх вызовов. Документ d2 она прочитать не смогла и ответила, что он недоступен: сервер вернул <code>not_available</code>, и выдумывать текст модель не стала.</li>
+<li><strong>Единственную неудачу 4B дал инструмент, а не модель.</strong> В задаче про HR-вопрос о помощи модель трижды правильно вызвала <code>search_questions(&quot;просит помощи&quot;)</code>, а поиск ничего не нашёл. Сервер сравнивает слова по первым шести буквам, и «просит» не совпало с «просишь», а «помощи» — с «помощь». Трасса вызовов отделяет ошибку модели от ошибки инструмента: аргументы верные, пустой результат пришёл от сервера.</li>
+</ul>
+<p>У автора прогон занял меньше минуты на 0.5B и около трёх минут на 4B.</p>
+</section><h2 id="M14-L09X--схема">Схема</h2>
+<figure class="diagram"><pre class="mermaid">flowchart TD
+    U[&quot;Задача пользователя&quot;] --&gt; P[&quot;Планировщик: модель&quot;]
+    T[&quot;tools/list: имена, описания, inputSchema&quot;] --&gt; S[&quot;Схема действия для модели&quot;]
+    S --&gt; P
+    P --&gt; C[&quot;MCP-клиент: _meta с версией 2026-07-28&quot;]
+    C --&gt; R[&quot;MCP-сервер по stdio&quot;]
+    R --&gt; E[&quot;Исполнитель M14: сессия из --session&quot;]
+    E --&gt; D[&quot;data/interview и документы сессии&quot;]
+    R --&gt; O[&quot;structuredContent по outputSchema&quot;]
+    O --&gt; P
+    classDef main fill:#e8f0fe,stroke:#245bba,stroke-width:2px,color:#182b3a
+    class S,C,R,E main
+</pre></figure>
+<p>Планировщик как MCP-клиент. Модель видит инструменты из <code>tools/list</code>, а её ответ ограничен схемой, собранной из их <code>inputSchema</code>. Клиент передаёт вызов серверу по stdio, и каждый запрос несёт версию протокола в <code>_meta</code>. Сервер вызывает прежний исполнитель M14. Область сессии исполнитель берёт из флага запуска, а не из аргументов модели. Ответ возвращается структурированным по <code>outputSchema</code> и уходит модели как данные. Выделен путь от схемы до исполнителя: здесь проверяется, что модель вообще может сделать.</p>
+<section class="lesson-stage" data-stage="practice"><span class="stage-label">Пробуем с поддержкой</span><h2 id="M14-L09X--практика-с-поддержкой">Практика с поддержкой</h2>
+<p><strong>Предскажи до запуска.</strong> Прежде чем запускать код, запиши ожидаемый вывод: сколько сообщений уйдёт серверу в каждой ревизии протокола, какая модель решит больше задач и на каком шаге маленькая модель собьётся. После запуска сравни с фактическим и объясни каждое расхождение.</p>
+<ol>
+<li>Выполни <code>.\.venv\Scripts\python.exe labs\M14\mcp_planner.py wire</code>. Открой <code>artifacts/M14/mcp/wire-auto.jsonl</code> и <code>wire-legacy.jsonl</code>, найди в них <code>server/discover</code>, <code>initialize</code> и поле <code>_meta</code>.</li>
+<li>Выполни <code>.\.venv\Scripts\python.exe labs\M14\mcp_planner.py report</code> и сверь с таблицей авторского прогона. В <code>quality/mcp/planner.jsonl</code> найди задачу <code>read-d2</code> и объясни, откуда модель узнала, что документ недоступен.</li>
+<li>Запусти сервер вручную <code>.\.venv\Scripts\python.exe labs\M14\mcp_server.py --session s2</code> и подключись к нему из Python через <code>Client(StdioServerParameters(...))</code>. Какой документ теперь доступен?</li>
+<li>Если модели скачаны, повтори прогон: <code>.\.venv\Scripts\python.exe labs\M14\mcp_planner.py run --models tiny</code>.</li>
+</ol>
+</section><section class="lesson-stage" data-stage="task"><span class="stage-label">Твоя попытка</span><h2 id="M14-L09X--самостоятельная-задача-a-m14-l09x-a">Самостоятельная задача A — M14-L09X-A</h2>
+<p>Добавь в сервер собеседование с состоянием, не нарушая протокола без состояния. Нужны два инструмента. <code>start_interview(track)</code> начинает собеседование по треку и возвращает ручку. <code>next_question(handle)</code> отдаёт следующий ещё не заданный вопрос. Состояние живёт на сервере под ручкой, а не в протокольной сессии: её в 2026-07-28 нет. Покажи, что второе соединение с той же ручкой продолжает то же собеседование, а угаданная ручка отклоняется. Объясни, почему ручка не должна быть номером по порядку.</p>
+</section><details class="hints" id="M14-L09X--подсказки-по-очереди"><summary>Подсказки по очереди</summary><div>
+<ol>
+<li>Новые инструменты регистрируются на уже построенном сервере декоратором <code>@server.tool()</code>.</li>
+<li>Состояние — словарь «ручка → очередь id вопросов» в памяти процесса сервера.</li>
+<li>Непредсказуемую ручку даёт <code>secrets.token_urlsafe</code>.</li>
+<li>Ошибку, которую должна прочитать модель, бросают как <code>ToolError</code>.</li>
+</ol>
+</div></details>
+<h2 id="M14-L09X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</h2>
+<p><strong>Критерии до попытки:</strong> инструменты сервера оборачивают существующие контракты; область доступа не зависит от аргументов модели; у результатов есть схема; ошибка понятна модели; клиент проверен на обеих ревизиях протокола; модель не может назвать несуществующий инструмент. Для самостоятельного зачёта объясни без открытого кода, чем ручка отличается от протокольной сессии, и найди в записи обмена, где передаётся версия протокола.</p>
+<p><strong>Типичные ошибки:</strong> передавать сессию или права аргументом инструмента; доверять <code>readOnlyHint</code> чужого сервера; описывать инструмент так, что модель путает его с соседним; ждать от протокола 2026-07-28 сессии, которой в нём нет; выдавать ручки по порядку, так что их можно угадать.</p>
+<section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M14-L09X--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
+<p><strong>Повтор B:</strong> клиент открывает новое соединение и делает один <code>tools/list</code> и три <code>tools/call</code>. Сколько сообщений он отправит серверу по ревизии 2025-11-25 и сколько по 2026-07-28, если <code>server/discover</code> вызывает один раз? Что изменится, если результат <code>tools/list</code> с <code>ttlMs</code> = 3 600 000 уже лежит в кеше клиента? <strong>Отложенная C:</strong> реши, какие части тренажёра вынести в MCP-серверы: базу вопросов, рубрики, распознавание речи, отправку отчёта. Для каждого реши, нужен ли инструмент или хватит ресурса, откуда сервер возьмёт права пользователя без протокольной сессии и какие действия потребуют подтверждения. <a href="#M14-SOLUTIONS--m14-l09x-a">Ключи</a> открывай после сохранения попытки.</p>
+</section><h2 id="M14-L09X--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>MCP-сервер — исполнитель инструментов. Контракт задают <code>inputSchema</code> и <code>outputSchema</code>, права берутся из конфигурации или проверенной личности клиента, а не из аргументов. Описания инструментов — часть prompt. В ревизии 2026-07-28 протокольной сессии нет, и состояние держат под ручкой, которую выдал сервер</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Версия протокола в <code>_meta</code> каждого запроса; <code>resultType</code> — завершён ли запрос; <code>ttlMs</code> и <code>cacheScope</code> — сколько и где можно хранить список. Решено — задача прошла проверку кодом; вызовов — сколько раз модель обращалась к серверу</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Когда один набор инструментов нужен нескольким приложениям или агентам. Пример: 4B решила 6 задач из 7 за 9 вызовов, 0.5B — 0 из 7 за 28. По 2025-11-25 клиент сначала шлёт <code>initialize</code> и уведомление, по 2026-07-28 — сразу запросы с версией в <code>_meta</code></td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Передавать права аргументом инструмента, верить аннотациям чужого сервера и путать ошибку инструмента с ошибкой модели</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M14-L09X--источники-и-углубление">Источники и углубление</h2>
+<p>Спецификация: <a href="https://modelcontextprotocol.io/specification/2026-07-28" target="_blank" rel="noopener noreferrer" class="external-link">MCP 2026-07-28</a> и <a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog" target="_blank" rel="noopener noreferrer" class="external-link">список изменений</a>. Обсуждения изменений: <a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2575" target="_blank" rel="noopener noreferrer" class="external-link">SEP-2575 — протокол без состояния</a>, <a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2567" target="_blank" rel="noopener noreferrer" class="external-link">SEP-2567 — без протокольных сессий</a>. Python SDK: <a href="https://github.com/modelcontextprotocol/python-sdk" target="_blank" rel="noopener noreferrer" class="external-link">репозиторий</a> и <a href="https://py.sdk.modelcontextprotocol.io/v2/migration/" target="_blank" rel="noopener noreferrer" class="external-link">переход на версию 2</a>.</p>
+<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l09x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L09X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L08X"><small>Предыдущий раздел</small>← M14-L08X. Безопасность LLM-приложений</a><a href="#M15"><small>Следующий раздел</small>M15 Речь и голосовой диалог →</a></nav></article><article class="material" id="M15" data-title="M15 Речь и голосовой диалог" data-short-title="Речь и голосовой диалог" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Речь и голосовой диалог</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: M09, M11 и M13: диалог, метрики и диагностика.</p>
 <h2 id="M15--уроки-и-практические-ступени">Уроки и практические ступени</h2>
 <ol>
 <li><a href="#M15-L01">M15-L01. Аудио и речь</a></li>
@@ -17969,7 +18229,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M15.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M15.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L08X"><small>Предыдущий раздел</small>← M14-L08X. Безопасность LLM-приложений</a><a href="#M15-L01"><small>Следующий раздел</small>M15-L01. Аудио и речь →</a></nav></article><article class="material" id="M15-L01" data-title="M15-L01. Аудио и речь" data-short-title="Аудио и речь" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Аудио и речь</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L01--объяснение">Объяснение</a></li><li><a href="#M15-L01--аналогия-несжатое-изображение-и-видео">Аналогия: несжатое изображение и видео</a></li><li><a href="#M15-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M15-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L01--карточка-урока">Карточка урока</a></li><li><a href="#M15-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+"></iframe><p><a href="course/visuals/M15.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M15.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L09X"><small>Предыдущий раздел</small>← M14-L09X. MCP: свой сервер инструментов</a><a href="#M15-L01"><small>Следующий раздел</small>M15-L01. Аудио и речь →</a></nav></article><article class="material" id="M15-L01" data-title="M15-L01. Аудио и речь" data-short-title="Аудио и речь" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Аудио и речь</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L01--объяснение">Объяснение</a></li><li><a href="#M15-L01--аналогия-несжатое-изображение-и-видео">Аналогия: несжатое изображение и видео</a></li><li><a href="#M15-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M15-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L01--карточка-урока">Карточка урока</a></li><li><a href="#M15-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, Vosk 0.3.45 и vosk-model-small-ru-0.22; синтез — Windows System.Speech с голосом Microsoft Irina Desktop · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/wave.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: wave</a></p>
 </blockquote>
@@ -22380,7 +22640,78 @@ print(len(found), false)
 <li>в регрессионный набор M11-L07X добавляется случай с такой просьбой.</li>
 </ul>
 <p>Инструменты модели-оценщику не нужны, их у неё быть не должно: оценка — чтение и вывод. Если тренажёр начнёт отправлять отчёт по почте, отправку делает код приложения по кнопке пользователя. Адрес берётся из профиля, а не из ответа модели, и перед отправкой пользователь видит текст и подтверждает его.</p>
-<nav class="answer-actions" aria-label="После самопроверки"><a href="#M14-L08X" data-return-task="M14-L08X">← Вернуться к задаче</a><a href="#M14-L08X" data-return-retry="M14-L08X">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M14.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M14"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M15-SOLUTIONS" data-title="M15. Решения для самопроверки" data-short-title="M15. Решения для самопроверки" data-kind="answer" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M15. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Версия 1.1.0. Открывай после собственной попытки. Данные реального ученика и результаты участия людей здесь не выдумываются.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M14-L08X" data-return-task="M14-L08X">← Вернуться к задаче</a><a href="#M14-L08X" data-return-retry="M14-L08X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M14-SOLUTIONS--m14-l09x-a"><summary>Ответ: M14-L09X-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M14-L09X" data-return-task="M14-L09X">← Вернуться к задаче</a><a href="#M14-L09X" data-return-retry="M14-L09X">Новый вариант B / C →</a></nav>
+<p>Решение работает в одном процессе: два клиента подключаются к одному серверу без stdio. Пакет <code>mcp</code> нужен.</p>
+<pre><code class="language-python">import asyncio
+import importlib.util
+import json
+import secrets
+
+if importlib.util.find_spec(&quot;mcp&quot;) is None:  # mcp is optional: requirements-optional.in
+    print(&quot;пакет mcp не установлен, ключ пропущен&quot;)
+    raise SystemExit(0)
+
+from mcp import Client  # noqa: E402
+from mcp.server.mcpserver.exceptions import ToolError  # noqa: E402
+
+spec = importlib.util.spec_from_file_location(&quot;mcp_server&quot;, &quot;labs/M14/mcp_server.py&quot;)
+srv = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(srv)
+server = srv.build(&quot;s1&quot;)
+bank = srv.questions()
+interviews = {}  # handle -&gt; question ids still to ask; lives in the server, not in a protocol session
+
+
+@server.tool()
+def start_interview(track: str) -&gt; dict:
+    &quot;&quot;&quot;Начать собеседование по треку; вернуть ручку, которую передают в next_question.&quot;&quot;&quot;
+    if track not in (&quot;backend&quot;, &quot;hr&quot;):
+        raise ToolError(&quot;трек: backend или hr&quot;)
+    handle = secrets.token_urlsafe(16)  # minted by the server and unguessable: it is a capability, not a counter
+    interviews[handle] = [q[&quot;id&quot;] for q in bank if q[&quot;track&quot;] == track]
+    return {&quot;handle&quot;: handle, &quot;remaining&quot;: len(interviews[handle])}
+
+
+@server.tool()
+def next_question(handle: str) -&gt; dict:
+    &quot;&quot;&quot;Следующий ещё не заданный вопрос собеседования по ручке.&quot;&quot;&quot;
+    if handle not in interviews:
+        raise ToolError(&quot;неизвестная ручка&quot;)
+    queue = interviews[handle]
+    return {&quot;done&quot;: True} if not queue else {&quot;done&quot;: False, &quot;id&quot;: queue.pop(0), &quot;remaining&quot;: len(queue)}
+
+
+def data(result):
+    return json.loads(result.content[0].text)
+
+
+async def main():
+    async with Client(server) as first, Client(server) as second:  # two separate connections to one server
+        handle = data(await first.call_tool(&quot;start_interview&quot;, {&quot;track&quot;: &quot;hr&quot;}))[&quot;handle&quot;]
+        a = data(await first.call_tool(&quot;next_question&quot;, {&quot;handle&quot;: handle}))
+        b = data(await second.call_tool(&quot;next_question&quot;, {&quot;handle&quot;: handle}))  # the handle, not the connection, carries state
+        guess = await second.call_tool(&quot;next_question&quot;, {&quot;handle&quot;: &quot;1&quot;})
+        return a, b, guess
+
+
+a, b, guess = asyncio.run(main())
+assert (a[&quot;id&quot;], b[&quot;id&quot;]) == (&quot;HR01&quot;, &quot;HR02&quot;) and b[&quot;remaining&quot;] == 6
+assert guess.is_error and &quot;неизвестная ручка&quot; in guess.content[0].text
+print(a, b)
+</code></pre>
+<p>Состояние живёт в словаре сервера под ручкой. Второе соединение с той же ручкой получило следующий вопрос HR02: протокольной сессии нет, и связывает вызовы только ручка. Угаданная ручка «1» отклонена понятной ошибкой.</p>
+<p>Ручка — это право продолжить чужое собеседование: у кого она есть, тот и продолжает. Номер по порядку легко перебрать, и тогда один кандидат увидит вопросы другого. Поэтому ручку выдаёт сервер, она случайная и длинная, а в настоящем сервисе ещё и привязана к пользователю и имеет срок жизни. Словарь в памяти пропадает при перезапуске и не виден другим экземплярам за балансировщиком: в проде состояние под ручкой хранят в базе или Redis.</p>
+<p>Критические ошибки: держать состояние в соединении и ждать, что следующий вызов придёт в него же; выдавать ручки по порядку; принимать от модели имя пользователя аргументом вместо проверенной личности клиента.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M14-L09X" data-return-task="M14-L09X">← Вернуться к задаче</a><a href="#M14-L09X" data-return-retry="M14-L09X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M14-SOLUTIONS--m14-l09x-b-c"><summary>Ответ: M14-L09X-B-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M14-L09X" data-return-task="M14-L09X">← Вернуться к задаче</a><a href="#M14-L09X" data-return-retry="M14-L09X">Новый вариант B / C →</a></nav>
+<p><strong>B.</strong> По ревизии 2025-11-25 клиент отправит 6 сообщений: <code>initialize</code>, уведомление <code>notifications/initialized</code>, <code>tools/list</code> и три <code>tools/call</code>. Это пять запросов и одно уведомление, и рукопожатие повторяется на каждом новом соединении. По 2026-07-28 уйдёт 5 запросов: <code>server/discover</code>, <code>tools/list</code> и три <code>tools/call</code>, каждый с версией протокола и сведениями о клиенте в <code>_meta</code>. Если <code>tools/list</code> с <code>ttlMs</code> = 3 600 000 уже в кеше и не устарел, запросов станет 4. Если клиент уже знает версию сервера, он может не вызывать необязательный <code>server/discover</code>, и останутся 3 вызова. Запросы по 2026-07-28 длиннее на поля <code>_meta</code>, зато ни один не зависит от предыдущего.</p>
+<p><strong>C.</strong> Разумное деление:</p>
+<ul>
+<li>база вопросов и рубрики — сервер с ресурсами и инструментами только для чтения, как в уроке;</li>
+<li>распознавание речи — инструмент, потому что это вычисление по входному аудио, а не данные по URI;</li>
+<li>отправка отчёта — отдельный инструмент с <code>destructiveHint: true</code>, и выполнять его можно только после подтверждения пользователя, как в M14-L08X.</li>
+</ul>
+<p>Без протокольной сессии права пользователя берутся из проверенной личности клиента: OAuth-токена в HTTP-транспорте или конфигурации процесса для stdio. Права не берутся из аргументов модели. Ход собеседования хранят под ручкой, которую выдал сервер (задача A). Подтверждение отправки и любые изменения данных проверяет приложение-клиент, а не описание инструмента на чужом сервере.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M14-L09X" data-return-task="M14-L09X">← Вернуться к задаче</a><a href="#M14-L09X" data-return-retry="M14-L09X">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M14.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M14"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M15-SOLUTIONS" data-title="M15. Решения для самопроверки" data-short-title="M15. Решения для самопроверки" data-kind="answer" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M15. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Версия 1.1.0. Открывай после собственной попытки. Данные реального ученика и результаты участия людей здесь не выдумываются.</p>
 <details class="answer-key" id="M15-SOLUTIONS--m15-l01"><summary>Ответ: M15-L01</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M15-L01" data-return-task="M15-L01">← Вернуться к задаче</a><a href="#M15-L01" data-return-retry="M15-L01">Новый вариант B / C →</a></nav>
 <p><strong>Условие:</strong> Рассчитай объём несжатой полезной части 30 секунд аудио:48000 Гц, два канала, PCM16. Затем рассчитай объём после корректного преобразования в 16000 Гц, моно, PCM16. Объясни, почему изменение только заголовка не является преобразованием.</p>
 <p><strong>Обоснованное решение:</strong> Исходный размер 30·48000·2·2=5760000 байтов. После преобразования 30·16000·1·2=960000 байтов. Это десятичные байты, без заголовка и метаданных. Объём уменьшился в шесть раз. Изменение заголовка заставит воспроизводитель интерпретировать прежние отсчёты с другой скоростью, изменив длительность и высоту. Корректное преобразование вычисляет новые отсчёты и смешивает каналы по принятому правилу, сохраняя временной масштаб.</p>
@@ -24073,7 +24404,7 @@ print(len(found), false)
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 111 из 111 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 112 из 112 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -24768,6 +25099,13 @@ print(len(found), false)
 <li><strong>Смысл величин.</strong> Доля успешных атак — ответы с маркером атаки, делённые на случаи, где отравленный текст дошёл до модели. Попытка — модель предложила опасный вызов. Вред — код его выполнил. Цена меры — потерянные чистые ответы или задачи.</li>
 <li><strong>Когда применять.</strong> Всегда, когда модель читает чужой текст или вызывает инструменты. Пример: на 4B поддельная роль <code>system</code> в документе сработала в 10 случаях из 10, после экранирования и тегов — в 3, с datamarking — в 0. Письмо атакующему модель отправляла в 5 задачах из 5, а с allow-list или подтверждением вреда не было ни разу.</li>
 <li><strong>Главная ошибка.</strong> Считать защитой просьбу к модели, давать агенту все инструменты «на всякий случай» и проверять меру на запросах, куда атака не дошла.</li>
+</ul>
+<h3 id="CHEATSHEET--m14-l09x-mcp-свой-сервер-инструментов"><a href="#M14-L09X">M14-L09X. MCP: свой сервер инструментов</a></h3>
+<ul>
+<li><strong>Правило.</strong> MCP-сервер — исполнитель инструментов. Контракт задают <code>inputSchema</code> и <code>outputSchema</code>, права берутся из конфигурации или проверенной личности клиента, а не из аргументов. Описания инструментов — часть prompt. В ревизии 2026-07-28 протокольной сессии нет, и состояние держат под ручкой, которую выдал сервер.</li>
+<li><strong>Смысл величин.</strong> Версия протокола в <code>_meta</code> каждого запроса; <code>resultType</code> — завершён ли запрос; <code>ttlMs</code> и <code>cacheScope</code> — сколько и где можно хранить список. Решено — задача прошла проверку кодом; вызовов — сколько раз модель обращалась к серверу.</li>
+<li><strong>Когда применять.</strong> Когда один набор инструментов нужен нескольким приложениям или агентам. Пример: 4B решила 6 задач из 7 за 9 вызовов, 0.5B — 0 из 7 за 28. По 2025-11-25 клиент сначала шлёт <code>initialize</code> и уведомление, по 2026-07-28 — сразу запросы с версией в <code>_meta</code>.</li>
+<li><strong>Главная ошибка.</strong> Передавать права аргументом инструмента, верить аннотациям чужого сервера и путать ошибку инструмента с ошибкой модели.</li>
 </ul>
 <h2 id="CHEATSHEET--m15-речь-и-голосовой-диалог">M15. Речь и голосовой диалог</h2>
 <h3 id="CHEATSHEET--m15-l01-аудио-и-речь"><a href="#M15-L01">M15-L01. Аудио и речь</a></h3>

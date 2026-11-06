@@ -2,3 +2,5 @@
 # Install into the project environment only: .\.venv\Scripts\python.exe -m pip install -r requirements-optional.in
 # M10-L08X (T34): vector store in one SQLite file, exact search, offline; MIT or Apache-2.0.
 sqlite-vec==0.1.9
+# M14-L09X (T42): MCP Python SDK 2.x, protocol revisions 2026-07-28 and 2025-11-25; MIT.
+mcp==2.3.0
