@@ -9,6 +9,7 @@
     "labs/M09/llama_serving.py",
     "labs/M09/structured_output.py",
     "labs/M10/contextual_retrieval.py",
-    "labs/M11/error_analysis.py report"
+    "labs/M11/error_analysis.py report",
+    "labs/M11/promptfoo_eval.py run"
   ]
 }

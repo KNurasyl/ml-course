@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="868544a35ce233155a0aea71e17fd89784a73df4638efa946a2a490639bc7303"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="743aabe5d3e944449055e5aee9ee3b336efeff62716a26c18129c52d5fe44b2e"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -13399,6 +13399,84 @@ assert release is False
 </code></pre>
 <p>Сравнение выдаёт HR и backend отдельно, также разделяет development/check. Порог допуска выбран до запуска: нет критических ошибок, средний grounded не ниже 1.5, доля хотя бы частично полезных отзывов не ниже 0.75 и не более половины fallback. Это учебная политика; её можно изменить для иной цели <strong>до нового опыта</strong>, сохранив прежний результат.</p>
 <p>Bootstrap пересэмплирует сценарии. Если один сценарий имеет несколько перефразировок, сначала считается его среднее изменение; каждый сценарий получает одинаковый вес. Два сценария в подгруппе дают крайне слабое основание для обобщения: вычисляемый интервал помогает увидеть механизм, но не доказывает пользу продукта для всех кандидатов. Увеличивать число перефразировок одного сценария вместо независимых сценариев недостаточно.</p>
+<h3 id="M11-L06--расширение-1-2-0-тот-же-набор-в-promptfoo">Расширение 1.2.0: тот же набор в promptfoo</h3>
+<p><strong>Расширение 1.2.0.</strong> Раздел дополняет урок и не входит в обязательный минимум 1.1.0. Нужны Node.js 22.22 или новее и модели GGUF из M09-L07X.</p>
+<blockquote>
+<p><strong>Версии и дата проверки:</strong> promptfoo 0.124.1 через npx, Node.js 24.15.0, llama.cpp b11803, Qwen2.5-0.5B-Instruct и Qwen3.5-4B в Q4_K_M · проверено 06.11.2026 · источник: <a href="https://www.promptfoo.dev/docs/intro/" target="_blank" rel="noopener noreferrer" class="external-link">документация promptfoo</a></p>
+</blockquote>
+<p>Собственный harness курса написан на Python. Он знает контракт ответа M09-L05, хранит ответы и разметку и применяет правило выпуска. promptfoo — открытый инструмент на Node.js для автоматической части того же цикла. В YAML перечисляют prompts, providers (модели) и tests (переменные и проверки, assertions). promptfoo прогоняет каждый тест на каждой модели и показывает матрицу «случай × модель». Отчёт пишется в JSON, HTML, CSV или JUnit XML. Если хоть одна проверка не прошла, процесс завершается с кодом 100. По этому коду CI остановит изменение prompt, пока набор не станет зелёным.</p>
+<p>Для backend-разработчика это Jest для prompt: набор случаев — <code>describe</code>, assertion — <code>expect</code>, профиль модели — окружение прогона. Аналогия ломается на детерминизме. Результат обычного теста зависит только от кода. Ответ модели зависит ещё от весов, квантования, шаблона чата и параметров генерации, поэтому зелёный прогон на одной модели ничего не говорит о другой.</p>
+<p>Набор взят из M09-L08X: 24 ответа на собеседовании с эталонной оценкой. Профили — две модели того урока, у каждой свой llama-server: tiny (Qwen2.5-0.5B) на порту 18080 и strong (Qwen3.5-4B) на 18081. Запрос тот же, что в режиме prompt_only: температура 0, не больше 160 токенов, seed 17, без кэша prompt. У strong выключено мышление. Поля, которых нет среди настроек promptfoo, передаёт <code>passthrough</code>. На каждый случай три проверки:</p>
+<ul>
+<li><code>is-json</code> со схемой <code>feedback.schema.json</code> (метрика schema);</li>
+<li>контракт M09-L05 из <code>checks.js</code> (contract);</li>
+<li>совпадение оценки с эталоном (score).</li>
+</ul>
+<p>С Python нужно держать в согласии две вещи. Первая — сам набор. <code>prompt.json</code>, <code>cases.jsonl</code> и <code>feedback.schema.json</code> генерирует из <code>labs/M09/structured_output.py</code> команда <code>promptfoo_eval.py sync</code>, а тест падает, если файлы разошлись с Python. Вторая — контракт. promptfoo его не знает, поэтому он написан ещё раз на JavaScript, и у одного правила стало две реализации. Очевидный перенос (<code>JSON.parse</code>, <code>Number.isInteger</code>, <code>trim()</code>) расходится с <code>demo.validate_feedback</code> в 5 строках из 20 краевых:</p>
+<ul>
+<li><code>JSON.parse</code> превращает <code>1.0</code> и <code>1e0</code> в целое 1, а Python оставляет float, и контракт его отклоняет;</li>
+<li><code>trim()</code> и метод Python <code>strip()</code> убирают разные пробельные символы, это ещё три строки.</li>
+</ul>
+<p>Поэтому <code>checks.js</code> читает исходный текст числа и повторяет набор пробелов Python. <code>tests/test_promptfoo_eval.py</code> гоняет обе реализации в настоящем Node на одних и тех же строках.</p>
+<p>Перед запуском три настройки приватности. Телеметрия promptfoo включена по умолчанию, её выключает <code>PROMPTFOO_DISABLE_TELEMETRY=1</code>. <code>PROMPTFOO_CONFIG_DIR</code> держит базу результатов и логи в <code>artifacts</code>. <code>useDefaultApiKey: false</code> в конфиге не даёт отправить локальному серверу <code>OPENAI_API_KEY</code> из окружения. Обёртка выставляет всё это сама:</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe labs\M11\promptfoo_eval.py run
+</code></pre>
+<p>Она поднимает оба сервера и запускает <code>npx --yes promptfoo@0.124.1 eval</code>. Глобально ничего не ставится. Первый запуск скачивает пакет со всеми зависимостями в кэш npm (<code>%LOCALAPPDATA%\npm-cache\_npx</code>): у автора это заняло 2 мин 42 с и 1.4 ГБ на диске. Затем обёртка пересчитывает каждую проверку на Python: схему через jsonschema, контракт через <code>demo.validate_feedback</code>, оценку против эталона. Итог и все расхождения пишутся в <code>artifacts/M11/promptfoo/comparison.json</code>.</p>
+<p>Без обёртки серверы запускают в двух окнах PowerShell, а promptfoo — в третьем:</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe labs\M09\llama_local.py serve qwen2.5-0.5b-instruct-q4_k_m
+.\.venv\Scripts\python.exe labs\M09\llama_local.py serve qwen3.5-4b-q4_k_m --port 18081
+$env:PROMPTFOO_DISABLE_TELEMETRY = '1'
+$env:PROMPTFOO_DISABLE_UPDATE = '1'
+$env:PROMPTFOO_CONFIG_DIR = &quot;$PWD\artifacts\M11\promptfoo\home&quot;
+npx --yes promptfoo@0.124.1 eval -c labs\M11\promptfoo\promptfooconfig.yaml --no-cache --no-share
+npx --yes promptfoo@0.124.1 view
+</code></pre>
+<p><code>view</code> открывает локальный веб-интерфейс с той же матрицей.</p>
+<p>Авторский прогон 06.11.2026, 24 случая на профиль, по одному запросу за раз:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Показатель</th>
+  <th>tiny</th>
+  <th>strong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Прошли схему JSON</td>
+  <td>21</td>
+  <td>24</td>
+</tr>
+<tr>
+  <td>Прошли контракт M09-L05</td>
+  <td>21</td>
+  <td>24</td>
+</tr>
+<tr>
+  <td>Оценка совпала с эталоном</td>
+  <td>9</td>
+  <td>18</td>
+</tr>
+<tr>
+  <td>Расхождений promptfoo и Python</td>
+  <td>0</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>Текст как в M09-L08X</td>
+  <td>24</td>
+  <td>24</td>
+</tr>
+<tr>
+  <td>Время ответа, медиана</td>
+  <td>1.0 с</td>
+  <td>9.3 с</td>
+</tr>
+</tbody>
+</table></div>
+<p>Весь прогон занял 4 мин 4 с. promptfoo насчитал 27 пройденных тестов из 48 и вышел с кодом 100. Все 48 ответов побайтно совпали с режимом prompt_only из M09-L08X. Prompt после подстановки переменных тоже совпал во всех 48. Значит, promptfoo отправил тот же запрос, и числа таблицы — числа того урока.</p>
+<p>На 144 вердиктах (48 ответов × 3 проверки) JS и Python согласны. Но в настоящих ответах нет ни <code>1.0</code>, ни редких пробелов. Поэтому согласие на этом наборе не доказывает, что реализации равны: это проверяет тест на краевых строках.</p>
+<p>Матрица показывает то, что скрывает одно число. strong держит формат и узнаёт все 8 неверных ответов, но 5 из 8 частичных оценивает на 2. tiny ставит 2 за 5 из 8 неверных. promptfoo удобен для быстрой регрессии: поменял prompt, прогнал набор на обоих профилях, увидел, где стало хуже, и повторил только упавшие случаи (<code>--filter-failing</code>). Ручная разметка, сравнение по сценариям с bootstrap и правило выпуска с критическими ошибками остаются в собственном harness. promptfoo о выпуске не решает.</p>
 </section><h2 id="M11-L06--схема">Схема</h2>
 <figure class="diagram"><pre class="mermaid">flowchart TD
     C[&quot;Случаи: case_id, scenario_id, одинаковый вход&quot;] --&gt; A[&quot;Версия A: raw и display&quot;]
@@ -13418,6 +13496,7 @@ assert release is False
 <p><strong>Предскажи до запуска.</strong> Прежде чем запускать код или пересчитывать пример, запиши ожидаемый вывод: числа, формы массивов, порядок или текст. После запуска сравни с фактическим и объясни каждое расхождение.</p>
 <p>Сначала реализуй <code>compare_pairs</code> в <a href="exercises/M11/starter.py">стартере</a> и выполни <a href="exercises/M11/README.md">проверку</a>. Затем найди в настоящем опыте один случай, где raw и display отличаются. Объясни, что сделала модель, что проверил код и какая часть вывода остаётся человеческим суждением.</p>
 <p>Подсказки: сначала построй словари по ID; затем проверь равенство множеств; только после этого вычисляй разности. Проверку critical делай независимо от знака численного изменения.</p>
+<p><strong>Расширение 1.2.0.</strong> Перенеси в promptfoo эвристику противоречия из M09-L08X: оценка 2, а в ответе «неверно» или «не верен» (функция <code>contradicts</code> в <code>labs/M09/structured_output.py</code>). Добавь в <code>checks.js</code> функцию с метрикой consistency и подключи её в <code>promptfooconfig.yaml</code>. Посчитай то же на Python по сохранённым ответам из <code>artifacts/M11/promptfoo/results.json</code>. До запуска предскажи число срабатываний для tiny и strong. Если JS и Python разошлись, ищи причину в регулярном выражении, а не в модели. Сверь с <a href="#M11-SOLUTIONS--m11-l06-pf">ключом</a>.</p>
 </section><section class="lesson-stage" data-stage="task"><span class="stage-label">Твоя попытка</span><h2 id="M11-L06--самостоятельная-задача-a-m11-l06-a">Самостоятельная задача A — M11-L06-A</h2>
 <p>На четырёх новых случаях — по два HR/backend — сравни две зафиксированные конфигурации. В одном случае ответ кандидата должен явно содержать отсутствие измеренного результата. Сохрани реальные outputs, собственную разметку и отчёт. Объясни один спорный балл и какое уточнение рубрики разрешило бы спор. Код, сохраняющий responses, не должен читать expected labels.</p>
 </section><h2 id="M11-L06--критерии-и-типичные-ошибки">Критерии и типичные ошибки</h2>
@@ -13455,6 +13534,7 @@ assert release is False
 <p>Процедура bootstrap: <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html" target="_blank" rel="noopener noreferrer" class="external-link">официальная документация SciPy</a>. Здесь используется прозрачный percentile-вариант для обучения; малый или зависимый набор требует осторожности. Реализация, шкалы, пороги и примеры этого урока авторские и доступны локально.</p>
 <p>Полный измеренный цикл с неудачной первой попыткой и новым контрольным набором: <a href="#EVALUATION-REFERENCE">разбор обратной связи</a>. Формат и точная цитата не гарантируют полезность; контрольные пороги эталона не пройдены.</p>
 <p>Для углубления: <a href="https://arxiv.org/abs/2411.00640" target="_blank" rel="noopener noreferrer" class="external-link">Miller: Adding Error Bars to Evals</a> — вопросы оценки как выборка из большой совокупности, формулы для разницы двух моделей на одних вопросах и поправка на сгруппированные вопросы — тот же довод, что bootstrap по сценариям, а не по строкам (на английском).</p>
+<p>promptfoo (расширение 1.2.0): <a href="https://www.promptfoo.dev/docs/configuration/expected-outputs/" target="_blank" rel="noopener noreferrer" class="external-link">проверки assertions</a>, <a href="https://www.promptfoo.dev/docs/providers/openai/" target="_blank" rel="noopener noreferrer" class="external-link">OpenAI-совместимый провайдер</a>, <a href="https://www.promptfoo.dev/docs/configuration/telemetry/" target="_blank" rel="noopener noreferrer" class="external-link">телеметрия и её отключение</a>.</p>
 <div class="practice-note"><a href="#M11">Модуль и домашняя работа</a> · <a href="#M11-SOLUTIONS--m11-l06-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M11-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L05"><small>Предыдущий раздел</small>← M11-L05. Регрессии и отчёт</a><a href="#M11-L07X"><small>Следующий раздел</small>M11-L07X. Error analysis как процесс →</a></nav></article><article class="material" id="M11-L07X" data-title="M11-L07X. Error analysis как процесс" data-short-title="Error analysis как процесс" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L07X</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Error analysis как процесс</h1><p class="outcome"><strong>После урока:</strong> провести разбор ошибок LLM-системы от сырых трасс до регрессионного набора. Нужно прочитать и закодировать трассы без готового списка ошибок, собрать из кодов таксономию и посчитать частоты с интервалом. Затем — придумать автоматические проверки для частых ошибок, сверить их с ручными кодами и закрепить найденное тестами pytest.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M11-L02, M11-L05, M10-L05. Лабораторная читает замороженные трассы и коды из <code>quality/error-analysis</code> и работает без моделей. Чтобы собрать трассы заново, нужны llama.cpp и GGUF из M09-L07X. Ориентир времени — 180 минут чтения, кодирования и разбора; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L07X--объяснение">Объяснение</a></li><li><a href="#M11-L07X--аналогия-разбор-инцидентов-и-группировка-ошибок">Аналогия: разбор инцидентов и группировка ошибок</a></li><li><a href="#M11-L07X--разобранный-пример">Разобранный пример</a></li><li><a href="#M11-L07X--схема">Схема</a></li><li><a href="#M11-L07X--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L07X--самостоятельная-задача-a-m11-l07x-a">Самостоятельная задача A — M11-L07X-A</a></li><li><a href="#M11-L07X--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M11-L07X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L07X--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L07X--карточка-урока">Карточка урока</a></li><li><a href="#M11-L07X--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Урок дополняет модуль, не входит в обязательный минимум 1.1.0.</p>
 
 
@@ -21301,6 +21381,19 @@ assert not accept_result(3,2)
 <nav class="answer-actions" aria-label="После самопроверки"><a href="#M11" data-return-task="M11">← Вернуться к задаче</a><a href="#M11" data-return-retry="M11">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M11-SOLUTIONS--m11-l06-a"><summary>Ответ: M11-L06-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L06" data-return-task="M11-L06">← Вернуться к задаче</a><a href="#M11-L06" data-return-retry="M11-L06">Новый вариант B / C →</a></nav>
 <p>Корректный артефакт содержит ровно по две записи на case_id, original raw и показанный display, сведения о fallback и ревизию кода. В разметке grounded/useful относятся к display, evidence дословно присутствует в нём, reason объясняет соответствие ответу кандидата, rater указывает реальный способ разбора. Если кандидат сказал «результат не измерял», фраза о доказанном снижении ошибок — неподтверждённый факт. Запросить будущую проверку допустимо; представить её как уже выполненную нельзя.</p>
 <p>Хэш связывает разметку с конкретным output, но не делает суждение верным. При споре о полезности сохраняются обе оценки и уточняется рубрика. При использовании нескольких перефразировок одного сценария нужны группы; повторять строки ради узкого интервала нельзя. Для новой самостоятельной работы создаются другие случаи, не копируется авторская разметка.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L06" data-return-task="M11-L06">← Вернуться к задаче</a><a href="#M11-L06" data-return-retry="M11-L06">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M11-SOLUTIONS--m11-l06-pf"><summary>Ответ: M11-L06-PF</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L06" data-return-task="M11-L06">← Вернуться к задаче</a><a href="#M11-L06" data-return-retry="M11-L06">Новый вариант B / C →</a></nav>
+<p>Авторская проверка 06.11.2026 на сохранённых ответах прогона. Python (<code>contradicts</code> по ответам, прошедшим контракт): tiny — 2, strong — 0. Оба срабатывания tiny — «Ответ кандидата не верен.» с оценкой 2, на случаях c05 (эталон 2) и c13 (эталон 1).</p>
+<p>Прямой перенос <code>/\bне\s*вер|\bневер/i</code> в JavaScript даёт 0 для обоих профилей. В JavaScript <code>\b</code> — граница между символом из <code>[A-Za-z0-9_]</code> и любым другим, даже с флагом <code>u</code> (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Word_boundary_assertion" target="_blank" rel="noopener noreferrer" class="external-link">MDN: граница слова</a>). Пробел и «н» оба вне этого класса, поэтому граница перед русским словом не находится никогда. В Python модуль <code>re</code> для строк по умолчанию работает с Unicode, и <code>\b</code> видит границу. Исправление — <code>/(?&lt;![\p{L}\p{N}_])(?:не\s*вер|невер)/iu</code>. С ним JS тоже даёт 2 и 0.</p>
+<p>Assertion проходит, когда противоречия нет:</p>
+<pre><code class="language-js">const NEGATIVE = /(?&lt;![\p{L}\p{N}_])(?:не\s*вер|невер)/iu;
+
+function consistency(output) {
+  const result = validateFeedback(output);
+  const bad = result.valid &amp;&amp; result.value.score === 2 &amp;&amp; NEGATIVE.test(output);
+  return { pass: !bad, score: bad ? 0 : 1, reason: bad ? 'score 2, feedback says wrong' : 'no contradiction found' };
+}
+</code></pre>
+<p>Функцию добавляют в <code>module.exports</code>, а в конфиг — проверку <code>file://checks.js:consistency</code> с <code>metric: consistency</code>. Эвристика ловит слова, а не смысл: фраза «неверно было бы сказать…» тоже сработает. Поэтому оба срабатывания читают глазами. Критическая ошибка — поверить нулю JS-проверки, не сверив его с Python на тех же сохранённых текстах. Вторая ошибка — сверять на новой генерации: тогда расхождение модели не отличить от расхождения проверок.</p>
 <nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L06" data-return-task="M11-L06">← Вернуться к задаче</a><a href="#M11-L06" data-return-retry="M11-L06">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M11-SOLUTIONS--m11-l06-b"><summary>Ответ: M11-L06-B</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L06" data-return-task="M11-L06">← Вернуться к задаче</a><a href="#M11-L06" data-return-retry="M11-L06">Новый вариант B / C →</a></nav>
 <p>u: +1, v: −2, среднее −0.5; новая critical в u блокирует выпуск, хотя численная оценка u выросла. Изменение порядка строк не меняет ответ. Полный код соединения находится в отдельном solution.py.</p>
 <nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L06" data-return-task="M11-L06">← Вернуться к задаче</a><a href="#M11-L06" data-return-retry="M11-L06">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M11-SOLUTIONS--m11-l06-c"><summary>Ответ: M11-L06-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L06" data-return-task="M11-L06">← Вернуться к задаче</a><a href="#M11-L06" data-return-retry="M11-L06">Новый вариант B / C →</a></nav>
@@ -22767,6 +22860,7 @@ assert not accept_result(3,2)
 <pre><code class="language-powershell">.\.venv\Scripts\python.exe -m pytest tests\test_interview_trainer.py -q
 .\.venv\Scripts\python.exe labs\M15\demo.py
 </code></pre>
+<p>Расширение 1.2.0: регрессию prompt оценки на двух профилях моделей, tiny (Qwen2.5-0.5B) и strong (Qwen3.5-4B), можно гонять через promptfoo. Конфиг лежит в <code>labs/M11/promptfoo</code>, инструкция — в разделе о promptfoo урока M11-L06; нужен Node.js. Основными остаются проверки pytest выше.</p>
 <h2 id="REFERENCE-PROJECT--границы-эталона-и-самостоятельное-улучшение">Границы эталона и самостоятельное улучшение</h2>
 <p>Эталон демонстрирует последовательную цепочку и ограниченные уточнения. Короткая база, эвристика полноты ответа и маленькая LLM не доказывают качество полноценного интервьюера. Нет автоматического barge-in, долговременного хранилища сессий, одновременного обслуживания пользователей и production-аутентификации. Он не предназначен для публичного размещения без переработки. Новая самостоятельная M16 требует запускаемый собственный вариант и сохранение состояния между процессами; ключ атомарного хранения находится в solutions/exercises/M16/persistence.py. Запуск эталона не засчитывает эту работу.</p>
 <p>Микрофон зависит от разрешения Edge и выбранного устройства. Если разрешение отклонено, поле текста остаётся рабочим, а качество голоса помечается «не проверено». Линейное изменение частоты в клиенте — понятный учебный baseline: для промышленного аудио сравни его с фильтрующим ресемплером на шумных записях. Установленный русский голос проверен как <code>Microsoft Irina Desktop</code>; на другом Windows сначала проверь его наличие.</p>

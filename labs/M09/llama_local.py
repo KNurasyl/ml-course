@@ -53,29 +53,29 @@ def server_exe() -> Path:
     return found[0]
 
 
-def request(path, payload=None, timeout=600):
+def request(path, payload=None, timeout=600, port=PORT):
     data = None if payload is None else json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(f"http://{HOST}:{PORT}{path}", data=data, headers={"Content-Type": "application/json"})
+    req = urllib.request.Request(f"http://{HOST}:{port}{path}", data=data, headers={"Content-Type": "application/json"})
     return urllib.request.urlopen(req, timeout=timeout)
 
 
 class Server:
     """One llama-server process for one GGUF model; logs go to a file, never to pipes the parent would wait on."""
 
-    def __init__(self, model: Path, threads=4, ctx=4096, alias: str | None = None, log: Path | None = None):
-        self.model, self.threads, self.ctx, self.alias = Path(model), threads, ctx, alias or Path(model).stem
+    def __init__(self, model: Path, threads=4, ctx=4096, alias: str | None = None, log: Path | None = None, port=PORT):
+        self.model, self.threads, self.ctx, self.alias, self.port = Path(model), threads, ctx, alias or Path(model).stem, port
         self.log = Path(log) if log else ROOT / "artifacts/M09/llama" / f"{self.model.stem}.server.log"
         self.process: subprocess.Popen | None = None
 
     def __enter__(self):
         try:  # a server left from an interrupted run would answer instead of the new one
-            with request("/health", timeout=2):
-                raise RuntimeError(f"port {PORT} is busy: stop the previous llama-server (Stop-Process -Name llama-server)")
+            with request("/health", timeout=2, port=self.port):
+                raise RuntimeError(f"port {self.port} is busy: stop the previous llama-server (Stop-Process -Name llama-server)")
         except (urllib.error.URLError, ConnectionError, TimeoutError):
             pass
         self.log.parent.mkdir(parents=True, exist_ok=True)
         handle = self.log.open("w", encoding="utf-8")
-        command = [str(server_exe()), "-m", str(self.model), "--host", HOST, "--port", str(PORT), "-t", str(self.threads),
+        command = [str(server_exe()), "-m", str(self.model), "--host", HOST, "--port", str(self.port), "-t", str(self.threads),
                    "-c", str(self.ctx), "--parallel", "1", "--jinja", "--no-webui", "--alias", self.alias]
         flags = subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0
         self.started = time.perf_counter()
@@ -85,7 +85,7 @@ class Server:
             if self.process.poll() is not None:
                 raise RuntimeError(f"llama-server exited with {self.process.returncode}, see {self.log}")
             try:
-                with request("/health", timeout=5) as response:
+                with request("/health", timeout=5, port=self.port) as response:
                     if response.status == 200:
                         self.load_seconds = time.perf_counter() - self.started
                         return self
@@ -103,11 +103,11 @@ class Server:
                 self.process.kill()
 
 
-def serve(name, threads=4, ctx=4096):
+def serve(name, threads=4, ctx=4096, port=PORT):
     """Keep one server running in the terminal until Ctrl+C, for requests by hand from PowerShell, Node or Python."""
     entry = next(e for e in json.loads((ROOT / "metadata/reference-models.json").read_text(encoding="utf-8"))["gguf"] if e["name"] == name)
-    with Server(ROOT / entry["path"] / entry["file"], threads=threads, ctx=ctx, alias=name) as server:
-        print(f"{name}: http://{HOST}:{PORT}/v1 (log: {server.log}); Ctrl+C stops the server")
+    with Server(ROOT / entry["path"] / entry["file"], threads=threads, ctx=ctx, alias=name, port=port) as server:
+        print(f"{name}: http://{HOST}:{port}/v1 (log: {server.log}); Ctrl+C stops the server")
         try:
             server.process.wait()
         except KeyboardInterrupt:
@@ -120,5 +120,6 @@ if __name__ == "__main__":
     parser.add_argument("model", nargs="?", default="qwen2.5-0.5b-instruct-q4_k_m", help="a gguf name from metadata/reference-models.json")
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--ctx", type=int, default=4096)
+    parser.add_argument("--port", type=int, default=PORT, help="a second model needs its own port, e.g. 18081")
     args = parser.parse_args()
-    fetch() if args.command == "fetch" else serve(args.model, args.threads, args.ctx)
+    fetch() if args.command == "fetch" else serve(args.model, args.threads, args.ctx, args.port)

@@ -1,0 +1,53 @@
+# promptfoo as an option over the course's own harness (extension 1.2.0, T38, lesson M11-L06).
+# One test set, two local profiles behind llama-server on 127.0.0.1. The wrapper starts both servers,
+# runs this config through npx and recomputes every verdict with the Python checks:
+#   .\.venv\Scripts\python.exe labs\M11\promptfoo_eval.py run
+# prompt.json, cases.jsonl and feedback.schema.json are generated from labs/M09/structured_output.py
+# by `promptfoo_eval.py sync`: change the Python source, not these three files.
+description: M09-L08X feedback contract and gold score, profiles tiny and strong
+
+prompts:
+  - file://prompt.json
+
+providers:
+  - id: openai:chat:qwen2.5-0.5b-instruct-q4_k_m
+    label: tiny
+    config:
+      apiBaseUrl: http://127.0.0.1:18080/v1
+      apiKeyRequired: false # llama-server takes no key
+      useDefaultApiKey: false # never forward OPENAI_API_KEY from the environment to the local server
+      temperature: 0
+      max_tokens: 160
+      passthrough: # extra request fields, the same as in labs/M09/structured_output.py
+        seed: 17
+        cache_prompt: false
+  - id: openai:chat:qwen3.5-4b-q4_k_m
+    label: strong
+    config:
+      apiBaseUrl: http://127.0.0.1:18081/v1
+      apiKeyRequired: false
+      useDefaultApiKey: false
+      temperature: 0
+      max_tokens: 160
+      passthrough:
+        seed: 17
+        cache_prompt: false
+        chat_template_kwargs:
+          enable_thinking: false
+
+tests: file://cases.jsonl
+
+defaultTest:
+  assert:
+    - type: is-json
+      value: file://feedback.schema.json
+      metric: schema
+    - type: javascript
+      value: file://checks.js:contract
+      metric: contract
+    - type: javascript
+      value: file://checks.js:score
+      metric: score
+
+evaluateOptions:
+  maxConcurrency: 1
