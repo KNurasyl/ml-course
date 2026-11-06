@@ -1,0 +1,448 @@
+{
+  "coder": "course author (AI-assisted), one pass after reading every trace in full; not an independent rater, agreement not measured — task M11-L07X-A asks for an independent second coding",
+  "date": "2026-11-06",
+  "taxonomy": {
+    "retrieval_miss": "в контексте нет фрагмента с ответом",
+    "failed_refusal": "в контексте нет ответа, а модель не отказалась",
+    "over_refusal": "отказ, хотя контекст содержит ответ",
+    "no_answer": "нет содержательного ответа: только ссылки, повтор вопроса или повтор одного токена",
+    "off_question": "текст о другом: переписан чужой или шаблонный абзац вместо ответа",
+    "unsupported_claim": "утверждение не следует из источников или противоречит им",
+    "bad_citation": "ссылка вне контекста, несуществующая или на абзац, где утверждения нет",
+    "format": "ответ оборван лимитом токенов, не по-русски или длиннее трёх предложений",
+    "ok": "ответ по существу, опирается на источник и ссылается на него, либо верный отказ"
+  },
+  "traces": {
+    "p-index": {
+      "codes": [
+        "retrieval_miss"
+      ],
+      "note": "Документа об индексе нет в контексте; модель отказалась, к отказу приписана ссылка [generator-v2-c1]."
+    },
+    "t-index": {
+      "codes": [
+        "off_question"
+      ],
+      "note": "Вопрос о записи; переписаны два предложения о чтении из index-v2-c1, предложение о дорогой записи пропущено."
+    },
+    "p-atomic": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка — пример [index-v2-c1] из системного prompt; абзац об атомарности был в контексте."
+    },
+    "t-atomic": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка на шаблонный абзац [atomic-v2-c0]."
+    },
+    "p-isolation": {
+      "codes": [
+        "retrieval_miss",
+        "failed_refusal",
+        "no_answer"
+      ],
+      "note": "Документа об изоляции нет; вместо отказа повторён вопрос со ссылкой на атомарность."
+    },
+    "t-isolation": {
+      "codes": [
+        "no_answer",
+        "bad_citation"
+      ],
+      "note": "Две ссылки без текста; пример [index-v2-c1] из системного prompt, его нет в контексте."
+    },
+    "p-timeout": {
+      "codes": [
+        "over_refusal"
+      ],
+      "note": "Ответ есть в timeout-v2-c1; отказ со ссылкой на фрагмент о голосе."
+    },
+    "t-timeout": {
+      "codes": [
+        "no_answer",
+        "bad_citation"
+      ],
+      "note": "Ссылки без текста; пример [index-v2-c1] из системного prompt вне контекста."
+    },
+    "p-idempotency": {
+      "codes": [
+        "retrieval_miss",
+        "failed_refusal",
+        "off_question"
+      ],
+      "note": "Документа об идемпотентности нет; переписан шаблонный абзац «Проверка для темы „Повтор запроса“»."
+    },
+    "t-idempotency": {
+      "codes": [
+        "bad_citation"
+      ],
+      "note": "Ответ верно переписан из idempotency-v2-c1, но ссылка — пример [index-v2-c1] из системного prompt, вне контекста."
+    },
+    "p-cache": {
+      "codes": [
+        "unsupported_claim",
+        "format"
+      ],
+      "note": "Верная мысль о версии корпуса в ключе смешана с выдумкой о «неудачной нормализации» из соседнего абзаца; список с разметкой, обрыв по лимиту токенов."
+    },
+    "t-cache": {
+      "codes": [
+        "over_refusal"
+      ],
+      "note": "Ответ прямо есть в cache-v2-c1; модель отказалась."
+    },
+    "p-generator": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка на нужный фрагмент, без текста."
+    },
+    "t-generator": {
+      "codes": [
+        "no_answer",
+        "bad_citation"
+      ],
+      "note": "Только пример [index-v2-c1] из системного prompt, вне контекста."
+    },
+    "p-async": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Повтор вопроса со ссылкой."
+    },
+    "t-async": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Ссылки без текста; [index-v2-c1] на этот раз в контексте, но не о вопросе."
+    },
+    "p-queue": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Три ссылки без текста."
+    },
+    "t-queue": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка."
+    },
+    "p-retry": {
+      "codes": [
+        "no_answer",
+        "bad_citation",
+        "format"
+      ],
+      "note": "пример [index-v2-c1] из системного prompt повторён до лимита токенов; фрагмента нет в контексте."
+    },
+    "t-retry": {
+      "codes": [
+        "ok"
+      ],
+      "note": "Переписаны два предложения retry-v2-c1: ответ по существу и со ссылкой; более подробного «почему» в источнике нет."
+    },
+    "p-norm": {
+      "codes": [
+        "retrieval_miss",
+        "failed_refusal",
+        "no_answer"
+      ],
+      "note": "Из документа о нормализации найден только шаблонный абзац c0, ответа в контексте нет; ссылка на чужой фрагмент."
+    },
+    "t-norm": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка на нужный фрагмент."
+    },
+    "p-leak": {
+      "codes": [
+        "retrieval_miss"
+      ],
+      "note": "Документа об утечке нет; отказ корректен, к нему приписана ссылка."
+    },
+    "t-leak": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка на шаблонный абзац."
+    },
+    "p-rag": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка на фрагмент об индексе; ответ был в rag-v2-c1."
+    },
+    "t-rag": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка на шаблонный абзац об индексе."
+    },
+    "p-context": {
+      "codes": [
+        "over_refusal"
+      ],
+      "note": "Ответ есть в context-v2-c1; модель отказалась."
+    },
+    "t-context": {
+      "codes": [
+        "no_answer",
+        "bad_citation"
+      ],
+      "note": "Только пример [index-v2-c1] из системного prompt, вне контекста."
+    },
+    "p-score": {
+      "codes": [
+        "over_refusal",
+        "bad_citation"
+      ],
+      "note": "Ответ есть в score-v2-c1; отказ со ссылкой на несуществующий фрагмент [answer-v2-c1]."
+    },
+    "t-score": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка на фрагмент об индексе из контекста."
+    },
+    "p-voice": {
+      "codes": [
+        "over_refusal"
+      ],
+      "note": "Ответ есть в voice-v2-c1; отказ со ссылкой на генератор."
+    },
+    "t-voice": {
+      "codes": [
+        "no_answer",
+        "bad_citation"
+      ],
+      "note": "Три ссылки на абзацы об индексе, которых нет в контексте."
+    },
+    "p-wer": {
+      "codes": [
+        "over_refusal"
+      ],
+      "note": "Ответ есть в wer-v2-c1; отказ со ссылкой на хранение аудио."
+    },
+    "t-wer": {
+      "codes": [
+        "over_refusal"
+      ],
+      "note": "Ответ есть в wer-v2-c1; модель отказалась."
+    },
+    "p-split": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка на нужный фрагмент."
+    },
+    "t-split": {
+      "codes": [
+        "off_question",
+        "bad_citation"
+      ],
+      "note": "Ссылка на split-v2-c1, а текст переписан из фрагмента об утечке."
+    },
+    "p-permission": {
+      "codes": [
+        "unsupported_claim",
+        "bad_citation"
+      ],
+      "note": "Опасная ошибка: источник говорит, что инструкция из документа не расширяет права, а модель отвечает, что система должна её выполнить; ссылка на несуществующий [answer-v2-c1]."
+    },
+    "t-permission": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка на нужный фрагмент."
+    },
+    "p-release": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка на фрагмент о хранении аудио."
+    },
+    "t-release": {
+      "codes": [
+        "no_answer",
+        "bad_citation"
+      ],
+      "note": "Ссылки без текста; пример [index-v2-c1] из системного prompt вне контекста."
+    },
+    "p-threshold": {
+      "codes": [
+        "retrieval_miss",
+        "failed_refusal",
+        "no_answer"
+      ],
+      "note": "Документа о пороге нет; вместо отказа ссылка на чужой шаблонный абзац."
+    },
+    "t-threshold": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка на нужный фрагмент."
+    },
+    "p-metrics": {
+      "codes": [
+        "over_refusal"
+      ],
+      "note": "Ответ есть в metrics-v2-c1; модель отказалась."
+    },
+    "t-metrics": {
+      "codes": [
+        "no_answer",
+        "bad_citation"
+      ],
+      "note": "Ссылки без текста, две из них на абзацы об индексе вне контекста."
+    },
+    "p-evidence": {
+      "codes": [
+        "retrieval_miss",
+        "failed_refusal",
+        "no_answer"
+      ],
+      "note": "Документа об основании отзыва нет; вместо отказа ссылка на изоляцию."
+    },
+    "t-evidence": {
+      "codes": [
+        "no_answer",
+        "bad_citation"
+      ],
+      "note": "Три ссылки на абзацы об индексе вне контекста."
+    },
+    "p-retention": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка на фрагмент об утечке; ответ был в retention-v2-c1."
+    },
+    "t-retention": {
+      "codes": [
+        "no_answer",
+        "bad_citation"
+      ],
+      "note": "Три ссылки на абзацы об индексе вне контекста."
+    },
+    "none-1": {
+      "codes": [
+        "failed_refusal",
+        "no_answer"
+      ],
+      "note": "Ответа в базе нет; вопрос дважды повторён со ссылками вместо отказа."
+    },
+    "none-2": {
+      "codes": [
+        "failed_refusal",
+        "no_answer"
+      ],
+      "note": "Ответа в базе нет; ссылка вместо отказа."
+    },
+    "none-3": {
+      "codes": [
+        "failed_refusal",
+        "no_answer"
+      ],
+      "note": "Ответа в базе нет; пример [index-v2-c1] из системного prompt вместо отказа."
+    },
+    "none-4": {
+      "codes": [
+        "failed_refusal",
+        "no_answer"
+      ],
+      "note": "Ответа в базе нет; ссылка на шаблонный абзац вместо отказа."
+    },
+    "dev-index": {
+      "codes": [
+        "off_question"
+      ],
+      "note": "Переписан шаблонный абзац c0; объяснение «почему» было в index-v2-c1."
+    },
+    "dev-timeout": {
+      "codes": [
+        "over_refusal",
+        "bad_citation"
+      ],
+      "note": "Ответ есть в timeout-v2-c1; отказ со ссылкой — пример [index-v2-c1] из системного prompt, вне контекста."
+    },
+    "dev-cache": {
+      "codes": [
+        "ok"
+      ],
+      "note": "Ответ по существу из cache-v2-c1 со ссылкой."
+    },
+    "dev-generator": {
+      "codes": [
+        "no_answer",
+        "bad_citation"
+      ],
+      "note": "Ссылки без текста; пример [index-v2-c1] из системного prompt вне контекста."
+    },
+    "dev-async": {
+      "codes": [
+        "over_refusal"
+      ],
+      "note": "Ответ есть в async-v2-c1; модель отказалась."
+    },
+    "dev-multi": {
+      "codes": [
+        "retrieval_miss",
+        "no_answer"
+      ],
+      "note": "Нужны два документа, найден только о кэше; одна ссылка без текста."
+    },
+    "dev-none": {
+      "codes": [
+        "ok"
+      ],
+      "note": "Верный отказ; лишняя ссылка при отказе не вредит."
+    },
+    "check-atomic": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка на шаблонный абзац об изоляции; ответ был в atomic-v2-c1."
+    },
+    "check-idempotent": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Только ссылка на фрагмент о повторе; ответ был в idempotency-v2-c1."
+    },
+    "check-split": {
+      "codes": [
+        "off_question"
+      ],
+      "note": "Переписан фрагмент об изоляции; нужный split-v2-c1 был в контексте."
+    },
+    "check-retention": {
+      "codes": [
+        "no_answer",
+        "bad_citation"
+      ],
+      "note": "«пример [index-v2-c1] из системного prompt 1»: ссылка вне контекста и цифра без смысла."
+    },
+    "check-voice": {
+      "codes": [
+        "no_answer"
+      ],
+      "note": "Три ссылки без текста."
+    },
+    "check-evidence": {
+      "codes": [
+        "no_answer",
+        "bad_citation"
+      ],
+      "note": "Только пример [index-v2-c1] из системного prompt, вне контекста; ответ был в evidence-v2-c1."
+    },
+    "check-none": {
+      "codes": [
+        "failed_refusal",
+        "no_answer"
+      ],
+      "note": "Ответа в базе нет; ссылка вместо отказа."
+    }
+  }
+}

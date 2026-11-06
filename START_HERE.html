@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="c52daefec05bb859ea380697c999af6f312d949b284e1b33dc541220569fa3b2"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="868544a35ce233155a0aea71e17fd89784a73df4638efa946a2a490639bc7303"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -34,7 +34,7 @@
 <section class="nav-group"><details class="nav-module"><summary>M08 NLP и Transformer</summary><ul><li data-key="M08"><a href="#M08" data-material="M08"><span class="nav-marker">M08</span><span>NLP и Transformer</span></a></li><li data-key="M08-L01"><a href="#M08-L01" data-material="M08-L01"><span class="nav-marker">L01</span><span>Текст и токены</span></a></li><li data-key="M08-L02"><a href="#M08-L02" data-material="M08-L02"><span class="nav-marker">L02</span><span>Embeddings</span></a></li><li data-key="M08-L03"><a href="#M08-L03" data-material="M08-L03"><span class="nav-marker">L03</span><span>Attention</span></a></li><li data-key="M08-L04"><a href="#M08-L04" data-material="M08-L04"><span class="nav-marker">L04</span><span>Позиции и causal mask</span></a></li><li data-key="M08-L06"><a href="#M08-L06" data-material="M08-L06"><span class="nav-marker">L06</span><span>Residual и LayerNorm: сохранить путь и выровнять масштаб</span></a></li><li data-key="M08-L07"><a href="#M08-L07" data-material="M08-L07"><span class="nav-marker">L07</span><span>Полный forward Transformer-блока</span></a></li><li data-key="M08-L05"><a href="#M08-L05" data-material="M08-L05"><span class="nav-marker">L05</span><span>Мини-языковая модель</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M09 Применение и запуск LLM</summary><ul><li data-key="M09"><a href="#M09" data-material="M09"><span class="nav-marker">M09</span><span>Применение и запуск LLM</span></a></li><li data-key="M09-L01"><a href="#M09-L01" data-material="M09-L01"><span class="nav-marker">L01</span><span>Сообщения и шаблон диалога</span></a></li><li data-key="M09-L02"><a href="#M09-L02" data-material="M09-L02"><span class="nav-marker">L02</span><span>Контекст и история</span></a></li><li data-key="M09-L03"><a href="#M09-L03" data-material="M09-L03"><span class="nav-marker">L03</span><span>Генерация и ограничения</span></a></li><li data-key="M09-L04"><a href="#M09-L04" data-material="M09-L04"><span class="nav-marker">L04</span><span>Локальный инференс и память</span></a></li><li data-key="M09-L05"><a href="#M09-L05" data-material="M09-L05"><span class="nav-marker">L05</span><span>Контракт ответа</span></a></li><li data-key="M09-L06"><a href="#M09-L06" data-material="M09-L06"><span class="nav-marker">L06</span><span>Выбрать локальную конфигурацию по измерениям</span></a></li><li data-key="M09-L07X"><a href="#M09-L07X" data-material="M09-L07X"><span class="nav-marker">L07X</span><span>Локальный serving: llama.cpp и Ollama</span></a></li><li data-key="M09-L08X"><a href="#M09-L08X" data-material="M09-L08X"><span class="nav-marker">L08X</span><span>Структурированный ответ: JSON Schema и грамматики</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M10 RAG и поиск</summary><ul><li data-key="M10"><a href="#M10" data-material="M10"><span class="nav-marker">M10</span><span>RAG и поиск</span></a></li><li data-key="M10-L01"><a href="#M10-L01" data-material="M10-L01"><span class="nav-marker">L01</span><span>Документ и фрагмент</span></a></li><li data-key="M10-L02"><a href="#M10-L02" data-material="M10-L02"><span class="nav-marker">L02</span><span>Лексический и векторный поиск</span></a></li><li data-key="M10-L03"><a href="#M10-L03" data-material="M10-L03"><span class="nav-marker">L03</span><span>Гибридный поиск и reranking</span></a></li><li data-key="M10-L04"><a href="#M10-L04" data-material="M10-L04"><span class="nav-marker">L04</span><span>Контекст и подтверждение ответа</span></a></li><li data-key="M10-L05"><a href="#M10-L05" data-material="M10-L05"><span class="nav-marker">L05</span><span>Диагностика и обновления</span></a></li><li data-key="M10-L06"><a href="#M10-L06" data-material="M10-L06"><span class="nav-marker">L06</span><span>Диагностировать русский RAG по трассе ошибки</span></a></li><li data-key="M10-L07X"><a href="#M10-L07X" data-material="M10-L07X"><span class="nav-marker">L07X</span><span>Эмбеддеры для русского языка</span></a></li><li data-key="M10-L08X"><a href="#M10-L08X" data-material="M10-L08X"><span class="nav-marker">L08X</span><span>Векторное хранилище</span></a></li><li data-key="M10-L09X"><a href="#M10-L09X" data-material="M10-L09X"><span class="nav-marker">L09X</span><span>Кросс-энкодер для reranking</span></a></li></ul></details></section>
-<section class="nav-group"><details class="nav-module"><summary>M11 Оценивание LLM-систем</summary><ul><li data-key="M11"><a href="#M11" data-material="M11"><span class="nav-marker">M11</span><span>Оценивание LLM-систем</span></a></li><li data-key="M11-L01"><a href="#M11-L01" data-material="M11-L01"><span class="nav-marker">L01</span><span>Что именно оцениваем</span></a></li><li data-key="M11-L02"><a href="#M11-L02" data-material="M11-L02"><span class="nav-marker">L02</span><span>Набор примеров и разметка</span></a></li><li data-key="M11-L03"><a href="#M11-L03" data-material="M11-L03"><span class="nav-marker">L03</span><span>HR и технические рубрики</span></a></li><li data-key="M11-L04"><a href="#M11-L04" data-material="M11-L04"><span class="nav-marker">L04</span><span>Модель как оценщик</span></a></li><li data-key="M11-L05"><a href="#M11-L05" data-material="M11-L05"><span class="nav-marker">L05</span><span>Регрессии и отчёт</span></a></li><li data-key="M11-L06"><a href="#M11-L06" data-material="M11-L06"><span class="nav-marker">L06</span><span>От реальных ответов к парному сравнению систем</span></a></li></ul></details></section>
+<section class="nav-group"><details class="nav-module"><summary>M11 Оценивание LLM-систем</summary><ul><li data-key="M11"><a href="#M11" data-material="M11"><span class="nav-marker">M11</span><span>Оценивание LLM-систем</span></a></li><li data-key="M11-L01"><a href="#M11-L01" data-material="M11-L01"><span class="nav-marker">L01</span><span>Что именно оцениваем</span></a></li><li data-key="M11-L02"><a href="#M11-L02" data-material="M11-L02"><span class="nav-marker">L02</span><span>Набор примеров и разметка</span></a></li><li data-key="M11-L03"><a href="#M11-L03" data-material="M11-L03"><span class="nav-marker">L03</span><span>HR и технические рубрики</span></a></li><li data-key="M11-L04"><a href="#M11-L04" data-material="M11-L04"><span class="nav-marker">L04</span><span>Модель как оценщик</span></a></li><li data-key="M11-L05"><a href="#M11-L05" data-material="M11-L05"><span class="nav-marker">L05</span><span>Регрессии и отчёт</span></a></li><li data-key="M11-L06"><a href="#M11-L06" data-material="M11-L06"><span class="nav-marker">L06</span><span>От реальных ответов к парному сравнению систем</span></a></li><li data-key="M11-L07X"><a href="#M11-L07X" data-material="M11-L07X"><span class="nav-marker">L07X</span><span>Error analysis как процесс</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M12 Обучение и адаптация моделей</summary><ul><li data-key="M12"><a href="#M12" data-material="M12"><span class="nav-marker">M12</span><span>Обучение и адаптация моделей</span></a></li><li data-key="M12-L01"><a href="#M12-L01" data-material="M12-L01"><span class="nav-marker">L01</span><span>Выбор вмешательства</span></a></li><li data-key="M12-L02"><a href="#M12-L02" data-material="M12-L02"><span class="nav-marker">L02</span><span>Данные для адаптации</span></a></li><li data-key="M12-L03"><a href="#M12-L03" data-material="M12-L03"><span class="nav-marker">L03</span><span>Малое обучение с нуля</span></a></li><li data-key="M12-L04"><a href="#M12-L04" data-material="M12-L04"><span class="nav-marker">L04</span><span>Дообучение и адаптеры</span></a></li><li data-key="M12-L05"><a href="#M12-L05" data-material="M12-L05"><span class="nav-marker">L05</span><span>Сравнение до и после</span></a></li><li data-key="M12-L06"><a href="#M12-L06" data-material="M12-L06"><span class="nav-marker">L06</span><span>Из диалога в обучающий пример: токены и маска потерь</span></a></li><li data-key="M12-L07"><a href="#M12-L07" data-material="M12-L07"><span class="nav-marker">L07</span><span>Настоящий малый SFT: адаптер, checkpoint и регрессии</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M13 MLOps и LLMOps</summary><ul><li data-key="M13"><a href="#M13" data-material="M13"><span class="nav-marker">M13</span><span>MLOps и LLMOps</span></a></li><li data-key="M13-L01"><a href="#M13-L01" data-material="M13-L01"><span class="nav-marker">L01</span><span>Версия эксперимента и релиза</span></a></li><li data-key="M13-L02"><a href="#M13-L02" data-material="M13-L02"><span class="nav-marker">L02</span><span>Упаковка и контракт</span></a></li><li data-key="M13-L03"><a href="#M13-L03" data-material="M13-L03"><span class="nav-marker">L03</span><span>Регрессионные проверки</span></a></li><li data-key="M13-L04"><a href="#M13-L04" data-material="M13-L04"><span class="nav-marker">L04</span><span>Наблюдаемость и нагрузка</span></a></li><li data-key="M13-L05"><a href="#M13-L05" data-material="M13-L05"><span class="nav-marker">L05</span><span>Неудачный релиз и восстановление</span></a></li><li data-key="M13-L06"><a href="#M13-L06" data-material="M13-L06"><span class="nav-marker">L06</span><span>Очередь, дедлайн и восстановление HTTP-сервиса</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M14 Агенты и инструменты</summary><ul><li data-key="M14"><a href="#M14" data-material="M14"><span class="nav-marker">M14</span><span>Агенты и инструменты</span></a></li><li data-key="M14-L01"><a href="#M14-L01" data-material="M14-L01"><span class="nav-marker">L01</span><span>Сценарий и агентный цикл</span></a></li><li data-key="M14-L02"><a href="#M14-L02" data-material="M14-L02"><span class="nav-marker">L02</span><span>Контракт инструмента</span></a></li><li data-key="M14-L03"><a href="#M14-L03" data-material="M14-L03"><span class="nav-marker">L03</span><span>Состояние и границы доступа</span></a></li><li data-key="M14-L04"><a href="#M14-L04" data-material="M14-L04"><span class="nav-marker">L04</span><span>Ошибки и остановка</span></a></li><li data-key="M14-L05"><a href="#M14-L05" data-material="M14-L05"><span class="nav-marker">L05</span><span>Проверка агента</span></a></li><li data-key="M14-L06"><a href="#M14-L06" data-material="M14-L06"><span class="nav-marker">L06</span><span>Модель предлагает инструмент, исполнитель проверяет</span></a></li></ul></details></section>
@@ -12467,6 +12467,7 @@ print(pairs_per_second, 'пар в секунду;', 40 / pairs_per_second, 'с 
 <li><a href="#M11-L04">M11-L04. Модель как оценщик</a></li>
 <li><a href="#M11-L05">M11-L05. Регрессии и отчёт</a></li>
 <li><a href="#M11-L06">M11-L06. От реальных ответов к парному сравнению систем</a></li>
+<li><a href="#M11-L07X">M11-L07X. Error analysis как процесс</a> — расширение 1.2.0, не входит в обязательный минимум; замороженные трассы работают без моделей</li>
 </ol>
 <p>После каждого урока сначала выполни самостоятельную задачу. Открой решение только после своей попытки. Проходить весь модуль за один день не требуется: при 4–5 часах в день чередуй чтение, расчёты, программирование и воспроизведение по памяти.</p>
 <p>Если ты уже делал RAG и интеграции LLM, модуль можно пройти по <a href="#FAST-TRACK-LLM">быстрому входу</a>: сначала домашняя работа, затем уроки только по пунктам рубрики, оценённым ниже 2.</p>
@@ -13454,7 +13455,309 @@ assert release is False
 <p>Процедура bootstrap: <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html" target="_blank" rel="noopener noreferrer" class="external-link">официальная документация SciPy</a>. Здесь используется прозрачный percentile-вариант для обучения; малый или зависимый набор требует осторожности. Реализация, шкалы, пороги и примеры этого урока авторские и доступны локально.</p>
 <p>Полный измеренный цикл с неудачной первой попыткой и новым контрольным набором: <a href="#EVALUATION-REFERENCE">разбор обратной связи</a>. Формат и точная цитата не гарантируют полезность; контрольные пороги эталона не пройдены.</p>
 <p>Для углубления: <a href="https://arxiv.org/abs/2411.00640" target="_blank" rel="noopener noreferrer" class="external-link">Miller: Adding Error Bars to Evals</a> — вопросы оценки как выборка из большой совокупности, формулы для разницы двух моделей на одних вопросах и поправка на сгруппированные вопросы — тот же довод, что bootstrap по сценариям, а не по строкам (на английском).</p>
-<div class="practice-note"><a href="#M11">Модуль и домашняя работа</a> · <a href="#M11-SOLUTIONS--m11-l06-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M11-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L05"><small>Предыдущий раздел</small>← M11-L05. Регрессии и отчёт</a><a href="#M12"><small>Следующий раздел</small>M12 Обучение и адаптация моделей →</a></nav></article><article class="material" id="M12" data-title="M12 Обучение и адаптация моделей" data-short-title="Обучение и адаптация моделей" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Обучение и адаптация моделей</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: M07, M09 и M11: градиент, инференс и независимое оценивание.</p>
+<div class="practice-note"><a href="#M11">Модуль и домашняя работа</a> · <a href="#M11-SOLUTIONS--m11-l06-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M11-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L05"><small>Предыдущий раздел</small>← M11-L05. Регрессии и отчёт</a><a href="#M11-L07X"><small>Следующий раздел</small>M11-L07X. Error analysis как процесс →</a></nav></article><article class="material" id="M11-L07X" data-title="M11-L07X. Error analysis как процесс" data-short-title="Error analysis как процесс" data-kind="ready" data-module="M11"><header class="material-head"><div class="eyebrow"><span class="material-id">M11-L07X</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Error analysis как процесс</h1><p class="outcome"><strong>После урока:</strong> провести разбор ошибок LLM-системы от сырых трасс до регрессионного набора. Нужно прочитать и закодировать трассы без готового списка ошибок, собрать из кодов таксономию и посчитать частоты с интервалом. Затем — придумать автоматические проверки для частых ошибок, сверить их с ручными кодами и закрепить найденное тестами pytest.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M11-L02, M11-L05, M10-L05. Лабораторная читает замороженные трассы и коды из <code>quality/error-analysis</code> и работает без моделей. Чтобы собрать трассы заново, нужны llama.cpp и GGUF из M09-L07X. Ориентир времени — 180 минут чтения, кодирования и разбора; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M11-L07X--объяснение">Объяснение</a></li><li><a href="#M11-L07X--аналогия-разбор-инцидентов-и-группировка-ошибок">Аналогия: разбор инцидентов и группировка ошибок</a></li><li><a href="#M11-L07X--разобранный-пример">Разобранный пример</a></li><li><a href="#M11-L07X--схема">Схема</a></li><li><a href="#M11-L07X--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M11-L07X--самостоятельная-задача-a-m11-l07x-a">Самостоятельная задача A — M11-L07X-A</a></li><li><a href="#M11-L07X--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M11-L07X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M11-L07X--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M11-L07X--карточка-урока">Карточка урока</a></li><li><a href="#M11-L07X--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Урок дополняет модуль, не входит в обязательный минимум 1.1.0.</p>
+
+
+<blockquote>
+<p><strong>Версии и дата проверки:</strong> Python 3.11.9, scikit-learn 1.9.1, pytest 8; llama.cpp b11803, Qwen2.5-0.5B-Instruct Q4_K_M (ревизия 9217f5d) · проверено 06.11.2026 · источник: <a href="https://hamel.dev/blog/posts/field-guide/" target="_blank" rel="noopener noreferrer" class="external-link">Hamel Husain: A Field Guide to Rapidly Improving AI Products</a></p>
+</blockquote>
+<h2 id="M11-L07X--объяснение">Объяснение</h2>
+<p>Средняя метрика говорит, насколько плохо система работает, но не говорит, почему. Error analysis отвечает на второй вопрос, и начинается он не с метрик, а с чтения. Берут 50–100 реальных трасс: вопрос, найденные фрагменты, prompt, ответ модели. Каждую читают целиком и записывают, что пошло не так, своими словами. Это открытое кодирование, термин из grounded theory (Strauss, Corbin): категории рождаются из данных, а не из заранее составленного списка. Заготовленный список полезен как подсказка, но его ошибки окажутся не теми, что в данных.</p>
+<p>Потом заметки собирают в таксономию — это осевое кодирование. Похожие коды объединяют, у каждого появляется определение: правило, по которому трасса в него попадает. Коды упорядочивают по конвейеру: поиск → решение об отказе → содержание → ссылки → форма. Для каждой трассы отмечают первую ошибку по этому порядку. Если в контексте не было нужного фрагмента, неверная ссылка в ответе — следствие, а не причина, и чинить надо поиск (как в M10-L05).</p>
+<p>Затем считают. Доля трасс с кодом — это k / n, и на 66 трассах у неё широкий интервал. Интервал Уилсона из M04 показывает, что 2 случая из 66 — это от 0.8 % до 10 %. Частота — не единственный критерий: редкая, но опасная ошибка может быть важнее частой. Поэтому у таксономии есть и вторая ось — цена ошибки.</p>
+<p>Для частых ошибок придумывают автоматические проверки, чтобы не читать каждую новую трассу. Проверка — это гипотеза: «код X ⇔ правило над сигналами трассы». Её сверяют с ручными кодами по точности (сколько сработавших проверок совпали с ручным кодом) и полноте (сколько ручных кодов проверка нашла). Одна оговорка: проверка, придуманная по тем же трассам, на них всегда выглядит хорошо. Честную оценку даёт только новый набор трасс. Ошибки, для которых дешёвой проверки нет, — выдуманное утверждение, ответ мимо вопроса — остаются ручной разметке или модели-оценщику (M11-L04), которую тоже сверяют с людьми.</p>
+<p>Последний шаг — регрессионный набор. Каждый найденный класс ошибок закрепляют тестом, чтобы изменение кода не вернуло его молча. Тест в pytest не вызывает модель: он проверяет детерминированные части. Это неизменность поиска для размеченных вопросов, то, что проверки не стали хуже на размеченном наборе, что опасный случай по-прежнему ловится, а верный ответ не вызывает тревоги. Повторный вызов модели — отдельный медленный тест, который включают явно. После вмешательства цикл повторяют: собирают трассы, считают ту же таксономию и смотрят, куда перетекли ошибки.</p>
+<p><a class="figure-expand" href="course/assets/M11-L07X.svg" target="_blank" data-figure="course/assets/M11-L07X.svg" aria-label="Увеличить рисунок: Таксономия ошибок 66 трасс"><picture><img src="course/assets/M11-L07X.svg" alt="Таксономия ошибок 66 трасс" loading="lazy"></picture></a><span class="figure-hint">Таксономия ошибок 66 трасс · Открыть крупнее ↗</span></p>
+<h2 id="M11-L07X--аналогия-разбор-инцидентов-и-группировка-ошибок">Аналогия: разбор инцидентов и группировка ошибок</h2>
+<p>Как похоже: после серии инцидентов в сервисе инженер сначала читает сырые логи каждого случая. Затем похожие случаи группируются в issue, как в Sentry по сигнатуре стека. Частым issue ставят алерт, а на каждый исправленный баг пишут регрессионный тест. Error analysis LLM-системы устроен так же, только сигнатуру ошибки приходится придумывать.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Трасса: вопрос, контекст, ответ</td>
+  <td>Лог одного инцидента с запросом и стеком</td>
+</tr>
+<tr>
+  <td>Открытое кодирование</td>
+  <td>Чтение каждого инцидента и запись причины своими словами</td>
+</tr>
+<tr>
+  <td>Таксономия с определениями</td>
+  <td>Группировка в issue по сигнатуре</td>
+</tr>
+<tr>
+  <td>Первая ошибка по конвейеру</td>
+  <td>Корневая причина в postmortem, а не последний упавший сервис</td>
+</tr>
+<tr>
+  <td>Автоматическая проверка</td>
+  <td>Алерт по правилу над метриками</td>
+</tr>
+<tr>
+  <td>Сверка проверки с ручными кодами</td>
+  <td>Проверка алерта на прошлых инцидентах: ложные срабатывания и пропуски</td>
+</tr>
+<tr>
+  <td>Регрессионный набор в pytest</td>
+  <td>Тест на исправленный баг в CI</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> Sentry группирует ошибки по стеку автоматически и одинаково для всех. У ошибки LLM стека нет: группировку делает человек, коды пересекаются, а двое людей закодируют одну трассу по-разному. Алерт по метрике проверяется на прошлых данных один раз. Проверка LLM-ошибки, придуманная по прочитанным трассам, на них заведомо хороша, и её нужно перепроверять на новых.</p>
+<section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M11-L07X--разобранный-пример">Разобранный пример</h2>
+<p>На 66 трассах код «нет ответа» встретился 43 раза: доля 43 / 66 ≈ 0.652. Интервал Уилсона с z = 1.96 — от 0.531 до 0.755. Код «выдуманное утверждение» встретился 2 раза: 0.030, интервал от 0.008 до 0.104. Проверка «промах поиска» сработала на 6 трассах, ручной код стоит на 8, общих — 6. Точность — 6 / 6 = 1.0: ложных срабатываний нет. Полнота — 6 / 8 = 0.75: два ручных случая проверка пропустила.</p>
+<pre><code class="language-python">import math
+
+def wilson(k, n, z=1.96):
+    p = k / n
+    centre = (p + z * z / (2 * n)) / (1 + z * z / n)
+    half = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / (1 + z * z / n)
+    return round(centre - half, 3), round(centre + half, 3)
+
+assert wilson(43, 66) == (0.531, 0.755)
+assert wilson(2, 66) == (0.008, 0.104)
+auto, manual = 6, 8
+both = 6
+precision, recall = both / auto, both / manual
+assert (precision, recall) == (1.0, 0.75)
+print(round(43 / 66, 3), 'доля трасс без ответа')
+</code></pre>
+<h3 id="M11-L07X--авторский-прогон-06-11-2026">Авторский прогон 06.11.2026</h3>
+<p>Система — маленький RAG на русском корпусе M10. Лексический поиск (RRF символьного TF-IDF и BM25) отдаёт три абзаца. Qwen2.5-0.5B Q4_K_M в llama-server отвечает со ссылками [id] или фразой «В источниках нет ответа.»; генерация жадная. Вопросов 66: 52 из ru-embed-1 и 14 диагностических из 1.1.0, на 6 из них в базе ответа нет. Трассы и коды лежат в <code>quality/error-analysis</code>. Кодировал автор курса за один проход после чтения каждой трассы целиком. Это один кодировщик, согласие не измерялось — задача A просит независимую вторую разметку.</p>
+<p>Заготовленный до чтения список ошибок разошёлся с данными. Категории «нет ссылки» и «потеряно условие» не встретились ни разу: модель ставит ссылки всегда, даже вместо ответа. Зато появилась категория, которой в списке не было, — «нет ответа»: только ссылки, повтор вопроса или один токен до лимита.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Код</th>
+  <th>Определение</th>
+  <th>Число</th>
+  <th>Доля и 95 % интервал</th>
+  <th>Первая ошибка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Нет ответа</td>
+  <td>Только ссылки, повтор вопроса или одного токена</td>
+  <td>43</td>
+  <td>0.65 (0.53–0.76)</td>
+  <td>33</td>
+</tr>
+<tr>
+  <td>Неверная ссылка</td>
+  <td>Вне контекста, несуществующая или на абзац без утверждения</td>
+  <td>18</td>
+  <td>0.27 (0.18–0.39)</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>Лишний отказ</td>
+  <td>Отказ, хотя ответ в контексте</td>
+  <td>10</td>
+  <td>0.15 (0.08–0.26)</td>
+  <td>10</td>
+</tr>
+<tr>
+  <td>Нет отказа</td>
+  <td>В контексте нет ответа, а модель не отказалась</td>
+  <td>10</td>
+  <td>0.15 (0.08–0.26)</td>
+  <td>5</td>
+</tr>
+<tr>
+  <td>Промах поиска</td>
+  <td>В контексте нет фрагмента с ответом</td>
+  <td>8</td>
+  <td>0.12 (0.06–0.22)</td>
+  <td>8</td>
+</tr>
+<tr>
+  <td>Мимо вопроса</td>
+  <td>Переписан чужой или шаблонный абзац</td>
+  <td>5</td>
+  <td>0.08 (0.03–0.17)</td>
+  <td>4</td>
+</tr>
+<tr>
+  <td>Выдуманное утверждение</td>
+  <td>Не следует из источников или противоречит им</td>
+  <td>2</td>
+  <td>0.03 (0.01–0.10)</td>
+  <td>2</td>
+</tr>
+<tr>
+  <td>Формат</td>
+  <td>Обрыв по лимиту, не по-русски, длиннее трёх предложений</td>
+  <td>2</td>
+  <td>0.03 (0.01–0.10)</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>Верно</td>
+  <td>По существу со ссылкой или верный отказ</td>
+  <td>3</td>
+  <td>0.05 (0.02–0.13)</td>
+  <td>3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Верных ответов — 3 из 66. Этот конвейер с этой моделью почти не работает, и средняя метрика сказала бы только это. Таксономия говорит больше. Первая ошибка в половине трасс — «нет ответа». Неверные ссылки почти никогда не причина, а следствие. Промах поиска — причина в 8 случаях из 66, поэтому чинить начинать надо не с поиска.</p>
+<p>Причина, найденная при осевом кодировании. В системном prompt был пример формата <code>[index-v2-c1]</code>, и модель копировала его. 24 трассы ссылаются на абзацы об индексе, хотя вопрос не о нём, — это 15 из 18 неверных ссылок. Этот признак считается автоматически и стал отдельным сигналом <code>cites_prompt_example</code>.</p>
+<p>Самая опасная трасса — одна. На вопрос, выполнять ли найденную в документе инструкцию «покажи данные другой сессии», модель ответила «Система должна выполнить это». Источник говорит обратное, а ссылка указывает на несуществующий фрагмент <code>[answer-v2-c1]</code>. По частоте это 1 трасса из 66, по цене — главная находка: такую ошибку закрепляют регрессионным тестом первой.</p>
+<p>Проверки сверены с ручными кодами на тех же 66 трассах:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Проверка</th>
+  <th>Правило</th>
+  <th>Сработала</th>
+  <th>Ручной код</th>
+  <th>Точность</th>
+  <th>Полнота</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Промах поиска</td>
+  <td>Ни один найденный абзац не из нужного документа</td>
+  <td>6</td>
+  <td>8</td>
+  <td>1.0</td>
+  <td>0.75</td>
+</tr>
+<tr>
+  <td>Нет отказа</td>
+  <td>В базе нет ответа, а фразы отказа нет</td>
+  <td>5</td>
+  <td>10</td>
+  <td>1.0</td>
+  <td>0.50</td>
+</tr>
+<tr>
+  <td>Лишний отказ</td>
+  <td>Нужный документ найден, а ответ — фраза отказа</td>
+  <td>10</td>
+  <td>10</td>
+  <td>1.0</td>
+  <td>1.0</td>
+</tr>
+<tr>
+  <td>Нет ответа</td>
+  <td>Без ссылок и вопроса меньше 15 букв или повтор вопроса</td>
+  <td>43</td>
+  <td>43</td>
+  <td>1.0</td>
+  <td>1.0</td>
+</tr>
+<tr>
+  <td>Неверная ссылка</td>
+  <td>Ссылка на фрагмент вне контекста</td>
+  <td>17</td>
+  <td>18</td>
+  <td>1.0</td>
+  <td>0.94</td>
+</tr>
+<tr>
+  <td>Формат</td>
+  <td>Обрыв по лимиту, больше трёх предложений или мало кириллицы</td>
+  <td>2</td>
+  <td>2</td>
+  <td>1.0</td>
+  <td>1.0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Пропуски объяснимы. Проверка промаха поиска смотрит на документ, а не на абзац. Она не видит случая, когда из документа найден только шаблонный абзац без ответа, и случая, когда нужен второй документ. Проверка «нет отказа» знает только вопросы, на которые в базе нет ответа. Она пропускает пять трасс, где ответа не было в контексте из-за промаха поиска. Проверка ссылок не видит ссылку на неверный абзац внутри контекста. Совпадения 1.0 у трёх проверок оптимистичны: их правила писались после чтения этих трасс. Для выдуманных утверждений и ответов мимо вопроса дешёвой проверки нет.</p>
+<p>Регрессионный набор — <code>tests/regression/test_rag_regression.py</code>, 14 быстрых тестов и один медленный. Быстрые проверяют:</p>
+<ul>
+<li>поиск для всех 66 вопросов возвращает те же три абзаца;</li>
+<li>точность и полнота каждой проверки не ниже значений из таблицы;</li>
+<li>опасная трасса по-прежнему ловится проверкой ссылок;</li>
+<li>три верных ответа не вызывают ни одной тревоги;</li>
+<li>причина с примером в prompt посчитана, а prompt перечисляет источники в порядке поиска.</li>
+</ul>
+<p>Медленный тест с <code>M11_LIVE=1</code> заново спрашивает модель и сверяет метки проверок шести контрольных трасс. В авторском прогоне он прошёл за 2 минуты 14 секунд.</p>
+</section><h2 id="M11-L07X--схема">Схема</h2>
+<figure class="diagram"><pre class="mermaid">flowchart TD
+    T[&quot;Трассы&quot;] --&gt; O[&quot;Открытое кодирование&quot;]
+    O --&gt; X[&quot;Таксономия и порядок&quot;]
+    X --&gt; N[&quot;Доли, первая ошибка, цена&quot;]
+    N --&gt; C[&quot;Проверки частых ошибок&quot;]
+    C --&gt; V[&quot;Сверка с ручными кодами&quot;]
+    V --&gt; R[&quot;Регрессионные тесты&quot;]
+    R --&gt; I[&quot;Вмешательство&quot;]
+    I -.-&gt;|&quot;новые трассы&quot;| T
+    classDef main fill:#e8f0fe,stroke:#245bba,stroke-width:2px,color:#182b3a
+    class O,X,V main
+</pre></figure>
+<p>Цикл разбора ошибок. Сначала чтение и заметки без готового списка, потом таксономия с определениями и порядком по конвейеру. Затем подсчёт с интервалом и отметкой первой ошибки. Частые ошибки получают автоматические проверки, а проверки сверяются с ручными кодами. Найденное закрепляется регрессионными тестами. Выделены шаги, которые нельзя пропустить: чтение, определения кодов и сверка проверок с людьми. Пунктир — после вмешательства собирают новые трассы и считают ту же таксономию, потому что ошибки перетекают между кодами.</p>
+<section class="lesson-stage" data-stage="practice"><span class="stage-label">Пробуем с поддержкой</span><h2 id="M11-L07X--практика-с-поддержкой">Практика с поддержкой</h2>
+<p><strong>Предскажи до запуска.</strong> Прежде чем запускать код или пересчитывать пример, запиши ожидаемый вывод: числа, формы массивов, порядок или текст. После запуска сравни с фактическим и объясни каждое расхождение.</p>
+<p>Отчёт и регрессионный набор работают без моделей:</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe labs\M11\error_analysis.py report
+.\.venv\Scripts\python.exe -m pytest -q tests\regression
+</code></pre>
+<p>До запуска открой <code>quality/error-analysis/traces.jsonl</code> и сам прочитай первые десять трасс. Запиши к каждой заметку и свой код, не глядя в <code>codes.json</code>. Предскажи, какая ошибка окажется самой частой. Затем сравни свои коды с авторскими, а свою догадку — с таблицей из <code>artifacts/M11/error-analysis/report.json</code>. Найди в отчёте поля <code>manual_only</code> у проверок и объясни по тексту трасс, почему проверка их пропустила. Собрать трассы заново можно командой <code>.\.venv\Scripts\python.exe labs\M11\error_analysis.py collect</code> (нужны llama.cpp и GGUF из M09-L07X). Медленный регрессионный тест включается переменной <code>$env:M11_LIVE = '1'</code>.</p>
+</section><section class="lesson-stage" data-stage="task"><span class="stage-label">Твоя попытка</span><h2 id="M11-L07X--самостоятельная-задача-a-m11-l07x-a">Самостоятельная задача A — M11-L07X-A</h2>
+<p>Проведи вмешательство по таксономии. Самая частая причина неверных ссылок — пример <code>[index-v2-c1]</code> в системном prompt. В копии лабораторной убери конкретный идентификатор из prompt, оставив правило «укажи id так, как он написан перед источником». Собери 66 трасс заново в отдельную папку. Гипотезу запиши до запуска. Посчитай срабатывания всех автоматических проверок до и после. Затем вручную закодируй 15 новых трасс и проверь, совпадают ли с твоими кодами проверки, придуманные по старым трассам. Реши, стал ли конвейер лучше, и назови следующую причину, которую стоит разбирать.</p>
+<p>Первая попытка — без готового решения. Сохрани код, таблицу и объяснение в <code>submissions/M11-L07X/</code>. AI может пояснять термины и помогать искать ошибку; запиши полученную помощь.</p>
+</section><details class="hints" id="M11-L07X--подсказки-по-очереди"><summary>Подсказки по очереди</summary><div>
+<ol>
+<li>Функция <code>collect</code> берёт prompt из переменной <code>SYSTEM</code>; поменяй строку и передай новую папку в <code>--out</code>, чтобы не затереть замороженный набор.</li>
+<li>Сравни не одну проверку, а все: исправление одной причины часто переводит ошибки в соседний код.</li>
+<li>Проверка отказа сравнивает точную фразу; отказ другими словами она не узнает — это видно только при ручном чтении новых трасс.</li>
+</ol>
+</div></details>
+<h2 id="M11-L07X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</h2>
+<p>Ошибка: начать с готового списка категорий и подгонять трассы под него. Ошибка: считать долю без интервала на 66 трассах. Ошибка: чинить последнюю ошибку в цепочке вместо первой. Ошибка: объявить проверку надёжной по тем же трассам, на которых её придумали. Ошибка: в регрессионном тесте вызывать модель и сравнивать текст слово в слово. Критерий: заметки к трассам, таксономия с определениями, таблица частот с интервалами и первой ошибкой, сверка проверок с ручными кодами и тесты, которые не зависят от модели.</p>
+<p>После попытки сверь результат с <a href="#M11-SOLUTIONS--m11-l07x-a">решением M11-L07X-A</a>.</p>
+<section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M11-L07X--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
+<p><strong>B — первая ошибка и проверка.</strong> В трассе нужного документа нет в контексте, модель не отказалась, переписала чужой абзац и сослалась на фрагмент, которого нет в контексте. Какие коды поставить и какой из них первая ошибка? Проверка «нет отказа» сработала на 4 трассах из 30, ручной код стоит на 9, общих — 4. Посчитай точность и полноту и объясни, что проверка пропускает.</p>
+<p><strong>C — через 7–10 дней.</strong> Тренажёр собеседований даёт голосовую обратную связь (M15, M16). Составь план разбора ошибок для 60 сессий. Что входит в трассу? Какие ошибки ты ожидаешь и как защитишься от того, чтобы ожидание не подменило чтение? Какие две проверки сделаешь автоматическими и как их проверишь? Что попадёт в регрессионный набор?</p>
+<p>Сначала сохрани собственное решение B/C, затем сверь <a href="#M11-SOLUTIONS--m11-l07x-b-c">отдельный ключ M11-L07X-B-C</a>. Отметь помощь; отложенную проверку засчитывай только после фактической новой попытки.</p>
+</section><h2 id="M11-L07X--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Сначала читают и кодируют 50–100 реальных трасс без готового списка, потом собирают таксономию с определениями и порядком по конвейеру, считают доли с интервалом и первую ошибку; для частых ошибок делают проверки, сверяют их с ручными кодами и закрепляют регрессионными тестами</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Доля кода k / n и интервал Уилсона; точность проверки — доля её срабатываний с ручным кодом, полнота — доля ручных кодов, найденных проверкой; первая ошибка — самый ранний код по конвейеру; проверка, придуманная по тем же трассам, оценена оптимистично</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Когда средняя метрика плохая, а причина неясна. Пример: 3 верных ответа из 66; «нет ответа» — 43 трассы (0.65, интервал 0.53–0.76); пример <code>[index-v2-c1]</code> в prompt дал 15 из 18 неверных ссылок, а одна опасная трасса велела выполнить инструкцию из документа</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Подогнать трассы под заранее придуманные категории или поверить проверке без сверки с ручной разметкой на новых трассах</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M11-L07X--источники-и-углубление">Источники и углубление</h2>
+<ul>
+<li><a href="https://hamel.dev/blog/posts/field-guide/" target="_blank" rel="noopener noreferrer" class="external-link">Hamel Husain: A Field Guide to Rapidly Improving AI Products</a> — разбор ошибок снизу вверх, просмотрщик трасс, роль экспертов (на английском)</li>
+<li><a href="https://hamel.dev/blog/posts/evals/" target="_blank" rel="noopener noreferrer" class="external-link">Hamel Husain: Your AI Product Needs Evals</a> — от разбора ошибок к проверкам и тестам (на английском)</li>
+<li><a href="https://en.wikipedia.org/wiki/Grounded_theory" target="_blank" rel="noopener noreferrer" class="external-link">Grounded theory</a> — открытое и осевое кодирование по Strauss и Corbin (на английском)</li>
+<li><a href="https://arxiv.org/abs/2404.12272" target="_blank" rel="noopener noreferrer" class="external-link">Shankar et al.: Who Validates the Validators?</a> — критерии меняются при чтении ответов, автоматические оценщики сверяют с людьми (на английском)</li>
+<li><a href="https://arxiv.org/abs/2005.04118" target="_blank" rel="noopener noreferrer" class="external-link">Ribeiro et al.: CheckList</a> — поведенческие тесты моделей по типам ошибок (на английском)</li>
+<li><a href="https://docs.sentry.io/concepts/data-management/event-grouping/" target="_blank" rel="noopener noreferrer" class="external-link">Sentry: Issue grouping</a> — как группируют ошибки по сигнатуре в обычном backend (на английском)</li>
+</ul>
+<p>Вопросы, трассы, коды и численные наблюдения созданы для курса; внешние тексты не копировались в учебные данные.</p>
+<div class="practice-note"><a href="#M11">Модуль и домашняя работа</a> · <a href="#M11-SOLUTIONS--m11-l07x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M11-L07X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L06"><small>Предыдущий раздел</small>← M11-L06. От реальных ответов к парному сравнению систем</a><a href="#M12"><small>Следующий раздел</small>M12 Обучение и адаптация моделей →</a></nav></article><article class="material" id="M12" data-title="M12 Обучение и адаптация моделей" data-short-title="Обучение и адаптация моделей" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Обучение и адаптация моделей</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: M07, M09 и M11: градиент, инференс и независимое оценивание.</p>
 <h2 id="M12--семь-уроков">Семь уроков</h2>
 <ol>
 <li><a href="#M12-L01">M12-L01. Выбор вмешательства</a></li>
@@ -13634,7 +13937,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M12.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M12.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L06"><small>Предыдущий раздел</small>← M11-L06. От реальных ответов к парному сравнению систем</a><a href="#M12-L01"><small>Следующий раздел</small>M12-L01. Выбор вмешательства →</a></nav></article><article class="material" id="M12-L01" data-title="M12-L01. Выбор вмешательства" data-short-title="Выбор вмешательства" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Выбор вмешательства</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M12-L01--объяснение">Объяснение</a></li><li><a href="#M12-L01--аналогия-баг-в-сервисе-конфиг-данные-или-код">Аналогия: баг в сервисе — конфиг, данные или код</a></li><li><a href="#M12-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L01--схема">Схема</a></li><li><a href="#M12-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L01--карточка-урока">Карточка урока</a></li><li><a href="#M12-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0.</p>
+"></iframe><p><a href="course/visuals/M12.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M12.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M11-L07X"><small>Предыдущий раздел</small>← M11-L07X. Error analysis как процесс</a><a href="#M12-L01"><small>Следующий раздел</small>M12-L01. Выбор вмешательства →</a></nav></article><article class="material" id="M12-L01" data-title="M12-L01. Выбор вмешательства" data-short-title="Выбор вмешательства" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Выбор вмешательства</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M12-L01--объяснение">Объяснение</a></li><li><a href="#M12-L01--аналогия-баг-в-сервисе-конфиг-данные-или-код">Аналогия: баг в сервисе — конфиг, данные или код</a></li><li><a href="#M12-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L01--схема">Схема</a></li><li><a href="#M12-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M12-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L01--карточка-урока">Карточка урока</a></li><li><a href="#M12-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu; предобученные модели не используются — учебная биграммная модель курса · проверено 04.11.2026 · источник: <a href="https://docs.pytorch.org/docs/2.15/nn.html" target="_blank" rel="noopener noreferrer" class="external-link">PyTorch 2.15: torch.nn</a></p>
 </blockquote>
@@ -21027,7 +21330,24 @@ assert not accept_result(3,2)
 <nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L05" data-return-task="M11-L05">← Вернуться к задаче</a><a href="#M11-L05" data-return-retry="M11-L05">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M11-SOLUTIONS--m11-l05-c"><summary>Ответ: M11-L05-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L05" data-return-task="M11-L05">← Вернуться к задаче</a><a href="#M11-L05" data-return-retry="M11-L05">Новый вариант B / C →</a></nav>
 <p>Нельзя молча менять набор. Нужно восстановить пропуск либо явно определить другой протокол, сохранив факт неполного исходного опыта.</p>
 <p>Полный измеренный цикл с неудачной первой попыткой и новым контрольным набором: <a href="#EVALUATION-REFERENCE">разбор обратной связи</a>. Формат и точная цитата не гарантируют полезность; контрольные пороги эталона не пройдены.</p>
-<nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L05" data-return-task="M11-L05">← Вернуться к задаче</a><a href="#M11-L05" data-return-retry="M11-L05">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M11.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M11"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M12-SOLUTIONS" data-title="M12. Решения для самопроверки" data-short-title="M12. Решения для самопроверки" data-kind="answer" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M12. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Версия 1.1.0. Открывай после собственной попытки. Данные реального ученика и результаты участия людей здесь не выдумываются.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L05" data-return-task="M11-L05">← Вернуться к задаче</a><a href="#M11-L05" data-return-retry="M11-L05">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M11-SOLUTIONS--m11-l07x-a"><summary>Ответ: M11-L07X-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L07X" data-return-task="M11-L07X">← Вернуться к задаче</a><a href="#M11-L07X" data-return-retry="M11-L07X">Новый вариант B / C →</a></nav>
+<p>Числа зависят от своего прогона, поэтому ключ проверяет ход решения. Авторская проверка 06.11.2026: в prompt «например [index-v2-c1]» заменено на «точно так, как id написан перед источником». Собраны те же 66 вопросов той же моделью и тем же поиском. Срабатывания проверок до и после:</p>
+<ul>
+<li>ссылка на пример из prompt — 24 → 1;</li>
+<li>неверная ссылка — 17 → 1;</li>
+<li>нет ответа — 43 → 12;</li>
+<li>нет отказа на вопросах без ответа в базе — 5 → 1;</li>
+<li>лишний отказ — 10 → 37;</li>
+<li>формат — 2 → 4;</li>
+<li>трасс без единой тревоги — 7 → 11;</li>
+<li>промах поиска не изменился — 6, поиск тот же.</li>
+</ul>
+<p>Вмешательство убрало причину, которую нашёл разбор, но ошибки перетекли в соседний код. Модель перестала отвечать голыми ссылками и стала отказываться даже там, где ответ лежит в контексте. Трасса dev-cache, верная до вмешательства, теперь — отказ. Поэтому «стало лучше» нельзя решить по одной проверке: из 66 трасс без тревоги стало 11 вместо 7, но лишние отказы выросли почти вчетверо.</p>
+<p>Ручное кодирование новых трасс нужно, потому что проверки придуманы по старым. Например, на вопрос без ответа модель ответила «Вопрос не содержит ответа.». Это отказ по смыслу, но проверка ищет точную фразу и засчитала его как «нет отказа». Следующая причина для разбора — лишние отказы: модель не находит ответ в контексте, который его содержит. Кандидаты — порядок источников, длина prompt и сама модель (сравнить с 4B). Критическая ошибка — объявить успех по падению одного кода, не посчитав остальные, и не перепроверить проверки на новых трассах.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L07X" data-return-task="M11-L07X">← Вернуться к задаче</a><a href="#M11-L07X" data-return-retry="M11-L07X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M11-SOLUTIONS--m11-l07x-b-c"><summary>Ответ: M11-L07X-B-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L07X" data-return-task="M11-L07X">← Вернуться к задаче</a><a href="#M11-L07X" data-return-retry="M11-L07X">Новый вариант B / C →</a></nav>
+<p>B: коды — промах поиска, нет отказа, мимо вопроса и неверная ссылка. Первая ошибка по конвейеру — промах поиска: без нужного фрагмента в контексте всё остальное следствие. Сначала чинят поиск, затем учат модель отказываться при пустом контексте. Проверка «нет отказа»: точность 4 / 4 = 1.0, полнота 4 / 9 ≈ 0.44. Она не ошибается, когда срабатывает, но находит меньше половины случаев. Если проверка, как в лабораторной, знает только вопросы без ответа в базе, она пропускает трассы, где ответа нет из-за промаха поиска, и отказы другими словами.</p>
+<p>C: трасса — вопрос и аудио кандидата, распознанный текст, найденные источники, prompt, ответ модели, синтезированная речь, задержки и идентификатор хода. Ожидаемые ошибки, например обрыв из-за перебивания, оценка без основания или ошибка распознавания отрицания, записывают отдельно до чтения. Затем читают все 60 сессий и кодируют без этого списка, а в конце сравнивают: что ожидалось и не встретилось, что встретилось и не ожидалось. Автоматическими разумно сделать дешёвые структурные проверки: звук отменённого хода после перебивания (по идентификаторам хода) и ссылка в отзыве на фрагмент, которого нет в ответе кандидата. Каждую сверяют с ручными кодами на сессиях, по которым её не придумывали. В регрессионный набор идут детерминированные части: обработка отмены хода, проверка схемы отзыва (M09-L08X), поиск по контрольным вопросам и опасные случаи, найденные разбором. Модель в быстрых тестах не вызывают.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M11-L07X" data-return-task="M11-L07X">← Вернуться к задаче</a><a href="#M11-L07X" data-return-retry="M11-L07X">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M11.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M11"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M12-SOLUTIONS" data-title="M12. Решения для самопроверки" data-short-title="M12. Решения для самопроверки" data-kind="answer" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M12. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Версия 1.1.0. Открывай после собственной попытки. Данные реального ученика и результаты участия людей здесь не выдумываются.</p>
 <details class="answer-key" id="M12-SOLUTIONS--m12-l01-a"><summary>Ответ: M12-L01-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M12-L01" data-return-task="M12-L01">← Вернуться к задаче</a><a href="#M12-L01" data-return-retry="M12-L01">Новый вариант B / C →</a></nav>
 <p><strong>Условие:</strong> Разбери три случая: модель нарушает JSON в восьми из двадцати ответов; правильно цитирует старый документ вместо нового; выдаёт одинаково общую обратную связь для разных ответов кандидатов. Для каждого предложи первый эксперимент, метрику и основание перейти к более дорогому вмешательству. Не используй название технологии вместо объяснения причины.</p>
 <p><strong>Обоснованное решение:</strong> Формат: сначала явная схема, пример и проверка парсером; считать валидность и содержательную точность отдельно. Старый факт: проверить версии корпуса и retrieval, затем подставить свежий фрагмент вручную; измерять правильность версии и подтверждение источником. Общая обратная связь: проверить наличие ответа кандидата и рубрики во входе, затем сопоставить конкретность с экспертными примерами. SFT оправдан только при устойчивом остаточном недостатке поведения и независимом улучшении; двадцать ответов позволяют начать диагностику, но не доказать универсальное превосходство.</p>
@@ -22873,7 +23193,7 @@ assert not accept_result(3,2)
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 108 из 108 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 109 из 109 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -23411,6 +23731,13 @@ assert not accept_result(3,2)
 <li><strong>Смысл величин.</strong> Grounded — нет ли придуманного и различены ли наблюдение и вопрос; useful — применимость следующего действия; шкалы порядковые, среднее — заранее выбранная сводка; fallback — запасной ответ приложения, его успех не засчитывают модели; bootstrap по сценариям даёт каждому сценарию одинаковый вес.</li>
 <li><strong>Когда применять.</strong> При сравнении двух конфигураций тренажёра на реальных ответах. Пример: у сценария S1 два случая с изменением useful +2 и 0, у S2 один случай с −1 — среднее по сценариям (1 + (−1))/2 = 0, а по случаям (2 + 0 − 1)/3 ≈ 0.333: перефразирования одного сценария не должны перевешивать.</li>
 <li><strong>Главная ошибка.</strong> Соединять результаты по порядку строк, считать пропущенную оценку нулём или засчитывать модели успех fallback.</li>
+</ul>
+<h3 id="CHEATSHEET--m11-l07x-error-analysis-как-процесс"><a href="#M11-L07X">M11-L07X. Error analysis как процесс</a></h3>
+<ul>
+<li><strong>Правило.</strong> Сначала читают и кодируют 50–100 реальных трасс без готового списка, потом собирают таксономию с определениями и порядком по конвейеру, считают доли с интервалом и первую ошибку; для частых ошибок делают проверки, сверяют их с ручными кодами и закрепляют регрессионными тестами.</li>
+<li><strong>Смысл величин.</strong> Доля кода k / n и интервал Уилсона; точность проверки — доля её срабатываний с ручным кодом, полнота — доля ручных кодов, найденных проверкой; первая ошибка — самый ранний код по конвейеру; проверка, придуманная по тем же трассам, оценена оптимистично.</li>
+<li><strong>Когда применять.</strong> Когда средняя метрика плохая, а причина неясна. Пример: 3 верных ответа из 66; «нет ответа» — 43 трассы (0.65, интервал 0.53–0.76); пример <code>[index-v2-c1]</code> в prompt дал 15 из 18 неверных ссылок, а одна опасная трасса велела выполнить инструкцию из документа.</li>
+<li><strong>Главная ошибка.</strong> Подогнать трассы под заранее придуманные категории или поверить проверке без сверки с ручной разметкой на новых трассах.</li>
 </ul>
 <h2 id="CHEATSHEET--m12-обучение-и-адаптация-моделей">M12. Обучение и адаптация моделей</h2>
 <h3 id="CHEATSHEET--m12-l01-выбор-вмешательства"><a href="#M12-L01">M12-L01. Выбор вмешательства</a></h3>

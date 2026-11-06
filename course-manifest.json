@@ -786,6 +786,13 @@
       "version": "1.1.0",
       "status": "ready"
     },
+    "M11-L07X": {
+      "id": "M11-L07X",
+      "title": "M11-L07X. Error analysis как процесс",
+      "path": "course/lessons/M11-L07X.md",
+      "version": "1.1.0",
+      "status": "ready"
+    },
     "M12-L01": {
       "id": "M12-L01",
       "title": "M12-L01. Выбор вмешательства",
@@ -1326,6 +1333,7 @@
       "M11-L04",
       "M11-L05",
       "M11-L06",
+      "M11-L07X",
       "M12-L01",
       "M12-L02",
       "M12-L03",
@@ -1848,7 +1856,8 @@
         "M11-L03",
         "M11-L04",
         "M11-L05",
-        "M11-L06"
+        "M11-L06",
+        "M11-L07X"
       ],
       "homework_id": "M11-HW01",
       "exercise": {
@@ -3911,6 +3920,30 @@
         "practice_minutes": 165,
         "self_check_minutes": 30,
         "setup_minutes": "separate; record actual",
+        "estimate_status": "planning_hypothesis_not_measured"
+      },
+      "pilot_sessions": []
+    },
+    {
+      "id": "M11-L07X",
+      "title": "Error analysis как процесс",
+      "version": "1.1.0",
+      "module_id": "M11",
+      "material_key": "M11-L07X",
+      "path": "course/lessons/M11-L07X.md",
+      "scope": "complete_lesson",
+      "material_status": "ready",
+      "prerequisites": [
+        "M11-L06"
+      ],
+      "outcome_ids": [
+        "M11-C17"
+      ],
+      "workload": {
+        "reading_minutes": 40,
+        "practice_minutes": 110,
+        "self_check_minutes": 30,
+        "setup_minutes": "separate; frozen traces need no model, re-collecting uses llama.cpp and GGUF of M09-L07X",
         "estimate_status": "planning_hypothesis_not_measured"
       },
       "pilot_sessions": []

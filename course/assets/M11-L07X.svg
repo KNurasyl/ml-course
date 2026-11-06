@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="480" viewBox="0 0 760 480" role="img" aria-labelledby="title desc">
+<title id="title">Таксономия ошибок 66 трасс</title>
+<desc id="desc">Слева — сколько из 66 трасс получили каждый код и сколько раз код был первой ошибкой по конвейеру: нет ответа 43 и 33, неверная ссылка 18 и 1, лишний отказ 10 и 10, нет отказа 10 и 5, промах поиска 8 и 8, мимо вопроса 5 и 4, выдуманное утверждение 2 и 2, формат 2 и 0, верно 3. Справа — точность и полнота автоматических проверок против ручных кодов. Внизу — причина с примером в prompt и одна опасная трасса.</desc>
+<rect width="760" height="480" fill="white"/>
+<text x="16" y="34" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650">Таксономия ошибок 66 трасс</text>
+<rect x="16" y="56" width="470" height="330" rx="6" fill="#eef4fc" stroke="#245bba"/>
+<text x="30" y="80" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600">Трасс с кодом и первая ошибка, из 66</text>
+<rect x="30" y="92" width="10" height="10" fill="#9fb8e3"/>
+<text x="45" y="101" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12">код есть в трассе</text>
+<rect x="170" y="92" width="10" height="10" fill="#087e82"/>
+<text x="185" y="101" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12">первая ошибка по конвейеру</text>
+<g font-family="Segoe UI,Arial,sans-serif" font-size="13" fill="#182b3a">
+<text x="30" y="128">Нет ответа</text><rect x="200" y="116" width="258" height="10" fill="#9fb8e3"/><rect x="200" y="128" width="198" height="10" fill="#087e82"/><text x="464" y="126" font-size="11">43</text><text x="404" y="138" font-size="11">33</text>
+<text x="30" y="158">Неверная ссылка</text><rect x="200" y="146" width="108" height="10" fill="#9fb8e3"/><rect x="200" y="158" width="6" height="10" fill="#087e82"/><text x="314" y="156" font-size="11">18</text><text x="212" y="168" font-size="11">1</text>
+<text x="30" y="188">Лишний отказ</text><rect x="200" y="176" width="60" height="10" fill="#9fb8e3"/><rect x="200" y="188" width="60" height="10" fill="#087e82"/><text x="266" y="186" font-size="11">10</text><text x="266" y="198" font-size="11">10</text>
+<text x="30" y="218">Нет отказа</text><rect x="200" y="206" width="60" height="10" fill="#9fb8e3"/><rect x="200" y="218" width="30" height="10" fill="#087e82"/><text x="266" y="216" font-size="11">10</text><text x="236" y="228" font-size="11">5</text>
+<text x="30" y="248">Промах поиска</text><rect x="200" y="236" width="48" height="10" fill="#9fb8e3"/><rect x="200" y="248" width="48" height="10" fill="#087e82"/><text x="254" y="246" font-size="11">8</text><text x="254" y="258" font-size="11">8</text>
+<text x="30" y="278">Мимо вопроса</text><rect x="200" y="266" width="30" height="10" fill="#9fb8e3"/><rect x="200" y="278" width="24" height="10" fill="#087e82"/><text x="236" y="276" font-size="11">5</text><text x="230" y="288" font-size="11">4</text>
+<text x="30" y="308" fill="#a65c12" font-weight="600">Выдуманное утверждение</text><rect x="200" y="296" width="12" height="10" fill="#9fb8e3"/><rect x="200" y="308" width="12" height="10" fill="#087e82"/><text x="218" y="306" font-size="11">2</text><text x="218" y="318" font-size="11">2</text>
+<text x="30" y="338">Формат</text><rect x="200" y="326" width="12" height="10" fill="#9fb8e3"/><text x="218" y="336" font-size="11">2</text><text x="200" y="348" font-size="11">0</text>
+<text x="30" y="368">Верно</text><rect x="200" y="356" width="18" height="10" fill="#9fb8e3"/><rect x="200" y="368" width="18" height="10" fill="#087e82"/><text x="224" y="366" font-size="11">3</text><text x="224" y="378" font-size="11">3</text>
+</g>
+<rect x="500" y="56" width="244" height="330" rx="6" fill="#edf8f7" stroke="#087e82"/>
+<text x="514" y="80" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600">Проверка против ручного кода</text>
+<text x="514" y="98" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12">точность / полнота на тех же трассах</text>
+<g font-family="Segoe UI,Arial,sans-serif" font-size="13" fill="#182b3a">
+<text x="514" y="128">Промах поиска</text><text x="730" y="128" text-anchor="end">1.0 / 0.75</text>
+<text x="514" y="156">Нет отказа</text><text x="730" y="156" text-anchor="end" fill="#a65c12" font-weight="600">1.0 / 0.50</text>
+<text x="514" y="184">Лишний отказ</text><text x="730" y="184" text-anchor="end">1.0 / 1.0 *</text>
+<text x="514" y="212">Нет ответа</text><text x="730" y="212" text-anchor="end">1.0 / 1.0 *</text>
+<text x="514" y="240">Неверная ссылка</text><text x="730" y="240" text-anchor="end">1.0 / 0.94</text>
+<text x="514" y="268">Формат</text><text x="730" y="268" text-anchor="end">1.0 / 1.0 *</text>
+</g>
+<text x="514" y="300" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12">* правило писали по этим трассам —</text>
+<text x="514" y="316" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12">оценка оптимистична</text>
+<text x="514" y="344" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12">без дешёвой проверки: выдумка</text>
+<text x="514" y="360" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12">и ответ мимо вопроса</text>
+<rect x="16" y="398" width="728" height="56" rx="6" fill="#fff3e5" stroke="#a65c12"/>
+<text x="30" y="421" fill="#a65c12" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600">Пример [index-v2-c1] из системного prompt дал 15 из 18 неверных ссылок</text>
+<text x="30" y="442" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">1 трасса из 66 велела выполнить инструкцию из документа — редкая, но самая дорогая ошибка</text>
+<text x="16" y="472" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12">Авторский прогон 06.11.2026: Qwen2.5-0.5B Q4_K_M, лексический поиск, один кодировщик.</text>
+</svg>

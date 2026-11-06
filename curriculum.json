@@ -2581,6 +2581,10 @@
         {
           "id": "M11-C16",
           "description": "Собрать неизменённые ответы двух конфигураций, разметить по рубрике и принять решение отдельно по HR/backend."
+        },
+        {
+          "id": "M11-C17",
+          "description": "Провести разбор ошибок LLM-системы: открытое кодирование реальных трасс, таксономия с первой ошибкой и интервалами, автоматические проверки, сверенные с ручными кодами, и регрессионный набор в pytest."
         }
       ],
       "lessons": [
@@ -2728,6 +2732,33 @@
             "estimate_status": "planning_hypothesis_not_measured"
           },
           "estimate_status": "planning_hypothesis",
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M11-L07X",
+          "title": "Error analysis как процесс",
+          "path": "course/lessons/M11-L07X.md",
+          "prerequisites": [
+            "M11-L06"
+          ],
+          "estimated_minutes": 180,
+          "estimate_status": "planning_hypothesis",
+          "practice": "66 реальных трасс RAG на 0.5B: открытое кодирование, таксономия, доли с интервалом и первая ошибка, проверки против ручных кодов, регрессионный набор tests/regression",
+          "assessment": "Заметки к трассам, таксономия с определениями, таблица частот, сверка проверок с ручными кодами и тесты без модели",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M11-C17"
+          ],
+          "extension": "1.2.0",
+          "required": false,
+          "workload": {
+            "reading_minutes": 40,
+            "practice_minutes": 110,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; frozen traces need no model, re-collecting uses llama.cpp and GGUF of M09-L07X",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
           "assessment_policy": "course/assessment.md"
         }
       ],

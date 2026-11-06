@@ -1,0 +1,14 @@
+{
+  "task": "T37",
+  "model": "qwen2.5-0.5b-instruct-q4_k_m",
+  "repo_id": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+  "revision": "9217f5db79a29953eb74d5343926648285ec7e67",
+  "llama_cpp": "b11803",
+  "threads": 4,
+  "top": 3,
+  "max_tokens": 200,
+  "system": "Ты отвечаешь на вопросы по технической базе знаний. Используй только приведённые источники. После каждого утверждения укажи id источника в квадратных скобках, например [index-v2-c1]. Если в источниках нет ответа, напиши ровно: «В источниках нет ответа.» Ответ — одно-три предложения на русском.",
+  "retriever": "RRF (c = 10) of char 3-5 TF-IDF and BM25 over title + paragraph, top 3",
+  "decoding": "greedy, seed 17, cache_prompt off",
+  "collected": "2026-11-06"
+}
