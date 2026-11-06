@@ -1216,5 +1216,12 @@
     "path": "course/lessons/M14-L09X.md",
     "version": "1.1.0",
     "status": "ready"
+  },
+  "M14-L10X": {
+    "id": "M14-L10X",
+    "title": "M14-L10X. Паттерны агентов: workflow или агент",
+    "path": "course/lessons/M14-L10X.md",
+    "version": "1.1.0",
+    "status": "ready"
   }
 }

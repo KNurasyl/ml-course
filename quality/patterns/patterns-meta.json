@@ -1,0 +1,25 @@
+{
+  "task": "T43",
+  "models": {
+    "tiny": "qwen2.5-0.5b-instruct-q4_k_m",
+    "strong": "qwen3.5-4b-q4_k_m"
+  },
+  "llama_cpp": "b11803",
+  "status": {
+    "tiny": {
+      "records": 20,
+      "minutes": 1.6
+    },
+    "strong": {
+      "records": 20,
+      "minutes": 6.2
+    }
+  },
+  "rounds": 2,
+  "agent_budget_composite": 8,
+  "agent_max_tokens_composite": 400,
+  "first_run": "with 200 tokens per agent step the 4B finish answer to mini-interview was cut off and broke the JSON",
+  "decoding": "greedy, seed 17",
+  "agent_on_simple_tasks": "quality/mcp/planner.jsonl (T42)",
+  "collected": "2026-11-07"
+}

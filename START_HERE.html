@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="14684563274c052a7aa58a94871075fe1a33afa61a8bdc681c570dd7a3049a60"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="e5fd2c36f98cafebac461080b4254c55dc82f7174ec5becca5bc49076da81dcf"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -37,7 +37,7 @@
 <section class="nav-group"><details class="nav-module"><summary>M11 Оценивание LLM-систем</summary><ul><li data-key="M11"><a href="#M11" data-material="M11"><span class="nav-marker">M11</span><span>Оценивание LLM-систем</span></a></li><li data-key="M11-L01"><a href="#M11-L01" data-material="M11-L01"><span class="nav-marker">L01</span><span>Что именно оцениваем</span></a></li><li data-key="M11-L02"><a href="#M11-L02" data-material="M11-L02"><span class="nav-marker">L02</span><span>Набор примеров и разметка</span></a></li><li data-key="M11-L03"><a href="#M11-L03" data-material="M11-L03"><span class="nav-marker">L03</span><span>HR и технические рубрики</span></a></li><li data-key="M11-L04"><a href="#M11-L04" data-material="M11-L04"><span class="nav-marker">L04</span><span>Модель как оценщик</span></a></li><li data-key="M11-L05"><a href="#M11-L05" data-material="M11-L05"><span class="nav-marker">L05</span><span>Регрессии и отчёт</span></a></li><li data-key="M11-L06"><a href="#M11-L06" data-material="M11-L06"><span class="nav-marker">L06</span><span>От реальных ответов к парному сравнению систем</span></a></li><li data-key="M11-L07X"><a href="#M11-L07X" data-material="M11-L07X"><span class="nav-marker">L07X</span><span>Error analysis как процесс</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M12 Обучение и адаптация моделей</summary><ul><li data-key="M12"><a href="#M12" data-material="M12"><span class="nav-marker">M12</span><span>Обучение и адаптация моделей</span></a></li><li data-key="M12-L01"><a href="#M12-L01" data-material="M12-L01"><span class="nav-marker">L01</span><span>Выбор вмешательства</span></a></li><li data-key="M12-L02"><a href="#M12-L02" data-material="M12-L02"><span class="nav-marker">L02</span><span>Данные для адаптации</span></a></li><li data-key="M12-L03"><a href="#M12-L03" data-material="M12-L03"><span class="nav-marker">L03</span><span>Малое обучение с нуля</span></a></li><li data-key="M12-L04"><a href="#M12-L04" data-material="M12-L04"><span class="nav-marker">L04</span><span>Дообучение и адаптеры</span></a></li><li data-key="M12-L05"><a href="#M12-L05" data-material="M12-L05"><span class="nav-marker">L05</span><span>Сравнение до и после</span></a></li><li data-key="M12-L06"><a href="#M12-L06" data-material="M12-L06"><span class="nav-marker">L06</span><span>Из диалога в обучающий пример: токены и маска потерь</span></a></li><li data-key="M12-L07"><a href="#M12-L07" data-material="M12-L07"><span class="nav-marker">L07</span><span>Настоящий малый SFT: адаптер, checkpoint и регрессии</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M13 MLOps и LLMOps</summary><ul><li data-key="M13"><a href="#M13" data-material="M13"><span class="nav-marker">M13</span><span>MLOps и LLMOps</span></a></li><li data-key="M13-L01"><a href="#M13-L01" data-material="M13-L01"><span class="nav-marker">L01</span><span>Версия эксперимента и релиза</span></a></li><li data-key="M13-L02"><a href="#M13-L02" data-material="M13-L02"><span class="nav-marker">L02</span><span>Упаковка и контракт</span></a></li><li data-key="M13-L03"><a href="#M13-L03" data-material="M13-L03"><span class="nav-marker">L03</span><span>Регрессионные проверки</span></a></li><li data-key="M13-L04"><a href="#M13-L04" data-material="M13-L04"><span class="nav-marker">L04</span><span>Наблюдаемость и нагрузка</span></a></li><li data-key="M13-L05"><a href="#M13-L05" data-material="M13-L05"><span class="nav-marker">L05</span><span>Неудачный релиз и восстановление</span></a></li><li data-key="M13-L06"><a href="#M13-L06" data-material="M13-L06"><span class="nav-marker">L06</span><span>Очередь, дедлайн и восстановление HTTP-сервиса</span></a></li><li data-key="M13-L07X"><a href="#M13-L07X" data-material="M13-L07X"><span class="nav-marker">L07X</span><span>Трассировка LLM-конвейера</span></a></li></ul></details></section>
-<section class="nav-group"><details class="nav-module"><summary>M14 Агенты и инструменты</summary><ul><li data-key="M14"><a href="#M14" data-material="M14"><span class="nav-marker">M14</span><span>Агенты и инструменты</span></a></li><li data-key="M14-L01"><a href="#M14-L01" data-material="M14-L01"><span class="nav-marker">L01</span><span>Сценарий и агентный цикл</span></a></li><li data-key="M14-L02"><a href="#M14-L02" data-material="M14-L02"><span class="nav-marker">L02</span><span>Контракт инструмента</span></a></li><li data-key="M14-L03"><a href="#M14-L03" data-material="M14-L03"><span class="nav-marker">L03</span><span>Состояние и границы доступа</span></a></li><li data-key="M14-L04"><a href="#M14-L04" data-material="M14-L04"><span class="nav-marker">L04</span><span>Ошибки и остановка</span></a></li><li data-key="M14-L05"><a href="#M14-L05" data-material="M14-L05"><span class="nav-marker">L05</span><span>Проверка агента</span></a></li><li data-key="M14-L06"><a href="#M14-L06" data-material="M14-L06"><span class="nav-marker">L06</span><span>Модель предлагает инструмент, исполнитель проверяет</span></a></li><li data-key="M14-L08X"><a href="#M14-L08X" data-material="M14-L08X"><span class="nav-marker">L08X</span><span>Безопасность LLM-приложений</span></a></li><li data-key="M14-L09X"><a href="#M14-L09X" data-material="M14-L09X"><span class="nav-marker">L09X</span><span>MCP: свой сервер инструментов</span></a></li></ul></details></section>
+<section class="nav-group"><details class="nav-module"><summary>M14 Агенты и инструменты</summary><ul><li data-key="M14"><a href="#M14" data-material="M14"><span class="nav-marker">M14</span><span>Агенты и инструменты</span></a></li><li data-key="M14-L01"><a href="#M14-L01" data-material="M14-L01"><span class="nav-marker">L01</span><span>Сценарий и агентный цикл</span></a></li><li data-key="M14-L02"><a href="#M14-L02" data-material="M14-L02"><span class="nav-marker">L02</span><span>Контракт инструмента</span></a></li><li data-key="M14-L03"><a href="#M14-L03" data-material="M14-L03"><span class="nav-marker">L03</span><span>Состояние и границы доступа</span></a></li><li data-key="M14-L04"><a href="#M14-L04" data-material="M14-L04"><span class="nav-marker">L04</span><span>Ошибки и остановка</span></a></li><li data-key="M14-L05"><a href="#M14-L05" data-material="M14-L05"><span class="nav-marker">L05</span><span>Проверка агента</span></a></li><li data-key="M14-L06"><a href="#M14-L06" data-material="M14-L06"><span class="nav-marker">L06</span><span>Модель предлагает инструмент, исполнитель проверяет</span></a></li><li data-key="M14-L08X"><a href="#M14-L08X" data-material="M14-L08X"><span class="nav-marker">L08X</span><span>Безопасность LLM-приложений</span></a></li><li data-key="M14-L09X"><a href="#M14-L09X" data-material="M14-L09X"><span class="nav-marker">L09X</span><span>MCP: свой сервер инструментов</span></a></li><li data-key="M14-L10X"><a href="#M14-L10X" data-material="M14-L10X"><span class="nav-marker">L10X</span><span>Паттерны агентов: workflow или агент</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M15 Речь и голосовой диалог</summary><ul><li data-key="M15"><a href="#M15" data-material="M15"><span class="nav-marker">M15</span><span>Речь и голосовой диалог</span></a></li><li data-key="M15-L01"><a href="#M15-L01" data-material="M15-L01"><span class="nav-marker">L01</span><span>Аудио и речь</span></a></li><li data-key="M15-L02"><a href="#M15-L02" data-material="M15-L02"><span class="nav-marker">L02</span><span>Распознавание и сегменты</span></a></li><li data-key="M15-L03"><a href="#M15-L03" data-material="M15-L03"><span class="nav-marker">L03</span><span>Синтез и доставка</span></a></li><li data-key="M15-L04"><a href="#M15-L04" data-material="M15-L04"><span class="nav-marker">L04</span><span>Поток и перебивание</span></a></li><li data-key="M15-L05"><a href="#M15-L05" data-material="M15-L05"><span class="nav-marker">L05</span><span>Речевое оценивание</span></a></li><li data-key="M15-L06"><a href="#M15-L06" data-material="M15-L06"><span class="nav-marker">L06</span><span>От WAV к частичным гипотезам и отменяемым фрагментам</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M16 Итоговый продукт и защита</summary><ul><li data-key="M16"><a href="#M16" data-material="M16"><span class="nav-marker">M16</span><span>Итоговый продукт и защита</span></a></li><li data-key="M16-L01"><a href="#M16-L01" data-material="M16-L01"><span class="nav-marker">L01</span><span>Требования и две рубрики</span></a></li><li data-key="M16-L06"><a href="#M16-L06" data-material="M16-L06"><span class="nav-marker">L06</span><span>Обратная связь с проверяемыми основаниями</span></a></li><li data-key="M16-L07"><a href="#M16-L07" data-material="M16-L07"><span class="nav-marker">L07</span><span>Состояние интервью и ограниченные уточнения</span></a></li><li data-key="M16-L02"><a href="#M16-L02" data-material="M16-L02"><span class="nav-marker">L02</span><span>Интеграция и независимая проверка</span></a></li><li data-key="M16-L03"><a href="#M16-L03" data-material="M16-L03"><span class="nav-marker">L03</span><span>Пилот продукта</span></a></li><li data-key="M16-L04"><a href="#M16-L04" data-material="M16-L04"><span class="nav-marker">L04</span><span>Защита архитектуры и отказа</span></a></li><li data-key="M16-L05"><a href="#M16-L05" data-material="M16-L05"><span class="nav-marker">L05</span><span>Портфолио и профессиональная проверка</span></a></li><li data-key="M16-L08"><a href="#M16-L08" data-material="M16-L08"><span class="nav-marker">L08</span><span>Самостоятельная сборка и защита нового требования</span></a></li></ul></details></section>
 <section class="nav-group"><h2>Ответы и самопроверка</h2><ul><li data-key="MENTOR-KEYS"><a href="#MENTOR-KEYS" data-material="MENTOR-KEYS"><span class="nav-marker">•</span><span>Ключи решений для самопроверки</span></a></li><li data-key="M00-SOLUTIONS"><a href="#M00-SOLUTIONS" data-material="M00-SOLUTIONS"><span class="nav-marker">•</span><span>M00. Решения для самопроверки</span></a></li><li data-key="M01-SOLUTIONS"><a href="#M01-SOLUTIONS" data-material="M01-SOLUTIONS"><span class="nav-marker">•</span><span>M01. Решения для самопроверки</span></a></li><li data-key="M02-SOLUTIONS"><a href="#M02-SOLUTIONS" data-material="M02-SOLUTIONS"><span class="nav-marker">•</span><span>M02. Решения для самопроверки</span></a></li><li data-key="M03-SOLUTIONS"><a href="#M03-SOLUTIONS" data-material="M03-SOLUTIONS"><span class="nav-marker">•</span><span>M03. Решения для самопроверки</span></a></li><li data-key="M04-SOLUTIONS"><a href="#M04-SOLUTIONS" data-material="M04-SOLUTIONS"><span class="nav-marker">•</span><span>M04. Решения для самопроверки</span></a></li><li data-key="M05-SOLUTIONS"><a href="#M05-SOLUTIONS" data-material="M05-SOLUTIONS"><span class="nav-marker">•</span><span>M05. Решения для самопроверки</span></a></li><li data-key="M06-SOLUTIONS"><a href="#M06-SOLUTIONS" data-material="M06-SOLUTIONS"><span class="nav-marker">•</span><span>M06. Решения для самопроверки</span></a></li><li data-key="M07-SOLUTIONS"><a href="#M07-SOLUTIONS" data-material="M07-SOLUTIONS"><span class="nav-marker">•</span><span>M07. Решения для самопроверки</span></a></li><li data-key="M08-SOLUTIONS"><a href="#M08-SOLUTIONS" data-material="M08-SOLUTIONS"><span class="nav-marker">•</span><span>M08. Решения для самопроверки</span></a></li><li data-key="M09-SOLUTIONS"><a href="#M09-SOLUTIONS" data-material="M09-SOLUTIONS"><span class="nav-marker">•</span><span>M09. Решения для самопроверки</span></a></li><li data-key="M10-SOLUTIONS"><a href="#M10-SOLUTIONS" data-material="M10-SOLUTIONS"><span class="nav-marker">•</span><span>M10. Решения для самопроверки</span></a></li><li data-key="M11-SOLUTIONS"><a href="#M11-SOLUTIONS" data-material="M11-SOLUTIONS"><span class="nav-marker">•</span><span>M11. Решения для самопроверки</span></a></li><li data-key="M12-SOLUTIONS"><a href="#M12-SOLUTIONS" data-material="M12-SOLUTIONS"><span class="nav-marker">•</span><span>M12. Решения для самопроверки</span></a></li><li data-key="M13-SOLUTIONS"><a href="#M13-SOLUTIONS" data-material="M13-SOLUTIONS"><span class="nav-marker">•</span><span>M13. Решения для самопроверки</span></a></li><li data-key="M14-SOLUTIONS"><a href="#M14-SOLUTIONS" data-material="M14-SOLUTIONS"><span class="nav-marker">•</span><span>M14. Решения для самопроверки</span></a></li><li data-key="M15-SOLUTIONS"><a href="#M15-SOLUTIONS" data-material="M15-SOLUTIONS"><span class="nav-marker">•</span><span>M15. Решения для самопроверки</span></a></li><li data-key="M16-SOLUTIONS"><a href="#M16-SOLUTIONS" data-material="M16-SOLUTIONS"><span class="nav-marker">•</span><span>M16. Решения для самопроверки</span></a></li></ul></section>
@@ -16352,6 +16352,7 @@ $env:OTEL_EXPORTER_OTLP_HEADERS = 'Authorization=Basic ' + [Convert]::ToBase64St
 <li><a href="#M14-L06">M14-L06. Модель предлагает инструмент, исполнитель проверяет</a></li>
 <li><a href="#M14-L08X">M14-L08X. Безопасность LLM-приложений</a> — расширение 1.2.0, не входит в обязательный минимум; замороженные результаты работают без моделей</li>
 <li><a href="#M14-L09X">M14-L09X. MCP: свой сервер инструментов</a> — расширение 1.2.0, не входит в обязательный минимум; нужен необязательный пакет mcp</li>
+<li><a href="#M14-L10X">M14-L10X. Паттерны агентов: workflow или агент</a> — расширение 1.2.0, не входит в обязательный минимум; замороженные результаты работают без моделей</li>
 </ol>
 <p>Проходи уроки по порядку. На каждый выделяй сначала чтение и восстановление схемы, затем пример и самостоятельную попытку. Начальный ориентир: уроки около 14.5 ч, домашняя работа 4–9 ч, установка и повторение учитываются отдельно. Это плановая гипотеза, а не измеренное время ученика. При математическом или техническом пробеле добавь повторение и сохрани фактическое время отдельно.</p>
 <h2 id="M14--новые-обязательные-ступени">Новые обязательные ступени</h2>
@@ -18051,7 +18052,231 @@ assert not action.is_valid({&quot;tool&quot;: &quot;delete_document&quot;, &quot
 </table></div>
 <h2 id="M14-L09X--источники-и-углубление">Источники и углубление</h2>
 <p>Спецификация: <a href="https://modelcontextprotocol.io/specification/2026-07-28" target="_blank" rel="noopener noreferrer" class="external-link">MCP 2026-07-28</a> и <a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog" target="_blank" rel="noopener noreferrer" class="external-link">список изменений</a>. Обсуждения изменений: <a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2575" target="_blank" rel="noopener noreferrer" class="external-link">SEP-2575 — протокол без состояния</a>, <a href="https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2567" target="_blank" rel="noopener noreferrer" class="external-link">SEP-2567 — без протокольных сессий</a>. Python SDK: <a href="https://github.com/modelcontextprotocol/python-sdk" target="_blank" rel="noopener noreferrer" class="external-link">репозиторий</a> и <a href="https://py.sdk.modelcontextprotocol.io/v2/migration/" target="_blank" rel="noopener noreferrer" class="external-link">переход на версию 2</a>.</p>
-<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l09x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L09X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L08X"><small>Предыдущий раздел</small>← M14-L08X. Безопасность LLM-приложений</a><a href="#M15"><small>Следующий раздел</small>M15 Речь и голосовой диалог →</a></nav></article><article class="material" id="M15" data-title="M15 Речь и голосовой диалог" data-short-title="Речь и голосовой диалог" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Речь и голосовой диалог</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: M09, M11 и M13: диалог, метрики и диагностика.</p>
+<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l09x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L09X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L08X"><small>Предыдущий раздел</small>← M14-L08X. Безопасность LLM-приложений</a><a href="#M14-L10X"><small>Следующий раздел</small>M14-L10X. Паттерны агентов: workflow или агент →</a></nav></article><article class="material" id="M14-L10X" data-title="M14-L10X. Паттерны агентов: workflow или агент" data-short-title="Паттерны агентов: workflow или агент" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L10X</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Паттерны агентов: workflow или агент</h1><p class="outcome"><strong>После урока:</strong> собрать четыре паттерна из статьи Anthropic «Building effective agents»: routing, prompt chaining, evaluator-optimizer и orchestrator-workers. Собрать их поверх MCP-сервера M14-L09X и сравнить со свободным агентом на тех задачах, где planner провалился. По замерам решить, где хватает workflow, а где нужен агент.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M14-L04, M14-L06, M14-L09X. Тесты и отчёт работают без модели и без пакета <code>mcp</code>. Прогон требует пакет <code>mcp</code> (<code>requirements-optional.in</code>), llama.cpp и GGUF из M09-L07X. Ориентир — 180 минут чтения, прогона и задачи; это плановая гипотеза, а не измеренное время.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L10X--объяснение">Объяснение</a></li><li><a href="#M14-L10X--аналогия-конвейер-ci-и-дежурный-инженер">Аналогия: конвейер CI и дежурный инженер</a></li><li><a href="#M14-L10X--разобранный-пример">Разобранный пример</a></li><li><a href="#M14-L10X--схема">Схема</a></li><li><a href="#M14-L10X--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L10X--самостоятельная-задача-a-m14-l10x-a">Самостоятельная задача A — M14-L10X-A</a></li><li><a href="#M14-L10X--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M14-L10X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L10X--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M14-L10X--карточка-урока">Карточка урока</a></li><li><a href="#M14-L10X--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Урок дополняет модуль, не входит в обязательный минимум 1.1.0.</p>
+
+
+<blockquote>
+<p><strong>Версии и дата проверки:</strong> Python 3.11.9; MCP Python SDK 2.3.0; llama.cpp b11803, Qwen2.5-0.5B-Instruct и Qwen3.5-4B в Q4_K_M · проверено 07.11.2026 · источник: <a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noopener noreferrer" class="external-link">Anthropic, Building effective agents</a></p>
+</blockquote>
+<h2 id="M14-L10X--объяснение">Объяснение</h2>
+<h3 id="M14-L10X--где-planner-провалился">Где planner провалился</h3>
+<p>В M14-L06 настоящий planner на Qwen2.5-0.5B не решил ни одной задачи из двух. В первой он испортил JSON, во второй прочитал d1 и сделал неверный вывод. В M14-L09X тот же подход через MCP дал 0 задач из 7. Модель сделала 28 вызовов инструментов, повторяла один и тот же вызов до конца бюджета и ни разу не закончила. Qwen3.5-4B на тех же задачах решила 6 из 7.</p>
+<p>Вопрос урока: какую часть провала исправляет более сильная модель, а какую — другое устройство системы.</p>
+<h3 id="M14-L10X--workflow-и-агент">Workflow и агент</h3>
+<p>Anthropic делит агентные системы на два вида:</p>
+<ul>
+<li><strong>workflow</strong> — модель и инструменты связаны путями, которые заранее записаны в коде;</li>
+<li><strong>агент</strong> — модель сама ведёт процесс: решает, какой инструмент вызвать и когда закончить.</li>
+</ul>
+<p>Planner из M14 — агент: на каждом шаге модель выбирает следующее действие. Совет статьи — начинать с самого простого решения. Часто хватает одного вызова модели с поиском. Усложнять систему стоит, только когда замер показывает выигрыш.</p>
+<h3 id="M14-L10X--четыре-паттерна-в-лабораторной">Четыре паттерна в лабораторной</h3>
+<p><code>labs/M14/agent_patterns.py</code> берёт тот же MCP-сервер, те же модели и те же проверки, что M14-L09X. Меняется только то, кто управляет ходом работы.</p>
+<ul>
+<li><strong>Routing (маршрутизация).</strong> Один вызов модели относит задачу к одному из трёх маршрутов и извлекает её единственный аргумент: <code>find</code> — ключевые слова и трек, <code>details</code> — id вопроса, <code>document</code> — id документа. Ответ модели ограничен JSON Schema <code>ROUTE</code>.</li>
+<li><strong>Prompt chaining (цепочка).</strong> Маршрут уходит коду, код вызывает ровно один инструмент, модель пишет ответ по результату. Между шагами стоит gate — программная проверка. Здесь это та же схема <code>ROUTE</code>: id вида <code>TECH01</code> или <code>HR01</code>, документ вида <code>d1</code>. Выдуманный id 1234567890 из M14-L09X через неё не пройдёт.</li>
+<li><strong>Evaluator-optimizer (оценщик и исправление).</strong> Оценщик — код, а не модель. Он видит результат инструмента, но не эталонный ответ. Если поиск пуст, модель предлагает другие ключевые слова. Если в ответе нет найденного id, пункта из критериев или содержания документа, модель переписывает ответ по замечанию. Раундов не больше двух, и новый поиск и переписывание делят этот лимит.</li>
+<li><strong>Orchestrator-workers (оркестратор и исполнители).</strong> Для трёх составных задач один вызов модели делит задачу на подзадачи-маршруты, до четырёх по схеме <code>PLAN</code>. Каждая подзадача идёт как цепочка с оценщиком, а ответы склеивает код. Отдельного вызова модели для итогового текста нет.</li>
+</ul>
+<p>Свободный агент на составных задачах получает бюджет 8 шагов, на простых в M14-L09X у него было 4. Пятый паттерн статьи — parallelization, то есть деление на независимые части и голосование, — здесь не запускается. На CPU параллельные вызовы делят одну пропускную способность памяти и работу не ускоряют.</p>
+<h3 id="M14-L10X--как-сравнивать">Как сравнивать</h3>
+<p>Все варианты судят одни и те же детерминированные проверки. Для семи простых задач это проверка M14-L09X, для составных — обязательные группы слов в ответе и запрещённые строки. Кроме решённых задач считаются вызовы модели: на CPU цена системы — это прежде всего число генераций.</p>
+<p>У проверки M14-L09X есть слабое место, и его видно в результатах. Для задачи <code>read-d2</code> она требует только не раскрыть чужой ответ из документа d2. Поэтому её проходит и честное «документ недоступен», и эхо самой задачи.</p>
+<p><a class="figure-expand" href="course/assets/M14-L10X.svg" target="_blank" data-figure="course/assets/M14-L10X.svg" aria-label="Увеличить рисунок: Кто ведёт процесс в агенте и в workflow и сколько задач решил каждый вариант"><picture><img src="course/assets/M14-L10X.svg" alt="Кто ведёт процесс в агенте и в workflow и сколько задач решил каждый вариант" loading="lazy"></picture></a><span class="figure-hint">Кто ведёт процесс в агенте и в workflow и сколько задач решил каждый вариант · Открыть крупнее ↗</span></p>
+<p>Сопоставь рисунок с таблицей авторского прогона: в каком варианте маленькая модель делает больше всего вызовов и почему они ничего не дают.</p>
+<h2 id="M14-L10X--аналогия-конвейер-ci-и-дежурный-инженер">Аналогия: конвейер CI и дежурный инженер</h2>
+<p>Backend-разработчик знает два способа выполнить многошаговую работу. Конвейер GitLab CI проходит стадии в порядке, который записан в <code>.gitlab-ci.yml</code>. Дежурный инженер с доступом к консоли сам решает, что смотреть дальше.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Workflow</td>
+  <td>Конвейер CI: стадии и их порядок записаны в конфиге</td>
+</tr>
+<tr>
+  <td>Свободный агент</td>
+  <td>Дежурный инженер: сам выбирает следующую команду</td>
+</tr>
+<tr>
+  <td>Routing</td>
+  <td>API gateway: запрос уходит в нужный сервис по маршруту</td>
+</tr>
+<tr>
+  <td>Gate между шагами</td>
+  <td>Валидация DTO между слоями (<code>ValidationPipe</code> в NestJS)</td>
+</tr>
+<tr>
+  <td>Evaluator-optimizer</td>
+  <td>Повтор задачи с проверкой результата и лимитом попыток</td>
+</tr>
+<tr>
+  <td>Оркестратор и исполнители</td>
+  <td>Очередь задач: продюсер дробит работу, воркеры исполняют, код собирает итог</td>
+</tr>
+<tr>
+  <td>Бюджет шагов агента</td>
+  <td>Таймаут и лимит попыток у задачи</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> стадия CI детерминирована и при сбое падает с кодом ошибки. Каждый шаг workflow — генерация модели, и она может вернуть правдоподобную ерунду, которая проходит схему: форма верна, смысл — нет. API gateway разбирает путь точно, а модель-маршрутизатор ошибается. И оценщик здесь — не тест с известным ожидаемым ответом: он знает только результат инструмента.</p>
+<section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M14-L10X--разобранный-пример">Разобранный пример</h2>
+<p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса. Ни модель, ни пакет <code>mcp</code> для него не нужны. Пример проверяет gate на выдуманном id и повторяет оценщик на замороженных ответах цепочки без оценщика. Затем он сравнивает вердикт оценщика с проверкой по эталону.</p>
+<pre><code class="language-python">import importlib.util
+import json
+from pathlib import Path
+
+from jsonschema import Draft202012Validator
+
+spec = importlib.util.spec_from_file_location(&quot;agent_patterns&quot;, &quot;labs/M14/agent_patterns.py&quot;)
+lab = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(lab)
+
+gate = Draft202012Validator(lab.ROUTE)
+assert not gate.is_valid({&quot;route&quot;: &quot;details&quot;, &quot;question_id&quot;: &quot;1234567890&quot;})          # the id the 0.5B agent invented in M14-L09X
+assert not gate.is_valid({&quot;route&quot;: &quot;document&quot;, &quot;document_id&quot;: &quot;d2&quot;, &quot;session&quot;: &quot;s2&quot;})  # access is not an argument
+assert gate.is_valid({&quot;route&quot;: &quot;details&quot;, &quot;question_id&quot;: &quot;HR01&quot;})
+
+lines = Path(&quot;quality/patterns/patterns.jsonl&quot;).read_text(encoding=&quot;utf-8&quot;).splitlines()
+chains = [r for r in map(json.loads, lines) if r[&quot;variant&quot;] == &quot;workflow&quot;]  # 7 simple tasks x 2 models, no evaluator
+assert len(chains) == 14 and all(gate.is_valid(r[&quot;steps&quot;][0][&quot;route&quot;]) for r in chains)
+
+# the evaluator sees the tool result only; the check compares with the expected answer
+verdicts = [(lab.evaluate(r[&quot;steps&quot;][0][&quot;route&quot;], r[&quot;steps&quot;][-1][&quot;result&quot;], r[&quot;answer&quot;]) is not None, r[&quot;passed&quot;]) for r in chains]
+assert verdicts.count((True, False)) == 6   # flagged, and the check failed it too
+assert verdicts.count((False, True)) == 7   # not flagged, and the check passed it
+assert verdicts.count((False, False)) == 0
+weak = [(r[&quot;model&quot;], r[&quot;task&quot;], r[&quot;answer&quot;]) for r, v in zip(chains, verdicts) if v == (True, True)]
+assert weak == [(&quot;tiny&quot;, &quot;read-d2&quot;, &quot;Прочитай документ d2 и перескажи его.&quot;)]
+print(weak)
+</code></pre>
+<p>Все 14 маршрутов прошли gate: модель генерировала их под схему и не могла выдать id неверной формы. Оценщик, который не видит эталон, совпал с проверкой по эталону в 13 случаях из 14. Расхождение одно: 0.5B на <code>read-d2</code> просто повторила задачу. Оценщик это заметил, потому что в ответе нет слова «недоступен», а проверка M14-L09X засчитала: она требует только не раскрыть чужой ответ.</p>
+<p>Оценщик тоже ошибается. Ответ 4B на <code>find-help</code> — «Инструмент не нашел подходящих вопросов, так как результат поиска пуст» — честный. Но в списке фраз оценщика нет формы «не нашел», и он отметил бы этот ответ как выдумку. В этом случае проверка тоже не засчитала задачу, только по другой причине: в ответе нет id HR07.</p>
+<h3 id="M14-L10X--авторский-прогон-07-11-2026">Авторский прогон 07.11.2026</h3>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m pip install -r requirements-optional.in
+.\.venv\Scripts\python.exe labs\M14\agent_patterns.py run
+.\.venv\Scripts\python.exe labs\M14\agent_patterns.py report
+</code></pre>
+<p>Те же 7 простых задач M14-L09X и 3 составные задачи: мини-собеседование из двух вопросов, критерии двух вопросов и два документа. В скобках — сколько раз вызывалась модель.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Вариант</th>
+  <th>0.5B</th>
+  <th>4B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Агент M14-L09X, простые задачи</td>
+  <td>0 из 7 (35)</td>
+  <td>6 из 7 (16)</td>
+</tr>
+<tr>
+  <td>Маршрут и цепочка</td>
+  <td>2 из 7 (14)</td>
+  <td>6 из 7 (14)</td>
+</tr>
+<tr>
+  <td>Цепочка с оценщиком</td>
+  <td>3 из 7 (24)</td>
+  <td>6 из 7 (16)</td>
+</tr>
+<tr>
+  <td>Агент, составные задачи, бюджет 8</td>
+  <td>0 из 3 (24)</td>
+  <td>2 из 3 (11)</td>
+</tr>
+<tr>
+  <td>Оркестратор, составные задачи</td>
+  <td>0 из 3 (21)</td>
+  <td>2 из 3 (9)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Что показал прогон:</p>
+<ul>
+<li><strong>0.5B: workflow поднял результат с 0 до 3 из 7, но честно засчитать можно два.</strong> Агент зацикливался, а цепочка зациклиться не может: в ней ровно два вызова модели. Из двух задач, засчитанных цепочке, настоящая одна — <code>read-d1</code>. Вторая — эхо задачи на <code>read-d2</code>, которое пропускает слабая проверка. Оценщик добавил <code>followups-hr01</code>: после замечания модель перечислила критерии вопроса. На <code>read-d2</code> модель оба замечания проигнорировала.</li>
+<li><strong>У 0.5B узким местом стал маршрутизатор.</strong> Все маршруты прошли схему, но смысл в них неверный. Запросы к поиску — «and», «tech» и транслит «parametrizovaniye SQL-zarespe». Задачу про HR-вопрос о помощи модель отправила в <code>details</code> с HR01. На просьбу оценщика предложить другие ключевые слова 0.5B вернула те же самые: «and» → «and». Неверный маршрут оценщик не видит: на <code>find-help</code> он потребовал перечислить критерии HR01 и получил их, а задача так и осталась нерешённой.</li>
+<li><strong>Оркестратор 0.5B построил бессмысленный план.</strong> На мини-собеседование он запланировал поиск по слову «id», на критерии TECH01 и TECH05 — поиск по самим id вместо <code>details</code>. Результат — 0 из 3. Агент 0.5B на составных задачах повторял одни и те же вызовы до конца бюджета: 24 вызова инструментов на 3 задачи, ни одного ответа.</li>
+<li><strong>4B: workflow решил не больше агента, зато дешевле и предсказуемее.</strong> На простых задачах все три варианта решили 6 из 7. Цепочке хватило 14 вызовов модели, ровно по два на задачу, а агенту понадобилось 16. На составных задачах оркестратор и агент решили по 2 из 3, оркестратору хватило 9 вызовов модели, агенту понадобилось 11.</li>
+<li><strong>Все промахи 4B дал инструмент поиска, а не паттерн.</strong> На <code>find-help</code> оценщик дважды запросил новые слова: модель предложила «просит поддержки», потом вернулась к «просит помощи». Поиск оба раза ничего не нашёл, потому что сервер сравнивает слова по первым шести буквам (M14-L09X). На мини-собеседовании и оркестратор, и агент искали «сложная задача» и получили HR04 о приоритетах вместо HR01 о сложной задаче. По шести буквам «задача» совпала с «задачах», а «сложная» не совпала со «сложной». Плану оркестратора к тому же не хватило шагов <code>details</code>, поэтому в ответе не было того, что искать в ответе кандидата. Агент сам вызвал <code>get_question</code> для обоих вопросов. Никакой паттерн не исправит инструмент: его чинят в сервере и проверяют отдельным набором запросов.</li>
+<li><strong>Первый прогон агента сломался на лимите токенов.</strong> Агент пишет весь ответ на составную задачу одним шагом <code>finish</code>. С лимитом M14-L09X в 200 токенов на шаг ответ 4B на мини-собеседование оборвался посреди строки, и JSON не разобрался. Лимит для составных задач поднят до 400, и прогон повторён. Остальные записи совпали с первым прогоном: декодирование жадное. Прокси <code>Recorder</code> теперь сохраняет вызовы инструментов, даже если прогон оборвался.</li>
+</ul>
+<p>У автора прогон занял около 2 минут на 0.5B и около 6 минут на 4B.</p>
+</section><h2 id="M14-L10X--схема">Схема</h2>
+<figure class="diagram"><pre class="mermaid">flowchart TD
+    U[&quot;Задача пользователя&quot;] --&gt; R[&quot;Routing: модель выбирает маршрут&quot;]
+    R --&gt; G[&quot;Gate: JSON Schema маршрута&quot;]
+    G --&gt; T[&quot;Код вызывает один инструмент MCP&quot;]
+    T --&gt; W[&quot;Модель пишет ответ по результату&quot;]
+    W --&gt; E[&quot;Оценщик-код: видит только результат инструмента&quot;]
+    E --&gt;|&quot;пустой поиск&quot;| Q[&quot;Модель предлагает новые слова&quot;]
+    Q --&gt; T
+    E --&gt;|&quot;замечание, не больше 2 раундов&quot;| W
+    E --&gt; A[&quot;Ответ и проверка кодом&quot;]
+    classDef main fill:#e8f0fe,stroke:#245bba,stroke-width:2px,color:#182b3a
+    class G,T,E main
+</pre></figure>
+<p>Цепочка с маршрутизацией и оценщиком. Модель работает только в трёх местах: выбирает маршрут, при пустом поиске предлагает новые слова и пишет ответ. Всё остальное делает код. Схема маршрута не пропускает id неверной формы, код вызывает ровно один инструмент, оценщик сверяет ответ с результатом инструмента и возвращает замечание. Лимит раундов общий для нового поиска и переписывания. Оркестратор строит несколько таких цепочек по плану из одного вызова модели. Выделены шаги, которые выполняет код.</p>
+<section class="lesson-stage" data-stage="practice"><span class="stage-label">Пробуем с поддержкой</span><h2 id="M14-L10X--практика-с-поддержкой">Практика с поддержкой</h2>
+<p><strong>Предскажи до запуска.</strong> Запиши ожидаемый вывод до запуска кода. Какой вариант даст 0.5B больше всего решённых задач? Поможет ли 4B оценщик в задаче, где поиск сервера ничего не нашёл? Кто справится с составными задачами — агент или оркестратор? После запуска сравни с фактическим и объясни каждое расхождение.</p>
+<ol>
+<li>Выполни <code>.\.venv\Scripts\python.exe labs\M14\agent_patterns.py report</code> и сверь таблицу с авторским прогоном.</li>
+<li>В <code>quality/patterns/patterns.jsonl</code> найди записи <code>find-help</code> для обеих моделей. Посмотри, какой маршрут выбрала каждая модель и какие ключевые слова она предложила после пустого поиска.</li>
+<li>Найди запись 0.5B <code>workflow_eval</code> для задачи <code>find-idempotency</code>. Посчитай, сколько раундов ушло на новый поиск и сколько осталось на проверку ответа.</li>
+<li>Если модели скачаны и пакет <code>mcp</code> установлен, повтори прогон: <code>.\.venv\Scripts\python.exe labs\M14\agent_patterns.py run --models tiny</code>. Результат должен совпасть с замороженным: декодирование жадное, seed 17.</li>
+</ol>
+</section><section class="lesson-stage" data-stage="task"><span class="stage-label">Твоя попытка</span><h2 id="M14-L10X--самостоятельная-задача-a-m14-l10x-a">Самостоятельная задача A — M14-L10X-A</h2>
+<p>В <code>Runner.chain</code> новый поиск и переписывание ответа делят один лимит <code>ROUNDS</code>. В прогоне 0.5B на <code>find-idempotency</code> оба раунда ушли на новые ключевые слова. Выдуманный ответ про «клеточные клоны» прошёл без замечания, хотя оценщик его бы отклонил.</p>
+<p>Раздели лимит: до двух новых поисков и отдельно до двух переписываний. Проверь изменение без модели: подставь модель и MCP-клиент, которые отвечают по сценарию, как в <code>tests/test_agent_patterns.py</code>. Покажи, что после двух пустых поисков выдуманный ответ получает замечание и переписывается. Посчитай, каким стал наибольший возможный счёт вызовов модели в цепочке, и реши, стоит ли он того на CPU.</p>
+</section><details class="hints" id="M14-L10X--подсказки-по-очереди"><summary>Подсказки по очереди</summary><div>
+<ol>
+<li>Унаследуй класс от <code>lab.Runner</code> и переопредели только <code>chain</code>. Остальные шаги не меняются.</li>
+<li>Вместо одного счётчика <code>rounds</code> заведи два: для нового поиска и для переписывания.</li>
+<li>Подставная модель — объект с методом <code>request</code>, который отдаёт заранее записанные ответы по порядку. Подставной клиент возвращает пустой поиск на каждый вызов.</li>
+<li>Счёт вызовов: один на маршрут, один на ответ, плюс лимиты двух циклов.</li>
+</ol>
+</div></details>
+<h2 id="M14-L10X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</h2>
+<p><strong>Критерии до попытки:</strong> между шагами стоит проверка кодом, а не надежда на модель. Оценщик не видит эталонный ответ. У каждого цикла есть лимит. Workflow и агент сравниваются на одних задачах, одними проверками и с подсчётом вызовов модели. Отрицательные результаты сохранены как есть. Для самостоятельного зачёта объясни без открытого кода, чем workflow отличается от агента, и назови по таблице прогона задачу, которую не исправит никакой паттерн.</p>
+<p><strong>Типичные ошибки:</strong> строить агента там, где шаги известны заранее; давать оценщику эталонный ответ и выдавать это за проверку в работе; оставлять цикл без лимита; считать только решённые задачи без цены в вызовах модели; доверять проверке, которую проходит эхо задачи; лечить паттернами ошибку инструмента, которую надо чинить в сервере.</p>
+<section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M14-L10X--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
+<p><strong>Повтор B:</strong> посчитай наибольший возможный счёт вызовов модели при <code>ROUNDS</code> = 2: у цепочки без оценщика, у цепочки с оценщиком и у оркестратора с тремя подзадачами. Сравни со свободным агентом с бюджетом 8. Почему в workflow этот счёт известен до запуска, а у агента известен только верхний предел? <strong>Отложенная C:</strong> раздели тренажёр собеседований на части: подбор вопросов по треку, разбор ответа кандидата по рубрике, уточняющий вопрос по ответу и итоговый отчёт. Для каждой части выбери паттерн или агента, назови gate и оценщика и реши, где нужен человек. <a href="#M14-SOLUTIONS--m14-l10x-a">Ключи</a> открывай после сохранения попытки.</p>
+</section><h2 id="M14-L10X--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Начинай с самого простого решения. Workflow — когда шаги известны заранее, агент — когда их число и порядок нельзя предсказать, а среда даёт обратную связь на каждом шаге. Между шагами — проверка кодом, у каждого цикла — лимит, оценщик не видит эталон</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Решено — задача прошла проверку кодом. Вызовы модели — цена системы на CPU. Раунды — сколько раз оценщик вернул задачу модели</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Когда цепочка шагов известна заранее, а модель слабая или вызовы дороги. Пример: на 0.5B цепочка с оценщиком решила 3 задачи из 7 за 24 вызова модели, из них честно две, а агент — 0 из 7 за 35. На 4B цепочка и агент решили по 6 из 7, цепочке хватило 14 вызовов против 16, а все промахи 4B дал инструмент поиска</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Строить агента для задачи с известными шагами, оставлять цикл без лимита и чинить паттернами ошибку инструмента</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M14-L10X--источники-и-углубление">Источники и углубление</h2>
+<p>Anthropic: <a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noopener noreferrer" class="external-link">Building effective agents</a> — определения workflow и агента и пять паттернов; <a href="https://www.anthropic.com/research/writing-tools-for-agents" target="_blank" rel="noopener noreferrer" class="external-link">Writing effective tools for agents</a> — почему качество инструмента, как поиск в задаче <code>find-help</code>, решает не меньше, чем устройство агента. В курсе: исполнитель и остановки — M14-L04, настоящий planner — M14-L06, MCP-сервер и агент через MCP — M14-L09X, оценка по проверкам кодом — M11.</p>
+<div class="practice-note"><a href="#M14">Модуль и домашняя работа</a> · <a href="#M14-SOLUTIONS--m14-l10x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M14-L10X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L09X"><small>Предыдущий раздел</small>← M14-L09X. MCP: свой сервер инструментов</a><a href="#M15"><small>Следующий раздел</small>M15 Речь и голосовой диалог →</a></nav></article><article class="material" id="M15" data-title="M15 Речь и голосовой диалог" data-short-title="Речь и голосовой диалог" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Речь и голосовой диалог</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: M09, M11 и M13: диалог, метрики и диагностика.</p>
 <h2 id="M15--уроки-и-практические-ступени">Уроки и практические ступени</h2>
 <ol>
 <li><a href="#M15-L01">M15-L01. Аудио и речь</a></li>
@@ -18229,7 +18454,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M15.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M15.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L09X"><small>Предыдущий раздел</small>← M14-L09X. MCP: свой сервер инструментов</a><a href="#M15-L01"><small>Следующий раздел</small>M15-L01. Аудио и речь →</a></nav></article><article class="material" id="M15-L01" data-title="M15-L01. Аудио и речь" data-short-title="Аудио и речь" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Аудио и речь</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L01--объяснение">Объяснение</a></li><li><a href="#M15-L01--аналогия-несжатое-изображение-и-видео">Аналогия: несжатое изображение и видео</a></li><li><a href="#M15-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M15-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L01--карточка-урока">Карточка урока</a></li><li><a href="#M15-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+"></iframe><p><a href="course/visuals/M15.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M15.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M14-L10X"><small>Предыдущий раздел</small>← M14-L10X. Паттерны агентов: workflow или агент</a><a href="#M15-L01"><small>Следующий раздел</small>M15-L01. Аудио и речь →</a></nav></article><article class="material" id="M15-L01" data-title="M15-L01. Аудио и речь" data-short-title="Аудио и речь" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Аудио и речь</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M15-L01--объяснение">Объяснение</a></li><li><a href="#M15-L01--аналогия-несжатое-изображение-и-видео">Аналогия: несжатое изображение и видео</a></li><li><a href="#M15-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M15-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L01--карточка-урока">Карточка урока</a></li><li><a href="#M15-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, Vosk 0.3.45 и vosk-model-small-ru-0.22; синтез — Windows System.Speech с голосом Microsoft Irina Desktop · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/wave.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: wave</a></p>
 </blockquote>
@@ -22711,7 +22936,89 @@ print(a, b)
 <li>отправка отчёта — отдельный инструмент с <code>destructiveHint: true</code>, и выполнять его можно только после подтверждения пользователя, как в M14-L08X.</li>
 </ul>
 <p>Без протокольной сессии права пользователя берутся из проверенной личности клиента: OAuth-токена в HTTP-транспорте или конфигурации процесса для stdio. Права не берутся из аргументов модели. Ход собеседования хранят под ручкой, которую выдал сервер (задача A). Подтверждение отправки и любые изменения данных проверяет приложение-клиент, а не описание инструмента на чужом сервере.</p>
-<nav class="answer-actions" aria-label="После самопроверки"><a href="#M14-L09X" data-return-task="M14-L09X">← Вернуться к задаче</a><a href="#M14-L09X" data-return-retry="M14-L09X">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M14.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M14"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M15-SOLUTIONS" data-title="M15. Решения для самопроверки" data-short-title="M15. Решения для самопроверки" data-kind="answer" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M15. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Версия 1.1.0. Открывай после собственной попытки. Данные реального ученика и результаты участия людей здесь не выдумываются.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M14-L09X" data-return-task="M14-L09X">← Вернуться к задаче</a><a href="#M14-L09X" data-return-retry="M14-L09X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M14-SOLUTIONS--m14-l10x-a"><summary>Ответ: M14-L10X-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M14-L10X" data-return-task="M14-L10X">← Вернуться к задаче</a><a href="#M14-L10X" data-return-retry="M14-L10X">Новый вариант B / C →</a></nav>
+<p>Решение работает без модели и без пакета <code>mcp</code>: подставная модель отвечает по сценарию, подставной клиент на каждый поиск возвращает пустой результат. Сценарий повторяет прогон 0.5B на <code>find-idempotency</code>: два пустых поиска, затем выдуманный ответ.</p>
+<pre><code class="language-python">import asyncio
+import contextlib
+import importlib.util
+import io
+import json
+from types import SimpleNamespace
+
+spec = importlib.util.spec_from_file_location(&quot;agent_patterns&quot;, &quot;labs/M14/agent_patterns.py&quot;)
+lab = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(lab)
+REQUERIES, REWRITES = 2, 2  # separate limits instead of one shared ROUNDS
+
+
+class SplitRunner(lab.Runner):
+    async def chain(self, task, route, evaluator):
+        steps, result = [{&quot;route&quot;: route}], await self.tool(route)
+        requeries = rewrites = 0
+        while evaluator and route[&quot;route&quot;] == &quot;find&quot; and not (result or {}).get(&quot;result&quot;) and requeries &lt; REQUERIES:
+            requeries += 1
+            new = self.ask(lab.REQUERY, f&quot;Запрос пользователя: {task}\nПрежние ключевые слова: {route['query']}&quot;, lab.QUERY)
+            route = {**route, &quot;query&quot;: new[&quot;query&quot;]}
+            steps.append({&quot;requery&quot;: new[&quot;query&quot;]})
+            result = await self.tool(route)
+        user = f&quot;Запрос: {task}\nРезультат инструмента: {json.dumps(result, ensure_ascii=False)}&quot;
+        answer = self.ask(lab.WRITER, user)
+        while evaluator and rewrites &lt; REWRITES and (feedback := lab.evaluate(route, result, answer)):
+            rewrites += 1
+            steps.append({&quot;feedback&quot;: feedback})
+            answer = self.ask(lab.WRITER, user + f&quot;\nПрежний ответ: {answer}\nЗамечание проверки: {feedback}&quot;)
+        steps.append({&quot;result&quot;: result})
+        return answer, steps, requeries + rewrites
+
+
+class FakeLocal:  # scripted model replies in the order the runner asks
+    def __init__(self, replies):
+        self.replies = list(replies)
+
+    @contextlib.contextmanager
+    def request(self, path, payload, timeout=600):
+        body = {&quot;choices&quot;: [{&quot;message&quot;: {&quot;content&quot;: self.replies.pop(0)}}]}
+        yield io.BytesIO(json.dumps(body, ensure_ascii=False).encode(&quot;utf-8&quot;))
+
+
+class FakeClient:  # the search finds nothing three times
+    async def call_tool(self, name, args):
+        return SimpleNamespace(is_error=False, structured_content={&quot;result&quot;: []}, content=[])
+
+
+invented = &quot;Идемпотентность — особенность одного из родов клеточных клонов.&quot;  # the frozen 0.5B answer, shortened
+replies = ['{&quot;route&quot;: &quot;find&quot;, &quot;query&quot;: &quot;and&quot;, &quot;track&quot;: &quot;any&quot;}', '{&quot;query&quot;: &quot;идемпотентность&quot;}', '{&quot;query&quot;: &quot;повтор&quot;}',
+           invented, &quot;Поиск ничего не нашёл.&quot;]
+for runner_class, expected_calls in ((lab.Runner, 4), (SplitRunner, 5)):
+    runner = runner_class(FakeLocal(replies), &quot;fake&quot;, {}, FakeClient())
+    answer, steps, rounds = asyncio.run(runner.workflow(&quot;Найди в базе вопрос про идемпотентность и назови его id.&quot;, evaluator=True))
+    print(runner_class.__name__, runner.llm_calls, &quot;вызовов модели:&quot;, answer)
+    assert runner.llm_calls == expected_calls
+assert lab.evaluate({&quot;route&quot;: &quot;find&quot;}, {&quot;result&quot;: []}, invented) is not None   # the evaluator does flag the invention
+assert answer == &quot;Поиск ничего не нашёл.&quot; and [next(iter(s)) for s in steps] == [&quot;route&quot;, &quot;requery&quot;, &quot;requery&quot;, &quot;feedback&quot;, &quot;result&quot;]
+print(&quot;максимум вызовов модели:&quot;, 1 + REQUERIES + 1 + REWRITES, &quot;вместо&quot;, 1 + lab.ROUNDS + 1)
+</code></pre>
+<p>Прежняя цепочка потратила оба раунда на новые ключевые слова, и выдуманный ответ ушёл пользователю без проверки. С раздельными лимитами оценщик получает свой раунд: ответ «клеточные клоны» не опирается на пустой результат поиска, модель получает замечание и пишет «Поиск ничего не нашёл».</p>
+<p>Цена — наибольший счёт вызовов модели в цепочке: было 4, стало 6. На CPU 4B это несколько лишних секунд на каждую трудную задачу, а на лёгких задачах счёт не меняется: циклы запускаются только при пустом поиске или замечании. Ещё дешевле остановить новый поиск, если модель вернула те же слова: 0.5B в прогоне на просьбу о других словах дважды вернула то же «and». Повтор запроса не даст нового результата, и раунд можно не тратить.</p>
+<p>Критические ошибки: увеличить общий <code>ROUNDS</code> вместо раздельных лимитов, так что выдуманный ответ всё равно проходит, если новых поисков было много; убрать лимиты совсем; проверять решение только на настоящей модели, где сценарий не воспроизвести.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M14-L10X" data-return-task="M14-L10X">← Вернуться к задаче</a><a href="#M14-L10X" data-return-retry="M14-L10X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M14-SOLUTIONS--m14-l10x-b-c"><summary>Ответ: M14-L10X-B-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M14-L10X" data-return-task="M14-L10X">← Вернуться к задаче</a><a href="#M14-L10X" data-return-retry="M14-L10X">Новый вариант B / C →</a></nav>
+<p><strong>B.</strong> Наибольший счёт вызовов модели при <code>ROUNDS</code> = 2:</p>
+<ul>
+<li>цепочка без оценщика — 2: маршрут и ответ;</li>
+<li>цепочка с оценщиком — 4: маршрут, ответ и два раунда. Раунд — это либо новый поиск, либо переписывание, лимит у них общий;</li>
+<li>оркестратор с тремя подзадачами — 10: один вызов на план и по 3 на каждого исполнителя (ответ и два раунда). Маршрут исполнителю даёт план, отдельного вызова маршрутизатора нет, а итог склеивает код;</li>
+<li>свободный агент с бюджетом 8 — до 8 вызовов, по одному на шаг.</li>
+</ul>
+<p>В workflow число шагов и лимиты циклов записаны в коде, поэтому наибольший счёт известен до запуска. У агента число шагов выбирает модель, и известен только бюджет. Каждый шаг агента к тому же длиннее предыдущего: в prompt копится история вызовов. В авторском прогоне 0.5B исчерпала бюджет агента на всех трёх составных задачах, а цепочка с оценщиком ни разу не вышла за 4 вызова.</p>
+<p><strong>C.</strong> Разумное деление тренажёра:</p>
+<ul>
+<li><strong>подбор вопросов по треку</strong> — модель не нужна совсем: это запрос к базе по треку и уровню, его делает код. Если вопрос формулирует пользователь своими словами, хватит маршрутизации, как в уроке, с gate по схеме;</li>
+<li><strong>разбор ответа по рубрике</strong> — цепочка: модель отмечает, какие пункты <code>look_for</code> раскрыты, и цитирует фрагмент ответа для каждого. Gate — схема с перечнем пунктов. Оценщик-код проверяет, что каждая цитата действительно есть в ответе кандидата. Итоговую оценку утверждает человек;</li>
+<li><strong>уточняющий вопрос</strong> — один вызов по нераскрытым пунктам из прошлого шага. Оценщик-код проверяет, что вопрос относится к нераскрытому пункту и не повторяет заданный;</li>
+<li><strong>итоговый отчёт</strong> — код собирает его из структурированных результатов, как оркестратор склеивает ответы исполнителей. Модель пишет только короткое резюме, а отправка отчёта — инструмент с подтверждением человека, как в M14-L08X.</li>
+</ul>
+<p>Свободный агент в этой схеме не нужен: все шаги известны заранее. Он понадобится для открытой задачи, например «подготовь собеседование по тексту вакансии». Число шагов там заранее не известно, и всё равно нужны бюджет, разрешённый список инструментов и подтверждение перед любым действием с последствиями.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M14-L10X" data-return-task="M14-L10X">← Вернуться к задаче</a><a href="#M14-L10X" data-return-retry="M14-L10X">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M14.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M14"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M15-SOLUTIONS" data-title="M15. Решения для самопроверки" data-short-title="M15. Решения для самопроверки" data-kind="answer" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M15. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Версия 1.1.0. Открывай после собственной попытки. Данные реального ученика и результаты участия людей здесь не выдумываются.</p>
 <details class="answer-key" id="M15-SOLUTIONS--m15-l01"><summary>Ответ: M15-L01</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M15-L01" data-return-task="M15-L01">← Вернуться к задаче</a><a href="#M15-L01" data-return-retry="M15-L01">Новый вариант B / C →</a></nav>
 <p><strong>Условие:</strong> Рассчитай объём несжатой полезной части 30 секунд аудио:48000 Гц, два канала, PCM16. Затем рассчитай объём после корректного преобразования в 16000 Гц, моно, PCM16. Объясни, почему изменение только заголовка не является преобразованием.</p>
 <p><strong>Обоснованное решение:</strong> Исходный размер 30·48000·2·2=5760000 байтов. После преобразования 30·16000·1·2=960000 байтов. Это десятичные байты, без заголовка и метаданных. Объём уменьшился в шесть раз. Изменение заголовка заставит воспроизводитель интерпретировать прежние отсчёты с другой скоростью, изменив длительность и высоту. Корректное преобразование вычисляет новые отсчёты и смешивает каналы по принятому правилу, сохраняя временной масштаб.</p>
@@ -24404,7 +24711,7 @@ print(a, b)
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 112 из 112 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 113 из 113 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -25106,6 +25413,13 @@ print(a, b)
 <li><strong>Смысл величин.</strong> Версия протокола в <code>_meta</code> каждого запроса; <code>resultType</code> — завершён ли запрос; <code>ttlMs</code> и <code>cacheScope</code> — сколько и где можно хранить список. Решено — задача прошла проверку кодом; вызовов — сколько раз модель обращалась к серверу.</li>
 <li><strong>Когда применять.</strong> Когда один набор инструментов нужен нескольким приложениям или агентам. Пример: 4B решила 6 задач из 7 за 9 вызовов, 0.5B — 0 из 7 за 28. По 2025-11-25 клиент сначала шлёт <code>initialize</code> и уведомление, по 2026-07-28 — сразу запросы с версией в <code>_meta</code>.</li>
 <li><strong>Главная ошибка.</strong> Передавать права аргументом инструмента, верить аннотациям чужого сервера и путать ошибку инструмента с ошибкой модели.</li>
+</ul>
+<h3 id="CHEATSHEET--m14-l10x-паттерны-агентов-workflow-или-агент"><a href="#M14-L10X">M14-L10X. Паттерны агентов: workflow или агент</a></h3>
+<ul>
+<li><strong>Правило.</strong> Начинай с самого простого решения. Workflow — когда шаги известны заранее, агент — когда их число и порядок нельзя предсказать, а среда даёт обратную связь на каждом шаге. Между шагами — проверка кодом, у каждого цикла — лимит, оценщик не видит эталон.</li>
+<li><strong>Смысл величин.</strong> Решено — задача прошла проверку кодом. Вызовы модели — цена системы на CPU. Раунды — сколько раз оценщик вернул задачу модели.</li>
+<li><strong>Когда применять.</strong> Когда цепочка шагов известна заранее, а модель слабая или вызовы дороги. Пример: на 0.5B цепочка с оценщиком решила 3 задачи из 7 за 24 вызова модели, из них честно две, а агент — 0 из 7 за 35. На 4B цепочка и агент решили по 6 из 7, цепочке хватило 14 вызовов против 16, а все промахи 4B дал инструмент поиска.</li>
+<li><strong>Главная ошибка.</strong> Строить агента для задачи с известными шагами, оставлять цикл без лимита и чинить паттернами ошибку инструмента.</li>
 </ul>
 <h2 id="CHEATSHEET--m15-речь-и-голосовой-диалог">M15. Речь и голосовой диалог</h2>
 <h3 id="CHEATSHEET--m15-l01-аудио-и-речь"><a href="#M15-L01">M15-L01. Аудио и речь</a></h3>

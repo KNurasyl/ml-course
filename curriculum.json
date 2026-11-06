@@ -3345,6 +3345,10 @@
         {
           "id": "M14-C18",
           "description": "Написать MCP-сервер, который оборачивает существующие контракты инструментов, подключить планировщик как MCP-клиент, прочитать обмен на проводе и объяснить изменения ревизии MCP 2026-07-28: протокол без состояния, версия в _meta, server/discover, явные ручки состояния."
+        },
+        {
+          "id": "M14-C19",
+          "description": "Собрать routing, prompt chaining, evaluator-optimizer и orchestrator-workers поверх MCP-сервера, сравнить их со свободным агентом на одних задачах и проверках с подсчётом вызовов модели и по замерам выбрать между workflow и агентом."
         }
       ],
       "lessons": [
@@ -3546,6 +3550,35 @@
             "practice_minutes": 90,
             "self_check_minutes": 40,
             "setup_minutes": "separate; needs the optional mcp package; the planner run uses llama.cpp and GGUF of M09-L07X",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M14-L10X",
+          "title": "Паттерны агентов: workflow или агент",
+          "path": "course/lessons/M14-L10X.md",
+          "prerequisites": [
+            "M14-L04",
+            "M14-L06",
+            "M14-L09X"
+          ],
+          "estimated_minutes": 180,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Routing, prompt chaining с gate по JSON Schema, evaluator-optimizer с оценщиком-кодом и orchestrator-workers поверх MCP-сервера M14-L09X; сравнение со свободным агентом на 0.5B и 4B, отрицательные результаты сохранены",
+          "assessment": "Сверка таблицы прогона, разбор провалов по записям, раздельные лимиты циклов оценщика на подставной модели",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M14-C19"
+          ],
+          "extension": "1.2.0",
+          "required": false,
+          "workload": {
+            "reading_minutes": 50,
+            "practice_minutes": 90,
+            "self_check_minutes": 40,
+            "setup_minutes": "separate; tests and report need no model; the run needs the optional mcp package, llama.cpp and GGUF of M09-L07X",
             "estimate_status": "planning_hypothesis_not_measured"
           },
           "assessment_policy": "course/assessment.md"
