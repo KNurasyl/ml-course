@@ -933,6 +933,13 @@
       "version": "1.1.0",
       "status": "ready"
     },
+    "M14-L08X": {
+      "id": "M14-L08X",
+      "title": "M14-L08X. Безопасность LLM-приложений",
+      "path": "course/lessons/M14-L08X.md",
+      "version": "1.1.0",
+      "status": "ready"
+    },
     "M15-L01": {
       "id": "M15-L01",
       "title": "M15-L01. Аудио и речь",
@@ -1361,6 +1368,7 @@
       "M14-L04",
       "M14-L05",
       "M14-L06",
+      "M14-L08X",
       "M15-L01",
       "M15-L02",
       "M15-L03",
@@ -1975,7 +1983,8 @@
         "M14-L03",
         "M14-L04",
         "M14-L05",
-        "M14-L06"
+        "M14-L06",
+        "M14-L08X"
       ],
       "homework_id": "M14-HW01",
       "exercise": {
@@ -4449,6 +4458,32 @@
         "practice_minutes": 105,
         "self_check_minutes": 30,
         "setup_minutes": "separate; record actual",
+        "estimate_status": "planning_hypothesis_not_measured"
+      },
+      "pilot_sessions": []
+    },
+    {
+      "id": "M14-L08X",
+      "title": "Безопасность LLM-приложений",
+      "version": "1.1.0",
+      "module_id": "M14",
+      "material_key": "M14-L08X",
+      "path": "course/lessons/M14-L08X.md",
+      "scope": "complete_lesson",
+      "material_status": "ready",
+      "prerequisites": [
+        "M14-L03",
+        "M14-L06",
+        "M10-L04"
+      ],
+      "outcome_ids": [
+        "M14-C17"
+      ],
+      "workload": {
+        "reading_minutes": 50,
+        "practice_minutes": 90,
+        "self_check_minutes": 40,
+        "setup_minutes": "separate; frozen results need no model, re-running uses llama.cpp and GGUF of M09-L07X",
         "estimate_status": "planning_hypothesis_not_measured"
       },
       "pilot_sessions": []

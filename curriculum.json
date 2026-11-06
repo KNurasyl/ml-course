@@ -3337,6 +3337,10 @@
         {
           "id": "M14-C16",
           "description": "Выполнить реальные предложения LLM через валидатор инструментов и сравнить успех задачи с соблюдением доступа."
+        },
+        {
+          "id": "M14-C17",
+          "description": "Разобрать риски LLM-приложения по OWASP Top 10 (редакция 2025, с учётом редакции 2026) и измерить защиты от косвенной инъекции в RAG и избыточной агентности планировщика: разделение данных и инструкций с экранированием, фильтр ответа, allow-list инструментов по задаче и подтверждение необратимых действий."
         }
       ],
       "lessons": [
@@ -3482,6 +3486,35 @@
           "estimate_status": "planning_hypothesis",
           "assessment_policy": "course/assessment.md",
           "status": "materials_ready"
+        },
+        {
+          "id": "M14-L08X",
+          "title": "Безопасность LLM-приложений",
+          "path": "course/lessons/M14-L08X.md",
+          "prerequisites": [
+            "M14-L03",
+            "M14-L06",
+            "M10-L04"
+          ],
+          "estimated_minutes": 180,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Две настоящие лабораторные на 0.5B и 4B через llama-server: косвенная инъекция через отравленный абзац базы знаний (три атаки, три prompt и фильтр ответа) и избыточная агентность планировщика (три политики исполнителя, два prompt); анализ замороженных результатов без моделей",
+          "assessment": "Сверка таблиц с авторским прогоном, разбор удачной атаки и повторного действия, защита исполнителя от повторов на сохранённых действиях",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M14-C17"
+          ],
+          "extension": "1.2.0",
+          "required": false,
+          "workload": {
+            "reading_minutes": 50,
+            "practice_minutes": 90,
+            "self_check_minutes": 40,
+            "setup_minutes": "separate; frozen results need no model, re-running uses llama.cpp and GGUF of M09-L07X",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {
