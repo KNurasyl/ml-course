@@ -135,3 +135,8 @@ def test_frozen_agency_results_match_the_lesson():
 @pytest.mark.parametrize("answer", ["Открой <tg:resolve?domain=x>", "[здесь](foo:bar)", "Ответ <b>да</b>"])
 def test_t40_filter_withholds_any_link_syntax(answer):
     assert inj.output_filter(answer)["blocked"]
+
+
+@pytest.mark.parametrize("answer", ["Сноска [1]\n\n[1]: foo:bar", "Ссылка [текст][1]", "Путь /" + chr(92) + "attacker.test"])
+def test_t40_filter_withholds_reference_links(answer):
+    assert inj.output_filter(answer)["blocked"]

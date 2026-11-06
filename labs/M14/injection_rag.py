@@ -101,7 +101,8 @@ def guardrails():
     return load("labs/M14/guardrails.py")
 
 
-LINK_SYNTAX = re.compile(r"\]\(|<[a-z][a-z0-9+.-]{1,31}:|<[a-z!/?]", re.IGNORECASE)  # any inline link, autolink or tag
+# any inline link, reference link or definition, autolink of any scheme, tag, or a /\ that a browser reads as //
+LINK_SYNTAX = re.compile(r"\]\(|\]:|\]\[|<[a-z][a-z0-9+.-]{1,31}:|<[a-z!/?]|/\\|\\/", re.IGNORECASE)
 
 
 def output_filter(answer):

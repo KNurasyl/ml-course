@@ -89,6 +89,10 @@ def test_output_rail(text, expect_json, action):
     ("[здесь](evil/https://docs.example.com)", "block"),            # the destination is relative, checked whole
     ("Сноска [1].\n\n[1]:guide/install", "block"),                   # a reference definition without a space
     ("Сноска [1].\n\n   [1]:<https://attacker.test/x>", "block"),
+    ("Сноска [1].\n\n> - [1]: //attacker.test/x", "block"),        # inside a block quote and a list item
+    ("Сноска [1].\n\n[1]:\n  guide/install", "block"),              # the destination on the next line
+    ("Сноска [a" + chr(92) + "]b].\n\n[a" + chr(92) + "]b]: guide/install", "block"),  # an escaped ] in the label
+    ("[здесь](/" + chr(92) + "attacker.test/x)", "block"),          # a browser reads /\ as //
 ])
 def test_output_allow_list_compares_every_host_exactly(text, action):
     assert lab.guard_output(text, allowed_hosts=("docs.example.com",))["action"] == action

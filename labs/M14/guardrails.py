@@ -62,11 +62,13 @@ INJECTION = {
                                       r"\b(?:ai|assistant)\s*:\s*(?:you\s+must|new\s+rule)|новое\s+правило\s+(?:для|базы)", re.IGNORECASE),
 }
 # Where a link may start inside a token: a known scheme with or without //, any other scheme followed by a slash, a
-# protocol-relative // or \\ host, or www. A one-letter "scheme" is a Windows drive (C:/data) and is left alone.
+# protocol-relative host (//, \\, /\ and \/ all mean // to a browser), or www. A one-letter "scheme" is a Windows drive (C:/data) and is left alone.
 URL_START = re.compile(r"(?<![a-z0-9+.-])(?:(?:https?|ftps?|wss?|javascript|data|vbscript|file|blob|mailto|about):|"
-                       r"[a-z][a-z0-9+.-]+:[/\\])|(?<![:/\\])(?://|\\\\)(?=[^\s/\\])|\bwww\.", re.IGNORECASE)
+                       r"[a-z][a-z0-9+.-]+:[/\\])|(?<![:/\\])(?://|\\\\|/\\|\\/)(?=[^\s/\\])|\bwww\.", re.IGNORECASE)
 TRAILING = ".,;:!?)]}»\"'*_~"  # punctuation a renderer leaves out of the end of an autolink
-REFERENCE = re.compile(r"^[ \t]{0,3}\[[^\]]+\]:[ \t]*<?([^\s>]+)>?", re.MULTILINE)  # CommonMark link reference definition
+# CommonMark link reference definition: inside block quotes and list items too, with escaped ] in the label and the
+# destination allowed on the next line.
+REFERENCE = re.compile(r"^[ \t]{0,3}(?:>[ \t]?|(?:[-*+]|\d{1,9}[.)])[ \t]+)*\[(?:[^\]\\]|\\.)+\]:[ \t]*\n?[ \t]*<?([^\s>]+)>?", re.MULTILINE)
 LABELS = ("email", "phone", "iin", "card", "secret", "injection")
 
 
@@ -164,7 +166,10 @@ def link_targets(text):
     end of its token: https://docs.example.com)@attacker.test is checked whole. The target of a markdown link "](...)" and
     of a reference definition "[1]: ..." is taken even when it has no scheme, because a relative link is not trusted either."""
     targets = []
-    for token in (t for t in re.split(r"[\s<>]+", text) if t):
+    tokens = [t for t in re.split(r"[\s<>]+", text) if t]
+    for i, token in enumerate(tokens):
+        if token.endswith("]:") and i + 1 < len(tokens):  # fallback for reference definitions the pattern misses
+            targets.append(tokens[i + 1].rstrip(TRAILING))
         parts = token.split("](")
         for k, part in enumerate(parts):
             m = URL_START.search(part)
