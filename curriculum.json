@@ -3085,6 +3085,10 @@
         {
           "id": "M13-C16",
           "description": "Измерить очередь и дедлайн через настоящий HTTP, воспроизвести перегрузку и восстановление после рестарта."
+        },
+        {
+          "id": "M13-C17",
+          "description": "Трассировать LLM-конвейер по семантическим конвенциям OpenTelemetry GenAI в JSONL без внешних сервисов: дерево спанов с контекстом, атрибуты модели и токенов, ошибки отдельно от вердиктов качества, содержимое только по явному согласию; по трассам найти, куда уходит время и какой вызов упал."
         }
       ],
       "lessons": [
@@ -3230,6 +3234,35 @@
           "estimate_status": "planning_hypothesis",
           "assessment_policy": "course/assessment.md",
           "status": "materials_ready"
+        },
+        {
+          "id": "M13-L07X",
+          "title": "Трассировка LLM-конвейера",
+          "path": "course/lessons/M13-L07X.md",
+          "prerequisites": [
+            "M13-L04",
+            "M13-L06",
+            "M11-L07X"
+          ],
+          "estimated_minutes": 150,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Трассы 66 вопросов RAG-конвейера M11-L07X на 0.5B через llama-server: четыре спана на вопрос по конвенциям OpenTelemetry GenAI, события с вердиктами проверок, запрос с дедлайном 50 мс; анализ p50 и p95 по этапам, OTLP/JSON для Langfuse по желанию",
+          "assessment": "Анализ замороженных трасс, объяснение трассы с ошибкой и следующей за ней, передача контекста через traceparent в отдельный HTTP-сервис",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M13-C17"
+          ],
+          "extension": "1.2.0",
+          "required": false,
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 75,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; frozen traces need no model, re-collecting uses llama.cpp and GGUF of M09-L07X",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {

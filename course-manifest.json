@@ -884,6 +884,13 @@
       "version": "1.1.0",
       "status": "ready"
     },
+    "M13-L07X": {
+      "id": "M13-L07X",
+      "title": "M13-L07X. Трассировка LLM-конвейера",
+      "path": "course/lessons/M13-L07X.md",
+      "version": "1.1.0",
+      "status": "ready"
+    },
     "M14-L01": {
       "id": "M14-L01",
       "title": "M14-L01. Сценарий и агентный цикл",
@@ -1347,6 +1354,7 @@
       "M13-L04",
       "M13-L05",
       "M13-L06",
+      "M13-L07X",
       "M14-L01",
       "M14-L02",
       "M14-L03",
@@ -1935,7 +1943,8 @@
         "M13-L03",
         "M13-L04",
         "M13-L05",
-        "M13-L06"
+        "M13-L06",
+        "M13-L07X"
       ],
       "homework_id": "M13-HW01",
       "exercise": {
@@ -4266,6 +4275,32 @@
         "practice_minutes": 135,
         "self_check_minutes": 30,
         "setup_minutes": "separate; record actual",
+        "estimate_status": "planning_hypothesis_not_measured"
+      },
+      "pilot_sessions": []
+    },
+    {
+      "id": "M13-L07X",
+      "title": "Трассировка LLM-конвейера",
+      "version": "1.1.0",
+      "module_id": "M13",
+      "material_key": "M13-L07X",
+      "path": "course/lessons/M13-L07X.md",
+      "scope": "complete_lesson",
+      "material_status": "ready",
+      "prerequisites": [
+        "M13-L04",
+        "M13-L06",
+        "M11-L07X"
+      ],
+      "outcome_ids": [
+        "M13-C17"
+      ],
+      "workload": {
+        "reading_minutes": 45,
+        "practice_minutes": 75,
+        "self_check_minutes": 30,
+        "setup_minutes": "separate; frozen traces need no model, re-collecting uses llama.cpp and GGUF of M09-L07X",
         "estimate_status": "planning_hypothesis_not_measured"
       },
       "pilot_sessions": []

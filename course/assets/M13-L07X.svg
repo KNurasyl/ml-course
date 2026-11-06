@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="500" viewBox="0 0 760 500" role="img" aria-labelledby="title desc">
+<title id="title">Трасса одного вопроса и брошенный запрос</title>
+<desc id="desc">Вверху — водопад медианной трассы: корень 1.76 с, поиск 1.5 мс, вызов модели 1.76 с, из них prefill 1.27 с и decode 0.46 с, проверка 0.1 мс. Внизу — запрос с клиентским дедлайном 50 мс: сервер заметил разрыв через 1.0 с и держал слот 1.7 с, следующий запрос ждал.</desc>
+<rect width="760" height="500" fill="white"/>
+<text x="16" y="34" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650">Трасса одного вопроса и брошенный запрос</text>
+<rect x="16" y="52" width="728" height="210" rx="6" fill="#eef4fc" stroke="#245bba"/>
+<text x="30" y="76" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600">Медианная трасса из 67: время от начала корня</text>
+<text x="30" y="111" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">invoke_workflow</text>
+<rect x="210.0" y="100" width="510.0" height="14" fill="#245bba"/>
+<text x="714.0" y="111" fill="white" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="end">1.76 с</text>
+<text x="30" y="141" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">retrieval</text>
+<rect x="210.0" y="130" width="2.0" height="14" fill="#087e82"/>
+<text x="216.4" y="141" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="start">1.5 мс</text>
+<text x="30" y="171" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">chat (CLIENT)</text>
+<rect x="210.3" y="160" width="367.3" height="14" fill="#087e82"/>
+<rect x="577.5" y="160" width="133.7" height="14" fill="#7cc4c6"/>
+<text x="214.3" y="190" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">prefill 1.27 с</text>
+<text x="581.5" y="190" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">decode 0.46 с</text>
+<text x="30" y="219" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">evaluate</text>
+<rect x="719.7" y="208" width="2.0" height="14" fill="#087e82"/>
+<text x="713.7" y="219" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="end">0.1 мс</text>
+<text x="30" y="256" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12">Почти всё время — вызов модели; поиск и проверка — миллисекунды. Prefill дольше decode.</text>
+<rect x="16" y="276" width="728" height="180" rx="6" fill="#fff3e5" stroke="#a65c12"/>
+<text x="30" y="300" fill="#a65c12" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600">Клиент сдался через 50 мс, сервер — нет</text>
+<text x="30" y="331" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">запрос A, клиент</text>
+<rect x="210.0" y="320" width="3" height="14" fill="#a65c12"/>
+<text x="218.0" y="331" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">timeout через 50 мс → спан ERROR, error.type = timeout</text>
+<text x="30" y="363" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">запрос A, сервер</text>
+<rect x="210.0" y="352" width="226.8" height="14" fill="#a65c12"/>
+<line x1="344.8" y1="346" x2="344.8" y2="372" stroke="#182b3a" stroke-width="2"/>
+<text x="349.8" y="345" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">разрыв замечен через 1.0 с</text>
+<text x="430.8" y="363" fill="white" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="end">слот занят 1.7 с</text>
+<text x="30" y="395" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">запрос B, клиент</text>
+<rect x="222.0" y="384" width="214.8" height="14" fill="#d9dee3"/>
+<text x="228.0" y="395" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11">ждёт в очереди сервера</text>
+<rect x="436.8" y="384" width="283.2" height="14" fill="#087e82"/>
+<text x="442.8" y="395" fill="white" font-family="Segoe UI,Arial,sans-serif" font-size="11">работа 2.1 с</text>
+<text x="30" y="428" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="13">Спан chat запроса B: 3.8 с, сервер сообщил 2.1 с — разрыв 1.6 с; обычно он около 8 мс.</text>
+<text x="16" y="484" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12">Авторский прогон 06.11.2026: Qwen2.5-0.5B Q4_K_M, llama.cpp b11803, 66 вопросов M11-L07X, лог llama-server.</text>
+</svg>

@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="743aabe5d3e944449055e5aee9ee3b336efeff62716a26c18129c52d5fe44b2e"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="8393c737ae03bb6418c034ac76f41a3d6389dad39264f103edd41ad72ead9c91"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -36,7 +36,7 @@
 <section class="nav-group"><details class="nav-module"><summary>M10 RAG и поиск</summary><ul><li data-key="M10"><a href="#M10" data-material="M10"><span class="nav-marker">M10</span><span>RAG и поиск</span></a></li><li data-key="M10-L01"><a href="#M10-L01" data-material="M10-L01"><span class="nav-marker">L01</span><span>Документ и фрагмент</span></a></li><li data-key="M10-L02"><a href="#M10-L02" data-material="M10-L02"><span class="nav-marker">L02</span><span>Лексический и векторный поиск</span></a></li><li data-key="M10-L03"><a href="#M10-L03" data-material="M10-L03"><span class="nav-marker">L03</span><span>Гибридный поиск и reranking</span></a></li><li data-key="M10-L04"><a href="#M10-L04" data-material="M10-L04"><span class="nav-marker">L04</span><span>Контекст и подтверждение ответа</span></a></li><li data-key="M10-L05"><a href="#M10-L05" data-material="M10-L05"><span class="nav-marker">L05</span><span>Диагностика и обновления</span></a></li><li data-key="M10-L06"><a href="#M10-L06" data-material="M10-L06"><span class="nav-marker">L06</span><span>Диагностировать русский RAG по трассе ошибки</span></a></li><li data-key="M10-L07X"><a href="#M10-L07X" data-material="M10-L07X"><span class="nav-marker">L07X</span><span>Эмбеддеры для русского языка</span></a></li><li data-key="M10-L08X"><a href="#M10-L08X" data-material="M10-L08X"><span class="nav-marker">L08X</span><span>Векторное хранилище</span></a></li><li data-key="M10-L09X"><a href="#M10-L09X" data-material="M10-L09X"><span class="nav-marker">L09X</span><span>Кросс-энкодер для reranking</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M11 Оценивание LLM-систем</summary><ul><li data-key="M11"><a href="#M11" data-material="M11"><span class="nav-marker">M11</span><span>Оценивание LLM-систем</span></a></li><li data-key="M11-L01"><a href="#M11-L01" data-material="M11-L01"><span class="nav-marker">L01</span><span>Что именно оцениваем</span></a></li><li data-key="M11-L02"><a href="#M11-L02" data-material="M11-L02"><span class="nav-marker">L02</span><span>Набор примеров и разметка</span></a></li><li data-key="M11-L03"><a href="#M11-L03" data-material="M11-L03"><span class="nav-marker">L03</span><span>HR и технические рубрики</span></a></li><li data-key="M11-L04"><a href="#M11-L04" data-material="M11-L04"><span class="nav-marker">L04</span><span>Модель как оценщик</span></a></li><li data-key="M11-L05"><a href="#M11-L05" data-material="M11-L05"><span class="nav-marker">L05</span><span>Регрессии и отчёт</span></a></li><li data-key="M11-L06"><a href="#M11-L06" data-material="M11-L06"><span class="nav-marker">L06</span><span>От реальных ответов к парному сравнению систем</span></a></li><li data-key="M11-L07X"><a href="#M11-L07X" data-material="M11-L07X"><span class="nav-marker">L07X</span><span>Error analysis как процесс</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M12 Обучение и адаптация моделей</summary><ul><li data-key="M12"><a href="#M12" data-material="M12"><span class="nav-marker">M12</span><span>Обучение и адаптация моделей</span></a></li><li data-key="M12-L01"><a href="#M12-L01" data-material="M12-L01"><span class="nav-marker">L01</span><span>Выбор вмешательства</span></a></li><li data-key="M12-L02"><a href="#M12-L02" data-material="M12-L02"><span class="nav-marker">L02</span><span>Данные для адаптации</span></a></li><li data-key="M12-L03"><a href="#M12-L03" data-material="M12-L03"><span class="nav-marker">L03</span><span>Малое обучение с нуля</span></a></li><li data-key="M12-L04"><a href="#M12-L04" data-material="M12-L04"><span class="nav-marker">L04</span><span>Дообучение и адаптеры</span></a></li><li data-key="M12-L05"><a href="#M12-L05" data-material="M12-L05"><span class="nav-marker">L05</span><span>Сравнение до и после</span></a></li><li data-key="M12-L06"><a href="#M12-L06" data-material="M12-L06"><span class="nav-marker">L06</span><span>Из диалога в обучающий пример: токены и маска потерь</span></a></li><li data-key="M12-L07"><a href="#M12-L07" data-material="M12-L07"><span class="nav-marker">L07</span><span>Настоящий малый SFT: адаптер, checkpoint и регрессии</span></a></li></ul></details></section>
-<section class="nav-group"><details class="nav-module"><summary>M13 MLOps и LLMOps</summary><ul><li data-key="M13"><a href="#M13" data-material="M13"><span class="nav-marker">M13</span><span>MLOps и LLMOps</span></a></li><li data-key="M13-L01"><a href="#M13-L01" data-material="M13-L01"><span class="nav-marker">L01</span><span>Версия эксперимента и релиза</span></a></li><li data-key="M13-L02"><a href="#M13-L02" data-material="M13-L02"><span class="nav-marker">L02</span><span>Упаковка и контракт</span></a></li><li data-key="M13-L03"><a href="#M13-L03" data-material="M13-L03"><span class="nav-marker">L03</span><span>Регрессионные проверки</span></a></li><li data-key="M13-L04"><a href="#M13-L04" data-material="M13-L04"><span class="nav-marker">L04</span><span>Наблюдаемость и нагрузка</span></a></li><li data-key="M13-L05"><a href="#M13-L05" data-material="M13-L05"><span class="nav-marker">L05</span><span>Неудачный релиз и восстановление</span></a></li><li data-key="M13-L06"><a href="#M13-L06" data-material="M13-L06"><span class="nav-marker">L06</span><span>Очередь, дедлайн и восстановление HTTP-сервиса</span></a></li></ul></details></section>
+<section class="nav-group"><details class="nav-module"><summary>M13 MLOps и LLMOps</summary><ul><li data-key="M13"><a href="#M13" data-material="M13"><span class="nav-marker">M13</span><span>MLOps и LLMOps</span></a></li><li data-key="M13-L01"><a href="#M13-L01" data-material="M13-L01"><span class="nav-marker">L01</span><span>Версия эксперимента и релиза</span></a></li><li data-key="M13-L02"><a href="#M13-L02" data-material="M13-L02"><span class="nav-marker">L02</span><span>Упаковка и контракт</span></a></li><li data-key="M13-L03"><a href="#M13-L03" data-material="M13-L03"><span class="nav-marker">L03</span><span>Регрессионные проверки</span></a></li><li data-key="M13-L04"><a href="#M13-L04" data-material="M13-L04"><span class="nav-marker">L04</span><span>Наблюдаемость и нагрузка</span></a></li><li data-key="M13-L05"><a href="#M13-L05" data-material="M13-L05"><span class="nav-marker">L05</span><span>Неудачный релиз и восстановление</span></a></li><li data-key="M13-L06"><a href="#M13-L06" data-material="M13-L06"><span class="nav-marker">L06</span><span>Очередь, дедлайн и восстановление HTTP-сервиса</span></a></li><li data-key="M13-L07X"><a href="#M13-L07X" data-material="M13-L07X"><span class="nav-marker">L07X</span><span>Трассировка LLM-конвейера</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M14 Агенты и инструменты</summary><ul><li data-key="M14"><a href="#M14" data-material="M14"><span class="nav-marker">M14</span><span>Агенты и инструменты</span></a></li><li data-key="M14-L01"><a href="#M14-L01" data-material="M14-L01"><span class="nav-marker">L01</span><span>Сценарий и агентный цикл</span></a></li><li data-key="M14-L02"><a href="#M14-L02" data-material="M14-L02"><span class="nav-marker">L02</span><span>Контракт инструмента</span></a></li><li data-key="M14-L03"><a href="#M14-L03" data-material="M14-L03"><span class="nav-marker">L03</span><span>Состояние и границы доступа</span></a></li><li data-key="M14-L04"><a href="#M14-L04" data-material="M14-L04"><span class="nav-marker">L04</span><span>Ошибки и остановка</span></a></li><li data-key="M14-L05"><a href="#M14-L05" data-material="M14-L05"><span class="nav-marker">L05</span><span>Проверка агента</span></a></li><li data-key="M14-L06"><a href="#M14-L06" data-material="M14-L06"><span class="nav-marker">L06</span><span>Модель предлагает инструмент, исполнитель проверяет</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M15 Речь и голосовой диалог</summary><ul><li data-key="M15"><a href="#M15" data-material="M15"><span class="nav-marker">M15</span><span>Речь и голосовой диалог</span></a></li><li data-key="M15-L01"><a href="#M15-L01" data-material="M15-L01"><span class="nav-marker">L01</span><span>Аудио и речь</span></a></li><li data-key="M15-L02"><a href="#M15-L02" data-material="M15-L02"><span class="nav-marker">L02</span><span>Распознавание и сегменты</span></a></li><li data-key="M15-L03"><a href="#M15-L03" data-material="M15-L03"><span class="nav-marker">L03</span><span>Синтез и доставка</span></a></li><li data-key="M15-L04"><a href="#M15-L04" data-material="M15-L04"><span class="nav-marker">L04</span><span>Поток и перебивание</span></a></li><li data-key="M15-L05"><a href="#M15-L05" data-material="M15-L05"><span class="nav-marker">L05</span><span>Речевое оценивание</span></a></li><li data-key="M15-L06"><a href="#M15-L06" data-material="M15-L06"><span class="nav-marker">L06</span><span>От WAV к частичным гипотезам и отменяемым фрагментам</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M16 Итоговый продукт и защита</summary><ul><li data-key="M16"><a href="#M16" data-material="M16"><span class="nav-marker">M16</span><span>Итоговый продукт и защита</span></a></li><li data-key="M16-L01"><a href="#M16-L01" data-material="M16-L01"><span class="nav-marker">L01</span><span>Требования и две рубрики</span></a></li><li data-key="M16-L06"><a href="#M16-L06" data-material="M16-L06"><span class="nav-marker">L06</span><span>Обратная связь с проверяемыми основаниями</span></a></li><li data-key="M16-L07"><a href="#M16-L07" data-material="M16-L07"><span class="nav-marker">L07</span><span>Состояние интервью и ограниченные уточнения</span></a></li><li data-key="M16-L02"><a href="#M16-L02" data-material="M16-L02"><span class="nav-marker">L02</span><span>Интеграция и независимая проверка</span></a></li><li data-key="M16-L03"><a href="#M16-L03" data-material="M16-L03"><span class="nav-marker">L03</span><span>Пилот продукта</span></a></li><li data-key="M16-L04"><a href="#M16-L04" data-material="M16-L04"><span class="nav-marker">L04</span><span>Защита архитектуры и отказа</span></a></li><li data-key="M16-L05"><a href="#M16-L05" data-material="M16-L05"><span class="nav-marker">L05</span><span>Портфолио и профессиональная проверка</span></a></li><li data-key="M16-L08"><a href="#M16-L08" data-material="M16-L08"><span class="nav-marker">L08</span><span>Самостоятельная сборка и защита нового требования</span></a></li></ul></details></section>
@@ -14993,6 +14993,7 @@ assert supervised_pairs == [(13,21),(21,22),(22,2)]
 <li><a href="#M13-L04">M13-L04. Наблюдаемость и нагрузка</a></li>
 <li><a href="#M13-L05">M13-L05. Неудачный релиз и восстановление</a></li>
 <li><a href="#M13-L06">M13-L06. Очередь, дедлайн и восстановление HTTP-сервиса</a></li>
+<li><a href="#M13-L07X">M13-L07X. Трассировка LLM-конвейера</a> — расширение 1.2.0, не входит в обязательный минимум; замороженные трассы работают без моделей</li>
 </ol>
 <p>Проходи уроки по порядку. На каждый выделяй сначала чтение и восстановление схемы, затем пример и самостоятельную попытку. Начальный ориентир: уроки около 15.0 ч, домашняя работа 4–8 ч, установка и повторение учитываются отдельно. Это плановая гипотеза, а не измеренное время ученика. При математическом или техническом пробеле добавь повторение и сохрани фактическое время отдельно.</p>
 <h2 id="M13--новые-обязательные-ступени">Новые обязательные ступени</h2>
@@ -16092,7 +16093,254 @@ document.querySelectorAll(&#x27;input&#x27;).forEach(el=&gt;el.addEventListener(
 <h2 id="M13-L06--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://docs.python.org/3.11/library/http.server.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: HTTPServer</a>, <a href="https://docs.python.org/3.11/library/threading.html" target="_blank" rel="noopener noreferrer" class="external-link">threading и семафоры</a>. Формулы очереди здесь — расчёт для заданного детерминированного расписания, а не универсальная теория очередей.</p>
 <p>Для углубления: <a href="https://sre.google/sre-book/handling-overload/" target="_blank" rel="noopener noreferrer" class="external-link">Google SRE Book: Handling Overload</a> — отказ от лишней нагрузки, троттлинг на стороне клиента и критичность запросов; <a href="https://sre.google/sre-book/addressing-cascading-failures/" target="_blank" rel="noopener noreferrer" class="external-link">Google SRE Book: Addressing Cascading Failures</a> — управление очередями, сброс нагрузки и передача дедлайнов между сервисами (обе на английском).</p>
-<div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l06-a-b-c">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L05"><small>Предыдущий раздел</small>← M13-L05. Неудачный релиз и восстановление</a><a href="#M14"><small>Следующий раздел</small>M14 Агенты и инструменты →</a></nav></article><article class="material" id="M14" data-title="M14 Агенты и инструменты" data-short-title="Агенты и инструменты" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Агенты и инструменты</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: M10, M11 и M13: поиск, оценивание и эксплуатация.</p>
+<div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l06-a-b-c">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L05"><small>Предыдущий раздел</small>← M13-L05. Неудачный релиз и восстановление</a><a href="#M13-L07X"><small>Следующий раздел</small>M13-L07X. Трассировка LLM-конвейера →</a></nav></article><article class="material" id="M13-L07X" data-title="M13-L07X. Трассировка LLM-конвейера" data-short-title="Трассировка LLM-конвейера" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L07X</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Трассировка LLM-конвейера</h1><p class="outcome"><strong>После урока:</strong> записать трассы настоящего LLM-конвейера в JSONL по семантическим конвенциям OpenTelemetry GenAI, без Docker и новых пакетов. По трассам ответить на три инженерных вопроса: куда уходит время, какой вызов упал и почему, какой запрос дал плохой ответ.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M13-L04, M13-L06, M11-L07X, M09-L07X. Анализ читает замороженные трассы из <code>quality/tracing</code> и работает без моделей. Чтобы собрать трассы заново, нужны llama.cpp и GGUF из M09-L07X. Ориентир — 150 минут чтения, анализа и задачи; это плановая гипотеза, а не измеренное время.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L07X--объяснение">Объяснение</a></li><li><a href="#M13-L07X--аналогия-request_id-и-jaeger-в-микросервисах">Аналогия: request_id и Jaeger в микросервисах</a></li><li><a href="#M13-L07X--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L07X--схема">Схема</a></li><li><a href="#M13-L07X--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L07X--самостоятельная-задача-a-m13-l07x-a">Самостоятельная задача A — M13-L07X-A</a></li><li><a href="#M13-L07X--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L07X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L07X--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L07X--карточка-урока">Карточка урока</a></li><li><a href="#M13-L07X--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Урок дополняет модуль, не входит в обязательный минимум 1.1.0.</p>
+
+
+<blockquote>
+<p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; llama.cpp b11803, Qwen2.5-0.5B-Instruct Q4_K_M (ревизия 9217f5d); семантические конвенции OpenTelemetry GenAI, коммит e6658f1 от 06.11.2026, статус Development · проверено 06.11.2026 · источник: <a href="https://github.com/open-telemetry/semantic-conventions-genai" target="_blank" rel="noopener noreferrer" class="external-link">OpenTelemetry GenAI semantic conventions</a></p>
+</blockquote>
+<h2 id="M13-L07X--объяснение">Объяснение</h2>
+<h3 id="M13-L07X--трасса-спан-и-контекст">Трасса, спан и контекст</h3>
+<p>M13-L04 развёл три вида наблюдений: лог описывает событие, метрика агрегирует много событий, трассировка связывает этапы одного запроса. Здесь трассировка становится конкретной.</p>
+<p>Трасса (trace) — дерево спанов одного запроса с общим <code>trace_id</code> длиной 16 байт. Спан (span) — одна операция. У него есть имя, вид (kind), <code>span_id</code> длиной 8 байт, <code>parent_span_id</code>, начало и конец в наносекундах Unix, статус и атрибуты. У корневого спана родителя нет.</p>
+<p>Родителя задаёт контекст, а не ручная передача id. Внутри процесса трассировщик держит текущий спан в <code>contextvars</code>. Новый спан берёт текущий родителем и на время работы сам становится текущим. Между процессами контекст передаётся в HTTP-заголовке W3C <code>traceparent</code> вида <code>00-{trace_id}-{span_id}-01</code>. Принимающий сервис продолжает ту же трассу своими спанами.</p>
+<p>Начало спана берут по календарным часам, чтобы сопоставлять спаны разных процессов. Длительность меряют монотонными часами, как в M13-L04, а конец считают как начало плюс длительность. Тогда коррекция системного времени не даст спану отрицательной длины.</p>
+<p>В M11-L07X словом «трасса» называлась запись для разбора: вопрос, найденные фрагменты, ответ и сигналы. Трасса OpenTelemetry — дерево операций со временем. Лабораторная связывает одно с другим: проверки M11-L07X становятся событиями внутри трассы.</p>
+<h3 id="M13-L07X--семантические-конвенции-genai">Семантические конвенции GenAI</h3>
+<p>Если каждый называет атрибуты по-своему, бэкенд не поймёт, где модель, а где токены. Семантические конвенции OpenTelemetry фиксируют имена. Для генеративного ИИ они в статусе Development, и имена ещё меняются. В 2026 году их вынесли в отдельный репозиторий <code>semantic-conventions-genai</code>, поэтому курс привязан к конкретному коммиту.</p>
+<p>На каждый вопрос лабораторная пишет четыре спана:</p>
+<ul>
+<li><code>invoke_workflow rag-answer</code> (INTERNAL) — корень. Порядок шагов задаёт приложение, а не модель, поэтому операция <code>invoke_workflow</code>, а не <code>invoke_agent</code>;</li>
+<li><code>retrieval</code> (INTERNAL) — поиск: <code>gen_ai.retrieval.top_k</code> = 3 и id найденных фрагментов;</li>
+<li><code>chat qwen2.5-0.5b-instruct-q4_k_m</code> (CLIENT) — вызов llama-server по HTTP;</li>
+<li><code>evaluate</code> (INTERNAL) — шесть проверок M11-L07X.</li>
+</ul>
+<p>У спана <code>chat</code> обязательны два атрибута: <code>gen_ai.operation.name</code> и <code>gen_ai.provider.name</code>. Рекомендуемые — модель, параметры запроса, <code>gen_ai.response.id</code>, причина остановки и токены <code>gen_ai.usage.input_tokens</code> и <code>gen_ai.usage.output_tokens</code>. Для llama.cpp в списке поставщиков значения нет, поэтому записано собственное <code>llama.cpp</code>. Время prefill и decode, которое сообщил сервер, лежит в атрибутах <code>llama_cpp.*</code>: это не часть конвенций, а пространство имён курса.</p>
+<p>Вердикт проверки — не статус спана. Сервер ответил 200, вызов удался, а ответ при этом может быть плохим. Поэтому вердикты записаны событиями <code>gen_ai.evaluation.result</code>, привязанными к спану <code>chat</code> по <code>trace_id</code> и <code>span_id</code>. Статус ERROR получает только операция, которая сама не выполнилась, вместе с коротким <code>error.type</code>, например <code>timeout</code>.</p>
+<p>Содержимое по умолчанию не пишется. Prompt, ответ модели и текст запроса к поиску — атрибуты уровня Opt-In. В тренажёре это ответы кандидатов, то есть персональные данные. Трасса хранит id вопроса, id фрагментов, число токенов и время. Флаг <code>--capture-content</code> добавляет текст; включать его стоит только на синтетических данных курса.</p>
+<p><a class="figure-expand" href="course/assets/M13-L07X.svg" target="_blank" data-figure="course/assets/M13-L07X.svg" aria-label="Увеличить рисунок: Водопад медианной трассы и брошенный запрос: модель занимает почти всё время, а сервер держит слот после дедлайна клиента"><picture><img src="course/assets/M13-L07X.svg" alt="Водопад медианной трассы и брошенный запрос: модель занимает почти всё время, а сервер держит слот после дедлайна клиента" loading="lazy"></picture></a><span class="figure-hint">Водопад медианной трассы и брошенный запрос: модель занимает почти всё время, а сервер держит слот после дедлайна клиента · Открыть крупнее ↗</span></p>
+<p>Сопоставь рисунок с числами: какая часть корня приходится на <code>chat</code>, что дольше — prefill или decode, и сколько ждал запрос B.</p>
+<h2 id="M13-L07X--аналогия-request_id-и-jaeger-в-микросервисах">Аналогия: request_id и Jaeger в микросервисах</h2>
+<p>Backend-разработчик уже видел это в микросервисах. Шлюз создаёт <code>request_id</code> и передаёт его в заголовке. Каждый сервис пишет его в свои логи, а Jaeger или Zipkin рисует водопад вызовов: шлюз, сервис заказов, запрос к базе. Медленный запрос ищут не по среднему времени, а открывают его водопад и смотрят, какой этап длинный.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>trace_id</code></td>
+  <td><code>request_id</code>, общий для всех сервисов</td>
+</tr>
+<tr>
+  <td>Спан</td>
+  <td>Строка в логе с началом и длительностью вызова</td>
+</tr>
+<tr>
+  <td><code>parent_span_id</code></td>
+  <td>Кто кого вызвал: шлюз → сервис заказов → база</td>
+</tr>
+<tr>
+  <td>Заголовок <code>traceparent</code></td>
+  <td>Заголовок <code>X-Request-ID</code> между сервисами</td>
+</tr>
+<tr>
+  <td>Спан <code>chat</code> с токенами</td>
+  <td>Запрос к базе с длительностью и числом строк</td>
+</tr>
+<tr>
+  <td>p95 по этапу</td>
+  <td>Журнал медленных запросов (slow query log)</td>
+</tr>
+<tr>
+  <td>Событие <code>gen_ai.evaluation.result</code></td>
+  <td>Проверка бизнес-правила после ответа сервиса</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> стоимость SQL-запроса примерно определяет план, известный заранее. Стоимость вызова модели зависит от числа выходных токенов, которое заранее неизвестно, и от длины prompt. Плохой ответ модели — не исключение: сервер вернул 200, а ответ неверный. Поэтому вердикт качества хранят отдельно от статуса спана. И содержимое запроса к модели чаще, чем параметры SQL, оказывается персональными данными: его не пишут по умолчанию.</p>
+<section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M13-L07X--разобранный-пример">Разобранный пример</h2>
+<p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса. Он пишет маленькую трассу трассировщиком лабораторной: корень, поиск и вызов модели, который падает по дедлайну. Модель не нужна.</p>
+<pre><code class="language-python">import importlib.util
+import json
+import tempfile
+from pathlib import Path
+
+spec = importlib.util.spec_from_file_location(&quot;tracing&quot;, &quot;labs/M13/tracing.py&quot;)
+tracing = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(tracing)
+
+folder = Path(tempfile.mkdtemp())
+tracer = tracing.Tracer(folder)
+with tracer.span(&quot;invoke_workflow demo&quot;, attributes={&quot;gen_ai.operation.name&quot;: &quot;invoke_workflow&quot;}):
+    with tracer.span(&quot;retrieval&quot;, attributes={&quot;gen_ai.operation.name&quot;: &quot;retrieval&quot;, &quot;gen_ai.retrieval.top_k&quot;: 3}):
+        pass
+    try:
+        with tracer.span(&quot;chat tiny&quot;, &quot;CLIENT&quot;, {&quot;gen_ai.operation.name&quot;: &quot;chat&quot;, &quot;gen_ai.provider.name&quot;: &quot;llama.cpp&quot;}):
+            raise TimeoutError(&quot;клиентский дедлайн 50 мс&quot;)
+    except TimeoutError:
+        pass  # конвейер решает, что делать дальше; спан уже записал сбой
+tracer.close()
+
+spans = {s[&quot;name&quot;]: s for s in map(json.loads, (folder / &quot;spans.jsonl&quot;).read_text(encoding=&quot;utf-8&quot;).splitlines())}
+root, retrieval, chat = spans[&quot;invoke_workflow demo&quot;], spans[&quot;retrieval&quot;], spans[&quot;chat tiny&quot;]
+assert root[&quot;parent_span_id&quot;] is None and len(root[&quot;trace_id&quot;]) == 32 and len(root[&quot;span_id&quot;]) == 16
+assert retrieval[&quot;parent_span_id&quot;] == chat[&quot;parent_span_id&quot;] == root[&quot;span_id&quot;]
+assert {retrieval[&quot;trace_id&quot;], chat[&quot;trace_id&quot;]} == {root[&quot;trace_id&quot;]}
+assert chat[&quot;status&quot;][&quot;code&quot;] == &quot;ERROR&quot; and chat[&quot;attributes&quot;][&quot;error.type&quot;] == &quot;timeout&quot;
+assert root[&quot;status&quot;][&quot;code&quot;] == &quot;UNSET&quot;  # исключение обработано внутри корня
+assert chat[&quot;end_time_unix_nano&quot;] &gt;= chat[&quot;start_time_unix_nano&quot;]
+</code></pre>
+<p>Числа из медианной трассы авторского прогона дают тот же разбор вручную: доля модели, разрыв между клиентом и сервером, скорость prefill и decode.</p>
+<pre><code class="language-python">root_ms, chat_ms, prefill_ms, decode_ms = 1761.2, 1759.5, 1268.3, 461.8  # медианная трасса, вопрос check-voice
+assert round(chat_ms / root_ms, 3) == 0.999                     # почти всё время — вызов модели
+assert round(chat_ms - (prefill_ms + decode_ms), 1) == 29.4     # HTTP и JSON вокруг работы сервера
+assert round(387 / prefill_ms * 1000) == 305                     # 387 токенов prompt в секунду вычислений
+assert round(22 / decode_ms * 1000, 1) == 47.6                   # 22 токена ответа
+after_chat_ms, after_server_ms = 3759.9, 2120.0                  # трасса после брошенного запроса
+assert round(after_chat_ms - after_server_ms, 1) == 1639.9      # ожидание в очереди сервера, а не модель
+</code></pre>
+<h3 id="M13-L07X--авторский-прогон-06-11-2026">Авторский прогон 06.11.2026</h3>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe labs\M13\tracing.py analyze
+.\.venv\Scripts\python.exe labs\M13\tracing.py collect --out artifacts\M13\my-traces
+</code></pre>
+<p>Первая команда читает замороженные трассы и работает без модели. Вторая собирает свои трассы, на ноутбуке автора это заняло около 3 минут. В прогоне 66 вопросов M11-L07X, затем запрос с дедлайном 50 мс и повтор того же вопроса без дедлайна. Всего 68 трасс, 271 спан и 402 события.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Этап</th>
+  <th>n</th>
+  <th>p50, мс</th>
+  <th>p95, мс</th>
+  <th>max, мс</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>invoke_workflow</td>
+  <td>67</td>
+  <td>1761</td>
+  <td>3265</td>
+  <td>6026</td>
+</tr>
+<tr>
+  <td>retrieval</td>
+  <td>67</td>
+  <td>1.7</td>
+  <td>2.8</td>
+  <td>3.1</td>
+</tr>
+<tr>
+  <td>chat</td>
+  <td>67</td>
+  <td>1760</td>
+  <td>3261</td>
+  <td>6023</td>
+</tr>
+<tr>
+  <td>evaluate</td>
+  <td>67</td>
+  <td>0.1</td>
+  <td>0.3</td>
+  <td>0.4</td>
+</tr>
+</tbody>
+</table></div>
+<p>Что показали трассы:</p>
+<ul>
+<li><strong>Время уходит в модель.</strong> На спан <code>chat</code> приходится 0.999 времени корня, поиск и проверки занимают миллисекунды. Ускорять поиск бессмысленно.</li>
+<li><strong>В медиане дольше prefill, а не ответ.</strong> Prompt — 396 токенов в медиане, ответ — 16. Prefill занял 1425 мс в медиане, decode — 283 мс. На p95 decode вырастает до 1659 мс: длинные ответы, до 88 токенов.</li>
+<li><strong>Самая долгая трасса — не медленный сервер.</strong> Вопрос p-retry шёл 6.0 с, потому что ответ упёрся в лимит 200 токенов (<code>finish_reasons</code> = <code>length</code>).</li>
+<li><strong>Быстрый ответ не значит хороший.</strong> 7 трасс без единой сработавшей проверки шли 2.4 с в медиане при 50 токенах ответа. 43 трассы с кодом «нет ответа» — 1.7 с при 9 токенах: модель коротко выдала одни ссылки. По задержке плохой ответ не найти, нужны события с вердиктами.</li>
+<li><strong>Клиент и сервер обычно согласны.</strong> Спан <code>chat</code> длиннее времени сервера на 8 мс в медиане и на 30 мс на p95: это HTTP и разбор JSON.</li>
+</ul>
+<p><strong>Брошенный запрос.</strong> Запрос с дедлайном 50 мс упал через 75 мс: трасса из трёх спанов, <code>chat</code> и корень со статусом ERROR и <code>error.type</code> = <code>timeout</code>, спана <code>evaluate</code> и событий нет. Сервер о дедлайне клиента не знает. По его логу разрыв соединения он заметил через 1.0 с, а слот освободил через 1.7 с — примерно столько занимает prefill этого prompt. Следующий запрос всё это время ждал. Его спан <code>chat</code> длился 3760 мс, а сервер сообщил 2120 мс работы: разрыв 1640 мс против обычных 8. Без времени сервера в спане эту паузу легко принять за медленную модель. Вывод для M13-L06: дедлайн клиента не освобождает сервер, отмену нужно передавать серверу явно.</p>
+<p><strong>Шумный сосед.</strong> Первый авторский прогон шёл одновременно с тестами на том же процессоре. Ответы и число токенов совпали с чистым прогоном до символа, а время — нет: decode 20 токенов в секунду в медиане против 54, p95 спана <code>chat</code> — 13.6 с против 3.3. Трасса показала причину: медленнее стали и prefill, и decode у всех запросов окна, а не у отдельных вопросов. Этот прогон сохранён в <code>quality/tracing-noisy</code> как отрицательный результат и в выводы о задержке не входит.</p>
+<p><strong>Цена трассировки.</strong> Пустой спан с записью строки в файл стоит 10.5 мкс. Четыре спана на вопрос — около 42 мкс при медиане вопроса 1.76 с, это 0.002 %.</p>
+<h3 id="M13-L07X--langfuse-через-docker-compose-по-желанию">Langfuse через Docker Compose — по желанию</h3>
+<p>Этот путь не входит в курс и не проверен автором: Docker на учебном ноутбуке не устанавливался. Команда <code>otlp</code> переводит замороженные спаны и события в OTLP/JSON, по одной строке на трассу:</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe labs\M13\tracing.py otlp
+</code></pre>
+<p>Файлы <code>otlp-traces.jsonl</code> и <code>otlp-logs.jsonl</code> появятся в <code>artifacts/M13/tracing</code>. Их принимает OpenTelemetry Collector и любой бэкенд с OTLP по HTTP. Langfuse — открытая платформа наблюдаемости для LLM, её можно поднять у себя:</p>
+<ol>
+<li>Установить Docker Desktop, выполнить <code>git clone https://github.com/langfuse/langfuse.git</code>, заменить в <code>docker-compose.yml</code> все строки с пометкой <code># CHANGEME</code> на длинные случайные пароли и запустить <code>docker compose up</code>. По документации веб-контейнер готов через 2–3 минуты, интерфейс — на <code>http://localhost:3000</code>.</li>
+<li>Зарегистрировать первого пользователя, создать проект и пару ключей.</li>
+<li>Положить ключи в переменную окружения и отправить файлы:</li>
+</ol>
+<pre><code class="language-powershell">$pair = 'pk-lf-...:sk-lf-...'   # свои ключи проекта; в код и коммиты их не кладут
+$env:OTEL_EXPORTER_OTLP_HEADERS = 'Authorization=Basic ' + [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($pair))
+.\.venv\Scripts\python.exe labs\M13\tracing.py send --endpoint http://localhost:3000/api/public/otel
+</code></pre>
+<p>Langfuse принимает OTLP по HTTP в JSON и protobuf, gRPC не поддерживает. Последняя версия на 06.11.2026 — v4.76.0. Для собственного проекта такой стенд полезен, когда трасс становится больше, чем удобно читать в JSONL.</p>
+</section><h2 id="M13-L07X--схема">Схема</h2>
+<figure class="diagram"><pre class="mermaid">flowchart TD
+    Q[&quot;Вопрос: свой trace_id&quot;] --&gt; W[&quot;invoke_workflow&quot;]
+    W --&gt; R[&quot;retrieval&quot;]
+    W --&gt; C[&quot;chat: CLIENT, токены&quot;]
+    W --&gt; E[&quot;evaluate: проверки&quot;]
+    C --&gt; S[&quot;llama-server по traceparent&quot;]
+    E --&gt; V[&quot;события оценки к спану chat&quot;]
+    V --&gt; J[&quot;JSONL: спаны и события&quot;]
+    J --&gt; A[&quot;analyze: p50 и p95&quot;]
+    classDef main fill:#e8f0fe,stroke:#245bba,stroke-width:2px,color:#182b3a
+    class W,C,J,A main
+</pre></figure>
+<p>Трасса одного вопроса. Корневой спан <code>invoke_workflow</code> объединяет поиск, вызов модели и проверку общим <code>trace_id</code>. Спан <code>chat</code> — клиентский: он хранит модель, токены и время сервера. В другой процесс контекст передаётся заголовком <code>traceparent</code>. Вердикты проверок записаны событиями, привязанными к спану <code>chat</code>, а не статусом ошибки. Все спаны и события ложатся в JSONL, его читает анализ: p50 и p95 по этапам, разрыв между временем клиента и сервера, разбивка по вердикту. Выделен путь от корня до анализа.</p>
+<section class="lesson-stage" data-stage="practice"><span class="stage-label">Пробуем с поддержкой</span><h2 id="M13-L07X--практика-с-поддержкой">Практика с поддержкой</h2>
+<p><strong>Предскажи до запуска.</strong> Прежде чем запускать код, запиши ожидаемый вывод: какая доля времени корня приходится на <code>chat</code>, что больше — prefill или decode, и какой этап задаёт p95. После запуска сравни с фактическим и объясни каждое расхождение.</p>
+<ol>
+<li>Выполни <code>.\.venv\Scripts\python.exe labs\M13\tracing.py analyze</code> и сверь числа с таблицей авторского прогона.</li>
+<li>Найди в <code>quality/tracing/spans.jsonl</code> трассу со статусом ERROR. Перечисли её спаны и объясни, почему у неё нет спана <code>evaluate</code> и событий.</li>
+<li>Найди трассу, которая шла следом. Сравни длительность её спана <code>chat</code> с суммой <code>llama_cpp.prompt_ms</code> и <code>llama_cpp.predicted_ms</code>, объясни разницу.</li>
+<li>Если модель скачана, собери свои трассы: <code>.\.venv\Scripts\python.exe labs\M13\tracing.py collect --limit 10 --out artifacts\M13\my-traces</code>. Затем запусти <code>analyze --folder artifacts\M13\my-traces</code> и сравни p50 спана <code>chat</code> с авторским.</li>
+</ol>
+</section><section class="lesson-stage" data-stage="task"><span class="stage-label">Твоя попытка</span><h2 id="M13-L07X--самостоятельная-задача-a-m13-l07x-a">Самостоятельная задача A — M13-L07X-A</h2>
+<p>Продолжи трассу через границу процесса. Подними локальный HTTP-сервис (<code>http.server</code> из стандартной библиотеки), который изображает модель: ждёт 20 мс и отвечает 200. Клиент открывает корневой спан и спан <code>chat</code> вида CLIENT, а в запрос кладёт заголовок <code>traceparent</code> от спана <code>chat</code>. Сервис разбирает заголовок, проверяет формат и пишет свой спан вида SERVER в отдельный файл. Докажи по двум файлам, что спан сервиса принадлежит той же трассе и его родитель — спан <code>chat</code>. Посчитай, сколько времени заняли соединение и HTTP вокруг работы сервиса. Затем убери заголовок и покажи, что сервис начал новую трассу.</p>
+</section><details class="hints" id="M13-L07X--подсказки-по-очереди"><summary>Подсказки по очереди</summary><div>
+<ol>
+<li>Заголовок — четыре части через дефис: версия <code>00</code>, <code>trace_id</code> из 32 шестнадцатеричных символов, <code>span_id</code> из 16 и флаги <code>01</code>.</li>
+<li>Обработчик <code>http.server</code> работает в другом потоке. Новый поток начинает с пустым контекстом: <code>CURRENT.get()</code> там вернёт <code>None</code>.</li>
+<li>Удалённого родителя можно поставить текущим на время обработки: <code>CURRENT.set(Span(trace_id, span_id, ...))</code>, а после — <code>CURRENT.reset(token)</code>.</li>
+<li>Время вокруг работы сервиса — длительность спана <code>chat</code> минус длительность спана сервиса.</li>
+</ol>
+</div></details>
+<h2 id="M13-L07X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</h2>
+<p><strong>Критерии до попытки:</strong> у всех спанов одной трассы общий <code>trace_id</code>; родитель каждого спана есть в файлах; длительность меряется монотонными часами; содержимое не пишется без явного флага; вердикт качества хранится отдельно от статуса ошибки; число измерений указано рядом с p95. Для самостоятельного зачёта объясни передачу контекста без открытого кода и реши новый численный вариант без подсказки.</p>
+<p><strong>Типичные ошибки:</strong> создавать новый <code>trace_id</code> в каждом сервисе и потом склеивать трассы по времени; ставить статус ERROR плохому, но успешно полученному ответу; писать prompt и ответы кандидатов в трассу по умолчанию; считать конец спана по календарным часам; сравнивать p95 на десятке трасс как устойчивую величину.</p>
+<section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M13-L07X--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
+<p><strong>Повтор B:</strong> корень длится 6000 мс, <code>retrieval</code> — 12 мс, <code>chat</code> — 5970 мс, сервер сообщил prefill 2400 мс и decode 1500 мс. Какая доля корня приходится на <code>chat</code>, сколько времени клиент ждал сверх работы сервера и где искать это время? <strong>Отложенная C:</strong> спроектируй трассу одного хода голосового тренажёра M15: распознавание речи, поиск, модель, синтез речи. Назови спаны, их вид и ключевые атрибуты. Реши, что из содержимого нельзя писать по умолчанию, и как связать трассу с оценкой ответа. <a href="#M13-SOLUTIONS--m13-l07x-a">Ключи</a> открывай после сохранения попытки.</p>
+</section><h2 id="M13-L07X--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Одна трасса — один запрос: общий <code>trace_id</code>, родитель из контекста, между процессами — заголовок <code>traceparent</code>. Длительность меряют монотонными часами. Атрибуты — по конвенциям GenAI: у вызова модели обязательны <code>gen_ai.operation.name</code> и <code>gen_ai.provider.name</code>. Вердикт качества — событие, ERROR — только для несостоявшейся операции. Содержимое пишут только по явному согласию</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Длительность спана, p50 и p95 по этапу вместе с числом измерений. Prefill — вычисление prompt, decode — генерация ответа, оба сообщает сервер. Разрыв «клиент минус сервер» — сеть, HTTP и очередь. Токены входа и выхода задают цену вызова</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Чтобы найти, куда уходит время и почему упал вызов. Пример: медианная трасса — 1761 мс, из них <code>chat</code> — 1759.5; сервер сообщил prefill 1268 и decode 462, разрыв 29 мс. После брошенного запроса разрыв 1640 мс — это очередь, а не модель</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Склеивать трассы по времени вместо <code>traceparent</code>, ставить ERROR плохому ответу, писать персональные данные по умолчанию или мерить на машине, занятой другой работой</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M13-L07X--источники-и-углубление">Источники и углубление</h2>
+<p>Семантические конвенции OpenTelemetry GenAI, коммит e6658f1: <a href="https://github.com/open-telemetry/semantic-conventions-genai/blob/e6658f14c9d9ea0760825f029cb82e7673f48fab/docs/gen-ai/client-inference.md" target="_blank" rel="noopener noreferrer" class="external-link">вызов модели</a>, <a href="https://github.com/open-telemetry/semantic-conventions-genai/blob/e6658f14c9d9ea0760825f029cb82e7673f48fab/docs/gen-ai/gen-ai-events.md" target="_blank" rel="noopener noreferrer" class="external-link">события и оценки</a>. Статус Development: перед новым проектом сверь имена с актуальной веткой. Передача контекста между процессами — <a href="https://www.w3.org/TR/trace-context/" target="_blank" rel="noopener noreferrer" class="external-link">W3C Trace Context</a>. Формат OTLP/JSON — <a href="https://opentelemetry.io/docs/specs/otlp/" target="_blank" rel="noopener noreferrer" class="external-link">спецификация OTLP</a>. Контекст внутри процесса — <a href="https://docs.python.org/3.11/library/contextvars.html" target="_blank" rel="noopener noreferrer" class="external-link">contextvars</a>. По желанию: <a href="https://langfuse.com/integrations/native/opentelemetry" target="_blank" rel="noopener noreferrer" class="external-link">Langfuse и OpenTelemetry</a>, <a href="https://langfuse.com/self-hosting/deployment/docker-compose" target="_blank" rel="noopener noreferrer" class="external-link">Langfuse через Docker Compose</a>.</p>
+<div class="practice-note"><a href="#M13">Модуль и домашняя работа</a> · <a href="#M13-SOLUTIONS--m13-l07x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M13-L07X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L06"><small>Предыдущий раздел</small>← M13-L06. Очередь, дедлайн и восстановление HTTP-сервиса</a><a href="#M14"><small>Следующий раздел</small>M14 Агенты и инструменты →</a></nav></article><article class="material" id="M14" data-title="M14 Агенты и инструменты" data-short-title="Агенты и инструменты" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Агенты и инструменты</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: M10, M11 и M13: поиск, оценивание и эксплуатация.</p>
 <h2 id="M14--уроки-и-практические-ступени">Уроки и практические ступени</h2>
 <ol>
 <li><a href="#M14-L01">M14-L01. Сценарий и агентный цикл</a></li>
@@ -16270,7 +16518,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M14.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M14.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L06"><small>Предыдущий раздел</small>← M13-L06. Очередь, дедлайн и восстановление HTTP-сервиса</a><a href="#M14-L01"><small>Следующий раздел</small>M14-L01. Сценарий и агентный цикл →</a></nav></article><article class="material" id="M14-L01" data-title="M14-L01. Сценарий и агентный цикл" data-short-title="Сценарий и агентный цикл" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сценарий и агентный цикл</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M14-L01--объяснение">Объяснение</a></li><li><a href="#M14-L01--аналогия-конечный-автомат-против-оркестратора-задач">Аналогия: конечный автомат против оркестратора задач</a></li><li><a href="#M14-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M14-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M14-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M14-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M14-L01--карточка-урока">Карточка урока</a></li><li><a href="#M14-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+"></iframe><p><a href="course/visuals/M14.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M14.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M13-L07X"><small>Предыдущий раздел</small>← M13-L07X. Трассировка LLM-конвейера</a><a href="#M14-L01"><small>Следующий раздел</small>M14-L01. Сценарий и агентный цикл →</a></nav></article><article class="material" id="M14-L01" data-title="M14-L01. Сценарий и агентный цикл" data-short-title="Сценарий и агентный цикл" data-kind="ready" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сценарий и агентный цикл</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M14-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M14-L01--объяснение">Объяснение</a></li><li><a href="#M14-L01--аналогия-конечный-автомат-против-оркестратора-задач">Аналогия: конечный автомат против оркестратора задач</a></li><li><a href="#M14-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M14-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M14-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M14-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M14-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M14-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M14-L01--карточка-урока">Карточка урока</a></li><li><a href="#M14-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; внешние модели не используются · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/json.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: json</a></p>
 </blockquote>
@@ -21550,7 +21798,88 @@ function consistency(output) {
 <p>A: потенциальные старты 0,60,120 мс. Третий не дождётся worker за 90 мс: 504 и никакого вычисленного ответа. Первые два могут вернуть 200 примерно в 60/120 мс. Четвёртый одновременный клиент при занятой вместимости 3 получает 503. Из-за расписания Windows порядок клиентских ID меняется, поэтому привязывай вывод к фактическим событиям. B: вместимость 1 отвергает второго 503 независимо от большого wait. C: wait150 позволяет старты 0/60/120 и ответы 60/120/180; client total включает накладные расходы. Полный запускаемый опыт — labs/M13/http_lab.py; самостоятельный выбор релиза отдельно проверяется exercises/M13/check.py.</p>
 <nav class="answer-actions" aria-label="После самопроверки"><a href="#M13-L06" data-return-task="M13-L06">← Вернуться к задаче</a><a href="#M13-L06" data-return-retry="M13-L06">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M13-SOLUTIONS--m13-hw01-b-c"><summary>Ответ: M13-HW01-B-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M13" data-return-task="M13">← Вернуться к задаче</a><a href="#M13" data-return-retry="M13">Новый вариант B / C →</a></nav>
 <p>B: <code>load_release</code> обязан отвергнуть schema=2 до приёма запросов; подмена версии не является миграцией. После восстановления всех полей A новый процесс даёт 2×9+1=19 и release=A. Полный механизм процессов/HTTP показан в http_lab.py; поменяй контрольный x на9. C: вычислить SHA-256 фактически читаемых байтов и сравнить с manifest до загрузки; несовпадение блокирует запуск. Одинаковый ответ на одном x возможен для разных функций и не доказывает тождество артефактов. Сохрани ожидаемый и фактический digest и факт отказа.</p>
-<nav class="answer-actions" aria-label="После самопроверки"><a href="#M13" data-return-task="M13">← Вернуться к задаче</a><a href="#M13" data-return-retry="M13">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M13.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M13"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M14-SOLUTIONS" data-title="M14. Решения для самопроверки" data-short-title="M14. Решения для самопроверки" data-kind="answer" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M14. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Версия 1.1.0. Открывай после собственной попытки. Данные реального ученика и результаты участия людей здесь не выдумываются.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M13" data-return-task="M13">← Вернуться к задаче</a><a href="#M13" data-return-retry="M13">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M13-SOLUTIONS--m13-l07x-a"><summary>Ответ: M13-L07X-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M13-L07X" data-return-task="M13-L07X">← Вернуться к задаче</a><a href="#M13-L07X" data-return-retry="M13-L07X">Новый вариант B / C →</a></nav>
+<p>Решение ниже работает в одном процессе: сервис — поток <code>http.server</code>. На настоящую границу процессов оно переносится без изменений, потому что контекст передаётся только заголовком.</p>
+<pre><code class="language-python">import http.server
+import importlib.util
+import json
+import tempfile
+import threading
+import time
+import urllib.request
+from pathlib import Path
+
+spec = importlib.util.spec_from_file_location(&quot;tracing&quot;, &quot;labs/M13/tracing.py&quot;)
+tracing = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(tracing)
+folder = Path(tempfile.mkdtemp())
+client, service = tracing.Tracer(folder / &quot;client&quot;), tracing.Tracer(folder / &quot;service&quot;)
+seen = []
+
+
+def parse(header):
+    version, trace_id, span_id, flags = header.split(&quot;-&quot;)
+    assert version == &quot;00&quot; and len(trace_id) == 32 and len(span_id) == 16 and flags == &quot;01&quot;
+    return trace_id, span_id
+
+
+class Handler(http.server.BaseHTTPRequestHandler):
+    def do_POST(self):
+        seen.append(tracing.CURRENT.get())  # a new thread starts without the caller's context
+        header = self.headers.get(&quot;traceparent&quot;)
+        token = None
+        if header:
+            trace_id, parent_id = parse(header)
+            token = tracing.CURRENT.set(tracing.Span(trace_id, parent_id, None, &quot;remote parent&quot;, &quot;CLIENT&quot;, {}))
+        try:
+            with service.span(&quot;POST /v1/chat/completions&quot;, &quot;SERVER&quot;, {&quot;http.request.method&quot;: &quot;POST&quot;}):
+                time.sleep(0.02)  # the model's work
+        finally:
+            if token:
+                tracing.CURRENT.reset(token)
+        self.send_response(200)
+        self.end_headers()
+
+    def log_message(self, *args):
+        pass
+
+
+server = http.server.HTTPServer((&quot;127.0.0.1&quot;, 0), Handler)
+threading.Thread(target=server.serve_forever, daemon=True).start()
+url = f&quot;http://127.0.0.1:{server.server_port}/v1/chat/completions&quot;
+with client.span(&quot;invoke_workflow demo&quot;, attributes={&quot;gen_ai.operation.name&quot;: &quot;invoke_workflow&quot;}):
+    with client.span(&quot;chat tiny&quot;, &quot;CLIENT&quot;, {&quot;gen_ai.operation.name&quot;: &quot;chat&quot;, &quot;gen_ai.provider.name&quot;: &quot;llama.cpp&quot;}) as chat:
+        request = urllib.request.Request(url, data=b&quot;{}&quot;, headers={&quot;traceparent&quot;: tracing.traceparent(chat)}, method=&quot;POST&quot;)
+        urllib.request.urlopen(request, timeout=5).read()
+    urllib.request.urlopen(urllib.request.Request(url, data=b&quot;{}&quot;, method=&quot;POST&quot;), timeout=5).read()  # no header
+server.shutdown()
+client.close()
+service.close()
+
+read = lambda name: [json.loads(x) for x in (folder / name / &quot;spans.jsonl&quot;).read_text(encoding=&quot;utf-8&quot;).splitlines()]
+chat_span, root = read(&quot;client&quot;)
+served, orphan = read(&quot;service&quot;)
+assert seen == [None, None]
+assert served[&quot;trace_id&quot;] == chat_span[&quot;trace_id&quot;] == root[&quot;trace_id&quot;] and served[&quot;parent_span_id&quot;] == chat_span[&quot;span_id&quot;]
+assert served[&quot;kind&quot;] == &quot;SERVER&quot; and chat_span[&quot;kind&quot;] == &quot;CLIENT&quot;
+assert orphan[&quot;trace_id&quot;] != root[&quot;trace_id&quot;] and orphan[&quot;parent_span_id&quot;] is None  # without the header: a new trace
+around_ms = chat_span[&quot;duration_ms&quot;] - served[&quot;duration_ms&quot;]  # connection, HTTP and the handler around the span
+assert served[&quot;duration_ms&quot;] &gt;= 20 and around_ms &gt; 0
+print(round(served[&quot;duration_ms&quot;], 1), round(around_ms, 1))
+</code></pre>
+<p>В потоке обработчика <code>CURRENT.get()</code> возвращает <code>None</code>: новый поток не наследует контекст вызывающего, и связь между спанами даёт только заголовок. С заголовком спан сервиса получил <code>trace_id</code> клиента, а родителем — спан <code>chat</code>. Без заголовка трассировщик начал новую трассу, и спан сервиса стал корнем. Время вокруг работы сервиса — соединение, разбор HTTP и обработчик — у автора составило несколько миллисекунд. В авторском прогоне трасс разрыв между спаном <code>chat</code> и временем llama-server в медиане был 8 мс.</p>
+<p>Критическая ошибка — склеивать трассы двух сервисов по времени или по совпадению текста запроса. При параллельных запросах такое соединение ошибается, а <code>trace_id</code> из заголовка — нет. Вторая ошибка — писать спан сервиса с родителем из локального контекста потока: там его нет, и получится отдельная трасса.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M13-L07X" data-return-task="M13-L07X">← Вернуться к задаче</a><a href="#M13-L07X" data-return-retry="M13-L07X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M13-SOLUTIONS--m13-l07x-b-c"><summary>Ответ: M13-L07X-B-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M13-L07X" data-return-task="M13-L07X">← Вернуться к задаче</a><a href="#M13-L07X" data-return-retry="M13-L07X">Новый вариант B / C →</a></nav>
+<p><strong>B.</strong> Доля <code>chat</code> — 5970 / 6000 ≈ 0.995. Сервер работал 2400 + 1500 = 3900 мс, а клиент ждал на 5970 − 3900 = 2070 мс дольше. В авторском прогоне медиана этого разрыва — 8 мс, поэтому 2 с — не сеть и не разбор JSON. Ищут очередь на сервере: слот был занят другим запросом. Так выглядела трасса после брошенного запроса: разрыв 1640 мс. Подтверждение — лог llama-server: время <code>launch_slot</code> и <code>release</code> соседней задачи. Без атрибутов сервера в спане эти 2 с выглядели бы как медленная модель.</p>
+<p><strong>C.</strong> Корень — <code>invoke_workflow interview-turn</code> (INTERNAL) с id хода; id сессии идёт в <code>gen_ai.conversation.id</code>. Дочерние спаны:</p>
+<ul>
+<li><code>transcribe</code> (INTERNAL, Vosk в процессе) — длительность аудио, модель, число слов;</li>
+<li><code>retrieval</code> — <code>top_k</code> и id фрагментов;</li>
+<li><code>chat {model}</code> (CLIENT) — модель, токены, prefill и decode;</li>
+<li><code>synthesize</code> (INTERNAL, SAPI или Piper) — число символов и длительность звука.</li>
+</ul>
+<p>HTTP-обработчик веб-сервера — спан SERVER, браузер передаёт ему <code>traceparent</code>. Аудио, распознанный текст, ответ кандидата и отзыв модели — персональные данные: по умолчанию их не пишут, остаются длительности, размеры, число токенов и id. Перебивание (barge-in) — не ошибка: ход помечают атрибутом вроде <code>course.turn.cancelled</code>, а статус ERROR оставляют для сбоев. Оценку ответа ставят позже, вручную или проверкой. Её записывают событием <code>gen_ai.evaluation.result</code> с <code>gen_ai.response.id</code>, и событие находит свою трассу, даже если пришло через день.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M13-L07X" data-return-task="M13-L07X">← Вернуться к задаче</a><a href="#M13-L07X" data-return-retry="M13-L07X">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M13.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M13"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M14-SOLUTIONS" data-title="M14. Решения для самопроверки" data-short-title="M14. Решения для самопроверки" data-kind="answer" data-module="M14"><header class="material-head"><div class="eyebrow"><span class="material-id">M14-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M14. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Версия 1.1.0. Открывай после собственной попытки. Данные реального ученика и результаты участия людей здесь не выдумываются.</p>
 <details class="answer-key" id="M14-SOLUTIONS--m14-l01"><summary>Ответ: M14-L01</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M14-L01" data-return-task="M14-L01">← Вернуться к задаче</a><a href="#M14-L01" data-return-retry="M14-L01">Новый вариант B / C →</a></nav>
 <p><strong>Условие:</strong> Спроектируй два варианта уточнения ответа кандидата: фиксированный сценарий и агент с поиском источника. Для каждого перечисли состояния, условие завершения и наблюдаемый выигрыш. Выбери вариант для трёх заранее известных вопросов про SQL и объясни, что должно измениться в требованиях, чтобы выбор пересмотреть.</p>
 <p><strong>Обоснованное решение:</strong> Для трёх вопросов достаточно сценария: ask→answer→one_followup→feedback→done. Переходы зависят от наличия ответа и одного явно проверяемого пробела. Агентный вариант добавляет select_source→read→decide_followup с бюджетом. Его выигрыш проявится при разнообразных темах и необходимости выбрать неизвестный заранее источник, а не просто при замене формулировки вопроса. Если темы фиксированы, усложнение требует отдельного доказательства пользы. Оба варианта должны завершаться по лимиту ходов и просьбе пользователя.</p>
@@ -23287,7 +23616,7 @@ function consistency(output) {
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 109 из 109 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 110 из 110 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -23925,6 +24254,13 @@ function consistency(output) {
 <li><strong>Смысл величин.</strong> Вместимость включает выполняющийся запрос; client_ms ≈ queue_ms + compute_ms плюс накладные расходы, поэтому рост клиентского времени не означает замедления модели; таймаут клиента не останавливает вычисление на сервере; восстановление — новый процесс из сохранённого релиза с проверкой schema и canary.</li>
 <li><strong>Когда применять.</strong> При ограничении нагрузки на CPU-сервис. Пример: вместимость 2, compute 50 мс, дедлайн ожидания 30 мс, три одновременных запроса — третий сразу получает 503, второй ждёт worker и примерно через 30 мс получает 504 queue_deadline, первый получает 200 примерно через 50 мс.</li>
 <li><strong>Главная ошибка.</strong> Считать выросшее клиентское время замедлением модели или освобождать worker, который запрос не захватил.</li>
+</ul>
+<h3 id="CHEATSHEET--m13-l07x-трассировка-llm-конвейера"><a href="#M13-L07X">M13-L07X. Трассировка LLM-конвейера</a></h3>
+<ul>
+<li><strong>Правило.</strong> Одна трасса — один запрос: общий <code>trace_id</code>, родитель из контекста, между процессами — заголовок <code>traceparent</code>. Длительность меряют монотонными часами. Атрибуты — по конвенциям GenAI: у вызова модели обязательны <code>gen_ai.operation.name</code> и <code>gen_ai.provider.name</code>. Вердикт качества — событие, ERROR — только для несостоявшейся операции. Содержимое пишут только по явному согласию.</li>
+<li><strong>Смысл величин.</strong> Длительность спана, p50 и p95 по этапу вместе с числом измерений. Prefill — вычисление prompt, decode — генерация ответа, оба сообщает сервер. Разрыв «клиент минус сервер» — сеть, HTTP и очередь. Токены входа и выхода задают цену вызова.</li>
+<li><strong>Когда применять.</strong> Чтобы найти, куда уходит время и почему упал вызов. Пример: медианная трасса — 1761 мс, из них <code>chat</code> — 1759.5; сервер сообщил prefill 1268 и decode 462, разрыв 29 мс. После брошенного запроса разрыв 1640 мс — это очередь, а не модель.</li>
+<li><strong>Главная ошибка.</strong> Склеивать трассы по времени вместо <code>traceparent</code>, ставить ERROR плохому ответу, писать персональные данные по умолчанию или мерить на машине, занятой другой работой.</li>
 </ul>
 <h2 id="CHEATSHEET--m14-агенты-и-инструменты">M14. Агенты и инструменты</h2>
 <h3 id="CHEATSHEET--m14-l01-сценарий-и-агентный-цикл"><a href="#M14-L01">M14-L01. Сценарий и агентный цикл</a></h3>

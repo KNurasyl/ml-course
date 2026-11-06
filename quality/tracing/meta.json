@@ -1,0 +1,26 @@
+{
+  "task": "T39",
+  "semconv": {
+    "repository": "https://github.com/open-telemetry/semantic-conventions-genai",
+    "commit": "e6658f14c9d9ea0760825f029cb82e7673f48fab",
+    "date": "2026-11-06",
+    "status": "Development"
+  },
+  "resource": {
+    "service.name": "course-rag",
+    "service.version": "1.2.0"
+  },
+  "model": "qwen2.5-0.5b-instruct-q4_k_m",
+  "revision": "9217f5db79a29953eb74d5343926648285ec7e67",
+  "llama_cpp": "b11803",
+  "threads": 4,
+  "questions": 66,
+  "deadline": {
+    "question": "p-index",
+    "client_timeout_s": 0.05,
+    "error_type": "timeout"
+  },
+  "capture_content": false,
+  "tracer_overhead_us_per_span": 10.5,
+  "collected": "2026-11-06"
+}
