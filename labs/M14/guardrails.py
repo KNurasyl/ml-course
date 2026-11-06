@@ -7,7 +7,8 @@ with a validation step where one exists:
 - secrets: key formats of OpenAI, GitHub, GitLab and AWS, and private-key headers. A secret blocks the text.
 - injection markers: chat-template role tokens, a closing </source>, and phrases that tell the assistant to drop its
   rules or that address the assistant directly, in Russian and English. A marked source paragraph is dropped.
-- output: links and addresses (the T40 filter), PII, and the JSON Schema plus the M09-L05 contract when JSON is expected.
+- output: a secret blocks; the JSON Schema plus the M09-L05 contract when JSON is expected; every link, markdown image and
+  address must point to an allowed host, compared exactly; PII is masked.
 
 evaluate: precision and recall of every rule on an authored labelled set: positives, near misses that must pass, and
 obfuscations that are expected to slip through. The 72 clean paragraphs of the M10 corpus are added as negatives.
@@ -28,6 +29,7 @@ import datetime
 import importlib.util
 import json
 import re
+import urllib.parse
 from pathlib import Path
 
 from jsonschema import Draft202012Validator
@@ -58,7 +60,8 @@ INJECTION = {
     "addresses_assistant": re.compile(r"(?:для|к)\s+(?:ии[- ]?)?ассистент\w*\s*:|\bnote\s+(?:to|for)\s+(?:the\s+)?(?:ai|assistant)\b|"
                                       r"\b(?:ai|assistant)\s*:\s*(?:you\s+must|new\s+rule)|новое\s+правило\s+(?:для|базы)", re.IGNORECASE),
 }
-LINK = re.compile(r"https?://|www\.|!\[", re.IGNORECASE)
+LINK = re.compile(r"(?:https?://|www\.)[^\s)\]>\"'«»]+", re.IGNORECASE)
+IMAGE = re.compile(r"!\[[^\]]*\]\(([^)\s]*)|!\[", re.IGNORECASE)  # a markdown image fetches its URL when rendered
 LABELS = ("email", "phone", "iin", "card", "secret", "injection")
 
 
@@ -128,8 +131,27 @@ def guard_input(text, source="user"):
             "text": None if action == "drop" else masked}
 
 
-def guard_output(text, expect_json=False, allowed_links=()):
-    """After the model: the JSON contract when expected, no links outside the allow-list, PII masked."""
+def link_hosts(text):
+    """Every link, markdown image and e-mail in the text with the host it points to; an unparsable target has no host."""
+    targets = [m.group(0) for m in LINK.finditer(text)] + [m.group(1) or "" for m in IMAGE.finditer(text)]
+    hosts = []
+    for target in targets:
+        url = target if re.match(r"https?://", target, re.IGNORECASE) else "http://" + target
+        try:
+            host = urllib.parse.urlsplit(url).hostname or ""
+        except ValueError:
+            host = ""
+        hosts.append((target, host.lower()))
+    hosts += [(m.group(0), m.group(0).rsplit("@", 1)[1].lower()) for m in EMAIL.finditer(text)]
+    return hosts
+
+
+def guard_output(text, expect_json=False, allowed_hosts=()):
+    """After the model: no secrets, the JSON contract when expected, every link and address on an allowed host, PII masked.
+    Hosts are compared exactly: allowing example.com does not allow example.com.attacker.test or a second link."""
+    found = findings(text)
+    if found.get("secret"):
+        return {"action": "block", "reason": "secret:" + ",".join(sorted(set(found["secret_kind"]))), "text": None}
     if expect_json:
         try:
             value = json.loads(text)
@@ -137,9 +159,10 @@ def guard_output(text, expect_json=False, allowed_links=()):
             return {"action": "block", "reason": "invalid_json", "text": None}
         if not Draft202012Validator(FEEDBACK_SCHEMA).is_valid(value) or type(value["score"]) is not int or not value["feedback"].strip():
             return {"action": "block", "reason": "schema", "text": None}
-    if any(m and not any(a in text for a in allowed_links) for m in LINK.finditer(text)) or findings(text).get("email") and not expect_json:
+    allowed = {host.lower() for host in allowed_hosts}
+    if any(host not in allowed for _, host in link_hosts(text)):
         return {"action": "block", "reason": "link_or_address", "text": None}
-    masked = mask(text, findings(text))
+    masked = mask(text, found)
     return {"action": "mask" if masked != text else "allow", "reason": None, "text": masked}
 
 
