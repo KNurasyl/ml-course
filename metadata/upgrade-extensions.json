@@ -13,6 +13,8 @@
     "labs/M11/promptfoo_eval.py run",
     "labs/M13/tracing.py analyze",
     "labs/M14/injection_rag.py report",
-    "labs/M14/agency.py report"
+    "labs/M14/agency.py report",
+    "labs/M14/guardrails.py evaluate",
+    "labs/M14/guardrails.py replay"
   ]
 }

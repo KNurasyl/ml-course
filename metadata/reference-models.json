@@ -113,5 +113,25 @@
       "license": "Apache-2.0",
       "source": "community quantization by unsloth of Qwen/Qwen3.5-4B (no official GGUF); chosen by the author 05.11.2026"
     }
+  ],
+  "guards": [
+    {
+      "name": "deberta-v3-base-prompt-injection-v2",
+      "repo_id": "protectai/deberta-v3-base-prompt-injection-v2",
+      "revision": "90c9989b1a342275dd0d1a95aad283c04e075671",
+      "path": "models/deberta-v3-base-prompt-injection-v2",
+      "license": "Apache-2.0",
+      "weights_bytes": 737719272,
+      "languages": "English",
+      "allow_patterns": [
+        "*.json",
+        "model.safetensors",
+        "spm.model",
+        "README.md"
+      ],
+      "ignore_patterns": [
+        "onnx/*"
+      ]
+    }
   ]
 }

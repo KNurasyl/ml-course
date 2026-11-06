@@ -61,6 +61,16 @@ def rerankers():
         print(f"Reranker ready: {directory}")
 
 
+
+def guards():
+    """Optional 1.2.0 extension (M14-L08X, T41): an English prompt-injection classifier, about 0.75 GB, pinned to a revision."""
+    from huggingface_hub import snapshot_download
+    for config in json.loads((ROOT / "metadata/reference-models.json").read_text(encoding="utf-8"))["guards"]:
+        directory = ROOT / config["path"]
+        snapshot_download(repo_id=config["repo_id"], revision=config["revision"], local_dir=directory,
+            allow_patterns=config["allow_patterns"], ignore_patterns=config["ignore_patterns"])
+        print(f"Guard classifier ready: {directory}")
+
 def gguf():
     """Optional 1.2.0 extension (M09-L07X, T30): GGUF files for llama.cpp, pinned to a revision and checked by sha256."""
     from huggingface_hub import hf_hub_download
@@ -85,9 +95,10 @@ if __name__ == "__main__":
     parser.add_argument("--embedders", action="store_true", help="optional M10-L07X models, about 4.9 GB in total")
     parser.add_argument("--rerankers", action="store_true", help="optional M10-L03 cross-encoder, about 2.3 GB")
     parser.add_argument("--gguf", action="store_true", help="optional M09-L07X GGUF files for llama.cpp, about 3.9 GB")
+    parser.add_argument("--guards", action="store_true", help="optional M14-L08X prompt-injection classifier, about 0.75 GB")
     args = parser.parse_args()
-    if not (args.speech or args.llm or args.embedders or args.rerankers or args.gguf):
-        parser.error("Укажи --speech, --llm, --embedders, --rerankers и/или --gguf")
+    if not (args.speech or args.llm or args.embedders or args.rerankers or args.gguf or args.guards):
+        parser.error("Укажи --speech, --llm, --embedders, --rerankers, --gguf и/или --guards")
     if args.speech:
         speech()
     if args.llm:
@@ -98,3 +109,5 @@ if __name__ == "__main__":
         rerankers()
     if args.gguf:
         gguf()
+    if args.guards:
+        guards()
