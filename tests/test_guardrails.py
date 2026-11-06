@@ -68,15 +68,33 @@ def test_output_rail(text, expect_json, action):
     ("Статус ![ok](https://attacker.test/s.png?q=индекс)", "block"),
     ("Пишите на team@docs.example.com", "mask"),  # allowed host, still personal data
     ("Пишите на team@docs.example.com.attacker.test", "block"),
+    ("https://attacker.test" + chr(92) + "@docs.example.com/", "block"),  # urlsplit says docs.example.com, a browser goes to attacker.test
+    ("https://docs.example.com@attacker.test/", "block"),
+    ("[здесь](//attacker.test/x)", "block"),
+    ("[здесь](javascript:alert(1))", "block"),
+    ('<img src="https://attacker.test/p.png">', "block"),
+    ("Смотри [1].\n\n[1]: https://attacker.test/doc", "block"),
+    ("[раздел](guide/install)", "block"),  # a relative link: the page that renders it decides the host
+    ("[раздел](https://docs.example.com/guide)", "allow"),
+    ("Код: a // b и путь C:/data", "allow"),
 ])
 def test_output_allow_list_compares_every_host_exactly(text, action):
     assert lab.guard_output(text, allowed_hosts=("docs.example.com",))["action"] == action
+
+
+def test_output_rail_checks_decoded_json_and_hands_on_what_it_checked():
+    escaped = '{"feedback": "Подробнее: ' + chr(92) + 'u0068ttp://attacker.test/doc", "score": 1}'  # \u0068 is h once decoded
+    assert lab.guard_output(escaped, expect_json=True, allowed_hosts=("docs.example.com",))["action"] == "block"
+    masked = lab.guard_output('{"feedback": "Звоните +7 701 234 56 78", "score": 1}', expect_json=True)
+    assert masked == {"action": "mask", "reason": None, "text": '{"feedback": "Звоните [PHONE]", "score": 1}'}
 
 
 def test_output_rail_blocks_a_secret_the_model_repeats():
     key = "glpat-" + "T41" + "z" * 20
     result = lab.guard_output(f'{{"feedback": "Ключ {key} подойдёт", "score": 1}}', expect_json=True)
     assert result == {"action": "block", "reason": "secret:gitlab", "text": None}
+    escaped = key.replace("g", chr(92) + "u0067", 1)  # the same key behind a JSON escape
+    assert lab.guard_output(f'{{"feedback": "Ключ {escaped}", "score": 1}}', expect_json=True)["reason"] == "secret:gitlab"
 
 
 def test_replay_over_the_t40_runs():

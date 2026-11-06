@@ -60,8 +60,14 @@ INJECTION = {
     "addresses_assistant": re.compile(r"(?:для|к)\s+(?:ии[- ]?)?ассистент\w*\s*:|\bnote\s+(?:to|for)\s+(?:the\s+)?(?:ai|assistant)\b|"
                                       r"\b(?:ai|assistant)\s*:\s*(?:you\s+must|new\s+rule)|новое\s+правило\s+(?:для|базы)", re.IGNORECASE),
 }
-LINK = re.compile(r"(?:https?://|www\.)[^\s)\]>\"'«»]+", re.IGNORECASE)
-IMAGE = re.compile(r"!\[[^\]]*\]\(([^)\s]*)|!\[", re.IGNORECASE)  # a markdown image fetches its URL when rendered
+LINK_TARGETS = (  # every place a rendered answer can point a browser to
+    re.compile(r"(?:\b[a-z][a-z0-9+.-]*:)?//[^\s)\]>\"'«»<]+", re.IGNORECASE),  # absolute and protocol-relative URLs
+    re.compile(r"\bwww\.[^\s)\]>\"'«»<]+", re.IGNORECASE),                    # autolinked by markdown
+    re.compile(r"\]\(\s*<?([^)>\s]*)"),                                      # markdown link and image targets
+    re.compile(r"^\s*\[[^\]]+\]:\s*<?(\S+?)>?\s*$", re.MULTILINE),          # markdown reference definitions
+    re.compile(r"\b(?:href|src|srcset|action)\s*=\s*[\"']?([^\"'\s>]+)", re.IGNORECASE),  # HTML attributes
+    re.compile(r"\b(?:javascript|data|vbscript|file):", re.IGNORECASE),      # schemes that never point to an allowed host
+)
 LABELS = ("email", "phone", "iin", "card", "secret", "injection")
 
 
@@ -131,27 +137,46 @@ def guard_input(text, source="user"):
             "text": None if action == "drop" else masked}
 
 
+def target_host(target):
+    """The host a browser would open, or "" when it cannot be trusted. Python and browsers parse some URLs differently:
+    https://attacker.test\\@docs.example.com is docs.example.com for urlsplit and attacker.test for a browser. So a target
+    with a backslash, userinfo, whitespace or a control character, a scheme other than http(s), or a relative path has
+    no trusted host."""
+    if not target or re.search(r"[\\\s\x00-\x1f\x7f]", target):
+        return ""
+    scheme = re.match(r"([a-z][a-z0-9+.-]*):", target, re.IGNORECASE)
+    if scheme and scheme.group(1).lower() not in ("http", "https"):
+        return ""
+    url = target if scheme else "http:" + target if target.startswith("//") else "http://" + target if target.lower().startswith("www.") else None
+    if url is None:
+        return ""  # a relative link: the reader's page decides where it goes
+    try:
+        parts = urllib.parse.urlsplit(url)
+        host = parts.hostname or ""
+    except ValueError:
+        return ""
+    if "@" in parts.netloc or not re.fullmatch(r"[a-z0-9.-]+", host or "-"):
+        return ""
+    return host
+
+
 def link_hosts(text):
-    """Every link, markdown image and e-mail in the text with the host it points to; an unparsable target has no host."""
-    targets = [m.group(0) for m in LINK.finditer(text)] + [m.group(1) or "" for m in IMAGE.finditer(text)]
-    hosts = []
-    for target in targets:
-        url = target if re.match(r"https?://", target, re.IGNORECASE) else "http://" + target
-        try:
-            host = urllib.parse.urlsplit(url).hostname or ""
-        except ValueError:
-            host = ""
-        hosts.append((target, host.lower()))
+    """Every link target and e-mail in the text with the host it points to; "" is a host no allow-list contains."""
+    targets = []
+    for rule in LINK_TARGETS:
+        for m in rule.finditer(text):
+            targets.append(m.group(1) if m.groups() else m.group(0))
+    hosts = [(target, target_host(target)) for target in targets]
     hosts += [(m.group(0), m.group(0).rsplit("@", 1)[1].lower()) for m in EMAIL.finditer(text)]
     return hosts
 
 
 def guard_output(text, expect_json=False, allowed_hosts=()):
     """After the model: no secrets, the JSON contract when expected, every link and address on an allowed host, PII masked.
-    Hosts are compared exactly: allowing example.com does not allow example.com.attacker.test or a second link."""
-    found = findings(text)
-    if found.get("secret"):
-        return {"action": "block", "reason": "secret:" + ",".join(sorted(set(found["secret_kind"]))), "text": None}
+    Hosts are compared exactly: allowing example.com does not allow example.com.attacker.test or a second link. For JSON
+    the decoded strings are checked too (\\u0068ttp is http once decoded), and the answer handed on is re-serialised from
+    the checked value."""
+    checked = [text]
     if expect_json:
         try:
             value = json.loads(text)
@@ -159,10 +184,19 @@ def guard_output(text, expect_json=False, allowed_hosts=()):
             return {"action": "block", "reason": "invalid_json", "text": None}
         if not Draft202012Validator(FEEDBACK_SCHEMA).is_valid(value) or type(value["score"]) is not int or not value["feedback"].strip():
             return {"action": "block", "reason": "schema", "text": None}
+        checked.append(value["feedback"])
+    for part in checked:
+        found = findings(part)
+        if found.get("secret"):
+            return {"action": "block", "reason": "secret:" + ",".join(sorted(set(found["secret_kind"]))), "text": None}
     allowed = {host.lower() for host in allowed_hosts}
-    if any(host not in allowed for _, host in link_hosts(text)):
+    if any(host not in allowed for part in checked for _, host in link_hosts(part)):
         return {"action": "block", "reason": "link_or_address", "text": None}
-    masked = mask(text, found)
+    if expect_json:
+        feedback = mask(value["feedback"], findings(value["feedback"]))
+        shown = json.dumps({"feedback": feedback, "score": value["score"]}, ensure_ascii=False)
+        return {"action": "mask" if feedback != value["feedback"] else "allow", "reason": None, "text": shown}
+    masked = mask(text, findings(text))
     return {"action": "mask" if masked != text else "allow", "reason": None, "text": masked}
 
 
