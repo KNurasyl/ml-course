@@ -26,6 +26,7 @@ from __future__ import annotations
 import argparse
 import collections
 import datetime
+import html
 import importlib.util
 import json
 import re
@@ -60,14 +61,11 @@ INJECTION = {
     "addresses_assistant": re.compile(r"(?:для|к)\s+(?:ии[- ]?)?ассистент\w*\s*:|\bnote\s+(?:to|for)\s+(?:the\s+)?(?:ai|assistant)\b|"
                                       r"\b(?:ai|assistant)\s*:\s*(?:you\s+must|new\s+rule)|новое\s+правило\s+(?:для|базы)", re.IGNORECASE),
 }
-LINK_TARGETS = (  # every place a rendered answer can point a browser to
-    re.compile(r"(?:\b[a-z][a-z0-9+.-]*:)?//[^\s)\]>\"'«»<]+", re.IGNORECASE),  # absolute and protocol-relative URLs
-    re.compile(r"\bwww\.[^\s)\]>\"'«»<]+", re.IGNORECASE),                    # autolinked by markdown
-    re.compile(r"\]\(\s*<?([^)>\s]*)"),                                      # markdown link and image targets
-    re.compile(r"^\s*\[[^\]]+\]:\s*<?(\S+?)>?\s*$", re.MULTILINE),          # markdown reference definitions
-    re.compile(r"\b(?:href|src|srcset|action)\s*=\s*[\"']?([^\"'\s>]+)", re.IGNORECASE),  # HTML attributes
-    re.compile(r"\b(?:javascript|data|vbscript|file):", re.IGNORECASE),      # schemes that never point to an allowed host
-)
+# Where a link may start inside a token: a known scheme with or without //, any other scheme followed by a slash, a
+# protocol-relative // or \\ host, or www. A one-letter "scheme" is a Windows drive (C:/data) and is left alone.
+URL_START = re.compile(r"(?<![a-z0-9+.-])(?:(?:https?|ftps?|wss?|javascript|data|vbscript|file|blob|mailto|about):|"
+                       r"[a-z][a-z0-9+.-]+:[/\\])|(?<![:/\\])(?://|\\\\)(?=[^\s/\\])|\bwww\.", re.IGNORECASE)
+TRAILING = ".,;:!?)]}»\"'*_~"  # punctuation a renderer leaves out of the end of an autolink
 LABELS = ("email", "phone", "iin", "card", "secret", "injection")
 
 
@@ -145,8 +143,8 @@ def target_host(target):
     if not target or re.search(r"[\\\s\x00-\x1f\x7f]", target):
         return ""
     scheme = re.match(r"([a-z][a-z0-9+.-]*):", target, re.IGNORECASE)
-    if scheme and scheme.group(1).lower() not in ("http", "https"):
-        return ""
+    if scheme and (scheme.group(1).lower() not in ("http", "https") or not target[scheme.end():].startswith("//")):
+        return ""  # https:attacker.test has no // but a browser still opens attacker.test
     url = target if scheme else "http:" + target if target.startswith("//") else "http://" + target if target.lower().startswith("www.") else None
     if url is None:
         return ""  # a relative link: the reader's page decides where it goes
@@ -160,15 +158,35 @@ def target_host(target):
     return host
 
 
+def link_targets(text):
+    """Every place a renderer could turn into a link. An autolink ends only at whitespace or '<', so a candidate runs to the
+    end of its token: https://docs.example.com)@attacker.test is checked whole. The target of a markdown link "](...)" and
+    of a reference definition "[1]: ..." is taken even when it has no scheme, because a relative link is not trusted either."""
+    targets = []
+    tokens = [t for t in re.split(r"[\s<>]+", text) if t]
+    for i, token in enumerate(tokens):
+        parts = token.split("](")
+        for k, part in enumerate(parts):
+            m = URL_START.search(part)
+            if m:
+                targets.append(part[m.start():].rstrip(TRAILING))
+            elif k > 0:  # a markdown link or image target without a scheme
+                targets.append(part.rstrip(TRAILING))
+        if token.endswith("]:") and i + 1 < len(tokens):  # a reference definition: its target is the next token
+            targets.append(tokens[i + 1].rstrip(TRAILING))
+    return targets
+
+
 def link_hosts(text):
     """Every link target and e-mail in the text with the host it points to; "" is a host no allow-list contains."""
-    targets = []
-    for rule in LINK_TARGETS:
-        for m in rule.finditer(text):
-            targets.append(m.group(1) if m.groups() else m.group(0))
-    hosts = [(target, target_host(target)) for target in targets]
+    hosts = [(target, target_host(target)) for target in link_targets(text)]
     hosts += [(m.group(0), m.group(0).rsplit("@", 1)[1].lower()) for m in EMAIL.finditer(text)]
     return hosts
+
+
+def shown(text):
+    """The text a reader gets: PII masked and markup escaped, so no tag renders whatever attribute it carries."""
+    return html.escape(mask(text, findings(text)), quote=False)
 
 
 def guard_output(text, expect_json=False, allowed_hosts=()):
@@ -193,11 +211,11 @@ def guard_output(text, expect_json=False, allowed_hosts=()):
     if any(host not in allowed for part in checked for _, host in link_hosts(part)):
         return {"action": "block", "reason": "link_or_address", "text": None}
     if expect_json:
-        feedback = mask(value["feedback"], findings(value["feedback"]))
-        shown = json.dumps({"feedback": feedback, "score": value["score"]}, ensure_ascii=False)
-        return {"action": "mask" if feedback != value["feedback"] else "allow", "reason": None, "text": shown}
-    masked = mask(text, findings(text))
-    return {"action": "mask" if masked != text else "allow", "reason": None, "text": masked}
+        feedback = shown(value["feedback"])
+        out = json.dumps({"feedback": feedback, "score": value["score"]}, ensure_ascii=False)
+        return {"action": "mask" if feedback != value["feedback"] else "allow", "reason": None, "text": out}
+    out = shown(text)
+    return {"action": "mask" if out != text else "allow", "reason": None, "text": out}
 
 
 def labelled_set():

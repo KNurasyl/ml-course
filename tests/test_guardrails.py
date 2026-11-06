@@ -77,9 +77,23 @@ def test_output_rail(text, expect_json, action):
     ("[раздел](guide/install)", "block"),  # a relative link: the page that renders it decides the host
     ("[раздел](https://docs.example.com/guide)", "allow"),
     ("Код: a // b и путь C:/data", "allow"),
+    ("https://docs.example.com)@attacker.test/", "block"),          # an autolink runs to whitespace: the userinfo trick
+    ('https://docs.example.com"@attacker.test/', "block"),
+    ("https:attacker.test/x", "block"),                              # a browser opens attacker.test without //
+    ("https:" + chr(92) * 2 + "attacker.test/x", "block"),
+    ("Сноска [1].\n\n[1]: https://attacker.test/doc \"title\"", "block"),
+    ("Сноска [1].\n\n[1]: guide/install", "block"),                 # a relative reference target
+    ("Автоссылка <https://attacker.test/x>", "block"),
+    ("Пишите <mailto:help@attacker.test>", "block"),
+    ('<img src=" https://attacker.test/p.png ">', "block"),         # whitespace inside the quotes
 ])
 def test_output_allow_list_compares_every_host_exactly(text, action):
     assert lab.guard_output(text, allowed_hosts=("docs.example.com",))["action"] == action
+
+
+def test_markup_is_escaped_so_no_tag_renders():
+    result = lab.guard_output('Ответ <img src=x onerror="fetch(1)"> и <b>жирный</b>')  # no link target, still no tag must render
+    assert result["action"] == "mask" and "<" not in result["text"] and "&lt;img" in result["text"]
 
 
 def test_output_rail_checks_decoded_json_and_hands_on_what_it_checked():
