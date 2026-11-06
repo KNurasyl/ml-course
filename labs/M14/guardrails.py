@@ -66,6 +66,7 @@ INJECTION = {
 URL_START = re.compile(r"(?<![a-z0-9+.-])(?:(?:https?|ftps?|wss?|javascript|data|vbscript|file|blob|mailto|about):|"
                        r"[a-z][a-z0-9+.-]+:[/\\])|(?<![:/\\])(?://|\\\\)(?=[^\s/\\])|\bwww\.", re.IGNORECASE)
 TRAILING = ".,;:!?)]}»\"'*_~"  # punctuation a renderer leaves out of the end of an autolink
+REFERENCE = re.compile(r"^[ \t]{0,3}\[[^\]]+\]:[ \t]*<?([^\s>]+)>?", re.MULTILINE)  # CommonMark link reference definition
 LABELS = ("email", "phone", "iin", "card", "secret", "injection")
 
 
@@ -163,17 +164,15 @@ def link_targets(text):
     end of its token: https://docs.example.com)@attacker.test is checked whole. The target of a markdown link "](...)" and
     of a reference definition "[1]: ..." is taken even when it has no scheme, because a relative link is not trusted either."""
     targets = []
-    tokens = [t for t in re.split(r"[\s<>]+", text) if t]
-    for i, token in enumerate(tokens):
+    for token in (t for t in re.split(r"[\s<>]+", text) if t):
         parts = token.split("](")
         for k, part in enumerate(parts):
             m = URL_START.search(part)
-            if m:
+            if m:  # an autolink candidate, and any address hidden inside a destination
                 targets.append(part[m.start():].rstrip(TRAILING))
-            elif k > 0:  # a markdown link or image target without a scheme
+            if k > 0:  # a markdown link or image destination is checked whole: evil/https://docs.example.com is relative
                 targets.append(part.rstrip(TRAILING))
-        if token.endswith("]:") and i + 1 < len(tokens):  # a reference definition: its target is the next token
-            targets.append(tokens[i + 1].rstrip(TRAILING))
+    targets += [m.group(1) for m in REFERENCE.finditer(text)]  # destinations of reference definitions, whole
     return targets
 
 

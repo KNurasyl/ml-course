@@ -86,6 +86,9 @@ def test_output_rail(text, expect_json, action):
     ("Автоссылка <https://attacker.test/x>", "block"),
     ("Пишите <mailto:help@attacker.test>", "block"),
     ('<img src=" https://attacker.test/p.png ">', "block"),         # whitespace inside the quotes
+    ("[здесь](evil/https://docs.example.com)", "block"),            # the destination is relative, checked whole
+    ("Сноска [1].\n\n[1]:guide/install", "block"),                   # a reference definition without a space
+    ("Сноска [1].\n\n   [1]:<https://attacker.test/x>", "block"),
 ])
 def test_output_allow_list_compares_every_host_exactly(text, action):
     assert lab.guard_output(text, allowed_hosts=("docs.example.com",))["action"] == action

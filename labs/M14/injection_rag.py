@@ -26,6 +26,7 @@ import collections
 import functools
 import importlib.util
 import json
+import re
 import time
 from pathlib import Path
 
@@ -100,10 +101,14 @@ def guardrails():
     return load("labs/M14/guardrails.py")
 
 
+LINK_SYNTAX = re.compile(r"\]\(|<[a-z][a-z0-9+.-]{1,31}:|<[a-z!/?]", re.IGNORECASE)  # any inline link, autolink or tag
+
+
 def output_filter(answer):
-    """Code-side defence: the corpus has no links, so an answer with any link target or address is withheld. The targets
-    come from guardrails.link_hosts, the same search the output rail of T41 uses with an allow-list of exact hosts."""
-    blocked = bool(guardrails().link_hosts(answer))
+    """Code-side defence: the corpus has no links, so an answer with any link target, address, markdown link, autolink of
+    any scheme or HTML tag is withheld. The targets come from guardrails.link_hosts, the search the T41 output rail uses
+    with an allow-list of exact hosts; the broad syntax check covers what a renderer might link without a known scheme."""
+    blocked = bool(guardrails().link_hosts(answer)) or bool(LINK_SYNTAX.search(answer))
     return {"blocked": blocked, "shown": "Ответ скрыт: в нём ссылка или адрес вне разрешённого списка." if blocked else answer}
 
 
