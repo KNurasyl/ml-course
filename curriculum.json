@@ -2838,6 +2838,14 @@
         {
           "id": "M12-C17",
           "description": "Обучить LoRA pretrained Smol135; сохранить и восстановить в новом процессе; сравнить base/original/new"
+        },
+        {
+          "id": "M12-C18",
+          "description": "Перенести ручной адаптер на PEFT LoraConfig, доказать паритет по логитам и повтором прежнего прогона, сохранить адаптер с ревизией базы, проверить загрузку, выключение и слияние и проверить заранее записанную гипотезу одним изменением."
+        },
+        {
+          "id": "M12-C19",
+          "description": "Собрать пары предпочтений, обучить DPO через TRL поверх SFT с проверенной опорной моделью, сверить первую потерю с ln 2 и отличить точность на парах от изменения свободной генерации и старого поведения."
         }
       ],
       "lessons": [
@@ -3008,6 +3016,62 @@
             "practice_minutes": 225,
             "self_check_minutes": 30,
             "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M12-L08X",
+          "title": "LoRA через PEFT",
+          "path": "course/lessons/M12-L08X.md",
+          "prerequisites": [
+            "M12-L04",
+            "M12-L07"
+          ],
+          "estimated_minutes": 150,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Ручной адаптер M12-L07 как PEFT LoraConfig: паритет логитов, повтор сохранённого прогона, save_pretrained с ревизией базы, загрузка, disable_adapter и merge_and_unload; заранее записанная гипотеза all-linear",
+          "assessment": "Сверка с сохранённым результатом M12-L07, разбор истории потерь, проверка гипотезы о порядке примеров",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M12-C18"
+          ],
+          "extension": "1.2.0",
+          "required": false,
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 70,
+            "self_check_minutes": 35,
+            "setup_minutes": "separate; tests and report need no model; the run needs the optional peft and trl packages and the local SmolLM2 of M09",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M12-L09X",
+          "title": "DPO через TRL: предпочтения вместо целевого ответа",
+          "path": "course/lessons/M12-L09X.md",
+          "prerequisites": [
+            "M12-L07",
+            "M12-L08X"
+          ],
+          "estimated_minutes": 150,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Пары chosen и rejected из задачи M12-L07, DPO через TRL поверх слитого SFT с новым LoRA и опорой через выключенный адаптер; точность на отложенных парах, первый токен, генерации и старые вопросы",
+          "assessment": "Сверка первой потери с ln 2, разложение сдвигов log-вероятностей, вариант с SFT-слагаемым",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M12-C19"
+          ],
+          "extension": "1.2.0",
+          "required": false,
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 70,
+            "self_check_minutes": 35,
+            "setup_minutes": "separate; tests and report need no model; the run needs the optional peft and trl packages and the local SmolLM2 of M09",
             "estimate_status": "planning_hypothesis_not_measured"
           },
           "assessment_policy": "course/assessment.md"

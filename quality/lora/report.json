@@ -1,0 +1,310 @@
+{
+  "task": "T44",
+  "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "torch": "2.15.0+cpu",
+  "transformers": "4.57.6",
+  "peft": "0.21.2",
+  "seed": 41,
+  "steps": 24,
+  "learning_rate": 0.006,
+  "rank": 4,
+  "alpha": 8,
+  "init_std": 0.02,
+  "parity_max_abs_error": 0.0,
+  "runs": {
+    "same": {
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ],
+      "last_layers": 4,
+      "trainable_parameters": 30720,
+      "total_parameters": 134545728,
+      "adapted_modules": 8,
+      "training_seconds": 4.8,
+      "history": [
+        3.1938,
+        3.1237,
+        3.0169,
+        2.8477,
+        2.339,
+        2.2268,
+        3.5264,
+        3.4066,
+        3.2073,
+        2.6618,
+        2.2715,
+        1.8932,
+        1.2874,
+        1.3728,
+        1.0764,
+        0.7214,
+        0.6209,
+        0.4368,
+        0.9791,
+        0.7508,
+        0.6735,
+        0.6111,
+        0.4377,
+        0.2795
+      ],
+      "before": {
+        "train_nll": 3.558745523293813,
+        "check_nll": 3.5329052209854126,
+        "old_nll": 2.3511902689933777,
+        "check_generations": [
+          {
+            "prompt": "My project went very well.",
+            "reference": "CLARIFY: Name your own action.",
+            "actual": "Your project went very well."
+          },
+          {
+            "prompt": "Everyone liked our improvements.",
+            "reference": "CLARIFY: Name your own action.",
+            "actual": "I'm glad you like the improvements."
+          },
+          {
+            "prompt": "I compressed response bodies and transferred bytes fell from 900 to 200 KB.",
+            "reference": "NEXT: Explain one tradeoff.",
+            "actual": "I apologize for the inconvenience caused by the transfer of bytes. Please provide the actual transfer size"
+          },
+          {
+            "prompt": "I pooled connections and measured p95 as 35 ms instead of 120 ms.",
+            "reference": "NEXT: Explain one tradeoff.",
+            "actual": "That's a great example of how you can use the p95 measurement to gauge the"
+          }
+        ],
+        "old_generations": [
+          {
+            "prompt": "What is 2 plus 2?",
+            "reference": "4.",
+            "actual": "Two plus two is a classic arithmetic operation that can be expressed as 2 + 2"
+          },
+          {
+            "prompt": "Name a programming language.",
+            "reference": "Python.",
+            "actual": "A programming language is a set of rules and guidelines that define how a language should be used"
+          }
+        ],
+        "task_review": {
+          "exact_match": 0.0,
+          "critical_wrong_command_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "scope": "Exact expected commands only; does not establish semantic quality on real interview answers."
+        }
+      },
+      "after": {
+        "train_nll": 0.32618461921811104,
+        "check_nll": 0.33164962008595467,
+        "old_nll": 2.324058711528778,
+        "check_generations": [
+          {
+            "prompt": "My project went very well.",
+            "reference": "CLARIFY: Name your own action.",
+            "actual": "NEXT: Explain one tradeoff."
+          },
+          {
+            "prompt": "Everyone liked our improvements.",
+            "reference": "CLARIFY: Name your own action.",
+            "actual": "NEXT: Explain your name and your name."
+          },
+          {
+            "prompt": "I compressed response bodies and transferred bytes fell from 900 to 200 KB.",
+            "reference": "NEXT: Explain one tradeoff.",
+            "actual": "NEXT: Explain one tradeoff."
+          },
+          {
+            "prompt": "I pooled connections and measured p95 as 35 ms instead of 120 ms.",
+            "reference": "NEXT: Explain one tradeoff.",
+            "actual": "NEXT: Explain one tradeoff."
+          }
+        ],
+        "old_generations": [
+          {
+            "prompt": "What is 2 plus 2?",
+            "reference": "4.",
+            "actual": "NEXT: Explain:"
+          },
+          {
+            "prompt": "Name a programming language.",
+            "reference": "Python.",
+            "actual": "NEXT: Explain: Name a programming language."
+          }
+        ],
+        "task_review": {
+          "exact_match": 0.5,
+          "critical_wrong_command_indices": [
+            0,
+            1
+          ],
+          "scope": "Exact expected commands only; does not establish semantic quality on real interview answers."
+        }
+      },
+      "artifact": {
+        "files": {
+          "adapter_config.json": 1235,
+          "adapter_model.safetensors": 124960,
+          "README.md": 5262
+        },
+        "reload_max_abs_error": 0.0,
+        "merge_max_abs_error": 3.24249267578125e-05,
+        "disabled_vs_base_max_abs_error": 0.0,
+        "adapter_vs_base_max_abs_difference": 17.744720458984375,
+        "config": {
+          "base_model_name_or_path": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+          "r": 4,
+          "lora_alpha": 8,
+          "target_modules": [
+            "q_proj",
+            "v_proj"
+          ],
+          "layers_to_transform": [
+            26,
+            27,
+            28,
+            29
+          ],
+          "peft_type": "LORA"
+        }
+      }
+    },
+    "wide": {
+      "target_modules": "all-linear",
+      "last_layers": null,
+      "trainable_parameters": 1221120,
+      "total_parameters": 135736128,
+      "adapted_modules": 210,
+      "training_seconds": 10.3,
+      "history": [
+        3.1938,
+        1.6124,
+        0.3524,
+        0.0473,
+        0.0023,
+        0.0012,
+        8.5368,
+        4.7643,
+        2.7655,
+        0.4008,
+        0.2049,
+        0.0883,
+        6.3838,
+        2.922,
+        0.2715,
+        0.0207,
+        0.004,
+        0.0009,
+        3.3079,
+        1.0567,
+        0.3204,
+        0.0136,
+        0.0051,
+        0.0011
+      ],
+      "before": {
+        "train_nll": 3.558745523293813,
+        "check_nll": 3.5329052209854126,
+        "old_nll": 2.3511902689933777,
+        "check_generations": [
+          {
+            "prompt": "My project went very well.",
+            "reference": "CLARIFY: Name your own action.",
+            "actual": "Your project went very well."
+          },
+          {
+            "prompt": "Everyone liked our improvements.",
+            "reference": "CLARIFY: Name your own action.",
+            "actual": "I'm glad you like the improvements."
+          },
+          {
+            "prompt": "I compressed response bodies and transferred bytes fell from 900 to 200 KB.",
+            "reference": "NEXT: Explain one tradeoff.",
+            "actual": "I apologize for the inconvenience caused by the transfer of bytes. Please provide the actual transfer size"
+          },
+          {
+            "prompt": "I pooled connections and measured p95 as 35 ms instead of 120 ms.",
+            "reference": "NEXT: Explain one tradeoff.",
+            "actual": "That's a great example of how you can use the p95 measurement to gauge the"
+          }
+        ],
+        "old_generations": [
+          {
+            "prompt": "What is 2 plus 2?",
+            "reference": "4.",
+            "actual": "Two plus two is a classic arithmetic operation that can be expressed as 2 + 2"
+          },
+          {
+            "prompt": "Name a programming language.",
+            "reference": "Python.",
+            "actual": "A programming language is a set of rules and guidelines that define how a language should be used"
+          }
+        ],
+        "task_review": {
+          "exact_match": 0.0,
+          "critical_wrong_command_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "scope": "Exact expected commands only; does not establish semantic quality on real interview answers."
+        }
+      },
+      "after": {
+        "train_nll": 1.5690092097696227,
+        "check_nll": 1.5934458480915055,
+        "old_nll": 10.733669757843018,
+        "check_generations": [
+          {
+            "prompt": "My project went very well.",
+            "reference": "CLARIFY: Name your own action.",
+            "actual": "NEXT: Explain one tradeoff."
+          },
+          {
+            "prompt": "Everyone liked our improvements.",
+            "reference": "CLARIFY: Name your own action.",
+            "actual": "NEXT: Explain one tradeoff."
+          },
+          {
+            "prompt": "I compressed response bodies and transferred bytes fell from 900 to 200 KB.",
+            "reference": "NEXT: Explain one tradeoff.",
+            "actual": "NEXT: Explain one tradeoff."
+          },
+          {
+            "prompt": "I pooled connections and measured p95 as 35 ms instead of 120 ms.",
+            "reference": "NEXT: Explain one tradeoff.",
+            "actual": "NEXT: Explain one tradeoff."
+          }
+        ],
+        "old_generations": [
+          {
+            "prompt": "What is 2 plus 2?",
+            "reference": "4.",
+            "actual": "NEXT: Explain one trade:"
+          },
+          {
+            "prompt": "Name a programming language.",
+            "reference": "Python.",
+            "actual": "NEXT: Explain one trade."
+          }
+        ],
+        "task_review": {
+          "exact_match": 0.5,
+          "critical_wrong_command_indices": [
+            0,
+            1
+          ],
+          "scope": "Exact expected commands only; does not establish semantic quality on real interview answers."
+        }
+      }
+    }
+  },
+  "hypothesis_wide": "fixed before the run: too few adapted weights; all-linear in all blocks, everything else unchanged",
+  "collected": "2026-11-07"
+}

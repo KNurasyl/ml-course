@@ -17,6 +17,8 @@
     "labs/M14/guardrails.py evaluate",
     "labs/M14/guardrails.py replay",
     "labs/M14/mcp_planner.py report",
-    "labs/M14/agent_patterns.py report"
+    "labs/M14/agent_patterns.py report",
+    "labs/M12/lora_peft.py report",
+    "labs/M12/dpo_trl.py report"
   ]
 }

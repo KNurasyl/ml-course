@@ -1223,5 +1223,19 @@
     "path": "course/lessons/M14-L10X.md",
     "version": "1.1.0",
     "status": "ready"
+  },
+  "M12-L08X": {
+    "id": "M12-L08X",
+    "title": "M12-L08X. LoRA через PEFT",
+    "path": "course/lessons/M12-L08X.md",
+    "version": "1.1.0",
+    "status": "ready"
+  },
+  "M12-L09X": {
+    "id": "M12-L09X",
+    "title": "M12-L09X. DPO через TRL: предпочтения вместо целевого ответа",
+    "path": "course/lessons/M12-L09X.md",
+    "version": "1.1.0",
+    "status": "ready"
   }
 }

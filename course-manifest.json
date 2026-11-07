@@ -842,6 +842,20 @@
       "version": "1.1.0",
       "status": "ready"
     },
+    "M12-L08X": {
+      "id": "M12-L08X",
+      "title": "M12-L08X. LoRA через PEFT",
+      "path": "course/lessons/M12-L08X.md",
+      "version": "1.1.0",
+      "status": "ready"
+    },
+    "M12-L09X": {
+      "id": "M12-L09X",
+      "title": "M12-L09X. DPO через TRL: предпочтения вместо целевого ответа",
+      "path": "course/lessons/M12-L09X.md",
+      "version": "1.1.0",
+      "status": "ready"
+    },
     "M13-L01": {
       "id": "M13-L01",
       "title": "M13-L01. Версия эксперимента и релиза",
@@ -1369,6 +1383,8 @@
       "M12-L05",
       "M12-L06",
       "M12-L07",
+      "M12-L08X",
+      "M12-L09X",
       "M13-L01",
       "M13-L02",
       "M13-L03",
@@ -1936,7 +1952,9 @@
         "M12-L04",
         "M12-L05",
         "M12-L06",
-        "M12-L07"
+        "M12-L07",
+        "M12-L08X",
+        "M12-L09X"
       ],
       "homework_id": "M12-HW01",
       "exercise": {
@@ -4154,6 +4172,56 @@
         "practice_minutes": 225,
         "self_check_minutes": 30,
         "setup_minutes": "separate; record actual",
+        "estimate_status": "planning_hypothesis_not_measured"
+      },
+      "pilot_sessions": []
+    },
+    {
+      "id": "M12-L08X",
+      "title": "LoRA через PEFT",
+      "version": "1.1.0",
+      "module_id": "M12",
+      "material_key": "M12-L08X",
+      "path": "course/lessons/M12-L08X.md",
+      "scope": "complete_lesson",
+      "material_status": "ready",
+      "prerequisites": [
+        "M12-L04",
+        "M12-L07"
+      ],
+      "outcome_ids": [
+        "M12-C18"
+      ],
+      "workload": {
+        "reading_minutes": 45,
+        "practice_minutes": 70,
+        "self_check_minutes": 35,
+        "setup_minutes": "separate; tests and report need no model; the run needs the optional peft and trl packages and the local SmolLM2 of M09",
+        "estimate_status": "planning_hypothesis_not_measured"
+      },
+      "pilot_sessions": []
+    },
+    {
+      "id": "M12-L09X",
+      "title": "DPO через TRL: предпочтения вместо целевого ответа",
+      "version": "1.1.0",
+      "module_id": "M12",
+      "material_key": "M12-L09X",
+      "path": "course/lessons/M12-L09X.md",
+      "scope": "complete_lesson",
+      "material_status": "ready",
+      "prerequisites": [
+        "M12-L07",
+        "M12-L08X"
+      ],
+      "outcome_ids": [
+        "M12-C19"
+      ],
+      "workload": {
+        "reading_minutes": 45,
+        "practice_minutes": 70,
+        "self_check_minutes": 35,
+        "setup_minutes": "separate; tests and report need no model; the run needs the optional peft and trl packages and the local SmolLM2 of M09",
         "estimate_status": "planning_hypothesis_not_measured"
       },
       "pilot_sessions": []

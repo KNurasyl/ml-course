@@ -1,0 +1,715 @@
+{
+  "task": "T44",
+  "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "torch": "2.15.0+cpu",
+  "transformers": "4.57.6",
+  "peft": "0.21.2",
+  "trl": "1.17.1",
+  "beta": 0.1,
+  "loss_type": [
+    "sigmoid"
+  ],
+  "steps": 24,
+  "batch": 2,
+  "learning_rate": 0.001,
+  "seed": 41,
+  "train_pairs": 12,
+  "check_pairs": 4,
+  "trainable_parameters": 30720,
+  "training_seconds": 58.6,
+  "first_loss": 0.6931,
+  "ln2": 0.6931,
+  "reference_is_sft": true,
+  "log": [
+    {
+      "loss": 0.6931,
+      "grad_norm": 0.0729,
+      "learning_rate": 0.001,
+      "entropy": 0.9949,
+      "num_tokens": 278.0,
+      "logits/chosen": 6.1124,
+      "logits/rejected": 5.6119,
+      "mean_token_accuracy": 0.9167,
+      "rewards/chosen": 0.0,
+      "rewards/rejected": 0.0,
+      "rewards/accuracies": 0.0,
+      "rewards/margins": 0.0,
+      "logps/chosen": -5.5806,
+      "logps/rejected": -3.9925,
+      "epoch": 0.1667,
+      "step": 1
+    },
+    {
+      "loss": 0.6962,
+      "grad_norm": 0.0726,
+      "learning_rate": 0.001,
+      "entropy": 0.9619,
+      "num_tokens": 616.0,
+      "logits/chosen": 5.7983,
+      "logits/rejected": 5.7839,
+      "mean_token_accuracy": 1.0,
+      "rewards/chosen": -0.0008,
+      "rewards/rejected": 0.0052,
+      "rewards/accuracies": 0.0,
+      "rewards/margins": -0.006,
+      "logps/chosen": -1.9727,
+      "logps/rejected": -7.1754,
+      "epoch": 0.3333,
+      "step": 2
+    },
+    {
+      "loss": 0.6896,
+      "grad_norm": 0.0681,
+      "learning_rate": 0.001,
+      "entropy": 1.0031,
+      "num_tokens": 896.0,
+      "logits/chosen": 4.9996,
+      "logits/rejected": 5.3019,
+      "mean_token_accuracy": 0.9167,
+      "rewards/chosen": 0.0025,
+      "rewards/rejected": -0.0045,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.007,
+      "logps/chosen": -4.6931,
+      "logps/rejected": -4.27,
+      "epoch": 0.5,
+      "step": 3
+    },
+    {
+      "loss": 0.6952,
+      "grad_norm": 0.062,
+      "learning_rate": 0.001,
+      "entropy": 0.9298,
+      "num_tokens": 1230.0,
+      "logits/chosen": 5.4706,
+      "logits/rejected": 5.2768,
+      "mean_token_accuracy": 1.0,
+      "rewards/chosen": -0.001,
+      "rewards/rejected": 0.0032,
+      "rewards/accuracies": 0.0,
+      "rewards/margins": -0.0042,
+      "logps/chosen": -1.8383,
+      "logps/rejected": -8.3406,
+      "epoch": 0.6667,
+      "step": 4
+    },
+    {
+      "loss": 0.6909,
+      "grad_norm": 0.0268,
+      "learning_rate": 0.001,
+      "entropy": 0.9573,
+      "num_tokens": 1536.0,
+      "logits/chosen": 5.4455,
+      "logits/rejected": 6.0394,
+      "mean_token_accuracy": 0.9545,
+      "rewards/chosen": 0.0009,
+      "rewards/rejected": -0.0036,
+      "rewards/accuracies": 0.5,
+      "rewards/margins": 0.0045,
+      "logps/chosen": -3.8748,
+      "logps/rejected": -6.3229,
+      "epoch": 0.8333,
+      "step": 5
+    },
+    {
+      "loss": 0.6898,
+      "grad_norm": 0.0328,
+      "learning_rate": 0.001,
+      "entropy": 0.9792,
+      "num_tokens": 1840.0,
+      "logits/chosen": 5.7642,
+      "logits/rejected": 5.8578,
+      "mean_token_accuracy": 0.9545,
+      "rewards/chosen": 0.0003,
+      "rewards/rejected": -0.0064,
+      "rewards/accuracies": 0.5,
+      "rewards/margins": 0.0067,
+      "logps/chosen": -4.34,
+      "logps/rejected": -5.3368,
+      "epoch": 1.0,
+      "step": 6
+    },
+    {
+      "loss": 0.6925,
+      "grad_norm": 0.0592,
+      "learning_rate": 0.001,
+      "entropy": 0.9465,
+      "num_tokens": 2174.0,
+      "logits/chosen": 5.638,
+      "logits/rejected": 5.9148,
+      "mean_token_accuracy": 1.0,
+      "rewards/chosen": -0.0016,
+      "rewards/rejected": -0.0029,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.0013,
+      "logps/chosen": -2.0171,
+      "logps/rejected": -7.5809,
+      "epoch": 1.1667,
+      "step": 7
+    },
+    {
+      "loss": 0.6871,
+      "grad_norm": 0.044,
+      "learning_rate": 0.001,
+      "entropy": 0.9579,
+      "num_tokens": 2482.0,
+      "logits/chosen": 5.8594,
+      "logits/rejected": 5.9295,
+      "mean_token_accuracy": 0.9545,
+      "rewards/chosen": -0.0003,
+      "rewards/rejected": -0.0124,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.0121,
+      "logps/chosen": -4.2508,
+      "logps/rejected": -5.9093,
+      "epoch": 1.3333,
+      "step": 8
+    },
+    {
+      "loss": 0.681,
+      "grad_norm": 0.1153,
+      "learning_rate": 0.001,
+      "entropy": 1.0075,
+      "num_tokens": 2762.0,
+      "logits/chosen": 5.0151,
+      "logits/rejected": 5.3154,
+      "mean_token_accuracy": 0.9167,
+      "rewards/chosen": -0.0002,
+      "rewards/rejected": -0.0247,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.0244,
+      "logps/chosen": -4.7207,
+      "logps/rejected": -4.4719,
+      "epoch": 1.5,
+      "step": 9
+    },
+    {
+      "loss": 0.6894,
+      "grad_norm": 0.085,
+      "learning_rate": 0.001,
+      "entropy": 0.975,
+      "num_tokens": 3096.0,
+      "logits/chosen": 5.4897,
+      "logits/rejected": 5.2167,
+      "mean_token_accuracy": 1.0,
+      "rewards/chosen": -0.0039,
+      "rewards/rejected": -0.0113,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.0074,
+      "logps/chosen": -2.0561,
+      "logps/rejected": -8.3035,
+      "epoch": 1.6667,
+      "step": 10
+    },
+    {
+      "loss": 0.6739,
+      "grad_norm": 0.1457,
+      "learning_rate": 0.001,
+      "entropy": 1.004,
+      "num_tokens": 3374.0,
+      "logits/chosen": 6.1365,
+      "logits/rejected": 5.6342,
+      "mean_token_accuracy": 0.9167,
+      "rewards/chosen": 0.0003,
+      "rewards/rejected": -0.0387,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.039,
+      "logps/chosen": -5.5779,
+      "logps/rejected": -4.3792,
+      "epoch": 1.8333,
+      "step": 11
+    },
+    {
+      "loss": 0.6783,
+      "grad_norm": 0.0671,
+      "learning_rate": 0.001,
+      "entropy": 0.9702,
+      "num_tokens": 3680.0,
+      "logits/chosen": 5.5348,
+      "logits/rejected": 5.9548,
+      "mean_token_accuracy": 0.9545,
+      "rewards/chosen": -0.0032,
+      "rewards/rejected": -0.0331,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.0299,
+      "logps/chosen": -3.7853,
+      "logps/rejected": -5.9624,
+      "epoch": 2.0,
+      "step": 12
+    },
+    {
+      "loss": 0.6727,
+      "grad_norm": 0.084,
+      "learning_rate": 0.001,
+      "entropy": 0.9739,
+      "num_tokens": 3988.0,
+      "logits/chosen": 6.0542,
+      "logits/rejected": 5.7498,
+      "mean_token_accuracy": 0.9545,
+      "rewards/chosen": -0.0023,
+      "rewards/rejected": -0.0437,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.0414,
+      "logps/chosen": -3.5485,
+      "logps/rejected": -5.943,
+      "epoch": 2.1667,
+      "step": 13
+    },
+    {
+      "loss": 0.6697,
+      "grad_norm": 0.0877,
+      "learning_rate": 0.001,
+      "entropy": 0.9689,
+      "num_tokens": 4296.0,
+      "logits/chosen": 5.3761,
+      "logits/rejected": 5.7768,
+      "mean_token_accuracy": 0.9545,
+      "rewards/chosen": -0.0031,
+      "rewards/rejected": -0.0508,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.0477,
+      "logps/chosen": -2.9324,
+      "logps/rejected": -6.616,
+      "epoch": 2.3333,
+      "step": 14
+    },
+    {
+      "loss": 0.6853,
+      "grad_norm": 0.1391,
+      "learning_rate": 0.001,
+      "entropy": 0.9816,
+      "num_tokens": 4624.0,
+      "logits/chosen": 5.5285,
+      "logits/rejected": 6.0458,
+      "mean_token_accuracy": 1.0,
+      "rewards/chosen": -0.0142,
+      "rewards/rejected": -0.03,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.0158,
+      "logps/chosen": -2.1829,
+      "logps/rejected": -7.8166,
+      "epoch": 2.5,
+      "step": 15
+    },
+    {
+      "loss": 0.6364,
+      "grad_norm": 0.2504,
+      "learning_rate": 0.001,
+      "entropy": 0.9926,
+      "num_tokens": 4906.0,
+      "logits/chosen": 5.7571,
+      "logits/rejected": 5.9314,
+      "mean_token_accuracy": 0.9167,
+      "rewards/chosen": 0.0011,
+      "rewards/rejected": -0.1158,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.1169,
+      "logps/chosen": -6.1754,
+      "logps/rejected": -5.2011,
+      "epoch": 2.6667,
+      "step": 16
+    },
+    {
+      "loss": 0.6509,
+      "grad_norm": 0.1152,
+      "learning_rate": 0.001,
+      "entropy": 1.0224,
+      "num_tokens": 5214.0,
+      "logits/chosen": 5.4126,
+      "logits/rejected": 5.6313,
+      "mean_token_accuracy": 0.9545,
+      "rewards/chosen": -0.0113,
+      "rewards/rejected": -0.0988,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.0875,
+      "logps/chosen": -3.8392,
+      "logps/rejected": -6.8108,
+      "epoch": 2.8333,
+      "step": 17
+    },
+    {
+      "loss": 0.6454,
+      "grad_norm": 0.1285,
+      "learning_rate": 0.001,
+      "entropy": 1.0032,
+      "num_tokens": 5520.0,
+      "logits/chosen": 5.745,
+      "logits/rejected": 5.0594,
+      "mean_token_accuracy": 0.9545,
+      "rewards/chosen": -0.0083,
+      "rewards/rejected": -0.1078,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.0996,
+      "logps/chosen": -4.0216,
+      "logps/rejected": -7.4597,
+      "epoch": 3.0,
+      "step": 18
+    },
+    {
+      "loss": 0.5968,
+      "grad_norm": 0.3253,
+      "learning_rate": 0.001,
+      "entropy": 0.9911,
+      "num_tokens": 5800.0,
+      "logits/chosen": 5.9009,
+      "logits/rejected": 5.9209,
+      "mean_token_accuracy": 0.9167,
+      "rewards/chosen": 0.0029,
+      "rewards/rejected": -0.2001,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.2029,
+      "logps/chosen": -5.3794,
+      "logps/rejected": -6.2413,
+      "epoch": 3.1667,
+      "step": 19
+    },
+    {
+      "loss": 0.6255,
+      "grad_norm": 0.1492,
+      "learning_rate": 0.001,
+      "entropy": 1.0173,
+      "num_tokens": 6104.0,
+      "logits/chosen": 5.9292,
+      "logits/rejected": 5.8213,
+      "mean_token_accuracy": 0.9545,
+      "rewards/chosen": -0.0146,
+      "rewards/rejected": -0.1588,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.1441,
+      "logps/chosen": -4.0722,
+      "logps/rejected": -6.9709,
+      "epoch": 3.3333,
+      "step": 20
+    },
+    {
+      "loss": 0.6169,
+      "grad_norm": 0.1505,
+      "learning_rate": 0.001,
+      "entropy": 0.9939,
+      "num_tokens": 6412.0,
+      "logits/chosen": 5.951,
+      "logits/rejected": 6.0167,
+      "mean_token_accuracy": 0.9545,
+      "rewards/chosen": -0.0166,
+      "rewards/rejected": -0.1808,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.1643,
+      "logps/chosen": -4.4136,
+      "logps/rejected": -7.594,
+      "epoch": 3.5,
+      "step": 21
+    },
+    {
+      "loss": 0.6859,
+      "grad_norm": 0.2792,
+      "learning_rate": 0.001,
+      "entropy": 1.026,
+      "num_tokens": 6746.0,
+      "logits/chosen": 5.7511,
+      "logits/rejected": 6.0161,
+      "mean_token_accuracy": 1.0,
+      "rewards/chosen": -0.0593,
+      "rewards/rejected": -0.074,
+      "rewards/accuracies": 0.5,
+      "rewards/margins": 0.0147,
+      "logps/chosen": -2.5942,
+      "logps/rejected": -8.2921,
+      "epoch": 3.6667,
+      "step": 22
+    },
+    {
+      "loss": 0.6022,
+      "grad_norm": 0.1615,
+      "learning_rate": 0.001,
+      "entropy": 1.0185,
+      "num_tokens": 7052.0,
+      "logits/chosen": 5.2265,
+      "logits/rejected": 4.9809,
+      "mean_token_accuracy": 0.9545,
+      "rewards/chosen": -0.0417,
+      "rewards/rejected": -0.2451,
+      "rewards/accuracies": 0.5,
+      "rewards/margins": 0.2034,
+      "logps/chosen": -4.062,
+      "logps/rejected": -8.9407,
+      "epoch": 3.8333,
+      "step": 23
+    },
+    {
+      "loss": 0.5942,
+      "grad_norm": 0.1661,
+      "learning_rate": 0.001,
+      "entropy": 1.0327,
+      "num_tokens": 7360.0,
+      "logits/chosen": 5.5054,
+      "logits/rejected": 5.815,
+      "mean_token_accuracy": 0.9545,
+      "rewards/chosen": -0.0529,
+      "rewards/rejected": -0.2745,
+      "rewards/accuracies": 1.0,
+      "rewards/margins": 0.2215,
+      "logps/chosen": -3.6201,
+      "logps/rejected": -8.6707,
+      "epoch": 4.0,
+      "step": 24
+    }
+  ],
+  "stages": {
+    "base": {
+      "train_nll": 3.558745523293813,
+      "check_nll": 3.5329052209854126,
+      "old_nll": 2.3511902689933777,
+      "check_generations": [
+        {
+          "prompt": "My project went very well.",
+          "reference": "CLARIFY: Name your own action.",
+          "actual": "Your project went very well."
+        },
+        {
+          "prompt": "Everyone liked our improvements.",
+          "reference": "CLARIFY: Name your own action.",
+          "actual": "I'm glad you like the improvements."
+        },
+        {
+          "prompt": "I compressed response bodies and transferred bytes fell from 900 to 200 KB.",
+          "reference": "NEXT: Explain one tradeoff.",
+          "actual": "I apologize for the inconvenience caused by the transfer of bytes. Please provide the actual transfer size"
+        },
+        {
+          "prompt": "I pooled connections and measured p95 as 35 ms instead of 120 ms.",
+          "reference": "NEXT: Explain one tradeoff.",
+          "actual": "That's a great example of how you can use the p95 measurement to gauge the"
+        }
+      ],
+      "old_generations": [
+        {
+          "prompt": "What is 2 plus 2?",
+          "reference": "4.",
+          "actual": "Two plus two is a classic arithmetic operation that can be expressed as 2 + 2"
+        },
+        {
+          "prompt": "Name a programming language.",
+          "reference": "Python.",
+          "actual": "A programming language is a set of rules and guidelines that define how a language should be used"
+        }
+      ],
+      "task_review": {
+        "exact_match": 0.0,
+        "critical_wrong_command_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "scope": "Exact expected commands only; does not establish semantic quality on real interview answers."
+      },
+      "check_pairs": [
+        {
+          "prompt": "My project went very well.",
+          "chosen": "CLARIFY: Name your own action.",
+          "logp_chosen": -38.31,
+          "logp_rejected": -40.408,
+          "first_chosen": 0.0,
+          "first_rejected": 0.001
+        },
+        {
+          "prompt": "Everyone liked our improvements.",
+          "chosen": "CLARIFY: Name your own action.",
+          "logp_chosen": -37.189,
+          "logp_rejected": -38.647,
+          "first_chosen": 0.0,
+          "first_rejected": 0.001
+        },
+        {
+          "prompt": "I compressed response bodies and transferred bytes fell from 900 to 200 KB.",
+          "chosen": "NEXT: Explain one tradeoff.",
+          "logp_chosen": -39.533,
+          "logp_rejected": -36.023,
+          "first_chosen": 0.005,
+          "first_rejected": 0.0
+        },
+        {
+          "prompt": "I pooled connections and measured p95 as 35 ms instead of 120 ms.",
+          "chosen": "NEXT: Explain one tradeoff.",
+          "logp_chosen": -38.867,
+          "logp_rejected": -37.69,
+          "first_chosen": 0.004,
+          "first_rejected": 0.0
+        }
+      ],
+      "pair_accuracy": 0.5
+    },
+    "sft": {
+      "train_nll": 0.32618461176753044,
+      "check_nll": 0.3316497206687927,
+      "old_nll": 2.3240591287612915,
+      "check_generations": [
+        {
+          "prompt": "My project went very well.",
+          "reference": "CLARIFY: Name your own action.",
+          "actual": "NEXT: Explain one tradeoff."
+        },
+        {
+          "prompt": "Everyone liked our improvements.",
+          "reference": "CLARIFY: Name your own action.",
+          "actual": "NEXT: Explain your name and your name."
+        },
+        {
+          "prompt": "I compressed response bodies and transferred bytes fell from 900 to 200 KB.",
+          "reference": "NEXT: Explain one tradeoff.",
+          "actual": "NEXT: Explain one tradeoff."
+        },
+        {
+          "prompt": "I pooled connections and measured p95 as 35 ms instead of 120 ms.",
+          "reference": "NEXT: Explain one tradeoff.",
+          "actual": "NEXT: Explain one tradeoff."
+        }
+      ],
+      "old_generations": [
+        {
+          "prompt": "What is 2 plus 2?",
+          "reference": "4.",
+          "actual": "NEXT: Explain:"
+        },
+        {
+          "prompt": "Name a programming language.",
+          "reference": "Python.",
+          "actual": "NEXT: Explain: Name a programming language."
+        }
+      ],
+      "task_review": {
+        "exact_match": 0.5,
+        "critical_wrong_command_indices": [
+          0,
+          1
+        ],
+        "scope": "Exact expected commands only; does not establish semantic quality on real interview answers."
+      },
+      "check_pairs": [
+        {
+          "prompt": "My project went very well.",
+          "chosen": "CLARIFY: Name your own action.",
+          "logp_chosen": -5.702,
+          "logp_rejected": -3.362,
+          "first_chosen": 0.032,
+          "first_rejected": 0.739
+        },
+        {
+          "prompt": "Everyone liked our improvements.",
+          "chosen": "CLARIFY: Name your own action.",
+          "logp_chosen": -4.956,
+          "logp_rejected": -3.66,
+          "first_chosen": 0.065,
+          "first_rejected": 0.594
+        },
+        {
+          "prompt": "I compressed response bodies and transferred bytes fell from 900 to 200 KB.",
+          "chosen": "NEXT: Explain one tradeoff.",
+          "logp_chosen": -2.795,
+          "logp_rejected": -7.411,
+          "first_chosen": 0.873,
+          "first_rejected": 0.011
+        },
+        {
+          "prompt": "I pooled connections and measured p95 as 35 ms instead of 120 ms.",
+          "chosen": "NEXT: Explain one tradeoff.",
+          "logp_chosen": -1.59,
+          "logp_rejected": -8.309,
+          "first_chosen": 0.92,
+          "first_rejected": 0.012
+        }
+      ],
+      "pair_accuracy": 0.5
+    },
+    "dpo": {
+      "train_nll": 0.3759797513484955,
+      "check_nll": 0.3871736228466034,
+      "old_nll": 2.305364489555359,
+      "check_generations": [
+        {
+          "prompt": "My project went very well.",
+          "reference": "CLARIFY: Name your own action.",
+          "actual": "NEXT: Explain your next question."
+        },
+        {
+          "prompt": "Everyone liked our improvements.",
+          "reference": "CLARIFY: Name your own action.",
+          "actual": "NEXT: Explain your actions and your own actions."
+        },
+        {
+          "prompt": "I compressed response bodies and transferred bytes fell from 900 to 200 KB.",
+          "reference": "NEXT: Explain one tradeoff.",
+          "actual": "NEXT: Explain one tradeoff."
+        },
+        {
+          "prompt": "I pooled connections and measured p95 as 35 ms instead of 120 ms.",
+          "reference": "NEXT: Explain one tradeoff.",
+          "actual": "NEXT: Explain one tradeoff."
+        }
+      ],
+      "old_generations": [
+        {
+          "prompt": "What is 2 plus 2?",
+          "reference": "4.",
+          "actual": "NEXT: Explain:"
+        },
+        {
+          "prompt": "Name a programming language.",
+          "reference": "Python.",
+          "actual": "NEXT: Explain: Name a programming language."
+        }
+      ],
+      "task_review": {
+        "exact_match": 0.5,
+        "critical_wrong_command_indices": [
+          0,
+          1
+        ],
+        "scope": "Exact expected commands only; does not establish semantic quality on real interview answers."
+      },
+      "check_pairs": [
+        {
+          "prompt": "My project went very well.",
+          "chosen": "CLARIFY: Name your own action.",
+          "logp_chosen": -5.666,
+          "logp_rejected": -7.879,
+          "first_chosen": 0.038,
+          "first_rejected": 0.704
+        },
+        {
+          "prompt": "Everyone liked our improvements.",
+          "chosen": "CLARIFY: Name your own action.",
+          "logp_chosen": -5.106,
+          "logp_rejected": -8.033,
+          "first_chosen": 0.072,
+          "first_rejected": 0.563
+        },
+        {
+          "prompt": "I compressed response bodies and transferred bytes fell from 900 to 200 KB.",
+          "chosen": "NEXT: Explain one tradeoff.",
+          "logp_chosen": -3.937,
+          "logp_rejected": -8.518,
+          "first_chosen": 0.884,
+          "first_rejected": 0.008
+        },
+        {
+          "prompt": "I pooled connections and measured p95 as 35 ms instead of 120 ms.",
+          "chosen": "NEXT: Explain one tradeoff.",
+          "logp_chosen": -2.573,
+          "logp_rejected": -9.703,
+          "first_chosen": 0.927,
+          "first_rejected": 0.007
+        }
+      ],
+      "pair_accuracy": 1.0,
+      "check_reward_margins": [
+        0.455,
+        0.422,
+        -0.003,
+        0.041
+      ]
+    }
+  },
+  "collected": "2026-11-07"
+}

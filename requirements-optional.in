@@ -4,3 +4,11 @@
 sqlite-vec==0.1.9
 # M14-L09X (T42): MCP Python SDK 2.x, protocol revisions 2026-07-28 and 2025-11-25; MIT.
 mcp==2.3.0
+# M12-L08X and M12-L09X (T44): LoRA through PEFT, DPO through TRL; Apache-2.0. Install after requirements.lock.txt.
+# TRL needs datasets, and every datasets release caps fsspec below the locked 2026.9.0, so pip downgrades fsspec to 2026.6.0
+# in .venv (accepted by the author on 07.11.2026). transformers 4.57.6 and huggingface_hub 0.36.2 from the lock stay;
+# datasets is pinned because newer releases need huggingface_hub 1.x and would pull transformers 5.
+peft==0.21.2
+trl==1.17.1
+accelerate==1.15.0
+datasets==5.0.1

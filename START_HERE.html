@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="e5fd2c36f98cafebac461080b4254c55dc82f7174ec5becca5bc49076da81dcf"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="c7514ca9b1a8a7bb3ce7987e1351c2e143845c728b8d884ff33d86335d086258"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -35,7 +35,7 @@
 <section class="nav-group"><details class="nav-module"><summary>M09 Применение и запуск LLM</summary><ul><li data-key="M09"><a href="#M09" data-material="M09"><span class="nav-marker">M09</span><span>Применение и запуск LLM</span></a></li><li data-key="M09-L01"><a href="#M09-L01" data-material="M09-L01"><span class="nav-marker">L01</span><span>Сообщения и шаблон диалога</span></a></li><li data-key="M09-L02"><a href="#M09-L02" data-material="M09-L02"><span class="nav-marker">L02</span><span>Контекст и история</span></a></li><li data-key="M09-L03"><a href="#M09-L03" data-material="M09-L03"><span class="nav-marker">L03</span><span>Генерация и ограничения</span></a></li><li data-key="M09-L04"><a href="#M09-L04" data-material="M09-L04"><span class="nav-marker">L04</span><span>Локальный инференс и память</span></a></li><li data-key="M09-L05"><a href="#M09-L05" data-material="M09-L05"><span class="nav-marker">L05</span><span>Контракт ответа</span></a></li><li data-key="M09-L06"><a href="#M09-L06" data-material="M09-L06"><span class="nav-marker">L06</span><span>Выбрать локальную конфигурацию по измерениям</span></a></li><li data-key="M09-L07X"><a href="#M09-L07X" data-material="M09-L07X"><span class="nav-marker">L07X</span><span>Локальный serving: llama.cpp и Ollama</span></a></li><li data-key="M09-L08X"><a href="#M09-L08X" data-material="M09-L08X"><span class="nav-marker">L08X</span><span>Структурированный ответ: JSON Schema и грамматики</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M10 RAG и поиск</summary><ul><li data-key="M10"><a href="#M10" data-material="M10"><span class="nav-marker">M10</span><span>RAG и поиск</span></a></li><li data-key="M10-L01"><a href="#M10-L01" data-material="M10-L01"><span class="nav-marker">L01</span><span>Документ и фрагмент</span></a></li><li data-key="M10-L02"><a href="#M10-L02" data-material="M10-L02"><span class="nav-marker">L02</span><span>Лексический и векторный поиск</span></a></li><li data-key="M10-L03"><a href="#M10-L03" data-material="M10-L03"><span class="nav-marker">L03</span><span>Гибридный поиск и reranking</span></a></li><li data-key="M10-L04"><a href="#M10-L04" data-material="M10-L04"><span class="nav-marker">L04</span><span>Контекст и подтверждение ответа</span></a></li><li data-key="M10-L05"><a href="#M10-L05" data-material="M10-L05"><span class="nav-marker">L05</span><span>Диагностика и обновления</span></a></li><li data-key="M10-L06"><a href="#M10-L06" data-material="M10-L06"><span class="nav-marker">L06</span><span>Диагностировать русский RAG по трассе ошибки</span></a></li><li data-key="M10-L07X"><a href="#M10-L07X" data-material="M10-L07X"><span class="nav-marker">L07X</span><span>Эмбеддеры для русского языка</span></a></li><li data-key="M10-L08X"><a href="#M10-L08X" data-material="M10-L08X"><span class="nav-marker">L08X</span><span>Векторное хранилище</span></a></li><li data-key="M10-L09X"><a href="#M10-L09X" data-material="M10-L09X"><span class="nav-marker">L09X</span><span>Кросс-энкодер для reranking</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M11 Оценивание LLM-систем</summary><ul><li data-key="M11"><a href="#M11" data-material="M11"><span class="nav-marker">M11</span><span>Оценивание LLM-систем</span></a></li><li data-key="M11-L01"><a href="#M11-L01" data-material="M11-L01"><span class="nav-marker">L01</span><span>Что именно оцениваем</span></a></li><li data-key="M11-L02"><a href="#M11-L02" data-material="M11-L02"><span class="nav-marker">L02</span><span>Набор примеров и разметка</span></a></li><li data-key="M11-L03"><a href="#M11-L03" data-material="M11-L03"><span class="nav-marker">L03</span><span>HR и технические рубрики</span></a></li><li data-key="M11-L04"><a href="#M11-L04" data-material="M11-L04"><span class="nav-marker">L04</span><span>Модель как оценщик</span></a></li><li data-key="M11-L05"><a href="#M11-L05" data-material="M11-L05"><span class="nav-marker">L05</span><span>Регрессии и отчёт</span></a></li><li data-key="M11-L06"><a href="#M11-L06" data-material="M11-L06"><span class="nav-marker">L06</span><span>От реальных ответов к парному сравнению систем</span></a></li><li data-key="M11-L07X"><a href="#M11-L07X" data-material="M11-L07X"><span class="nav-marker">L07X</span><span>Error analysis как процесс</span></a></li></ul></details></section>
-<section class="nav-group"><details class="nav-module"><summary>M12 Обучение и адаптация моделей</summary><ul><li data-key="M12"><a href="#M12" data-material="M12"><span class="nav-marker">M12</span><span>Обучение и адаптация моделей</span></a></li><li data-key="M12-L01"><a href="#M12-L01" data-material="M12-L01"><span class="nav-marker">L01</span><span>Выбор вмешательства</span></a></li><li data-key="M12-L02"><a href="#M12-L02" data-material="M12-L02"><span class="nav-marker">L02</span><span>Данные для адаптации</span></a></li><li data-key="M12-L03"><a href="#M12-L03" data-material="M12-L03"><span class="nav-marker">L03</span><span>Малое обучение с нуля</span></a></li><li data-key="M12-L04"><a href="#M12-L04" data-material="M12-L04"><span class="nav-marker">L04</span><span>Дообучение и адаптеры</span></a></li><li data-key="M12-L05"><a href="#M12-L05" data-material="M12-L05"><span class="nav-marker">L05</span><span>Сравнение до и после</span></a></li><li data-key="M12-L06"><a href="#M12-L06" data-material="M12-L06"><span class="nav-marker">L06</span><span>Из диалога в обучающий пример: токены и маска потерь</span></a></li><li data-key="M12-L07"><a href="#M12-L07" data-material="M12-L07"><span class="nav-marker">L07</span><span>Настоящий малый SFT: адаптер, checkpoint и регрессии</span></a></li></ul></details></section>
+<section class="nav-group"><details class="nav-module"><summary>M12 Обучение и адаптация моделей</summary><ul><li data-key="M12"><a href="#M12" data-material="M12"><span class="nav-marker">M12</span><span>Обучение и адаптация моделей</span></a></li><li data-key="M12-L01"><a href="#M12-L01" data-material="M12-L01"><span class="nav-marker">L01</span><span>Выбор вмешательства</span></a></li><li data-key="M12-L02"><a href="#M12-L02" data-material="M12-L02"><span class="nav-marker">L02</span><span>Данные для адаптации</span></a></li><li data-key="M12-L03"><a href="#M12-L03" data-material="M12-L03"><span class="nav-marker">L03</span><span>Малое обучение с нуля</span></a></li><li data-key="M12-L04"><a href="#M12-L04" data-material="M12-L04"><span class="nav-marker">L04</span><span>Дообучение и адаптеры</span></a></li><li data-key="M12-L05"><a href="#M12-L05" data-material="M12-L05"><span class="nav-marker">L05</span><span>Сравнение до и после</span></a></li><li data-key="M12-L06"><a href="#M12-L06" data-material="M12-L06"><span class="nav-marker">L06</span><span>Из диалога в обучающий пример: токены и маска потерь</span></a></li><li data-key="M12-L07"><a href="#M12-L07" data-material="M12-L07"><span class="nav-marker">L07</span><span>Настоящий малый SFT: адаптер, checkpoint и регрессии</span></a></li><li data-key="M12-L08X"><a href="#M12-L08X" data-material="M12-L08X"><span class="nav-marker">L08X</span><span>LoRA через PEFT</span></a></li><li data-key="M12-L09X"><a href="#M12-L09X" data-material="M12-L09X"><span class="nav-marker">L09X</span><span>DPO через TRL: предпочтения вместо целевого ответа</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M13 MLOps и LLMOps</summary><ul><li data-key="M13"><a href="#M13" data-material="M13"><span class="nav-marker">M13</span><span>MLOps и LLMOps</span></a></li><li data-key="M13-L01"><a href="#M13-L01" data-material="M13-L01"><span class="nav-marker">L01</span><span>Версия эксперимента и релиза</span></a></li><li data-key="M13-L02"><a href="#M13-L02" data-material="M13-L02"><span class="nav-marker">L02</span><span>Упаковка и контракт</span></a></li><li data-key="M13-L03"><a href="#M13-L03" data-material="M13-L03"><span class="nav-marker">L03</span><span>Регрессионные проверки</span></a></li><li data-key="M13-L04"><a href="#M13-L04" data-material="M13-L04"><span class="nav-marker">L04</span><span>Наблюдаемость и нагрузка</span></a></li><li data-key="M13-L05"><a href="#M13-L05" data-material="M13-L05"><span class="nav-marker">L05</span><span>Неудачный релиз и восстановление</span></a></li><li data-key="M13-L06"><a href="#M13-L06" data-material="M13-L06"><span class="nav-marker">L06</span><span>Очередь, дедлайн и восстановление HTTP-сервиса</span></a></li><li data-key="M13-L07X"><a href="#M13-L07X" data-material="M13-L07X"><span class="nav-marker">L07X</span><span>Трассировка LLM-конвейера</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M14 Агенты и инструменты</summary><ul><li data-key="M14"><a href="#M14" data-material="M14"><span class="nav-marker">M14</span><span>Агенты и инструменты</span></a></li><li data-key="M14-L01"><a href="#M14-L01" data-material="M14-L01"><span class="nav-marker">L01</span><span>Сценарий и агентный цикл</span></a></li><li data-key="M14-L02"><a href="#M14-L02" data-material="M14-L02"><span class="nav-marker">L02</span><span>Контракт инструмента</span></a></li><li data-key="M14-L03"><a href="#M14-L03" data-material="M14-L03"><span class="nav-marker">L03</span><span>Состояние и границы доступа</span></a></li><li data-key="M14-L04"><a href="#M14-L04" data-material="M14-L04"><span class="nav-marker">L04</span><span>Ошибки и остановка</span></a></li><li data-key="M14-L05"><a href="#M14-L05" data-material="M14-L05"><span class="nav-marker">L05</span><span>Проверка агента</span></a></li><li data-key="M14-L06"><a href="#M14-L06" data-material="M14-L06"><span class="nav-marker">L06</span><span>Модель предлагает инструмент, исполнитель проверяет</span></a></li><li data-key="M14-L08X"><a href="#M14-L08X" data-material="M14-L08X"><span class="nav-marker">L08X</span><span>Безопасность LLM-приложений</span></a></li><li data-key="M14-L09X"><a href="#M14-L09X" data-material="M14-L09X"><span class="nav-marker">L09X</span><span>MCP: свой сервер инструментов</span></a></li><li data-key="M14-L10X"><a href="#M14-L10X" data-material="M14-L10X"><span class="nav-marker">L10X</span><span>Паттерны агентов: workflow или агент</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M15 Речь и голосовой диалог</summary><ul><li data-key="M15"><a href="#M15" data-material="M15"><span class="nav-marker">M15</span><span>Речь и голосовой диалог</span></a></li><li data-key="M15-L01"><a href="#M15-L01" data-material="M15-L01"><span class="nav-marker">L01</span><span>Аудио и речь</span></a></li><li data-key="M15-L02"><a href="#M15-L02" data-material="M15-L02"><span class="nav-marker">L02</span><span>Распознавание и сегменты</span></a></li><li data-key="M15-L03"><a href="#M15-L03" data-material="M15-L03"><span class="nav-marker">L03</span><span>Синтез и доставка</span></a></li><li data-key="M15-L04"><a href="#M15-L04" data-material="M15-L04"><span class="nav-marker">L04</span><span>Поток и перебивание</span></a></li><li data-key="M15-L05"><a href="#M15-L05" data-material="M15-L05"><span class="nav-marker">L05</span><span>Речевое оценивание</span></a></li><li data-key="M15-L06"><a href="#M15-L06" data-material="M15-L06"><span class="nav-marker">L06</span><span>От WAV к частичным гипотезам и отменяемым фрагментам</span></a></li></ul></details></section>
@@ -13849,6 +13849,11 @@ print(round(43 / 66, 3), 'доля трасс без ответа')
 <li><a href="#M12-L06">M12-L06. Из диалога в обучающий пример: токены и маска потерь</a></li>
 <li><a href="#M12-L07">M12-L07. Настоящий малый SFT: адаптер, checkpoint и регрессии</a></li>
 </ol>
+<p>Расширение 1.2.0, не входит в обязательный минимум; нужны необязательные пакеты peft и trl, замороженные результаты работают без них:</p>
+<ol start="8">
+<li><a href="#M12-L08X">M12-L08X. LoRA через PEFT</a> — расширение 1.2.0</li>
+<li><a href="#M12-L09X">M12-L09X. DPO через TRL: предпочтения вместо целевого ответа</a> — расширение 1.2.0</li>
+</ol>
 <p>Проходи уроки по порядку. На каждый выделяй сначала чтение и восстановление схемы, затем пример и самостоятельную попытку. Начальный ориентир: уроки около 19.5 ч, домашняя работа 4–8 ч. Установка и повторение учитываются отдельно. Это плановая гипотеза, а не измеренное время ученика. При математическом или техническом пробеле добавь повторение и сохрани фактическое время отдельно.</p>
 <h2 id="M12--практический-маршрут">Практический маршрут</h2>
 <ol>
@@ -14985,7 +14990,428 @@ assert supervised_pairs == [(13,21),(21,22),(22,2)]
 <h2 id="M12-L07--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://arxiv.org/abs/2106.09685" target="_blank" rel="noopener noreferrer" class="external-link">LoRA: исходная статья</a>, <a href="https://huggingface.co/docs/peft/main/conceptual_guides/lora" target="_blank" rel="noopener noreferrer" class="external-link">Hugging Face: устройство LoRA</a>. Реализация курса намеренно ограничена одной проверенной архитектурой; это не универсальный заменитель PEFT.</p>
 <p>Для углубления: <a href="https://huggingface.co/docs/peft/main/en/developer_guides/checkpoint" target="_blank" rel="noopener noreferrer" class="external-link">PEFT checkpoint format</a> — что сохраняет адаптер: веса и adapter_config.json с базовой моделью, target modules и rank (на английском).</p>
-<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l07-полный-pretrained-sft">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L07.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L06"><small>Предыдущий раздел</small>← M12-L06. Из диалога в обучающий пример: токены и маска потерь</a><a href="#M13"><small>Следующий раздел</small>M13 MLOps и LLMOps →</a></nav></article><article class="material" id="M13" data-title="M13 MLOps и LLMOps" data-short-title="MLOps и LLMOps" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>MLOps и LLMOps</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: M06, M09 и M11: сервис, версии моделей и проверка качества.</p>
+<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l07-полный-pretrained-sft">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L07.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L06"><small>Предыдущий раздел</small>← M12-L06. Из диалога в обучающий пример: токены и маска потерь</a><a href="#M12-L08X"><small>Следующий раздел</small>M12-L08X. LoRA через PEFT →</a></nav></article><article class="material" id="M12-L08X" data-title="M12-L08X. LoRA через PEFT" data-short-title="LoRA через PEFT" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L08X</span><span class="badge ready">Урок · Теория и практика</span></div><h1>LoRA через PEFT</h1><p class="outcome"><strong>После урока:</strong> перенести ручной адаптер M12-L07 на библиотеку PEFT и доказать по логитам, что это та же арифметика. Затем воспроизвести сохранённый прогон SFT, проверить одну заранее записанную гипотезу и сохранить адаптер в формате, который понимают другие инструменты.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M12-L04, M12-L07. Тесты и отчёт работают без модели и без PEFT. Прогон требует пакет <code>peft</code> (<code>requirements-optional.in</code>) и локальную SmolLM2-135M-Instruct из M09; на CPU он занимает около минуты. Ориентир — 150 минут чтения, прогона и задачи; это плановая гипотеза, а не измеренное время.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L08X--объяснение">Объяснение</a></li><li><a href="#M12-L08X--аналогия-официальный-sdk-вместо-самописного-клиента">Аналогия: официальный SDK вместо самописного клиента</a></li><li><a href="#M12-L08X--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L08X--схема">Схема</a></li><li><a href="#M12-L08X--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L08X--самостоятельная-задача-a-m12-l08x-a">Самостоятельная задача A — M12-L08X-A</a></li><li><a href="#M12-L08X--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L08X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L08X--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L08X--карточка-урока">Карточка урока</a></li><li><a href="#M12-L08X--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Урок дополняет модуль, не входит в обязательный минимум 1.1.0.</p>
+
+
+<blockquote>
+<p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu, transformers 4.57.6, PEFT 0.21.2; SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 07.11.2026 · источник: <a href="https://huggingface.co/docs/peft/package_reference/lora" target="_blank" rel="noopener noreferrer" class="external-link">PEFT: LoRA</a></p>
+</blockquote>
+<h2 id="M12-L08X--объяснение">Объяснение</h2>
+<h3 id="M12-L08X--ручной-адаптер-и-его-запись-в-peft">Ручной адаптер и его запись в PEFT</h3>
+<p>В M12-L07 адаптер написан вручную: к замороженному Linear добавлена ветка <code>x·Aᵀ·Bᵀ·α/r</code>. Ранг r = 4, α = 8, поэтому множитель α/r = 2. Ветка стоит в проекциях Q и V четырёх последних блоков SmolLM2. PEFT задаёт то же самое конфигурацией <code>LoraConfig</code>:</p>
+<ul>
+<li><code>r=4</code> и <code>lora_alpha=8</code> — ранг и множитель;</li>
+<li><code>target_modules=[&quot;q_proj&quot;, &quot;v_proj&quot;]</code> — какие Linear обернуть;</li>
+<li><code>layers_to_transform=[26, 27, 28, 29]</code> — в каких блоках, всего их у SmolLM2 30;</li>
+<li><code>lora_dropout=0</code> — без случайного выключения входов при обучении, как в M12-L07.</li>
+</ul>
+<p>Число обучаемых параметров считается по формам матриц. A имеет форму [r, in], B — [out, r], поэтому на один Linear приходится r·(in + out) чисел. У q_proj вход и выход по 576: 4·(576 + 576) = 4608 чисел. У v_proj выход 192: 4·(576 + 192) = 3072. Четыре блока по два модуля дают 4·(4608 + 3072) = 30 720, то же число, что в отчёте M12-L07. Полная матрица q_proj — это 576·576 = 331 776 чисел.</p>
+<p>Есть одно отличие по умолчанию. PEFT заполняет A равномерным распределением Kaiming, а M12-L07 — нормальным N(0; 0.02). B в обоих случаях нулевая, поэтому в начале адаптер ничего не добавляет. В лабораторной A заполняют так же, как в M12-L07: сравнивать прогоны можно только с одного старта.</p>
+<h3 id="M12-L08X--паритет-та-же-арифметика">Паритет: та же арифметика</h3>
+<p>Прежде чем доверять библиотеке, проверь её на известном ответе. Лабораторная кладёт одинаковые A и одинаковую ненулевую B в ручной адаптер и в PEFT и сравнивает логиты на одном примере. Затем она обучает PEFT-адаптер на тех же данных, в том же порядке, с тем же seed, числом шагов и learning rate. Если библиотека считает то же самое, совпадут и потери, и генерации сохранённого прогона M12-L07, включая его отрицательный результат.</p>
+<h3 id="M12-L08X--что-даёт-библиотека">Что даёт библиотека</h3>
+<ul>
+<li><strong><code>save_pretrained</code></strong> пишет два файла: <code>adapter_config.json</code> и <code>adapter_model.safetensors</code>. Веса адаптера занимают около 125 КБ, а база — около 540 МБ (135 млн чисел по 4 байта). По умолчанию в конфиг попадает локальный путь к базе. Лабораторная записывает вместо него id модели на Hugging Face и ревизию, иначе через полгода не понять, к какой базе адаптер подходит.</li>
+<li><strong><code>PeftModel.from_pretrained(base, path)</code></strong> загружает адаптер в свежую базу.</li>
+<li><strong><code>disable_adapter()</code></strong> временно выключает адаптер, и модель ведёт себя как база без перезагрузки. Так удобно сравнивать старые случаи, и так же TRL получает опорную модель в M12-L09X.</li>
+<li><strong><code>merge_and_unload()</code></strong> прибавляет B·A·α/r к весу W и возвращает обычную модель без отдельной ветки. Задержка на генерацию не растёт, но выключить адаптер уже нельзя, поэтому отдельный артефакт адаптера храни всегда.</li>
+<li><strong>QLoRA</strong> держит базу в 4 битах (bitsandbytes), а LoRA обучает поверх неё. Так модель на 7 млрд параметров дообучают на одной видеокарте. Обычный путь для QLoRA — видеокарта с CUDA, поэтому в курсе она не запускалась и не проверялась.</li>
+</ul>
+<h3 id="M12-L08X--гипотеза-записанная-до-прогона">Гипотеза, записанная до прогона</h3>
+<p>Провал M12-L07: на расплывчатые ответы модель пишет NEXT вместо CLARIFY. До запуска в коде записана одна гипотеза: адаптеру не хватает ёмкости. Вариант <code>wide</code> ставит LoRA ранга 4 на все Linear всех 30 блоков: 1 221 120 обучаемых чисел в 210 модулях, в 40 раз больше. Остальное не меняется: данные, порядок, шаги, learning rate, инициализация.</p>
+<p><a class="figure-expand" href="course/assets/M12-L08X.svg" target="_blank" data-figure="course/assets/M12-L08X.svg" aria-label="Увеличить рисунок: Ручной адаптер и PEFT дают одинаковые логиты; результаты трёх вариантов"><picture><img src="course/assets/M12-L08X.svg" alt="Ручной адаптер и PEFT дают одинаковые логиты; результаты трёх вариантов" loading="lazy"></picture></a><span class="figure-hint">Ручной адаптер и PEFT дают одинаковые логиты; результаты трёх вариантов · Открыть крупнее ↗</span></p>
+<p>Сопоставь рисунок с таблицей авторского прогона: какой вариант сильнее всего испортил старые вопросы и что про причину говорит история потерь.</p>
+<h2 id="M12-L08X--аналогия-официальный-sdk-вместо-самописного-клиента">Аналогия: официальный SDK вместо самописного клиента</h2>
+<p>Backend-разработчик заменял самописный HTTP-клиент чужого API на официальный SDK. Сначала контрактный тест проверяет, что SDK отправляет те же запросы, а потом в дело идут его удобства: сериализация, версии, флаги.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Ручной адаптер M12-L07</td>
+  <td>Самописный клиент API</td>
+</tr>
+<tr>
+  <td><code>LoraConfig</code> в PEFT</td>
+  <td>Официальный SDK с конфигурацией</td>
+</tr>
+<tr>
+  <td>Паритет логитов 0.0</td>
+  <td>Контрактный тест: SDK шлёт те же байты</td>
+</tr>
+<tr>
+  <td>Повтор прогона M12-L07</td>
+  <td>Регрессионный прогон на записанных запросах</td>
+</tr>
+<tr>
+  <td>Ревизия базы в <code>adapter_config.json</code></td>
+  <td>Точная версия зависимости в lock-файле</td>
+</tr>
+<tr>
+  <td><code>disable_adapter()</code></td>
+  <td>Выключенный feature flag: старое поведение без передеплоя</td>
+</tr>
+<tr>
+  <td><code>merge_and_unload()</code></td>
+  <td>Сборка в один бинарник: быстрее, но флаг уже не выключить</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> контрактный тест SDK проходит раз и навсегда, а паритет обучения держится только при тех же условиях. С <code>lora_dropout</code> больше нуля или с перемешиванием примеров та же конфигурация даст другой адаптер. И если поднять SDK-клиенту размер пула соединений, ничего не сломается, а у LoRA больше адаптированных весов при том же learning rate сломали старые ответы.</p>
+<section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M12-L08X--разобранный-пример">Разобранный пример</h2>
+<p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса. Ни модель, ни PEFT для него не нужны. Пример пересчитывает число параметров по формам матриц SmolLM2, сверяет размер файла адаптера и проверяет, что PEFT повторил сохранённый прогон M12-L07.</p>
+<pre><code class="language-python">import json
+from pathlib import Path
+
+hidden, kv, inner, blocks, rank = 576, 192, 1536, 30, 4
+
+
+def lora(n_in, n_out):
+    return rank * (n_in + n_out)  # A: rank x in, B: out x rank
+
+
+same = 4 * (lora(hidden, hidden) + lora(hidden, kv))  # q_proj and v_proj in the last four blocks
+block = 2 * lora(hidden, hidden) + 2 * lora(hidden, kv) + 2 * lora(hidden, inner) + lora(inner, hidden)  # q o k v gate up down
+assert same == 30_720 and blocks * block == 1_221_120
+
+report = json.loads(Path(&quot;quality/lora/report.json&quot;).read_text(encoding=&quot;utf-8&quot;))
+artifact = report[&quot;runs&quot;][&quot;same&quot;][&quot;artifact&quot;]
+size = artifact[&quot;files&quot;][&quot;adapter_model.safetensors&quot;]
+assert same * 4 &lt;= size &lt; same * 4 + 4096  # float32 weights plus a small header
+assert artifact[&quot;config&quot;][&quot;revision&quot;] == report[&quot;revision&quot;]
+
+saved = json.loads(Path(&quot;quality/measurements-1.1.0/M12-sft-report.json&quot;).read_text(encoding=&quot;utf-8&quot;))
+after = report[&quot;runs&quot;][&quot;same&quot;][&quot;after&quot;]
+assert abs(after[&quot;check_nll&quot;] - saved[&quot;after&quot;][&quot;check_nll&quot;]) &lt; 1e-3
+assert [g[&quot;actual&quot;] for g in after[&quot;check_generations&quot;]] == [g[&quot;actual&quot;] for g in saved[&quot;after&quot;][&quot;check_generations&quot;]]
+print(size, report[&quot;parity_max_abs_error&quot;], artifact[&quot;merge_max_abs_error&quot;])
+</code></pre>
+<p>Формула числа параметров совпала с отчётом, а файл весит ровно столько, сколько 30 720 чисел float32 плюс заголовок. PEFT повторил и цифры, и генерации M12-L07. Значит, отрицательный результат того урока не связан с ручной реализацией адаптера.</p>
+<h3 id="M12-L08X--авторский-прогон-07-11-2026">Авторский прогон 07.11.2026</h3>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m pip install -r requirements-optional.in
+.\.venv\Scripts\python.exe labs\M12\lora_peft.py run
+.\.venv\Scripts\python.exe labs\M12\lora_peft.py report
+</code></pre>
+<p>Те же 12 train, 4 check и 2 old примера, что в M12-L07. Неверная команда — CLARIFY вместо NEXT или наоборот, а также ответ без команды.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Вариант</th>
+  <th>Check NLL</th>
+  <th>Old NLL</th>
+  <th>Неверных команд</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>M12-L07 вручную, 30 720 чисел, сохранён</td>
+  <td>3.533 → 0.332</td>
+  <td>2.351 → 2.324</td>
+  <td>2 из 4</td>
+</tr>
+<tr>
+  <td>PEFT, та же конфигурация, 30 720 чисел</td>
+  <td>3.533 → 0.332</td>
+  <td>2.351 → 2.324</td>
+  <td>2 из 4</td>
+</tr>
+<tr>
+  <td>PEFT, все Linear, 1 221 120 чисел</td>
+  <td>3.533 → 1.593</td>
+  <td>2.351 → 10.734</td>
+  <td>2 из 4</td>
+</tr>
+</tbody>
+</table></div>
+<p>Что показал прогон:</p>
+<ul>
+<li><strong>PEFT повторил ручной адаптер точно.</strong> На паритете логиты совпали до последнего бита: наибольшая разница 0.0. После 24 шагов совпали потери до третьего знака и все генерации, включая «NEXT: Explain your name and your name.» на расплывчатый ответ. Обучение заняло 4.8 секунды.</li>
+<li><strong>Артефакт проходит все проверки.</strong> Файл весов — 124 960 байт. Загрузка в свежую базу дала разницу логитов 0.0. С выключенным адаптером модель совпала с базой тоже до 0.0, а с включённым отличалась от неё на 17.7: адаптер действительно меняет выход. После слияния разница 3·10⁻⁵ — это округление float32.</li>
+<li><strong>Гипотеза о ёмкости не подтвердилась.</strong> Вариант <code>wide</code> снизил check NLL только до 1.593 и не исправил ни одной команды: все четыре ответа check — NEXT. Старые вопросы сломались: old NLL вырос в 4.6 раза, на «What is 2 plus 2?» модель ответила «NEXT: Explain one trade:».</li>
+<li><strong>История потерь указывает на другую причину.</strong> В train шесть примеров CLARIFY идут подряд, затем шесть NEXT, и так дважды. Внутри блока потеря <code>wide</code> падала почти до нуля (0.001), а на смене класса подскакивала до 8.5. Адаптер запоминал последний блок, а последние шесть шагов — NEXT. Эту гипотезу о порядке примеров проверяет задача A.</li>
+</ul>
+<p>У автора весь прогон занял около минуты.</p>
+</section><h2 id="M12-L08X--схема">Схема</h2>
+<figure class="diagram"><pre class="mermaid">flowchart TD
+    M[&quot;Ручной адаптер M12-L07&quot;] --&gt; C[&quot;LoraConfig: r, alpha, модули, блоки&quot;]
+    C --&gt; P[&quot;Паритет: логиты совпали&quot;]
+    P --&gt; R[&quot;Повтор прогона M12-L07&quot;]
+    R --&gt; S[&quot;save_pretrained с ревизией базы&quot;]
+    S --&gt; L[&quot;Загрузка в свежую базу&quot;]
+    L --&gt; D[&quot;disable_adapter: как база&quot;]
+    L --&gt; G[&quot;merge_and_unload: одна модель&quot;]
+    R --&gt; H[&quot;Гипотеза: все Linear&quot;]
+    classDef main fill:#e8f0fe,stroke:#245bba,stroke-width:2px,color:#182b3a
+    class P,R,S main
+</pre></figure>
+<p>Переход с ручного адаптера на PEFT. Конфигурация переводит ранг, множитель, модули и блоки в параметры библиотеки. Паритет и повтор прогона доказывают, что считается то же самое. Только после этого используются удобства библиотеки: сохранение с ревизией базы, загрузка в свежую модель, выключение адаптера и слияние. Гипотеза об улучшении проверяется отдельным вариантом, записанным до прогона. Выделены шаги, без которых результату библиотеки нельзя доверять.</p>
+<section class="lesson-stage" data-stage="practice"><span class="stage-label">Пробуем с поддержкой</span><h2 id="M12-L08X--практика-с-поддержкой">Практика с поддержкой</h2>
+<p><strong>Предскажи до запуска.</strong> Запиши ожидаемый вывод до запуска кода. Совпадут ли логиты ручного адаптера и PEFT до последнего знака или только приблизительно? Сколько байт займёт файл адаптера? Что станет со старыми вопросами, если адаптировать все Linear? После запуска сравни с фактическим и объясни каждое расхождение.</p>
+<ol>
+<li>Выполни <code>.\.venv\Scripts\python.exe labs\M12\lora_peft.py report</code> и сверь таблицу с авторским прогоном.</li>
+<li>Если PEFT установлен, выполни <code>run</code>. Открой <code>artifacts/M12/lora/same/adapter_config.json</code>: найди ревизию базы, ранг, модули и блоки.</li>
+<li>В <code>quality/lora/report.json</code> выпиши историю потерь <code>wide</code> по шагам 1–12 и отметь, где меняется класс примеров.</li>
+<li>Объясни по коду лабораторной, почему разница после <code>merge_and_unload</code> не нулевая, а после повторной загрузки — нулевая.</li>
+</ol>
+</section><section class="lesson-stage" data-stage="task"><span class="stage-label">Твоя попытка</span><h2 id="M12-L08X--самостоятельная-задача-a-m12-l08x-a">Самостоятельная задача A — M12-L08X-A</h2>
+<p>Проверь гипотезу о порядке примеров. Возьми конфигурацию <code>same</code>: Q и V четырёх последних блоков, 24 шага, тот же seed и learning rate. Измени только порядок train: CLARIFY и NEXT должны чередоваться, а не идти блоками по шесть. Запиши предсказание до запуска. Затем сравни с <code>same</code>: check NLL, тип команды на check, old NLL и ответы на старые вопросы. Реши, пропускает ли такой адаптер правило выпуска M12-L07, и объясни, почему четыре примера check не доказывают гипотезу.</p>
+</section><details class="hints" id="M12-L08X--подсказки-по-очереди"><summary>Подсказки по очереди</summary><div>
+<ol>
+<li>Модель с адаптером собирается вызовами <code>get_peft_model(base, lab.lora_config(&quot;same&quot;, 30))</code> и <code>lab.init_like_m12(model, lab.SEED)</code>.</li>
+<li>Чередующийся порядок индексов: <code>[i for pair in zip(range(6), range(6, 12)) for i in pair]</code>.</li>
+<li>Цикл обучения и замеры уже есть: <code>lab.train(model, rows)</code> и <code>lab.stage(sft, tokenizer, model, data)</code>.</li>
+<li>Правило выпуска M12-L07 состоит из двух частей: check NLL снизился, old NLL вырос не больше чем на 20%, и на check нет неверной команды. Прочитай и ответы на старые вопросы.</li>
+</ol>
+</div></details>
+<h2 id="M12-L08X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</h2>
+<p><strong>Критерии до попытки:</strong> перед заменой реализации есть паритет на известных весах. Сравнение с прежним результатом идёт с одного старта и на тех же данных. Артефакт адаптера записывает ревизию базы и проверяется загрузкой в свежую модель. Гипотеза записана до прогона, и меняется в ней одно условие. Отрицательный результат сохранён. Для самостоятельного зачёта объясни без открытого кода, что означают <code>r</code>, <code>lora_alpha</code>, <code>target_modules</code> и <code>layers_to_transform</code>, и посчитай число обучаемых параметров для своей конфигурации.</p>
+<p><strong>Типичные ошибки:</strong> сравнивать PEFT с ручным адаптером при разной инициализации и считать разницу заслугой библиотеки; хранить в <code>adapter_config.json</code> локальный путь вместо id и ревизии базы; сливать адаптер и выбрасывать отдельный артефакт; добавлять ёмкость, не посмотрев на историю потерь; менять сразу несколько условий и называть результат проверкой одной гипотезы; считать выпуск разрешённым, не прочитав ответы на старые вопросы.</p>
+<section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M12-L08X--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
+<p><strong>Повтор B:</strong> посчитай число обучаемых параметров LoRA ранга 8 на q_proj, k_proj, v_proj и o_proj всех 30 блоков SmolLM2. Сколько займёт файл весов в float32 и какая это доля от 134.5 млн параметров базы? <strong>Отложенная C:</strong> ты дообучаешь адаптер для русского тренажёра на модели побольше. Перечисли, что записать вместе с адаптером, чтобы через полгода его можно было загрузить и проверить. Реши, когда сливать адаптер с базой, а когда держать несколько адаптеров на одной базе и переключать их. <a href="#M12-SOLUTIONS--m12-l08x-a">Ключи</a> открывай после сохранения попытки.</p>
+</section><h2 id="M12-L08X--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Перед заменой ручной реализации библиотекой нужен паритет на известных весах и повтор прежнего прогона. Адаптер хранится с id и ревизией базы и проверяется загрузкой в свежую модель. Гипотеза об улучшении записывается до прогона и меняет одно условие</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>r — ранг, lora_alpha/r — множитель ветки, target_modules и layers_to_transform — где стоит адаптер. Число обучаемых параметров — сумма r·(in + out) по адаптированным Linear</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Когда дообучение нужно повторять, хранить и переключать. Пример: PEFT повторил M12-L07 точно (30 720 параметров, файл 125 КБ, паритет 0.0), а адаптер на всех Linear (1.2 млн параметров) поднял old NLL с 2.35 до 10.73 и не исправил ни одной команды</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Добавлять ёмкость вместо разбора причины и хранить адаптер без ревизии базы</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M12-L08X--источники-и-углубление">Источники и углубление</h2>
+<p>Статья <a href="https://arxiv.org/abs/2106.09685" target="_blank" rel="noopener noreferrer" class="external-link">LoRA: Low-Rank Adaptation of Large Language Models</a> (Hu и др., 2021). Документация <a href="https://huggingface.co/docs/peft/package_reference/lora" target="_blank" rel="noopener noreferrer" class="external-link">PEFT: LoRA</a> — параметры <code>LoraConfig</code>, <code>merge_and_unload</code>, <code>disable_adapter</code>. Статья <a href="https://arxiv.org/abs/2305.14314" target="_blank" rel="noopener noreferrer" class="external-link">QLoRA</a> (Dettmers и др., 2023) — дообучение поверх 4-битной базы, нужна CUDA. В курсе: адаптер вручную и правило выпуска — M12-L07, маска потерь — M12-L06, DPO поверх этого адаптера — M12-L09X.</p>
+<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l08x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L08X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L07"><small>Предыдущий раздел</small>← M12-L07. Настоящий малый SFT: адаптер, checkpoint и регрессии</a><a href="#M12-L09X"><small>Следующий раздел</small>M12-L09X. DPO через TRL: предпочтения вместо целевого ответа →</a></nav></article><article class="material" id="M12-L09X" data-title="M12-L09X. DPO через TRL: предпочтения вместо целевого ответа" data-short-title="DPO через TRL: предпочтения вместо целевого ответа" data-kind="ready" data-module="M12"><header class="material-head"><div class="eyebrow"><span class="material-id">M12-L09X</span><span class="badge ready">Урок · Теория и практика</span></div><h1>DPO через TRL: предпочтения вместо целевого ответа</h1><p class="outcome"><strong>После урока:</strong> собрать пары «выбранный — отвергнутый ответ» и обучить DPO через TRL поверх SFT из M12-L07. Нужно проверить формулу потерь на первом шаге и отличить рост точности на парах от изменения того, что модель генерирует.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M12-L07, M12-L08X. Тесты и отчёт работают без модели и без TRL. Прогон требует пакеты <code>peft</code> и <code>trl</code> (<code>requirements-optional.in</code>) и локальную SmolLM2-135M-Instruct из M09; на CPU он занимает около полутора минут. Ориентир — 150 минут чтения, прогона и задачи; это плановая гипотеза, а не измеренное время.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M12-L09X--объяснение">Объяснение</a></li><li><a href="#M12-L09X--аналогия-попарное-обучение-ранжированию-в-поиске">Аналогия: попарное обучение ранжированию в поиске</a></li><li><a href="#M12-L09X--разобранный-пример">Разобранный пример</a></li><li><a href="#M12-L09X--схема">Схема</a></li><li><a href="#M12-L09X--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M12-L09X--самостоятельная-задача-a-m12-l09x-a">Самостоятельная задача A — M12-L09X-A</a></li><li><a href="#M12-L09X--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M12-L09X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M12-L09X--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M12-L09X--карточка-урока">Карточка урока</a></li><li><a href="#M12-L09X--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Урок дополняет модуль, не входит в обязательный минимум 1.1.0.</p>
+
+
+<blockquote>
+<p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu, transformers 4.57.6, PEFT 0.21.2, TRL 1.17.1, datasets 5.0.1; SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 07.11.2026 · источник: <a href="https://huggingface.co/docs/trl/dpo_trainer" target="_blank" rel="noopener noreferrer" class="external-link">TRL: DPO Trainer</a></p>
+</blockquote>
+<h2 id="M12-L09X--объяснение">Объяснение</h2>
+<h3 id="M12-L09X--чем-dpo-отличается-от-sft">Чем DPO отличается от SFT</h3>
+<p>SFT учит модель повышать вероятность одного целевого ответа. DPO (Direct Preference Optimization, Rafailov и др., 2023) учится на парах: для одного запроса x есть выбранный ответ y_w и отвергнутый y_l. Потеря одной пары:</p>
+<p>L = −log σ(β·[(log π(y_w|x) − log π_ref(y_w|x)) − (log π(y_l|x) − log π_ref(y_l|x))])</p>
+<p>Смысл величин:</p>
+<ul>
+<li><strong>π</strong> — обучаемая модель, <strong>π_ref</strong> — замороженная опорная модель, здесь это SFT из M12-L07;</li>
+<li><strong>log π(y|x)</strong> — сумма log-вероятностей токенов ответа, как в маске потерь M12-L06;</li>
+<li><strong>β</strong> — насколько крепко держаться за опорную модель, в лабораторной β = 0.1;</li>
+<li><strong>неявная награда</strong> r(x, y) = β·(log π(y|x) − log π_ref(y|x)) — на сколько модель подняла ответ относительно опоры. Выражение в скобках умножено на β — это разность наград выбранного и отвергнутого ответов, её называют отрывом (margin).</li>
+</ul>
+<p>Численный пример. В начале обучения π совпадает с π_ref: отрыв равен 0, σ(0) = 0.5, потеря равна ln 2 ≈ 0.693. После обучения в паре «My project went very well.» выбранный ответ поднялся на 0.036, а отвергнутый опустился на 4.517. Отрыв 0.1·(0.036 + 4.517) = 0.455, потеря −log σ(0.455) ≈ 0.49.</p>
+<h3 id="M12-L09X--почему-опорная-модель-это-sft">Почему опорная модель — это SFT</h3>
+<p>Без опоры модели проще всего бесконечно занижать вероятность отвергнутых ответов, и она уходит от осмысленного текста. Опора и β не дают далеко уйти от SFT. В лабораторной SFT-адаптер сливается с базой, а TRL ставит поверх новый LoRA-адаптер. С выключенным адаптером та же модель и есть опора, поэтому вторая копия в памяти не нужна. Прогон это проверяет: log-вероятности с выключенным адаптером совпадают с SFT.</p>
+<h3 id="M12-L09X--данные-пар">Данные пар</h3>
+<p>Двенадцать пар собраны из train M12-L07. Выбранный ответ — ожидаемая команда, отвергнутый — другая команда: на расплывчатый ответ кандидата выбран CLARIFY и отвергнут NEXT, на ответ с измерением — наоборот. Четыре пары из check отложены для проверки. Формат диалоговый: <code>prompt</code> содержит сообщения system и user, <code>chosen</code> и <code>rejected</code> — по одному сообщению assistant. TRL сам применяет chat template, а потери считает только по токенам ответа.</p>
+<h3 id="M12-L09X--что-измерять">Что измерять</h3>
+<ul>
+<li><strong>Точность на парах</strong> — доля отложенных пар, где log π(y_w|x) &gt; log π(y_l|x). Именно это DPO и оптимизирует.</li>
+<li><strong>Отрыв неявных наград</strong> на отложенных парах.</li>
+<li><strong>Свободная генерация</strong> — что увидит пользователь, и прежде всего тип команды.</li>
+<li><strong>Вероятность первого токена</strong> ответа — с чего начнёт жадный декодер.</li>
+<li><strong>Check NLL и old NLL</strong>, как в M12-L07.</li>
+</ul>
+<p><a class="figure-expand" href="course/assets/M12-L09X.svg" target="_blank" data-figure="course/assets/M12-L09X.svg" aria-label="Увеличить рисунок: Сдвиги log-вероятностей выбранного и отвергнутого ответа и вероятность первого токена до и после DPO"><picture><img src="course/assets/M12-L09X.svg" alt="Сдвиги log-вероятностей выбранного и отвергнутого ответа и вероятность первого токена до и после DPO" loading="lazy"></picture></a><span class="figure-hint">Сдвиги log-вероятностей выбранного и отвергнутого ответа и вероятность первого токена до и после DPO · Открыть крупнее ↗</span></p>
+<p>Сопоставь рисунок с таблицей авторского прогона: какой из двух ответов сдвинулся сильнее и почему генерация от этого не изменилась.</p>
+<h2 id="M12-L09X--аналогия-попарное-обучение-ранжированию-в-поиске">Аналогия: попарное обучение ранжированию в поиске</h2>
+<p>Backend-инженер, который делал поиск для RAG, видел обучение ранжированию по кликам. Модель учат, что документ A выше документа B, если пользователь выбрал A.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Пара chosen и rejected</td>
+  <td>Клик: пользователь выбрал документ A, а не B</td>
+</tr>
+<tr>
+  <td>DPO-потеря</td>
+  <td>Попарная потеря learning to rank</td>
+</tr>
+<tr>
+  <td>Опорная модель и β</td>
+  <td>Текущий ранжировщик, от которого новый не должен далеко уходить</td>
+</tr>
+<tr>
+  <td>Точность на парах</td>
+  <td>Доля пар, упорядоченных верно</td>
+</tr>
+<tr>
+  <td>Свободная генерация</td>
+  <td>Выдача, которую видит пользователь</td>
+</tr>
+<tr>
+  <td>Первый токен ответа</td>
+  <td>Первая позиция выдачи</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> ранжировщик в поиске упорядочивает заданный набор документов. Языковая модель генерирует, и набор кандидатов бесконечен. Опустив одну отвергнутую строку, она может выдать соседнюю, которой в парах не было. В авторском прогоне так и случилось.</p>
+<section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M12-L09X--разобранный-пример">Разобранный пример</h2>
+<p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса. Ни модель, ни TRL для него не нужны. Пример по замороженным log-вероятностям пересчитывает потерю и отрыв, проверяет первый шаг и раскладывает изменение каждой отложенной пары на вклад выбранного и отвергнутого ответа.</p>
+<pre><code class="language-python">import json
+import math
+from pathlib import Path
+
+report = json.loads(Path(&quot;quality/dpo/report.json&quot;).read_text(encoding=&quot;utf-8&quot;))
+beta = report[&quot;beta&quot;]
+
+
+def loss(margin):
+    return math.log1p(math.exp(-margin))  # -log sigmoid(margin)
+
+
+assert report[&quot;first_loss&quot;] == round(loss(0.0), 4) == 0.6931  # policy equals reference at step 0
+
+sft, dpo = report[&quot;stages&quot;][&quot;sft&quot;][&quot;check_pairs&quot;], report[&quot;stages&quot;][&quot;dpo&quot;][&quot;check_pairs&quot;]
+for before, after in zip(sft, dpo):
+    up_chosen = after[&quot;logp_chosen&quot;] - before[&quot;logp_chosen&quot;]
+    up_rejected = after[&quot;logp_rejected&quot;] - before[&quot;logp_rejected&quot;]
+    margin = beta * (up_chosen - up_rejected)
+    print(f&quot;{before['prompt'][:28]:28} chosen {up_chosen:+.2f} rejected {up_rejected:+.2f} &quot;
+          f&quot;loss {loss(margin):.3f} first token {after['first_chosen']:.2f} vs {after['first_rejected']:.2f}&quot;)
+assert [round(beta * ((a[&quot;logp_chosen&quot;] - b[&quot;logp_chosen&quot;]) - (a[&quot;logp_rejected&quot;] - b[&quot;logp_rejected&quot;])), 3)
+        for a, b in zip(dpo, sft)] == report[&quot;stages&quot;][&quot;dpo&quot;][&quot;check_reward_margins&quot;]
+</code></pre>
+<p>Первая строка проверяет формулу: при совпадающих моделях потеря равна ln 2, и TRL записал ровно 0.6931. Разложение показывает, как DPO выиграл пары с расплывчатым ответом: выбранный CLARIFY почти не сдвинулся, а отвергнутый NEXT упал на 4.4–4.5. Вероятность того, что ответ начнётся с NEXT, при этом осталась около 0.7 и 0.56.</p>
+<h3 id="M12-L09X--авторский-прогон-07-11-2026">Авторский прогон 07.11.2026</h3>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m pip install -r requirements-optional.in
+.\.venv\Scripts\python.exe labs\M12\dpo_trl.py run
+.\.venv\Scripts\python.exe labs\M12\dpo_trl.py report
+</code></pre>
+<p>DPO: β = 0.1, сигмоидная потеря, 24 шага по 2 пары, постоянный learning rate 0.001, seed 41. Всё это записано в коде до прогона. Обучаемых чисел 30 720 — новый LoRA-адаптер той же формы, что в M12-L07. Неверная команда — CLARIFY вместо NEXT или наоборот, а также ответ без команды.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Стадия</th>
+  <th>Точность на парах</th>
+  <th>Check NLL</th>
+  <th>Old NLL</th>
+  <th>Неверных команд</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>База</td>
+  <td>0.50</td>
+  <td>3.533</td>
+  <td>2.351</td>
+  <td>4 из 4</td>
+</tr>
+<tr>
+  <td>SFT M12-L07 через PEFT</td>
+  <td>0.50</td>
+  <td>0.332</td>
+  <td>2.324</td>
+  <td>2 из 4</td>
+</tr>
+<tr>
+  <td>SFT и DPO</td>
+  <td>1.00</td>
+  <td>0.387</td>
+  <td>2.305</td>
+  <td>2 из 4</td>
+</tr>
+</tbody>
+</table></div>
+<p>Что показал прогон:</p>
+<ul>
+<li><strong>Формула и опора проверены.</strong> Первая записанная потеря — 0.6931, ровно ln 2. Log-вероятности с выключенным адаптером совпали с SFT, значит, опорой действительно была SFT-модель.</li>
+<li><strong>DPO выиграл пары.</strong> К последнему шагу потеря упала до 0.594, а на отложенных парах точность выросла с 0.50 до 1.00.</li>
+<li><strong>Генерация не изменилась по типу.</strong> На расплывчатые ответы модель по-прежнему пишет NEXT, только другими словами: «NEXT: Explain your next question.» и «NEXT: Explain your actions and your own actions.». DPO почти не поднял выбранный CLARIFY (−5.70 → −5.67 и −4.96 → −5.11), зато опустил строку «NEXT: Explain one tradeoff.» (−3.36 → −7.88 и −3.66 → −8.03). Решение принимается на первом токене, а там NEXT остался вероятнее: 0.74 → 0.70 и 0.59 → 0.56 против 0.03–0.07 у CLARIFY. Модель обошла запрет соседней формулировкой, которой не было в парах.</li>
+<li><strong>Check NLL вырос с 0.332 до 0.387.</strong> На парах с измерением DPO опустил и выбранный NEXT: −2.80 → −3.94 и −1.59 → −2.57. Отрыв всё равно положительный, потому что отвергнутый ответ упал ещё сильнее.</li>
+<li><strong>Старые вопросы DPO не починил.</strong> На «What is 2 plus 2?» модель после SFT отвечала «NEXT: Explain:», и после DPO ответ тот же. Пар про старые вопросы не было, поэтому и сигнала исправить их не было.</li>
+</ul>
+<p>Обучение DPO заняло около минуты, весь прогон вместе с SFT — около полутора минут.</p>
+</section><h2 id="M12-L09X--схема">Схема</h2>
+<figure class="diagram"><pre class="mermaid">flowchart TD
+    S[&quot;SFT M12-L07&quot;] --&gt; M[&quot;Слияние с базой&quot;]
+    M --&gt; R[&quot;Опора без адаптера&quot;]
+    P[&quot;Пары предпочтений&quot;] --&gt; T[&quot;DPOTrainer: новый LoRA, B = 0&quot;]
+    M --&gt; T
+    R --&gt; T
+    T --&gt; E[&quot;Отложенные пары&quot;]
+    T --&gt; G[&quot;Генерация, первый токен&quot;]
+    classDef main fill:#e8f0fe,stroke:#245bba,stroke-width:2px,color:#182b3a
+    class T,R,G main
+</pre></figure>
+<p>DPO поверх SFT. SFT-адаптер сливается с базой, и эта модель становится опорной. TRL ставит новый адаптер с нулевой B, поэтому в начале обучаемая модель совпадает с опорой и потеря равна ln 2. Опора — та же слитая модель с выключенным адаптером: на каждом шаге TRL считает log-вероятности выбранного и отвергнутого ответа с адаптером и без него. Оценка идёт двумя путями: по отложенным парам и по свободной генерации. Выделены новый адаптер, опорная модель и генерация: без проверки генерации рост точности на парах легко принять за исправление.</p>
+<section class="lesson-stage" data-stage="practice"><span class="stage-label">Пробуем с поддержкой</span><h2 id="M12-L09X--практика-с-поддержкой">Практика с поддержкой</h2>
+<p><strong>Предскажи до запуска.</strong> Запиши ожидаемый вывод до запуска кода. Какой будет потеря на первом шаге и почему? Вырастет ли точность на отложенных парах? Начнёт ли модель отвечать CLARIFY на расплывчатые ответы? После запуска сравни с фактическим и объясни каждое расхождение.</p>
+<ol>
+<li>Выполни <code>.\.venv\Scripts\python.exe labs\M12\dpo_trl.py report</code> и сверь таблицу с авторским прогоном.</li>
+<li>В <code>quality/dpo/report.json</code> найди журнал <code>log</code>: потерю, <code>rewards/accuracies</code> и <code>rewards/margins</code> по шагам. Найди шаг, где точность на обучающем пакете падала до 0.5.</li>
+<li>Для двух пар с расплывчатым ответом выпиши <code>first_chosen</code> и <code>first_rejected</code> до и после DPO.</li>
+<li>Если TRL установлен, повтори прогон: <code>.\.venv\Scripts\python.exe labs\M12\dpo_trl.py run</code>. Числа должны совпасть: seed, порядок и жадная генерация заданы.</li>
+</ol>
+</section><section class="lesson-stage" data-stage="task"><span class="stage-label">Твоя попытка</span><h2 id="M12-L09X--самостоятельная-задача-a-m12-l09x-a">Самостоятельная задача A — M12-L09X-A</h2>
+<p>DPO опустил отвергнутую строку, но почти не поднял выбранную. Добавь к DPO-потере SFT-слагаемое на выбранном ответе: в TRL это <code>loss_type=[&quot;sigmoid&quot;, &quot;sft&quot;]</code> с равными весами. Остальное не меняй. До запуска запиши предсказание: какой станет потеря на первом шаге, изменится ли тип команды на check и что будет со старыми вопросами. Запусти <code>.\.venv\Scripts\python.exe labs\M12\dpo_trl.py run --loss sigmoid sft --out artifacts\M12\dpo-sft</code> и сравни с основным прогоном. Реши, можно ли выпускать такую модель.</p>
+</section><details class="hints" id="M12-L09X--подсказки-по-очереди"><summary>Подсказки по очереди</summary><div>
+<ol>
+<li>SFT-слагаемое — средняя NLL выбранного ответа. На первом шаге к ln 2 прибавится NLL опорной модели на этом пакете.</li>
+<li>Сравнивай одни и те же величины: точность на парах, check NLL, old NLL, тип команды и вероятность первого токена.</li>
+<li>Старые вопросы не входят в пары. Подумай, откуда у модели возьмётся сигнал их исправить.</li>
+<li>Правило выпуска M12-L07 требует прочитать и ответы на старые вопросы, а не только посчитать old NLL.</li>
+</ol>
+</div></details>
+<h2 id="M12-L09X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</h2>
+<p><strong>Критерии до попытки:</strong> пары отражают одно различие — тип команды. Опорная модель — та, от которой начинается обучение, и это проверено. Первая потеря сверена с ln 2. Настройки DPO записаны до прогона. Точность на парах, свободная генерация и старые вопросы оцениваются отдельно. Отрицательный результат сохранён. Для самостоятельного зачёта объясни без открытого кода смысл β и неявной награды и посчитай потерю пары по двум сдвигам log-вероятностей.</p>
+<p><strong>Типичные ошибки:</strong> считать рост точности на парах исправлением поведения; не проверять, что опора — именно SFT, а не база; давать в отвергнутых ответах одну формулировку и ждать, что модель откажется от всего класса; не читать первый токен и свободную генерацию; забывать, что DPO не чинит то, чего нет в парах, например старые вопросы.</p>
+<section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M12-L09X--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
+<p><strong>Повтор B:</strong> относительно опорной модели log-вероятность выбранного ответа упала на 1.0, а отвергнутого — на 3.0. Посчитай отрыв и потерю пары при β = 0.1 и β = 0.5. Почему при малом β потеря почти не отличается от ln 2, хотя пара уже упорядочена верно? <strong>Отложенная C:</strong> собери план пар предпочтений для русского тренажёра. Откуда взять выбранные и отвергнутые ответы, сколько разных формулировок отвергнутого нужно на один класс, как защитить старое поведение и чем проверить результат, кроме точности на парах. <a href="#M12-SOLUTIONS--m12-l09x-a">Ключи</a> открывай после сохранения попытки.</p>
+</section><h2 id="M12-L09X--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>DPO учится на парах относительно опорной модели. В начале потеря равна ln 2. Точность на парах — только цель оптимизации: поведение проверяют свободной генерацией, первым токеном и старыми вопросами</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>log π(y∣x) — сумма log-вероятностей токенов ответа. Неявная награда — β·(log π − log π_ref). Отрыв — разность наград выбранного и отвергнутого ответа, потеря — −log σ(отрыва)</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Когда есть пары «лучше — хуже» и SFT уже дал формат. Пример: DPO поднял точность на отложенных парах с 0.50 до 1.00, а команды остались неверными в 2 случаях из 4, потому что первый токен NEXT остался вероятнее (0.70 против 0.04)</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Принимать выигранные пары за исправленную генерацию и ждать от DPO исправления того, чего нет в парах</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M12-L09X--источники-и-углубление">Источники и углубление</h2>
+<p>Статья <a href="https://arxiv.org/abs/2305.18290" target="_blank" rel="noopener noreferrer" class="external-link">Direct Preference Optimization: Your Language Model is Secretly a Reward Model</a> (Rafailov и др., 2023). Документация <a href="https://huggingface.co/docs/trl/dpo_trainer" target="_blank" rel="noopener noreferrer" class="external-link">TRL: DPO Trainer</a> — формат пар, метрики <code>rewards/*</code>, типы потерь и их комбинации. В курсе: SFT и правило выпуска — M12-L07, LoRA через PEFT — M12-L08X, маска потерь — M12-L06.</p>
+<div class="practice-note"><a href="#M12">Модуль и домашняя работа</a> · <a href="#M12-SOLUTIONS--m12-l09x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M12-L09X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L08X"><small>Предыдущий раздел</small>← M12-L08X. LoRA через PEFT</a><a href="#M13"><small>Следующий раздел</small>M13 MLOps и LLMOps →</a></nav></article><article class="material" id="M13" data-title="M13 MLOps и LLMOps" data-short-title="MLOps и LLMOps" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>MLOps и LLMOps</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: M06, M09 и M11: сервис, версии моделей и проверка качества.</p>
 <h2 id="M13--уроки-и-практические-ступени">Уроки и практические ступени</h2>
 <ol>
 <li><a href="#M13-L01">M13-L01. Версия эксперимента и релиза</a></li>
@@ -15164,7 +15590,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M13.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M13.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L07"><small>Предыдущий раздел</small>← M12-L07. Настоящий малый SFT: адаптер, checkpoint и регрессии</a><a href="#M13-L01"><small>Следующий раздел</small>M13-L01. Версия эксперимента и релиза →</a></nav></article><article class="material" id="M13-L01" data-title="M13-L01. Версия эксперимента и релиза" data-short-title="Версия эксперимента и релиза" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Версия эксперимента и релиза</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M13-L01--объяснение">Объяснение</a></li><li><a href="#M13-L01--аналогия-package-lock-json-и-digest-образа">Аналогия: package-lock.json и digest образа</a></li><li><a href="#M13-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M13-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L01--карточка-урока">Карточка урока</a></li><li><a href="#M13-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+"></iframe><p><a href="course/visuals/M13.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M13.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M12-L09X"><small>Предыдущий раздел</small>← M12-L09X. DPO через TRL: предпочтения вместо целевого ответа</a><a href="#M13-L01"><small>Следующий раздел</small>M13-L01. Версия эксперимента и релиза →</a></nav></article><article class="material" id="M13-L01" data-title="M13-L01. Версия эксперимента и релиза" data-short-title="Версия эксперимента и релиза" data-kind="ready" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Версия эксперимента и релиза</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M13-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M13-L01--объяснение">Объяснение</a></li><li><a href="#M13-L01--аналогия-package-lock-json-и-digest-образа">Аналогия: package-lock.json и digest образа</a></li><li><a href="#M13-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M13-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M13-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M13-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M13-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M13-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M13-L01--карточка-урока">Карточка урока</a></li><li><a href="#M13-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека · проверено 04.11.2026 · источник: <a href="https://docs.python.org/3.11/library/hashlib.html" target="_blank" rel="noopener noreferrer" class="external-link">Python 3.11: hashlib</a></p>
 </blockquote>
@@ -22604,7 +23030,112 @@ function consistency(output) {
 <nav class="answer-actions" aria-label="После самопроверки"><a href="#M12-L05" data-return-task="M12-L05">← Вернуться к задаче</a><a href="#M12-L05" data-return-retry="M12-L05">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M12-SOLUTIONS--m12-hw01-b-c"><summary>Ответ: M12-HW01-B-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M12" data-return-task="M12">← Вернуться к задаче</a><a href="#M12" data-return-retry="M12">Новый вариант B / C →</a></nav>
 <p>B: обновить версию справочника, его chunks/векторы и активный manifest; включить новую версию в cache key либо инвалидировать старые записи. Вопрос «Каков актуальный предел длины ответа?» при v2 должен получить 2000 с источником limits:v2. Контекст не должен подменяться limits:v1, старый cache hit проверяется отдельно. Обучать веса ради этого меняющегося правила не требуется. Побитово прежние веса/tokenizer подтверждают отсутствие обучения, а неизменные входы грамматического опыта позволяют повторно проверить прежние losses; нельзя объяснять их улучшение одной сменой справочника без измерения.</p>
 <p>C: старая потеря выросла в 2.8/0.4=7 раз (+600%); новая уменьшилась на (3.0−0.6)/3.0=80%. New gate проходит, old gate нарушен: выпуск отклоняется. Следующий опыт — смешанное обучение на старых/новых train-примерах либо явная маршрутизация разных адаптеров с проверкой на обеих заранее отделённых группах. Зафиксировать пороги до нового прогона и сохранить базу, исходный и новый адаптер, их logits/генерации и восстановление из checkpoint. Hash W не фиксирует функцию W+ΔW, маску, prompt и retrieval; неизменная база не гарантирует прежних ответов.</p>
-<nav class="answer-actions" aria-label="После самопроверки"><a href="#M12" data-return-task="M12">← Вернуться к задаче</a><a href="#M12" data-return-retry="M12">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M12.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M12"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M13-SOLUTIONS" data-title="M13. Решения для самопроверки" data-short-title="M13. Решения для самопроверки" data-kind="answer" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M13. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Версия 1.1.0. Открывай после собственной попытки. Данные реального ученика и результаты участия людей здесь не выдумываются.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M12" data-return-task="M12">← Вернуться к задаче</a><a href="#M12" data-return-retry="M12">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M12-SOLUTIONS--m12-l08x-a"><summary>Ответ: M12-L08X-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M12-L08X" data-return-task="M12-L08X">← Вернуться к задаче</a><a href="#M12-L08X" data-return-retry="M12-L08X">Новый вариант B / C →</a></nav>
+<p>Решение обучает тот же адаптер <code>same</code> и меняет только порядок примеров. Нужны пакет <code>peft</code> и локальная SmolLM2 из M09; на CPU ключ работает около 20 секунд.</p>
+<pre><code class="language-python">import importlib.util
+from pathlib import Path
+
+if importlib.util.find_spec(&quot;peft&quot;) is None or not Path(&quot;models/smollm2-135m-instruct/model.safetensors&quot;).exists():
+    print(&quot;нужны пакет peft и локальная SmolLM2 из M09, ключ пропущен&quot;)  # optional: requirements-optional.in
+    raise SystemExit(0)
+
+import torch
+from peft import get_peft_model
+
+
+def load(name, path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+lab, sft, m09 = load(&quot;lora_peft&quot;, &quot;labs/M12/lora_peft.py&quot;), load(&quot;sft&quot;, &quot;labs/M12/sft.py&quot;), load(&quot;m09&quot;, &quot;labs/M09/demo.py&quot;)
+torch.set_num_threads(2)
+torch.manual_seed(lab.SEED)
+tokenizer, base, _ = m09.load_local()
+model = get_peft_model(base, lab.lora_config(&quot;same&quot;, len(base.model.layers)))
+lab.init_like_m12(model, lab.SEED)
+
+# the only change: CLARIFY and NEXT alternate instead of six-and-six blocks
+order = [i for pair in zip(range(6), range(6, 12)) for i in pair]
+train = [sft.masked_example(tokenizer, *sft.TRAIN[i]) for i in order]
+check = [sft.masked_example(tokenizer, q, a) for q, a in sft.CHECK]
+old = [sft.masked_example(tokenizer, q, a, system=&quot;You are a concise assistant.&quot;) for q, a in sft.OLD]
+before_old = sft.mean_loss(model, old)
+lab.train(model, train)
+after = lab.stage(sft, tokenizer, model, (train, check, old))
+print(&quot;check NLL&quot;, round(after[&quot;check_nll&quot;], 3), &quot;old NLL&quot;, round(before_old, 3), &quot;-&gt;&quot;, round(after[&quot;old_nll&quot;], 3))
+print(&quot;check&quot;, [row[&quot;actual&quot;] for row in after[&quot;check_generations&quot;]])
+print(&quot;old&quot;, [row[&quot;actual&quot;] for row in after[&quot;old_generations&quot;]])
+assert after[&quot;task_review&quot;][&quot;critical_wrong_command_indices&quot;] == []  # the command type is right on all four check cases
+assert after[&quot;old_nll&quot;] &gt; before_old                                 # and the old questions got worse
+</code></pre>
+<p>Результат авторского прогона:</p>
+<ul>
+<li><strong>Тип команды исправился.</strong> Неверных команд на check стало 0 из 4 вместо 2: на расплывчатые ответы модель начинает с CLARIFY. Точное совпадение осталось 0.5: ответ обрывается на «CLARIFY:» без второй части.</li>
+<li><strong>Check NLL снизился с 0.332 до 0.144.</strong> Чередование не даёт адаптеру запомнить последний блок одного класса.</li>
+<li><strong>Старые вопросы сломались сильнее.</strong> Old NLL вырос с 2.351 до 2.811, то есть на 19.6%. На «What is 2 plus 2?» модель повторяет «NEXT: Explain: Explain: …», а на просьбу назвать язык выдумывает «CLU».</li>
+</ul>
+<p>Правило выпуска M12-L07 такой адаптер пропустило бы. Check NLL снизился, old NLL вырос меньше чем на 20%, неверных команд на check нет. Но ответы на старые вопросы испорчены. Правило оказалось слабее, чем нужно: как и предупреждал M12-L07, в защитный набор нужны старые прикладные случаи и чтение ответов, а не только порог old NLL. Выпускать нельзя. Следующая гипотеза — подмешать старые случаи в train или снизить learning rate.</p>
+<p>Четыре примера check, по два на класс, не доказывают гипотезу о порядке. Это один прогон с одним seed, и другой порядок, например начиная с NEXT, мог дать другой результат. Гипотезу подтверждают на новом независимом наборе и нескольких seed. Кроме того, check уже использован при выборе гипотезы, поэтому для окончательной проверки нужен новый набор.</p>
+<p>Критические ошибки: менять вместе с порядком ещё и learning rate или число шагов; объявить успех по check NLL и не прочитать ответы на старые вопросы; выбирать порядок по результату на том же check и называть check независимым.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M12-L08X" data-return-task="M12-L08X">← Вернуться к задаче</a><a href="#M12-L08X" data-return-retry="M12-L08X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M12-SOLUTIONS--m12-l08x-b-c"><summary>Ответ: M12-L08X-B-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M12-L08X" data-return-task="M12-L08X">← Вернуться к задаче</a><a href="#M12-L08X" data-return-retry="M12-L08X">Новый вариант B / C →</a></nav>
+<p><strong>B.</strong> На один блок: q_proj — 8·(576 + 576) = 9216, k_proj — 8·(576 + 192) = 6144, v_proj — 6144, o_proj — 9216, всего 30 720. На 30 блоков — 921 600 обучаемых чисел. В float32 это 3 686 400 байт, около 3.7 МБ плюс небольшой заголовок safetensors. Доля от 134.5 млн параметров базы — около 0.69%.</p>
+<p><strong>C.</strong> Вместе с адаптером записывают:</p>
+<ul>
+<li>id базы, её ревизию и контрольную сумму весов;</li>
+<li><code>adapter_config.json</code>: ранг, alpha, модули, блоки, dropout, способ инициализации;</li>
+<li>версии torch, transformers и peft;</li>
+<li>снимок данных с контрольной суммой, порядок примеров, seed, число шагов, learning rate;</li>
+<li>метрики и генерации до и после, результаты защитного набора старых случаев, решение о выпуске и его причину;</li>
+<li>лицензию базы и данных.</li>
+</ul>
+<p>Сливать адаптер с базой стоит, когда в работе один адаптер и важны простота и скорость. Слияние нужно, например, для экспорта в GGUF и запуска в llama.cpp без отдельного файла LoRA. Держать адаптеры отдельно стоит, когда на одной базе их несколько: под разные задачи, языки или клиентов. Их переключают через <code>set_adapter</code> в PEFT или загружают несколько LoRA в сервер инференса. Отдельный адаптер ещё и быстро откатывается: достаточно выключить его, а базу не трогать.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M12-L08X" data-return-task="M12-L08X">← Вернуться к задаче</a><a href="#M12-L08X" data-return-retry="M12-L08X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M12-SOLUTIONS--m12-l09x-a"><summary>Ответ: M12-L09X-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M12-L09X" data-return-task="M12-L09X">← Вернуться к задаче</a><a href="#M12-L09X" data-return-retry="M12-L09X">Новый вариант B / C →</a></nav>
+<p>Решение читает замороженный авторский прогон варианта и сравнивает его с основным DPO. Ни модель, ни TRL для этого не нужны. Сам прогон делает команда <code>.\.venv\Scripts\python.exe labs\M12\dpo_trl.py run --loss sigmoid sft --out artifacts\M12\dpo-sft</code>, на CPU около полутора минут.</p>
+<pre><code class="language-python">import json
+import math
+from pathlib import Path
+
+base = json.loads(Path(&quot;quality/dpo/report.json&quot;).read_text(encoding=&quot;utf-8&quot;))
+variant = json.loads(Path(&quot;quality/dpo/report-sigmoid-sft.json&quot;).read_text(encoding=&quot;utf-8&quot;))
+assert variant[&quot;loss_type&quot;] == [&quot;sigmoid&quot;, &quot;sft&quot;] and variant[&quot;first_loss&quot;] &gt; math.log(2)
+print(&quot;first loss&quot;, variant[&quot;first_loss&quot;], &quot;= ln 2 +&quot;, round(variant[&quot;first_loss&quot;] - math.log(2), 4))  # plus the NLL of chosen
+
+for name, report in ((&quot;dpo&quot;, base), (&quot;dpo + sft&quot;, variant)):
+    s = report[&quot;stages&quot;][&quot;dpo&quot;]
+    vague = [(p[&quot;first_chosen&quot;], p[&quot;first_rejected&quot;]) for p in s[&quot;check_pairs&quot;][:2]]
+    print(name, &quot;pairs&quot;, s[&quot;pair_accuracy&quot;], &quot;check NLL&quot;, round(s[&quot;check_nll&quot;], 3), &quot;old NLL&quot;, round(s[&quot;old_nll&quot;], 3),
+          &quot;wrong&quot;, s[&quot;task_review&quot;][&quot;critical_wrong_command_indices&quot;], &quot;first token CLARIFY vs NEXT&quot;, vague)
+    print(&quot;   old:&quot;, [g[&quot;actual&quot;] for g in s[&quot;old_generations&quot;]])
+
+s = variant[&quot;stages&quot;][&quot;dpo&quot;]
+assert s[&quot;task_review&quot;][&quot;critical_wrong_command_indices&quot;] == [] and s[&quot;task_review&quot;][&quot;exact_match&quot;] == 1.0
+assert all(p[&quot;first_chosen&quot;] &gt; p[&quot;first_rejected&quot;] for p in s[&quot;check_pairs&quot;][:2])   # the first token flipped to CLARIFY
+assert s[&quot;old_nll&quot;] &gt; variant[&quot;stages&quot;][&quot;sft&quot;][&quot;old_nll&quot;]                             # the old questions got worse
+assert not any(g[&quot;actual&quot;].startswith(&quot;4&quot;) for g in s[&quot;old_generations&quot;])
+</code></pre>
+<p>Результат авторского прогона:</p>
+<ul>
+<li><strong>Первая потеря — 1.158.</strong> Это ln 2 плюс SFT-слагаемое 0.465: NLL выбранных ответов первого пакета у опорной модели.</li>
+<li><strong>Тип команды исправился.</strong> Все четыре ответа check совпали с ожидаемыми дословно, неверных команд нет. На расплывчатые ответы вероятность первого токена CLARIFY стала 0.55 и 0.65 против 0.30 и 0.19 у NEXT. SFT-слагаемое поднимает выбранный ответ, а не только опускает отвергнутый.</li>
+<li><strong>Check NLL снизился до 0.196</strong> против 0.332 у SFT и 0.387 у DPO без слагаемого.</li>
+<li><strong>Старые вопросы стали хуже.</strong> Old NLL вырос с 2.324 до 2.410. На «What is 2 plus 2?» модель отвечает «NEXT: Explain: Explain: …», на просьбу назвать язык — «CLU: …».</li>
+</ul>
+<p>Выпускать нельзя: старые вопросы сломаны. Они сломались ещё на SFT, и ни DPO, ни SFT-слагаемое на выбранном ответе этого не исправят, пока старых случаев нет в данных. Следующий шаг — добавить защитные пары: на общий вопрос выбран обычный ответ, отвергнута команда. Ещё один вариант — подмешать старые случаи в SFT. Проверять изменение нужно на новом независимом наборе: этот check уже использован для выбора варианта.</p>
+<p>Критические ошибки: считать задачу решённой по совпадению команд на check; не читать ответы на старые вопросы; сравнивать с основным DPO при других seed, шагах или β.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M12-L09X" data-return-task="M12-L09X">← Вернуться к задаче</a><a href="#M12-L09X" data-return-retry="M12-L09X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M12-SOLUTIONS--m12-l09x-b-c"><summary>Ответ: M12-L09X-B-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M12-L09X" data-return-task="M12-L09X">← Вернуться к задаче</a><a href="#M12-L09X" data-return-retry="M12-L09X">Новый вариант B / C →</a></nav>
+<p><strong>B.</strong> Отрыв равен β·(−1.0 − (−3.0)) = 2β. При β = 0.1 отрыв 0.2, потеря ln(1 + e^(−0.2)) ≈ 0.598. При β = 0.5 отрыв 1.0, потеря ≈ 0.313. Для сравнения, ln 2 ≈ 0.693. Точность на парах учитывает только знак отрыва, поэтому пара уже засчитана как верная. Потеря учитывает величину, умноженную на β. При малом β тот же сдвиг стоит мало, и чтобы снизить потерю, модели приходится сдвигать log-вероятности сильнее и дальше уходить от опоры. Поэтому β — это масштаб, в котором сдвиг считается достаточным, а не шаг обучения.</p>
+<p><strong>C.</strong> План пар для русского тренажёра:</p>
+<ul>
+<li><strong>Источник.</strong> Выбранный ответ — правка интервьюера, отвергнутый — исходный ответ модели. Ещё один источник — оценки двух черновиков на один запрос. Персональные данные кандидатов без согласия не используются.</li>
+<li><strong>Разнообразие отвергнутых.</strong> На каждый класс ошибок нужно несколько формулировок отвергнутого ответа. Авторский прогон показал, что модель обходит одну запрещённую строку соседней.</li>
+<li><strong>Баланс и защита.</strong> Классы сбалансированы. Добавлены защитные пары для старого поведения: на общий вопрос выбран обычный ответ, отвергнута команда.</li>
+<li><strong>Опора.</strong> Опорная модель — текущая SFT, и это проверяется до обучения.</li>
+<li><strong>Проверка.</strong> Свободная генерация на новом независимом наборе, доля верного первого токена, чтение выборки ответов человеком и регрессия на старых случаях. Точность на парах — только одна из величин.</li>
+</ul>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M12-L09X" data-return-task="M12-L09X">← Вернуться к задаче</a><a href="#M12-L09X" data-return-retry="M12-L09X">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M12.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M12"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M13-SOLUTIONS" data-title="M13. Решения для самопроверки" data-short-title="M13. Решения для самопроверки" data-kind="answer" data-module="M13"><header class="material-head"><div class="eyebrow"><span class="material-id">M13-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M13. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Версия 1.1.0. Открывай после собственной попытки. Данные реального ученика и результаты участия людей здесь не выдумываются.</p>
 <details class="answer-key" id="M13-SOLUTIONS--m13-l01"><summary>Ответ: M13-L01</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M13-L01" data-return-task="M13-L01">← Вернуться к задаче</a><a href="#M13-L01" data-return-retry="M13-L01">Новый вариант B / C →</a></nav>
 <p><strong>Условие:</strong> Составь манифест для тренажёра, у которого обновился только поисковый корпус. Укажи минимум восемь полей и объясни, какие файлы нужно сохранить для воспроизведения. Затем сравни два JSON с разным порядком ключей и докажи одинаковую каноническую сумму.</p>
 <p><strong>Обоснованное решение:</strong> Нужны release_id, code_commit, model_id и hash весов, tokenizer_id, prompt_hash, corpus_hash, index_hash, retrieval_config, evaluation_version, dependency_lock, created_at. Для восстановления нужны сами документы, индекс или воспроизводимый рецепт его создания, код, конфигурация и доступные локальные веса. Хеш без файла недостаточен. <code>json.dumps(obj, sort_keys=True, separators=(',', ':'))</code> обеспечивает одинаковое представление для перестановок ключей одного объекта; оно не превращает два разных типа, например 2 и&quot;2&quot;, в одинаковый объект.</p>
@@ -24711,7 +25242,7 @@ print(&quot;максимум вызовов модели:&quot;, 1 + REQUERIES +
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 113 из 113 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 115 из 115 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -25306,6 +25837,20 @@ print(&quot;максимум вызовов модели:&quot;, 1 + REQUERIES +
 <li><strong>Смысл величин.</strong> α/rank — масштаб добавки; hash базы подтверждает, что веса не менялись, но не отсутствие регрессий: выход зависит от адаптера; teacher-forced NLL и свободный диалог — разные проверки; набор old ловит регрессию старого поведения.</li>
 <li><strong>Когда применять.</strong> При малом SFT на CPU. Пример: Linear с in = 576 и out = 192, rank 4 — A 4×576 и B 192×4, всего 2304 + 768 = 3072 обучаемых числа вместо 110 592; α = 16 даёт множитель 4.</li>
 <li><strong>Главная ошибка.</strong> Выпустить по снижению check NLL, не читая генераций, или молча пропустить несовпавшие веса при загрузке.</li>
+</ul>
+<h3 id="CHEATSHEET--m12-l08x-lora-через-peft"><a href="#M12-L08X">M12-L08X. LoRA через PEFT</a></h3>
+<ul>
+<li><strong>Правило.</strong> Перед заменой ручной реализации библиотекой нужен паритет на известных весах и повтор прежнего прогона. Адаптер хранится с id и ревизией базы и проверяется загрузкой в свежую модель. Гипотеза об улучшении записывается до прогона и меняет одно условие.</li>
+<li><strong>Смысл величин.</strong> r — ранг, lora_alpha/r — множитель ветки, target_modules и layers_to_transform — где стоит адаптер. Число обучаемых параметров — сумма r·(in + out) по адаптированным Linear.</li>
+<li><strong>Когда применять.</strong> Когда дообучение нужно повторять, хранить и переключать. Пример: PEFT повторил M12-L07 точно (30 720 параметров, файл 125 КБ, паритет 0.0), а адаптер на всех Linear (1.2 млн параметров) поднял old NLL с 2.35 до 10.73 и не исправил ни одной команды.</li>
+<li><strong>Главная ошибка.</strong> Добавлять ёмкость вместо разбора причины и хранить адаптер без ревизии базы.</li>
+</ul>
+<h3 id="CHEATSHEET--m12-l09x-dpo-через-trl-предпочтения-вместо-целевого-ответа"><a href="#M12-L09X">M12-L09X. DPO через TRL: предпочтения вместо целевого ответа</a></h3>
+<ul>
+<li><strong>Правило.</strong> DPO учится на парах относительно опорной модели. В начале потеря равна ln 2. Точность на парах — только цель оптимизации: поведение проверяют свободной генерацией, первым токеном и старыми вопросами.</li>
+<li><strong>Смысл величин.</strong> log π(y∣x) — сумма log-вероятностей токенов ответа. Неявная награда — β·(log π − log π_ref). Отрыв — разность наград выбранного и отвергнутого ответа, потеря — −log σ(отрыва).</li>
+<li><strong>Когда применять.</strong> Когда есть пары «лучше — хуже» и SFT уже дал формат. Пример: DPO поднял точность на отложенных парах с 0.50 до 1.00, а команды остались неверными в 2 случаях из 4, потому что первый токен NEXT остался вероятнее (0.70 против 0.04).</li>
+<li><strong>Главная ошибка.</strong> Принимать выигранные пары за исправленную генерацию и ждать от DPO исправления того, чего нет в парах.</li>
 </ul>
 <h2 id="CHEATSHEET--m13-mlops-и-llmops">M13. MLOps и LLMOps</h2>
 <h3 id="CHEATSHEET--m13-l01-версия-эксперимента-и-релиза"><a href="#M13-L01">M13-L01. Версия эксперимента и релиза</a></h3>
