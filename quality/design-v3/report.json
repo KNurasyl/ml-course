@@ -1,0 +1,1448 @@
+{
+  "kind": "design_acceptance_not_learner_study",
+  "design": "3.0 (phase 6: dark theme and fonts)",
+  "status": "green",
+  "date": "2026-11-09T20:29:47.809Z",
+  "reader_sha256": "bc0a864a94ce41fc8dd3d67787e7206d20098372dca489e93988961053dedafb",
+  "acceptance": {
+    "external_requests": 0,
+    "requests_seen": 187,
+    "fonts": {
+      "golos_text_faces": 6,
+      "golos_text_loaded": 4,
+      "jetbrains_mono_faces": 4
+    },
+    "colour_literals_outside_root": 0,
+    "token_pairs": {
+      "count": 126,
+      "threshold": 4.5,
+      "min_ratio_by_theme": {
+        "dark": 6.125,
+        "light": 4.526,
+        "print": 4.526
+      }
+    }
+  },
+  "reader_checks": {
+    "passed": 62,
+    "failed": 0,
+    "names": [
+      "D1 colour literals only inside :root token blocks",
+      "F4 text/background token pairs meet 4.5:1 in dark, light and print",
+      "D1 first open is dark",
+      "D1 theme switch turns light and saves the choice",
+      "D1 saved light choice survives reload",
+      "D1 theme switch returns to dark",
+      "F2 embedded Golos Text is used for text",
+      "D01 prominent start action in first desktop viewport",
+      "D01 start action opens diagnostic",
+      "D02 active lesson visible and module in breadcrumb",
+      "D07 prose has bounded measure",
+      "D06 distinct task roles and local map",
+      "F2 embedded JetBrains Mono is used for code",
+      "F2 code ligatures are off",
+      "D6 Python examples are highlighted with theme tokens",
+      "D07 formula blocks and shape table",
+      "D5 Mermaid follows the page theme without a redraw",
+      "D5 Mermaid prints light while the dark theme is chosen",
+      "D06 local map moves to task",
+      "D11 lesson opens its own answer",
+      "D11 neighboring answers remain closed",
+      "D11 return lands on assignment",
+      "D11 new attempt lands on B/C",
+      "D10 result explains hidden answer context",
+      "D10 exact match visible inside opened answer",
+      "Search empty state is explicit",
+      "Clear restores navigation",
+      "Keyboard shortcut focuses search",
+      "Figure zoom opens dialog",
+      "D3 zoom shows the inline figure with unique ids",
+      "Native size control works",
+      "Dialog closes by Escape",
+      "D3 inline figures paint only with theme tokens in both themes",
+      "D3 inline figures print light while the dark theme is chosen",
+      "D4 image figure follows the theme and prints light",
+      "D4 hand-drawn figure shows its dark copy",
+      "D4 every image figure offers a dark copy",
+      "D7 a lesson draws its diagrams on opening, before they scroll into view",
+      "D12 six audited utility roles meet 4.5 contrast",
+      "D01 mobile start action in first viewport",
+      "D1 theme switch visible in the mobile top bar",
+      "D13 first theory starts before 500px at390",
+      "D02 mobile menu exposes active lesson",
+      "D02 current mobile link within screen",
+      "Mobile escape restores menu button focus",
+      "D06 mobile map closes after selection",
+      "D03 mobile-specific figure selected",
+      "D03 tablet selects figure by actual column width",
+      "D4 phone shows the mobile dark copy",
+      "All161 sections reflow at320 without page overflow",
+      "Unknown fragment recovers",
+      "Malformed encoded fragment recovers",
+      "Mobile keyboard search opens menu",
+      "D11 B/C link opens B/C instead of A",
+      "Print excludes navigation and unopened answers",
+      "D1 print uses light tokens while the dark theme is chosen",
+      "D7 print hides the theme switch and shows external link addresses",
+      "D7 link addresses appear only in print",
+      "D5 all diagrams paint only with theme tokens in both themes",
+      "All generated fragment links resolve",
+      "F2 no requests outside file:, data:, about: and blob:",
+      "No browser JavaScript errors"
+    ]
+  },
+  "experiment_checks": {
+    "cases": 52,
+    "passed": 58,
+    "failed": 0
+  },
+  "token_contrast": [
+    {
+      "theme": "dark",
+      "text": "ink",
+      "ground": "bg",
+      "ratio": 14.225,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "ink",
+      "ground": "surface",
+      "ratio": 13.233,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "ink",
+      "ground": "paper",
+      "ratio": 12.34,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "ink",
+      "ground": "code-bg",
+      "ratio": 14.741,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "muted",
+      "ground": "bg",
+      "ratio": 7.592,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "muted",
+      "ground": "surface",
+      "ratio": 7.062,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "muted",
+      "ground": "paper",
+      "ratio": 6.586,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "muted",
+      "ground": "code-bg",
+      "ratio": 7.867,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "accent",
+      "ground": "bg",
+      "ratio": 7.703,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "accent",
+      "ground": "surface",
+      "ratio": 7.166,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "accent",
+      "ground": "paper",
+      "ratio": 6.682,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "accent",
+      "ground": "code-bg",
+      "ratio": 7.983,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "act",
+      "ground": "bg",
+      "ratio": 8.646,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "act",
+      "ground": "surface",
+      "ratio": 8.043,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "act",
+      "ground": "paper",
+      "ratio": 7.5,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "act",
+      "ground": "code-bg",
+      "ratio": 8.96,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "hint",
+      "ground": "bg",
+      "ratio": 9.534,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "hint",
+      "ground": "surface",
+      "ratio": 8.869,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "hint",
+      "ground": "paper",
+      "ratio": 8.27,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "hint",
+      "ground": "code-bg",
+      "ratio": 9.88,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "ok",
+      "ground": "bg",
+      "ratio": 9.916,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "ok",
+      "ground": "surface",
+      "ratio": 9.225,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "ok",
+      "ground": "paper",
+      "ratio": 8.602,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "ok",
+      "ground": "code-bg",
+      "ratio": 10.276,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "warn",
+      "ground": "bg",
+      "ratio": 8.514,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "warn",
+      "ground": "surface",
+      "ratio": 7.92,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "warn",
+      "ground": "paper",
+      "ratio": 7.386,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "warn",
+      "ground": "code-bg",
+      "ratio": 8.823,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "error",
+      "ground": "bg",
+      "ratio": 7.435,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "error",
+      "ground": "surface",
+      "ratio": 6.916,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "error",
+      "ground": "paper",
+      "ratio": 6.449,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "error",
+      "ground": "code-bg",
+      "ratio": 7.705,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "accent",
+      "ground": "accent-soft",
+      "ratio": 6.125,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "act",
+      "ground": "act-soft",
+      "ratio": 6.798,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "hint",
+      "ground": "hint-soft",
+      "ratio": 7.139,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "ok",
+      "ground": "ok-soft",
+      "ratio": 7.841,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "warn",
+      "ground": "warn-soft",
+      "ratio": 6.906,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "ink",
+      "ground": "accent-soft",
+      "ratio": 11.311,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "ink",
+      "ground": "act-soft",
+      "ratio": 11.185,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "ink",
+      "ground": "hint-soft",
+      "ratio": 10.652,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "mark-fg",
+      "ground": "mark-bg",
+      "ratio": 8.848,
+      "pass": true
+    },
+    {
+      "theme": "dark",
+      "text": "bg",
+      "ground": "accent",
+      "ratio": 7.703,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "ink",
+      "ground": "bg",
+      "ratio": 14.288,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "ink",
+      "ground": "surface",
+      "ratio": 13.297,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "ink",
+      "ground": "paper",
+      "ratio": 15.587,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "ink",
+      "ground": "code-bg",
+      "ratio": 13.907,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "muted",
+      "ground": "bg",
+      "ratio": 5.636,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "muted",
+      "ground": "surface",
+      "ratio": 5.245,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "muted",
+      "ground": "paper",
+      "ratio": 6.148,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "muted",
+      "ground": "code-bg",
+      "ratio": 5.485,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "accent",
+      "ground": "bg",
+      "ratio": 6.45,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "accent",
+      "ground": "surface",
+      "ratio": 6.002,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "accent",
+      "ground": "paper",
+      "ratio": 7.036,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "accent",
+      "ground": "code-bg",
+      "ratio": 6.278,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "act",
+      "ground": "bg",
+      "ratio": 5.088,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "act",
+      "ground": "surface",
+      "ratio": 4.735,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "act",
+      "ground": "paper",
+      "ratio": 5.55,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "act",
+      "ground": "code-bg",
+      "ratio": 4.952,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "hint",
+      "ground": "bg",
+      "ratio": 4.864,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "hint",
+      "ground": "surface",
+      "ratio": 4.526,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "hint",
+      "ground": "paper",
+      "ratio": 5.306,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "hint",
+      "ground": "code-bg",
+      "ratio": 4.734,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "ok",
+      "ground": "bg",
+      "ratio": 4.892,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "ok",
+      "ground": "surface",
+      "ratio": 4.553,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "ok",
+      "ground": "paper",
+      "ratio": 5.337,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "ok",
+      "ground": "code-bg",
+      "ratio": 4.762,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "warn",
+      "ground": "bg",
+      "ratio": 5.093,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "warn",
+      "ground": "surface",
+      "ratio": 4.74,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "warn",
+      "ground": "paper",
+      "ratio": 5.556,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "warn",
+      "ground": "code-bg",
+      "ratio": 4.957,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "error",
+      "ground": "bg",
+      "ratio": 5.374,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "error",
+      "ground": "surface",
+      "ratio": 5.002,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "error",
+      "ground": "paper",
+      "ratio": 5.863,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "error",
+      "ground": "code-bg",
+      "ratio": 5.231,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "accent",
+      "ground": "accent-soft",
+      "ratio": 5.927,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "act",
+      "ground": "act-soft",
+      "ratio": 4.821,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "hint",
+      "ground": "hint-soft",
+      "ratio": 4.654,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "ok",
+      "ground": "ok-soft",
+      "ratio": 4.586,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "warn",
+      "ground": "warn-soft",
+      "ratio": 4.587,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "ink",
+      "ground": "accent-soft",
+      "ratio": 13.13,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "ink",
+      "ground": "act-soft",
+      "ratio": 13.538,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "ink",
+      "ground": "hint-soft",
+      "ratio": 13.672,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "mark-fg",
+      "ground": "mark-bg",
+      "ratio": 12.436,
+      "pass": true
+    },
+    {
+      "theme": "light",
+      "text": "bg",
+      "ground": "accent",
+      "ratio": 6.45,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "ink",
+      "ground": "bg",
+      "ratio": 14.288,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "ink",
+      "ground": "surface",
+      "ratio": 13.297,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "ink",
+      "ground": "paper",
+      "ratio": 15.587,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "ink",
+      "ground": "code-bg",
+      "ratio": 13.907,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "muted",
+      "ground": "bg",
+      "ratio": 5.636,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "muted",
+      "ground": "surface",
+      "ratio": 5.245,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "muted",
+      "ground": "paper",
+      "ratio": 6.148,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "muted",
+      "ground": "code-bg",
+      "ratio": 5.485,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "accent",
+      "ground": "bg",
+      "ratio": 6.45,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "accent",
+      "ground": "surface",
+      "ratio": 6.002,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "accent",
+      "ground": "paper",
+      "ratio": 7.036,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "accent",
+      "ground": "code-bg",
+      "ratio": 6.278,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "act",
+      "ground": "bg",
+      "ratio": 5.088,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "act",
+      "ground": "surface",
+      "ratio": 4.735,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "act",
+      "ground": "paper",
+      "ratio": 5.55,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "act",
+      "ground": "code-bg",
+      "ratio": 4.952,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "hint",
+      "ground": "bg",
+      "ratio": 4.864,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "hint",
+      "ground": "surface",
+      "ratio": 4.526,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "hint",
+      "ground": "paper",
+      "ratio": 5.306,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "hint",
+      "ground": "code-bg",
+      "ratio": 4.734,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "ok",
+      "ground": "bg",
+      "ratio": 4.892,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "ok",
+      "ground": "surface",
+      "ratio": 4.553,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "ok",
+      "ground": "paper",
+      "ratio": 5.337,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "ok",
+      "ground": "code-bg",
+      "ratio": 4.762,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "warn",
+      "ground": "bg",
+      "ratio": 5.093,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "warn",
+      "ground": "surface",
+      "ratio": 4.74,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "warn",
+      "ground": "paper",
+      "ratio": 5.556,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "warn",
+      "ground": "code-bg",
+      "ratio": 4.957,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "error",
+      "ground": "bg",
+      "ratio": 5.374,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "error",
+      "ground": "surface",
+      "ratio": 5.002,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "error",
+      "ground": "paper",
+      "ratio": 5.863,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "error",
+      "ground": "code-bg",
+      "ratio": 5.231,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "accent",
+      "ground": "accent-soft",
+      "ratio": 5.927,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "act",
+      "ground": "act-soft",
+      "ratio": 4.821,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "hint",
+      "ground": "hint-soft",
+      "ratio": 4.654,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "ok",
+      "ground": "ok-soft",
+      "ratio": 4.586,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "warn",
+      "ground": "warn-soft",
+      "ratio": 4.587,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "ink",
+      "ground": "accent-soft",
+      "ratio": 13.13,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "ink",
+      "ground": "act-soft",
+      "ratio": 13.538,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "ink",
+      "ground": "hint-soft",
+      "ratio": 13.672,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "mark-fg",
+      "ground": "mark-bg",
+      "ratio": 12.436,
+      "pass": true
+    },
+    {
+      "theme": "print",
+      "text": "bg",
+      "ground": "accent",
+      "ratio": 6.45,
+      "pass": true
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "quality/design-v3/screenshots/code-1440-dark.png",
+      "bytes": 262445,
+      "sha256": "88396c937502f7cc3400089d4c02f34cd6691c51c961d3da38103a03d0e0e952"
+    },
+    {
+      "path": "quality/design-v3/screenshots/code-1440-light.png",
+      "bytes": 261129,
+      "sha256": "90408458bb146bfc471cbd456a3cb8241b72c63ded0c2de44cca5fcf833b9662"
+    },
+    {
+      "path": "quality/design-v3/screenshots/code-390-dark.png",
+      "bytes": 92504,
+      "sha256": "64bcba8ccb3d12949f91f8e31b01c2e6791ab0274b7aeceec67e07c9d7aa0208"
+    },
+    {
+      "path": "quality/design-v3/screenshots/code-390-light.png",
+      "bytes": 91091,
+      "sha256": "3b3e654007c75ceff208bf89ae0504f80e9cb0fd128de64266a83df77ffe114d"
+    },
+    {
+      "path": "quality/design-v3/screenshots/experiment-1440-dark.png",
+      "bytes": 156148,
+      "sha256": "35bceeb37f8aa6ae4d928105f5a225c250bcda3240f6c4c1ac4605c9428fd3c3"
+    },
+    {
+      "path": "quality/design-v3/screenshots/experiment-1440-light.png",
+      "bytes": 155695,
+      "sha256": "1e783791f89c12147625d27b51b49f51442a9e8ffe5beeb86e1f22e163694a4c"
+    },
+    {
+      "path": "quality/design-v3/screenshots/experiment-390-dark.png",
+      "bytes": 34188,
+      "sha256": "29f047a17eea63148347cc5e19371a2d8ee05ffcd523c22561fbac430ac7d715"
+    },
+    {
+      "path": "quality/design-v3/screenshots/experiment-390-light.png",
+      "bytes": 34144,
+      "sha256": "40dea9877cf6bbc5f011659ce58fff3b0a4f3fb0c1e6bb26dab751419b8b897f"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M00-L04-desktop-dark.png",
+      "bytes": 21414,
+      "sha256": "9c55a294490473e4f783b191be98c7bfea4e3a022fa2a96d0c1a3a469e0fc628"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M00-L04-desktop-light.png",
+      "bytes": 21397,
+      "sha256": "35c4ffdfcf72750df805067f341ba889f52625d4ca86624682fda44033a45cd4"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M03-L02-desktop-dark.png",
+      "bytes": 20284,
+      "sha256": "90cbae6af7f6b6e94a998bac1ff9b319c3617b3579c77d90c35828b71f3afc2d"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M03-L02-desktop-light.png",
+      "bytes": 20438,
+      "sha256": "6de518502a0b244dcd98a9f7dfa43b8840e6ab26bd9f4ee49432b3a412d9b5b0"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M04-L06-desktop-dark.png",
+      "bytes": 21808,
+      "sha256": "9a370f0ecd9b3d941aa8d163389cc6759d4a7dcb425d2ffd6682d6bb4787d43c"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M04-L06-desktop-light.png",
+      "bytes": 21754,
+      "sha256": "54e5195e0930a6067283bcb4c5fa5ed4d6f6b6cd8cfe761f4c1e2de59be77806"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M04-L06-mobile-dark.png",
+      "bytes": 36714,
+      "sha256": "a9bdb83f2af3ce8ff99442de8d471cb27a79a7d4037cd8c3807f97ecbdcc7dc0"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M04-L06-mobile-light.png",
+      "bytes": 36488,
+      "sha256": "e7574edd786855c2715ebab4c57af015710fa2990b43ab5f4b091df2f670dad6"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M05-L04-desktop-dark.png",
+      "bytes": 23272,
+      "sha256": "b7cf7ddd5ac2c40b874027c49bd3205ee6cacca6f89238aff953a828c275bd94"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M05-L04-desktop-light.png",
+      "bytes": 23224,
+      "sha256": "a555e6ee4f0b234e855650e88c33bd305848484b5c17faa5078bfae1d7eda67f"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M08-L03-desktop-dark.png",
+      "bytes": 29519,
+      "sha256": "7be1670150040a04e8a85834b68ff47678c17ba899d2c5f1b3e123b98792661d"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M08-L03-desktop-light.png",
+      "bytes": 29770,
+      "sha256": "fdfff7c0a944677e8b913a1cd6514344116271fa6631684e99debb99f5f71bee"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M08-L07-desktop-dark.png",
+      "bytes": 44926,
+      "sha256": "572fd4b22f22bf44c60b40d5a7f4cee9f987ceb8be9441fd9907b233aca00304"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M08-L07-desktop-light.png",
+      "bytes": 45350,
+      "sha256": "a25d1171baa337e7273c20387e4eaa47cab0bbdf0369034550946f6e0a79b5e2"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M08-L07-mobile-dark.png",
+      "bytes": 46189,
+      "sha256": "281a3104fa4111a972cbe978a1461e9b03adcaf70e2604418c375366abb1b7e0"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M08-L07-mobile-light.png",
+      "bytes": 46244,
+      "sha256": "2f1591b80d2a3e93f450c41c3a378167e458142f88da9e4462663c1ad0ac7f8e"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M10-L06-desktop-dark.png",
+      "bytes": 31550,
+      "sha256": "e62174e7b0a3c81d72aac8a7c6dd736c0d996d5dd967761af89f123d163282cb"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M10-L06-desktop-light.png",
+      "bytes": 31560,
+      "sha256": "02ed1e5664d9950a9eaf9bcb4c1a8f32c4531f5b97f8f0dc25fb37a403b8d7ed"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M12-L04-desktop-dark.png",
+      "bytes": 27035,
+      "sha256": "9ff7a9bad9d9b90c11aed722208834c32a56aebc33d2c7fd66c104225e5911a2"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M12-L04-desktop-light.png",
+      "bytes": 26913,
+      "sha256": "82a90e312edcb996cc7946e1a1d56e46d49d7c8cec6c63eeb6dfb0025d8fb280"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M12-L06-desktop-dark.png",
+      "bytes": 28355,
+      "sha256": "33fafe71b343784bfa8dd8765e7bc30eafe9df8ff4cebe6a15a41dec8e0df2f9"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M12-L06-desktop-light.png",
+      "bytes": 28238,
+      "sha256": "302badf8c9747cc861dc372c563f51f9bc68f815072e41447db0344d89ed69da"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M15-L06-desktop-dark.png",
+      "bytes": 38889,
+      "sha256": "e1363c87f88bc0daabd6cf3f8c65556ce5fb3b398a11f63a19f71695a7620ae7"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M15-L06-desktop-light.png",
+      "bytes": 38878,
+      "sha256": "0c6864e44212999e05d58bd608603c2969b9ddaa34764bb4a71be05d5a6e92de"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M15-L06-mobile-dark.png",
+      "bytes": 51963,
+      "sha256": "439c7fbbe61ed9a7a7265d3b9dcbc941ce0cb8fbe89fb82ae58566995f1b2db8"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures/M15-L06-mobile-light.png",
+      "bytes": 51790,
+      "sha256": "1b92a76582be2f2b15dadc1ff7021d24ccd1eb7540bcb77367397a9b8fb54186"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M00-L02-desktop-dark.png",
+      "bytes": 34130,
+      "sha256": "925b86c301da2b65547a4fc0935004e99adece53e2b217895a7c7244e52bf016"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M00-L02-desktop-light.png",
+      "bytes": 33567,
+      "sha256": "a8f475488232d4fc3cfd93930052b4a052e1a80f83f23fb08edaad03ee8f41ee"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M02-L02-desktop-dark.png",
+      "bytes": 21689,
+      "sha256": "c0176b26f3ccfb613e1da3665b98507e83a4d8eb533c233dc297187e23e6f3c2"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M02-L02-desktop-light.png",
+      "bytes": 21353,
+      "sha256": "f880b998ddc848ce93f386933993a580bc3e1ace1ed0e6036e252a6bbf53f03c"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M02-L02-mobile-dark.png",
+      "bytes": 15284,
+      "sha256": "87d111ec248f0594155f3f8acc28e1710eff3bf7dd36c41a36f8ba126a5f8caf"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M02-L02-mobile-light.png",
+      "bytes": 14832,
+      "sha256": "07b649d9084865ca331e20727ae1225ea207d0709d36e4f6a2267699c6b53484"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M05-L01-desktop-dark.png",
+      "bytes": 14073,
+      "sha256": "57880ed45ac6f9eb71958d6406611e3b3508f44b57bb034831b016571889c681"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M05-L01-desktop-light.png",
+      "bytes": 14206,
+      "sha256": "b996bc2aad2acc3c2f47bff407725efd49cc46c64a4506480e96f258a14681ac"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M06-L03-desktop-dark.png",
+      "bytes": 13108,
+      "sha256": "97dc7a4bf12eb49bdbaccd1a198af72226e579ce3f7868bdcb3f5a78be86e9b3"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M06-L03-desktop-light.png",
+      "bytes": 12942,
+      "sha256": "59b30bc9d0e30752ea22c00c9a8a9580afa0882ae4cd84b4094d85b2974bc9fe"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M08-L04-desktop-dark.png",
+      "bytes": 23520,
+      "sha256": "b8cfcc4467eb36a8b2db2b1b0f917a2dc904028c046f0a6b7b102add5eddfb9b"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M08-L04-desktop-light.png",
+      "bytes": 23727,
+      "sha256": "58ac410f004483ff9ba39655cc75dbfe8de591a5817de1aad85aecd9e50a68e5"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M08-L08X-desktop-dark.png",
+      "bytes": 52629,
+      "sha256": "af030b801c76c27ca00db7adaed89a2fd89a57f8aa0f64297921f233e24ed262"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M08-L08X-desktop-light.png",
+      "bytes": 51906,
+      "sha256": "b5e5f8b1c1cfc31c17b1dcdb45f2a327a5777c1d9ce920ee3efd596977e580a7"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M09-L02-desktop-dark.png",
+      "bytes": 13053,
+      "sha256": "c676a35bc9fc80f7b2556e3c26b3a8f5ae127ddbfb26c337a4d94e49f3f5699e"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M09-L02-desktop-light.png",
+      "bytes": 12834,
+      "sha256": "0a11e36f245a192350987a931b96aca8964b058add10613fbdb1f523984b1a91"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M09-L02-mobile-dark.png",
+      "bytes": 12893,
+      "sha256": "828f4c75e5e65c532740b3c54ac48134d31df3a8175066dcacd44e31e36d72d0"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M09-L02-mobile-light.png",
+      "bytes": 12787,
+      "sha256": "5b79721cfd42ec8fe0a7c1a12864d185356c9ca724a6f657864ccf15802061e5"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M11-L07X-desktop-dark.png",
+      "bytes": 52377,
+      "sha256": "9b080d60cee8b84897fbd0563cd6516d59b3753e7d38dd8c5e264e0693debfa7"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M11-L07X-desktop-light.png",
+      "bytes": 51905,
+      "sha256": "12fdb5b2bc1a883e68c5e2fb27f3532af9ab9e3833511a00123c8acbedafd458"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M14-L08X-desktop-dark.png",
+      "bytes": 48006,
+      "sha256": "5a373879260bbcff1d483187adf8620eecea1c8c73e71ff7776f9aefb1b602ae"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M14-L08X-desktop-light.png",
+      "bytes": 47451,
+      "sha256": "825813573d9fd2c4bc4526371a3de79ca6d5fec265ad226950648631d39585b2"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M15-L01-desktop-dark.png",
+      "bytes": 31809,
+      "sha256": "bf87c3b6cc5a3ff4f6d2911dec5ddcf4213e3bc2801e021fd1ed62792fd365cc"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M15-L01-desktop-light.png",
+      "bytes": 30928,
+      "sha256": "cb657bbd81e43163d2b792df048bcd7cbdbb3bd20433e7e1ecf1801f5ac703ba"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M15-L07X-desktop-dark.png",
+      "bytes": 60064,
+      "sha256": "1172d296b422413e4d5e6127ed66fb98a531e88386bca3941e866e5e1fd9e531"
+    },
+    {
+      "path": "quality/design-v3/screenshots/figures-images/M15-L07X-desktop-light.png",
+      "bytes": 59078,
+      "sha256": "a49c14c87eb94ecc7c44052cc5feb9031c56849cd359acbbf087f52f21a31eca"
+    },
+    {
+      "path": "quality/design-v3/screenshots/home-1440-dark.png",
+      "bytes": 168423,
+      "sha256": "5bade77cdc240142172ad1ae50182da2581a6e558af205b3fba4f87b339e436f"
+    },
+    {
+      "path": "quality/design-v3/screenshots/home-1440-light.png",
+      "bytes": 167437,
+      "sha256": "5da34c9ff33330133b37d18f9b1f20b757828102325f8b5dbaa35c48f9389323"
+    },
+    {
+      "path": "quality/design-v3/screenshots/home-390-dark.png",
+      "bytes": 63396,
+      "sha256": "a3a8bb73ed8529a52f1fd04884af7ae354926382803b1d265ceb40d6f4ea7767"
+    },
+    {
+      "path": "quality/design-v3/screenshots/home-390-light.png",
+      "bytes": 63535,
+      "sha256": "357cd2c5318f33fb5353fbb460dfc59df7fd134330b2af00e07f7eaa43072042"
+    },
+    {
+      "path": "quality/design-v3/screenshots/lesson-1440-dark.png",
+      "bytes": 247037,
+      "sha256": "37acb679bffc95c1adb20d9a56798ff7fa2d222d05c8620a54834c925a6b7a64"
+    },
+    {
+      "path": "quality/design-v3/screenshots/lesson-1440-light.png",
+      "bytes": 246129,
+      "sha256": "cac49d06f0a96c7d8ff917806ec2c64df4dbe884375557d25970481bf33fd1dd"
+    },
+    {
+      "path": "quality/design-v3/screenshots/lesson-390-dark.png",
+      "bytes": 76102,
+      "sha256": "776f6f616295acb6fb5a26fa6d8ceced0acd8de19e0b9fb03bc4ae94352ae63f"
+    },
+    {
+      "path": "quality/design-v3/screenshots/lesson-390-light.png",
+      "bytes": 75372,
+      "sha256": "76bd3dca2513e555257dbc0d8fdd66b71834b0983a451695c86736d153e5eac8"
+    },
+    {
+      "path": "quality/design-v3/screenshots/mermaid-1440-dark.png",
+      "bytes": 162891,
+      "sha256": "1f8da49a6cb78100f91562094b1a109445ffa412c480327a7373b6826ba59a81"
+    },
+    {
+      "path": "quality/design-v3/screenshots/mermaid-1440-light.png",
+      "bytes": 161497,
+      "sha256": "4faa8f16c7e7da0bca91a04c8876516a0726f69a2b650b4c34f03b7235994c9c"
+    },
+    {
+      "path": "quality/design-v3/screenshots/mermaid-390-dark.png",
+      "bytes": 63803,
+      "sha256": "3825f08e6790f85c6022a54ec06122927e48530d1190db3a50119a5118cf1a4d"
+    },
+    {
+      "path": "quality/design-v3/screenshots/mermaid-390-light.png",
+      "bytes": 62819,
+      "sha256": "e059d440414f0a37f85a5227ab1d58f6041a22f104d7c6c4c9276024e62ec2ed"
+    },
+    {
+      "path": "quality/design-v3/screenshots/mermaid-M05-L04-1440-dark.png",
+      "bytes": 124414,
+      "sha256": "36f34f1b87fb2ef8d400991cdc7d2c5de860ec6aa910910adc424be584b02982"
+    },
+    {
+      "path": "quality/design-v3/screenshots/mermaid-M05-L04-1440-light.png",
+      "bytes": 123416,
+      "sha256": "cddbd9ecea26bdf4fef63587b0194a67e95ca154378776e2c9d6b58755949905"
+    },
+    {
+      "path": "quality/design-v3/screenshots/mermaid-M05-L04-390-dark.png",
+      "bytes": 24811,
+      "sha256": "7aa72081a8b72f22d97267d3b3cfdc211259558859615022ee64d16ecc0dfd99"
+    },
+    {
+      "path": "quality/design-v3/screenshots/mermaid-M05-L04-390-light.png",
+      "bytes": 24266,
+      "sha256": "06676e111a4ec68defa2114da4ae5ead02908f4b06d4ca352b10feb130a6f009"
+    },
+    {
+      "path": "quality/design-v3/screenshots/mermaid-M14-L06-1440-dark.png",
+      "bytes": 198208,
+      "sha256": "85ceb797d6ae4abf3f706e9c592d3f6d1d0926330dcc64683ffb0c4484dd8498"
+    },
+    {
+      "path": "quality/design-v3/screenshots/mermaid-M14-L06-1440-light.png",
+      "bytes": 195838,
+      "sha256": "057bce92b26a0b27222f0acb7885904ad3a0994de72ab4ce916f8c6fe8ca4a83"
+    },
+    {
+      "path": "quality/design-v3/screenshots/mermaid-M14-L06-390-dark.png",
+      "bytes": 79659,
+      "sha256": "9952995c86f49a26859916f59d1ca2f8b8e431870b899eccf5aeaf972e73fc5f"
+    },
+    {
+      "path": "quality/design-v3/screenshots/mermaid-M14-L06-390-light.png",
+      "bytes": 78576,
+      "sha256": "4ff0ee005e5afe32c96ac67c06e7bdeb0b1a0a4d2e29519a047001b54dc2e1ec"
+    },
+    {
+      "path": "quality/design-v3/screenshots/product-experiment-1440-dark.png",
+      "bytes": 176476,
+      "sha256": "6c7a73f8952fd1589e3a8faffcd0ed95f334d2062613f671af02ff43e612252f"
+    },
+    {
+      "path": "quality/design-v3/screenshots/product-experiment-1440-light.png",
+      "bytes": 175360,
+      "sha256": "c7df76599ea2f1fcc6e7ebc6919d6cf326549579bf305a43961418baf078387b"
+    },
+    {
+      "path": "quality/design-v3/screenshots/product-experiment-390-dark.png",
+      "bytes": 41091,
+      "sha256": "90266d1c663484eb7f87cc2c19e251b21849b2eb3a952b133e620a863e776512"
+    },
+    {
+      "path": "quality/design-v3/screenshots/product-experiment-390-light.png",
+      "bytes": 40924,
+      "sha256": "ec116600498245782aff967ddb5e0c1007b7212100faba6eb0a5d04ce84b638b"
+    },
+    {
+      "path": "quality/design-v3/screenshots/python-code-1440-dark.png",
+      "bytes": 232001,
+      "sha256": "416a017da1652ef915ae818205c02d3f3bdb83b811b7a8f64b0a1481806cfe93"
+    },
+    {
+      "path": "quality/design-v3/screenshots/python-code-1440-light.png",
+      "bytes": 231281,
+      "sha256": "266190543adf68aee2c93f318b87982f6636886db98fb5d2f6777fa86812db27"
+    },
+    {
+      "path": "quality/design-v3/screenshots/python-code-390-dark.png",
+      "bytes": 82825,
+      "sha256": "91bf9c2a47648edb9c3711d7013d43bbd1052dd8f7a65ed587fa825d95b9911b"
+    },
+    {
+      "path": "quality/design-v3/screenshots/python-code-390-light.png",
+      "bytes": 81431,
+      "sha256": "f6a8d081eca5c940a8055c312404c33c6525a33a3263c2fb3230f919dc0fb6ef"
+    }
+  ],
+  "print": [
+    {
+      "path": "quality/design-v3/print/M08-L03.pdf",
+      "bytes": 152988,
+      "sha256": "787e00d60fca434fb60c4b58e29c4842c8a2a499a5994b0c4c1b27bfcbfcfe79"
+    },
+    {
+      "path": "quality/design-v3/print/M14-L08X.pdf",
+      "bytes": 232995,
+      "sha256": "30ef370e9fafce8754a90252fccd28e30b8bba5204df860a3d66325081951771"
+    }
+  ],
+  "how_to_reproduce": [
+    "node tools/run_design_checks.cjs (PW_PATH points at a node_modules folder with playwright)",
+    "look at quality/design-v3/screenshots",
+    "python tools/build_design_v3_report.py"
+  ],
+  "limits": [
+    "Contrast is checked for text/background token pairs, not for every rendered element; matplotlib light files keep the 1.1.0 palette.",
+    "Print was checked through Edge's PDF output (page.pdf) and its built-in viewer, not through a printer.",
+    "Browser checks ran in Microsoft Edge only; Firefox and Safari were not run.",
+    "These checks describe the textbook build; they do not assess a learner."
+  ]
+}

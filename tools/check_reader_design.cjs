@@ -56,6 +56,29 @@ function colorLiteralsOutsideRoot(css) {
   return found;
 }
 
+// F4: text/background token pairs meet 4.5:1 (WCAG 2.1 AA, body text) in the dark, light and print token sets.
+// Every text token on every page surface, each hue on its soft fill, ink on soft fills, marks and text on accent.
+const TEXT_PAIRS = [...['ink','muted','accent','act','hint','ok','warn','error'].flatMap(text => ['bg','surface','paper','code-bg'].map(ground => [text, ground])),
+  ['accent','accent-soft'], ['act','act-soft'], ['hint','hint-soft'], ['ok','ok-soft'], ['warn','warn-soft'],
+  ['ink','accent-soft'], ['ink','act-soft'], ['ink','hint-soft'], ['mark-fg','mark-bg'], ['bg','accent']];
+function tokenSets(css) {
+  const read = pattern => Object.fromEntries([...css.match(pattern)[1].matchAll(/--([\w-]+):(#[0-9a-fA-F]{6})/g)].map(m => [m[1], m[2]]));
+  return {dark:read(/:root\{color-scheme:dark;([^}]*)\}/), light:read(/:root\[data-theme="light"\]\{color-scheme:light;([^}]*)\}/),
+    print:read(/@media print\{:root\{color-scheme:light;([^}]*)\}\}/)};
+}
+function contrastRatio(a, b) {
+  const lum = hex => {const v = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255).map(c => c <= .04045 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4);
+    return .2126 * v[0] + .7152 * v[1] + .0722 * v[2];};
+  const [high, low] = [lum(a), lum(b)].sort((x, y) => y - x);
+  return (high + .05) / (low + .05);
+}
+function tokenContrast(css) {
+  return Object.entries(tokenSets(css)).flatMap(([theme, t]) => TEXT_PAIRS.map(([text, ground]) => {
+    const ratio = contrastRatio(t[text], t[ground]);
+    return {theme, text, ground, ratio:Math.round(ratio * 1000) / 1000, pass:ratio >= 4.5};
+  }));
+}
+
 async function run(browser, repo, options = {}) {
   const out = options.out || path.join(repo, 'artifacts/design-redesign/reader');
   await fs.mkdir(out, {recursive:true});
@@ -74,6 +97,9 @@ async function run(browser, repo, options = {}) {
     await go('HOME');
     const outside=colorLiteralsOutsideRoot(await fs.readFile(path.join(repo,'tools/reader.css'),'utf8'));
     check('D1 colour literals only inside :root token blocks',outside.length===0,{count:outside.length,outside:outside.slice(0,20)});
+    const tokenPairs=tokenContrast(await fs.readFile(path.join(repo,'tools/reader.css'),'utf8'));report.measurements.tokenContrast=tokenPairs;
+    check('F4 text/background token pairs meet 4.5:1 in dark, light and print',tokenPairs.length===3*TEXT_PAIRS.length&&tokenPairs.every(pair=>pair.pass),
+      {pairs:tokenPairs.length,min:Math.min(...tokenPairs.map(pair=>pair.ratio)),weak:tokenPairs.filter(pair=>!pair.pass)});
     const themeState=()=>page.evaluate(()=>({theme:document.documentElement.dataset.theme,meta:document.querySelector('meta[name="color-scheme"]')?.content,
       bg:getComputedStyle(document.body).backgroundColor,label:document.getElementById('theme-toggle').textContent,
       stored:(()=>{try{return localStorage.getItem('ml-llm-course-theme');}catch{return 'unavailable';}})()}));
@@ -117,7 +143,7 @@ async function run(browser, repo, options = {}) {
     const darkCode=await codeColours();await page.locator('#theme-toggle').click();const lightCode=await codeColours();await page.locator('#theme-toggle').click();
     check('D6 Python examples are highlighted with theme tokens',darkCode.blocks===142&&darkCode.highlighted===142
       &&darkCode.k==='rgb(88, 196, 198)'&&darkCode.s==='rgb(230, 181, 102)'&&darkCode.n==='rgb(134, 170, 240)'&&darkCode.c==='rgb(163, 169, 180)'
-      &&lightCode.k==='rgb(11, 116, 120)'&&lightCode.s==='rgb(154, 100, 16)'&&lightCode.n==='rgb(31, 85, 176)'&&lightCode.c==='rgb(90, 98, 112)',{dark:darkCode,light:lightCode});
+      &&lightCode.k==='rgb(11, 116, 120)'&&lightCode.s==='rgb(149, 96, 15)'&&lightCode.n==='rgb(31, 85, 176)'&&lightCode.c==='rgb(90, 98, 112)',{dark:darkCode,light:lightCode});
     await page.evaluate(()=>window.scrollTo(0,0));await settle();
     check('D07 formula blocks and shape table',await page.locator('#M08-L03 .formula').count()>=4&&await page.locator('#M08-L03 table').count()>=1);
     await snap('attention-desktop');
@@ -304,12 +330,15 @@ async function run(browser, repo, options = {}) {
   await fs.writeFile(path.join(out,'qa-results.json'),JSON.stringify(report,null,2));
   return report;
 }
-module.exports={run,colorLiteralsOutsideRoot};
+module.exports={run,colorLiteralsOutsideRoot,tokenContrast,TEXT_PAIRS};
 
 // Without a browser: node tools/check_reader_design.cjs [file.css] runs only the static colour check.
 if (require.main === module) {
   const file = process.argv[2] || path.join(__dirname, 'reader.css');
-  const outside = colorLiteralsOutsideRoot(require('node:fs').readFileSync(file, 'utf8'));
+  const css = require('node:fs').readFileSync(file, 'utf8'), outside = colorLiteralsOutsideRoot(css);
   console.log(JSON.stringify({check:'colour literals only inside :root token blocks', file:path.relative(process.cwd(), file), count:outside.length, outside}, null, 2));
-  process.exitCode = outside.length ? 1 : 0;
+  // The token contrast needs the reader's token blocks; another stylesheet gets only the literal check.
+  const weak = /:root\{color-scheme:dark;/.test(css) ? tokenContrast(css).filter(pair => !pair.pass) : [];
+  if (weak.length) console.log(JSON.stringify({check:'text/background token pairs meet 4.5:1', weak}, null, 2));
+  process.exitCode = outside.length || weak.length ? 1 : 0;
 }
