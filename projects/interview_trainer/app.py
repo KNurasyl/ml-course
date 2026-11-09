@@ -21,6 +21,15 @@ SESSIONS: dict[str, Interview] = {}
 WORK = threading.Lock()
 MODEL = LocalLLM()
 ENGINES = {"asr": transcribe_wav, "tts": synthesize_wav}
+QUESTIONS = {"mode": "auto", "search": None}
+
+
+def question_search():
+    """Search over the question base (T52); built on the first request, models only in the full mode."""
+    if QUESTIONS["search"] is None:
+        from .question_rag import QuestionSearch
+        QUESTIONS["search"] = QuestionSearch(QUESTIONS["mode"])
+    return QUESTIONS["search"]
 
 
 def select_speech(asr: str = "vosk", tts: str = "sapi") -> dict:
@@ -56,6 +65,17 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/health":
             return self.send(200, {"status":"ok","profile":getattr(MODEL, "profile", "tiny"),"model_loaded":MODEL.model is not None,"sessions":len(SESSIONS)})
+        if self.path == "/questions" or self.path.startswith("/questions?"):
+            from urllib.parse import parse_qs, urlparse
+            params = parse_qs(urlparse(self.path).query)
+            if not WORK.acquire(blocking=False):
+                return self.send(409, {"error":"Модель занята. Повтори поиск позже."})
+            try:
+                return self.send(200, question_search().search(params.get("q", [""])[0], int(params.get("k", ["3"])[0])))
+            except ValueError as error:
+                return self.send(400, {"error":str(error)})
+            finally:
+                WORK.release()
         if self.path.startswith("/session/"):
             if not WORK.acquire(blocking=False):
                 return self.send(409, {"error":"Операция ещё выполняется. Повтори восстановление позже."})
@@ -154,7 +174,10 @@ def main():
     parser.add_argument("--asr", choices=["vosk", "whisper"], default="vosk", help="whisper: optional faster-whisper, M15-L07X")
     parser.add_argument("--tts", choices=["sapi", "piper"], default="sapi", help="piper: optional Piper voice, M15-L07X")
     parser.add_argument("--profile", default=None, help="model profile from profiles.yaml: tiny (default), strong, ru-8b, api")
+    parser.add_argument("--questions", choices=["auto", "full", "lexical"], default="auto",
+                        help="search over the question base: full needs the T32/T35 models and sqlite-vec, auto falls back to lexical")
     args = parser.parse_args()
+    QUESTIONS["mode"] = args.questions
     select_speech(args.asr, args.tts)
     global MODEL
     with contextlib.ExitStack() as stack:

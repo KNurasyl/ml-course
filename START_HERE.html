@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="ce14e26cd453a3a5a52a63959c874e5d2004fa343368da8e0a977f901779b81f"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="468d69b2bf8200cce87999ab4997f88784d88a188ac88b530672a19f16ddfa38"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -25104,6 +25104,21 @@ for asr in (&quot;vosk&quot;, &quot;whisper&quot;):
 </ul>
 <p>Недоступный профиль не подменяется другим: тренажёр останавливается и пишет, чего не хватает. <code>/health</code> показывает активный профиль.</p>
 <p>Авторская проверка 09.11.2026: одна и та же HR-реплика и одна backend-реплика прошли через рубрику на обоих профилях, файл <code>quality/profiles/smoke.json</code>. Оба профиля дали проверяемое наблюдение. <code>tiny</code> выбрал в HR-ответе личное действие, <code>strong</code> — обоснование. На одну реплику <code>strong</code> тратит около 5 с после запуска сервера за 8 с, <code>tiny</code> — 2–9 с, считая первую загрузку модели. Это проверка того, что профиль работает целиком, а не сравнение качества: сравнение моделей — отдельная задача T51.</p>
+<h2 id="REFERENCE-PROJECT--поиск-по-базе-вопросов-расширение-1-2-0">Поиск по базе вопросов (расширение 1.2.0)</h2>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m projects.interview_trainer.question_rag search &quot;как кандидат просит помощи&quot;
+.\.venv\Scripts\python.exe -m projects.interview_trainer.question_rag report
+.\.venv\Scripts\python.exe -m projects.interview_trainer.question_rag evaluate
+</code></pre>
+<p>Интервьюер пишет тему своими словами и получает вопрос из <code>data/interview</code> вместе с тем, что искать в ответе, и уточнениями. В приложении тот же поиск отвечает на <code>GET /questions?q=...&amp;k=3</code>. Полный режим собирает модули расширений M10: BM25 (T33), векторы USER-bge-m3 (T32) в файле sqlite-vec (T34), их слияние RRF и рерэнкер bge-reranker-v2-m3 по 10 лучшим кандидатам (T35). Без этих моделей тренажёр переходит в лексический режим (BM25 и символьный TF-IDF) и прямо пишет, что уверенность не оценивает. Флаг приложения <code>--questions full|lexical|auto</code>.</p>
+<p>Авторская оценка 09.11.2026, <code>quality/question-search/report.json</code>: 40 запросов, написанных до первого прогона, по два на вопрос (с ключевым термином и пересказом без него), и 8 тем, которых в базе нет. Recall@1:</p>
+<ul>
+<li>поиск MCP-сервера из T42 по шести буквам — 0.650;</li>
+<li>символьный TF-IDF тренажёра — 0.650;</li>
+<li>USER-bge-m3 — 0.825;</li>
+<li>RRF BM25 и плотного поиска — 0.600: слияние со слабым BM25 без морфологии ухудшило плотный поиск;</li>
+<li>RRF и рерэнкер — 0.900, MRR 0.933.</li>
+</ul>
+<p>На пересказах рост с 0.40 до 0.80, запросы с термином дают 1.0. Провалы T42 и T43 исправлены: «просит помощи» находит HR07, «сложная задача» — HR01. Отрицательный результат: вероятность рерэнкера на этой базе не отделяет темы вне базы от пересказов. Заранее выбранный порог 0.1 отклонил все 8 тем вне базы и 18 из 40 верных запросов. Поэтому поиск всегда показывает ближайшие вопросы и помечает уверенность, а решение остаётся за интервьюером. Загрузка двух моделей — 10 с, запрос — около 0.9 с, из них 0.84 с занимает рерэнкер.</p>
 <h2 id="REFERENCE-PROJECT--как-проверять-результат">Как проверять результат</h2>
 <ol>
 <li>Пройди один HR и один backend сценарий. Сохрани JSON в submissions, а время каждого хода перенеси в отчёт.</li>

@@ -1,0 +1,4378 @@
+{
+  "task": "T52",
+  "bank": 20,
+  "answerable": 40,
+  "unanswerable": 8,
+  "pool": 10,
+  "threshold": 0.1,
+  "rrf_c": 10,
+  "encoder": "deepvk/USER-bge-m3@0cc6cfe48e260fb0474c753087a69369e88709ae",
+  "reranker": "BAAI/bge-reranker-v2-m3@953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+  "store": {
+    "kind": "sqlite-vec",
+    "rebuilt": true,
+    "key": "deepvk/USER-bge-m3@0cc6cfe48e260fb0474c753087a69369e88709ae#bank-4e63961d6fdaa7c4"
+  },
+  "vector_parity_with_t32": 2.682209014892578e-07,
+  "table": {
+    "stem6": {
+      "recall@1": 0.65,
+      "recall@3": 0.7,
+      "recall@5": 0.75,
+      "mrr": 0.688,
+      "missed": [
+        "q06",
+        "q12",
+        "q14",
+        "q18",
+        "q20",
+        "q25",
+        "q30",
+        "q36",
+        "q37"
+      ]
+    },
+    "tfidf_char": {
+      "recall@1": 0.65,
+      "recall@3": 0.85,
+      "recall@5": 0.85,
+      "mrr": 0.752,
+      "missed": []
+    },
+    "bm25": {
+      "recall@1": 0.5,
+      "recall@3": 0.575,
+      "recall@5": 0.6,
+      "mrr": 0.581,
+      "missed": []
+    },
+    "dense": {
+      "recall@1": 0.825,
+      "recall@3": 0.95,
+      "recall@5": 1.0,
+      "mrr": 0.892,
+      "missed": []
+    },
+    "rrf": {
+      "recall@1": 0.6,
+      "recall@3": 0.825,
+      "recall@5": 0.975,
+      "mrr": 0.733,
+      "missed": []
+    },
+    "rrf_rerank": {
+      "recall@1": 0.9,
+      "recall@3": 0.95,
+      "recall@5": 1.0,
+      "mrr": 0.933,
+      "missed": []
+    },
+    "rerank_all": {
+      "recall@1": 0.9,
+      "recall@3": 0.95,
+      "recall@5": 1.0,
+      "mrr": 0.933,
+      "missed": []
+    }
+  },
+  "recall@1_by_style": {
+    "term": {
+      "stem6": 0.9,
+      "tfidf_char": 1.0,
+      "bm25": 0.75,
+      "dense": 1.0,
+      "rrf": 0.85,
+      "rrf_rerank": 1.0,
+      "rerank_all": 1.0
+    },
+    "paraphrase": {
+      "stem6": 0.4,
+      "tfidf_char": 0.3,
+      "bm25": 0.25,
+      "dense": 0.65,
+      "rrf": 0.35,
+      "rrf_rerank": 0.8,
+      "rerank_all": 0.8
+    }
+  },
+  "stem6_empty": {
+    "answerable": 2,
+    "unanswerable": 4
+  },
+  "threshold_rule": {
+    "answerable_kept": 22,
+    "answerable_kept_and_right": 22,
+    "unanswerable_rejected": 8
+  },
+  "threshold_sweep": [
+    {
+      "threshold": 0.01,
+      "answerable_kept": 25,
+      "answerable_kept_and_right": 25,
+      "unanswerable_rejected": 8
+    },
+    {
+      "threshold": 0.05,
+      "answerable_kept": 23,
+      "answerable_kept_and_right": 23,
+      "unanswerable_rejected": 8
+    },
+    {
+      "threshold": 0.1,
+      "answerable_kept": 22,
+      "answerable_kept_and_right": 22,
+      "unanswerable_rejected": 8
+    },
+    {
+      "threshold": 0.3,
+      "answerable_kept": 21,
+      "answerable_kept_and_right": 21,
+      "unanswerable_rejected": 8
+    },
+    {
+      "threshold": 0.5,
+      "answerable_kept": 20,
+      "answerable_kept_and_right": 20,
+      "unanswerable_rejected": 8
+    }
+  ],
+  "latency": {
+    "load_seconds": 10.2,
+    "encode_ms_per_query": 30.9,
+    "rerank_ms_per_query_pool": 840.2
+  },
+  "rows": [
+    {
+      "id": "q01",
+      "text": "вопрос про разницу между обучением и инференсом",
+      "gold": [
+        "TECH01"
+      ],
+      "style": "term",
+      "best_probability": 0.9676,
+      "top": {
+        "bm25": [
+          "TECH06",
+          "HR03",
+          "TECH03"
+        ],
+        "tfidf_char": [
+          "TECH01",
+          "HR07",
+          "HR02"
+        ],
+        "dense": [
+          "TECH01",
+          "TECH07",
+          "TECH10"
+        ],
+        "rrf": [
+          "HR03",
+          "TECH01",
+          "TECH06"
+        ],
+        "stem6": [
+          "TECH01"
+        ],
+        "rrf_rerank": [
+          "TECH01",
+          "TECH10",
+          "TECH04"
+        ],
+        "rerank_all": [
+          "TECH01",
+          "TECH10",
+          "TECH04"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 9,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.1111111111111111
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q02",
+      "text": "чем отличается момент, когда сеть учится, от момента, когда она отвечает пользователю",
+      "gold": [
+        "TECH01"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0017,
+      "top": {
+        "bm25": [
+          "TECH01",
+          "TECH07",
+          "TECH10"
+        ],
+        "tfidf_char": [
+          "TECH12",
+          "TECH01",
+          "TECH07"
+        ],
+        "dense": [
+          "TECH01",
+          "TECH07",
+          "HR05"
+        ],
+        "rrf": [
+          "TECH01",
+          "TECH07",
+          "TECH10"
+        ],
+        "stem6": [
+          "TECH01",
+          "TECH07",
+          "TECH10"
+        ],
+        "rrf_rerank": [
+          "TECH01",
+          "TECH07",
+          "TECH12"
+        ],
+        "rerank_all": [
+          "TECH01",
+          "TECH07",
+          "TECH12"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q03",
+      "text": "почему нельзя подбирать параметры на тестовых данных",
+      "gold": [
+        "TECH02"
+      ],
+      "style": "term",
+      "best_probability": 0.8229,
+      "top": {
+        "bm25": [
+          "TECH10",
+          "TECH11",
+          "TECH02"
+        ],
+        "tfidf_char": [
+          "TECH02",
+          "TECH01",
+          "TECH05"
+        ],
+        "dense": [
+          "TECH02",
+          "TECH05",
+          "TECH11"
+        ],
+        "rrf": [
+          "TECH02",
+          "TECH11",
+          "TECH10"
+        ],
+        "stem6": [
+          "TECH02",
+          "TECH01",
+          "TECH05"
+        ],
+        "rrf_rerank": [
+          "TECH02",
+          "TECH11",
+          "TECH10"
+        ],
+        "rerank_all": [
+          "TECH02",
+          "TECH11",
+          "TECH10"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 3,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.3333333333333333
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q04",
+      "text": "почему отложенную выборку нельзя трогать, пока настраиваешь модель",
+      "gold": [
+        "TECH02"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0003,
+      "top": {
+        "bm25": [
+          "TECH11",
+          "TECH02",
+          "TECH01"
+        ],
+        "tfidf_char": [
+          "TECH01",
+          "TECH11",
+          "TECH02"
+        ],
+        "dense": [
+          "TECH08",
+          "TECH02",
+          "TECH05"
+        ],
+        "rrf": [
+          "TECH02",
+          "TECH11",
+          "TECH01"
+        ],
+        "stem6": [
+          "TECH02",
+          "TECH11",
+          "HR06"
+        ],
+        "rrf_rerank": [
+          "TECH02",
+          "TECH11",
+          "TECH08"
+        ],
+        "rerank_all": [
+          "TECH02",
+          "TECH11",
+          "HR08"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "tfidf_char": {
+          "rank": 3,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.3333333333333333
+        },
+        "dense": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q05",
+      "text": "что проверять, если API медленный",
+      "gold": [
+        "TECH03"
+      ],
+      "style": "term",
+      "best_probability": 0.9918,
+      "top": {
+        "bm25": [
+          "TECH03",
+          "TECH02",
+          "TECH04"
+        ],
+        "tfidf_char": [
+          "TECH03",
+          "TECH02",
+          "TECH10"
+        ],
+        "dense": [
+          "TECH03",
+          "HR07",
+          "TECH06"
+        ],
+        "rrf": [
+          "TECH03",
+          "TECH12",
+          "TECH06"
+        ],
+        "stem6": [
+          "TECH03",
+          "TECH12",
+          "HR01"
+        ],
+        "rrf_rerank": [
+          "TECH03",
+          "TECH06",
+          "TECH11"
+        ],
+        "rerank_all": [
+          "TECH03",
+          "TECH06",
+          "TECH11"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q06",
+      "text": "сервис стал долго отвечать, с чего начать поиск причины",
+      "gold": [
+        "TECH03"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0031,
+      "top": {
+        "bm25": [
+          "TECH12",
+          "HR08",
+          "HR06"
+        ],
+        "tfidf_char": [
+          "TECH12",
+          "TECH06",
+          "TECH09"
+        ],
+        "dense": [
+          "HR07",
+          "TECH03",
+          "TECH11"
+        ],
+        "rrf": [
+          "TECH12",
+          "HR08",
+          "TECH03"
+        ],
+        "stem6": [
+          "TECH12"
+        ],
+        "rrf_rerank": [
+          "TECH03",
+          "TECH12",
+          "HR07"
+        ],
+        "rerank_all": [
+          "TECH03",
+          "TECH12",
+          "HR07"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 8,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.125
+        },
+        "tfidf_char": {
+          "rank": 6,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.16666666666666666
+        },
+        "dense": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "rrf": {
+          "rank": 3,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.3333333333333333
+        },
+        "stem6": {
+          "rank": null,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q07",
+      "text": "идемпотентность",
+      "gold": [
+        "TECH04"
+      ],
+      "style": "term",
+      "best_probability": 0.5553,
+      "top": {
+        "bm25": [
+          "TECH04",
+          "TECH01",
+          "TECH02"
+        ],
+        "tfidf_char": [
+          "TECH04",
+          "HR03",
+          "HR08"
+        ],
+        "dense": [
+          "TECH04",
+          "TECH11",
+          "HR03"
+        ],
+        "rrf": [
+          "TECH04",
+          "TECH01",
+          "TECH11"
+        ],
+        "stem6": [
+          "TECH04"
+        ],
+        "rrf_rerank": [
+          "TECH04",
+          "TECH03",
+          "TECH06"
+        ],
+        "rerank_all": [
+          "TECH04",
+          "TECH03",
+          "TECH06"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q08",
+      "text": "что будет, если один и тот же запрос на оплату отправить дважды",
+      "gold": [
+        "TECH04"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0004,
+      "top": {
+        "bm25": [
+          "HR07",
+          "TECH10",
+          "TECH03"
+        ],
+        "tfidf_char": [
+          "HR07",
+          "TECH06",
+          "TECH05"
+        ],
+        "dense": [
+          "TECH04",
+          "TECH12",
+          "HR07"
+        ],
+        "rrf": [
+          "HR07",
+          "TECH04",
+          "TECH12"
+        ],
+        "stem6": [
+          "HR07",
+          "TECH03",
+          "TECH04"
+        ],
+        "rrf_rerank": [
+          "TECH06",
+          "TECH04",
+          "HR07"
+        ],
+        "rerank_all": [
+          "TECH06",
+          "TECH04",
+          "HR08"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 4,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.25
+        },
+        "tfidf_char": {
+          "rank": 6,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.16666666666666666
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "stem6": {
+          "rank": 3,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.3333333333333333
+        },
+        "rrf_rerank": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "rerank_all": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        }
+      }
+    },
+    {
+      "id": "q09",
+      "text": "параметризованные SQL-запросы",
+      "gold": [
+        "TECH05"
+      ],
+      "style": "term",
+      "best_probability": 0.8682,
+      "top": {
+        "bm25": [
+          "TECH05",
+          "TECH01",
+          "TECH02"
+        ],
+        "tfidf_char": [
+          "TECH05",
+          "TECH02",
+          "TECH01"
+        ],
+        "dense": [
+          "TECH05",
+          "HR07",
+          "TECH06"
+        ],
+        "rrf": [
+          "TECH05",
+          "TECH03",
+          "TECH06"
+        ],
+        "stem6": [
+          "TECH05",
+          "HR07",
+          "TECH01"
+        ],
+        "rrf_rerank": [
+          "TECH05",
+          "TECH06",
+          "HR07"
+        ],
+        "rerank_all": [
+          "TECH05",
+          "TECH06",
+          "HR07"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q10",
+      "text": "почему опасно вставлять ввод пользователя прямо в текст запроса к базе",
+      "gold": [
+        "TECH05"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0153,
+      "top": {
+        "bm25": [
+          "TECH05",
+          "HR05",
+          "TECH03"
+        ],
+        "tfidf_char": [
+          "TECH05",
+          "TECH02",
+          "TECH12"
+        ],
+        "dense": [
+          "TECH05",
+          "TECH02",
+          "TECH06"
+        ],
+        "rrf": [
+          "TECH05",
+          "TECH06",
+          "TECH02"
+        ],
+        "stem6": [
+          "TECH05",
+          "HR06",
+          "HR07"
+        ],
+        "rrf_rerank": [
+          "TECH05",
+          "HR08",
+          "TECH06"
+        ],
+        "rerank_all": [
+          "TECH05",
+          "HR08",
+          "TECH06"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q11",
+      "text": "зачем нужен индекс в базе данных",
+      "gold": [
+        "TECH06"
+      ],
+      "style": "term",
+      "best_probability": 0.9892,
+      "top": {
+        "bm25": [
+          "TECH06",
+          "HR05",
+          "TECH10"
+        ],
+        "tfidf_char": [
+          "TECH06",
+          "TECH10",
+          "TECH02"
+        ],
+        "dense": [
+          "TECH06",
+          "TECH05",
+          "TECH02"
+        ],
+        "rrf": [
+          "TECH06",
+          "TECH03",
+          "TECH02"
+        ],
+        "stem6": [
+          "TECH06",
+          "TECH10"
+        ],
+        "rrf_rerank": [
+          "TECH06",
+          "TECH02",
+          "TECH03"
+        ],
+        "rerank_all": [
+          "TECH06",
+          "TECH02",
+          "TECH03"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q12",
+      "text": "почему выборка по таблице ускорилась, а вставка строк стала медленнее",
+      "gold": [
+        "TECH06"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0031,
+      "top": {
+        "bm25": [
+          "TECH05",
+          "TECH11",
+          "TECH02"
+        ],
+        "tfidf_char": [
+          "TECH05",
+          "TECH03",
+          "TECH07"
+        ],
+        "dense": [
+          "TECH05",
+          "TECH07",
+          "TECH02"
+        ],
+        "rrf": [
+          "TECH05",
+          "TECH02",
+          "TECH11"
+        ],
+        "stem6": [
+          "TECH05",
+          "HR06",
+          "TECH02"
+        ],
+        "rrf_rerank": [
+          "TECH11",
+          "TECH05",
+          "TECH03"
+        ],
+        "rerank_all": [
+          "TECH11",
+          "TECH05",
+          "TECH03"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 10,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.1
+        },
+        "tfidf_char": {
+          "rank": 14,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.07142857142857142
+        },
+        "dense": {
+          "rank": 4,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.25
+        },
+        "rrf": {
+          "rank": 5,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.2
+        },
+        "stem6": {
+          "rank": null,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.0
+        },
+        "rrf_rerank": {
+          "rank": 4,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.25
+        },
+        "rerank_all": {
+          "rank": 4,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.25
+        }
+      }
+    },
+    {
+      "id": "q13",
+      "text": "async и CPU-вычисления",
+      "gold": [
+        "TECH07"
+      ],
+      "style": "term",
+      "best_probability": 0.8279,
+      "top": {
+        "bm25": [
+          "TECH07",
+          "TECH06",
+          "HR03"
+        ],
+        "tfidf_char": [
+          "TECH07",
+          "HR05",
+          "HR02"
+        ],
+        "dense": [
+          "TECH07",
+          "TECH03",
+          "TECH08"
+        ],
+        "rrf": [
+          "TECH07",
+          "TECH03",
+          "HR03"
+        ],
+        "stem6": [
+          "TECH07"
+        ],
+        "rrf_rerank": [
+          "TECH07",
+          "TECH03",
+          "TECH11"
+        ],
+        "rerank_all": [
+          "TECH07",
+          "TECH03",
+          "TECH11"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q14",
+      "text": "поможет ли асинхронность, если сервис считает тяжёлую математику",
+      "gold": [
+        "TECH07"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0002,
+      "top": {
+        "bm25": [
+          "TECH06",
+          "TECH01",
+          "TECH02"
+        ],
+        "tfidf_char": [
+          "TECH06",
+          "TECH12",
+          "TECH11"
+        ],
+        "dense": [
+          "TECH07",
+          "TECH11",
+          "TECH06"
+        ],
+        "rrf": [
+          "TECH06",
+          "TECH07",
+          "TECH03"
+        ],
+        "stem6": [
+          "TECH06",
+          "TECH12"
+        ],
+        "rrf_rerank": [
+          "TECH07",
+          "TECH06",
+          "TECH11"
+        ],
+        "rerank_all": [
+          "TECH07",
+          "TECH06",
+          "TECH11"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 7,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.14285714285714285
+        },
+        "tfidf_char": {
+          "rank": 7,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.14285714285714285
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "stem6": {
+          "rank": null,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q15",
+      "text": "версии модели и preprocessing",
+      "gold": [
+        "TECH08"
+      ],
+      "style": "term",
+      "best_probability": 0.5461,
+      "top": {
+        "bm25": [
+          "TECH08",
+          "TECH01",
+          "TECH06"
+        ],
+        "tfidf_char": [
+          "TECH08",
+          "TECH01",
+          "HR02"
+        ],
+        "dense": [
+          "TECH08",
+          "TECH01",
+          "TECH03"
+        ],
+        "rrf": [
+          "TECH08",
+          "TECH01",
+          "TECH03"
+        ],
+        "stem6": [
+          "TECH08",
+          "TECH01"
+        ],
+        "rrf_rerank": [
+          "TECH08",
+          "TECH01",
+          "TECH03"
+        ],
+        "rerank_all": [
+          "TECH08",
+          "TECH01",
+          "TECH10"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q16",
+      "text": "как не выкатить веса, несовместимые с обработкой входных данных",
+      "gold": [
+        "TECH08"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0033,
+      "top": {
+        "bm25": [
+          "HR08",
+          "TECH04",
+          "TECH09"
+        ],
+        "tfidf_char": [
+          "TECH08",
+          "TECH10",
+          "TECH02"
+        ],
+        "dense": [
+          "TECH08",
+          "TECH02",
+          "TECH05"
+        ],
+        "rrf": [
+          "TECH05",
+          "HR08",
+          "TECH08"
+        ],
+        "stem6": [
+          "HR02",
+          "HR04",
+          "HR07"
+        ],
+        "rrf_rerank": [
+          "TECH08",
+          "TECH06",
+          "TECH02"
+        ],
+        "rerank_all": [
+          "TECH08",
+          "TECH06",
+          "TECH02"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 13,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.07692307692307693
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 3,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.3333333333333333
+        },
+        "stem6": {
+          "rank": 6,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.16666666666666666
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q17",
+      "text": "как найти ошибку в RAG",
+      "gold": [
+        "TECH09"
+      ],
+      "style": "term",
+      "best_probability": 0.5326,
+      "top": {
+        "bm25": [
+          "TECH09",
+          "HR05",
+          "TECH03"
+        ],
+        "tfidf_char": [
+          "TECH09",
+          "HR03",
+          "HR07"
+        ],
+        "dense": [
+          "TECH09",
+          "HR03",
+          "HR07"
+        ],
+        "rrf": [
+          "TECH09",
+          "TECH03",
+          "HR07"
+        ],
+        "stem6": [
+          "TECH09",
+          "HR02",
+          "HR04"
+        ],
+        "rrf_rerank": [
+          "TECH09",
+          "TECH03",
+          "TECH12"
+        ],
+        "rerank_all": [
+          "TECH09",
+          "TECH03",
+          "TECH06"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q18",
+      "text": "ассистент с поиском по документам отвечает неправильно, где искать причину",
+      "gold": [
+        "TECH09"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0003,
+      "top": {
+        "bm25": [
+          "TECH04",
+          "TECH12",
+          "HR08"
+        ],
+        "tfidf_char": [
+          "TECH06",
+          "TECH09",
+          "HR03"
+        ],
+        "dense": [
+          "HR07",
+          "HR03",
+          "TECH09"
+        ],
+        "rrf": [
+          "HR08",
+          "TECH09",
+          "TECH12"
+        ],
+        "stem6": [],
+        "rrf_rerank": [
+          "TECH06",
+          "HR07",
+          "HR03"
+        ],
+        "rerank_all": [
+          "TECH06",
+          "HR07",
+          "HR03"
+        ]
+      },
+      "stem6_empty": true,
+      "methods": {
+        "bm25": {
+          "rank": 6,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.16666666666666666
+        },
+        "tfidf_char": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "dense": {
+          "rank": 3,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.3333333333333333
+        },
+        "rrf": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "stem6": {
+          "rank": null,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.0
+        },
+        "rrf_rerank": {
+          "rank": 4,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.25
+        },
+        "rerank_all": {
+          "rank": 4,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.25
+        }
+      }
+    },
+    {
+      "id": "q19",
+      "text": "тест функции и проверка качества ML",
+      "gold": [
+        "TECH10"
+      ],
+      "style": "term",
+      "best_probability": 0.9926,
+      "top": {
+        "bm25": [
+          "TECH10",
+          "HR06",
+          "TECH06"
+        ],
+        "tfidf_char": [
+          "TECH10",
+          "TECH02",
+          "HR07"
+        ],
+        "dense": [
+          "TECH10",
+          "TECH03",
+          "HR06"
+        ],
+        "rrf": [
+          "TECH10",
+          "HR06",
+          "TECH03"
+        ],
+        "stem6": [
+          "TECH10",
+          "HR01",
+          "HR07"
+        ],
+        "rrf_rerank": [
+          "TECH10",
+          "TECH03",
+          "HR01"
+        ],
+        "rerank_all": [
+          "TECH10",
+          "TECH03",
+          "TECH08"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q20",
+      "text": "почему зелёных юнит-тестов мало, чтобы сказать, что модель хорошая",
+      "gold": [
+        "TECH10"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0007,
+      "top": {
+        "bm25": [
+          "TECH01",
+          "TECH03",
+          "HR06"
+        ],
+        "tfidf_char": [
+          "TECH02",
+          "TECH01",
+          "TECH12"
+        ],
+        "dense": [
+          "TECH02",
+          "TECH11",
+          "TECH08"
+        ],
+        "rrf": [
+          "TECH01",
+          "TECH11",
+          "TECH02"
+        ],
+        "stem6": [
+          "TECH02",
+          "HR06",
+          "TECH01"
+        ],
+        "rrf_rerank": [
+          "TECH11",
+          "TECH02",
+          "TECH10"
+        ],
+        "rerank_all": [
+          "TECH11",
+          "TECH02",
+          "TECH10"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 13,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.07692307692307693
+        },
+        "tfidf_char": {
+          "rank": 9,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.1111111111111111
+        },
+        "dense": {
+          "rank": 4,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.25
+        },
+        "rrf": {
+          "rank": 8,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.125
+        },
+        "stem6": {
+          "rank": null,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.0
+        },
+        "rrf_rerank": {
+          "rank": 3,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.3333333333333333
+        },
+        "rerank_all": {
+          "rank": 3,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.3333333333333333
+        }
+      }
+    },
+    {
+      "id": "q21",
+      "text": "почему нельзя смотреть только на среднюю задержку",
+      "gold": [
+        "TECH11"
+      ],
+      "style": "term",
+      "best_probability": 0.6691,
+      "top": {
+        "bm25": [
+          "TECH11",
+          "TECH02",
+          "TECH10"
+        ],
+        "tfidf_char": [
+          "TECH11",
+          "TECH02",
+          "TECH03"
+        ],
+        "dense": [
+          "TECH11",
+          "TECH07",
+          "TECH02"
+        ],
+        "rrf": [
+          "TECH11",
+          "TECH02",
+          "TECH05"
+        ],
+        "stem6": [
+          "TECH11",
+          "TECH02",
+          "HR06"
+        ],
+        "rrf_rerank": [
+          "TECH11",
+          "TECH02",
+          "TECH03"
+        ],
+        "rerank_all": [
+          "TECH11",
+          "TECH02",
+          "TECH03"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q22",
+      "text": "среднее время ответа нормальное, а пользователи жалуются на тормоза",
+      "gold": [
+        "TECH11"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0056,
+      "top": {
+        "bm25": [
+          "TECH10",
+          "TECH01",
+          "TECH02"
+        ],
+        "tfidf_char": [
+          "TECH12",
+          "TECH05",
+          "TECH11"
+        ],
+        "dense": [
+          "TECH03",
+          "TECH07",
+          "TECH11"
+        ],
+        "rrf": [
+          "TECH03",
+          "TECH07",
+          "TECH10"
+        ],
+        "stem6": [
+          "TECH05",
+          "TECH11",
+          "TECH12"
+        ],
+        "rrf_rerank": [
+          "TECH11",
+          "TECH03",
+          "TECH12"
+        ],
+        "rerank_all": [
+          "TECH11",
+          "TECH03",
+          "TECH12"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 11,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.09090909090909091
+        },
+        "tfidf_char": {
+          "rank": 3,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.3333333333333333
+        },
+        "dense": {
+          "rank": 3,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.3333333333333333
+        },
+        "rrf": {
+          "rank": 5,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.2
+        },
+        "stem6": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q23",
+      "text": "голосовой сервис и перебивание пользователя",
+      "gold": [
+        "TECH12"
+      ],
+      "style": "term",
+      "best_probability": 0.1845,
+      "top": {
+        "bm25": [
+          "TECH06",
+          "HR03",
+          "TECH03"
+        ],
+        "tfidf_char": [
+          "TECH12",
+          "TECH05",
+          "TECH02"
+        ],
+        "dense": [
+          "TECH12",
+          "HR07",
+          "HR03"
+        ],
+        "rrf": [
+          "HR03",
+          "TECH06",
+          "TECH12"
+        ],
+        "stem6": [
+          "TECH12",
+          "TECH05"
+        ],
+        "rrf_rerank": [
+          "TECH12",
+          "HR03",
+          "TECH03"
+        ],
+        "rerank_all": [
+          "TECH12",
+          "HR03",
+          "TECH03"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 8,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.125
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 3,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.3333333333333333
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q24",
+      "text": "что делать со старым ответом бота, если человек заговорил поверх него",
+      "gold": [
+        "TECH12"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.3041,
+      "top": {
+        "bm25": [
+          "TECH12",
+          "TECH03",
+          "TECH04"
+        ],
+        "tfidf_char": [
+          "TECH12",
+          "TECH09",
+          "TECH03"
+        ],
+        "dense": [
+          "TECH12",
+          "HR03",
+          "TECH08"
+        ],
+        "rrf": [
+          "TECH12",
+          "TECH08",
+          "TECH03"
+        ],
+        "stem6": [
+          "TECH12",
+          "TECH03",
+          "TECH04"
+        ],
+        "rrf_rerank": [
+          "TECH12",
+          "TECH08",
+          "HR03"
+        ],
+        "rerank_all": [
+          "TECH12",
+          "TECH09",
+          "HR07"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q25",
+      "text": "сложная задача",
+      "gold": [
+        "HR01"
+      ],
+      "style": "term",
+      "best_probability": 0.6129,
+      "top": {
+        "bm25": [
+          "TECH01",
+          "TECH02",
+          "TECH03"
+        ],
+        "tfidf_char": [
+          "HR01",
+          "HR04",
+          "HR06"
+        ],
+        "dense": [
+          "HR01",
+          "HR07",
+          "TECH11"
+        ],
+        "rrf": [
+          "HR01",
+          "TECH03",
+          "TECH01"
+        ],
+        "stem6": [
+          "HR04"
+        ],
+        "rrf_rerank": [
+          "HR01",
+          "HR07",
+          "TECH11"
+        ],
+        "rerank_all": [
+          "HR01",
+          "HR07",
+          "TECH11"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 13,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.07692307692307693
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": null,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q26",
+      "text": "попросить кандидата рассказать о трудном случае, который он довёл до конца",
+      "gold": [
+        "HR01"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.9301,
+      "top": {
+        "bm25": [
+          "HR01",
+          "TECH06",
+          "TECH11"
+        ],
+        "tfidf_char": [
+          "HR01",
+          "HR07",
+          "HR03"
+        ],
+        "dense": [
+          "HR01",
+          "HR07",
+          "HR03"
+        ],
+        "rrf": [
+          "HR01",
+          "TECH06",
+          "TECH11"
+        ],
+        "stem6": [
+          "HR01",
+          "HR03"
+        ],
+        "rrf_rerank": [
+          "HR01",
+          "HR03",
+          "HR07"
+        ],
+        "rerank_all": [
+          "HR01",
+          "HR03",
+          "HR07"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q27",
+      "text": "разногласие по архитектуре",
+      "gold": [
+        "HR02"
+      ],
+      "style": "term",
+      "best_probability": 0.6921,
+      "top": {
+        "bm25": [
+          "HR02",
+          "TECH11",
+          "TECH02"
+        ],
+        "tfidf_char": [
+          "HR02",
+          "TECH08",
+          "TECH05"
+        ],
+        "dense": [
+          "HR02",
+          "HR08",
+          "TECH08"
+        ],
+        "rrf": [
+          "HR02",
+          "TECH11",
+          "TECH02"
+        ],
+        "stem6": [
+          "HR02"
+        ],
+        "rrf_rerank": [
+          "HR02",
+          "HR08",
+          "TECH08"
+        ],
+        "rerank_all": [
+          "HR02",
+          "HR08",
+          "TECH08"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q28",
+      "text": "как кандидат спорил с коллегами о техническом решении",
+      "gold": [
+        "HR02"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.005,
+      "top": {
+        "bm25": [
+          "HR08",
+          "TECH09",
+          "HR01"
+        ],
+        "tfidf_char": [
+          "HR08",
+          "HR02",
+          "HR04"
+        ],
+        "dense": [
+          "HR02",
+          "HR08",
+          "TECH02"
+        ],
+        "rrf": [
+          "HR08",
+          "HR01",
+          "HR02"
+        ],
+        "stem6": [
+          "HR02",
+          "HR08",
+          "HR04"
+        ],
+        "rrf_rerank": [
+          "HR02",
+          "HR08",
+          "HR01"
+        ],
+        "rerank_all": [
+          "HR02",
+          "HR08",
+          "HR01"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 10,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.1
+        },
+        "tfidf_char": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 3,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.3333333333333333
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q29",
+      "text": "ошибка и исправление процесса",
+      "gold": [
+        "HR03"
+      ],
+      "style": "term",
+      "best_probability": 0.9431,
+      "top": {
+        "bm25": [
+          "HR03",
+          "TECH06",
+          "TECH03"
+        ],
+        "tfidf_char": [
+          "HR03",
+          "TECH09",
+          "TECH11"
+        ],
+        "dense": [
+          "HR03",
+          "TECH09",
+          "HR07"
+        ],
+        "rrf": [
+          "HR03",
+          "TECH03",
+          "TECH06"
+        ],
+        "stem6": [
+          "HR03"
+        ],
+        "rrf_rerank": [
+          "HR03",
+          "TECH03",
+          "TECH09"
+        ],
+        "rerank_all": [
+          "HR03",
+          "HR01",
+          "TECH03"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q30",
+      "text": "что кандидат поменял в работе команды после своего промаха",
+      "gold": [
+        "HR03"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0,
+      "top": {
+        "bm25": [
+          "TECH03",
+          "HR05",
+          "TECH04"
+        ],
+        "tfidf_char": [
+          "HR08",
+          "HR05",
+          "HR03"
+        ],
+        "dense": [
+          "HR03",
+          "TECH12",
+          "HR07"
+        ],
+        "rrf": [
+          "TECH12",
+          "HR05",
+          "TECH03"
+        ],
+        "stem6": [
+          "TECH03",
+          "TECH04",
+          "TECH12"
+        ],
+        "rrf_rerank": [
+          "HR03",
+          "HR01",
+          "TECH03"
+        ],
+        "rerank_all": [
+          "HR03",
+          "HR01",
+          "HR04"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 16,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.0625
+        },
+        "tfidf_char": {
+          "rank": 3,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.3333333333333333
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 4,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.25
+        },
+        "stem6": {
+          "rank": null,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q31",
+      "text": "приоритеты при нескольких срочных задачах",
+      "gold": [
+        "HR04"
+      ],
+      "style": "term",
+      "best_probability": 0.8165,
+      "top": {
+        "bm25": [
+          "HR04",
+          "HR02",
+          "TECH01"
+        ],
+        "tfidf_char": [
+          "HR04",
+          "HR01",
+          "TECH03"
+        ],
+        "dense": [
+          "HR04",
+          "TECH11",
+          "HR01"
+        ],
+        "rrf": [
+          "HR04",
+          "TECH03",
+          "TECH11"
+        ],
+        "stem6": [
+          "HR04",
+          "HR02",
+          "TECH01"
+        ],
+        "rrf_rerank": [
+          "HR04",
+          "TECH11",
+          "TECH03"
+        ],
+        "rerank_all": [
+          "HR04",
+          "TECH11",
+          "TECH03"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q32",
+      "text": "как кандидат решает, что делать первым, когда всё горит",
+      "gold": [
+        "HR04"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0007,
+      "top": {
+        "bm25": [
+          "TECH12",
+          "HR07",
+          "TECH03"
+        ],
+        "tfidf_char": [
+          "TECH12",
+          "HR07",
+          "HR04"
+        ],
+        "dense": [
+          "HR02",
+          "HR04",
+          "HR07"
+        ],
+        "rrf": [
+          "HR07",
+          "TECH12",
+          "HR02"
+        ],
+        "stem6": [
+          "TECH12",
+          "HR07",
+          "HR02"
+        ],
+        "rrf_rerank": [
+          "HR04",
+          "HR01",
+          "HR07"
+        ],
+        "rerank_all": [
+          "HR04",
+          "HR01",
+          "HR07"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 6,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.16666666666666666
+        },
+        "tfidf_char": {
+          "rank": 3,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.3333333333333333
+        },
+        "dense": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "rrf": {
+          "rank": 4,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.25
+        },
+        "stem6": {
+          "rank": 4,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.25
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q33",
+      "text": "чему научился в последнем проекте",
+      "gold": [
+        "HR05"
+      ],
+      "style": "term",
+      "best_probability": 0.8923,
+      "top": {
+        "bm25": [
+          "HR05",
+          "TECH03",
+          "TECH01"
+        ],
+        "tfidf_char": [
+          "HR05",
+          "TECH11",
+          "HR03"
+        ],
+        "dense": [
+          "HR05",
+          "HR01",
+          "HR08"
+        ],
+        "rrf": [
+          "HR05",
+          "TECH03",
+          "TECH01"
+        ],
+        "stem6": [
+          "HR05",
+          "HR03",
+          "HR08"
+        ],
+        "rrf_rerank": [
+          "HR05",
+          "TECH03",
+          "HR01"
+        ],
+        "rerank_all": [
+          "HR05",
+          "TECH03",
+          "HR01"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q34",
+      "text": "какой новый навык кандидат получил на прошлой работе",
+      "gold": [
+        "HR05"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0018,
+      "top": {
+        "bm25": [
+          "HR05",
+          "TECH10",
+          "TECH01"
+        ],
+        "tfidf_char": [
+          "HR05",
+          "HR08",
+          "TECH02"
+        ],
+        "dense": [
+          "HR05",
+          "HR01",
+          "HR03"
+        ],
+        "rrf": [
+          "HR05",
+          "TECH02",
+          "TECH01"
+        ],
+        "stem6": [
+          "HR05"
+        ],
+        "rrf_rerank": [
+          "HR05",
+          "HR06",
+          "HR01"
+        ],
+        "rerank_all": [
+          "HR05",
+          "HR06",
+          "HR08"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q35",
+      "text": "почему интересна ML-инженерия",
+      "gold": [
+        "HR06"
+      ],
+      "style": "term",
+      "best_probability": 0.7566,
+      "top": {
+        "bm25": [
+          "HR06",
+          "TECH10",
+          "TECH11"
+        ],
+        "tfidf_char": [
+          "HR06",
+          "TECH11",
+          "TECH02"
+        ],
+        "dense": [
+          "HR06",
+          "TECH10",
+          "TECH11"
+        ],
+        "rrf": [
+          "HR06",
+          "TECH10",
+          "TECH11"
+        ],
+        "stem6": [
+          "HR06",
+          "TECH02",
+          "TECH05"
+        ],
+        "rrf_rerank": [
+          "HR06",
+          "TECH06",
+          "TECH10"
+        ],
+        "rerank_all": [
+          "HR06",
+          "TECH06",
+          "TECH10"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q36",
+      "text": "что мотивирует кандидата уйти в машинное обучение",
+      "gold": [
+        "HR06"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0202,
+      "top": {
+        "bm25": [
+          "TECH03",
+          "TECH01",
+          "HR05"
+        ],
+        "tfidf_char": [
+          "TECH01",
+          "HR06",
+          "HR08"
+        ],
+        "dense": [
+          "HR06",
+          "TECH02",
+          "HR08"
+        ],
+        "rrf": [
+          "HR05",
+          "TECH01",
+          "TECH02"
+        ],
+        "stem6": [
+          "TECH01",
+          "TECH03",
+          "TECH04"
+        ],
+        "rrf_rerank": [
+          "HR06",
+          "TECH01",
+          "HR08"
+        ],
+        "rerank_all": [
+          "HR06",
+          "TECH11",
+          "TECH10"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 18,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.05555555555555555
+        },
+        "tfidf_char": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 5,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.2
+        },
+        "stem6": {
+          "rank": null,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q37",
+      "text": "просит помощи",
+      "gold": [
+        "HR07"
+      ],
+      "style": "term",
+      "best_probability": 0.6683,
+      "top": {
+        "bm25": [
+          "TECH01",
+          "TECH02",
+          "TECH03"
+        ],
+        "tfidf_char": [
+          "HR07",
+          "TECH06",
+          "TECH05"
+        ],
+        "dense": [
+          "HR07",
+          "HR03",
+          "HR01"
+        ],
+        "rrf": [
+          "TECH03",
+          "TECH06",
+          "TECH01"
+        ],
+        "stem6": [],
+        "rrf_rerank": [
+          "HR07",
+          "HR01",
+          "TECH06"
+        ],
+        "rerank_all": [
+          "HR07",
+          "HR01",
+          "TECH06"
+        ]
+      },
+      "stem6_empty": true,
+      "methods": {
+        "bm25": {
+          "rank": 19,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.05263157894736842
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 4,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.25
+        },
+        "stem6": {
+          "rank": null,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q38",
+      "text": "что делает кандидат, когда застрял и не может решить задачу сам",
+      "gold": [
+        "HR07"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0883,
+      "top": {
+        "bm25": [
+          "TECH06",
+          "HR07",
+          "TECH04"
+        ],
+        "tfidf_char": [
+          "HR07",
+          "TECH06",
+          "TECH12"
+        ],
+        "dense": [
+          "HR07",
+          "HR08",
+          "HR04"
+        ],
+        "rrf": [
+          "HR07",
+          "TECH06",
+          "TECH03"
+        ],
+        "stem6": [
+          "HR07",
+          "TECH06",
+          "TECH12"
+        ],
+        "rrf_rerank": [
+          "HR07",
+          "HR01",
+          "TECH06"
+        ],
+        "rerank_all": [
+          "HR07",
+          "HR01",
+          "TECH06"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q39",
+      "text": "объяснить техническое ограничение заказчику",
+      "gold": [
+        "HR08"
+      ],
+      "style": "term",
+      "best_probability": 0.9412,
+      "top": {
+        "bm25": [
+          "HR08",
+          "TECH01",
+          "TECH02"
+        ],
+        "tfidf_char": [
+          "HR08",
+          "HR05",
+          "TECH04"
+        ],
+        "dense": [
+          "HR08",
+          "HR05",
+          "HR07"
+        ],
+        "rrf": [
+          "HR08",
+          "TECH03",
+          "TECH02"
+        ],
+        "stem6": [
+          "HR08",
+          "HR05"
+        ],
+        "rrf_rerank": [
+          "HR08",
+          "HR03",
+          "HR05"
+        ],
+        "rerank_all": [
+          "HR08",
+          "HR03",
+          "HR05"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "tfidf_char": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "stem6": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "q40",
+      "text": "как кандидат говорит клиенту, что сделать так нельзя",
+      "gold": [
+        "HR08"
+      ],
+      "style": "paraphrase",
+      "best_probability": 0.0006,
+      "top": {
+        "bm25": [
+          "TECH11",
+          "TECH02",
+          "TECH03"
+        ],
+        "tfidf_char": [
+          "TECH12",
+          "TECH02",
+          "TECH11"
+        ],
+        "dense": [
+          "HR08",
+          "TECH02",
+          "HR07"
+        ],
+        "rrf": [
+          "TECH02",
+          "HR08",
+          "HR07"
+        ],
+        "stem6": [
+          "HR02",
+          "HR04",
+          "HR07"
+        ],
+        "rrf_rerank": [
+          "HR08",
+          "HR07",
+          "TECH02"
+        ],
+        "rerank_all": [
+          "HR08",
+          "HR01",
+          "HR03"
+        ]
+      },
+      "stem6_empty": false,
+      "methods": {
+        "bm25": {
+          "rank": 8,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.125
+        },
+        "tfidf_char": {
+          "rank": 10,
+          "r1": false,
+          "r3": false,
+          "r5": false,
+          "rr": 0.1
+        },
+        "dense": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rrf": {
+          "rank": 2,
+          "r1": false,
+          "r3": true,
+          "r5": true,
+          "rr": 0.5
+        },
+        "stem6": {
+          "rank": 4,
+          "r1": false,
+          "r3": false,
+          "r5": true,
+          "rr": 0.25
+        },
+        "rrf_rerank": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        },
+        "rerank_all": {
+          "rank": 1,
+          "r1": true,
+          "r3": true,
+          "r5": true,
+          "rr": 1.0
+        }
+      }
+    },
+    {
+      "id": "u01",
+      "text": "вопрос про шардирование базы данных",
+      "gold": [],
+      "style": "unanswerable",
+      "best_probability": 0.001,
+      "top": {
+        "bm25": [
+          "TECH10",
+          "TECH01",
+          "TECH02"
+        ],
+        "tfidf_char": [
+          "TECH10",
+          "HR07",
+          "TECH02"
+        ],
+        "dense": [
+          "TECH05",
+          "TECH08",
+          "TECH06"
+        ],
+        "rrf": [
+          "TECH05",
+          "TECH08",
+          "TECH06"
+        ],
+        "stem6": [
+          "TECH10"
+        ],
+        "rrf_rerank": [
+          "TECH06",
+          "TECH05",
+          "TECH11"
+        ],
+        "rerank_all": [
+          "TECH06",
+          "TECH05",
+          "HR03"
+        ]
+      },
+      "stem6_empty": false
+    },
+    {
+      "id": "u02",
+      "text": "как кандидат относится к переработкам и графику",
+      "gold": [],
+      "style": "unanswerable",
+      "best_probability": 0.0001,
+      "top": {
+        "bm25": [
+          "TECH08",
+          "TECH06",
+          "HR04"
+        ],
+        "tfidf_char": [
+          "TECH07",
+          "HR08",
+          "TECH09"
+        ],
+        "dense": [
+          "HR08",
+          "TECH11",
+          "HR04"
+        ],
+        "rrf": [
+          "HR08",
+          "HR04",
+          "TECH08"
+        ],
+        "stem6": [
+          "HR02",
+          "HR04",
+          "HR07"
+        ],
+        "rrf_rerank": [
+          "TECH11",
+          "TECH08",
+          "HR03"
+        ],
+        "rerank_all": [
+          "TECH11",
+          "TECH08",
+          "HR03"
+        ]
+      },
+      "stem6_empty": false
+    },
+    {
+      "id": "u03",
+      "text": "вопрос про GraphQL и REST",
+      "gold": [],
+      "style": "unanswerable",
+      "best_probability": 0.0004,
+      "top": {
+        "bm25": [
+          "TECH06",
+          "HR03",
+          "TECH03"
+        ],
+        "tfidf_char": [
+          "HR07",
+          "TECH06",
+          "TECH05"
+        ],
+        "dense": [
+          "TECH03",
+          "TECH11",
+          "TECH09"
+        ],
+        "rrf": [
+          "TECH03",
+          "TECH11",
+          "TECH06"
+        ],
+        "stem6": [],
+        "rrf_rerank": [
+          "TECH06",
+          "TECH03",
+          "TECH10"
+        ],
+        "rerank_all": [
+          "TECH06",
+          "TECH03",
+          "TECH10"
+        ]
+      },
+      "stem6_empty": true
+    },
+    {
+      "id": "u04",
+      "text": "вопрос о хешировании паролей",
+      "gold": [],
+      "style": "unanswerable",
+      "best_probability": 0.0004,
+      "top": {
+        "bm25": [
+          "HR01",
+          "TECH11",
+          "TECH01"
+        ],
+        "tfidf_char": [
+          "HR07",
+          "TECH05",
+          "TECH08"
+        ],
+        "dense": [
+          "HR07",
+          "TECH05",
+          "TECH08"
+        ],
+        "rrf": [
+          "TECH05",
+          "TECH11",
+          "HR01"
+        ],
+        "stem6": [],
+        "rrf_rerank": [
+          "HR07",
+          "HR01",
+          "TECH12"
+        ],
+        "rerank_all": [
+          "HR07",
+          "HR03",
+          "HR01"
+        ]
+      },
+      "stem6_empty": true
+    },
+    {
+      "id": "u05",
+      "text": "уровень английского языка кандидата",
+      "gold": [],
+      "style": "unanswerable",
+      "best_probability": 0.0,
+      "top": {
+        "bm25": [
+          "TECH01",
+          "TECH02",
+          "TECH03"
+        ],
+        "tfidf_char": [
+          "TECH12",
+          "HR01",
+          "TECH06"
+        ],
+        "dense": [
+          "HR07",
+          "HR08",
+          "HR05"
+        ],
+        "rrf": [
+          "TECH03",
+          "TECH02",
+          "TECH01"
+        ],
+        "stem6": [],
+        "rrf_rerank": [
+          "HR01",
+          "HR07",
+          "TECH02"
+        ],
+        "rerank_all": [
+          "TECH11",
+          "HR01",
+          "TECH10"
+        ]
+      },
+      "stem6_empty": true
+    },
+    {
+      "id": "u06",
+      "text": "вопрос про Docker и контейнеры",
+      "gold": [],
+      "style": "unanswerable",
+      "best_probability": 0.0007,
+      "top": {
+        "bm25": [
+          "TECH06",
+          "HR03",
+          "TECH03"
+        ],
+        "tfidf_char": [
+          "HR07",
+          "TECH09",
+          "TECH05"
+        ],
+        "dense": [
+          "TECH11",
+          "TECH03",
+          "HR07"
+        ],
+        "rrf": [
+          "TECH11",
+          "TECH03",
+          "TECH06"
+        ],
+        "stem6": [],
+        "rrf_rerank": [
+          "HR03",
+          "TECH06",
+          "TECH03"
+        ],
+        "rerank_all": [
+          "HR03",
+          "TECH06",
+          "TECH03"
+        ]
+      },
+      "stem6_empty": true
+    },
+    {
+      "id": "u07",
+      "text": "работа в распределённой команде в разных часовых поясах",
+      "gold": [],
+      "style": "unanswerable",
+      "best_probability": 0.0024,
+      "top": {
+        "bm25": [
+          "HR05",
+          "TECH03",
+          "TECH08"
+        ],
+        "tfidf_char": [
+          "HR08",
+          "TECH11",
+          "TECH08"
+        ],
+        "dense": [
+          "TECH11",
+          "HR04",
+          "HR01"
+        ],
+        "rrf": [
+          "HR05",
+          "HR08",
+          "TECH03"
+        ],
+        "stem6": [
+          "HR08",
+          "TECH07",
+          "TECH08"
+        ],
+        "rrf_rerank": [
+          "TECH11",
+          "HR08",
+          "TECH07"
+        ],
+        "rerank_all": [
+          "TECH11",
+          "HR08",
+          "TECH07"
+        ]
+      },
+      "stem6_empty": false
+    },
+    {
+      "id": "u08",
+      "text": "зарплатные ожидания кандидата",
+      "gold": [],
+      "style": "unanswerable",
+      "best_probability": 0.0,
+      "top": {
+        "bm25": [
+          "TECH01",
+          "TECH02",
+          "TECH03"
+        ],
+        "tfidf_char": [
+          "TECH07",
+          "HR01",
+          "HR02"
+        ],
+        "dense": [
+          "HR06",
+          "TECH11",
+          "HR04"
+        ],
+        "rrf": [
+          "TECH02",
+          "TECH03",
+          "TECH11"
+        ],
+        "stem6": [
+          "TECH07"
+        ],
+        "rrf_rerank": [
+          "TECH11",
+          "HR06",
+          "TECH07"
+        ],
+        "rerank_all": [
+          "TECH11",
+          "HR06",
+          "TECH07"
+        ]
+      },
+      "stem6_empty": false
+    }
+  ],
+  "collected": "2026-11-09",
+  "scope": "Author-written queries on a 20-question synthetic bank; a check of the pipeline, not a benchmark."
+}
