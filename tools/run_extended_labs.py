@@ -8,11 +8,15 @@ import argparse
 import json
 import os
 import shlex
+import signal
 import subprocess
 import sys
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
+# The longest optional lab, labs/M10/rerank.py, scores 4608 cross-encoder pairs in about 25 minutes on 4 CPU
+# threads (lesson M10-L09X); the former 900 s limit cut it off, so a run gets up to 40 minutes.
+TIMEOUT_SECONDS = 2400
 
 
 def command_args(command):
@@ -25,6 +29,24 @@ def command_args(command):
     if not args or not (ROOT / args[0].replace("\\", "/")).is_file():
         raise ValueError(f"Unknown script: {command}")
     return [sys.executable, "-X", "utf8", *args]
+
+
+def run_command(invocation):
+    """Run one lab; on timeout stop its whole process tree. A lab may start llama-server, and killing only the
+    Python child left the server holding port 18080, which then failed the next lab and a live test (1.2.0)."""
+    process = subprocess.Popen(invocation, cwd=ROOT, env=dict(os.environ, PYTHONUTF8="1", MPLBACKEND="Agg", HF_HUB_OFFLINE="1"),
+                               stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding="utf-8",
+                               start_new_session=os.name != "nt")
+    try:
+        out, err = process.communicate(timeout=TIMEOUT_SECONDS)
+        return process.returncode, out + err
+    except subprocess.TimeoutExpired:
+        if os.name == "nt":
+            subprocess.run(["taskkill", "/F", "/T", "/PID", str(process.pid)], capture_output=True, check=False)
+        else:
+            os.killpg(process.pid, signal.SIGKILL)
+        process.communicate()
+        return 124, f"Timeout after {TIMEOUT_SECONDS} seconds"
 
 
 def main():
@@ -57,13 +79,7 @@ def main():
     for name, command, expected_success in tasks:
         started = time.perf_counter()
         invocation = command_args(command)
-        try:
-            p = subprocess.run(invocation, cwd=ROOT,
-                env=dict(os.environ, PYTHONUTF8="1", MPLBACKEND="Agg", HF_HUB_OFFLINE="1"),
-                capture_output=True, text=True, encoding="utf-8", timeout=900)
-            code, output = p.returncode, p.stdout + p.stderr
-        except subprocess.TimeoutExpired:
-            code, output = 124, "Timeout after 900 seconds"
+        code, output = run_command(invocation)
         (folder / f"{name}.log").write_text(output, encoding="utf-8")
         passed = code == 0 if expected_success else code not in (0, 124)
         result = {"id": name, "command": invocation[3:], "expected_success": expected_success,

@@ -1,0 +1,1001 @@
+{
+  "results": [
+    {
+      "path": "course/lessons/M00-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.063,
+      "log": "artifacts/lesson-examples/lessons-M00-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M00-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.096,
+      "log": "artifacts/lesson-examples/lessons-M00-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M00-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.068,
+      "log": "artifacts/lesson-examples/lessons-M00-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M00-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.067,
+      "log": "artifacts/lesson-examples/lessons-M00-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M00-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.075,
+      "log": "artifacts/lesson-examples/lessons-M00-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M01-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.246,
+      "log": "artifacts/lesson-examples/lessons-M01-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M01-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.886,
+      "log": "artifacts/lesson-examples/lessons-M01-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M01-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.801,
+      "log": "artifacts/lesson-examples/lessons-M01-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M01-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.086,
+      "log": "artifacts/lesson-examples/lessons-M01-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M01-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.276,
+      "log": "artifacts/lesson-examples/lessons-M01-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M02-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.242,
+      "log": "artifacts/lesson-examples/lessons-M02-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M02-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.222,
+      "log": "artifacts/lesson-examples/lessons-M02-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M02-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.227,
+      "log": "artifacts/lesson-examples/lessons-M02-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M02-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.232,
+      "log": "artifacts/lesson-examples/lessons-M02-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M02-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.231,
+      "log": "artifacts/lesson-examples/lessons-M02-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M03-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.064,
+      "log": "artifacts/lesson-examples/lessons-M03-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M03-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.059,
+      "log": "artifacts/lesson-examples/lessons-M03-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M03-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.22,
+      "log": "artifacts/lesson-examples/lessons-M03-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M03-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.061,
+      "log": "artifacts/lesson-examples/lessons-M03-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M03-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.051,
+      "log": "artifacts/lesson-examples/lessons-M03-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M04-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.06,
+      "log": "artifacts/lesson-examples/lessons-M04-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M04-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.238,
+      "log": "artifacts/lesson-examples/lessons-M04-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M04-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.062,
+      "log": "artifacts/lesson-examples/lessons-M04-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M04-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.277,
+      "log": "artifacts/lesson-examples/lessons-M04-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M04-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.06,
+      "log": "artifacts/lesson-examples/lessons-M04-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M04-L06.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.058,
+      "log": "artifacts/lesson-examples/lessons-M04-L06-1.log"
+    },
+    {
+      "path": "course/lessons/M04-L07.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.061,
+      "log": "artifacts/lesson-examples/lessons-M04-L07-1.log"
+    },
+    {
+      "path": "course/lessons/M04-L08.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 1.318,
+      "log": "artifacts/lesson-examples/lessons-M04-L08-1.log"
+    },
+    {
+      "path": "course/lessons/M04-L08.md",
+      "block": 2,
+      "exit_code": 0,
+      "seconds": 1.425,
+      "log": "artifacts/lesson-examples/lessons-M04-L08-2.log"
+    },
+    {
+      "path": "course/lessons/M05-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.047,
+      "log": "artifacts/lesson-examples/lessons-M05-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M05-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.521,
+      "log": "artifacts/lesson-examples/lessons-M05-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M05-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.102,
+      "log": "artifacts/lesson-examples/lessons-M05-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M05-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.18,
+      "log": "artifacts/lesson-examples/lessons-M05-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M05-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.733,
+      "log": "artifacts/lesson-examples/lessons-M05-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M05-L06.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.122,
+      "log": "artifacts/lesson-examples/lessons-M05-L06-1.log"
+    },
+    {
+      "path": "course/lessons/M05-L07.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.02,
+      "log": "artifacts/lesson-examples/lessons-M05-L07-1.log"
+    },
+    {
+      "path": "course/lessons/M06-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.048,
+      "log": "artifacts/lesson-examples/lessons-M06-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M06-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.052,
+      "log": "artifacts/lesson-examples/lessons-M06-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M06-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.052,
+      "log": "artifacts/lesson-examples/lessons-M06-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M06-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.046,
+      "log": "artifacts/lesson-examples/lessons-M06-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M06-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.051,
+      "log": "artifacts/lesson-examples/lessons-M06-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M07-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.178,
+      "log": "artifacts/lesson-examples/lessons-M07-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M07-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.164,
+      "log": "artifacts/lesson-examples/lessons-M07-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M07-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 3.742,
+      "log": "artifacts/lesson-examples/lessons-M07-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M07-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.188,
+      "log": "artifacts/lesson-examples/lessons-M07-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M07-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.362,
+      "log": "artifacts/lesson-examples/lessons-M07-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M08-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.055,
+      "log": "artifacts/lesson-examples/lessons-M08-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M08-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.513,
+      "log": "artifacts/lesson-examples/lessons-M08-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M08-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.843,
+      "log": "artifacts/lesson-examples/lessons-M08-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M08-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.713,
+      "log": "artifacts/lesson-examples/lessons-M08-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M08-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.066,
+      "log": "artifacts/lesson-examples/lessons-M08-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M08-L06.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.614,
+      "log": "artifacts/lesson-examples/lessons-M08-L06-1.log"
+    },
+    {
+      "path": "course/lessons/M08-L08X.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.162,
+      "log": "artifacts/lesson-examples/lessons-M08-L08X-1.log"
+    },
+    {
+      "path": "course/lessons/M09-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 8.514,
+      "log": "artifacts/lesson-examples/lessons-M09-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M09-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.06,
+      "log": "artifacts/lesson-examples/lessons-M09-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M09-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.053,
+      "log": "artifacts/lesson-examples/lessons-M09-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M09-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.062,
+      "log": "artifacts/lesson-examples/lessons-M09-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M09-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.095,
+      "log": "artifacts/lesson-examples/lessons-M09-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M09-L07X.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.055,
+      "log": "artifacts/lesson-examples/lessons-M09-L07X-1.log"
+    },
+    {
+      "path": "course/lessons/M09-L08X.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.087,
+      "log": "artifacts/lesson-examples/lessons-M09-L08X-1.log"
+    },
+    {
+      "path": "course/lessons/M10-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.061,
+      "log": "artifacts/lesson-examples/lessons-M10-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M10-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.054,
+      "log": "artifacts/lesson-examples/lessons-M10-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M10-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.062,
+      "log": "artifacts/lesson-examples/lessons-M10-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M10-L03.md",
+      "block": 2,
+      "exit_code": 0,
+      "seconds": 0.069,
+      "log": "artifacts/lesson-examples/lessons-M10-L03-2.log"
+    },
+    {
+      "path": "course/lessons/M10-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.06,
+      "log": "artifacts/lesson-examples/lessons-M10-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M10-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.062,
+      "log": "artifacts/lesson-examples/lessons-M10-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M10-L07X.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.059,
+      "log": "artifacts/lesson-examples/lessons-M10-L07X-1.log"
+    },
+    {
+      "path": "course/lessons/M10-L08X.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.246,
+      "log": "artifacts/lesson-examples/lessons-M10-L08X-1.log"
+    },
+    {
+      "path": "course/lessons/M10-L09X.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.063,
+      "log": "artifacts/lesson-examples/lessons-M10-L09X-1.log"
+    },
+    {
+      "path": "course/lessons/M11-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.058,
+      "log": "artifacts/lesson-examples/lessons-M11-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M11-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.188,
+      "log": "artifacts/lesson-examples/lessons-M11-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M11-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.188,
+      "log": "artifacts/lesson-examples/lessons-M11-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M11-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.231,
+      "log": "artifacts/lesson-examples/lessons-M11-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M11-L06.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.058,
+      "log": "artifacts/lesson-examples/lessons-M11-L06-1.log"
+    },
+    {
+      "path": "course/lessons/M11-L07X.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.06,
+      "log": "artifacts/lesson-examples/lessons-M11-L07X-1.log"
+    },
+    {
+      "path": "course/lessons/M12-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.059,
+      "log": "artifacts/lesson-examples/lessons-M12-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M12-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.058,
+      "log": "artifacts/lesson-examples/lessons-M12-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M12-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 4.606,
+      "log": "artifacts/lesson-examples/lessons-M12-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M12-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 3.188,
+      "log": "artifacts/lesson-examples/lessons-M12-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M12-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.069,
+      "log": "artifacts/lesson-examples/lessons-M12-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M12-L06.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.087,
+      "log": "artifacts/lesson-examples/lessons-M12-L06-1.log"
+    },
+    {
+      "path": "course/lessons/M12-L08X.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.113,
+      "log": "artifacts/lesson-examples/lessons-M12-L08X-1.log"
+    },
+    {
+      "path": "course/lessons/M12-L09X.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.119,
+      "log": "artifacts/lesson-examples/lessons-M12-L09X-1.log"
+    },
+    {
+      "path": "course/lessons/M13-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.102,
+      "log": "artifacts/lesson-examples/lessons-M13-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M13-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.069,
+      "log": "artifacts/lesson-examples/lessons-M13-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M13-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.067,
+      "log": "artifacts/lesson-examples/lessons-M13-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M13-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.073,
+      "log": "artifacts/lesson-examples/lessons-M13-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M13-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.134,
+      "log": "artifacts/lesson-examples/lessons-M13-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M13-L07X.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.271,
+      "log": "artifacts/lesson-examples/lessons-M13-L07X-1.log"
+    },
+    {
+      "path": "course/lessons/M13-L07X.md",
+      "block": 2,
+      "exit_code": 0,
+      "seconds": 0.083,
+      "log": "artifacts/lesson-examples/lessons-M13-L07X-2.log"
+    },
+    {
+      "path": "course/lessons/M14-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.111,
+      "log": "artifacts/lesson-examples/lessons-M14-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M14-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.059,
+      "log": "artifacts/lesson-examples/lessons-M14-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M14-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.077,
+      "log": "artifacts/lesson-examples/lessons-M14-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M14-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.11,
+      "log": "artifacts/lesson-examples/lessons-M14-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M14-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.069,
+      "log": "artifacts/lesson-examples/lessons-M14-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M14-L08X.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 1.479,
+      "log": "artifacts/lesson-examples/lessons-M14-L08X-1.log"
+    },
+    {
+      "path": "course/lessons/M14-L09X.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 1.456,
+      "log": "artifacts/lesson-examples/lessons-M14-L09X-1.log"
+    },
+    {
+      "path": "course/lessons/M14-L10X.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 1.671,
+      "log": "artifacts/lesson-examples/lessons-M14-L10X-1.log"
+    },
+    {
+      "path": "course/lessons/M15-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.08,
+      "log": "artifacts/lesson-examples/lessons-M15-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M15-L02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 1.815,
+      "log": "artifacts/lesson-examples/lessons-M15-L02-1.log"
+    },
+    {
+      "path": "course/lessons/M15-L03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.757,
+      "log": "artifacts/lesson-examples/lessons-M15-L03-1.log"
+    },
+    {
+      "path": "course/lessons/M15-L04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.069,
+      "log": "artifacts/lesson-examples/lessons-M15-L04-1.log"
+    },
+    {
+      "path": "course/lessons/M15-L05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.142,
+      "log": "artifacts/lesson-examples/lessons-M15-L05-1.log"
+    },
+    {
+      "path": "course/lessons/M15-L06.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.074,
+      "log": "artifacts/lesson-examples/lessons-M15-L06-1.log"
+    },
+    {
+      "path": "course/lessons/M15-L07X.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.179,
+      "log": "artifacts/lesson-examples/lessons-M15-L07X-1.log"
+    },
+    {
+      "path": "course/lessons/M16-L01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.081,
+      "log": "artifacts/lesson-examples/lessons-M16-L01-1.log"
+    },
+    {
+      "path": "course/lessons/M16-L06.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.191,
+      "log": "artifacts/lesson-examples/lessons-M16-L06-1.log"
+    },
+    {
+      "path": "course/lessons/M16-L07.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.198,
+      "log": "artifacts/lesson-examples/lessons-M16-L07-1.log"
+    },
+    {
+      "path": "solutions/modules/M01.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.315,
+      "log": "artifacts/lesson-examples/modules-M01-1.log"
+    },
+    {
+      "path": "solutions/modules/M01.md",
+      "block": 2,
+      "exit_code": 0,
+      "seconds": 1.09,
+      "log": "artifacts/lesson-examples/modules-M01-2.log"
+    },
+    {
+      "path": "solutions/modules/M01.md",
+      "block": 3,
+      "exit_code": 0,
+      "seconds": 0.063,
+      "log": "artifacts/lesson-examples/modules-M01-3.log"
+    },
+    {
+      "path": "solutions/modules/M01.md",
+      "block": 4,
+      "exit_code": 0,
+      "seconds": 0.233,
+      "log": "artifacts/lesson-examples/modules-M01-4.log"
+    },
+    {
+      "path": "solutions/modules/M02.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.248,
+      "log": "artifacts/lesson-examples/modules-M02-1.log"
+    },
+    {
+      "path": "solutions/modules/M02.md",
+      "block": 2,
+      "exit_code": 0,
+      "seconds": 0.248,
+      "log": "artifacts/lesson-examples/modules-M02-2.log"
+    },
+    {
+      "path": "solutions/modules/M02.md",
+      "block": 3,
+      "exit_code": 0,
+      "seconds": 0.244,
+      "log": "artifacts/lesson-examples/modules-M02-3.log"
+    },
+    {
+      "path": "solutions/modules/M02.md",
+      "block": 4,
+      "exit_code": 0,
+      "seconds": 0.239,
+      "log": "artifacts/lesson-examples/modules-M02-4.log"
+    },
+    {
+      "path": "solutions/modules/M02.md",
+      "block": 5,
+      "exit_code": 0,
+      "seconds": 0.234,
+      "log": "artifacts/lesson-examples/modules-M02-5.log"
+    },
+    {
+      "path": "solutions/modules/M03.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.061,
+      "log": "artifacts/lesson-examples/modules-M03-1.log"
+    },
+    {
+      "path": "solutions/modules/M03.md",
+      "block": 2,
+      "exit_code": 0,
+      "seconds": 0.06,
+      "log": "artifacts/lesson-examples/modules-M03-2.log"
+    },
+    {
+      "path": "solutions/modules/M03.md",
+      "block": 3,
+      "exit_code": 0,
+      "seconds": 0.229,
+      "log": "artifacts/lesson-examples/modules-M03-3.log"
+    },
+    {
+      "path": "solutions/modules/M03.md",
+      "block": 4,
+      "exit_code": 0,
+      "seconds": 0.076,
+      "log": "artifacts/lesson-examples/modules-M03-4.log"
+    },
+    {
+      "path": "solutions/modules/M03.md",
+      "block": 5,
+      "exit_code": 0,
+      "seconds": 0.059,
+      "log": "artifacts/lesson-examples/modules-M03-5.log"
+    },
+    {
+      "path": "solutions/modules/M04.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.052,
+      "log": "artifacts/lesson-examples/modules-M04-1.log"
+    },
+    {
+      "path": "solutions/modules/M04.md",
+      "block": 2,
+      "exit_code": 0,
+      "seconds": 0.226,
+      "log": "artifacts/lesson-examples/modules-M04-2.log"
+    },
+    {
+      "path": "solutions/modules/M04.md",
+      "block": 3,
+      "exit_code": 0,
+      "seconds": 0.059,
+      "log": "artifacts/lesson-examples/modules-M04-3.log"
+    },
+    {
+      "path": "solutions/modules/M04.md",
+      "block": 4,
+      "exit_code": 0,
+      "seconds": 0.277,
+      "log": "artifacts/lesson-examples/modules-M04-4.log"
+    },
+    {
+      "path": "solutions/modules/M04.md",
+      "block": 5,
+      "exit_code": 0,
+      "seconds": 0.066,
+      "log": "artifacts/lesson-examples/modules-M04-5.log"
+    },
+    {
+      "path": "solutions/modules/M05.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 2.191,
+      "log": "artifacts/lesson-examples/modules-M05-1.log"
+    },
+    {
+      "path": "solutions/modules/M05.md",
+      "block": 2,
+      "exit_code": 0,
+      "seconds": 0.223,
+      "log": "artifacts/lesson-examples/modules-M05-2.log"
+    },
+    {
+      "path": "solutions/modules/M05.md",
+      "block": 3,
+      "exit_code": 0,
+      "seconds": 0.23,
+      "log": "artifacts/lesson-examples/modules-M05-3.log"
+    },
+    {
+      "path": "solutions/modules/M05.md",
+      "block": 4,
+      "exit_code": 0,
+      "seconds": 0.221,
+      "log": "artifacts/lesson-examples/modules-M05-4.log"
+    },
+    {
+      "path": "solutions/modules/M05.md",
+      "block": 5,
+      "exit_code": 0,
+      "seconds": 0.232,
+      "log": "artifacts/lesson-examples/modules-M05-5.log"
+    },
+    {
+      "path": "solutions/modules/M06.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.058,
+      "log": "artifacts/lesson-examples/modules-M06-1.log"
+    },
+    {
+      "path": "solutions/modules/M08.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 17.968,
+      "log": "artifacts/lesson-examples/modules-M08-1.log"
+    },
+    {
+      "path": "solutions/modules/M12.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 24.722,
+      "log": "artifacts/lesson-examples/modules-M12-1.log"
+    },
+    {
+      "path": "solutions/modules/M12.md",
+      "block": 2,
+      "exit_code": 0,
+      "seconds": 0.113,
+      "log": "artifacts/lesson-examples/modules-M12-2.log"
+    },
+    {
+      "path": "solutions/modules/M13.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.859,
+      "log": "artifacts/lesson-examples/modules-M13-1.log"
+    },
+    {
+      "path": "solutions/modules/M14.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.135,
+      "log": "artifacts/lesson-examples/modules-M14-1.log"
+    },
+    {
+      "path": "solutions/modules/M14.md",
+      "block": 2,
+      "exit_code": 0,
+      "seconds": 3.014,
+      "log": "artifacts/lesson-examples/modules-M14-2.log"
+    },
+    {
+      "path": "solutions/modules/M14.md",
+      "block": 3,
+      "exit_code": 0,
+      "seconds": 1.136,
+      "log": "artifacts/lesson-examples/modules-M14-3.log"
+    },
+    {
+      "path": "solutions/modules/M14.md",
+      "block": 4,
+      "exit_code": 0,
+      "seconds": 0.209,
+      "log": "artifacts/lesson-examples/modules-M14-4.log"
+    },
+    {
+      "path": "solutions/modules/M15.md",
+      "block": 1,
+      "exit_code": 0,
+      "seconds": 0.118,
+      "log": "artifacts/lesson-examples/modules-M15-1.log"
+    }
+  ],
+  "passed": true,
+  "learner_mastery": "not_assessed",
+  "scope": "All fenced Python examples; conceptual answers use authored keys and rubrics."
+}

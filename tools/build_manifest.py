@@ -11,7 +11,7 @@ import importlib.util
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 CREATED = "2026-11-03"
 PILOT_IDS = [f"P{i:02}" for i in range(1, 11)]
 MODULE_IDS = [f"M{i:02}" for i in range(17)]
@@ -195,7 +195,7 @@ def build_manifest(root: Path = ROOT) -> dict:
         "language": "ru", "course_status": "complete_self_study_materials" if full_materials else "incomplete_materials",
         "full_materials_ready": full_materials,
         "full_course_ready": False,
-        "technical_evidence": {"release": "quality/release-1.1.0.json",
+        "technical_evidence": {"release": "quality/release-1.2.0.json", "previous_release": "quality/release-1.1.0.json",
                                "audit_resolution": "quality/audit-resolution-1.1.0.md",
                                "design_revision": "quality/design-v2/report.json",
                                "policy": "File completeness alone is not verification or learner mastery; inspect the release evidence and its scope."},

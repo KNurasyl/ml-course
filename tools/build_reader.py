@@ -18,7 +18,7 @@ import mistune
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = "START_HERE.html"
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 PILOT_IDS = [f"P{i:02}" for i in range(1, 11)]
 MODULE_IDS = [f"M{i:02}" for i in range(17)]
 FOUNDATION_IDS = ["HOME", "DIAGNOSTIC", "GLOSSARY", "PROJECT", "MENTOR", "PROGRESS"]

@@ -11,7 +11,7 @@ import sys
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 MODULE_IDS = [f"M{i:02}" for i in range(17)]
 PILOT_IDS = [f"P{i:02}" for i in range(1, 11)]
 REQUIRED_MATERIALS = ["HOME", "PROGRESS", "DIAGNOSTIC", "MENTOR", "MENTOR-KEYS",

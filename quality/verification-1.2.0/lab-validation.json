@@ -1,0 +1,108 @@
+{
+  "results": [
+    {
+      "module": "M00",
+      "exit_code": 0,
+      "seconds": 0.103,
+      "log": "artifacts/lab-runs/M00.log"
+    },
+    {
+      "module": "M01",
+      "exit_code": 0,
+      "seconds": 0.94,
+      "log": "artifacts/lab-runs/M01.log"
+    },
+    {
+      "module": "M02",
+      "exit_code": 0,
+      "seconds": 0.26,
+      "log": "artifacts/lab-runs/M02.log"
+    },
+    {
+      "module": "M03",
+      "exit_code": 0,
+      "seconds": 0.257,
+      "log": "artifacts/lab-runs/M03.log"
+    },
+    {
+      "module": "M04",
+      "exit_code": 0,
+      "seconds": 1.334,
+      "log": "artifacts/lab-runs/M04.log"
+    },
+    {
+      "module": "M05",
+      "exit_code": 0,
+      "seconds": 2.349,
+      "log": "artifacts/lab-runs/M05.log"
+    },
+    {
+      "module": "M06",
+      "exit_code": 0,
+      "seconds": 0.101,
+      "log": "artifacts/lab-runs/M06.log"
+    },
+    {
+      "module": "M07",
+      "exit_code": 0,
+      "seconds": 11.518,
+      "log": "artifacts/lab-runs/M07.log"
+    },
+    {
+      "module": "M08",
+      "exit_code": 0,
+      "seconds": 4.82,
+      "log": "artifacts/lab-runs/M08.log"
+    },
+    {
+      "module": "M09",
+      "exit_code": 0,
+      "seconds": 12.192,
+      "log": "artifacts/lab-runs/M09.log"
+    },
+    {
+      "module": "M10",
+      "exit_code": 0,
+      "seconds": 10.437,
+      "log": "artifacts/lab-runs/M10.log"
+    },
+    {
+      "module": "M11",
+      "exit_code": 0,
+      "seconds": 14.276,
+      "log": "artifacts/lab-runs/M11.log"
+    },
+    {
+      "module": "M12",
+      "exit_code": 0,
+      "seconds": 5.718,
+      "log": "artifacts/lab-runs/M12.log"
+    },
+    {
+      "module": "M13",
+      "exit_code": 0,
+      "seconds": 0.154,
+      "log": "artifacts/lab-runs/M13.log"
+    },
+    {
+      "module": "M14",
+      "exit_code": 0,
+      "seconds": 0.104,
+      "log": "artifacts/lab-runs/M14.log"
+    },
+    {
+      "module": "M15",
+      "exit_code": 0,
+      "seconds": 2.304,
+      "log": "artifacts/lab-runs/M15.log"
+    },
+    {
+      "module": "M16",
+      "exit_code": 0,
+      "seconds": 0.099,
+      "log": "artifacts/lab-runs/M16.log"
+    }
+  ],
+  "passed": true,
+  "learner_mastery": "not_assessed"
+}
