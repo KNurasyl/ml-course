@@ -49,9 +49,32 @@ def test_mermaid_block_becomes_escaped_diagram_source(tmp_path):
     source = tmp_path / "lesson.md"
     renderer = reader.CourseRenderer(tmp_path, source, "M00-L01", {})
     html = mistune.create_markdown(renderer=renderer)('```mermaid\nflowchart LR\n  A["a < b"] --> B\n```\n\n```python\nx=1\n```\n')
-    assert ('<figure class="diagram"><pre class="mermaid" data-theme="light">'
+    # D5: no light island any more, the diagram follows the page theme.
+    assert ('<figure class="diagram"><pre class="mermaid">'
             'flowchart LR\n  A[&quot;a &lt; b&quot;] --&gt; B\n</pre></figure>') in html
     assert '<code class="language-python">' in html
+
+
+def test_lesson_diagram_colours_map_onto_theme_tokens():
+    # D5: Markdown keeps its classDef colours; reader.js draws them with the tokens of the current theme.
+    script = (SOURCE / "tools/reader.js").read_text(encoding="utf-8")
+    mapping = dict(re.findall(r"'(#[0-9a-f]{6})':'(--[\w-]+)'", re.search(r"lessonColors=\{(.*?)\}", script).group(1)))
+    drawn = re.findall(r"'(--[\w-]+)'", re.search(r"diagramTokens=\[(.*?)\]", script).group(1))
+    used = set()
+    for path in sorted((SOURCE / "course").rglob("*.md")) + sorted((SOURCE / "solutions").rglob("*.md")):
+        for block in re.findall(r"```mermaid\n(.*?)```", path.read_text(encoding="utf-8"), re.DOTALL):
+            for line in block.splitlines():
+                if re.match(r"\s*(?:classDef|style|linkStyle)\b", line):
+                    used.update(colour.lower() for colour in re.findall(r"#[0-9a-fA-F]{3,8}\b", line))
+    assert used and used <= set(mapping), sorted(used - set(mapping))
+    assert set(mapping.values()) <= set(drawn)
+    tokens = set(re.findall(r"(--[\w-]+):#", (SOURCE / "tools/reader.css").read_text(encoding="utf-8")))
+    assert set(drawn) <= tokens
+    # Plan 6.0 mapping; arrows use --muted by the author's decision (--line-strong is 1.5:1 on paper).
+    for variable, token in [("primaryColor", "--paper"), ("primaryTextColor", "--ink"), ("textColor", "--ink"),
+                            ("primaryBorderColor", "--accent"), ("lineColor", "--muted"), ("edgeLabelBackground", "--paper")]:
+        assert f"{variable}:value('{token}')" in script
+    assert "theme:'base'" in script and "theme:'neutral'" not in script
 
 
 def lesson_with_schema(schema):

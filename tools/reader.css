@@ -11,8 +11,8 @@
   --mark-bg:#4a3c14;--mark-fg:#ffe7a6;--code-bg:#111318;--focus:#e6b566;
   --sans:'Golos Text','Segoe UI',system-ui,sans-serif;--mono:'JetBrains Mono','Cascadia Code',Consolas,ui-monospace,monospace;
   --sidebar:272px}
-/* Light: the theme chosen on <html>, or a light island inside it (Mermaid diagrams until D5). */
-:root[data-theme="light"],:root [data-theme="light"]{color-scheme:light;
+/* Light: the theme chosen on <html>. Mermaid diagrams follow it since D5 (no light island). */
+:root[data-theme="light"]{color-scheme:light;
   --bg:#f6f5f1;--surface:#eeede8;--paper:#ffffff;--line:#d9d6cd;--line-strong:#c2beb3;
   --ink:#1d2430;--muted:#5a6270;--accent:#1f55b0;--accent-soft:#e4ecfb;--act:#0b7478;--act-soft:#dff3f2;
   --hint:#9a6410;--hint-soft:#fbefd6;--ok:#2a7a4b;--ok-soft:#e1f2e6;--warn:#a0541c;--warn-soft:#f9e6d8;--error:#b23b3b;
@@ -65,7 +65,7 @@
                small button, hint and answer cards, figure card,
                route card                                      -> --paper
                experiment frame                                -> --paper, then --bg in D2 (frames blend into the page)
-               Mermaid block                                   -> --paper on a light island (data-theme="light", until D5)
+               Mermaid block                                   -> --paper (light island in D1, page theme since D5)
                primary action hover text                       -> --accent
    b5c3cf      small button border                             -> --line-strong
    f0f4f8      inline code                                     -> --code-bg

@@ -111,8 +111,15 @@ async function run(browser, repo, options = {}) {
     await snap('attention-desktop');
     const diagram=page.locator('#M08-L03 pre.mermaid').first();await diagram.scrollIntoViewIfNeeded();
     await page.waitForFunction(()=>document.querySelector('#M08-L03 pre.mermaid svg, #M08-L03 pre.mermaid.diagram-unavailable'));
-    const island=await diagram.evaluate(el=>({theme:el.dataset.theme,bg:getComputedStyle(el).backgroundColor,svg:!!el.querySelector('svg')}));
-    check('D1 Mermaid stays on a light island until D5',island.theme==='light'&&island.bg==='rgb(255, 255, 255)'&&island.svg,island);
+    // D5: the diagram is drawn in the page theme and its styles name the tokens, so a switch and print need no redraw.
+    const diagramLook=()=>diagram.evaluate(el=>{const svg=el.querySelector('svg'),main=svg?.querySelector('.node.main rect, .node.main polygon, .node.main path'),edge=svg?.querySelector('path.flowchart-link');
+      return{island:el.dataset.theme||null,svg:svg?.id||null,bg:getComputedStyle(el).backgroundColor,main:main&&getComputedStyle(main).fill,edge:edge&&getComputedStyle(edge).stroke};});
+    const darkDiagram=await diagramLook();
+    await page.locator('#theme-toggle').click();const lightDiagram=await diagramLook();await page.locator('#theme-toggle').click();
+    check('D5 Mermaid follows the page theme without a redraw',darkDiagram.island===null&&darkDiagram.svg&&darkDiagram.bg==='rgb(32, 36, 44)'&&darkDiagram.main==='rgb(31, 42, 68)'&&darkDiagram.edge==='rgb(163, 169, 180)'
+      &&lightDiagram.svg===darkDiagram.svg&&lightDiagram.bg==='rgb(255, 255, 255)'&&lightDiagram.main==='rgb(228, 236, 251)'&&lightDiagram.edge==='rgb(90, 98, 112)',{dark:darkDiagram,light:lightDiagram});
+    await page.emulateMedia({media:'print'});const printedDiagram=await diagramLook();await page.emulateMedia({media:'screen'});
+    check('D5 Mermaid prints light while the dark theme is chosen',printedDiagram.bg==='rgb(255, 255, 255)'&&printedDiagram.main==='rgb(228, 236, 251)'&&printedDiagram.edge==='rgb(90, 98, 112)',printedDiagram);
     // Headings follow the 1.2.0 vocabulary (T13): "Самостоятельная задача A", "Новая и отложенная проверка".
     await page.locator('#M08-L03 .lesson-outline a').filter({hasText:'Самостоятельная задача A'}).click();await settle();
     const taskY=await page.locator('#M08-L03 [data-stage="task"] h2').evaluate(el=>el.getBoundingClientRect().top);
@@ -187,6 +194,35 @@ async function run(browser, repo, options = {}) {
     const printed=await page.evaluate(()=>({theme:document.documentElement.dataset.theme,bg:getComputedStyle(document.documentElement).getPropertyValue('--bg').trim(),ink:getComputedStyle(document.body).color}));
     check('D1 print uses light tokens while the dark theme is chosen',printed.theme==='dark'&&printed.bg==='#f6f5f1'&&printed.ink==='rgb(29, 36, 48)',printed);
     await page.emulateMedia({media:'screen'});
+    // D5: every diagram is drawn, keeps labels inside their shapes and paints only with diagram tokens, in both themes.
+    const diagramPaint=pre=>{const root=document.documentElement,style=getComputedStyle(root),svg=pre.querySelector('svg');
+      if(!svg)return{theme:root.dataset.theme,issues:['not drawn']};
+      const rgb=hex=>'rgb('+[1,3,5].map(i=>parseInt(hex.trim().slice(i,i+2),16)).join(', ')+')';
+      const tokens=new Set(['--paper','--ink','--muted','--accent','--accent-soft','--hint','--hint-soft'].map(name=>rgb(style.getPropertyValue(name)))),issues=new Set();
+      const paint=(value,where)=>{if(!value||value==='none'||value.startsWith('url('))return;
+        const srgb=value.match(/^color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: \/ ([\d.]+))?\)$/),plain=value.match(/^rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)$/);
+        const parts=srgb?[...srgb.slice(1,4).map(v=>Math.round(v*255)),srgb[4]??1]:plain?[...plain.slice(1,4).map(Number),plain[4]??1]:null;
+        if(parts&&Number(parts[3])===0)return;
+        if(!parts||!tokens.has(`rgb(${parts.slice(0,3).join(', ')})`))issues.add(where+' '+value);};
+      for(const el of svg.querySelectorAll('*')){
+        if(!el.closest('marker')&&!el.getClientRects().length)continue;
+        const s=getComputedStyle(el),tag=el.tagName.toLowerCase();
+        if(/^(rect|path|polygon|circle|ellipse|line|polyline)$/.test(tag)){paint(s.fill,tag+' fill');if(parseFloat(s.strokeWidth)>0)paint(s.stroke,tag+' stroke');}
+        if(Array.from(el.childNodes).some(n=>n.nodeType===3&&n.textContent.trim()))paint(tag==='text'||tag==='tspan'?s.fill:s.color,tag+' text');
+        if(el.namespaceURI==='http://www.w3.org/1999/xhtml')paint(s.backgroundColor,tag+' background');
+        const label=tag==='foreignobject'&&el.firstElementChild;
+        if(label&&(label.scrollWidth>parseFloat(el.getAttribute('width'))+1||label.scrollHeight>parseFloat(el.getAttribute('height'))+1))issues.add('label overflow: '+el.textContent.trim().slice(0,40));}
+      return{theme:root.dataset.theme,issues:[...issues]};};
+    const diagramIds=await page.evaluate(()=>Array.from(new Set(Array.from(document.querySelectorAll('pre.mermaid'),pre=>pre.closest('article').id))));
+    const diagramIssues=[];let diagramCount=0;
+    for(const id of diagramIds){await go(id);
+      for(const pre of await page.locator('#'+id+' pre.mermaid').all()){
+        await pre.scrollIntoViewIfNeeded();await page.waitForFunction(el=>el.querySelector('svg')||el.classList.contains('diagram-unavailable'),await pre.elementHandle());
+        const dark=await pre.evaluate(diagramPaint);await page.evaluate(()=>document.getElementById('theme-toggle').click());
+        const light=await pre.evaluate(diagramPaint);await page.evaluate(()=>document.getElementById('theme-toggle').click());
+        diagramCount++;
+        if(dark.theme!=='dark'||light.theme!=='light'||dark.issues.length||light.issues.length)diagramIssues.push({id,dark,light});}}
+    check('D5 all diagrams paint only with theme tokens in both themes',diagramCount>=33&&diagramIssues.length===0,{diagrams:diagramCount,issues:diagramIssues.slice(0,10)});
     const anchorIssues=await page.evaluate(()=>Array.from(document.querySelectorAll('a[href^="#"]')).filter(a=>{let id;try{id=decodeURIComponent(a.hash.slice(1));}catch{return true;}return !document.getElementById(id);}).slice(0,30).map(a=>a.getAttribute('href')));
     check('All generated fragment links resolve',anchorIssues.length===0,{issues:anchorIssues});
     const external=requests.filter(url=>!/^(file|data|about|blob):/.test(url));

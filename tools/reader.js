@@ -245,16 +245,41 @@
     button.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(code.textContent);button.textContent='Скопировано';}catch{button.textContent='Выдели код вручную';}setTimeout(()=>{button.textContent='Копировать';},2400);});pre.prepend(button);
   });
   // Mermaid is a local file loaded on the first visible diagram; hidden diagrams would get zero sizes.
+  // D5: the 'base' theme computes with real colours, so it gets the current token values; the drawn
+  // SVG's styles then name the tokens again (value -> var(--token)). A diagram drawn once follows a
+  // theme switch and the always-light print without a redraw. Lesson classDef colours map onto
+  // tokens as the experiment colours did in D2: blue main path, amber holdout.
   const diagrams=document.querySelectorAll('pre.mermaid');
   if(diagrams.length&&'IntersectionObserver' in window){
-    let library=null;
+    const lessonColors={'#e8f0fe':'--accent-soft','#245bba':'--accent','#182b3a':'--ink','#fff4e5':'--hint-soft','#a65c12':'--hint'};
+    const diagramTokens=['--paper','--ink','--muted','--accent','--accent-soft','--hint','--hint-soft'];
+    const hex=/#[0-9a-f]{6}\b/gi;
+    let library=null,queue=Promise.resolve(),count=0;
     const load=()=>library||(library=new Promise((resolve,reject)=>{
       const script=document.createElement('script');script.src='tools/vendor/mermaid/mermaid.min.js';
-      script.onload=()=>{window.mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'neutral',fontFamily:'Segoe UI, system-ui, sans-serif'});resolve(window.mermaid);};
-      script.onerror=reject;document.head.appendChild(script);}));
+      script.onload=()=>resolve(window.mermaid);script.onerror=reject;document.head.appendChild(script);}));
+    const draw=async diagram=>{
+      const mermaid=await load(),style=getComputedStyle(document.documentElement);
+      const value=name=>style.getPropertyValue(name).trim().toLowerCase(),names=new Map(diagramTokens.map(name=>[value(name),name]));
+      if(names.size!==diagramTokens.length)throw new Error('Diagram tokens need distinct values');
+      mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Segoe UI, system-ui, sans-serif',themeVariables:{
+        darkMode:document.documentElement.dataset.theme!=='light',background:value('--paper'),primaryColor:value('--paper'),primaryTextColor:value('--ink'),
+        primaryBorderColor:value('--accent'),lineColor:value('--muted'),textColor:value('--ink'),edgeLabelBackground:value('--paper')}});
+      const lesson=color=>lessonColors[color.toLowerCase()]?value(lessonColors[color.toLowerCase()]):color;
+      const source=diagram.textContent.replace(/^\s*(?:classDef|style|linkStyle)\b.*$/gm,line=>line.replace(hex,lesson));
+      const {svg}=await mermaid.render('course-diagram-'+(++count),source);
+      // Strict mode sanitises the SVG, as mermaid.run did before. Only CSS takes var(): the <style>
+      // block and style attributes are renamed, presentation attributes keep their values. Mermaid
+      // also fades a colour itself (edge label background, rgba with half opacity).
+      const named=color=>names.has(color.toLowerCase())?`var(${names.get(color.toLowerCase())})`:color;
+      const faded=(color,r,g,b,alpha)=>{const opaque='#'+[r,g,b].map(n=>Number(n).toString(16).padStart(2,'0')).join('');
+        return names.has(opaque)?`color-mix(in srgb,var(${names.get(opaque)}) ${Math.round(alpha*100)}%,transparent)`:color;};
+      diagram.innerHTML=svg.replace(/<style>[\s\S]*?<\/style>|style="[^"]*"/g,css=>css.replace(hex,named).replace(/rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)/g,faded));
+    };
     const observer=new IntersectionObserver(entries=>{for(const entry of entries){
       if(!entry.isIntersecting)continue;observer.unobserve(entry.target);
-      load().then(mermaid=>mermaid.run({nodes:[entry.target]})).catch(()=>entry.target.classList.add('diagram-unavailable'));
+      // One diagram at a time: Mermaid's configuration is global and a theme switch may come between draws.
+      queue=queue.then(()=>draw(entry.target)).catch(()=>entry.target.classList.add('diagram-unavailable'));
     }},{rootMargin:'200px'});
     diagrams.forEach(diagram=>observer.observe(diagram));
   }
