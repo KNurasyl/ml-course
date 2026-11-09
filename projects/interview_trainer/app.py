@@ -1,6 +1,7 @@
 """Run with: python -m projects.interview_trainer.app (localhost only)."""
 from __future__ import annotations
 import argparse
+import contextlib
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
@@ -12,6 +13,7 @@ from .core import Interview, make_prompt
 from .llm import LocalLLM
 from .feedback import evaluate_answer
 from .speech import synthesize_wav, transcribe_wav
+from .profiles import open_model
 
 ROOT = Path(__file__).resolve().parents[2]
 WEB = Path(__file__).parent / "web"
@@ -53,7 +55,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         if self.path == "/health":
-            return self.send(200, {"status":"ok","model_loaded":MODEL.model is not None,"sessions":len(SESSIONS)})
+            return self.send(200, {"status":"ok","profile":getattr(MODEL, "profile", "tiny"),"model_loaded":MODEL.model is not None,"sessions":len(SESSIONS)})
         if self.path.startswith("/session/"):
             if not WORK.acquire(blocking=False):
                 return self.send(409, {"error":"Операция ещё выполняется. Повтори восстановление позже."})
@@ -151,17 +153,21 @@ def main():
     parser.add_argument("--port", type=int, default=8765)
     parser.add_argument("--asr", choices=["vosk", "whisper"], default="vosk", help="whisper: optional faster-whisper, M15-L07X")
     parser.add_argument("--tts", choices=["sapi", "piper"], default="sapi", help="piper: optional Piper voice, M15-L07X")
+    parser.add_argument("--profile", default=None, help="model profile from profiles.yaml: tiny (default), strong, ru-8b, api")
     args = parser.parse_args()
     select_speech(args.asr, args.tts)
-    server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
-    server.timeout = 1
-    print(f"Открой http://127.0.0.1:{args.port} ; Ctrl+C останавливает сервер", flush=True)
-    try:
-        server.serve_forever()
-    except KeyboardInterrupt:
-        pass
-    finally:
-        server.server_close()
+    global MODEL
+    with contextlib.ExitStack() as stack:
+        MODEL = stack.enter_context(open_model(args.profile))  # a llama.cpp server started here stops with the app
+        server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
+        server.timeout = 1
+        print(f"Профиль модели: {MODEL.profile}. Открой http://127.0.0.1:{args.port} ; Ctrl+C останавливает сервер", flush=True)
+        try:
+            server.serve_forever()
+        except KeyboardInterrupt:
+            pass
+        finally:
+            server.server_close()
 
 
 if __name__ == "__main__":

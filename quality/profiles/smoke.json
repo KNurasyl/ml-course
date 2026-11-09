@@ -1,0 +1,109 @@
+{
+  "task": "T50",
+  "collected": "2026-11-09",
+  "scope": "Two fixed answers: the profile runs end to end through the rubric; not a quality comparison (T51).",
+  "runs": [
+    {
+      "profile": "tiny",
+      "open_seconds": 0.0,
+      "load_seconds": null,
+      "turns": [
+        {
+          "mode": "hr",
+          "status": "grounded_candidate",
+          "raw_output": "{\"evidence_id\":0,\"criterion\":\"action\",\"next_step\":\"action\"}",
+          "observations": [
+            {
+              "quote": "Я сам переписал медленный отчёт.",
+              "criterion": "action"
+            }
+          ],
+          "seconds": 9.3,
+          "generation": {
+            "input_tokens": 297,
+            "output_tokens": 18,
+            "stop_policy": "bounded_token_choices",
+            "choice_count": 27,
+            "truncated": false,
+            "profile": "tiny",
+            "backend": "transformers"
+          }
+        },
+        {
+          "mode": "backend",
+          "status": "grounded_candidate",
+          "raw_output": "{\"evidence_id\":0,\"criterion\":\"fact\",\"next_step\":\"fact\"}",
+          "observations": [
+            {
+              "quote": "Транзакция объединяет операции так, что применяются все или ни одной.",
+              "criterion": "fact"
+            }
+          ],
+          "seconds": 1.99,
+          "generation": {
+            "input_tokens": 307,
+            "output_tokens": 18,
+            "stop_policy": "bounded_token_choices",
+            "choice_count": 18,
+            "truncated": false,
+            "profile": "tiny",
+            "backend": "transformers"
+          }
+        }
+      ],
+      "scope": "Two fixed answers: the profile runs end to end through the rubric; not a quality comparison (T51)."
+    },
+    {
+      "profile": "strong",
+      "open_seconds": 8.4,
+      "load_seconds": 2.4,
+      "turns": [
+        {
+          "mode": "hr",
+          "status": "grounded_candidate",
+          "raw_output": "{\"evidence_id\":1,\"criterion\":\"reason\",\"next_step\":\"action\"}",
+          "observations": [
+            {
+              "quote": "Сначала измерил время, потом убрал лишние запросы.",
+              "criterion": "reason"
+            }
+          ],
+          "seconds": 5.15,
+          "generation": {
+            "input_tokens": 267,
+            "output_tokens": 18,
+            "stop_policy": "bounded_token_choices",
+            "choice_count": 27,
+            "truncated": false,
+            "profile": "strong",
+            "backend": "llama_server",
+            "seconds": 5.113
+          }
+        },
+        {
+          "mode": "backend",
+          "status": "grounded_candidate",
+          "raw_output": "{\"evidence_id\":0,\"criterion\":\"fact\",\"next_step\":\"fact\"}",
+          "observations": [
+            {
+              "quote": "Транзакция объединяет операции так, что применяются все или ни одной.",
+              "criterion": "fact"
+            }
+          ],
+          "seconds": 5.34,
+          "generation": {
+            "input_tokens": 261,
+            "output_tokens": 18,
+            "stop_policy": "bounded_token_choices",
+            "choice_count": 18,
+            "truncated": false,
+            "profile": "strong",
+            "backend": "llama_server",
+            "seconds": 5.305
+          }
+        }
+      ],
+      "scope": "Two fixed answers: the profile runs end to end through the rubric; not a quality comparison (T51)."
+    }
+  ]
+}

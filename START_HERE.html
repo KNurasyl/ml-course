@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="15e85f92f4cad731928c9ad1c8fa8dbafede9200b6bcafe8a42106ebf0b8b84d"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="ce14e26cd453a3a5a52a63959c874e5d2004fa343368da8e0a977f901779b81f"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -25090,6 +25090,20 @@ for asr in (&quot;vosk&quot;, &quot;whisper&quot;):
 <pre><code class="language-powershell">.\.venv\Scripts\python.exe -m projects.interview_trainer.app --asr whisper --tts piper
 </code></pre>
 <p>По умолчанию тренажёр распознаёт речь через Vosk и озвучивает через Windows SAPI. Флаги <code>--asr whisper</code> и <code>--tts piper</code> подключают вторую конфигурацию из <code>speech_alt.py</code>: faster-whisper small в int8 и голос Piper ru_RU-denis-medium. Контракт тот же: WAV mono PCM16 16 кГц, до 120 секунд. Нужны необязательные пакеты из <code>requirements-optional.in</code> и модели <code>tools\download_models.py --speech-extra</code>. Сравнение конфигураций и его границы разобраны в уроке M15-L07X: авторский замер сделан на синтетическом голосе.</p>
+<h2 id="REFERENCE-PROJECT--профили-моделей-расширение-1-2-0">Профили моделей (расширение 1.2.0)</h2>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m projects.interview_trainer.profiles list
+.\.venv\Scripts\python.exe -m projects.interview_trainer.app --profile strong
+.\.venv\Scripts\python.exe -m projects.interview_trainer.profiles smoke strong
+</code></pre>
+<p>Модель задаётся профилем из <code>profiles.yaml</code>. Контракт у всех профилей один: <code>generate</code>, <code>generate_json</code> и <code>generate_choice</code>, лимит 1800 токенов контекста, одна рубрика M11 и одна политика обратной связи.</p>
+<ul>
+<li><strong><code>tiny</code></strong> — Qwen2.5-0.5B-Instruct через transformers на CPU. Это профиль по умолчанию, тесты работают на нём.</li>
+<li><strong><code>strong</code></strong> — Qwen3.5-4B Q4_K_M через llama-server из M09-L07X, рассуждения выключены, декодирование жадное. Если по адресу из профиля сервер не отвечает, тренажёр сам запускает <code>runtime/llama.cpp</code> с GGUF из <code>tools\download_models.py --gguf</code> и останавливает его при выходе. В Windows сервер привязан к процессу тренажёра и завершится, даже если закрыть окно. Число токенов считается до генерации через <code>/tokenize</code>, а выбор из ограниченного набора задаётся грамматикой из точных строк вариантов.</li>
+<li><strong><code>ru-8b</code></strong> — русская модель на 8 млрд параметров через тот же сервер. Выключен: GGUF весит около 5 ГБ, и для загрузки нужно решение автора.</li>
+<li><strong><code>api</code></strong> — любой совместимый с OpenAI платный endpoint, вне бесплатного пути курса. Выключен, пока в профиле не заданы <code>base_url</code> и <code>model</code>, а ключ не лежит в переменной окружения <code>TRAINER_API_KEY</code>. Вместо грамматики используется JSON Schema с перечислениями, лимит токенов проверяется после ответа.</li>
+</ul>
+<p>Недоступный профиль не подменяется другим: тренажёр останавливается и пишет, чего не хватает. <code>/health</code> показывает активный профиль.</p>
+<p>Авторская проверка 09.11.2026: одна и та же HR-реплика и одна backend-реплика прошли через рубрику на обоих профилях, файл <code>quality/profiles/smoke.json</code>. Оба профиля дали проверяемое наблюдение. <code>tiny</code> выбрал в HR-ответе личное действие, <code>strong</code> — обоснование. На одну реплику <code>strong</code> тратит около 5 с после запуска сервера за 8 с, <code>tiny</code> — 2–9 с, считая первую загрузку модели. Это проверка того, что профиль работает целиком, а не сравнение качества: сравнение моделей — отдельная задача T51.</p>
 <h2 id="REFERENCE-PROJECT--как-проверять-результат">Как проверять результат</h2>
 <ol>
 <li>Пройди один HR и один backend сценарий. Сохрани JSON в submissions, а время каждого хода перенеси в отчёт.</li>

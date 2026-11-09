@@ -6,9 +6,12 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 class LocalLLM:
-    def __init__(self):
+    def __init__(self, model_dir=None, threads=4, context_tokens=1800, profile="tiny"):
+        # The defaults are the tiny profile of profiles.yaml; other values come from a profile (T50).
         self.model = None
         self.tokenizer = None
+        self.directory = Path(model_dir) if model_dir else ROOT / "models/Qwen2.5-0.5B-Instruct"
+        self.threads, self.context_tokens, self.profile = threads, context_tokens, profile
         self.lock = threading.Lock()
         self.last_generation = {}
 
@@ -26,17 +29,17 @@ class LocalLLM:
         import json
         with self.lock:
             if self.model is None:
-                directory = ROOT / "models/Qwen2.5-0.5B-Instruct"
+                directory = self.directory
                 if not (directory / "config.json").exists():
                     raise FileNotFoundError("Выполни python tools/download_models.py --llm")
-                torch.set_num_threads(4)
+                torch.set_num_threads(self.threads)
                 self.tokenizer = AutoTokenizer.from_pretrained(directory, local_files_only=True)
                 self.model = AutoModelForCausalLM.from_pretrained(directory, local_files_only=True,
                     dtype=torch.float32).eval()
             rendered = self.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
             inputs = self.tokenizer(rendered, return_tensors="pt")
-            if inputs.input_ids.shape[-1] > 1800:
-                raise ValueError("Контекст превышает учебный лимит 1800 токенов: сократи ответ")
+            if inputs.input_ids.shape[-1] > self.context_tokens:
+                raise ValueError(f"Контекст превышает учебный лимит {self.context_tokens} токенов: сократи ответ")
             # Stop generation after a complete emitted JSON object. This changes
             # the stop rule, never edits or substitutes the model's actual tokens.
             extra = {}
@@ -73,5 +76,6 @@ class LocalLLM:
             stops = stops if isinstance(stops, list) else [stops]
             self.last_generation = {"input_tokens":int(inputs.input_ids.shape[-1]),"output_tokens":len(new_tokens),"stop_policy":"bounded_token_choices" if choices is not None else ("complete_json_or_limit" if json_object else "eos_or_limit"),
                 "choice_count":len(choices) if choices is not None else None,
-                "truncated":len(new_tokens) == max_new_tokens and int(new_tokens[-1]) not in stops}
+                "truncated":len(new_tokens) == max_new_tokens and int(new_tokens[-1]) not in stops,
+                "profile":self.profile,"backend":"transformers"}
             return self.tokenizer.decode(new_tokens, skip_special_tokens=True).strip()

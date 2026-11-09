@@ -1,0 +1,44 @@
+# Model profiles of the interview trainer (IMPROVEMENT_PLAN.md 3.5, T50). One request/response contract for all of them:
+# generate, generate_json and generate_choice with the same limits, and the same M11 rubric judges every profile.
+# Choose with: python -m projects.interview_trainer.app --profile strong
+default: tiny
+profiles:
+  tiny:
+    description: Qwen2.5-0.5B-Instruct in float32 through transformers on CPU; the default, the tests run on it
+    backend: transformers
+    model_dir: models/Qwen2.5-0.5B-Instruct
+    download: python tools/download_models.py --llm
+    threads: 4
+    context_tokens: 1800
+  strong:
+    description: Qwen3.5-4B Q4_K_M through the llama.cpp server of M09-L07X; thinking off, greedy decoding
+    backend: llama_server
+    gguf: qwen3.5-4b-q4_k_m
+    download: python tools/download_models.py --gguf
+    url: http://127.0.0.1:18095
+    start: true
+    threads: 4
+    ctx: 4096
+    context_tokens: 1800
+    chat_template_kwargs:
+      enable_thinking: false
+  ru-8b:
+    description: a Russian 8B model (T-lite-it-2.1 or YandexGPT-5-Lite-8B) in GGUF through the same llama.cpp server
+    backend: llama_server
+    enabled: false
+    reason: not downloaded; the GGUF is about 5 GB and needs the author's approval (CLAUDE.md, downloads over 1 GB)
+    gguf: null
+    url: http://127.0.0.1:18096
+    start: true
+    threads: 4
+    ctx: 4096
+    context_tokens: 1800
+  api:
+    description: any OpenAI-compatible paid endpoint; outside the free local path of the course
+    backend: openai_compatible
+    enabled: false
+    reason: paid and optional; set base_url and model here and the key in the environment variable TRAINER_API_KEY
+    base_url: null
+    model: null
+    api_key_env: TRAINER_API_KEY
+    context_tokens: 1800
