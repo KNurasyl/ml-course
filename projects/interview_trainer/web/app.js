@@ -23,7 +23,7 @@ function render() {
   for(const turn of session.history){
     const card=document.createElement('article'); card.className='result';
     for(const [tag,text,cls] of [['h3',turn.question,''],['p',turn.answer,'candidate'],['div',turn.feedback,'feedback'],['p',`Генерация и загрузка: ${turn.seconds.toFixed(2)} с. Источники поиска ниже; их наличие не гарантирует, что модель использовала их правильно.`,'muted']]){const element=document.createElement(tag);element.textContent=text;element.className=cls;card.append(element);}
-    for(const source of turn.sources){const element=document.createElement(source.url?'a':'p');element.textContent=`[${source.id}] ${source.title}`;if(source.url){element.href=source.url;element.target='_blank';element.rel='noopener noreferrer';}card.append(element,document.createElement('br'));}
+    for(const source of turn.sources){const link=/^https?:\/\/[^\\]+$/i.test(source.url||'');const element=document.createElement(link?'a':'p');element.textContent=`[${source.id}] ${source.title}`;if(link){element.href=source.url;element.target='_blank';element.rel='noopener noreferrer';}card.append(element,document.createElement('br'));}
     if(turn.generation?.truncated){const note=document.createElement('p');note.className='muted';note.textContent='Достигнут лимит генерации: разбор может быть незавершённым. Учти это при оценке качества.';card.append(note);}
     const listen=document.createElement('button');listen.className='secondary';listen.textContent='Озвучить разбор';listen.onclick=()=>{if(!busy&&!recording)speak(turn.feedback);};card.append(listen);
     $('results').append(card);

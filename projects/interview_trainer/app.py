@@ -14,6 +14,7 @@ from .llm import LocalLLM
 from .feedback import evaluate_answer
 from .speech import synthesize_wav, transcribe_wav
 from .profiles import open_model
+from .security import TraceLog, turn_event
 
 ROOT = Path(__file__).resolve().parents[2]
 WEB = Path(__file__).parent / "web"
@@ -22,6 +23,7 @@ WORK = threading.Lock()
 MODEL = LocalLLM()
 ENGINES = {"asr": transcribe_wav, "tts": synthesize_wav}
 QUESTIONS = {"mode": "auto", "search": None}
+TRACE = TraceLog()  # in memory unless --trace-log names a file; candidate answers enter it only as hash and length
 
 
 def question_search():
@@ -147,9 +149,16 @@ class Handler(BaseHTTPRequestHandler):
                 assessment = evaluate_answer(MODEL, mode=interview.mode, question=question,
                     answer=data['answer'], sources=sources, history=interview.history, config='candidate')
                 feedback = assessment['display_text']
+                if assessment['status'] == 'blocked_input':
+                    TRACE.record(**turn_event(session=interview.id, mode=interview.mode, question=question, answer=data["answer"],
+                                              sources=sources, assessment=assessment, seconds=time.perf_counter()-start))
+                    raise ValueError(feedback)
                 if not assessment['raw_output'].strip():
                     raise RuntimeError("Модель вернула пустой разбор; ход не сохранён")
-                result = interview.commit(data["answer"], feedback, sources, time.perf_counter()-start, MODEL.last_generation, assessment)
+                seconds = time.perf_counter()-start
+                result = interview.commit(data["answer"], feedback, sources, seconds, MODEL.last_generation, assessment)
+                TRACE.record(**turn_event(session=interview.id, mode=interview.mode, question=question, answer=data["answer"],
+                                          sources=sources, assessment=assessment, seconds=seconds))
                 # In-memory only; user explicitly exports a session from the browser.
                 return self.send(200, result)
             if self.path == "/tts":
@@ -176,8 +185,11 @@ def main():
     parser.add_argument("--profile", default=None, help="model profile from profiles.yaml: tiny (default), strong, ru-8b, api")
     parser.add_argument("--questions", choices=["auto", "full", "lexical"], default="auto",
                         help="search over the question base: full needs the T32/T35 models and sqlite-vec, auto falls back to lexical")
+    parser.add_argument("--trace-log", default=None, help="append-only JSONL journal of model turns (no candidate text), e.g. artifacts/interview_trainer/trace.jsonl")
     args = parser.parse_args()
     QUESTIONS["mode"] = args.questions
+    global TRACE
+    TRACE = TraceLog(args.trace_log)
     select_speech(args.asr, args.tts)
     global MODEL
     with contextlib.ExitStack() as stack:
