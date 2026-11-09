@@ -64,6 +64,7 @@ async function run(browser, repo, options = {}) {
   const report = {date:new Date().toISOString(),reader_sha256:require('node:crypto').createHash('sha256').update(html).digest('hex'),kind:'browser_design_verification_not_learner_study',checks:[],errors:[],measurements:{},screenshots:[]};
   const context = await browser.newContext({viewport:{width:1440,height:1000},offline:true,deviceScaleFactor:1});
   const page = await context.newPage();
+  const requests = [];context.on('request', request => requests.push(request.url()));
   page.on('pageerror',error=>report.errors.push(error.message));
   const check = (name, pass, detail={}) => {report.checks.push({name,pass:!!pass,detail});};
   const settle = async()=>page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
@@ -84,6 +85,11 @@ async function run(browser, repo, options = {}) {
     check('D1 saved light choice survives reload',kept.theme==='light'&&kept.bg==='rgb(246, 245, 241)'&&kept.label.includes('светлая'),kept);
     await page.locator('#theme-toggle').click();const back=await themeState();
     check('D1 theme switch returns to dark',back.theme==='dark'&&back.bg==='rgb(21, 23, 28)'&&back.stored==='dark',back);
+    // F2: fonts come from data: URLs in the reader. check() alone is true for unknown families, so loaded faces are counted too.
+    const fontState=family=>page.evaluate(async family=>{await document.fonts.ready;const faces=[...document.fonts].filter(f=>f.family.replace(/["']/g,'')===family);
+      return{declared:faces.length,loaded:faces.filter(f=>f.status==='loaded').length,latin:document.fonts.check(`17px "${family}"`,'Rag 0l1'),cyrillic:document.fonts.check(`17px "${family}"`,'Ёжик')};},family);
+    const sans=await fontState('Golos Text');sans.body=await page.evaluate(()=>getComputedStyle(document.body).fontFamily);
+    check('F2 embedded Golos Text is used for text',sans.declared===6&&sans.loaded>=2&&sans.latin&&sans.cyrillic&&sans.body.startsWith('"Golos Text"'),sans);
     const cta=page.locator('.primary-action');const box=await cta.boundingBox();
     check('D01 prominent start action in first desktop viewport',box&&box.y+box.height<1000);
     await snap('home-desktop');
@@ -97,6 +103,10 @@ async function run(browser, repo, options = {}) {
     const body=await page.locator('#M08-L03 .body-content').boundingBox();
     check('D07 prose has bounded measure',body.width<=740,{width:body.width});
     check('D06 distinct task roles and local map',(await page.locator('#M08-L03 .lesson-stage').count())>=4&&(await page.locator('#M08-L03 .lesson-outline a').count())>=7);
+    await page.locator('#M08-L03 pre code').first().scrollIntoViewIfNeeded();
+    const mono=await fontState('JetBrains Mono');mono.code=await page.locator('#M08-L03 pre code').first().evaluate(el=>getComputedStyle(el).fontFamily);
+    check('F2 embedded JetBrains Mono is used for code',mono.declared===4&&mono.loaded>=1&&mono.latin&&mono.code.startsWith('"JetBrains Mono"'),mono);
+    await page.evaluate(()=>window.scrollTo(0,0));await settle();
     check('D07 formula blocks and shape table',await page.locator('#M08-L03 .formula').count()>=4&&await page.locator('#M08-L03 table').count()>=1);
     await snap('attention-desktop');
     const diagram=page.locator('#M08-L03 pre.mermaid').first();await diagram.scrollIntoViewIfNeeded();
@@ -179,6 +189,8 @@ async function run(browser, repo, options = {}) {
     await page.emulateMedia({media:'screen'});
     const anchorIssues=await page.evaluate(()=>Array.from(document.querySelectorAll('a[href^="#"]')).filter(a=>{let id;try{id=decodeURIComponent(a.hash.slice(1));}catch{return true;}return !document.getElementById(id);}).slice(0,30).map(a=>a.getAttribute('href')));
     check('All generated fragment links resolve',anchorIssues.length===0,{issues:anchorIssues});
+    const external=requests.filter(url=>!/^(file|data|about|blob):/.test(url));
+    check('F2 no requests outside file:, data:, about: and blob:',external.length===0,{requests:requests.length,external:external.slice(0,20)});
     check('No browser JavaScript errors',report.errors.length===0,{errors:report.errors});
   } catch(error) {report.errors.push(error.stack);report.checks.push({name:'QA script completed',pass:false,detail:error.message});}
   finally {await context.close();}

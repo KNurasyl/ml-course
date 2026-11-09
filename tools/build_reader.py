@@ -6,6 +6,7 @@ learning state and does not execute notebook code. Edit Markdown, then rebuild.
 from __future__ import annotations
 
 import argparse
+import base64
 from html import escape, unescape
 from hashlib import sha256
 import json
@@ -47,7 +48,7 @@ def source_fingerprint(root: Path) -> str:
     paths = {item["path"] for item in registry.values()}
     paths.update({"metadata/material-registry.json", "tools/build_reader.py"})
     for relative in ("curriculum.json", "metadata/lesson-visuals.json", "metadata/responsive-figures.json",
-                     "tools/reader.css", "tools/reader.js"):
+                     "tools/reader.css", "tools/reader.js", "tools/fonts/fonts.json"):
         if (root / relative).is_file():
             paths.add(relative)
     for folder in ("course/assets", "course/visuals"):
@@ -364,7 +365,30 @@ def home_presentation(body: str, registry: dict) -> str:
     return start + '<h2 id="HOME--course-route">Твой маршрут</h2><div class="course-route">' + cards + '</div>' + body
 
 
+FONTS_DIR = Path(__file__).with_name("fonts")
+
+
+def font_faces(fonts_dir: Path = FONTS_DIR) -> str:
+    """Embed the recorded woff2 files (F1) so the reader shows its fonts without any network request.
+
+    One rule per file with its unicode-range: the browser decodes only the subsets a page uses, and
+    characters outside them fall back to the rest of --sans / --mono in reader.css."""
+    manifest = json.loads((fonts_dir / "fonts.json").read_text(encoding="utf-8"))
+    rules = []
+    for item in manifest["files"]:
+        data = (fonts_dir / item["file"]).read_bytes()
+        if len(data) != item["bytes"] or sha256(data).hexdigest() != item["sha256"]:
+            raise ValueError(f"Font file differs from tools/fonts/fonts.json: {item['file']}")
+        encoded = base64.b64encode(data).decode("ascii")
+        rules.append(f"@font-face{{font-family:'{item['family']}';font-style:{item['style']};"
+                     f"font-weight:{item['weight']};font-display:swap;"
+                     f"src:url(data:font/woff2;base64,{encoded}) format('woff2');"
+                     f"unicode-range:{item['unicode_range']}}}")
+    return "\n".join(rules)
+
+
 CSS = Path(__file__).with_name("reader.css").read_text(encoding="utf-8")
+FONT_FACES = font_faces()
 SCRIPT = Path(__file__).with_name("reader.js").read_text(encoding="utf-8")
 # Runs in <head> before the first paint so a saved light choice does not flash dark.
 # The key and the values must match the theme switcher in reader.js.
@@ -450,7 +474,7 @@ def build(root: Path) -> tuple[str, int]:
     navigation = '\n'.join(nav_groups)
     html = f'''<!doctype html>
 <html lang="ru" data-theme="dark">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="course-source-sha256" content="{source_fingerprint(root)}"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>{CSS}</style><script>{THEME_BOOT}</script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="course-source-sha256" content="{source_fingerprint(root)}"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style id="course-fonts">{FONT_FACES}</style><style>{CSS}</style><script>{THEME_BOOT}</script></head>
 <body><a class="skip-link" href="#main-content">К материалу</a>
 <aside class="sidebar" id="course-menu" aria-label="Оглавление курса"><div class="sidebar-head"><a class="brand" href="#HOME"><span class="brand-symbol">ML</span><span class="brand-name">ML и LLM</span><span class="brand-caption">Технический учебник · Практика</span></a><button id="menu-close" class="small-button menu-close" aria-label="Закрыть оглавление">×</button><label class="search"><span class="screen-reader-only">Найти тему</span><span class="search-row"><input id="course-search" type="search" placeholder="Найти тему…" autocomplete="off" spellcheck="false" aria-describedby="search-status"><button id="search-clear" class="small-button search-clear" type="button" aria-label="Очистить поиск" hidden>×</button></span></label><p class="search-status" id="search-status" role="status">Поиск по тексту · Ctrl K</p></div><div class="sidebar-scroll"><nav id="book-navigation" aria-label="Разделы учебника">{navigation}</nav><ol class="search-results" id="search-results" aria-label="Результаты поиска"></ol><p class="empty-search" id="empty-search" hidden>Попробуй другое слово или его основу.</p><p class="nav-foot">Материалы {VERSION} · Чтение без интернета<br><a href="#PROGRESS">Журнал самостоятельной работы</a></p></div></aside>
 <button class="backdrop" id="backdrop" aria-label="Закрыть оглавление" tabindex="-1"></button>
