@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="737.03952pt" height="362.63952pt" viewBox="0 0 737.03952 362.63952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>M04-L07</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>M04-L07</dc:title>
+    <dc:description>Responsive layout; source numbers unchanged.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 362.63952 
+L 737.03952 362.63952 
+L 737.03952 0 
+L 0 0 
+z
+" style="fill: #20242c"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Segoe UI'; text-anchor: start; fill: #86aaf0" x="14.829421" y="87.627215" transform="rotate(-0 14.829421 87.627215)">X=0</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 13px; font-family: 'Consolas'; text-anchor: start; fill: #e7e5de" x="94.255531" y="87.787937" transform="rotate(-0 94.255531 87.787937)">0000</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Segoe UI'; text-anchor: start; fill: #86aaf0" x="14.829421" y="134.508179" transform="rotate(-0 14.829421 134.508179)">X=1</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 13px; font-family: 'Consolas'; fill: #e7e5de" transform="translate(94.255531 134.564293)">0001 0010 0100</text>
+    <text style="font-size: 13px; font-family: 'Consolas'; fill: #e7e5de" transform="translate(94.255531 152.764293)">1000</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Segoe UI'; text-anchor: start; fill: #86aaf0" x="14.829421" y="181.259144" transform="rotate(-0 14.829421 181.259144)">X=2</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 13px; font-family: 'Consolas'; fill: #e7e5de" transform="translate(94.255531 181.340648)">0011 0101 0110</text>
+    <text style="font-size: 13px; font-family: 'Consolas'; fill: #e7e5de" transform="translate(94.255531 199.540648)">1001 1010 1100</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Segoe UI'; text-anchor: start; fill: #e6b566" x="14.829421" y="227.956281" transform="rotate(-0 14.829421 227.956281)">X=3</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 13px; font-family: 'Consolas'; fill: #e7e5de" transform="translate(94.255531 228.117004)">0111 1011 1101</text>
+    <text style="font-size: 13px; font-family: 'Consolas'; fill: #e7e5de" transform="translate(94.255531 246.317004)">1110</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Segoe UI'; text-anchor: start; fill: #e6b566" x="14.829421" y="274.735683" transform="rotate(-0 14.829421 274.735683)">X=4</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 13px; font-family: 'Consolas'; text-anchor: start; fill: #e7e5de" x="94.255531" y="274.91164" transform="rotate(-0 94.255531 274.91164)">1111</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 14px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="176.991062" y="53.767628" transform="rotate(-0 176.991062 53.767628)">Все 16 равновероятных исходов</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_2">
+    <path d="M 394.577397 305.958973 
+L 725.51952 305.958973 
+L 725.51952 59.767628 
+L 394.577397 59.767628 
+z
+" style="fill: #20242c"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 409.620221 305.958973 
+L 459.762966 305.958973 
+L 459.762966 272.509062 
+L 409.620221 272.509062 
+z
+" clip-path="url(#pd9b1816f7e)" style="fill: #86aaf0"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 472.298653 305.958973 
+L 522.441399 305.958973 
+L 522.441399 172.159329 
+L 472.298653 172.159329 
+z
+" clip-path="url(#pd9b1816f7e)" style="fill: #86aaf0"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 534.977085 305.958973 
+L 585.119831 305.958973 
+L 585.119831 105.259507 
+L 534.977085 105.259507 
+z
+" clip-path="url(#pd9b1816f7e)" style="fill: #86aaf0"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 597.655518 305.958973 
+L 647.798264 305.958973 
+L 647.798264 172.159329 
+L 597.655518 172.159329 
+z
+" clip-path="url(#pd9b1816f7e)" style="fill: #e6b566"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 660.33395 305.958973 
+L 710.476696 305.958973 
+L 710.476696 272.509062 
+L 660.33395 272.509062 
+z
+" clip-path="url(#pd9b1816f7e)" style="fill: #e6b566"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="mcb6e612ebf" d="M 0 0 
+L 0 3.5 
+" style="stroke: #a3a9b4; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mcb6e612ebf" x="434.691593" y="305.958973" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #a3a9b4" x="434.691593" y="326.047079" transform="rotate(-0 434.691593 326.047079)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#mcb6e612ebf" x="497.370026" y="305.958973" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #a3a9b4" x="497.370026" y="326.151688" transform="rotate(-0 497.370026 326.151688)">1</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#mcb6e612ebf" x="560.048458" y="305.958973" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #a3a9b4" x="560.048458" y="326.126297" transform="rotate(-0 560.048458 326.126297)">2</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#mcb6e612ebf" x="622.726891" y="305.958973" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #a3a9b4" x="622.726891" y="326.047079" transform="rotate(-0 622.726891 326.047079)">3</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#mcb6e612ebf" x="685.405323" y="305.958973" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #a3a9b4" x="685.405323" y="326.050125" transform="rotate(-0 685.405323 326.050125)">4</text>
+     </g>
+    </g>
+    <g id="text_17">
+     <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="560.048458" y="345.600868" transform="rotate(-0 560.048458 345.600868)">Число успехов X</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_6">
+      <path d="M 394.577397 305.958973 
+L 725.51952 305.958973 
+" clip-path="url(#pd9b1816f7e)" style="fill: none; stroke: #a3a9b4; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_7">
+      <defs>
+       <path id="m4511b3f703" d="M 0 0 
+L -3.5 0 
+" style="stroke: #a3a9b4; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m4511b3f703" x="394.577397" y="305.958973" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_18">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #a3a9b4" x="387.577397" y="312.503026" transform="rotate(-0 387.577397 312.503026)">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8">
+      <path d="M 394.577397 252.439116 
+L 725.51952 252.439116 
+" clip-path="url(#pd9b1816f7e)" style="fill: none; stroke: #a3a9b4; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m4511b3f703" x="394.577397" y="252.439116" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #a3a9b4" x="387.577397" y="258.995864" transform="rotate(-0 387.577397 258.995864)">0.1</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_10">
+      <path d="M 394.577397 198.919258 
+L 725.51952 198.919258 
+" clip-path="url(#pd9b1816f7e)" style="fill: none; stroke: #a3a9b4; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m4511b3f703" x="394.577397" y="198.919258" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #a3a9b4" x="387.577397" y="205.463311" transform="rotate(-0 387.577397 205.463311)">0.2</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_12">
+      <path d="M 394.577397 145.399401 
+L 725.51952 145.399401 
+" clip-path="url(#pd9b1816f7e)" style="fill: none; stroke: #a3a9b4; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m4511b3f703" x="394.577397" y="145.399401" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_21">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #a3a9b4" x="387.577397" y="151.943453" transform="rotate(-0 387.577397 151.943453)">0.3</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_14">
+      <path d="M 394.577397 91.879543 
+L 725.51952 91.879543 
+" clip-path="url(#pd9b1816f7e)" style="fill: none; stroke: #a3a9b4; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m4511b3f703" x="394.577397" y="91.879543" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_22">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #a3a9b4" x="387.577397" y="98.423596" transform="rotate(-0 387.577397 98.423596)">0.4</text>
+     </g>
+    </g>
+    <g id="text_23">
+     <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="361.258276" y="182.863301" transform="rotate(-90 361.258276 182.863301)">Вероятность</text>
+    </g>
+   </g>
+   <g id="patch_8">
+    <path d="M 394.577397 305.958973 
+L 394.577397 59.767628 
+" style="fill: none; stroke: #a3a9b4; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 394.577397 305.958973 
+L 725.51952 305.958973 
+" style="fill: none; stroke: #a3a9b4; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="434.691593" y="262.865879" transform="rotate(-0 434.691593 262.865879)">1/16</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="497.370026" y="162.516146" transform="rotate(-0 497.370026 162.516146)">4/16</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="560.048458" y="95.616324" transform="rotate(-0 560.048458 95.616324)">6/16</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="622.726891" y="162.516146" transform="rotate(-0 622.726891 162.516146)">4/16</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="685.405323" y="262.865879" transform="rotate(-0 685.405323 262.865879)">1/16</text>
+   </g>
+  </g>
+  <g id="text_29">
+   <text style="font-weight: 700; font-size: 18px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="368.51976" y="27.716836" transform="rotate(-0 368.51976 27.716836)">Четыре испытания: P(X≥3) = 5/16</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pd9b1816f7e">
+   <rect x="394.577397" y="59.767628" width="330.942123" height="246.191345"/>
+  </clipPath>
+ </defs>
+</svg>

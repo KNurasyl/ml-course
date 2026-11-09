@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="290.63952pt" height="366.837768pt" viewBox="0 0 290.63952 366.837768" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>M11-L04</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>M11-L04</dc:title>
+    <dc:description>Responsive layout; source numbers unchanged.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 366.837768 
+L 290.63952 366.837768 
+L 290.63952 0 
+L 0 0 
+z
+" style="fill: #20242c"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 90.353086 310.157221 
+L 279.11952 310.157221 
+L 279.11952 121.390787 
+L 90.353086 121.390787 
+z
+" style="fill: #20242c"/>
+   </g>
+   <g clip-path="url(#pb937e85037)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAQcAAAEGCAYAAABo91ACAAADFUlEQVR4nO3WQRHAIAADQYpFRNRNLcOfuTrYfUbATZ71fnsAXOY9AIgD8MtzAJI4AEkcgCQOQBIHIIkDkMQBSOIAJHEAkjgASRyAJA5AEgcgiQOQxAFI4gAkcQCSOABJHIAkDkASByCJA5DEAUjiACRxAJI4AEkcgCQOQBIHIIkDkMQBSOIAJHEAkjgASRyAJA5AEgcgiQOQxAFI4gAkcQCSOABJHIAkDkASByCJA5DEAUjiACRxAJI4AEkcgCQOQBIHIIkDkMQBSOIAJHEAkjgASRyAJA5AEgcgiQOQxAFI4gAkcQCSOABJHIAkDkASByCJA5DEAUjiACRxAJI4AEkcgCQOQBIHIIkDkMQBSOIAJHEAkjgASRyAJA5AEgcgiQOQxAFI4gAkcQCSOABJHIAkDkASByCJA5DEAUjiACRxAJI4AEkcgCQOQBIHIIkDkMQBSOIAJHEAkjgASRyAJA5AEgcgiQOQxAFI4gAkcQCSOABJHIAkDkASByCJA5DEAUjiACRxAJI4AEkcgCQOQBIHIIkDkMQBSOIAJHEAkjgASRyAJA5AEgcgiQOQxAFI4gAkcQCSOABJHIAkDkASByCJA5DEAUjiACRxAJI4AEkcgCQOQBIHIIkDkMQBSOIAJHEAkjgASRyAJA5AEgcgiQOQxAFI4gAkcQCSOABJHIAkDkASByCJA5DEAUjiACRxAJI4AEkcgCQOQBIHIIkDkMQBSOIAJHEAkjgASRyAJA5AEgcgiQOQxAFI4gAkcQCSOABJHIAkDkASByCJA5DEAUjiACRxAJI4AEkcgCQOQBIHIIkDkMQBSOIAJHEAkjgASRyAJA5AEgcgiQOQxAFI4gAkcQCSOABJHIAkDkASByCJA5DEAUjiACRxAJI4AEkcgCQOQBIHIIkDkMQBSOIAJHEAkjgASRyAJA5AEgcgiQOQxAFI4gAkcQCSOABJHIAkDkASByCJA5DEAUjiACRxAJI4AEkcgCQOQBIHIIkDkMQBSOIAJHEAkjgASRyAJA5AEgcgiQOQxAFI4gAkcQCSOABJHIBRDi7zBFO+OfiWAAAAAElFTkSuQmCC" id="image3a906ae1d8" transform="scale(1 -1) translate(0 -188.64)" x="90" y="-121.317768" width="189.36" height="188.64"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="mcb6e612ebf" d="M 0 0 
+L 0 3.5 
+" style="stroke: #a3a9b4; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mcb6e612ebf" x="137.544694" y="310.157221" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #a3a9b4" x="137.544694" y="327.52853" transform="rotate(-0 137.544694 327.52853)">неверно</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#mcb6e612ebf" x="231.927911" y="310.157221" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #a3a9b4" x="231.927911" y="327.52853" transform="rotate(-0 231.927911 327.52853)">верно</text>
+     </g>
+    </g>
+    <g id="text_3">
+     <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="184.736303" y="350.060131" transform="rotate(-0 184.736303 350.060131)">Оценка judge</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <path d="M 90.353086 168.582395 
+L 279.11952 168.582395 
+" clip-path="url(#pb937e85037)" style="fill: none; stroke: #a3a9b4; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <defs>
+       <path id="m4511b3f703" d="M 0 0 
+L -3.5 0 
+" style="stroke: #a3a9b4; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m4511b3f703" x="90.353086" y="168.582395" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #a3a9b4" x="83.353086" y="173.76805" transform="rotate(-0 83.353086 173.76805)">неверно</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_5">
+      <path d="M 90.353086 262.965612 
+L 279.11952 262.965612 
+" clip-path="url(#pb937e85037)" style="fill: none; stroke: #a3a9b4; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m4511b3f703" x="90.353086" y="262.965612" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #a3a9b4" x="83.353086" y="268.151267" transform="rotate(-0 83.353086 268.151267)">верно</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="23.081621" y="215.774004" transform="rotate(-90 23.081621 215.774004)">Ручная оценка</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 90.353086 310.157221 
+L 90.353086 121.390787 
+" style="fill: none; stroke: #a3a9b4; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 90.353086 310.157221 
+L 279.11952 310.157221 
+" style="fill: none; stroke: #a3a9b4; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 20px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="137.544694" y="175.740208" transform="rotate(-0 137.544694 175.740208)">TN=1</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 20px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="231.927911" y="175.740208" transform="rotate(-0 231.927911 175.740208)">FP=1</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 20px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="137.544694" y="270.123425" transform="rotate(-0 137.544694 270.123425)">FN=1</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 20px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="231.927911" y="270.123425" transform="rotate(-0 231.927911 270.123425)">TP=1</text>
+   </g>
+  </g>
+  <g id="text_11">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="145.31976" y="25.16502" transform="rotate(-0 145.31976 25.16502)">Judge: 2 совпадения из 4</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pb937e85037">
+   <rect x="90.353086" y="121.390787" width="188.766434" height="188.766434"/>
+  </clipPath>
+ </defs>
+</svg>

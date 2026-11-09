@@ -3,17 +3,40 @@ Fixed teaching examples and stored measurements are used; this does not retrain
 models or replace historical measurement evidence.
 """
 from pathlib import Path
-import json,sys,textwrap,math
+import contextlib,json,re,sys,textwrap,math
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
 from scipy.stats import binom
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'course/assets/responsive';OUT.mkdir(parents=True,exist_ok=True)
 BLUE='#245bba';TEAL='#087e82';AMBER='#a65c12';GRAY='#526474'
 plt.rcParams.update({'font.family':'Segoe UI','font.size':13,'svg.fonttype':'none','svg.hashsalt':'ml-llm-textbook' ,'axes.spines.top':False,'axes.spines.right':False,'figure.facecolor':'white','axes.facecolor':'white','text.color':'#182b3a','axes.labelcolor':'#182b3a','xtick.color':GRAY,'ytick.color':GRAY,'axes.prop_cycle':matplotlib.cycler(color=[BLUE,TEAL,AMBER])})
 MAP={};MOBILE=False
+# D4: every figure also gets a dark copy, <name>-dark.svg, drawn with the 6.0 dark tokens; the light pass keeps the
+# literals, so the existing light files stay byte-identical. Dark: blue -> accent, teal -> act, amber -> hint,
+# gray -> muted, purple -> ink (author's decision), white text on a strong fill -> bg, dark text -> ink,
+# Blues -> a paper..accent ramp; tints of a hue -> that token at 55% opacity (author's decision): the light blue
+# wait bars and the steel blue sources segment; slate -> muted.
+PURPLE='#7045a0';ON_STRONG='white';ON_WEAK='#182b3a';CMAP='Blues';WAIT=('#dce7f7',None)
+CONTEXT=[(BLUE,None),(TEAL,None),('#51799f',None),('#a65c12',None),('#667085',None),('#7545a0',None)]
+THEME='light'
+# build_responsive_figures.py redraws this one with theme tokens and the reader inlines it (D3): no dark copy.
+DRAWN_INLINE={'M12-L04'}
+
+def tokens(theme):
+    """6.0 token values for one theme, read from the reader's stylesheet."""
+    css=(ROOT/'tools/reader.css').read_text(encoding='utf-8')
+    pattern=r':root\{color-scheme:dark;(.*?)\}' if theme=='dark' else r':root\[data-theme="light"\]\{color-scheme:light;(.*?)\}'
+    return dict(re.findall(r'--([\w-]+):(#[0-9a-fA-F]{6})',re.search(pattern,css,re.DOTALL).group(1)))
+
+def dark_rc(t):
+    return {'figure.facecolor':t['paper'],'axes.facecolor':t['paper'],'savefig.facecolor':t['paper'],'savefig.edgecolor':t['paper'],
+            'text.color':t['ink'],'axes.labelcolor':t['ink'],'axes.titlecolor':t['ink'],'xtick.color':t['muted'],'ytick.color':t['muted'],
+            'axes.edgecolor':t['muted'],'grid.color':t['muted'],'patch.edgecolor':t['muted'],'legend.facecolor':t['paper'],
+            'legend.edgecolor':t['line-strong'],'axes.prop_cycle':matplotlib.cycler(color=[t['accent'],t['act'],t['hint']])}
 
 def wrap(t,n=30):return '\n'.join(textwrap.fill(x,n,break_long_words=False,break_on_hyphens=False) for x in t.split('\n'))
 def canvas(title,cols=1):
@@ -33,12 +56,32 @@ def save(fig,key,ext='svg'):
    if legend:
     for t in legend.get_texts():t.set_text(wrap(t.get_text(),30));t.set_fontsize(12)
   ax.grid(axis='y',alpha=.13)
- layout='mobile' if MOBILE else 'desktop';path=OUT/f'{key}-{layout}.svg'
+ if THEME=='dark' and key in DRAWN_INLINE:
+  plt.close(fig);return
+ layout='mobile' if MOBILE else 'desktop';path=OUT/(f'{key}-{layout}-dark.svg' if THEME=='dark' else f'{key}-{layout}.svg')
  fig.savefig(path,bbox_inches='tight',pad_inches=.16,metadata={'Date':None,'Title':key,'Description':'Responsive layout; source numbers unchanged.'});plt.close(fig)
  path.write_bytes(path.read_bytes().replace(b'\r\n', b'\n'))
+ if THEME=='dark':return
  MAP.setdefault(f'course/assets/{key}.{ext}',{})[layout]=path.relative_to(ROOT).as_posix()
 
-def build():
+def build(themes=('light','dark')):
+ global THEME,BLUE,TEAL,AMBER,GRAY,PURPLE,ON_STRONG,ON_WEAK,CMAP,WAIT,CONTEXT
+ light=(BLUE,TEAL,AMBER,GRAY,PURPLE,ON_STRONG,ON_WEAK,CMAP,WAIT,CONTEXT)
+ for THEME in themes:
+  if THEME=='dark':
+   t=tokens('dark');context=plt.rc_context(dark_rc(t))
+   BLUE,TEAL,AMBER,GRAY,PURPLE,ON_STRONG,ON_WEAK=t['accent'],t['act'],t['hint'],t['muted'],t['ink'],t['bg'],t['ink']
+   CMAP=LinearSegmentedColormap.from_list('paper-accent',[t['paper'],t['accent']]);WAIT=(t['accent'],.55)
+   CONTEXT=[(t['accent'],None),(t['act'],None),(t['accent'],.55),(t['hint'],None),(t['muted'],None),(t['ink'],None)]
+  else:
+   context=contextlib.nullcontext();BLUE,TEAL,AMBER,GRAY,PURPLE,ON_STRONG,ON_WEAK,CMAP,WAIT,CONTEXT=light
+  with context:draw()
+ BLUE,TEAL,AMBER,GRAY,PURPLE,ON_STRONG,ON_WEAK,CMAP,WAIT,CONTEXT=light
+ (ROOT/'metadata/quantitative-figures.json').write_text(json.dumps(MAP,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+ print(f'{len(MAP)} quantitative figure pairs rendered')
+ return MAP
+
+def draw():
  global MOBILE
  for MOBILE in [False,True]:
   fig,axes=canvas('Четыре испытания: P(X≥3) = 5/16',2)
@@ -71,9 +114,9 @@ def build():
 
   fig,ax=canvas('Очередь увеличивает задержку запроса')
   for i,a in enumerate([0,1,2,3]):
-   start=2*i;ax.barh(i,start-a,left=a,color='#dce7f7',label='Ожидание' if i==0 else None)
+   start=2*i;ax.barh(i,start-a,left=a,color=WAIT[0],alpha=WAIT[1],label='Ожидание' if i==0 else None)
    ax.barh(i,2,left=start,color=BLUE,label='Модель: 2 с' if i==0 else None)
-   ax.text(start+1,i,f'{2+i} с',ha='center',va='center',color='white',fontsize=13)
+   ax.text(start+1,i,f'{2+i} с',ha='center',va='center',color=ON_STRONG,fontsize=13)
   ax.set(yticks=range(4),yticklabels=['Запрос 1','Запрос 2','Запрос 3','Запрос 4'],xlabel='Секунды от начала');ax.invert_yaxis();ax.legend(loc='upper center',bbox_to_anchor=(.5,-.18),fontsize=12)
   save(fig,'M06-L03')
 
@@ -85,18 +128,18 @@ def build():
 
   fig,ax=canvas('Causal mask: будущие ключи запрещены')
   a=np.tril(np.ones((4,4)));a/=a.sum(1,keepdims=True)
-  ax.imshow(a,cmap='Blues',vmin=0,vmax=1)
+  ax.imshow(a,cmap=CMAP,vmin=0,vmax=1)
   for i in range(4):
-   for j in range(4):ax.text(j,i,f'{a[i,j]:.2f}' if j<=i else '×',ha='center',va='center',fontsize=15,color='white' if a[i,j]>.6 else '#182b3a')
+   for j in range(4):ax.text(j,i,f'{a[i,j]:.2f}' if j<=i else '×',ha='center',va='center',fontsize=15,color=ON_STRONG if a[i,j]>.6 else ON_WEAK)
   ax.set(xticks=range(4),yticks=range(4),xticklabels=['K1','K2','K3','K4'],yticklabels=['Q1','Q2','Q3','Q4'],xlabel='Ключи · × означает вес 0',ylabel='Запросы')
   save(fig,'M08-L04')
 
   fig,ax=canvas('Контекст включает резерв ответа')
-  parts=[60,180,200,40,20,64];names=['Правила','История','Источники','Вопрос','Маркеры','Ответ'];colors=[BLUE,TEAL,'#51799f','#a65c12','#667085','#7545a0']
+  parts=[60,180,200,40,20,64];names=['Правила','История','Источники','Вопрос','Маркеры','Ответ'];colors=CONTEXT
   for i,vals in enumerate([parts,[60,100,200,40,20,64]]):
    left=0
-   for value,name,color in zip(vals,names,colors):
-    ax.barh(i,value,left=left,color=color,label=name if i==0 else None)
+   for value,name,(color,alpha) in zip(vals,names,colors):
+    ax.barh(i,value,left=left,color=color,alpha=alpha,label=name if i==0 else None)
     left+=value
    ax.text(left+7,i,str(left),va='center',fontsize=13)
   ax.axvline(512,color=AMBER,ls='--');ax.set(xlim=(0,640),yticks=[0,1],yticklabels=['До','После'],xlabel='Токены · лимит 512');ax.invert_yaxis()
@@ -114,7 +157,7 @@ def build():
   save(fig,'M10-L03')
 
   fig,ax=canvas('Judge: 2 совпадения из 4')
-  ax.imshow(np.ones((2,2)),cmap='Blues',vmin=0,vmax=2)
+  ax.imshow(np.ones((2,2)),cmap=CMAP,vmin=0,vmax=2)
   for i,row in enumerate([['TN=1','FP=1'],['FN=1','TP=1']]):
    for j,t in enumerate(row):ax.text(j,i,t,ha='center',va='center',fontsize=20)
   ax.set(xticks=[0,1],yticks=[0,1],xticklabels=['неверно','верно'],yticklabels=['неверно','верно'],xlabel='Оценка judge',ylabel='Ручная оценка');save(fig,'M11-L04')
@@ -139,14 +182,16 @@ def build():
   x=np.arange(1,21);queue=np.array([0]*16+[900]*4)
   ax.bar(x,np.full(20,500),label='ASR + генерация: 500 мс',color=BLUE)
   ax.bar(x,queue,bottom=500,label='Очередь: 900 мс',color=AMBER)
-  ax.axhline(680,color=TEAL,ls='--',label='Среднее 680 мс');ax.axhline(1400,color='#7045a0',ls=':',label='p95 = 1400 мс')
+  ax.axhline(680,color=TEAL,ls='--',label='Среднее 680 мс');ax.axhline(1400,color=PURPLE,ls=':',label='p95 = 1400 мс')
   ax.set(xlabel='Номер запроса',ylabel='Задержка, мс',ylim=(0,2350),xticks=[1,5,10,15,20]);ax.legend(fontsize=11)
   save(fig,'M13-L04')
 
   fig,axes=canvas('Дискретизация: амплитуда во времени',2)
   rate=16000;t=np.arange(320)/rate;y=.7*np.sin(2*np.pi*220*t)
   axes[0].plot(t*1000,y,color=BLUE);axes[0].set(title='Тон 220 Гц · первые 20 мс',xlabel='Время, мс',ylabel='Амплитуда',ylim=(-1,1))
-  axes[1].stem(t[:20]*1000,y[:20],linefmt=AMBER,markerfmt='o',basefmt='k-');axes[1].set(title='Шаг: 1/16000 секунды',xlabel='Время, мс',ylabel='Амплитуда',ylim=(-1,1))
+  stems=axes[1].stem(t[:20]*1000,y[:20],linefmt=AMBER,markerfmt='o',basefmt='k-')
+  if THEME=='dark':stems.baseline.set_color(GRAY)
+  axes[1].set(title='Шаг: 1/16000 секунды',xlabel='Время, мс',ylabel='Амплитуда',ylim=(-1,1))
   save(fig,'M15-L01')
 
   data=json.loads((ROOT/'course/assets/data/M07-HW01-measurements.json').read_text(encoding='utf-8'))
@@ -165,8 +210,4 @@ def build():
   axes[1].set(xlabel='Исходный признак x1',ylabel='Исходный признак x2',title='Test: реальные ошибки');axes[1].legend(fontsize=11)
   save(fig,'M07-HW01','png')
 
- (ROOT/'metadata/quantitative-figures.json').write_text(json.dumps(MAP,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
- print(f'{len(MAP)} quantitative figure pairs rendered')
- return MAP
-
-if __name__=='__main__':build()
+if __name__=='__main__':build(tuple(sys.argv[1:]) or ('light','dark'))

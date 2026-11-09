@@ -52,7 +52,9 @@ def test_drawn_figures_take_colours_only_from_theme_tokens():
 
 def test_only_drawn_figures_are_inline_and_matplotlib_figures_stay_images():
     drawn = set(inline_files())
-    responsive = {path.relative_to(ROOT).as_posix() for path in (ROOT / "course/assets/responsive").glob("*.svg")}
+    # Dark copies of the matplotlib figures (D4, <name>-dark.svg) are checked in tests/test_dark_figures.py.
+    responsive = {path.relative_to(ROOT).as_posix() for path in (ROOT / "course/assets/responsive").glob("*.svg")
+                  if not path.stem.endswith("-dark")}
     made_by_matplotlib = {relative for relative in responsive if "matplotlib" in (ROOT / relative).read_text(encoding="utf-8")[:3000]}
     assert len(responsive) == 208 and len(made_by_matplotlib) == 72
     assert drawn == responsive - made_by_matplotlib

@@ -1,7 +1,7 @@
 """Rebuild every generated course file in one fixed order.
 
 metadata (registry entries copied from curriculum.json, the canonical source)
--> cheatsheet (lesson cards) -> progress dashboard -> visuals (interactive experiments) -> figures (lesson SVG) -> reader -> manifest
+-> cheatsheet (lesson cards) -> progress dashboard -> visuals (interactive experiments) -> figures (lesson SVG, light and dark) -> reader -> manifest
 Each generator is deterministic for unchanged sources, so a full run leaves the
 working tree untouched unless a source changed. Release reports are opt-in:
 they rewrite committed evidence from artifacts of a full verification run.
@@ -22,7 +22,8 @@ STAGES = [
     ("cheatsheet", ["build_cheatsheet.py"]),
     ("progress", ["progress.py dashboard"]),
     ("visuals", ["build_visuals.py", "build_module_visuals.py", "build_product_visuals.py"]),
-    ("figures", ["build_foundation_figures.py", "build_quantitative_figures.py", "build_responsive_figures.py"]),
+    ("figures", ["build_foundation_figures.py", "build_quantitative_figures.py", "build_responsive_figures.py",
+                 "build_dark_figures.py"]),
     ("reader", ["build_reader.py"]),
     ("manifest", ["build_manifest.py"]),
     ("reports", ["build_release_report.py", "build_design_report.py"]),

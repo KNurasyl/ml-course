@@ -23,7 +23,7 @@ def test_default_order_is_metadata_cheatsheet_visuals_figures_reader_manifest():
     assert scripts == ["build_manifest.py --sync-registry-only", "build_cheatsheet.py", "progress.py dashboard",
                        "build_visuals.py", "build_module_visuals.py", "build_product_visuals.py",
                        "build_foundation_figures.py", "build_quantitative_figures.py", "build_responsive_figures.py",
-                       "build_reader.py", "build_manifest.py"]
+                       "build_dark_figures.py", "build_reader.py", "build_manifest.py"]
     assert all((SOURCE / "tools" / script.split()[0]).is_file() for _, scripts in build_all.STAGES for script in scripts)
 
 

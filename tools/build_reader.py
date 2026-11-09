@@ -55,6 +55,13 @@ def inline_svg(root: Path, relative: str) -> str:
     return svg
 
 
+def dark_copy(root: Path, relative: str) -> str | None:
+    """The dark copy of an image figure (D4), drawn next to it as <name>-dark.<ext>, if there is one."""
+    path = Path(relative)
+    candidate = path.with_name(f"{path.stem}-dark{path.suffix}").as_posix()
+    return candidate if (root / candidate).is_file() else None
+
+
 def source_fingerprint(root: Path) -> str:
     """Fingerprint every canonical text, its registry and the rendering code."""
     root = root.resolve()
@@ -162,10 +169,19 @@ class CourseRenderer(mistune.HTMLRenderer):
             return (f'<a class="figure-expand figure-inline" href="{url}" target="_blank" data-figure="{url}" '
                     f'data-title="{label}" aria-label="Увеличить рисунок: {label}">{variants}</a>'
                     f'<span class="figure-hint">{escape(alternatives.get("caption", text))} · Открыть крупнее ↗</span>')
-        picture = ''
+        # D4: an image figure has a dark copy next to it (<name>-dark.<ext>). Without JS the dark copy shows on
+        # screen, where the reader opens dark, and the light one in print; reader.js enables the sources by the
+        # page theme and the column width.
+        sources = []
         if mobile:
             checked_file(self.root, mobile)
-            picture = f'<source media="(max-width: 600px)" srcset="{escape(mobile, quote=True)}">'
+            if mobile_dark := dark_copy(self.root, mobile):
+                sources.append(("screen and (max-width: 600px)", mobile_dark, "mobile", "dark"))
+            sources.append(("(max-width: 600px)", mobile, "mobile", "light"))
+        if desktop_dark := dark_copy(self.root, unquote(desktop)):
+            sources.append(("screen", desktop_dark, "desktop", "dark"))
+        picture = "".join(f'<source media="{media}" srcset="{escape(path, quote=True)}" data-layout="{layout}" '
+                          f'data-variant="{variant}">' for media, path, layout, variant in sources)
         url = escape(desktop, quote=True)
         return (f'<a class="figure-expand" href="{url}" target="_blank" data-figure="{url}" '
                 f'aria-label="Увеличить рисунок: {escape(text, quote=True)}">'

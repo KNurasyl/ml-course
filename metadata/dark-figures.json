@@ -1,0 +1,349 @@
+{
+  "note": "Image figures of the reader and their dark copies (phase 6, D4). light_sha256 was frozen on 10.11.2026 from commit 0baae63: the light drawings stay byte-identical. Change a hash only together with a deliberate change of that light figure.",
+  "figures": {
+    "course/assets/responsive/M00-L01-desktop.svg": {
+      "dark": "course/assets/responsive/M00-L01-desktop-dark.svg",
+      "light_sha256": "abb3e67100979205d34ac7d54d29d9ed7fb3293e53fb82fe85034a2a3041ca91"
+    },
+    "course/assets/responsive/M00-L01-mobile.svg": {
+      "dark": "course/assets/responsive/M00-L01-mobile-dark.svg",
+      "light_sha256": "31b556461d55c1e6e926615e304374644b7e0c4b6cb617e1c7949c08595d237a"
+    },
+    "course/assets/responsive/M00-L02-desktop.svg": {
+      "dark": "course/assets/responsive/M00-L02-desktop-dark.svg",
+      "light_sha256": "ca800e37d55c8ed356d8e052f5ee141d7e1c86ae2e507166f2de20d7e4c6568f"
+    },
+    "course/assets/responsive/M00-L02-mobile.svg": {
+      "dark": "course/assets/responsive/M00-L02-mobile-dark.svg",
+      "light_sha256": "dc885c41bf28dc7c94d1eae5fa19311e2e4d1e4ee897b8926b7a69dbffdb44c0"
+    },
+    "course/assets/responsive/M00-L03-desktop.svg": {
+      "dark": "course/assets/responsive/M00-L03-desktop-dark.svg",
+      "light_sha256": "ab43213f27ff5ec4d159cd1aed3cb02bf5f9fe1b70b3f1bab778bacd8dcba6e7"
+    },
+    "course/assets/responsive/M00-L03-mobile.svg": {
+      "dark": "course/assets/responsive/M00-L03-mobile-dark.svg",
+      "light_sha256": "ca5a1a684cace52ea6eb85bdae2d743075144b567e1100da4b5363f3726626cf"
+    },
+    "course/assets/responsive/M01-L03-desktop.svg": {
+      "dark": "course/assets/responsive/M01-L03-desktop-dark.svg",
+      "light_sha256": "ec226fef4c278ec674612e26055b255dbfef2c1cd1c69020cf18901ccb602a3d"
+    },
+    "course/assets/responsive/M01-L03-mobile.svg": {
+      "dark": "course/assets/responsive/M01-L03-mobile-dark.svg",
+      "light_sha256": "32eb62b52cc83a7f2fee56e4a7ffb77fe8f7bf1ab56837c3034072e7559f31f9"
+    },
+    "course/assets/responsive/M01-L04-desktop.svg": {
+      "dark": "course/assets/responsive/M01-L04-desktop-dark.svg",
+      "light_sha256": "f412a9140765fdb4528ce24eaf8f073c2223c8849d5001764f68fead39d6c74e"
+    },
+    "course/assets/responsive/M01-L04-mobile.svg": {
+      "dark": "course/assets/responsive/M01-L04-mobile-dark.svg",
+      "light_sha256": "2719df75632cc10f5206c3f9beeaff989e8154f040aa6a6246b6f7e87d2e58aa"
+    },
+    "course/assets/responsive/M01-L05-desktop.svg": {
+      "dark": "course/assets/responsive/M01-L05-desktop-dark.svg",
+      "light_sha256": "9448d1f09f99d5f2bf162107e1c21225440ceb7f900b8272d8e6396c6e95cd66"
+    },
+    "course/assets/responsive/M01-L05-mobile.svg": {
+      "dark": "course/assets/responsive/M01-L05-mobile-dark.svg",
+      "light_sha256": "4c17ed57dc2f78949bac3570d1575c1d3cd6be071278851ffeadccde1f9d8462"
+    },
+    "course/assets/responsive/M02-L01-desktop.svg": {
+      "dark": "course/assets/responsive/M02-L01-desktop-dark.svg",
+      "light_sha256": "05d83569abb32429a9bc8ff7c2b89afb9ea6a9c9a4a758e78f30cca95a0f9f59"
+    },
+    "course/assets/responsive/M02-L01-mobile.svg": {
+      "dark": "course/assets/responsive/M02-L01-mobile-dark.svg",
+      "light_sha256": "0740a7f69684dfb9f1e990cb11e67cb4624a174340fef09bc3e514399d3c25b9"
+    },
+    "course/assets/responsive/M02-L02-desktop.svg": {
+      "dark": "course/assets/responsive/M02-L02-desktop-dark.svg",
+      "light_sha256": "cd534d477ac6f3f83e354b809a73021498ecd3ec57662bab5a44eafaa1065d2d"
+    },
+    "course/assets/responsive/M02-L02-mobile.svg": {
+      "dark": "course/assets/responsive/M02-L02-mobile-dark.svg",
+      "light_sha256": "14c6def5548abac1cedb00ddaad040548215aee0e1f31384bc4f6b65462d3ab8"
+    },
+    "course/assets/responsive/M02-L03-desktop.svg": {
+      "dark": "course/assets/responsive/M02-L03-desktop-dark.svg",
+      "light_sha256": "092933e629e7ae1c6f2aaf87716ee6eda4a483f217aa84f22ae7c284e582b51f"
+    },
+    "course/assets/responsive/M02-L03-mobile.svg": {
+      "dark": "course/assets/responsive/M02-L03-mobile-dark.svg",
+      "light_sha256": "a4f204568c7aeb4568d5d9266c0759af5a7267408cd55d79c6eaf9cef436e186"
+    },
+    "course/assets/responsive/M02-L04-desktop.svg": {
+      "dark": "course/assets/responsive/M02-L04-desktop-dark.svg",
+      "light_sha256": "fc4a06df8d5f56b18562c1800d7444c54b5d24d678ee3ee8ee96da2b6ef43e6f"
+    },
+    "course/assets/responsive/M02-L04-mobile.svg": {
+      "dark": "course/assets/responsive/M02-L04-mobile-dark.svg",
+      "light_sha256": "2ffcdc6b6469331c538d463f3b0f0de6ef68ba6feb1a2f72e67fba8d50c2696e"
+    },
+    "course/assets/responsive/M02-L05-desktop.svg": {
+      "dark": "course/assets/responsive/M02-L05-desktop-dark.svg",
+      "light_sha256": "0a02254c52b26a361c54fc3a30d5655c8a36e64802f491af8bb7196a26a6d776"
+    },
+    "course/assets/responsive/M02-L05-mobile.svg": {
+      "dark": "course/assets/responsive/M02-L05-mobile-dark.svg",
+      "light_sha256": "b215c1bff1fce210cd10a8087e4e49fe34d393840e25bdec29bd2686118c6d8b"
+    },
+    "course/assets/responsive/M03-L01-desktop.svg": {
+      "dark": "course/assets/responsive/M03-L01-desktop-dark.svg",
+      "light_sha256": "6685cc385e84b47455b0a602575334344e904793221ba4c09bbb7fbb44fd90ea"
+    },
+    "course/assets/responsive/M03-L01-mobile.svg": {
+      "dark": "course/assets/responsive/M03-L01-mobile-dark.svg",
+      "light_sha256": "7171bbd2f3001c55ad91fbfc30faabe1a3821fe31120066d992bc3a3a2c4db37"
+    },
+    "course/assets/responsive/M03-L03-desktop.svg": {
+      "dark": "course/assets/responsive/M03-L03-desktop-dark.svg",
+      "light_sha256": "9989df961da854f55e041ba0a30bca7c8b1e6d525c253a5f574345ed353e3dc6"
+    },
+    "course/assets/responsive/M03-L03-mobile.svg": {
+      "dark": "course/assets/responsive/M03-L03-mobile-dark.svg",
+      "light_sha256": "69fc78d830ae707f1dfe7a1e5653005eef3c63979aebe2c7d2b99df657327233"
+    },
+    "course/assets/responsive/M03-L04-desktop.svg": {
+      "dark": "course/assets/responsive/M03-L04-desktop-dark.svg",
+      "light_sha256": "42ce87e127f8a3941fb67e7dc35992847bbcad8527166f3df279dbc92e1cf441"
+    },
+    "course/assets/responsive/M03-L04-mobile.svg": {
+      "dark": "course/assets/responsive/M03-L04-mobile-dark.svg",
+      "light_sha256": "ec0d377542b009a9c1fb25eb3058d8db84d6b1b0626f2c81e91a5da9f4b35f54"
+    },
+    "course/assets/responsive/M03-L05-desktop.svg": {
+      "dark": "course/assets/responsive/M03-L05-desktop-dark.svg",
+      "light_sha256": "6d738c11d2467dae02e356851d25fb2ed37408bed92fdc02829693c85bcb0ad4"
+    },
+    "course/assets/responsive/M03-L05-mobile.svg": {
+      "dark": "course/assets/responsive/M03-L05-mobile-dark.svg",
+      "light_sha256": "a05242af01341cbfe142da2f7184fb7f5605201aaf0521828d1a0308715935f1"
+    },
+    "course/assets/responsive/M04-L02-desktop.svg": {
+      "dark": "course/assets/responsive/M04-L02-desktop-dark.svg",
+      "light_sha256": "4d88773487d4275a5c7dbc8fe53ec61856e55db306f92a22f423e1c22f94358d"
+    },
+    "course/assets/responsive/M04-L02-mobile.svg": {
+      "dark": "course/assets/responsive/M04-L02-mobile-dark.svg",
+      "light_sha256": "33dd4d463cf1503f2e6c4bfcb5f13da5c3544d9bdee049cc1cb84cb507589a0f"
+    },
+    "course/assets/responsive/M04-L03-desktop.svg": {
+      "dark": "course/assets/responsive/M04-L03-desktop-dark.svg",
+      "light_sha256": "b894e5081799d227022f734d691d94410cc890cdc0bd03089346405e1b2d972f"
+    },
+    "course/assets/responsive/M04-L03-mobile.svg": {
+      "dark": "course/assets/responsive/M04-L03-mobile-dark.svg",
+      "light_sha256": "efea4e868b2b0c65b0409a026c2b31336a9024021504003570f5ef79f04ee153"
+    },
+    "course/assets/responsive/M04-L04-desktop.svg": {
+      "dark": "course/assets/responsive/M04-L04-desktop-dark.svg",
+      "light_sha256": "e6f89206c6ca67bc879d23ee731107301c635ff659c7688c8b637e0db5cd9f76"
+    },
+    "course/assets/responsive/M04-L04-mobile.svg": {
+      "dark": "course/assets/responsive/M04-L04-mobile-dark.svg",
+      "light_sha256": "7bd9488395e3a948d22a59c13bf6489483271fae0ae277ad3e2c7b092e75dabe"
+    },
+    "course/assets/responsive/M04-L05-desktop.svg": {
+      "dark": "course/assets/responsive/M04-L05-desktop-dark.svg",
+      "light_sha256": "6eb182d1664658d105d9276db505339d42ff77bf3b9bfda9e74c02b896caa5c4"
+    },
+    "course/assets/responsive/M04-L05-mobile.svg": {
+      "dark": "course/assets/responsive/M04-L05-mobile-dark.svg",
+      "light_sha256": "872bed4ad168f9f3cbf8afced2e192e7239c996305f813930d76f0a63cd90f49"
+    },
+    "course/assets/responsive/M04-L07-desktop.svg": {
+      "dark": "course/assets/responsive/M04-L07-desktop-dark.svg",
+      "light_sha256": "0a3f97cfde5782467ac6c33d4cbc1768ece1bf904049ee0cd84f00aac08bf8b4"
+    },
+    "course/assets/responsive/M04-L07-mobile.svg": {
+      "dark": "course/assets/responsive/M04-L07-mobile-dark.svg",
+      "light_sha256": "36ffef24b7a576d04d732c10db56eb4f52685b66965328176f0319d916f3e730"
+    },
+    "course/assets/responsive/M04-L08-desktop.svg": {
+      "dark": "course/assets/responsive/M04-L08-desktop-dark.svg",
+      "light_sha256": "333639c19ecd77a470f4ed846f0976df599ff1b99607907947aa5d0287c9d4e5"
+    },
+    "course/assets/responsive/M04-L08-mobile.svg": {
+      "dark": "course/assets/responsive/M04-L08-mobile-dark.svg",
+      "light_sha256": "eba4d682b5b1e2f96c7ba3bdf50051cc7dfb200120b6956a2b14217a914c1db5"
+    },
+    "course/assets/responsive/M05-L01-desktop.svg": {
+      "dark": "course/assets/responsive/M05-L01-desktop-dark.svg",
+      "light_sha256": "593ade68a2c001bfea145182170ab85d3d60005babb8e854e09ee98ebc356ae4"
+    },
+    "course/assets/responsive/M05-L01-mobile.svg": {
+      "dark": "course/assets/responsive/M05-L01-mobile-dark.svg",
+      "light_sha256": "4843ef78c4f3ca6e981fa6975dff51fda7644d4614639c72d781c6f65c21ac08"
+    },
+    "course/assets/responsive/M05-L02-desktop.svg": {
+      "dark": "course/assets/responsive/M05-L02-desktop-dark.svg",
+      "light_sha256": "99923cccce70ccb3bf73575e2a412d7915ab0efd854e23403e2c05bd5103ba57"
+    },
+    "course/assets/responsive/M05-L02-mobile.svg": {
+      "dark": "course/assets/responsive/M05-L02-mobile-dark.svg",
+      "light_sha256": "9498a83b0a0c02d46a873319d4fcfa3037b8766a6899bb9e6a33557bc1cf7a79"
+    },
+    "course/assets/responsive/M05-L03-desktop.svg": {
+      "dark": "course/assets/responsive/M05-L03-desktop-dark.svg",
+      "light_sha256": "fa71fe2fb1ea5ed2e7fd23495782346c3ebc9b7bd1029d36838dcbe58a1f15bb"
+    },
+    "course/assets/responsive/M05-L03-mobile.svg": {
+      "dark": "course/assets/responsive/M05-L03-mobile-dark.svg",
+      "light_sha256": "172185e37838a2b1d944aff30db4ef089aa5472b7728b8cbb3f5743bc6a5e18a"
+    },
+    "course/assets/responsive/M05-L05-desktop.svg": {
+      "dark": "course/assets/responsive/M05-L05-desktop-dark.svg",
+      "light_sha256": "9d973d56018edf197315b2f872d173913ddc4cc4cac8c84c01e81fdfe4d4f64d"
+    },
+    "course/assets/responsive/M05-L05-mobile.svg": {
+      "dark": "course/assets/responsive/M05-L05-mobile-dark.svg",
+      "light_sha256": "df166664400de3e7d5eee11d9be6eed05f0bc98e79cf81b7e9b8a62d420d9e61"
+    },
+    "course/assets/responsive/M06-L03-desktop.svg": {
+      "dark": "course/assets/responsive/M06-L03-desktop-dark.svg",
+      "light_sha256": "bb836dd1bd6aca9243780e85060cca70e77a0e7f44735df7b8eaa3a31046a3a7"
+    },
+    "course/assets/responsive/M06-L03-mobile.svg": {
+      "dark": "course/assets/responsive/M06-L03-mobile-dark.svg",
+      "light_sha256": "3139a5602426366b833db66fdbf6923ecf7a23400a77a785a8a51d4e5cccce56"
+    },
+    "course/assets/responsive/M07-HW01-desktop.svg": {
+      "dark": "course/assets/responsive/M07-HW01-desktop-dark.svg",
+      "light_sha256": "cd1daf96610ae378da5f6af187694f18e0e97c775fd852479b1444de21b86b1b"
+    },
+    "course/assets/responsive/M07-HW01-mobile.svg": {
+      "dark": "course/assets/responsive/M07-HW01-mobile-dark.svg",
+      "light_sha256": "e9cd47aaf971f3a82035358e2b974bea9e96a34d3c1838adbf8b518ec41132e2"
+    },
+    "course/assets/responsive/M07-L04-desktop.svg": {
+      "dark": "course/assets/responsive/M07-L04-desktop-dark.svg",
+      "light_sha256": "ce70d6ddb471e3782354e2bb0b047c73241fa56d9f84aba7d220d3d392bdd9e9"
+    },
+    "course/assets/responsive/M07-L04-mobile.svg": {
+      "dark": "course/assets/responsive/M07-L04-mobile-dark.svg",
+      "light_sha256": "dfdf065f0f80f9784c79b8fefc30c898407d46980b813e3681d06142fc6e93bc"
+    },
+    "course/assets/responsive/M08-L04-desktop.svg": {
+      "dark": "course/assets/responsive/M08-L04-desktop-dark.svg",
+      "light_sha256": "c4240f44c70cf014f5b42827820cf30dadaa9d0315fc97bbfcaaf9c317c3abb9"
+    },
+    "course/assets/responsive/M08-L04-mobile.svg": {
+      "dark": "course/assets/responsive/M08-L04-mobile-dark.svg",
+      "light_sha256": "08532ba4aa74fe8b22599936b98e3c5dbfa54dad2f897c7309967eaf1d41a50e"
+    },
+    "course/assets/responsive/M09-L02-desktop.svg": {
+      "dark": "course/assets/responsive/M09-L02-desktop-dark.svg",
+      "light_sha256": "07b591964dae27f978cebe0789280b38ab47518dd3abef8dfebb21f6c780f257"
+    },
+    "course/assets/responsive/M09-L02-mobile.svg": {
+      "dark": "course/assets/responsive/M09-L02-mobile-dark.svg",
+      "light_sha256": "ec43c89094ed4cc241480c0cb7a02695fc796f9af8a1d1ab5d177d4ae3e80918"
+    },
+    "course/assets/responsive/M09-L04-desktop.svg": {
+      "dark": "course/assets/responsive/M09-L04-desktop-dark.svg",
+      "light_sha256": "9d12a2315fb149e6df580d3359c64cb21d92c26fcc42e084e8a98f40acd7529e"
+    },
+    "course/assets/responsive/M09-L04-mobile.svg": {
+      "dark": "course/assets/responsive/M09-L04-mobile-dark.svg",
+      "light_sha256": "a8f25abb880fba3588c88542db4d98d091ecc43fa35874fa6eed68862e1f6393"
+    },
+    "course/assets/responsive/M10-L03-desktop.svg": {
+      "dark": "course/assets/responsive/M10-L03-desktop-dark.svg",
+      "light_sha256": "f3bda9e73cd3d538d79fc95e90b8a0cc734c95242cd2e207f32a79ce150fb03a"
+    },
+    "course/assets/responsive/M10-L03-mobile.svg": {
+      "dark": "course/assets/responsive/M10-L03-mobile-dark.svg",
+      "light_sha256": "295143741f3933948f8bab96f74cc0d4048781e196b8a111af86955355b3ae18"
+    },
+    "course/assets/responsive/M11-L04-desktop.svg": {
+      "dark": "course/assets/responsive/M11-L04-desktop-dark.svg",
+      "light_sha256": "d6829837247fd1a255e5a23376a053f5622e0afc2dfda7984e6f6c78d312017d"
+    },
+    "course/assets/responsive/M11-L04-mobile.svg": {
+      "dark": "course/assets/responsive/M11-L04-mobile-dark.svg",
+      "light_sha256": "0c28432fea3970ac9d811c5b096da12c7e21eded302aa752bb97f736161233ed"
+    },
+    "course/assets/responsive/M12-L05-desktop.svg": {
+      "dark": "course/assets/responsive/M12-L05-desktop-dark.svg",
+      "light_sha256": "8182141372dbbe4cfcd92454a3e9a6a4999430ef959b72b2569324e972c92247"
+    },
+    "course/assets/responsive/M12-L05-mobile.svg": {
+      "dark": "course/assets/responsive/M12-L05-mobile-dark.svg",
+      "light_sha256": "8252502a81268740b24ac925a76453c4b32c966c4f2172c781d380713f583b62"
+    },
+    "course/assets/responsive/M13-L04-desktop.svg": {
+      "dark": "course/assets/responsive/M13-L04-desktop-dark.svg",
+      "light_sha256": "eae34071e8d65ee1f06d0f31bf018a358761d8702f497f071c20935b4f496e4d"
+    },
+    "course/assets/responsive/M13-L04-mobile.svg": {
+      "dark": "course/assets/responsive/M13-L04-mobile-dark.svg",
+      "light_sha256": "684dd900545124042c49edc85e126966ae6998df71fe03a77782f458f1314e94"
+    },
+    "course/assets/responsive/M15-L01-desktop.svg": {
+      "dark": "course/assets/responsive/M15-L01-desktop-dark.svg",
+      "light_sha256": "d7b3aef61fba40cbc5d9d823f85604e9c3720ab1a5e7229aab57a23f50ef53c4"
+    },
+    "course/assets/responsive/M15-L01-mobile.svg": {
+      "dark": "course/assets/responsive/M15-L01-mobile-dark.svg",
+      "light_sha256": "a3ba064392758574bb0077a9eeb0351fda5f1e3b89df8ed18f75b9f7670af82c"
+    },
+    "course/assets/M08-L08X.svg": {
+      "dark": "course/assets/M08-L08X-dark.svg",
+      "light_sha256": "57be59c24e4f12d3011f1fae4d15193b67ed75c27b68bd202fc5f427548e8247"
+    },
+    "course/assets/M09-L07X.svg": {
+      "dark": "course/assets/M09-L07X-dark.svg",
+      "light_sha256": "764820966ece32be725b9d097e32da159cb57bca685e8a7b54f3b4b6b2533cd8"
+    },
+    "course/assets/M09-L08X.svg": {
+      "dark": "course/assets/M09-L08X-dark.svg",
+      "light_sha256": "8ccebdff26084c5e5adc4402fceeb07c77177306ebe293b7349e3926cf647e0e"
+    },
+    "course/assets/M10-L07X.svg": {
+      "dark": "course/assets/M10-L07X-dark.svg",
+      "light_sha256": "43dade2aaebab6409833612d8083a5f327e53f5e61c69c918a422206b9aa874f"
+    },
+    "course/assets/M10-L08X.svg": {
+      "dark": "course/assets/M10-L08X-dark.svg",
+      "light_sha256": "d1c3174f18a4c4e62e8ffabbd28c77d420d3b3152b2a3953acaa0876c60ba198"
+    },
+    "course/assets/M10-L09X.svg": {
+      "dark": "course/assets/M10-L09X-dark.svg",
+      "light_sha256": "3186adf37e041b279a8b3c26303dd8de3127a5cec9e8447a73a9afa333fb2f17"
+    },
+    "course/assets/M11-L07X.svg": {
+      "dark": "course/assets/M11-L07X-dark.svg",
+      "light_sha256": "139157856e84636340d17b8b4db422b4266449bf580142ec0afda46763024e03"
+    },
+    "course/assets/M12-L08X.svg": {
+      "dark": "course/assets/M12-L08X-dark.svg",
+      "light_sha256": "c37e50aacca01d3e09785af3258d629d8bbc260852861cbf32ef13f4dd2e08bc"
+    },
+    "course/assets/M12-L09X.svg": {
+      "dark": "course/assets/M12-L09X-dark.svg",
+      "light_sha256": "84717585bcf04617cdbe068d27648c6b43d50fa0d223650e59ada2faccdc0e5f"
+    },
+    "course/assets/M13-L07X.svg": {
+      "dark": "course/assets/M13-L07X-dark.svg",
+      "light_sha256": "9244ece604707fd8aa16c92dc209dbb43f9df1ce6fa68f52f641619a78a10984"
+    },
+    "course/assets/M14-L08X.svg": {
+      "dark": "course/assets/M14-L08X-dark.svg",
+      "light_sha256": "f49ecb9dde49da3f735a43299ec6045c41b370e212a4041617a51220b3add287"
+    },
+    "course/assets/M14-L09X.svg": {
+      "dark": "course/assets/M14-L09X-dark.svg",
+      "light_sha256": "2cde49f746a2ed6b661dbbd267ec70d70d9a7b5048ae53e63448f114e2ca23a9"
+    },
+    "course/assets/M14-L10X.svg": {
+      "dark": "course/assets/M14-L10X-dark.svg",
+      "light_sha256": "4ae4471b5b88776e8279334c8b769a85c10f7fa54c05ec50a54c40c187e9518d"
+    },
+    "course/assets/M15-L07X.svg": {
+      "dark": "course/assets/M15-L07X-dark.svg",
+      "light_sha256": "4cc533f6f47fda91a4404aafe24a869c50e248ddfa88a67165fac8466622a1d7"
+    }
+  }
+}

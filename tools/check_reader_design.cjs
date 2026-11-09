@@ -174,6 +174,23 @@ async function run(browser, repo, options = {}) {
       &&lightFigures.theme==='light'&&lightFigures.card==='rgb(255, 255, 255)'&&lightFigures.ink==='rgb(29, 36, 48)',{dark:darkFigures,light:lightFigures});
     await page.emulateMedia({media:'print'});const printedFigures=await figurePaint();await page.emulateMedia({media:'screen'});
     check('D3 inline figures print light while the dark theme is chosen',printedFigures.theme==='dark'&&printedFigures.ink==='rgb(29, 36, 48)'&&!printedFigures.issues.length,printedFigures);
+    // D4: image figures (matplotlib and hand-drawn) show their dark copy in the dark theme, the light drawing otherwise and in print.
+    const imageOf=id=>`#${id} .figure-expand:not(.figure-inline) img`;
+    const srcOf=selector=>page.locator(selector).first().evaluate(el=>el.currentSrc.split('/').pop());
+    const showImage=async id=>{await go(id);await page.locator(imageOf(id)).first().scrollIntoViewIfNeeded();
+      await page.waitForFunction(s=>{const img=document.querySelector(s);return img.complete&&img.currentSrc;},imageOf(id));};
+    const awaitSrc=(id,ending)=>page.waitForFunction(([s,e])=>document.querySelector(s).currentSrc.endsWith(e),[imageOf(id),ending]).catch(()=>{});
+    await showImage('M02-L02');const imageDark=await srcOf(imageOf('M02-L02'));
+    await page.locator('#theme-toggle').click();await awaitSrc('M02-L02','-desktop.svg');const imageLight=await srcOf(imageOf('M02-L02'));
+    await page.locator('#theme-toggle').click();await awaitSrc('M02-L02','-dark.svg');
+    await page.emulateMedia({media:'print'});await awaitSrc('M02-L02','-desktop.svg');const imagePrint=await srcOf(imageOf('M02-L02'));await page.emulateMedia({media:'screen'});
+    check('D4 image figure follows the theme and prints light',imageDark==='M02-L02-desktop-dark.svg'&&imageLight==='M02-L02-desktop.svg'&&imagePrint==='M02-L02-desktop.svg',{imageDark,imageLight,imagePrint});
+    await showImage('M08-L08X');
+    check('D4 hand-drawn figure shows its dark copy',await srcOf(imageOf('M08-L08X'))==='M08-L08X-dark.svg');
+    const pictures=await page.evaluate(()=>{const all=Array.from(document.querySelectorAll('.figure-expand:not(.figure-inline) picture'));
+      return{pictures:all.length,desktopDark:all.filter(p=>p.querySelector('source[data-variant="dark"][data-layout="desktop"]')).length,
+        mobileDark:all.filter(p=>p.querySelector('source[data-variant="dark"][data-layout="mobile"]')).length};});
+    check('D4 every image figure offers a dark copy',pictures.pictures===50&&pictures.desktopDark===50&&pictures.mobileDark===36,pictures);
     // Contrast of the exact utility roles from the audit, composited over solid surfaces.
     const contrast=await page.evaluate(()=>{
       const lum=rgb=>{const v=rgb.slice(0,3).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;});return .2126*v[0]+.7152*v[1]+.0722*v[2];};
@@ -202,6 +219,8 @@ async function run(browser, repo, options = {}) {
     const tablet={layout:await shownLayout('M04-L06'),width:await page.locator('#M04-L06 .figure-expand').evaluate(el=>el.clientWidth)};
     check('D03 tablet selects figure by actual column width',tablet.layout==='figure-mobile'&&tablet.width<600,tablet);await snap('log-figure-tablet');
     await page.setViewportSize({width:390,height:844});
+    await showImage('M02-L02');await awaitSrc('M02-L02','-mobile-dark.svg');
+    check('D4 phone shows the mobile dark copy',await srcOf(imageOf('M02-L02'))==='M02-L02-mobile-dark.svg');
     for(const key of ['M08-L03','M08-L07','M15-L06']){await go(key);const fig=page.locator('#'+key+' a[data-figure]').first();await fig.scrollIntoViewIfNeeded();await settle();await snap(key+'-figure-mobile');}
     // At320, walk every document (161 in 1.1.0, more since 1.2.0). Tables and code may scroll internally; the page may not.
     await page.setViewportSize({width:320,height:844});

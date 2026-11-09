@@ -182,6 +182,19 @@
     themeButton.setAttribute('aria-label',light?'Тема: светлая. Включить тёмную':'Тема: тёмная. Включить светлую');
     if(save){try{localStorage.setItem(themeKey,light?'light':'dark');}catch(_){}}
     document.querySelectorAll('iframe.experiment').forEach(sendTheme);
+    document.querySelectorAll('.figure-expand').forEach(chooseFigure);
+  }
+  // D4: an image figure offers its layouts (column width) and its dark copy (page theme). A dark source is
+  // 'screen' only, so print always falls back to the light drawing. Before the first size report the layout
+  // follows the viewport, as the static media attributes do.
+  function chooseFigure(figure){
+    const narrowColumn=figure.dataset.narrow?figure.dataset.narrow==='true':matchMedia('(max-width: 600px)').matches;
+    const dark=document.documentElement.dataset.theme!=='light';
+    figure.querySelectorAll('source').forEach(source=>{
+      const fits=(source.dataset.layout!=='mobile'||narrowColumn)&&(source.dataset.variant!=='dark'||dark);
+      const media=!fits?'not all':source.dataset.variant==='dark'?'screen':'all';
+      if(source.media!==media)source.media=media;
+    });
   }
   applyTheme(document.documentElement.dataset.theme,false);themeButton.hidden=false;
   themeButton.addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='light'?'dark':'light',true));
@@ -224,9 +237,7 @@
   const figureObserver=new ResizeObserver(entries=>{
     for(const entry of entries){
       if(entry.contentRect.width<=0)continue;
-      const source=entry.target.querySelector('source');if(!source)continue;
-      const media=entry.contentRect.width<600?'(min-width: 0px)':'(max-width: 0px)';
-      if(source.media!==media)source.media=media;
+      entry.target.dataset.narrow=String(entry.contentRect.width<600);chooseFigure(entry.target);
     }
   });
   document.querySelectorAll('.figure-expand').forEach(figure=>figureObserver.observe(figure));

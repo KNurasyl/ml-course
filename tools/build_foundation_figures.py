@@ -6,11 +6,12 @@ Run with the course virtual environment. The original PNGs remain for provenance
 """
 from pathlib import Path
 from math import comb,sqrt
-import json,textwrap
+import contextlib,json,re,sys,textwrap
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
 from matplotlib.patches import Rectangle,FancyArrowPatch
 from matplotlib.text import Text
 
@@ -18,9 +19,28 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'course/assets/responsive'
 OUT.mkdir(parents=True,exist_ok=True)
 BLUE='#245bba';GREEN='#087e82';RED='#a65c12';PURPLE='#7045a0';GRAY='#526474'
+# D4: every figure also gets a dark copy, <name>-dark.svg, drawn with the 6.0 dark tokens. The light pass keeps
+# these literals, so the existing light files stay byte-identical. Dark: blue -> accent, green -> act, red -> hint,
+# purple -> ink (no purple in 6.0, author's decision), gray -> muted, white backdrop -> paper, white text on a
+# strong fill -> bg, dark text on a weak fill -> ink, Blues -> a paper..accent ramp.
+PAPER='white';ON_STRONG='white';ON_WEAK='#102a43';CMAP='Blues';THEME='light'
+# build_responsive_figures.py redraws these with theme tokens and the reader inlines them (D3): no dark copy.
+DRAWN_INLINE={'M00-L04','M00-L05','M01-L01','M01-L02','M03-L02','M04-L01','M05-L04'}
 MOBILE=False
 MAPPING={}
 plt.rcParams.update({'font.family':'Segoe UI','font.size':13,'axes.titlesize':14,'axes.labelsize':13,'figure.facecolor':'#ffffff','axes.facecolor':'#ffffff','axes.spines.top':False,'axes.spines.right':False,'axes.grid':True,'grid.alpha':.15,'savefig.facecolor':'#ffffff','svg.fonttype':'none','svg.hashsalt':'ml-llm-textbook','text.color':'#182b3a','axes.labelcolor':'#182b3a','xtick.color':'#526474','ytick.color':'#526474'})
+
+def tokens(theme):
+    """6.0 token values for one theme, read from the reader's stylesheet."""
+    css=(ROOT/'tools/reader.css').read_text(encoding='utf-8')
+    pattern=r':root\{color-scheme:dark;(.*?)\}' if theme=='dark' else r':root\[data-theme="light"\]\{color-scheme:light;(.*?)\}'
+    return dict(re.findall(r'--([\w-]+):(#[0-9a-fA-F]{6})',re.search(pattern,css,re.DOTALL).group(1)))
+
+def dark_rc(t):
+    return {'figure.facecolor':t['paper'],'axes.facecolor':t['paper'],'savefig.facecolor':t['paper'],'savefig.edgecolor':t['paper'],
+            'text.color':t['ink'],'axes.labelcolor':t['ink'],'axes.titlecolor':t['ink'],'xtick.color':t['muted'],'ytick.color':t['muted'],
+            'axes.edgecolor':t['muted'],'grid.color':t['muted'],'patch.edgecolor':t['muted'],'legend.facecolor':t['paper'],
+            'legend.edgecolor':t['line-strong'],'axes.prop_cycle':matplotlib.cycler(color=[t['accent'],t['act'],t['hint']])}
 
 def wrap(value,n=30):
     return '\n'.join(textwrap.fill(line,n,break_long_words=False,break_on_hyphens=False) for line in value.split('\n'))
@@ -50,10 +70,13 @@ def save(fig,key):
                     t.set_fontsize(12)
         suffix='mobile'
     else:suffix='desktop'
-    path=OUT/f'{key}-{suffix}.svg'
+    if THEME=='dark' and key in DRAWN_INLINE:
+        plt.close(fig);return
+    path=OUT/(f'{key}-{suffix}-dark.svg' if THEME=='dark' else f'{key}-{suffix}.svg')
     fig.savefig(path,bbox_inches='tight',pad_inches=.16,metadata={'Date':None,'Title':key,'Description':'Identical fixed teaching data; responsive layout.'})
     path.write_bytes(path.read_bytes().replace(b'\r\n', b'\n'))
     plt.close(fig)
+    if THEME=='dark':return
     entry=MAPPING.setdefault(f'course/assets/{key}.png',{})
     entry[suffix]=path.relative_to(ROOT).as_posix()
 
@@ -71,15 +94,31 @@ def table(key,title,rows,cols,values,colors=None):
     t.auto_set_font_size(False);t.set_fontsize(11 if MOBILE else 14);t.scale(.85 if MOBILE else 1,2.8)
     save(fig,key)
 
-def arrow(ax,start,end,color=BLUE,text=None,offset=(0,0)):
+def arrow(ax,start,end,color=None,text=None,offset=(0,0)):
+    color=color or BLUE
     ax.annotate('',xy=end,xytext=start,arrowprops={'arrowstyle':'->','lw':2.6,'color':color})
     if text:ax.text(end[0]+offset[0],end[1]+offset[1],text,color=color,ha='left',va='bottom',fontweight='bold')
 
-def box(ax,x,y,label,color=BLUE,w=2.3,h=.8):
+def box(ax,x,y,label,color=None,w=2.3,h=.8):
+    color=color or BLUE
     ax.add_patch(Rectangle((x-w/2,y-h/2),w,h,facecolor=color+'16',edgecolor=color,lw=1.8))
     ax.text(x,y,label,ha='center',va='center',fontsize=11)
 
-def build():
+def build(themes=('light','dark')):
+    global THEME,BLUE,GREEN,RED,PURPLE,GRAY,PAPER,ON_STRONG,ON_WEAK,CMAP
+    light=(BLUE,GREEN,RED,PURPLE,GRAY,PAPER,ON_STRONG,ON_WEAK,CMAP)
+    for THEME in themes:
+        if THEME=='dark':
+            t=tokens('dark');context=plt.rc_context(dark_rc(t))
+            BLUE,GREEN,RED,PURPLE,GRAY,PAPER,ON_STRONG,ON_WEAK=t['accent'],t['act'],t['hint'],t['ink'],t['muted'],t['paper'],t['bg'],t['ink']
+            CMAP=LinearSegmentedColormap.from_list('paper-accent',[t['paper'],t['accent']])
+        else:
+            context=contextlib.nullcontext();BLUE,GREEN,RED,PURPLE,GRAY,PAPER,ON_STRONG,ON_WEAK,CMAP=light
+        with context:draw()
+    BLUE,GREEN,RED,PURPLE,GRAY,PAPER,ON_STRONG,ON_WEAK,CMAP=light
+    return MAPPING
+
+def draw():
     global MOBILE
     for MOBILE in (False,True):
         # M00: model, parameters, loss, training/context distinction, service boundary.
@@ -139,7 +178,7 @@ def build():
         ax.plot([2,4],[1,3],color=GRAY,ls='--');ax.set(xlim=(-.3,6),ylim=(-.3,4),xlabel='Координата 1',ylabel='Координата 2');ax.set_aspect('equal');save(fig,'M02-L01')
         fig,ax=canvas('M02-L02 · Dot учитывает длины и угол')
         arrow(ax,(0,0),(3,4),BLUE,'u=(3,4), ||u||=5');arrow(ax,(0,0),(4,0),GREEN,'v=(4,0), ||v||=4',(.1,.1))
-        ax.plot([3,3],[0,4],color=GRAY,ls='--');ax.text(.3,3.4,'u·v = 12\ncos θ = 0.6\n||u−v|| = √17',bbox={'facecolor':'white','alpha':.9,'edgecolor':'none'})
+        ax.plot([3,3],[0,4],color=GRAY,ls='--');ax.text(.3,3.4,'u·v = 12\ncos θ = 0.6\n||u−v|| = √17',bbox={'facecolor':PAPER,'alpha':.9,'edgecolor':'none'})
         ax.set(xlim=(-.3,6.5),ylim=(-.5,5),xlabel='Координата 1',ylabel='Координата 2');ax.set_aspect('equal');save(fig,'M02-L02')
         fig,ax=canvas('M02-L03 · Порядок преобразований меняет результат')
         x=np.array([1,2]);ax.scatter(*x,color=GRAY,s=90);ax.annotate('x=(1,2)',(1,2),xytext=(0,23),textcoords='offset points',ha='center')
@@ -196,19 +235,19 @@ def build():
         ax.set_yticks([0,1],['900 / 1000','9 / 10']);ax.set(xlim=(.5,1),ylim=(-.5,1.6),xlabel='Доля и 95%-интервал Уилсона');ax.axvline(.9,color=GRAY,ls=':');save(fig,'M04-L03')
         fig,ax=canvas('M04-L04 · Bootstrap пересэмплирует пять исходных пар')
         d=np.array([1.,0,0,0,1]);rng=np.random.default_rng(42);means=d[rng.integers(0,5,size=(20000,5))].mean(1)
-        ax.hist(means,bins=np.arange(-.1,1.11,.2),color=BLUE,edgecolor='white',rwidth=.9)
+        ax.hist(means,bins=np.arange(-.1,1.11,.2),color=BLUE,edgecolor=PAPER,rwidth=.9)
         for q in [0,.8]:ax.axvline(q,color=RED,ls='--',label='Квантили 2.5% и 97.5%' if q==0 else None)
         ax.axvline(.4,color=GREEN,lw=2,label='Исходное среднее 0.4');ax.set(xlabel='Средняя парная разность',ylabel='Число bootstrap-повторов');ax.legend();save(fig,'M04-L04')
         fig,ax=canvas('M04-L05 · Два хвоста при девяти победах из десяти')
         k=np.arange(11);p=np.array([comb(10,int(j))/2**10 for j in k]);cs=[RED if j in [0,1,9,10] else BLUE for j in k]
-        ax.bar(k,p,color=cs);ax.set_xticks(k);ax.set(xlabel='Число побед B при H₀: p=0.5',ylabel='Вероятность');ax.text(.2,.235,'Сумма выделенных столбцов:\n22/1024 ≈ 0.02148',bbox={'facecolor':'white','edgecolor':'none'});save(fig,'M04-L05')
+        ax.bar(k,p,color=cs);ax.set_xticks(k);ax.set(xlabel='Число побед B при H₀: p=0.5',ylabel='Вероятность');ax.text(.2,.235,'Сумма выделенных столбцов:\n22/1024 ≈ 0.02148',bbox={'facecolor':PAPER,'edgecolor':'none'});save(fig,'M04-L05')
 
         # M05: metrics, probabilities, tree function, CV, error slices.
         fig,ax=canvas('M05-L01 · Какие ошибки скрывает общая accuracy?')
-        matrix=np.array([[4,1],[2,1]]);ax.imshow(matrix,cmap='Blues',vmin=0,vmax=4)
+        matrix=np.array([[4,1],[2,1]]);ax.imshow(matrix,cmap=CMAP,vmin=0,vmax=4)
         names=[['TN','FP'],['FN','TP']]
         for i in range(2):
-            for j in range(2):ax.text(j,i,f'{names[i][j]}\n{matrix[i,j]}',ha='center',va='center',fontsize=24,color='white' if matrix[i,j]>2 else '#102a43')
+            for j in range(2):ax.text(j,i,f'{names[i][j]}\n{matrix[i,j]}',ha='center',va='center',fontsize=24,color=ON_STRONG if matrix[i,j]>2 else ON_WEAK)
         ax.set_xticks([0,1],['Прогноз 0','Прогноз 1']);ax.set_yticks([0,1],['Истина 0','Истина 1']);ax.grid(False);save(fig,'M05-L01')
         fig,ax=canvas('M05-L02 · Вероятность и порог — разные части решения')
         z=np.linspace(-5,5,300);p=1/(1+np.exp(-z));ax.plot(z,p,color=BLUE,lw=3,label='σ(z)')
@@ -225,7 +264,7 @@ def build():
             for col in range(3):
                 validation=col==row
                 ax.add_patch(Rectangle((col,row),.95,.7,facecolor=GREEN if validation else BLUE,alpha=.8))
-                ax.text(col+.475,row+.35,'VALIDATION' if validation else 'TRAIN',ha='center',va='center',color='white',fontsize=11)
+                ax.text(col+.475,row+.35,'VALIDATION' if validation else 'TRAIN',ha='center',va='center',color=ON_STRONG,fontsize=11)
         ax.add_patch(Rectangle((3.35,0),.95,2.7,facecolor=GRAY,alpha=.25));ax.text(3.825,1.35,'TEST\nотдельно',ha='center',va='center')
         ax.set(xlim=(-.1,4.5),ylim=(-.2,3.5));ax.set_yticks([.35,1.35,2.35],['Fold 1','Fold 2','Fold 3']);ax.set_xticks([.475,1.475,2.475],['Часть 1','Часть 2','Часть 3']);ax.grid(False)
         ax.text(0,3.05,'fit(preprocessing + model) только на синих блоках',fontsize=12);save(fig,'M05-L04')
@@ -235,6 +274,6 @@ def build():
     return MAPPING
 
 if __name__=='__main__':
-    mapping=build()
+    mapping=build(tuple(sys.argv[1:]) or ('light','dark'))
     (ROOT/'metadata/foundation-figures.json').write_text(json.dumps(mapping,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(f"Rendered {len(mapping)} quantitative figures in two layouts")

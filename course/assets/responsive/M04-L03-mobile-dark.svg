@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="292.813928pt" height="387.83952pt" viewBox="0 0 292.813928 387.83952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>M04-L03</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>M04-L03</dc:title>
+    <dc:description>Identical fixed teaching data; responsive layout.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 387.83952 
+L 292.813928 387.83952 
+L 292.813928 0 
+L 0 0 
+z
+" style="fill: #20242c"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 79.762187 331.158973 
+L 245.098895 331.158973 
+L 245.098895 56.936496 
+L 79.762187 56.936496 
+z
+" style="fill: #20242c"/>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="mc32a705dce" d="M 0 5 
+C 1.326016 5 2.597899 4.473168 3.535534 3.535534 
+C 4.473168 2.597899 5 1.326016 5 0 
+C 5 -1.326016 4.473168 -2.597899 3.535534 -3.535534 
+C 2.597899 -4.473168 1.326016 -5 0 -5 
+C -1.326016 -5 -2.597899 -4.473168 -3.535534 -3.535534 
+C -4.473168 -2.597899 -5 -1.326016 -5 0 
+C -5 1.326016 -4.473168 2.597899 -3.535534 3.535534 
+C -2.597899 4.473168 -1.326016 5 0 5 
+z
+" style="stroke: #86aaf0"/>
+    </defs>
+    <g clip-path="url(#p588b0cfd46)">
+     <use xlink:href="#mc32a705dce" x="212.031553" y="135.285775" style="fill: #86aaf0; stroke: #86aaf0"/>
+    </g>
+   </g>
+   <g id="PathCollection_2">
+    <defs>
+     <path id="me7fb2f4617" d="M 0 5 
+C 1.326016 5 2.597899 4.473168 3.535534 3.535534 
+C 4.473168 2.597899 5 1.326016 5 0 
+C 5 -1.326016 4.473168 -2.597899 3.535534 -3.535534 
+C 2.597899 -4.473168 1.326016 -5 0 -5 
+C -1.326016 -5 -2.597899 -4.473168 -3.535534 -3.535534 
+C -4.473168 -2.597899 -5 -1.326016 -5 0 
+C -5 1.326016 -4.473168 2.597899 -3.535534 3.535534 
+C -2.597899 4.473168 -1.326016 5 0 5 
+z
+" style="stroke: #58c4c6"/>
+    </defs>
+    <g clip-path="url(#p588b0cfd46)">
+     <use xlink:href="#me7fb2f4617" x="212.031553" y="265.867907" style="fill: #58c4c6; stroke: #58c4c6"/>
+    </g>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 112.829529 331.158973 
+L 112.829529 56.936496 
+" clip-path="url(#p588b0cfd46)" style="fill: none; stroke: #a3a9b4; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="mcb6e612ebf" d="M 0 0 
+L 0 3.5 
+" style="stroke: #a3a9b4; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mcb6e612ebf" x="112.829529" y="331.158973" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #a3a9b4" x="112.829529" y="351.247079" transform="rotate(-0 112.829529 351.247079)">0.6</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 178.964212 331.158973 
+L 178.964212 56.936496 
+" clip-path="url(#p588b0cfd46)" style="fill: none; stroke: #a3a9b4; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#mcb6e612ebf" x="178.964212" y="331.158973" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #a3a9b4" x="178.964212" y="351.247079" transform="rotate(-0 178.964212 351.247079)">0.8</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 245.098895 331.158973 
+L 245.098895 56.936496 
+" clip-path="url(#p588b0cfd46)" style="fill: none; stroke: #a3a9b4; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#mcb6e612ebf" x="245.098895" y="331.158973" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #a3a9b4" x="245.098895" y="351.272469" transform="rotate(-0 245.098895 351.272469)">1.0</text>
+     </g>
+    </g>
+    <g id="text_4">
+     <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: middle; fill: #e7e5de" x="162.430541" y="370.911571" transform="rotate(-0 162.430541 370.911571)">Доля и 95%-интервал Уилсона</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <path d="M 79.762187 265.867907 
+L 245.098895 265.867907 
+" clip-path="url(#p588b0cfd46)" style="fill: none; stroke: #a3a9b4; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <defs>
+       <path id="m4511b3f703" d="M 0 0 
+L -3.5 0 
+" style="stroke: #a3a9b4; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m4511b3f703" x="79.762187" y="265.867907" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #a3a9b4" x="72.762187" y="272.086452" transform="rotate(-0 72.762187 272.086452)">900 / 1000</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_9">
+      <path d="M 79.762187 135.285775 
+L 245.098895 135.285775 
+" clip-path="url(#p588b0cfd46)" style="fill: none; stroke: #a3a9b4; stroke-opacity: 0.15; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m4511b3f703" x="79.762187" y="135.285775" style="fill: #a3a9b4; stroke: #a3a9b4; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: end; fill: #a3a9b4" x="72.762187" y="141.50432" transform="rotate(-0 72.762187 141.50432)">9 / 10</text>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_11">
+    <path d="M 111.457225 135.285775 
+L 239.187706 135.285775 
+" clip-path="url(#p588b0cfd46)" style="fill: none; stroke: #86aaf0; stroke-width: 5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 205.367835 265.867907 
+L 217.682946 265.867907 
+" clip-path="url(#p588b0cfd46)" style="fill: none; stroke: #58c4c6; stroke-width: 5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 212.031553 331.158973 
+L 212.031553 56.936496 
+" clip-path="url(#p588b0cfd46)" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #a3a9b4; stroke-width: 1.5"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 79.762187 331.158973 
+L 79.762187 56.936496 
+" style="fill: none; stroke: #a3a9b4; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 79.762187 331.158973 
+L 245.098895 331.158973 
+" style="fill: none; stroke: #a3a9b4; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: start; fill: #86aaf0" x="111.457225" y="114.392634" transform="rotate(-0 111.457225 114.392634)">[0.596; 0.982]</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 13px; font-family: 'Segoe UI'; text-anchor: start; fill: #58c4c6" x="205.367835" y="244.974766" transform="rotate(-0 205.367835 244.974766)">[0.880; 0.917]</text>
+   </g>
+  </g>
+  <g id="text_9">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'Segoe UI'; fill: #e7e5de" transform="translate(57.947104 25.34666)">90% на десяти и тысяче</text>
+   <text style="font-weight: 700; font-size: 15px; font-family: 'Segoe UI'; fill: #e7e5de" transform="translate(98.335776 45.35584)">наблюдений</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p588b0cfd46">
+   <rect x="79.762187" y="56.936496" width="165.336707" height="274.222478"/>
+  </clipPath>
+ </defs>
+</svg>
