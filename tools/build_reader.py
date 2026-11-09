@@ -10,11 +10,13 @@ import base64
 from html import escape, unescape
 from hashlib import sha256
 import json
+import keyword
 from pathlib import Path
 import re
 from urllib.parse import quote, unquote, urlsplit
 
 import mistune
+from mistune.util import escape as escape_text
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -39,6 +41,31 @@ def checked_file(root: Path, relative: str) -> Path:
     if not candidate.is_relative_to(root.resolve()) or not candidate.is_file():
         raise ValueError(f"Missing or external course file: {relative}")
     return candidate
+
+
+# D6: Python examples get four token classes at build time, without libraries: k keyword, s string,
+# n number, c comment. One pass of one expression over the raw code; whatever it does not match
+# (names, operators, a broken fragment) stays plain text, so the visible code, every assert
+# included, is exactly the Markdown block. f-strings are one string, soft keywords stay names.
+PYTHON_TOKEN = re.compile(r"""
+    (?P<c>\#[^\n]*)
+  | (?P<s>(?i:rb|br|fr|rf|[rbuf])?(?:'''[\s\S]*?'''|\"\"\"[\s\S]*?\"\"\"|'(?:\\.|[^'\\\n])*'|"(?:\\.|[^"\\\n])*"))
+  | (?P<n>(?<![\w.])(?:0[xX][0-9a-fA-F_]+|0[oO][0-7_]+|0[bB][01_]+|(?:\d[\d_]*(?:\.[\d_]*)?|\.\d[\d_]*)(?:[eE][+-]?\d[\d_]*)?[jJ]?))
+  | (?P<w>[^\W\d]\w*)
+""", re.VERBOSE)
+
+
+def highlight_python(code: str) -> str:
+    parts, position = [], 0
+    for match in PYTHON_TOKEN.finditer(code):
+        kind, text = match.lastgroup, match.group()
+        if kind == "w" and text not in keyword.kwlist:
+            continue
+        parts.append(escape_text(code[position:match.start()]))
+        parts.append(f'<span class="{"k" if kind == "w" else kind}">{escape_text(text)}</span>')
+        position = match.end()
+    parts.append(escape_text(code[position:]))
+    return "".join(parts)
 
 
 TOKEN_FALLBACK = re.compile(r"var\((--[\w-]+),#[0-9a-fA-F]{6}\)")
@@ -96,6 +123,8 @@ class CourseRenderer(mistune.HTMLRenderer):
         # in the page theme (D5).
         if info and info.split()[0] == "mermaid":
             return f'<figure class="diagram"><pre class="mermaid">{escape(code)}</pre></figure>\n'
+        if info and info.split()[0] == "python":
+            return f'<pre><code class="language-python">{highlight_python(code)}</code></pre>\n'
         return super().block_code(code, info)
 
     def destination(self, url: str) -> tuple[str | None, bool]:

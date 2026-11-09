@@ -106,6 +106,14 @@ async function run(browser, repo, options = {}) {
     await page.locator('#M08-L03 pre code').first().scrollIntoViewIfNeeded();
     const mono=await fontState('JetBrains Mono');mono.code=await page.locator('#M08-L03 pre code').first().evaluate(el=>getComputedStyle(el).fontFamily);
     check('F2 embedded JetBrains Mono is used for code',mono.declared===4&&mono.loaded>=1&&mono.latin&&mono.code.startsWith('"JetBrains Mono"'),mono);
+    // D6: every Python example carries build-time token classes in theme colours, in both themes.
+    const codeColours=()=>page.evaluate(()=>{const blocks=Array.from(document.querySelectorAll('pre code.language-python'));
+      const colour=kind=>{const el=document.querySelector('pre code.language-python .'+kind);return el&&getComputedStyle(el).color;};
+      return{blocks:blocks.length,highlighted:blocks.filter(block=>block.querySelector('.k,.s,.n,.c')).length,k:colour('k'),s:colour('s'),n:colour('n'),c:colour('c')};});
+    const darkCode=await codeColours();await page.locator('#theme-toggle').click();const lightCode=await codeColours();await page.locator('#theme-toggle').click();
+    check('D6 Python examples are highlighted with theme tokens',darkCode.blocks===142&&darkCode.highlighted===142
+      &&darkCode.k==='rgb(88, 196, 198)'&&darkCode.s==='rgb(230, 181, 102)'&&darkCode.n==='rgb(134, 170, 240)'&&darkCode.c==='rgb(163, 169, 180)'
+      &&lightCode.k==='rgb(11, 116, 120)'&&lightCode.s==='rgb(154, 100, 16)'&&lightCode.n==='rgb(31, 85, 176)'&&lightCode.c==='rgb(90, 98, 112)',{dark:darkCode,light:lightCode});
     await page.evaluate(()=>window.scrollTo(0,0));await settle();
     check('D07 formula blocks and shape table',await page.locator('#M08-L03 .formula').count()>=4&&await page.locator('#M08-L03 table').count()>=1);
     await snap('attention-desktop');
