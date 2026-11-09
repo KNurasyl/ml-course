@@ -153,10 +153,16 @@
     sidebarScroll.scrollTop=0;
   }
   // file:// sandbox frames have an opaque origin; trust only the exact known WindowProxy.
+  // A frame cannot read the saved theme, so it gets it with every size report and on every switch;
+  // a lazy frame may still be about:blank, so nothing is cached here and the frame ignores repeats.
+  const sendTheme = frame => frame.contentWindow?.postMessage(
+    {type:'course:theme', theme:document.documentElement.dataset.theme === 'light' ? 'light' : 'dark'}, '*');
   window.addEventListener('message', event => {
     if (event.data?.type !== 'course:resize' || !Number.isFinite(event.data.height)) return;
     const frame = Array.from(document.querySelectorAll('iframe.experiment')).find(frame => frame.contentWindow === event.source);
-    if (!frame || event.data.height < 60 || event.data.height > 24000) return;
+    if (!frame) return;
+    sendTheme(frame);
+    if (event.data.height < 60 || event.data.height > 24000) return;
     frame.style.height = Math.ceil(event.data.height + 2) + 'px';
   });
   menu.addEventListener('click',()=>document.body.classList.contains('nav-open')?closeMenu(true):openMenu());
@@ -172,6 +178,7 @@
     themeButton.querySelector('.theme-state').textContent=light?': светлая':': тёмная';
     themeButton.setAttribute('aria-label',light?'Тема: светлая. Включить тёмную':'Тема: тёмная. Включить светлую');
     if(save){try{localStorage.setItem(themeKey,light?'light':'dark');}catch(_){}}
+    document.querySelectorAll('iframe.experiment').forEach(sendTheme);
   }
   applyTheme(document.documentElement.dataset.theme,false);themeButton.hidden=false;
   themeButton.addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='light'?'dark':'light',true));

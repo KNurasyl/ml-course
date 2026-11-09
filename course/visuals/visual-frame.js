@@ -1,6 +1,13 @@
-/* Offline iframe sizing. Parent must validate event.source against its frame. */
+/* Offline iframe sizing and theme. Parent must validate event.source against its frame. */
 (() => {
   'use strict';
+  const setTheme = theme => {
+    if ((theme === 'light' || theme === 'dark') && document.documentElement.dataset.theme !== theme)
+      document.documentElement.dataset.theme = theme;
+  };
+  // Opened on its own the page follows the reader's saved choice; inside the sandboxed reader frame
+  // storage throws and the choice arrives from the parent as a course:theme message instead.
+  try { setTheme(localStorage.getItem('ml-llm-course-theme')); } catch (_) {}
   if (window.parent === window) return;
   let scheduled = false, last = 0;
   function measure() {
@@ -28,8 +35,8 @@
   document.addEventListener('input', schedule); document.addEventListener('change', schedule);
   document.addEventListener('toggle', schedule, true);
   addEventListener('message', event => {
-    if (event.source === parent && event.data?.type === 'course:measure') {
-      last = 0; schedule();
-    }
+    if (event.source !== parent) return;
+    if (event.data?.type === 'course:measure') { last = 0; schedule(); }
+    if (event.data?.type === 'course:theme') setTheme(event.data.theme);
   });
 })();

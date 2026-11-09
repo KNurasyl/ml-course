@@ -1,0 +1,21 @@
+/* Theme colour tokens for the experiments (IMPROVEMENT_PLAN.md 6.0, D2). Same values as the :root blocks
+   of tools/reader.css; tests/test_reader_v2.py keeps the two in step. Dark is the default; the reader sends
+   its choice into each sandboxed frame (visual-frame.js), a page opened on its own reads the saved choice. */
+:root{color-scheme:dark;
+  --bg:#15171c;--surface:#1b1e25;--paper:#20242c;--line:#2e333d;--line-strong:#3b4150;
+  --ink:#e7e5de;--muted:#a3a9b4;
+  --accent:#86aaf0;--accent-soft:#1f2a44;
+  --act:#58c4c6;--act-soft:#12302f;
+  --hint:#e6b566;--hint-soft:#3a2d12;
+  --ok:#86d19c;--ok-soft:#173021;--warn:#f0a071;--warn-soft:#3a2416;--error:#f08a8a;
+  --mark-bg:#4a3c14;--mark-fg:#ffe7a6;--code-bg:#111318;--focus:#e6b566}
+:root[data-theme="light"]{color-scheme:light;
+  --bg:#f6f5f1;--surface:#eeede8;--paper:#ffffff;--line:#d9d6cd;--line-strong:#c2beb3;
+  --ink:#1d2430;--muted:#5a6270;--accent:#1f55b0;--accent-soft:#e4ecfb;--act:#0b7478;--act-soft:#dff3f2;
+  --hint:#9a6410;--hint-soft:#fbefd6;--ok:#2a7a4b;--ok-soft:#e1f2e6;--warn:#a0541c;--warn-soft:#f9e6d8;--error:#b23b3b;
+  --mark-bg:#ffe3a1;--mark-fg:#1d2430;--code-bg:#f0f2f6;--focus:#a65c12}
+@media print{:root{color-scheme:light;
+  --bg:#f6f5f1;--surface:#eeede8;--paper:#ffffff;--line:#d9d6cd;--line-strong:#c2beb3;
+  --ink:#1d2430;--muted:#5a6270;--accent:#1f55b0;--accent-soft:#e4ecfb;--act:#0b7478;--act-soft:#dff3f2;
+  --hint:#9a6410;--hint-soft:#fbefd6;--ok:#2a7a4b;--ok-soft:#e1f2e6;--warn:#a0541c;--warn-soft:#f9e6d8;--error:#b23b3b;
+  --mark-bg:#ffe3a1;--mark-fg:#1d2430;--code-bg:#f0f2f6;--focus:#a65c12}}

@@ -16,7 +16,7 @@ def build() -> None:
         mid, title, label, minimum, maximum, step, value, question, limitation = config
         output = f'''<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{escape(mid)} · {escape(title)}</title><link rel="stylesheet" href="visual-style.css"></head>
+<title>{escape(mid)} · {escape(title)}</title><link rel="stylesheet" href="theme-tokens.css"><link rel="stylesheet" href="visual-style.css"></head>
 <body><main><span class="tag">{escape(mid)} · Численный эксперимент</span>
 <h1>{escape(title)}</h1><p class="question">{escape(question)}</p>
 <div class="control"><label for="parameter"><span>{escape(label)}</span><output id="value" for="parameter">{value}</output></label>

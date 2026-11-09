@@ -301,3 +301,54 @@ def test_leading_tool_versions_move_to_lesson_head_and_later_notes_stay():
     # A version note inside a later section is that section's content and is not moved.
     assert 'Python 3.12.0' in lesson_body and 'Python 3.12.0' not in head
     assert 'Объяснение' in outline and 'Источники' in outline
+
+
+VISUALS = ROOT / "course/visuals"
+COLOUR_LITERAL = re.compile(r"(?<![\w&])#(?:[0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{3,4})\b"
+                            r"|\b(?:rgba?|hsla?)\(|(?<![-\w])(?:white|black)(?![-\w])")
+OLD_VISUAL_VARIABLES = re.compile(r"var\(--(?:blue|teal|amber|orange|pale|soft|input|process|warning)\b")
+
+
+def token_blocks(css: str) -> dict[str, dict[str, str]]:
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.DOTALL)
+    blocks = {
+        "dark": re.search(r":root\{color-scheme:dark;(.*?)\}", css, re.DOTALL),
+        "light": re.search(r':root\[data-theme="light"\][^{]*\{color-scheme:light;(.*?)\}', css, re.DOTALL),
+        "print": re.search(r"@media print\{:root\{color-scheme:light;(.*?)\}\}", css, re.DOTALL),
+    }
+    return {name: dict(re.findall(r"(--[\w-]+):\s*(#[0-9a-fA-F]+)", found.group(1))) for name, found in blocks.items()}
+
+
+def test_experiments_take_colours_only_from_theme_tokens():
+    # D2: the 26 experiments, their shared style and scripts have no colour of their own.
+    sources = sorted(path for path in VISUALS.iterdir()
+                     if path.suffix in {".html", ".css", ".js"} and path.name != "theme-tokens.css")
+    experiments = [path for path in sources if path.suffix == ".html"]
+    assert len(experiments) == 26
+    for path in sources:
+        text = path.read_text(encoding="utf-8")
+        assert not COLOUR_LITERAL.findall(text), (path.name, COLOUR_LITERAL.findall(text)[:5])
+        assert not OLD_VISUAL_VARIABLES.search(text), path.name
+    for path in experiments:
+        text = path.read_text(encoding="utf-8")
+        tokens = text.find('<link rel="stylesheet" href="theme-tokens.css">')
+        assert tokens >= 0, path.name
+        styles = [i for i in (text.find('href="visual-style.css"'), text.find("<style")) if i >= 0]
+        assert styles and tokens < min(styles), path.name
+        assert '<script src="visual-frame.js"></script>' in text, path.name
+
+
+def test_experiment_tokens_match_reader_tokens():
+    reader_tokens = token_blocks((ROOT / "tools/reader.css").read_text(encoding="utf-8"))
+    frame_tokens = token_blocks((VISUALS / "theme-tokens.css").read_text(encoding="utf-8"))
+    assert reader_tokens == frame_tokens
+    assert len(frame_tokens["dark"]) == 22 and frame_tokens["light"] == frame_tokens["print"]
+
+
+def test_frames_take_the_theme_only_from_their_parent():
+    frame = (VISUALS / "visual-frame.js").read_text(encoding="utf-8")
+    assert "if (event.source !== parent) return;" in frame
+    assert "event.data?.type === 'course:theme'" in frame and "theme === 'light' || theme === 'dark'" in frame
+    script = reader.SCRIPT
+    assert "postMessage(\n    {type:'course:theme'" in script
+    assert "document.querySelectorAll('iframe.experiment').forEach(sendTheme)" in script

@@ -4,13 +4,14 @@
 'use strict';
 const c=CONFIG, slider=document.querySelector('#parameter'), out=document.querySelector('#value'), stage=document.querySelector('#figure'), result=document.querySelector('#result');
 const f=(n,d=2)=>Number.isFinite(n)?n.toFixed(d):'не определено';
-const colors={blue:'#245bba',teal:'#087e82',amber:'#a65c12',line:'#c9d5e1',muted:'#526474'};
+// Theme tokens from theme-tokens.css (D2). SVG fill/stroke are set as style, where var() always resolves.
+const colors={blue:'var(--accent)',teal:'var(--act)',amber:'var(--hint)',line:'var(--line-strong)',muted:'var(--muted)'};
 const html=(s)=>{stage.innerHTML=s;};
 function chart(label,height=230){
  const width=Math.max(200,Math.round(stage.clientWidth));
  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
  svg.setAttribute('viewBox',`0 0 ${width} ${height}`);svg.setAttribute('role','img');svg.setAttribute('aria-label',label);stage.replaceChildren(svg);
- const node=(tag,attrs,text)=>{const n=document.createElementNS(svg.namespaceURI,tag);Object.entries(attrs).forEach(([k,v])=>n.setAttribute(k,v));if(text!==undefined)n.textContent=text;svg.append(n);return n;};
+ const node=(tag,attrs,text)=>{const n=document.createElementNS(svg.namespaceURI,tag);Object.entries(attrs).forEach(([k,v])=>k==='fill'||k==='stroke'?n.style.setProperty(k,v):n.setAttribute(k,v));if(text!==undefined)n.textContent=text;svg.append(n);return n;};
  return {width,height,line:(x1,y1,x2,y2,color=colors.line,stroke=1)=>node('line',{x1,y1,x2,y2,stroke:color,'stroke-width':stroke}),text:(x,y,t,anchor='start',color=colors.muted)=>node('text',{x,y,'text-anchor':anchor,style:`fill:${color}`},t),point:(x,y,color=colors.amber,r=5)=>node('circle',{cx:x,cy:y,r,fill:color}),rect:(x,y,w,h,color)=>node('rect',{x,y,width:w,height:h,fill:color,rx:3}),path:(points,color=colors.teal)=>node('polyline',{points:points.map(p=>p.join(',')).join(' '),fill:'none',stroke:color,'stroke-width':2.5})};
 }
 function plot(points,{xmin,xmax,ymin,ymax,xlabel='x',ylabel='y',xticks,yticks,highlight,reference}={}){
@@ -31,7 +32,7 @@ function cards(items){html('<div class="mini-grid">'+items.map(x=>`<div class="d
 function draw(){
  const p=Number(slider.value);out.textContent=Number.isInteger(p)?p:f(p,2);let message='';
  switch(c[0]){
- case'M00':{const points=Array.from({length:51},(_,i)=>[i/10,p*i/10+1]);plot(points,{xmin:0,xmax:5,ymin:-10,ymax:25,xlabel:'Вход x',ylabel:'Прогноз ŷ',xticks:[0,1,2,3,4,5],yticks:[-10,0,10,20],highlight:[3,p*3+1]});message=`ŷ = w·x + 1. Для x = 3: ŷ = ${f(p*3+1)}.\nСиняя настройка меняет вес w. Оранжевая точка показывает прогноз для одного и того же входа x = 3.`;break;}
+ case'M00':{const points=Array.from({length:51},(_,i)=>[i/10,p*i/10+1]);plot(points,{xmin:0,xmax:5,ymin:-10,ymax:25,xlabel:'Вход x',ylabel:'Прогноз ŷ',xticks:[0,1,2,3,4,5],yticks:[-10,0,10,20],highlight:[3,p*3+1]});message=`ŷ = w·x + 1. Для x = 3: ŷ = ${f(p*3+1)}.\nБирюзовая настройка меняет вес w. Оранжевая точка показывает прогноз для одного и того же входа x = 3.`;break;}
  case'M01':{html(`<p class="formula">(${p}, 1) + (${p},) → (${p}, ${p})</p><table class="matrix" style="width:100%"><caption>В ячейке: номер строки + номер столбца</caption><thead><tr><th scope="col">+</th>${Array.from({length:p},(_,j)=>`<th scope="col">${j}</th>`).join('')}</tr></thead><tbody>${Array.from({length:p},(_,i)=>`<tr><th scope="row">${i}</th>${Array.from({length:p},(_,j)=>`<td>${i+j}</td>`).join('')}</tr>`).join('')}</tbody></table>`);message=`Столбец [0…${p-1}] плюс строка [0…${p-1}].\nПолучилось ${p*p} элементов. Для поэлементной суммы сначала согласуй формы.`;break;}
  case'M02':{const g=chart('Единичные векторы u и v и проекция v на u',225),cx=g.width/2,cy=174,r=Math.min(90,g.width/2-35),a=p*Math.PI/180,vx=cx+r*Math.cos(a),vy=cy-r*Math.sin(a);g.line(18,cy,g.width-18,cy);g.line(cx,35,cx,200);g.line(cx,cy,cx+r,cy,colors.blue,3);g.line(cx,cy,vx,vy,colors.teal,3);g.line(vx,vy,vx,cy,colors.line,1);g.line(cx,cy+5,vx,cy+5,colors.amber,3);g.point(vx,vy,colors.teal,4);g.text(cx+r+9,cy+4,'u');g.text(Math.min(g.width-12,Math.max(12,vx)),vy-10,'v','middle');g.text(g.width/2,25,`θ = ${p}°; cos θ = ${f(Math.cos(a),3)}`,'middle');g.text(g.width/2,217,'Оранжевая линия — проекция','middle');message=`u·v = cos θ = ${f(Math.cos(a),3)}.\nПри одинаковых единичных длинах меняется только направление. При θ = 90° проекция и произведение равны нулю.`;break;}
  case'M03':{let w=0,history=[w];for(let i=0;i<10;i++){w-=p*2*(w-3);history.push(w);}let low=Math.min(0,...history),high=Math.max(6,...history);plot(history.map((v,i)=>[i,v]),{xmin:0,xmax:10,ymin:low,ymax:high,xlabel:'Номер шага',ylabel:'Вес w',xticks:[0,5,10],yticks:[low,3,high],highlight:[10,w],reference:3});stage.insertAdjacentHTML('beforeend','<p class="chart-caption">Оранжевая горизонталь: минимум w* = 3. Масштаб оси w меняется, чтобы показать расходимость.</p>');message=`w₁₀ = ${f(w,4)}; L(w₁₀) = ${f((w-3)**2,4)}.\nГрадиент = 2(w − 3). Сходимость при 0 < η < 1; η = 1 даёт колебания, η > 1 — расходимость.`;break;}
