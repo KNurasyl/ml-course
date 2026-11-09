@@ -106,6 +106,10 @@ async function run(browser, repo, options = {}) {
     await page.locator('#M08-L03 pre code').first().scrollIntoViewIfNeeded();
     const mono=await fontState('JetBrains Mono');mono.code=await page.locator('#M08-L03 pre code').first().evaluate(el=>getComputedStyle(el).fontFamily);
     check('F2 embedded JetBrains Mono is used for code',mono.declared===4&&mono.loaded>=1&&mono.latin&&mono.code.startsWith('"JetBrains Mono"'),mono);
+    // Code shows every character as typed: JetBrains Mono ligatures (== drawn as one sign) are off in blocks, inline code and source notes.
+    const ligatures=await page.evaluate(()=>Object.fromEntries([['block','#M08-L03 pre code'],['inline','.body-content p code'],['source','.source-note code']]
+      .map(([name,selector])=>[name,getComputedStyle(document.querySelector(selector)).fontVariantLigatures])));
+    check('F2 code ligatures are off',Object.values(ligatures).every(value=>value==='none'),ligatures);
     // D6: every Python example carries build-time token classes in theme colours, in both themes.
     const codeColours=()=>page.evaluate(()=>{const blocks=Array.from(document.querySelectorAll('pre code.language-python'));
       const colour=kind=>{const el=document.querySelector('pre code.language-python .'+kind);return el&&getComputedStyle(el).color;};

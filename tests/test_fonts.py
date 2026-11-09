@@ -71,6 +71,9 @@ def test_reader_embeds_each_font_once_as_a_data_url_with_swap():
     assert "font:17px/1.75 var(--sans)" in reader.CSS and ".body-content code{font-family:var(--mono)" in reader.CSS
     assert "'Segoe UI'" in reader.CSS.split("--sans:")[1].split(";")[0]
     assert "Consolas" in reader.CSS.split("--mono:")[1].split(";")[0]
+    # Code shows every character as typed: no JetBrains Mono ligatures (== must not become one sign).
+    for rule in re.findall(r"[^{}]*\{[^{}]*var\(--mono\)[^{}]*\}", reader.CSS.split("--mono:")[1].split("}", 1)[1]):
+        assert "font-variant-ligatures:none" in rule, rule
 
 
 def test_changed_font_file_stops_the_build(tmp_path):
