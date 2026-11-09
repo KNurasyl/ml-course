@@ -62,8 +62,9 @@ def request(path, payload=None, timeout=600, port=PORT):
 class Server:
     """One llama-server process for one GGUF model; logs go to a file, never to pipes the parent would wait on."""
 
-    def __init__(self, model: Path, threads=4, ctx=4096, alias: str | None = None, log: Path | None = None, port=PORT):
+    def __init__(self, model: Path, threads=4, ctx=4096, alias: str | None = None, log: Path | None = None, port=PORT, extra_args=()):
         self.model, self.threads, self.ctx, self.alias, self.port = Path(model), threads, ctx, alias or Path(model).stem, port
+        self.extra_args = [str(a) for a in extra_args]  # e.g. ["--cache-ram", "0"] for the trainer's strong profile (T51)
         self.log = Path(log) if log else ROOT / "artifacts/M09/llama" / f"{self.model.stem}.server.log"
         self.process: subprocess.Popen | None = None
 
@@ -76,7 +77,7 @@ class Server:
         self.log.parent.mkdir(parents=True, exist_ok=True)
         handle = self.log.open("w", encoding="utf-8")
         command = [str(server_exe()), "-m", str(self.model), "--host", HOST, "--port", str(self.port), "-t", str(self.threads),
-                   "-c", str(self.ctx), "--parallel", "1", "--jinja", "--no-webui", "--alias", self.alias]
+                   "-c", str(self.ctx), "--parallel", "1", "--jinja", "--no-webui", "--alias", self.alias, *self.extra_args]
         flags = subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0
         self.started = time.perf_counter()
         self.process = subprocess.Popen(command, stdin=subprocess.DEVNULL, stdout=handle, stderr=subprocess.STDOUT, creationflags=flags)

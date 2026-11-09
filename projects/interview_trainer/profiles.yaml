@@ -20,6 +20,9 @@ profiles:
     threads: 4
     ctx: 4096
     context_tokens: 1800
+    # llama-server keeps up to 8 GiB of processed prompts in RAM by default (--cache-ram 8192); the trainer sends
+    # cache_prompt false, so the cache only cost memory: 9 GB peak in the first T51 run. Off for this profile.
+    server_args: ["--cache-ram", "0"]
     chat_template_kwargs:
       enable_thinking: false
   ru-8b:

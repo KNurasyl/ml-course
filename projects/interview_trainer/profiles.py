@@ -117,7 +117,7 @@ def open_model(name: str | None = None, data: dict | None = None):
     port = urllib.parse.urlparse(profile["url"]).port
     log = ROOT / "artifacts/interview_trainer" / f"{name}.server.log"
     with _llama_local().Server(gguf_path(profile), threads=profile.get("threads", 4), ctx=profile.get("ctx", 4096),
-                               alias=profile["gguf"], log=log, port=port) as server:
+                               alias=profile["gguf"], log=log, port=port, extra_args=profile.get("server_args", [])) as server:
         job = bind_to_this_process(server.process)  # noqa: F841 - the open handle is what keeps the binding
         model.load_seconds = round(server.load_seconds, 1)
         yield model

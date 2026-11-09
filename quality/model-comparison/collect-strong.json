@@ -1,0 +1,1385 @@
+{
+  "task": "T51",
+  "profile": "strong",
+  "pass_rule": "grounded >= 1 and useful >= 1 and no critical error (M11 rubric feedback-grounding-usefulness-v2)",
+  "collected": "2026-11-09",
+  "open_seconds": 8.5,
+  "rubric_outputs": [
+    {
+      "case_id": "e-hr01",
+      "track": "hr",
+      "question": "Что ты лично сделал в сложной задаче?",
+      "answer": "В API повторялись запросы оплаты. Я добавил ключ идемпотентности и тест повторной доставки. Результат пока не измерял.",
+      "display_text": "В твоём ответе: «Я добавил ключ идемпотентности и тест повторной доставки.». Критерий для самопроверки: личное действие. Уточни, что именно сделал ты. Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":1,\"criterion\":\"action\",\"next_step\":\"action\"}",
+      "status": "grounded_candidate",
+      "seconds": 4.746
+    },
+    {
+      "case_id": "e-hr02",
+      "track": "hr",
+      "question": "Расскажи о примере качественно выполненной работы.",
+      "answer": "Я всегда делаю всё качественно и быстро.",
+      "display_text": "В твоём ответе: «Я всегда делаю всё качественно и быстро.». Критерий для самопроверки: личное действие. Уточни, что именно сделал ты. Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":0,\"criterion\":\"action\",\"next_step\":\"action\"}",
+      "status": "grounded_candidate",
+      "seconds": 4.323
+    },
+    {
+      "case_id": "e-hr03",
+      "track": "hr",
+      "question": "Как ты разрешил разногласие в команде?",
+      "answer": "Коллега предложил переписать сервис. Я предложил сначала измерить задержки. Мы сравнили два прототипа и оставили текущую архитектуру, потому что она укладывалась в согласованный лимит.",
+      "display_text": "В твоём ответе: «Я предложил сначала измерить задержки.». Критерий для самопроверки: личное действие. Уточни, что именно сделал ты. Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":1,\"criterion\":\"action\",\"next_step\":\"action\"}",
+      "status": "grounded_candidate",
+      "seconds": 5.017
+    },
+    {
+      "case_id": "e-hr04",
+      "track": "hr",
+      "question": "Как ты проверил результат своего решения?",
+      "answer": "Я пока не собирал измерения и не знаю, помогло ли изменение. Следующим шагом сравню журнал ошибок за одинаковые периоды.",
+      "display_text": "В твоём ответе: «Я пока не собирал измерения и не знаю, помогло ли изменение.». Критерий для самопроверки: наблюдаемый результат. Как ты проверил результат? Если измерения не было, скажи об этом. Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":0,\"criterion\":\"result\",\"next_step\":\"result\"}",
+      "status": "grounded_candidate",
+      "seconds": 4.886
+    },
+    {
+      "case_id": "e-be01",
+      "track": "backend",
+      "question": "Всегда ли индекс ускоряет SQL-запрос?",
+      "answer": "Нет. Это зависит от селективности и плана. Индекс занимает место и требует обновления при записи.",
+      "display_text": "В твоём ответе: «Индекс занимает место и требует обновления при записи.». Критерий для самопроверки: компромисс. Какую цену имеет предложенное решение и какую альтернативу ты сравнил? Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":1,\"criterion\":\"tradeoff\",\"next_step\":\"tradeoff\"}",
+      "status": "grounded_candidate",
+      "seconds": 6.649
+    },
+    {
+      "case_id": "e-be02",
+      "track": "backend",
+      "question": "Останавливает ли таймаут клиента вычисление на сервере?",
+      "answer": "Любой таймаут клиента автоматически останавливает серверное вычисление.",
+      "display_text": "В твоём ответе: «Любой таймаут клиента автоматически останавливает серверное вычисление.». Критерий для самопроверки: техническое утверждение. Проверь техническое утверждение по указанному источнику. Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":0,\"criterion\":\"fact\",\"next_step\":\"fact\"}",
+      "status": "grounded_candidate",
+      "seconds": 6.765
+    },
+    {
+      "case_id": "e-be03",
+      "track": "backend",
+      "question": "Можно ли вызвать долгую синхронную операцию внутри async def?",
+      "answer": "Синтаксически можно, но она заблокирует event loop. Для блокирующего I/O можно использовать отдельный поток; CPU-задачу нужно рассматривать отдельно.",
+      "display_text": "В твоём ответе: «Синтаксически можно, но она заблокирует event loop.». Критерий для самопроверки: техническое утверждение. Проверь техническое утверждение по указанному источнику. Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":0,\"criterion\":\"fact\",\"next_step\":\"fact\"}",
+      "status": "grounded_candidate",
+      "seconds": 7.144
+    },
+    {
+      "case_id": "e-be04",
+      "track": "backend",
+      "question": "Как избежать повторного платежа при повторной доставке запроса?",
+      "answer": "Нужен ключ идемпотентности и атомарная фиксация результата операции. Один только retry без сохранения состояния не защищает от повторного эффекта.",
+      "display_text": "В твоём ответе: «Нужен ключ идемпотентности и атомарная фиксация результата операции.». Критерий для самопроверки: техническое утверждение. Проверь техническое утверждение по указанному источнику. Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":0,\"criterion\":\"fact\",\"next_step\":\"fact\"}",
+      "status": "grounded_candidate",
+      "seconds": 6.548
+    },
+    {
+      "case_id": "v3-hr01",
+      "track": "hr",
+      "question": "Расскажи об ошибке и своём следующем действии.",
+      "answer": "Я выпустил миграцию без проверки на копии базы. После ошибки откатил изменение и добавил проверку восстановления. Частоту подобных сбоев пока не измерял.",
+      "display_text": "В твоём ответе: «После ошибки откатил изменение и добавил проверку восстановления.». Критерий для самопроверки: наблюдаемый результат. Как ты проверил результат? Если измерения не было, скажи об этом. Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":1,\"criterion\":\"result\",\"next_step\":\"result\"}",
+      "status": "grounded_candidate",
+      "seconds": 4.951
+    },
+    {
+      "case_id": "v3-hr02",
+      "track": "hr",
+      "question": "Какой был твой личный вклад в командный проект?",
+      "answer": "Наша команда сделала удобный сервис. За свою часть я пока не могу назвать конкретные решения.",
+      "display_text": "В твоём ответе: «За свою часть я пока не могу назвать конкретные решения.». Критерий для самопроверки: обоснование решения. Уточни, что именно сделал ты. Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":1,\"criterion\":\"reason\",\"next_step\":\"action\"}",
+      "status": "grounded_candidate",
+      "seconds": 4.682
+    },
+    {
+      "case_id": "v3-hr03",
+      "track": "hr",
+      "question": "Как ты выбрал объём работы при коротком сроке?",
+      "answer": "Я разделил требования на обязательные и дополнительные. С заказчиком согласовал перенос дополнительных отчётов на следующий выпуск, потому что проверка основной функции была важнее.",
+      "display_text": "В твоём ответе: «С заказчиком согласовал перенос дополнительных отчётов на следующий выпуск, потому что проверка основной функции была важнее.». Критерий для самопроверки: обоснование решения. Какую альтернативу ты рассмотрел и почему выбрал это решение? Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":1,\"criterion\":\"reason\",\"next_step\":\"reason\"}",
+      "status": "grounded_candidate",
+      "seconds": 5.115
+    },
+    {
+      "case_id": "v3-hr04",
+      "track": "hr",
+      "question": "Какие данные подтверждают результат улучшения?",
+      "answer": "После изменения в журнале было три ошибки вместо десяти за такой же период. Одновременно менялась нагрузка, поэтому я пока не приписываю всё снижение своему коду.",
+      "display_text": "В твоём ответе: «После изменения в журнале было три ошибки вместо десяти за такой же период.». Критерий для самопроверки: наблюдаемый результат. Как ты проверил результат? Если измерения не было, скажи об этом. Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":0,\"criterion\":\"result\",\"next_step\":\"result\"}",
+      "status": "grounded_candidate",
+      "seconds": 4.91
+    },
+    {
+      "case_id": "v3-be01",
+      "track": "backend",
+      "question": "Достаточно ли автоматически повторить платёжный запрос после сетевой ошибки?",
+      "answer": "Нет. Первый запрос мог выполниться, даже если ответ потерян. Нужны идентификатор операции и сохранённый результат, чтобы повтор не создал второй платёж.",
+      "display_text": "В твоём ответе: «Нужны идентификатор операции и сохранённый результат, чтобы повтор не создал второй платёж.». Критерий для самопроверки: условие применимости. Назови условие, при котором твой ответ перестанет быть верным. Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":1,\"criterion\":\"condition\",\"next_step\":\"condition\"}",
+      "status": "grounded_candidate",
+      "seconds": 6.803
+    },
+    {
+      "case_id": "v3-be02",
+      "track": "backend",
+      "question": "Как индекс влияет на изменение данных в таблице?",
+      "answer": "Индекс бесплатно ускоряет любые операции, поэтому нужно индексировать каждую колонку.",
+      "display_text": "В твоём ответе: «Индекс бесплатно ускоряет любые операции, поэтому нужно индексировать каждую колонку.». Критерий для самопроверки: техническое утверждение. Проверь техническое утверждение по указанному источнику. Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":0,\"criterion\":\"fact\",\"next_step\":\"fact\"}",
+      "status": "grounded_candidate",
+      "seconds": 6.143
+    },
+    {
+      "case_id": "v3-be03",
+      "track": "backend",
+      "question": "Что произойдёт при блокирующем ожидании внутри обработчика async?",
+      "answer": "Пока синхронная функция ждёт, поток event loop не выполняет другие корутины. Для подходящего I/O нужно использовать неблокирующий интерфейс либо вынести блокирующий вызов отдельно.",
+      "display_text": "В твоём ответе: «Для подходящего I/O нужно использовать неблокирующий интерфейс либо вынести блокирующий вызов отдельно.». Критерий для самопроверки: компромисс. Какую цену имеет предложенное решение и какую альтернативу ты сравнил? Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":1,\"criterion\":\"tradeoff\",\"next_step\":\"tradeoff\"}",
+      "status": "grounded_candidate",
+      "seconds": 7.271
+    },
+    {
+      "case_id": "v3-be04",
+      "track": "backend",
+      "question": "Достаточно ли среднего времени ответа для оценки удобства голосового тренажёра?",
+      "answer": "Нет. Среднее может скрыть редкие долгие ожидания. Я отдельно посмотрю хвост распределения и время до начала звука, указав число измерений и нагрузку.",
+      "display_text": "В твоём ответе: «Среднее может скрыть редкие долгие ожидания.». Критерий для самопроверки: техническое утверждение. Проверь техническое утверждение по указанному источнику. Наличие цитаты проверено автоматически; соответствие критерию проверь по рубрике.",
+      "raw_output": "{\"evidence_id\":0,\"criterion\":\"fact\",\"next_step\":\"fact\"}",
+      "status": "grounded_candidate",
+      "seconds": 6.67
+    }
+  ],
+  "judge": [
+    {
+      "key": "v2/e-hr01/baseline",
+      "track": "hr",
+      "label": {
+        "useful": 0,
+        "critical_error": false,
+        "grounded": 1
+      },
+      "verdict": {
+        "useful": 2,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":2,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-hr01/candidate",
+      "track": "hr",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-hr02/candidate",
+      "track": "hr",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 2,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":2,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-hr02/baseline",
+      "track": "hr",
+      "label": {
+        "useful": 0,
+        "critical_error": true,
+        "grounded": 0
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-hr03/baseline",
+      "track": "hr",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 1
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-hr03/candidate",
+      "track": "hr",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-hr04/candidate",
+      "track": "hr",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-hr04/baseline",
+      "track": "hr",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 2,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":2,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-be01/baseline",
+      "track": "backend",
+      "label": {
+        "useful": 0,
+        "critical_error": false,
+        "grounded": 1
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-be01/candidate",
+      "track": "backend",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 2,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":2,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-be02/candidate",
+      "track": "backend",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-be02/baseline",
+      "track": "backend",
+      "label": {
+        "useful": 0,
+        "critical_error": false,
+        "grounded": 1
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-be03/baseline",
+      "track": "backend",
+      "label": {
+        "useful": 0,
+        "critical_error": true,
+        "grounded": 0
+      },
+      "verdict": {
+        "useful": 2,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":2,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-be03/candidate",
+      "track": "backend",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-be04/candidate",
+      "track": "backend",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v2/e-be04/baseline",
+      "track": "backend",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 1
+      },
+      "verdict": {
+        "useful": 2,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":2,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-hr01/baseline",
+      "track": "hr",
+      "label": {
+        "useful": 0,
+        "critical_error": true,
+        "grounded": 0
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-hr01/candidate",
+      "track": "hr",
+      "label": {
+        "useful": 0,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-hr02/candidate",
+      "track": "hr",
+      "label": {
+        "useful": 2,
+        "critical_error": false,
+        "grounded": 1
+      },
+      "verdict": {
+        "useful": 2,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":2,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-hr02/baseline",
+      "track": "hr",
+      "label": {
+        "useful": 0,
+        "critical_error": false,
+        "grounded": 1
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-hr03/baseline",
+      "track": "hr",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 1
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-hr03/candidate",
+      "track": "hr",
+      "label": {
+        "useful": 0,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-hr04/candidate",
+      "track": "hr",
+      "label": {
+        "useful": 0,
+        "critical_error": false,
+        "grounded": 1
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-hr04/baseline",
+      "track": "hr",
+      "label": {
+        "useful": 0,
+        "critical_error": true,
+        "grounded": 0
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-be01/baseline",
+      "track": "backend",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 2,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":2,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-be01/candidate",
+      "track": "backend",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-be02/candidate",
+      "track": "backend",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": true
+      },
+      "raw": "{\"useful\":0,\"critical_error\":true}"
+    },
+    {
+      "key": "v3/v3-be02/baseline",
+      "track": "backend",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 1
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-be03/baseline",
+      "track": "backend",
+      "label": {
+        "useful": 0,
+        "critical_error": true,
+        "grounded": 0
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-be03/candidate",
+      "track": "backend",
+      "label": {
+        "useful": 1,
+        "critical_error": false,
+        "grounded": 2
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-be04/candidate",
+      "track": "backend",
+      "label": {
+        "useful": 0,
+        "critical_error": false,
+        "grounded": 1
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    },
+    {
+      "key": "v3/v3-be04/baseline",
+      "track": "backend",
+      "label": {
+        "useful": 0,
+        "critical_error": true,
+        "grounded": 0
+      },
+      "verdict": {
+        "useful": 0,
+        "critical_error": false
+      },
+      "raw": "{\"useful\":0,\"critical_error\":false}"
+    }
+  ],
+  "json": [
+    {
+      "case_id": "e-hr01",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"В API повторялись запросы оплаты. Я добавил ключ идемпотентности и тест повторной доставки.\",\"criterion\":\"action\"}],\"next_step\":\"result\"}",
+      "truncated": false,
+      "seconds": 6.74
+    },
+    {
+      "case_id": "e-hr01",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"В API повторялись запросы оплаты. Я добавил ключ идемпотентности и тест повторной доставки.\",\"criterion\":\"action\"}],\"next_step\":\"result\"}",
+      "truncated": false,
+      "seconds": 7.02
+    },
+    {
+      "case_id": "e-hr01",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":1,\"criterion\":\"action\",\"next_step\":\"action\"}",
+      "truncated": false,
+      "seconds": 5.39
+    },
+    {
+      "case_id": "e-hr02",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Я всегда делаю всё качественно и быстро.\",\"criterion\":\"action\"}],\"next_step\":\"result\"}",
+      "truncated": false,
+      "seconds": 4.95
+    },
+    {
+      "case_id": "e-hr02",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Я всегда делаю всё качественно и быстро.\",\"criterion\":\"action\"}],\"next_step\":\"result\"}",
+      "truncated": false,
+      "seconds": 4.95
+    },
+    {
+      "case_id": "e-hr02",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":0,\"criterion\":\"action\",\"next_step\":\"action\"}",
+      "truncated": false,
+      "seconds": 4.65
+    },
+    {
+      "case_id": "e-hr03",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Мы сравнили два прототипа и оставили текущую архитектуру, потому что она укладывалась в согласованный лимит.\",\"criterion\":\"result\"}],\"next_step\":\"result\"}",
+      "truncated": false,
+      "seconds": 7.48
+    },
+    {
+      "case_id": "e-hr03",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Мы сравнили два прототипа и оставили текущую архитектуру, потому что она укладывалась в согласованный лимит.\",\"criterion\":\"result\"}],\"next_step\":\"result\"}",
+      "truncated": false,
+      "seconds": 7.47
+    },
+    {
+      "case_id": "e-hr03",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":1,\"criterion\":\"action\",\"next_step\":\"action\"}",
+      "truncated": false,
+      "seconds": 5.42
+    },
+    {
+      "case_id": "e-hr04",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Следующим шагом сравню журнал ошибок за одинаковые периоды.\",\"criterion\":\"result\"}],\"next_step\":\"result\"}",
+      "truncated": false,
+      "seconds": 5.34
+    },
+    {
+      "case_id": "e-hr04",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Следующим шагом сравню журнал ошибок за одинаковые периоды.\",\"criterion\":\"result\"}],\"next_step\":\"result\"}",
+      "truncated": false,
+      "seconds": 5.76
+    },
+    {
+      "case_id": "e-hr04",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":0,\"criterion\":\"result\",\"next_step\":\"result\"}",
+      "truncated": false,
+      "seconds": 4.89
+    },
+    {
+      "case_id": "e-be01",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Нет. Это зависит от селективности и плана.\",\"criterion\":\"fact\"}],\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 7.07
+    },
+    {
+      "case_id": "e-be01",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Нет. Это зависит от селективности и плана.\",\"criterion\":\"fact\"}],\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 6.8
+    },
+    {
+      "case_id": "e-be01",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":1,\"criterion\":\"tradeoff\",\"next_step\":\"tradeoff\"}",
+      "truncated": false,
+      "seconds": 7.16
+    },
+    {
+      "case_id": "e-be02",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Любой таймаут клиента автоматически останавливает серверное вычисление.\",\"criterion\":\"fact\"}],\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 8.56
+    },
+    {
+      "case_id": "e-be02",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Любой таймаут клиента автоматически останавливает серверное вычисление.\",\"criterion\":\"fact\"}],\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 8.55
+    },
+    {
+      "case_id": "e-be02",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":0,\"criterion\":\"fact\",\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 7.71
+    },
+    {
+      "case_id": "e-be03",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Синтаксически можно, но она заблокирует event loop.\",\"criterion\":\"condition\"}],\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 9.99
+    },
+    {
+      "case_id": "e-be03",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Синтаксически можно, но она заблокирует event loop.\",\"criterion\":\"condition\"}],\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 9.84
+    },
+    {
+      "case_id": "e-be03",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":0,\"criterion\":\"fact\",\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 8.04
+    },
+    {
+      "case_id": "e-be04",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Нужен ключ идемпотентности и атомарная фиксация результата операции.\",\"criterion\":\"tradeoff\"}],\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 8.23
+    },
+    {
+      "case_id": "e-be04",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Нужен ключ идемпотентности и атомарная фиксация результата операции.\",\"criterion\":\"tradeoff\"}],\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 8.27
+    },
+    {
+      "case_id": "e-be04",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":0,\"criterion\":\"fact\",\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 6.95
+    },
+    {
+      "case_id": "v3-hr01",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Частоту подобных сбоев пока не измерял.\",\"criterion\":\"result\"}],\"next_step\":\"action\"}",
+      "truncated": false,
+      "seconds": 5.54
+    },
+    {
+      "case_id": "v3-hr01",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Частоту подобных сбоев пока не измерял.\",\"criterion\":\"result\"}],\"next_step\":\"action\"}",
+      "truncated": false,
+      "seconds": 5.76
+    },
+    {
+      "case_id": "v3-hr01",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":1,\"criterion\":\"result\",\"next_step\":\"result\"}",
+      "truncated": false,
+      "seconds": 6.5
+    },
+    {
+      "case_id": "v3-hr02",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"За свою часть я пока не могу назвать конкретные решения.\",\"criterion\":\"result\"}],\"next_step\":\"action\"}",
+      "truncated": false,
+      "seconds": 6.94
+    },
+    {
+      "case_id": "v3-hr02",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"За свою часть я пока не могу назвать конкретные решения.\",\"criterion\":\"result\"}],\"next_step\":\"action\"}",
+      "truncated": false,
+      "seconds": 5.8
+    },
+    {
+      "case_id": "v3-hr02",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":1,\"criterion\":\"reason\",\"next_step\":\"action\"}",
+      "truncated": false,
+      "seconds": 6.0
+    },
+    {
+      "case_id": "v3-hr03",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Я разделил требования на обязательные и дополнительные.\",\"criterion\":\"action\"}],\"next_step\":\"result\"}",
+      "truncated": false,
+      "seconds": 5.61
+    },
+    {
+      "case_id": "v3-hr03",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Я разделил требования на обязательные и дополнительные.\",\"criterion\":\"action\"}],\"next_step\":\"result\"}",
+      "truncated": false,
+      "seconds": 5.97
+    },
+    {
+      "case_id": "v3-hr03",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":1,\"criterion\":\"reason\",\"next_step\":\"reason\"}",
+      "truncated": false,
+      "seconds": 5.55
+    },
+    {
+      "case_id": "v3-hr04",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"После изменения в журнале было три ошибки вместо десяти за такой же период.\",\"criterion\":\"result\"}],\"next_step\":\"action\"}",
+      "truncated": false,
+      "seconds": 6.36
+    },
+    {
+      "case_id": "v3-hr04",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"После изменения в журнале было три ошибки вместо десяти за такой же период.\",\"criterion\":\"result\"}],\"next_step\":\"action\"}",
+      "truncated": false,
+      "seconds": 6.7
+    },
+    {
+      "case_id": "v3-hr04",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":0,\"criterion\":\"result\",\"next_step\":\"result\"}",
+      "truncated": false,
+      "seconds": 5.53
+    },
+    {
+      "case_id": "v3-be01",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Нет. Первый запрос мог выполниться, даже если ответ потерян. Нужны идентификатор операции и сохранённый результат, чтобы повтор не создал второй платёж.\",\"criterion\":\"fact\"}],\"next_step\":\"tradeoff\"}",
+      "truncated": false,
+      "seconds": 10.67
+    },
+    {
+      "case_id": "v3-be01",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Нет. Первый запрос мог выполниться, даже если ответ потерян. Нужны идентификатор операции и сохранённый результат, чтобы повтор не создал второй платёж.\",\"criterion\":\"fact\"}],\"next_step\":\"tradeoff\"}",
+      "truncated": false,
+      "seconds": 11.12
+    },
+    {
+      "case_id": "v3-be01",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":1,\"criterion\":\"condition\",\"next_step\":\"condition\"}",
+      "truncated": false,
+      "seconds": 7.47
+    },
+    {
+      "case_id": "v3-be02",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Индекс бесплатно ускоряет любые операции, поэтому нужно индексировать каждую колонку.\",\"criterion\":\"tradeoff\"}],\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 8.1
+    },
+    {
+      "case_id": "v3-be02",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Индекс бесплатно ускоряет любые операции, поэтому нужно индексировать каждую колонку.\",\"criterion\":\"tradeoff\"}],\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 8.05
+    },
+    {
+      "case_id": "v3-be02",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":0,\"criterion\":\"fact\",\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 6.75
+    },
+    {
+      "case_id": "v3-be03",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Пока синхронная функция ждёт, поток event loop не выполняет другие корутины.\",\"criterion\":\"fact\"}],\"next_step\":\"tradeoff\"}",
+      "truncated": false,
+      "seconds": 9.07
+    },
+    {
+      "case_id": "v3-be03",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Пока синхронная функция ждёт, поток event loop не выполняет другие корутины.\",\"criterion\":\"fact\"}],\"next_step\":\"tradeoff\"}",
+      "truncated": false,
+      "seconds": 8.89
+    },
+    {
+      "case_id": "v3-be03",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":1,\"criterion\":\"tradeoff\",\"next_step\":\"tradeoff\"}",
+      "truncated": false,
+      "seconds": 7.84
+    },
+    {
+      "case_id": "v3-be04",
+      "way": "free_text",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Нет. Среднее может скрыть редкие долгие ожидания.\",\"criterion\":\"fact\"}],\"next_step\":\"tradeoff\"}",
+      "truncated": false,
+      "seconds": 7.88
+    },
+    {
+      "case_id": "v3-be04",
+      "way": "json_mode",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"observations\":[{\"quote\":\"Нет. Среднее может скрыть редкие долгие ожидания.\",\"criterion\":\"fact\"}],\"next_step\":\"tradeoff\"}",
+      "truncated": false,
+      "seconds": 7.92
+    },
+    {
+      "case_id": "v3-be04",
+      "way": "bounded_choice",
+      "parsed": true,
+      "schema_valid": true,
+      "raw": "{\"evidence_id\":0,\"criterion\":\"fact\",\"next_step\":\"fact\"}",
+      "truncated": false,
+      "seconds": 7.56
+    }
+  ],
+  "speed": {
+    "prompt_tokens": 54,
+    "prefill_tps": 52.7,
+    "decode_tokens": 96,
+    "decode_tps": 8.4,
+    "source": "llama.cpp timings"
+  },
+  "peak_mb_llm_phase": {
+    "python": 176.8,
+    "llama_server": 4400.7
+  },
+  "voice": {
+    "vosk_sapi": {
+      "turns": [
+        {
+          "case_id": "e-hr01",
+          "speech_seconds": 11.71,
+          "asr": 1.12,
+          "llm": 5.19,
+          "tts_first": 2.9,
+          "total": 9.21,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "e-hr02",
+          "speech_seconds": 3.83,
+          "asr": 0.61,
+          "llm": 5.07,
+          "tts_first": 0.49,
+          "total": 6.17,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "e-hr03",
+          "speech_seconds": 16.27,
+          "asr": 1.26,
+          "llm": 5.52,
+          "tts_first": 0.52,
+          "total": 7.31,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "e-hr04",
+          "speech_seconds": 10.93,
+          "asr": 1.02,
+          "llm": 5.05,
+          "tts_first": 0.52,
+          "total": 6.58,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "e-be01",
+          "speech_seconds": 9.86,
+          "asr": 1.05,
+          "llm": 7.29,
+          "tts_first": 0.51,
+          "total": 8.84,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "e-be02",
+          "speech_seconds": 6.3,
+          "asr": 0.76,
+          "llm": 7.83,
+          "tts_first": 0.63,
+          "total": 9.23,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "e-be03",
+          "speech_seconds": 14.01,
+          "asr": 1.28,
+          "llm": 7.11,
+          "tts_first": 0.54,
+          "total": 8.94,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "e-be04",
+          "speech_seconds": 13.03,
+          "asr": 1.25,
+          "llm": 6.77,
+          "tts_first": 0.48,
+          "total": 8.51,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-hr01",
+          "speech_seconds": 14.12,
+          "asr": 1.01,
+          "llm": 4.82,
+          "tts_first": 0.49,
+          "total": 6.31,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-hr02",
+          "speech_seconds": 8.74,
+          "asr": 0.83,
+          "llm": 4.67,
+          "tts_first": 0.47,
+          "total": 5.98,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-hr03",
+          "speech_seconds": 15.35,
+          "asr": 1.15,
+          "llm": 4.82,
+          "tts_first": 0.53,
+          "total": 6.51,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-hr04",
+          "speech_seconds": 13.92,
+          "asr": 1.11,
+          "llm": 4.8,
+          "tts_first": 0.5,
+          "total": 6.41,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-be01",
+          "speech_seconds": 14.34,
+          "asr": 1.09,
+          "llm": 6.64,
+          "tts_first": 0.48,
+          "total": 8.21,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-be02",
+          "speech_seconds": 7.53,
+          "asr": 0.82,
+          "llm": 6.07,
+          "tts_first": 0.48,
+          "total": 7.37,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-be03",
+          "speech_seconds": 15.96,
+          "asr": 1.18,
+          "llm": 7.16,
+          "tts_first": 0.5,
+          "total": 8.84,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-be04",
+          "speech_seconds": 13.97,
+          "asr": 1.11,
+          "llm": 6.7,
+          "tts_first": 0.48,
+          "total": 8.29,
+          "status": "grounded_candidate"
+        }
+      ],
+      "p50": 7.79,
+      "p95": 9.21,
+      "llm_p50": 5.79
+    },
+    "whisper_piper": {
+      "turns": [
+        {
+          "case_id": "e-hr01",
+          "speech_seconds": 11.71,
+          "asr": 1.99,
+          "llm": 4.96,
+          "tts_first": 0.17,
+          "total": 7.13,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "e-hr02",
+          "speech_seconds": 3.83,
+          "asr": 1.52,
+          "llm": 4.44,
+          "tts_first": 0.13,
+          "total": 6.09,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "e-hr03",
+          "speech_seconds": 16.27,
+          "asr": 2.17,
+          "llm": 5.27,
+          "tts_first": 0.12,
+          "total": 7.56,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "e-hr04",
+          "speech_seconds": 10.93,
+          "asr": 1.9,
+          "llm": 4.85,
+          "tts_first": 0.15,
+          "total": 6.91,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "e-be01",
+          "speech_seconds": 9.86,
+          "asr": 1.79,
+          "llm": 6.97,
+          "tts_first": 0.15,
+          "total": 8.92,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "e-be02",
+          "speech_seconds": 6.3,
+          "asr": 1.66,
+          "llm": 7.2,
+          "tts_first": 0.2,
+          "total": 9.07,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "e-be03",
+          "speech_seconds": 14.01,
+          "asr": 2.08,
+          "llm": 7.17,
+          "tts_first": 0.14,
+          "total": 9.38,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "e-be04",
+          "speech_seconds": 13.03,
+          "asr": 2.0,
+          "llm": 6.8,
+          "tts_first": 0.18,
+          "total": 8.98,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-hr01",
+          "speech_seconds": 14.12,
+          "asr": 2.07,
+          "llm": 5.31,
+          "tts_first": 0.19,
+          "total": 7.57,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-hr02",
+          "speech_seconds": 8.74,
+          "asr": 1.73,
+          "llm": 4.58,
+          "tts_first": 0.15,
+          "total": 6.47,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-hr03",
+          "speech_seconds": 15.35,
+          "asr": 2.04,
+          "llm": 5.03,
+          "tts_first": 0.29,
+          "total": 7.36,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-hr04",
+          "speech_seconds": 13.92,
+          "asr": 2.04,
+          "llm": 4.97,
+          "tts_first": 0.2,
+          "total": 7.2,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-be01",
+          "speech_seconds": 14.34,
+          "asr": 1.96,
+          "llm": 6.98,
+          "tts_first": 0.22,
+          "total": 9.16,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-be02",
+          "speech_seconds": 7.53,
+          "asr": 1.72,
+          "llm": 6.44,
+          "tts_first": 0.21,
+          "total": 8.37,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-be03",
+          "speech_seconds": 15.96,
+          "asr": 2.23,
+          "llm": 7.09,
+          "tts_first": 0.2,
+          "total": 9.52,
+          "status": "grounded_candidate"
+        },
+        {
+          "case_id": "v3-be04",
+          "speech_seconds": 13.97,
+          "asr": 2.05,
+          "llm": 6.89,
+          "tts_first": 0.13,
+          "total": 9.07,
+          "status": "grounded_candidate"
+        }
+      ],
+      "p50": 7.97,
+      "p95": 9.38,
+      "llm_p50": 5.88
+    }
+  },
+  "dialogue": {
+    "hr": {
+      "turns": 4,
+      "cpu_seconds": 101.9,
+      "wall_seconds": 25.4
+    },
+    "backend": {
+      "turns": 4,
+      "cpu_seconds": 140.5,
+      "wall_seconds": 35.3
+    }
+  },
+  "peak_mb_end": {
+    "python": 1175.6,
+    "llama_server": 4400.7
+  },
+  "total_seconds": 927.4
+}
