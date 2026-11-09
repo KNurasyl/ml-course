@@ -71,8 +71,9 @@ class CourseRenderer(mistune.HTMLRenderer):
 
     def block_code(self, code: str, info: str | None = None) -> str:
         # Mermaid source stays readable text; reader.js draws it with the local library when visible.
+        # Until D5 themes Mermaid, each diagram is a light island inside the dark page.
         if info and info.split()[0] == "mermaid":
-            return f'<figure class="diagram"><pre class="mermaid">{escape(code)}</pre></figure>\n'
+            return f'<figure class="diagram"><pre class="mermaid" data-theme="light">{escape(code)}</pre></figure>\n'
         return super().block_code(code, info)
 
     def destination(self, url: str) -> tuple[str | None, bool]:
@@ -354,6 +355,10 @@ def home_presentation(body: str, registry: dict) -> str:
 
 CSS = Path(__file__).with_name("reader.css").read_text(encoding="utf-8")
 SCRIPT = Path(__file__).with_name("reader.js").read_text(encoding="utf-8")
+# Runs in <head> before the first paint so a saved light choice does not flash dark.
+# The key and the values must match the theme switcher in reader.js.
+THEME_BOOT = ("try{const t=localStorage.getItem('ml-llm-course-theme');"
+              "if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(_){}")
 
 
 def build(root: Path) -> tuple[str, int]:
@@ -433,12 +438,12 @@ def build(root: Path) -> tuple[str, int]:
         nav_groups.append('<section class="nav-group">' + content + '</section>')
     navigation = '\n'.join(nav_groups)
     html = f'''<!doctype html>
-<html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="{source_fingerprint(root)}"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>{CSS}</style></head>
+<html lang="ru" data-theme="dark">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="course-source-sha256" content="{source_fingerprint(root)}"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>{CSS}</style><script>{THEME_BOOT}</script></head>
 <body><a class="skip-link" href="#main-content">К материалу</a>
 <aside class="sidebar" id="course-menu" aria-label="Оглавление курса"><div class="sidebar-head"><a class="brand" href="#HOME"><span class="brand-symbol">ML</span><span class="brand-name">ML и LLM</span><span class="brand-caption">Технический учебник · Практика</span></a><button id="menu-close" class="small-button menu-close" aria-label="Закрыть оглавление">×</button><label class="search"><span class="screen-reader-only">Найти тему</span><span class="search-row"><input id="course-search" type="search" placeholder="Найти тему…" autocomplete="off" spellcheck="false" aria-describedby="search-status"><button id="search-clear" class="small-button search-clear" type="button" aria-label="Очистить поиск" hidden>×</button></span></label><p class="search-status" id="search-status" role="status">Поиск по тексту · Ctrl K</p></div><div class="sidebar-scroll"><nav id="book-navigation" aria-label="Разделы учебника">{navigation}</nav><ol class="search-results" id="search-results" aria-label="Результаты поиска"></ol><p class="empty-search" id="empty-search" hidden>Попробуй другое слово или его основу.</p><p class="nav-foot">Материалы {VERSION} · Чтение без интернета<br><a href="#PROGRESS">Журнал самостоятельной работы</a></p></div></aside>
 <button class="backdrop" id="backdrop" aria-label="Закрыть оглавление" tabindex="-1"></button>
-<div class="layout"><header class="topbar"><nav class="breadcrumbs" id="breadcrumbs" aria-label="Текущее место"><a href="#HOME">Учебник</a></nav><div class="top-actions"><button class="small-button menu-toggle" id="menu-toggle" aria-controls="course-menu" aria-expanded="false">☰ Содержание</button><button class="small-button print-button" id="print-section">Печать</button></div></header><main class="reader" id="main-content" tabindex="-1"><noscript><p class="no-script">JavaScript выключен: все разделы показаны ниже подряд. Ссылки оглавления продолжают работать.</p></noscript>{''.join(sections)}</main></div>
+<div class="layout"><header class="topbar"><nav class="breadcrumbs" id="breadcrumbs" aria-label="Текущее место"><a href="#HOME">Учебник</a></nav><div class="top-actions"><button class="small-button menu-toggle" id="menu-toggle" aria-controls="course-menu" aria-expanded="false">☰ Содержание</button><button class="small-button print-button" id="print-section">Печать</button><button class="small-button theme-toggle" id="theme-toggle" type="button" hidden>Тема<span class="theme-state">: тёмная</span></button></div></header><main class="reader" id="main-content" tabindex="-1"><noscript><p class="no-script">JavaScript выключен: все разделы показаны ниже подряд. Ссылки оглавления продолжают работать.</p></noscript>{''.join(sections)}</main></div>
 <dialog id="figure-dialog" aria-labelledby="figure-title"><div class="figure-toolbar"><strong id="figure-title">Рисунок</strong><button id="figure-zoom" class="small-button">Исходный размер</button><button id="figure-close" class="small-button">Закрыть</button></div><div class="figure-scroll"><img id="figure-large" alt=""></div><a id="figure-original" target="_blank">Открыть исходный файл отдельно</a></dialog>
 <script>{SCRIPT}</script>
 </body></html>'''

@@ -49,7 +49,8 @@ def test_mermaid_block_becomes_escaped_diagram_source(tmp_path):
     source = tmp_path / "lesson.md"
     renderer = reader.CourseRenderer(tmp_path, source, "M00-L01", {})
     html = mistune.create_markdown(renderer=renderer)('```mermaid\nflowchart LR\n  A["a < b"] --> B\n```\n\n```python\nx=1\n```\n')
-    assert '<figure class="diagram"><pre class="mermaid">flowchart LR\n  A[&quot;a &lt; b&quot;] --&gt; B\n</pre></figure>' in html
+    assert ('<figure class="diagram"><pre class="mermaid" data-theme="light">'
+            'flowchart LR\n  A[&quot;a &lt; b&quot;] --&gt; B\n</pre></figure>') in html
     assert '<code class="language-python">' in html
 
 

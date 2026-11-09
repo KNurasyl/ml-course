@@ -1,0 +1,384 @@
+<title>Квест-режим учебника</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a lab notebook — left rail of screens, one working surface; honest scoring, no confetti. */
+:root{
+  --bg:#f3f1ea; --paper:#fbfaf6; --ink:#1d2430; --muted:#5d6675; --line:#d9d4c7;
+  --accent:#176b74; --accent-ink:#ffffff; --signal:#c9931a; --signal-bg:#fbf1d6;
+  --ok:#2e7d4f; --ok-bg:#e3f1e7; --warn:#a4541b; --warn-bg:#f8e7d9; --lock:#8a8f99;
+  --display:'Unbounded',system-ui,sans-serif; --body:'Golos Text',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#15181e;--paper:#1d2129;--ink:#ebe8df;--muted:#a0a7b3;--line:#333a46;--accent:#4fb3bd;--accent-ink:#0f1a1c;--signal:#e3b24a;--signal-bg:#3a2f14;--ok:#6fcf97;--ok-bg:#1d3326;--warn:#e89a5c;--warn-bg:#3d2816;--lock:#6b7280;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15181e;--paper:#1d2129;--ink:#ebe8df;--muted:#a0a7b3;--line:#333a46;--accent:#4fb3bd;--accent-ink:#0f1a1c;--signal:#e3b24a;--signal-bg:#3a2f14;--ok:#6fcf97;--ok-bg:#1d3326;--warn:#e89a5c;--warn-bg:#3d2816;--lock:#6b7280;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(22px,3.2vw,32px);font-weight:700}
+h2{font-size:clamp(18px,2.4vw,22px);font-weight:700}
+h3{font-size:15px;font-weight:500}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:20px}
+.top{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{color:var(--muted);max-width:62ch}
+.statbar{display:flex;flex-wrap:wrap;gap:10px}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-width:120px}
+.stat b{display:block;font-family:var(--mono);font-size:20px;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+nav.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line);padding-bottom:10px}
+nav.tabs button{font:inherit;font-weight:500;background:transparent;border:1px solid transparent;border-radius:999px;padding:8px 14px;color:var(--muted);cursor:pointer}
+nav.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+nav.tabs button:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+section.screen{display:grid;gap:18px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.grid2>*{min-width:0}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:12px;min-width:0}
+.panel.quiet{background:transparent}
+.note{font-size:14px;color:var(--muted)}
+.pill{display:inline-block;font-family:var(--mono);font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.pill.ok{background:var(--ok-bg);color:var(--ok);border-color:transparent}
+.pill.warn{background:var(--warn-bg);color:var(--warn);border-color:transparent}
+.pill.sig{background:var(--signal-bg);color:var(--signal);border-color:transparent}
+/* tech tree */
+.tree{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.node{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--paper);display:grid;gap:4px;position:relative;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.node .id{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.node .t{font-weight:600;font-size:14px;line-height:1.3}
+.node .bar{height:5px;border-radius:3px;background:var(--line);overflow:hidden}
+.node .bar i{display:block;height:100%;background:var(--accent)}
+.node.locked{color:var(--lock);background:transparent;border-style:dashed}
+.node.locked .bar i{background:var(--lock)}
+.node.active{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.node.done .bar i{background:var(--ok)}
+.node .x{font-size:11px;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:middle}
+/* quest rail */
+.quest{display:grid;grid-template-columns:230px 1fr;gap:18px}
+@media (max-width:760px){.quest{grid-template-columns:1fr}}
+.rail{display:grid;gap:6px;align-content:start}
+.rail button{font:inherit;text-align:left;background:transparent;border:1px solid var(--line);border-radius:10px;padding:9px 11px;color:var(--ink);cursor:pointer;display:flex;gap:9px;align-items:center}
+.rail button .n{font-family:var(--mono);font-size:12px;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;flex:none;color:var(--muted)}
+.rail button.cur{border-color:var(--accent)}
+.rail button.cur .n{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.rail button.ok .n{background:var(--ok);color:#fff;border-color:var(--ok)}
+.rail button.skip .n{border-style:dashed}
+.rail small{display:block;color:var(--muted);font-size:12px}
+.step{display:none;gap:14px}
+.step.show{display:grid}
+.btn{font:inherit;font-weight:600;border:0;border-radius:10px;padding:10px 16px;cursor:pointer;background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.btn:disabled{opacity:.5;cursor:default}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+input[type=text],input[type=number],textarea{font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-width:0}
+textarea{width:100%;min-height:70px;resize:vertical}
+.flip{perspective:900px;cursor:pointer}
+.flip .card{position:relative;transition:transform .5s;transform-style:preserve-3d;min-height:150px}
+.flip.on .card{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--paper);display:grid;gap:8px;align-content:start}
+.face.back{transform:rotateY(180deg);background:var(--warn-bg);border-color:transparent}
+@media (prefers-reduced-motion:reduce){.flip .card{transition:none}}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:13px}
+.tablewrap{overflow-x:auto}
+code,.mono{font-family:var(--mono);font-size:13px}
+pre{font-family:var(--mono);font-size:13px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px;overflow-x:auto;margin:0;white-space:pre-wrap}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:9px 12px;cursor:pointer;background:var(--paper)}
+.opt.sel{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.opt.right{background:var(--ok-bg);border-color:transparent}
+.opt.wrong{background:var(--warn-bg);border-color:transparent}
+.hintbox{border-left:3px solid var(--signal);padding:8px 12px;background:var(--signal-bg);border-radius:0 8px 8px 0;font-size:14px}
+.result{border-radius:10px;padding:12px 14px;font-size:14px}
+.result.ok{background:var(--ok-bg);color:var(--ok)}
+.result.warn{background:var(--warn-bg);color:var(--warn)}
+.score{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.score button{font:inherit;border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:8px 4px;cursor:pointer;color:var(--ink);font-size:13px}
+.score button.sel{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
+.deck{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.timer{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:22px}
+.ideas{display:grid;gap:10px}
+.idea{border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:grid;gap:6px;background:var(--paper)}
+.idea h3{font-family:var(--body);font-weight:600;font-size:15px}
+.idea .meta{display:flex;flex-wrap:wrap;gap:6px}
+.slider{width:100%}
+.bars{display:grid;gap:6px}
+.bars div{display:grid;grid-template-columns:70px 1fr 60px;gap:8px;align-items:center;font-size:13px}
+.bars .tr{height:10px;background:var(--line);border-radius:5px;overflow:hidden}
+.bars .tr i{display:block;height:100%;background:var(--accent)}
+footer{color:var(--muted);font-size:13px}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Прототип · самоучитель ML и LLM 1.2.0</div>
+      <h1>Квест-режим учебника</h1>
+      <p class="lede">Как может выглядеть тот же курс, если читать его не как текст, а проходить как лабораторию: шаги, ставки до запуска, честный счёт. Данные на экране примерные.</p>
+    </div>
+    <div class="statbar" aria-label="Состояние ученика">
+      <div class="stat"><b>12</b><span>дней подряд с попыткой</span></div>
+      <div class="stat"><b>31 / 117</b><span>уроков с самостоятельной A</span></div>
+      <div class="stat"><b>4</b><span>повторения сегодня</span></div>
+      <div class="stat"><b>2</b><span>трофея «честный провал»</span></div>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Экраны прототипа">
+    <button role="tab" aria-selected="true" data-tab="map">Карта курса</button>
+    <button role="tab" aria-selected="false" data-tab="quest">Урок как квест</button>
+    <button role="tab" aria-selected="false" data-tab="review">Повторение</button>
+    <button role="tab" aria-selected="false" data-tab="ideas">Идеи и границы</button>
+  </nav>
+
+  <!-- ============ MAP ============ -->
+  <section class="screen show" id="tab-map">
+    <div class="grid2">
+      <div class="panel" style="grid-column:1/-1">
+        <div class="row" style="justify-content:space-between">
+          <h2>Дерево модулей</h2>
+          <div class="legend"><span><i style="background:var(--ok)"></i>подтверждено отложенной проверкой</span><span><i style="background:var(--accent)"></i>в работе</span><span><i style="background:var(--lock)"></i>закрыто предпосылками</span></div>
+        </div>
+        <p class="note">Полоса под модулем — доля уроков, где самостоятельная задача A сдана без ключа. Чтение и запуск эталона полосу не двигают. Нажми на модуль, чтобы увидеть, что его открывает.</p>
+        <div class="tree" id="tree"></div>
+        <div class="result" id="treeinfo" style="background:var(--bg)">M10 · RAG и поиск. Открыт: M01, M09-L02. В работе 3 из 9 уроков. Ветки-расширения: L07X эмбеддеры, L08X хранилище, L09X рерэнкер. Босс модуля: M10-HW01 — русский RAG с диагностикой.</div>
+      </div>
+      <div class="panel">
+        <h2>Сегодня</h2>
+        <p class="note">Список собирается из <code>progress due</code>: повторения по правилу 1–3–7–21 и следующий шаг маршрута.</p>
+        <div class="opts">
+          <div class="opt"><span class="pill sig">повтор · день 7</span><span>M03-L03-B: градиент MSE для x=[2,4], y=[1,7]</span></div>
+          <div class="opt"><span class="pill sig">повтор · день 3</span><span>M05-L07-C: разбиение по группам, новая таблица</span></div>
+          <div class="opt"><span class="pill sig">повтор · день 1</span><span>M10-L02-B: TF-IDF косинус вручную</span></div>
+          <div class="opt"><span class="pill">новое</span><span>M10-L03: гибридный поиск и reranking · ~140 мин</span></div>
+        </div>
+        <p class="note">Повторения из разных модулей смешаны специально: так проверяется, что способ решения восстанавливается без контекста урока.</p>
+      </div>
+      <div class="panel">
+        <h2>Честный счёт</h2>
+        <p class="note">Очки начисляются только за то, что курс и так требует записывать в журнал. Их нельзя получить чтением.</p>
+        <div class="tablewrap"><table>
+          <tr><th>Действие</th><th>Очки</th><th>Почему</th></tr>
+          <tr><td>Самостоятельная A без ключа, с объяснением</td><td class="mono">+10</td><td>Главный результат урока</td></tr>
+          <tr><td>Предсказание до запуска записано (любое)</td><td class="mono">+2</td><td>Награда за ставку, не за угадывание</td></tr>
+          <tr><td>Повторение B/C в срок</td><td class="mono">+5</td><td>Интервальное повторение</td></tr>
+          <tr><td>Задача решена после ключа</td><td class="mono">0</td><td>Назначается новый вариант</td></tr>
+          <tr><td>Записан провал эксперимента с причиной</td><td class="mono">трофей</td><td>Курс учит отказывать в выпуске</td></tr>
+        </table></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUEST ============ -->
+  <section class="screen" id="tab-quest" hidden>
+    <div class="row" style="justify-content:space-between">
+      <div><div class="eyebrow">M10-L03 · гибридный поиск и reranking</div><h2>Урок как цепочка шагов</h2></div>
+      <div class="row"><span class="pill">подсказок осталось: <b id="hintsLeft">3</b></span><span class="timer" id="timer">00:00</span></div>
+    </div>
+    <p class="note">Тот же текст урока, тот же порядок разделов. Отличие: каждый шаг требует действия до того, как откроется следующий, а ответ ученика сохраняется в журнал.</p>
+    <div class="quest">
+      <aside class="rail" id="rail">
+        <button data-step="0" class="cur"><span class="n">1</span><span>Проверь себя сначала<small>задача первого шага</small></span></button>
+        <button data-step="1"><span class="n">2</span><span>Аналогия<small>и где она ломается</small></span></button>
+        <button data-step="2"><span class="n">3</span><span>Предскажи и проверь<small>ставка до запуска</small></span></button>
+        <button data-step="3"><span class="n">4</span><span>Разобранный пример<small>одна строка вручную</small></span></button>
+        <button data-step="4"><span class="n">5</span><span>Задача A<small>подсказки по очереди</small></span></button>
+        <button data-step="5"><span class="n">6</span><span>Карточка и журнал<small>самооценка, команда</small></span></button>
+      </aside>
+      <div class="panel">
+        <!-- step 0 -->
+        <div class="step show" data-step="0">
+          <h3>Шаг 1. Проверь себя сначала</h3>
+          <p>Списки lexical = [A, B, C] и dense = [B, D, A]. Какой документ получит наибольший RRF-score при c = 10, и почему?</p>
+          <div class="opts" id="q0">
+            <div class="opt" data-v="A">A — первый у лексического поиска</div>
+            <div class="opt" data-v="B">B — высоко в обоих списках</div>
+            <div class="opt" data-v="D">D — второй у плотного поиска</div>
+          </div>
+          <textarea id="q0why" placeholder="Объясни одним предложением. Без объяснения короткий путь не засчитывается."></textarea>
+          <div class="row"><button class="btn" id="q0btn">Проверить</button><span class="note">Верно и объяснено → короткий путь: сразу к задаче A. Иначе → полный урок.</span></div>
+          <div id="q0res"></div>
+        </div>
+        <!-- step 1 -->
+        <div class="step" data-step="1">
+          <h3>Шаг 2. Аналогия</h3>
+          <p>Два рекрутера независимо составили шорт-листы. RRF даёт кандидату 1/(c + место) у каждого и складывает. Reranking — техническое интервью, дорогое, поэтому только для top-N.</p>
+          <div class="flip" id="flip1"><div class="card">
+            <div class="face"><span class="pill">нажми, чтобы перевернуть</span><b>Соответствие</b><table><tr><td>Ранг в списке</td><td>Место у рекрутера</td></tr><tr><td>Константа c</td><td>Насколько сильно ценится первое место</td></tr><tr><td>Top-N для reranker</td><td>Кого позвали на интервью</td></tr></table></div>
+            <div class="face back"><b>Где аналогия ломается</b><p>Интервьюер не может нанять того, кого нет в шорт-листе. Если нужный chunk не попал в top-N первой стадии, reranker его не поднимет. Поэтому измеряют candidate Recall@N до reranking, а не только MRR после.</p></div>
+          </div></div>
+          <div class="row"><button class="btn ghost" data-next="2">Дальше</button></div>
+        </div>
+        <!-- step 2 -->
+        <div class="step" data-step="2">
+          <h3>Шаг 3. Предскажи и проверь</h3>
+          <p>Те же списки, c меняется. Сначала запиши ставку: при каком c документ A обгонит B? Потом двигай ползунок.</p>
+          <div class="row"><label for="bet">Моя ставка, c =</label><input type="number" id="bet" min="0" max="100" value="" placeholder="?" style="width:90px"><button class="btn ghost" id="betbtn">Зафиксировать</button><span id="betres" class="note"></span></div>
+          <input type="range" class="slider" id="cslider" min="0" max="60" value="10" disabled aria-label="константа c">
+          <div class="bars" id="rrfbars"></div>
+          <p class="note" id="rrfnote">Ползунок откроется после ставки.</p>
+          <div class="row"><button class="btn ghost" data-next="3">Дальше</button></div>
+        </div>
+        <!-- step 3 -->
+        <div class="step" data-step="3">
+          <h3>Шаг 4. Разобранный пример</h3>
+          <p>Посчитай одну строку сам. При c = 10: A = 1/11 + 1/13. Введи результат с тремя знаками.</p>
+          <div class="row"><input type="text" id="ex" placeholder="0,___" style="width:120px"><button class="btn ghost" id="exbtn">Сверить</button><span id="exres"></span></div>
+          <pre>score = defaultdict(float)
+for ranking in [['A','B','C'], ['B','D','A']]:
+    for rank, doc in enumerate(ranking, 1):
+        score[doc] += 1/(10+rank)
+assert sorted(score, key=score.get, reverse=True) == ['B','A','D','C']</pre>
+          <div class="row"><button class="btn ghost" data-next="4">К задаче A</button></div>
+        </div>
+        <!-- step 4 -->
+        <div class="step" data-step="4">
+          <h3>Шаг 5. Самостоятельная задача M10-L03-A</h3>
+          <p>L = [X, Y, Z], D = [Z, X, W], c = 5. Посчитай RRF и порядок. Если релевантен W, а reranker получает top-2, исправит ли он выдачу? MRR для позиций 1, 3 и «не найден»?</p>
+          <div class="row"><input type="text" id="aorder" placeholder="порядок, напр. X Z Y W" style="flex:1"><input type="text" id="amrr" placeholder="MRR" style="width:90px"></div>
+          <textarea id="awhy" placeholder="Исправит ли reranker выдачу для W и почему?"></textarea>
+          <div class="row"><button class="btn" id="abtn">Сохранить попытку</button><button class="btn ghost" id="hintbtn">Подсказка</button><span class="note">Каждая подсказка понижает доступную самооценку. Ключ открывается только после сохранённой попытки.</span></div>
+          <div id="hints" style="display:grid;gap:6px"></div>
+          <div id="ares"></div>
+        </div>
+        <!-- step 5 -->
+        <div class="step" data-step="5">
+          <h3>Шаг 6. Карточка урока и запись в журнал</h3>
+          <div class="tablewrap"><table>
+            <tr><th>Правило</th><td>score(d) = Σ 1/(c + rank), ранги с 1, отсутствие = 0</td></tr>
+            <tr><th>Когда применять</th><td>Шкалы scores разных retriever несопоставимы</td></tr>
+            <tr><th>Что мерить</th><td>Recall@N до reranking, MRR после</td></tr>
+            <tr><th>Главная ошибка</th><td>Считать candidate Recall финальной точностью</td></tr>
+          </table></div>
+          <h3>Самооценка</h3>
+          <div class="score" id="score">
+            <button data-s="0">0<br><small>не проверено</small></button>
+            <button data-s="1">1<br><small>повторить</small></button>
+            <button data-s="2">2<br><small>с поддержкой</small></button>
+            <button data-s="3">3<br><small>сам</small></button>
+            <button data-s="4" disabled>4<br><small>позже</small></button>
+          </div>
+          <p class="note" id="scorenote">Оценка 4 ставится только при отложенной проверке через 7 дней. Максимум сейчас зависит от подсказок.</p>
+          <p class="note">Учебник не пишет файлы. Он собирает команду, которую ты вставляешь в терминал — журнал остаётся в твоих руках:</p>
+          <pre id="cmd">.\.venv\Scripts\python.exe tools\progress.py add M10-L03-A --min 0 --self 3 --help none --route full</pre>
+          <div class="row"><button class="btn" id="copy">Скопировать команду</button><span class="note" id="copyres"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REVIEW ============ -->
+  <section class="screen" id="tab-review" hidden>
+    <div><div class="eyebrow">progress due · 09.11.2026</div><h2>Колода повторения</h2></div>
+    <p class="note">Карточки собраны из «Карточек урока» (T22) и вариантов B/C. Лицевая сторона — вопрос, обратная — правило и смысл величин. Сначала ответь вслух или на бумаге, потом переворачивай.</p>
+    <div class="deck" id="deck"></div>
+    <div class="panel quiet">
+      <h3>Босс модуля</h3>
+      <p>Домашняя работа M10-HW01 открывается, когда все уроки модуля имеют сданную A и хотя бы одно повторение. Это не замок ради замка: рубрика HW проверяет перенос, а перенос без базы невозможен. Пройти «босса» — значит выполнить рубрику и записать критические ошибки, если они были.</p>
+    </div>
+  </section>
+
+  <!-- ============ IDEAS ============ -->
+  <section class="screen" id="tab-ideas" hidden>
+    <div><div class="eyebrow">мозговой штурм</div><h2>Идеи и границы</h2></div>
+    <p class="lede">Критерий отбора: механика должна усиливать то, что курс уже требует (попытка до ключа, объяснение, новый вариант, запись), а не подменять. Всё, что награждает за чтение или клики, отброшено.</p>
+    <div class="ideas" id="ideas"></div>
+    <div class="panel">
+      <h3>Чего не делать</h3>
+      <ul style="margin:0;padding-left:20px;display:grid;gap:4px">
+        <li>Очки за открытие урока, просмотр видео или запуск эталона: это ровно то, что курс называет «не результат».</li>
+        <li>Автопроверка текстовых объяснений «по ключевым словам»: даст ложное чувство освоения.</li>
+        <li>Конфетти и звуки за правильный ответ: отвлекают и обесценивают отрицательный результат, который в этом курсе тоже успех.</li>
+        <li>Лидерборды: ты один. Единственный соперник — ты неделю назад, и это показывает дашборд.</li>
+        <li>Запись прогресса в localStorage учебника как единственного хранилища: журнал должен оставаться файлом в git.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>Прототип. Механики привязаны к существующим инструментам курса: build_reader.py, course/route.yaml, tools/progress.py, карточки урока и варианты B/C. Ничего из текста уроков не убирается.</footer>
+</div>
+
+<script>
+(() => {
+'use strict';
+// ---------- tabs ----------
+const tabs=[...document.querySelectorAll('nav.tabs button')];
+function showTab(id){tabs.forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===id)));document.querySelectorAll('section.screen').forEach(s=>{s.hidden=s.id!=='tab-'+id;});try{localStorage.setItem('qm-tab',id);}catch(e){}}
+tabs.forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+try{const t=localStorage.getItem('qm-tab');if(t&&tabs.some(b=>b.dataset.tab===t))showTab(t);}catch(e){}
+
+// ---------- tree ----------
+const mods=[
+['M00','Модель и обучение',5,5,'done','Открывает M01, M03'],['M01','Данные и Python',5,5,'done','Открывает M02, M05, M10'],['M02','Линейная алгебра',5,5,'done','Открывает M07, M08'],['M03','Производные',5,4,'active','4 из 5 A сданы; L05 ждёт повторения'],['M04','Вероятность',8,6,'active','Пропуск запрещён: новые темы'],['M05','Классический ML',7,7,'done','Босс пройден 02.11'],['M06','Проектирование',5,3,'active',''],['M07','PyTorch',5,0,'open','Открыт: M02, M03'],['M08','Transformer',7,0,'locked','Нужен M07. Ветка: L08X GPT с нуля'],['M09','Запуск LLM',6,0,'locked','Ветки: L07X serving, L08X JSON'],['M10','RAG и поиск',9,3,'active','Ветки: L07X, L08X, L09X'],['M11','Оценивание',7,0,'locked','Ветка: L07X error analysis'],['M12','Адаптация',9,0,'locked','Ветки: LoRA, DPO'],['M13','MLOps',7,0,'locked','Ветка: трассировка'],['M14','Агенты',9,0,'locked','Ветки: OWASP, MCP, паттерны'],['M15','Речь',7,0,'locked','Ветка: Whisper + Piper'],['M16','Итоговый продукт',8,0,'locked','Босс: защита проекта']];
+const tree=document.getElementById('tree'),info=document.getElementById('treeinfo');
+mods.forEach(([id,t,n,d,st,extra])=>{const b=document.createElement('button');b.className='node '+(st==='locked'?'locked':st==='done'?'done':st==='active'?'active':'');b.innerHTML=`<span class="id">${id}</span><span class="t">${t}</span><span class="bar"><i style="width:${Math.round(d/n*100)}%"></i></span><span class="x">${d}/${n} A сдано${extra&&extra.includes('Ветк')?' · есть ветки X':''}</span>`;b.addEventListener('click',()=>{info.textContent=`${id} · ${t}. ${d} из ${n} самостоятельных задач сдано без ключа. ${extra||''}`;document.querySelectorAll('.node').forEach(x=>x.classList.remove('active'));b.classList.add('active');});tree.append(b);});
+
+// ---------- quest ----------
+const steps=[...document.querySelectorAll('.step')],rail=[...document.querySelectorAll('#rail button')];
+let hintsUsed=0,route='full',start=Date.now(),selfMax=3,selfSel=3;
+function go(i){steps.forEach(s=>s.classList.toggle('show',+s.dataset.step===i));rail.forEach(b=>b.classList.toggle('cur',+b.dataset.step===i));}
+rail.forEach(b=>b.addEventListener('click',()=>go(+b.dataset.step)));
+document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>{go(+b.dataset.next);}));
+setInterval(()=>{const s=Math.floor((Date.now()-start)/1000);document.getElementById('timer').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');updateCmd();},1000);
+
+// step 0
+let q0v=null;const q0=document.getElementById('q0');q0.querySelectorAll('.opt').forEach(o=>o.addEventListener('click',()=>{q0.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel'));o.classList.add('sel');q0v=o.dataset.v;}));
+document.getElementById('q0btn').addEventListener('click',()=>{const why=document.getElementById('q0why').value.trim();const res=document.getElementById('q0res');q0.querySelectorAll('.opt').forEach(o=>o.classList.remove('right','wrong'));
+ if(!q0v){res.innerHTML='<div class="result warn">Выбери вариант.</div>';return;}
+ const sel=q0.querySelector('.opt.sel');
+ if(q0v==='B'&&why.length>=15){sel.classList.add('right');res.innerHTML='<div class="result ok">Верно: B = 1/12 + 1/11 ≈ 0,174 против A ≈ 0,168. Объяснение записано. Короткий путь открыт — шаги 2–4 отмечены как необязательные, можно сразу к задаче A. Маршрут в журнале: short.</div>';route='short';rail[0].classList.add('ok');[1,2,3].forEach(i=>rail[i].classList.add('skip'));}
+ else if(q0v==='B'){sel.classList.add('right');res.innerHTML='<div class="result warn">Ответ верный, но без объяснения короткий путь не засчитывается — так устроено правило route.yaml. Напиши, почему B, или иди полным путём.</div>';}
+ else{sel.classList.add('wrong');res.innerHTML='<div class="result warn">Пока нет. Это нормально: проверка первого шага для того и нужна. Полный урок, маршрут full.</div>';rail[0].classList.add('ok');}
+ updateCmd();});
+
+// step 1 flip
+document.getElementById('flip1').addEventListener('click',e=>e.currentTarget.classList.toggle('on'));
+
+// step 2 predict
+const bars=document.getElementById('rrfbars'),cs=document.getElementById('cslider');
+function rrf(c){const s={A:1/(c+1)+1/(c+3),B:1/(c+2)+1/(c+1),C:1/(c+3),D:1/(c+2)};const m=Math.max(...Object.values(s));bars.innerHTML=Object.entries(s).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div><span>${k}</span><span class="tr"><i style="width:${v/m*100}%"></i></span><span class="mono">${v.toFixed(4)}</span></div>`).join('');document.getElementById('rrfnote').textContent=`c = ${c}. ${s.A>s.B?'A впереди B':'B впереди A'}. Обрати внимание: при любом c ≥ 0 B остаётся выше A — проверь алгебраически: 1/(c+2) − 1/(c+3) > 0.`;}
+rrf(10);
+document.getElementById('betbtn').addEventListener('click',()=>{const v=document.getElementById('bet').value;const r=document.getElementById('betres');if(v===''){r.textContent='Поставь число или напиши 0, если думаешь, что никогда.';return;}cs.disabled=false;r.textContent=`Ставка записана: c = ${v}. +2 очка за предсказание, независимо от исхода. Теперь проверяй.`;cs.addEventListener('input',()=>rrf(+cs.value));});
+
+// step 3 example
+document.getElementById('exbtn').addEventListener('click',()=>{const v=parseFloat(document.getElementById('ex').value.replace(',','.'));const r=document.getElementById('exres');if(Math.abs(v-0.168)<0.0015){r.innerHTML='<span class="pill ok">0,168 — верно</span>';}else{r.innerHTML='<span class="pill warn">не сошлось; ранги начинаются с 1</span>';}});
+
+// step 4 task
+const hintTexts=['Ранги начинаются с единицы.','Отсутствующий документ получает нулевой вклад, а не ранг ноль.','MRR усредняет обратные ранги: (1 + 1/3 + 0)/3.'];
+document.getElementById('hintbtn').addEventListener('click',()=>{if(hintsUsed>=3)return;const h=document.createElement('div');h.className='hintbox';h.textContent=`Подсказка ${hintsUsed+1}: ${hintTexts[hintsUsed]}`;document.getElementById('hints').append(h);hintsUsed++;document.getElementById('hintsLeft').textContent=3-hintsUsed;selfMax=2;if(selfSel>2)selfSel=2;renderScore();updateCmd();});
+document.getElementById('abtn').addEventListener('click',()=>{const o=document.getElementById('aorder').value.trim(),m=document.getElementById('amrr').value.trim(),w=document.getElementById('awhy').value.trim();const r=document.getElementById('ares');if(!o||!m||!w){r.innerHTML='<div class="result warn">Нужны порядок, MRR и объяснение про W. Пустая попытка не сохраняется.</div>';return;}r.innerHTML='<div class="result ok">Попытка сохранена в submissions/M10-L03/. Теперь открыт ключ: порядок X Z Y W (X = 1/6+1/7, Z = 1/8+1/6, Y = 1/7, W = 1/8); W вне top-2, reranker его не спасёт; MRR = (1 + 1/3 + 0)/3 ≈ 0,444. Сверь, отметь расхождение и переходи к карточке.</div>';rail[4].classList.add('ok');go(5);});
+
+// step 5 score + cmd
+const scoreEl=document.getElementById('score');
+function renderScore(){scoreEl.querySelectorAll('button').forEach(b=>{const s=+b.dataset.s;b.disabled=s===4||s>selfMax;b.classList.toggle('sel',s===selfSel);});document.getElementById('scorenote').textContent=hintsUsed?`Использовано подсказок: ${hintsUsed}. Максимальная самооценка сейчас — 2 («с поддержкой»). Оценка 3 возможна на новом варианте B без подсказок.`:'Оценка 4 ставится только при отложенной проверке через 7 дней. Максимум сейчас зависит от подсказок.';}
+scoreEl.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.disabled)return;selfSel=+b.dataset.s;renderScore();updateCmd();});
+function updateCmd(){const min=Math.max(1,Math.round((Date.now()-start)/60000));const help=hintsUsed?`hint${hintsUsed}`:'none';document.getElementById('cmd').textContent=`.\\.venv\\Scripts\\python.exe tools\\progress.py add M10-L03-A --min ${min} --self ${selfSel} --help ${help} --route ${route}`;}
+renderScore();updateCmd();
+document.getElementById('copy').addEventListener('click',()=>{const t=document.getElementById('cmd').textContent;const r=document.getElementById('copyres');navigator.clipboard.writeText(t).then(()=>{r.textContent='Скопировано. Вставь в PowerShell в папке курса.';}).catch(()=>{const range=document.createRange();range.selectNodeContents(document.getElementById('cmd'));const sel=getSelection();sel.removeAllRanges();sel.addRange(range);r.textContent='Текст выделен — скопируй вручную.';});});
+
+// ---------- review deck ----------
+const cards=[['M03-L03 · день 7','Как считается dw для MSE и почему среднее, а не сумма?','dw = (2/n)Σeᵢxᵢ. Среднее, чтобы шаг не зависел от размера набора. Обе производные по старым параметрам.'],['M05-L07 · день 3','Два ограничения разбиения, которые нужно выполнить одновременно?','Группа (один пользователь) целиком в одной части и граница по времени: test — будущее относительно train.'],['M10-L02 · день 1','Почему нельзя складывать TF-IDF cosine и score эмбеддера напрямую?','Разные шкалы и калибровка. Поэтому RRF по рангам, а не по величинам.'],['M00-L04 · день 21','Что меняет найденный документ в RAG: веса, контекст или историю?','Контекст запроса. Веса не меняются; история приложения — отдельное хранилище.']];
+const deck=document.getElementById('deck');cards.forEach(([t,q,a])=>{const d=document.createElement('div');d.className='flip';d.innerHTML=`<div class="card"><div class="face"><span class="pill sig">${t}</span><p>${q}</p><span class="note">нажми после своего ответа</span></div><div class="face back"><b>Правило</b><p>${a}</p><div class="row"><span class="pill ok">вспомнил</span><span class="pill warn">повторить завтра</span></div></div></div>`;d.addEventListener('click',()=>d.classList.toggle('on'));deck.append(d);});
+
+// ---------- ideas ----------
+const ideas=[
+['Маршрут как дерево модулей','Карта 17 модулей с полосой «сдано A без ключа» и ветками X. Замки только там, где есть реальные предпосылки из curriculum.json.','совместимо','1–2 дня','build_reader.py читает curriculum.json и progress.jsonl; HTML пересобирается командой'],
+['Шаги вместо прокрутки','Урок показывается по разделам; следующий открывается после действия: выбора, ввода числа, ставки. Полный текст доступен всегда кнопкой «читать целиком».','совместимо','2–3 дня','reader.js уже знает порядок h2; нужен режим quest и состояние шага'],
+['Ставка до запуска','26 опытов получают поле «моя ставка» перед ползунком. Очки за наличие ставки, не за точность. Это ICAP «constructive» вместо «active».','совместимо, усиливает T27','1 день','module-experiments.js: поле ввода и блокировка ползунка до ставки'],
+['Бюджет подсказок','Подсказки по очереди уже есть. Добавляется счётчик и честное следствие: после подсказки самооценка ограничена 2, новый вариант B снимает ограничение.','совместимо, это правило курса','0,5 дня','details.hints → кнопка с счётчиком; значение уходит в команду progress'],
+['Генератор команды журнала','Учебник не пишет файлы, но собирает `progress.py add …` с временем, самооценкой и помощью. Один клик — вставить в терминал.','совместимо','0,5 дня','JS в reader; формат уже есть в tools/progress.py'],
+['Колода повторения','Карточки урока + варианты B/C как перевёртыши. `progress due` отдаёт список на сегодня, учебник показывает колоду, смешивая модули.','совместимо','1 день','build_reader вставляет due-список из dashboard.md; карточки уже есть'],
+['Босс модуля = HW','Домашняя работа открывается при сданных A всех уроков и хотя бы одном повторении. Рубрика HW и есть «бой с боссом».','совместимо','0,5 дня','правило в route.yaml, отображение в карте'],
+['Трофей «честный провал»','Отдельная награда за сохранённый отрицательный результат с причиной: RAG-HW не прошёл, SFT не достиг точности. Курс считает это инженерной практикой.','совместимо, уникально для курса','0,5 дня','поле --error в progress.py уже есть'],
+['Серия дней','Считаются дни с хотя бы одной записью в журнале. Пропуск серию не сжигает полностью, а снижает на треть: цель — ритм, а не тревога.','совместимо','0,5 дня','progress.py dashboard'],
+['Дуэль с собой','Повтор B через 7 дней показывает твоё прошлое время и число подсказок. Соперник — ты неделю назад.','совместимо','0,5 дня','данные уже в progress.jsonl'],
+['Голосовой пересказ в тренажёр','После модуля — объяснить тему за 3 минуты голосом своему же тренажёру (M15). Транскрипт сохраняется как «объясни другому».','совместимо, использует проект','2 дня','projects/interview_trainer, режим «пересказ»'],
+['Автопроверка числовых ответов в браузере','Для задач с числовым ответом сверка с допуском прямо в учебнике (как шаг 4 прототипа). Объяснение всё равно проверяется руками.','совместимо, расширяет T26','2–3 дня','ответы хранить хешем, чтобы не подсмотреть в исходнике'],
+['Очки за чтение, время на странице, просмотры','Самая частая геймификация в онлайн-курсах.','отклонено','—','противоречит принципу «открыть урок — не результат»'],
+['Лидерборд, соревнование','—','отклонено','—','ученик один; сравнение с собой полезнее'],
+['Авто-зачёт навыка по тестам','Зелёный тест = урок пройден.','отклонено','—','курс разделяет самооценку и подтверждение; тесты подтверждают код, не понимание']];
+const list=document.getElementById('ideas');ideas.forEach(([t,d,v,eff,how])=>{const el=document.createElement('div');el.className='idea';const cls=v.startsWith('откл')?'warn':'ok';el.innerHTML=`<div class="row" style="justify-content:space-between"><h3>${t}</h3><span class="pill ${cls}">${v}</span></div><p>${d}</p><div class="meta"><span class="pill">трудоёмкость: ${eff}</span><span class="pill">где: ${how}</span></div>`;list.append(el);});
+})();
+</script>

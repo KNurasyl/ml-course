@@ -4,8 +4,60 @@ const fs = require('node:fs/promises');
 const path = require('node:path');
 const {pathToFileURL} = require('node:url');
 
-async function run(browser, repo) {
-  const out = path.join(repo, 'artifacts/design-redesign/reader');
+// D1: colour literals are allowed only in theme token blocks, i.e. rules whose every selector starts
+// with :root (at top level or inside @media). Comments and strings are ignored; offsets keep lines.
+const NAMED_COLORS = new Set(('aliceblue antiquewhite aqua aquamarine azure beige bisque black blanchedalmond blue blueviolet brown '+
+  'burlywood cadetblue chartreuse chocolate coral cornflowerblue cornsilk crimson cyan darkblue darkcyan darkgoldenrod darkgray '+
+  'darkgreen darkgrey darkkhaki darkmagenta darkolivegreen darkorange darkorchid darkred darksalmon darkseagreen darkslateblue '+
+  'darkslategray darkslategrey darkturquoise darkviolet deeppink deepskyblue dimgray dimgrey dodgerblue firebrick floralwhite '+
+  'forestgreen fuchsia gainsboro ghostwhite gold goldenrod gray green greenyellow grey honeydew hotpink indianred indigo ivory '+
+  'khaki lavender lavenderblush lawngreen lemonchiffon lightblue lightcoral lightcyan lightgoldenrodyellow lightgray lightgreen '+
+  'lightgrey lightpink lightsalmon lightseagreen lightskyblue lightslategray lightslategrey lightsteelblue lightyellow lime '+
+  'limegreen linen magenta maroon mediumaquamarine mediumblue mediumorchid mediumpurple mediumseagreen mediumslateblue '+
+  'mediumspringgreen mediumturquoise mediumvioletred midnightblue mintcream mistyrose moccasin navajowhite navy oldlace olive '+
+  'olivedrab orange orangered orchid palegoldenrod palegreen paleturquoise palevioletred papayawhip peachpuff peru pink plum '+
+  'powderblue purple rebeccapurple red rosybrown royalblue saddlebrown salmon sandybrown seagreen seashell sienna silver skyblue '+
+  'slateblue slategray slategrey snow springgreen steelblue tan teal thistle tomato turquoise violet wheat white whitesmoke '+
+  'yellow yellowgreen').split(' '));
+function colorLiteralsOutsideRoot(css) {
+  const blank = text => text.replace(/[^\n]/g, ' ');
+  const text = css.replace(/\/\*[\s\S]*?\*\//g, blank).replace(/(["'])(?:\\.|(?!\1)[^\\\n])*\1/g, blank);
+  const lineAt = offset => text.slice(0, offset).split('\n').length;
+  const found = [], stack = [];
+  let last = 0;
+  const scan = (selector, start, body) => {
+    let offset = start;
+    for (const declaration of body.split(';')) {
+      const colon = declaration.indexOf(':');
+      if (colon > 0) {
+        const value = declaration.slice(colon + 1), base = offset + colon + 1;
+        const add = (at, literal) => found.push({line:lineAt(base + at), selector, literal});
+        for (const m of value.matchAll(/#[0-9a-f]{3,8}\b/gi)) add(m.index, m[0]);
+        for (const m of value.matchAll(/\b(?:rgba?|hsla?|hwb|lab|lch|oklab|oklch|color)\(/gi)) add(m.index, m[0]);
+        for (const m of value.matchAll(/(?<![-\w#])[a-z]+(?![-\w(])/gi)) if (NAMED_COLORS.has(m[0].toLowerCase())) add(m.index, m[0]);
+      }
+      offset += declaration.length + 1;
+    }
+  };
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === '{') {
+      if (stack.length) stack.at(-1).nested = true;
+      stack.push({selector:text.slice(last, i).trim().replace(/\s+/g, ' '), start:i + 1, nested:false});
+      last = i + 1;
+    } else if (text[i] === '}') {
+      const block = stack.pop();
+      if (!block) throw new Error(`Unbalanced } at line ${lineAt(i)}`);
+      const token = !block.selector.startsWith('@') && block.selector.split(',').every(s => s.trim().startsWith(':root'));
+      if (!block.nested && !token) scan(block.selector, block.start, text.slice(block.start, i));
+      last = i + 1;
+    }
+  }
+  if (stack.length) throw new Error('Unclosed { in CSS');
+  return found;
+}
+
+async function run(browser, repo, options = {}) {
+  const out = options.out || path.join(repo, 'artifacts/design-redesign/reader');
   await fs.mkdir(out, {recursive:true});
   const url = pathToFileURL(path.join(repo,'START_HERE.html')).href;
   const html=await fs.readFile(path.join(repo,'START_HERE.html'));
@@ -19,6 +71,19 @@ async function run(browser, repo) {
   const snap = async name => {await page.screenshot({path:path.join(out,name+'.png'),scale:'css',animations:'disabled'});report.screenshots.push(name+'.png');};
   try {
     await go('HOME');
+    const outside=colorLiteralsOutsideRoot(await fs.readFile(path.join(repo,'tools/reader.css'),'utf8'));
+    check('D1 colour literals only inside :root token blocks',outside.length===0,{count:outside.length,outside:outside.slice(0,20)});
+    const themeState=()=>page.evaluate(()=>({theme:document.documentElement.dataset.theme,meta:document.querySelector('meta[name="color-scheme"]')?.content,
+      bg:getComputedStyle(document.body).backgroundColor,label:document.getElementById('theme-toggle').textContent,
+      stored:(()=>{try{return localStorage.getItem('ml-llm-course-theme');}catch{return 'unavailable';}})()}));
+    const first=await themeState();
+    check('D1 first open is dark',first.theme==='dark'&&first.meta==='dark light'&&first.bg==='rgb(21, 23, 28)'&&first.stored===null,first);
+    await page.locator('#theme-toggle').click();const light=await themeState();
+    check('D1 theme switch turns light and saves the choice',light.theme==='light'&&light.bg==='rgb(246, 245, 241)'&&light.stored==='light'&&light.label.includes('светлая'),light);
+    await page.reload();await page.locator('#HOME').waitFor({state:'visible'});await settle();const kept=await themeState();
+    check('D1 saved light choice survives reload',kept.theme==='light'&&kept.bg==='rgb(246, 245, 241)'&&kept.label.includes('светлая'),kept);
+    await page.locator('#theme-toggle').click();const back=await themeState();
+    check('D1 theme switch returns to dark',back.theme==='dark'&&back.bg==='rgb(21, 23, 28)'&&back.stored==='dark',back);
     const cta=page.locator('.primary-action');const box=await cta.boundingBox();
     check('D01 prominent start action in first desktop viewport',box&&box.y+box.height<1000);
     await snap('home-desktop');
@@ -34,7 +99,12 @@ async function run(browser, repo) {
     check('D06 distinct task roles and local map',(await page.locator('#M08-L03 .lesson-stage').count())>=4&&(await page.locator('#M08-L03 .lesson-outline a').count())>=7);
     check('D07 formula blocks and shape table',await page.locator('#M08-L03 .formula').count()>=4&&await page.locator('#M08-L03 table').count()>=1);
     await snap('attention-desktop');
-    await page.locator('#M08-L03 .lesson-outline a').filter({hasText:'Самостоятельная работа'}).click();await settle();
+    const diagram=page.locator('#M08-L03 pre.mermaid').first();await diagram.scrollIntoViewIfNeeded();
+    await page.waitForFunction(()=>document.querySelector('#M08-L03 pre.mermaid svg, #M08-L03 pre.mermaid.diagram-unavailable'));
+    const island=await diagram.evaluate(el=>({theme:el.dataset.theme,bg:getComputedStyle(el).backgroundColor,svg:!!el.querySelector('svg')}));
+    check('D1 Mermaid stays on a light island until D5',island.theme==='light'&&island.bg==='rgb(255, 255, 255)'&&island.svg,island);
+    // Headings follow the 1.2.0 vocabulary (T13): "Самостоятельная задача A", "Новая и отложенная проверка".
+    await page.locator('#M08-L03 .lesson-outline a').filter({hasText:'Самостоятельная задача A'}).click();await settle();
     const taskY=await page.locator('#M08-L03 [data-stage="task"] h2').evaluate(el=>el.getBoundingClientRect().top);
     check('D06 local map moves to task',taskY>=60&&taskY<180,{top:taskY});await snap('assignment-desktop');
     await page.locator('#M08-L03 .practice-note a').filter({hasText:'Решение этой задачи'}).click();await settle();
@@ -42,10 +112,10 @@ async function run(browser, repo) {
     check('D11 lesson opens its own answer',await answer.locator('summary').innerText()==='Ответ: M08-L03-A');
     check('D11 neighboring answers remain closed',await page.locator('#M08-SOLUTIONS .answer-key[open]').count()===1);await snap('answer-return');
     await answer.locator('[data-return-task]').first().click();await settle();
-    check('D11 return lands on assignment',decodeURIComponent(new URL(page.url()).hash).includes('самостоятельная-работа'));
+    check('D11 return lands on assignment',decodeURIComponent(new URL(page.url()).hash).includes('самостоятельная-задача-a'));
     await page.locator('#M08-L03 .practice-note a').filter({hasText:'Решение этой задачи'}).click();await settle();
     await page.locator('#M08-SOLUTIONS .answer-key[open] [data-return-retry]').first().click();await settle();
-    check('D11 new attempt lands on B/C',decodeURIComponent(new URL(page.url()).hash).includes('повтор-и-перенос'));
+    check('D11 new attempt lands on B/C',decodeURIComponent(new URL(page.url()).hash).includes('новая-и-отложенная-проверка'));
     await page.locator('#course-search').fill('обратное давление');
     check('D10 result explains hidden answer context',(await page.locator('#search-results').innerText()).includes('Решение — после своей попытки'));
     await page.locator('#search-results a').first().click();await settle();
@@ -70,6 +140,8 @@ async function run(browser, repo) {
     });report.measurements.utilityContrast=contrast;check('D12 six audited utility roles meet 4.5 contrast',contrast.every(x=>x.ratio>=4.5),contrast);
     await page.setViewportSize({width:390,height:844});await go('HOME');
     const mobileCTA=await page.locator('.primary-action').boundingBox();check('D01 mobile start action in first viewport',mobileCTA.y+mobileCTA.height<844);await snap('home-mobile');
+    const themeBox=await page.locator('#theme-toggle').boundingBox();
+    check('D1 theme switch visible in the mobile top bar',await page.locator('#theme-toggle').isVisible()&&themeBox.x+themeBox.width<=390,{rect:themeBox});
     await go('M10-L06');const mobileH2=await page.locator('#M10-L06 .body-content h2').first().boundingBox();
     check('D13 first theory starts before 500px at390',mobileH2.y<500,{top:mobileH2.y,previousAudit:622});await snap('lesson-mobile');
     await page.locator('#menu-toggle').click();await settle();
@@ -86,11 +158,11 @@ async function run(browser, repo) {
     check('D03 tablet selects figure by actual column width',await page.locator('#M04-L06 .figure-expand').evaluate(el=>el.clientWidth<600));await snap('log-figure-tablet');
     await page.setViewportSize({width:390,height:844});
     for(const key of ['M08-L03','M08-L07','M15-L06']){await go(key);const fig=page.locator('#'+key+' a[data-figure]').first();await fig.scrollIntoViewIfNeeded();await fig.locator('img').evaluate(el=>el.decode());await snap(key+'-figure-mobile');}
-    // At320, walk all161 documents. Tables and code may scroll internally; the page may not.
+    // At320, walk every document (161 in 1.1.0, more since 1.2.0). Tables and code may scroll internally; the page may not.
     await page.setViewportSize({width:320,height:844});
     const ids=await page.locator('article').evaluateAll(nodes=>nodes.map(el=>el.id));const overflows=[];
     for(const id of ids){await go(id);const measure=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));if(measure.scroll>measure.width+1)overflows.push({id,...measure});}
-    check('All161 sections reflow at320 without page overflow',ids.length===161&&overflows.length===0,{sections:ids.length,overflows});
+    check('All161 sections reflow at320 without page overflow',ids.length>=161&&overflows.length===0,{sections:ids.length,overflows});
     // Malformed and unknown deep links should recover to HOME without errors.
     await page.goto(url+'#M99-missing');await settle();check('Unknown fragment recovers',await page.locator('#HOME').isVisible());
     await page.goto(url+'#%E0%A4%A');await settle();check('Malformed encoded fragment recovers',await page.locator('#HOME').isVisible());
@@ -102,6 +174,8 @@ async function run(browser, repo) {
     check('D11 B/C link opens B/C instead of A',(await page.locator('#M08-SOLUTIONS .answer-key[open]').last().locator('summary').innerText()).includes('B и C'));
     await page.emulateMedia({media:'print'});
     check('Print excludes navigation and unopened answers',!await page.locator('.sidebar').isVisible()&&!await page.locator('#M08-SOLUTIONS .answer-key:not([open])').first().isVisible());
+    const printed=await page.evaluate(()=>({theme:document.documentElement.dataset.theme,bg:getComputedStyle(document.documentElement).getPropertyValue('--bg').trim(),ink:getComputedStyle(document.body).color}));
+    check('D1 print uses light tokens while the dark theme is chosen',printed.theme==='dark'&&printed.bg==='#f6f5f1'&&printed.ink==='rgb(29, 36, 48)',printed);
     await page.emulateMedia({media:'screen'});
     const anchorIssues=await page.evaluate(()=>Array.from(document.querySelectorAll('a[href^="#"]')).filter(a=>{let id;try{id=decodeURIComponent(a.hash.slice(1));}catch{return true;}return !document.getElementById(id);}).slice(0,30).map(a=>a.getAttribute('href')));
     check('All generated fragment links resolve',anchorIssues.length===0,{issues:anchorIssues});
@@ -112,4 +186,12 @@ async function run(browser, repo) {
   await fs.writeFile(path.join(out,'qa-results.json'),JSON.stringify(report,null,2));
   return report;
 }
-module.exports={run};
+module.exports={run,colorLiteralsOutsideRoot};
+
+// Without a browser: node tools/check_reader_design.cjs [file.css] runs only the static colour check.
+if (require.main === module) {
+  const file = process.argv[2] || path.join(__dirname, 'reader.css');
+  const outside = colorLiteralsOutsideRoot(require('node:fs').readFileSync(file, 'utf8'));
+  console.log(JSON.stringify({check:'colour literals only inside :root token blocks', file:path.relative(process.cwd(), file), count:outside.length, outside}, null, 2));
+  process.exitCode = outside.length ? 1 : 0;
+}

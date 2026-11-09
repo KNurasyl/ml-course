@@ -1,0 +1,298 @@
+<title>Тёмная тема учебника</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: spec first (diagnosis, palette), then a 1:1 mock of a lesson page in the new theme, then the change list. Dark-first by design; light kept for print. */
+:root{
+  --bg:#15171c; --surface:#1b1e25; --paper:#20242c; --line:#2e333d; --line-strong:#3b4150;
+  --ink:#e7e5de; --muted:#a3a9b4; --accent:#86aaf0; --accent-soft:#1f2a44; --teal:#58c4c6; --teal-soft:#12302f;
+  --amber:#e6b566; --amber-soft:#3a2d12; --ok:#86d19c; --ok-soft:#173021; --warn:#f0a071; --warn-soft:#3a2416; --error:#f08a8a;
+  --mark-bg:#4a3c14; --mark-fg:#ffe7a6; --code-bg:#111318; --focus:#e6b566;
+  --sans:'Segoe UI','Golos Text',system-ui,-apple-system,sans-serif; --mono:'Cascadia Code',Consolas,'JetBrains Mono',ui-monospace,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bg:#f6f5f1;--surface:#eeede8;--paper:#ffffff;--line:#d9d6cd;--line-strong:#c2beb3;--ink:#1d2430;--muted:#5a6270;--accent:#1f55b0;--accent-soft:#e4ecfb;--teal:#0b7478;--teal-soft:#dff3f2;--amber:#9a6410;--amber-soft:#fbefd6;--ok:#2a7a4b;--ok-soft:#e1f2e6;--warn:#a0541c;--warn-soft:#f9e6d8;--error:#b23b3b;--mark-bg:#ffe3a1;--mark-fg:#1d2430;--code-bg:#f0f2f6;--focus:#a65c12;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f6f5f1;--surface:#eeede8;--paper:#ffffff;--line:#d9d6cd;--line-strong:#c2beb3;--ink:#1d2430;--muted:#5a6270;--accent:#1f55b0;--accent-soft:#e4ecfb;--teal:#0b7478;--teal-soft:#dff3f2;--amber:#9a6410;--amber-soft:#fbefd6;--ok:#2a7a4b;--ok-soft:#e1f2e6;--warn:#a0541c;--warn-soft:#f9e6d8;--error:#b23b3b;--mark-bg:#ffe3a1;--mark-fg:#1d2430;--code-bg:#f0f2f6;--focus:#a65c12;color-scheme:light}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:22px 48px}
+h1,h2,h3,h4{line-height:1.2;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(24px,3.4vw,34px);font-weight:700}
+h2{font-size:clamp(19px,2.4vw,24px);font-weight:700}
+h3{font-size:17px;font-weight:600}
+p{margin:0}
+a{color:var(--accent);text-underline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:28px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{color:var(--muted);max-width:66ch}
+.sec{display:grid;gap:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.grid>*{min-width:0}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:10px}
+.note{font-size:14px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:13px}
+.tw{overflow-x:auto}
+code,.mono{font-family:var(--mono);font-size:13px}
+.sw{display:flex;align-items:center;gap:10px}
+.sw i{width:26px;height:26px;border-radius:6px;border:1px solid var(--line-strong);flex:none}
+.pill{display:inline-block;font-family:var(--mono);font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.pill.ok{color:var(--ok);background:var(--ok-soft);border-color:transparent}
+.pill.warn{color:var(--warn);background:var(--warn-soft);border-color:transparent}
+.pill.err{color:var(--error);background:var(--warn-soft);border-color:transparent}
+.toggle{font:inherit;font-size:13px;background:var(--paper);color:var(--ink);border:1px solid var(--line-strong);border-radius:999px;padding:7px 14px;cursor:pointer}
+.toggle:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+
+/* ===== mock of the reader ===== */
+.mock{border:1px solid var(--line-strong);border-radius:14px;overflow:hidden;background:var(--bg);display:grid;grid-template-columns:250px 1fr;min-height:620px}
+@media (max-width:820px){.mock{grid-template-columns:1fr}.mock .side{display:none}}
+.mock .side{background:var(--surface);border-right:1px solid var(--line);padding:18px 14px;display:grid;gap:14px;align-content:start;font-size:13px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px}
+.brand i{display:grid;place-items:center;width:32px;height:32px;border-radius:7px;background:var(--accent);color:var(--bg);font-size:13px;font-style:normal;font-weight:700}
+.search{background:var(--bg);border:1px solid var(--line-strong);border-radius:7px;padding:9px 10px;color:var(--muted)}
+.navh{font-size:12px;color:var(--muted);letter-spacing:.03em;margin-top:6px;font-weight:600}
+.nav a{display:grid;grid-template-columns:30px 1fr;gap:8px;padding:8px 9px;border-radius:6px;color:var(--ink);text-decoration:none;line-height:1.4}
+.nav a span:first-child{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.nav a.cur{background:var(--accent-soft);color:var(--accent);box-shadow:inset 3px 0 var(--accent);font-weight:600}
+.nav a.cur span:first-child{color:var(--accent)}
+.nav a.done span:first-child::after{content:' ✓';color:var(--ok)}
+.main{padding:0;display:grid;grid-template-rows:auto 1fr;min-width:0}
+.crumbs{display:flex;justify-content:space-between;align-items:center;padding:12px 26px;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.crumbs b{color:var(--ink);font-weight:500}
+.btn{font:inherit;font-size:13px;font-weight:600;background:transparent;color:var(--ink);border:1px solid var(--line-strong);border-radius:8px;padding:7px 12px;cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.body{padding:26px;display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:28px}
+@media (max-width:1000px){.body{grid-template-columns:1fr}.outline{display:none}}
+.article{display:grid;gap:16px;max-width:68ch;min-width:0;font-size:17px;line-height:1.7}
+.article .eyebrow .id{color:var(--accent)}
+.article h1{font-size:clamp(26px,3vw,36px)}
+.after{color:var(--muted)}.after b{color:var(--ink)}
+.article h2{margin-top:10px;font-size:22px}
+.outline{font-size:13px;color:var(--muted);border-left:1px solid var(--line);padding-left:14px;align-self:start;position:sticky;top:12px;display:grid;gap:6px}
+.outline b{color:var(--ink);font-weight:600;font-size:12px}
+.outline ol{margin:0;padding-left:18px;display:grid;gap:4px}
+.outline li.on{color:var(--accent)}
+.formula{font-family:var(--mono);font-size:15px;background:var(--code-bg);border-left:3px solid var(--accent);padding:14px 16px;border-radius:0 8px 8px 0;overflow-x:auto}
+pre{font-family:var(--mono);font-size:13.5px;line-height:1.55;background:var(--code-bg);border:1px solid var(--line);border-radius:8px;padding:14px;margin:0;overflow-x:auto}
+.k{color:var(--teal)}.s{color:var(--amber)}.c{color:var(--muted)}.n{color:var(--accent)}
+.fig{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;gap:8px}
+.fig svg{width:100%;height:auto;display:block}
+.fig figcaption{font-size:13px;color:var(--muted)}
+details{border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+details summary{padding:10px 14px;font-weight:600;font-size:15px;cursor:pointer;list-style:none;display:flex;gap:8px;align-items:center}
+details summary::before{content:'›';display:inline-block;width:12px;color:var(--muted);transition:transform .2s}
+details[open] summary::before{transform:rotate(90deg)}
+details>div{padding:4px 14px 12px;font-size:15px;color:var(--muted)}
+details.answer{border-color:var(--teal);background:var(--teal-soft)}
+details.answer summary{color:var(--teal)}
+details.hint{border-left:3px solid var(--amber)}
+.exp{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;gap:10px}
+.exp .lab{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);font-weight:600}
+.exp input[type=range]{width:100%;accent-color:var(--teal)}
+.bars{display:grid;gap:6px;font-size:13px}
+.bars div{display:grid;grid-template-columns:34px 1fr 64px;gap:8px;align-items:center}
+.bars .tr{height:9px;background:var(--line);border-radius:5px;overflow:hidden}.bars .tr i{display:block;height:100%;background:var(--teal)}
+.bars .v{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--muted)}
+mark{background:var(--mark-bg);color:var(--mark-fg);padding:0 2px;border-radius:2px}
+.card{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.card th{width:34%;background:var(--surface)}
+.callout{border-left:3px solid var(--warn);background:var(--warn-soft);padding:10px 14px;border-radius:0 8px 8px 0;font-size:15px}
+.callout b{color:var(--warn)}
+.scale div{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding:6px 0}
+.scale .mono{color:var(--muted);width:150px;flex:none}
+@media (prefers-reduced-motion:reduce){details summary::before{transition:none}}
+footer{color:var(--muted);font-size:13px}
+</style>
+
+<div class="wrap">
+  <header class="sec">
+    <div class="eyebrow">Дизайн-спецификация · учебник ML и LLM 1.2.0</div>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:flex-start">
+      <div class="sec" style="gap:8px"><h1>Тёмная тема учебника</h1>
+      <p class="lede">Тёмная тема по умолчанию, светлая остаётся для печати и как переключатель. Акцент меняется с тёмно-синего на светлый: старый #245bba на тёмном фоне даёт контраст 2,8:1, читать ссылки было бы нельзя. Ниже — палитра с замерами, макет реальной страницы урока и список правок по файлам.</p></div>
+      <button class="toggle" id="themeBtn" type="button">Показать светлую</button>
+    </div>
+  </header>
+
+  <!-- diagnosis -->
+  <section class="sec">
+    <h2>Что сейчас</h2>
+    <div class="grid">
+      <div class="panel"><h3>Только светлая</h3><p class="note"><code>color-scheme:light</code> в <code>reader.css</code>, <code>visual-style.css</code> и в мета-теге. Ночью при 4–5 часах чтения экран светит белым листом 5,5 МБ.</p></div>
+      <div class="panel"><h3>Цвета зашиты наполовину</h3><p class="note">В <code>reader.css</code> 7 токенов и 72 обращения к ним, но ещё 51 литерал вроде <code>#354c60</code>, <code>#e3ecfb</code>. В <code>visual-style.css</code> 21 литерал, в опытах 5. Переключить тему одной строкой нельзя.</p></div>
+      <div class="panel"><h3>Рисунки с белой подложкой</h3><p class="note">208 адаптивных SVG генерируются скриптом с палитрой в константах и <code>&lt;rect fill="white"&gt;</code>. 34 PNG из matplotlib — белые навсегда. Mermaid в теме <code>neutral</code>.</p></div>
+      <div class="panel"><h3>Шрифты и ритм</h3><p class="note">Segoe UI 17px / 1,75, колонка ~75 знаков — это хорошо, менять не нужно. Моноширинный — системный по умолчанию, без подсветки синтаксиса. Иерархия заголовков ровная, но все поверхности одинаково белые.</p></div>
+    </div>
+  </section>
+
+  <!-- palette -->
+  <section class="sec">
+    <h2>Палитра</h2>
+    <p class="lede">Тёплый графит вместо чисто чёрного: меньше ореолов у текста, глаз не «плывёт» между абзацами. Текст слегка тёплый (#e7e5de), не белый. Три акцента курса сохранены по смыслу — синий для навигации и ссылок, бирюзовый для опытов и ответов, янтарный для подсказок и предупреждений — но осветлены под тёмный фон.</p>
+    <div class="tw"><table>
+      <tr><th>Токен</th><th>Тёмная</th><th>Роль</th><th>Контраст к фону</th><th>Светлая</th></tr>
+      <tr><td class="mono">--bg</td><td class="sw"><i style="background:#15171c"></i>#15171c</td><td>Страница</td><td>—</td><td class="mono">#f6f5f1</td></tr>
+      <tr><td class="mono">--surface</td><td class="sw"><i style="background:#1b1e25"></i>#1b1e25</td><td>Боковая панель, подсказки, опыты</td><td>—</td><td class="mono">#eeede8</td></tr>
+      <tr><td class="mono">--paper</td><td class="sw"><i style="background:#20242c"></i>#20242c</td><td>Карточки, рисунки</td><td>—</td><td class="mono">#ffffff</td></tr>
+      <tr><td class="mono">--ink</td><td class="sw"><i style="background:#e7e5de"></i>#e7e5de</td><td>Основной текст</td><td><span class="pill ok">14,2:1</span></td><td class="mono">#1d2430</td></tr>
+      <tr><td class="mono">--muted</td><td class="sw"><i style="background:#a3a9b4"></i>#a3a9b4</td><td>Подписи, второстепенное</td><td><span class="pill ok">7,6:1</span></td><td class="mono">#5a6270</td></tr>
+      <tr><td class="mono">--accent</td><td class="sw"><i style="background:#86aaf0"></i>#86aaf0</td><td>Ссылки, активный пункт, ID урока</td><td><span class="pill ok">7,7:1</span></td><td class="mono">#1f55b0</td></tr>
+      <tr><td class="mono">--teal</td><td class="sw"><i style="background:#58c4c6"></i>#58c4c6</td><td>Опыты «Предскажи и проверь», ответы</td><td><span class="pill ok">8,7:1</span></td><td class="mono">#0b7478</td></tr>
+      <tr><td class="mono">--amber</td><td class="sw"><i style="background:#e6b566"></i>#e6b566</td><td>Подсказки, фокус, выделение поиска</td><td><span class="pill ok">9,5:1</span></td><td class="mono">#9a6410</td></tr>
+      <tr><td class="mono">--ok / --warn / --error</td><td class="sw"><i style="background:#86d19c"></i><i style="background:#f0a071"></i><i style="background:#f08a8a"></i></td><td>Статусы задач, критические ошибки</td><td><span class="pill ok">9,9 / 8,5 / 7,4</span></td><td class="mono">#2a7a4b / #a0541c / #b23b3b</td></tr>
+      <tr><td class="mono">--code-bg</td><td class="sw"><i style="background:#111318"></i>#111318</td><td>Код и формулы — темнее страницы, не светлее</td><td>—</td><td class="mono">#f0f2f6</td></tr>
+    </table></div>
+    <p class="note">Все значения текста выше 7:1 — уровень AAA по WCAG, с запасом для матовых экранов и ночной яркости. Границы (<code>--line</code>) намеренно слабые, 1,4:1: они разделяют, а не рисуют.</p>
+  </section>
+
+  <!-- mock -->
+  <section class="sec">
+    <h2>Страница урока в новой теме</h2>
+    <p class="lede">Макет повторяет реальный экран M10-L06 из скриншотов проверки. Содержимое то же, меняется только оформление. Подсказки, ответ и опыт кликаются.</p>
+    <div class="mock">
+      <aside class="side">
+        <div class="brand"><i>ML</i>ML и LLM</div>
+        <div class="search">Найти тему… <span style="float:right" class="mono">Ctrl K</span></div>
+        <div class="navh">M10 RAG и поиск</div>
+        <nav class="nav">
+          <a href="#" class="done"><span>M10</span><span>RAG и поиск</span></a>
+          <a href="#" class="done"><span>L01</span><span>Документ и фрагмент</span></a>
+          <a href="#" class="done"><span>L02</span><span>Лексический и векторный поиск</span></a>
+          <a href="#"><span>L03</span><span>Гибридный поиск и reranking</span></a>
+          <a href="#"><span>L04</span><span>Контекст и подтверждение ответа</span></a>
+          <a href="#"><span>L05</span><span>Диагностика и обновления</span></a>
+          <a href="#" class="cur"><span>L06</span><span>Диагностировать русский RAG по трассе ошибки</span></a>
+          <a href="#"><span>L07X</span><span>Эмбеддеры для русского языка</span></a>
+        </nav>
+        <div class="navh">M11 Оценивание LLM-систем</div>
+        <div class="navh">M12 Обучение и адаптация</div>
+      </aside>
+      <div class="main">
+        <div class="crumbs"><span>Учебник / M10 / <b>Диагностировать русский RAG по трассе ошибки</b></span><button class="btn" type="button">Печать</button></div>
+        <div class="body">
+          <article class="article">
+            <div class="eyebrow"><span class="id">M10-L06</span> · Урок · Теория и практика</div>
+            <h1>Диагностировать русский RAG по трассе ошибки</h1>
+            <p class="after"><b>После урока:</b> отличить потерю нужного документа, потерю условия при разбиении, устаревшую версию и вопрос без ответа; выбрать исправление по наблюдению.</p>
+            <h2>Почему хороший Recall может скрывать плохой контекст</h2>
+            <p>Допустим, документ говорит: «Индекс может ускорить запрос. Он <b>не гарантирует</b> ускорения выборки почти всей таблицы». Поиск нашёл нужный документ — recall по document_id равен единице. Но в переданный генератору фрагмент попало только первое предложение. Генератор <mark>потерял условие</mark>, хотя документная метрика этого не заметила.</p>
+            <div class="formula">MRR = (1/N) · Σ 1/rank_i,   rank_i = позиция первого релевантного chunk, 0 если не найден</div>
+            <figure class="fig">
+              <svg viewBox="0 0 640 180" role="img" aria-label="Трасса ошибки: документ найден, условие потеряно на границе фрагмента">
+                <rect x="20" y="30" width="170" height="54" rx="7" fill="var(--surface)" stroke="var(--line-strong)"/>
+                <text x="105" y="52" text-anchor="middle" fill="var(--ink)" font-size="13" font-weight="600">Документ найден</text>
+                <text x="105" y="71" text-anchor="middle" fill="var(--muted)" font-size="12">recall@doc = 1.0</text>
+                <path d="M190 57 L250 57" stroke="var(--teal)" stroke-width="2"/><path d="M243 51 L251 57 L243 63" fill="none" stroke="var(--teal)" stroke-width="2"/>
+                <rect x="252" y="30" width="170" height="54" rx="7" fill="var(--warn-soft)" stroke="var(--warn)"/>
+                <text x="337" y="52" text-anchor="middle" fill="var(--ink)" font-size="13" font-weight="600">Граница chunk</text>
+                <text x="337" y="71" text-anchor="middle" fill="var(--warn)" font-size="12">условие отрезано</text>
+                <path d="M422 57 L482 57" stroke="var(--teal)" stroke-width="2"/><path d="M475 51 L483 57 L475 63" fill="none" stroke="var(--teal)" stroke-width="2"/>
+                <rect x="484" y="30" width="140" height="54" rx="7" fill="var(--surface)" stroke="var(--line-strong)"/>
+                <text x="554" y="52" text-anchor="middle" fill="var(--ink)" font-size="13" font-weight="600">Ответ LLM</text>
+                <text x="554" y="71" text-anchor="middle" fill="var(--error)" font-size="12">уверенный, неверный</text>
+                <line x1="20" y1="120" x2="624" y2="120" stroke="var(--line)"/>
+                <text x="20" y="148" fill="var(--muted)" font-size="12">Метрика документа</text><text x="160" y="148" fill="var(--ok)" font-size="12" font-weight="600">1.0</text>
+                <text x="252" y="148" fill="var(--muted)" font-size="12">Достаточность chunk</text><text x="400" y="148" fill="var(--error)" font-size="12" font-weight="600">0.0</text>
+                <text x="484" y="148" fill="var(--muted)" font-size="12">Полезность ответа</text><text x="610" y="148" fill="var(--error)" font-size="12" font-weight="600">0</text>
+              </svg>
+              <figcaption>Рисунок перерисован токенами темы: фон, линии и акценты берутся из CSS, а не зашиты в файл.</figcaption>
+            </figure>
+            <h2>Практика с поддержкой</h2>
+            <p>Запиши ожидаемый вывод до запуска; объясни расхождение.</p>
+            <pre><span class="k">from</span> labs.M10.diagnostic_ru <span class="k">import</span> trace
+<span class="n">report</span> = trace(query=<span class="s">"ускоряет ли индекс выборку всей таблицы"</span>, k=<span class="n">3</span>)
+<span class="c"># ожидаю: doc_recall == 1.0, chunk_sufficient == False</span>
+<span class="k">assert</span> report.doc_recall == <span class="n">1.0</span> <span class="k">and not</span> report.chunk_sufficient</pre>
+            <div class="exp">
+              <div class="lab">Предскажи и проверь</div>
+              <p style="font-size:15px">Число документов в контексте k. Из шести кандидатов релевантны три. Где precision и recall разойдутся?</p>
+              <input type="range" id="k" min="1" max="6" value="3" aria-label="k">
+              <div class="bars" id="kb"></div>
+            </div>
+            <details class="hint"><summary>Подсказка 1 из 3</summary><div>Сначала отдели единицы наблюдения: документ, chunk, утверждение. Метрика считается для одной из них.</div></details>
+            <details class="answer"><summary>Ответ: самостоятельная задача M10-L06-A</summary><div>Открывается после сохранённой попытки в <code>submissions/M10-L06/</code>. Расхождение отмечается по категории: понятие, арифметика, данные, код.</div></details>
+            <h2>Карточка урока</h2>
+            <div class="card tw"><table>
+              <tr><th>Правило</th><td>Recall по документу ≠ достаточность chunk ≠ полезность ответа: три метрики, три знаменателя</td></tr>
+              <tr><th>Когда применять</th><td>Любой разбор провала RAG начинается с трассы: что нашли, что передали, что сказали</td></tr>
+              <tr><th>Главная ошибка</th><td>Считать recall@doc финальным качеством системы</td></tr>
+            </table></div>
+            <div class="callout"><b>Критическая ошибка:</b> выдать любую существующую ссылку за подтверждение ответа.</div>
+          </article>
+          <aside class="outline"><b>В этом уроке</b><ol><li class="on">Почему хороший Recall может скрывать плохой контекст</li><li>Набор, в котором можно ошибиться</li><li>Запуск и разобранное наблюдение</li><li>Вопрос без ответа — другой знаменатель</li><li>Практика с поддержкой</li><li>Самостоятельная задача A</li><li>Подсказки, повтор B и проверка C</li><li>Карточка урока</li><li>Источники</li></ol></aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- rules -->
+  <section class="sec">
+    <h2>Правила оформления</h2>
+    <div class="grid">
+      <div class="panel">
+        <h3>Поверхности: три уровня, не один</h3>
+        <p class="note">Страница → панель (боковая, подсказки, опыты) → карточка (рисунки, таблицы). Каждый уровень на 3–4% светлее. Код и формулы наоборот темнее страницы: взгляд их находит без рамок. Тени не используются — на тёмном они не читаются, глубину даёт яркость.</p>
+      </div>
+      <div class="panel">
+        <h3>Цвет кодирует тип блока</h3>
+        <p class="note">Синий — навигация и ссылки. Бирюзовый — всё, где ученик действует: опыт, ответ, активная задача. Янтарный — подсказки, фокус, выделение поиска. Оранжевый и красный — только статусы и критические ошибки. Один блок = один акцент.</p>
+      </div>
+      <div class="panel">
+        <h3>Типографика без изменений в ритме</h3>
+        <div class="scale">
+          <div><span class="mono">h1 · 36/1.2</span><span style="font-size:24px;font-weight:700">Заголовок урока</span></div>
+          <div><span class="mono">h2 · 22/1.25</span><span style="font-size:19px;font-weight:700">Раздел</span></div>
+          <div><span class="mono">body · 17/1.7</span><span>Основной текст, колонка до 68 знаков</span></div>
+          <div><span class="mono">note · 14/1.55</span><span class="note">Подписи, боковая панель, оглавление</span></div>
+          <div><span class="mono">code · 13.5</span><span class="mono">Cascadia Code → Consolas</span></div>
+        </div>
+        <p class="note">Segoe UI остаётся: учебник офлайн, веб-шрифты грузить неоткуда, а на Windows это лучшая системная кириллица. Для кода — Cascadia Code, она уже есть в Windows 11; запасной Consolas.</p>
+      </div>
+      <div class="panel">
+        <h3>Рисунки и схемы</h3>
+        <p class="note">SVG: вместо констант <code>INK='#182b3a'</code> генератор пишет <code>fill="var(--ink)"</code>, белую подложку убирает — рисунок лежит на карточке. Mermaid переходит на <code>theme:'base'</code> с <code>themeVariables</code> из тех же токенов. PNG из matplotlib перегенерируются в две версии через <code>plt.style</code> и вставляются через <code>&lt;picture&gt;</code> с <code>prefers-color-scheme</code>; пока не перегенерированы — лежат на светлой карточке с рамкой, без инверсии фильтром.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- changes -->
+  <section class="sec">
+    <h2>Что менять и где</h2>
+    <div class="tw"><table>
+      <tr><th>#</th><th>Правка</th><th>Файлы</th><th>Проверка</th><th>Дни</th></tr>
+      <tr><td>D1</td><td>Токены темы: все 51 литерал в <code>reader.css</code> заменяются переменными; блок тёмной палитры по умолчанию, светлая через <code>[data-theme="light"]</code> и <code>@media print</code>; переключатель в шапке, выбор хранится в localStorage</td><td><code>tools/reader.css</code>, <code>reader.js</code>, <code>build_reader.py</code> (мета color-scheme)</td><td><code>check_reader_design.cjs</code>: 0 литералов вне <code>:root</code>; скриншоты в обеих темах</td><td>1</td></tr>
+      <tr><td>D2</td><td>Опыты: <code>visual-style.css</code> и <code>module-experiments.js</code> на токены; iframe получает тему от родителя через атрибут</td><td><code>course/visuals/*</code></td><td>26 опытов открываются в обеих темах, тест в <code>test_reader_v2</code></td><td>1</td></tr>
+      <tr><td>D3</td><td>Генератор адаптивных SVG: константы → <code>var(--…)</code>, без белого <code>rect</code>; перегенерация 208 файлов</td><td><code>tools/build_responsive_figures.py</code>, <code>course/assets/responsive/</code></td><td><code>check_no_loss</code>: число рисунков не меньше; визуальная выборка 10 рисунков</td><td>1–2</td></tr>
+      <tr><td>D4</td><td>Matplotlib-рисунки: 34 PNG + 84 SVG перегенерировать в двух вариантах (<code>-light</code>, <code>-dark</code>); <code>build_reader</code> вставляет <code>&lt;picture&gt;</code></td><td><code>build_foundation_figures.py</code>, <code>build_quantitative_figures.py</code>, <code>build_visuals.py</code></td><td>Старые файлы остаются как светлый вариант; diff-тест HTML</td><td>2</td></tr>
+      <tr><td>D5</td><td>Mermaid: <code>theme:'base'</code> + <code>themeVariables</code> из токенов, перерисовка при переключении</td><td><code>reader.js</code></td><td>33 схемы читаемы в обеих темах</td><td>0,5</td></tr>
+      <tr><td>D6</td><td>Подсветка синтаксиса Python в <code>&lt;pre&gt;</code>: 4 класса (ключевое слово, строка, число, комментарий) на этапе сборки, без библиотек</td><td><code>build_reader.py</code></td><td>117 уроков, тест на валидный HTML</td><td>1</td></tr>
+      <tr><td>D7</td><td>Печать: <code>@media print</code> всегда светлая, без боковой панели, рисунки светлого варианта</td><td><code>reader.css</code></td><td>PDF одного урока</td><td>0,5</td></tr>
+    </table></div>
+    <p class="note">Итого 7–8 дней работы агента. Текст уроков и Markdown не меняются: всё происходит в <code>tools/</code> и <code>course/visuals/</code>. Порядок: D1 → D2 → D5 дают рабочую тёмную тему за два дня; D3–D4 убирают белые пятна рисунков; D6–D7 полировка.</p>
+  </section>
+
+  <section class="sec">
+    <h2>Чего не делать</h2>
+    <div class="grid">
+      <div class="panel"><h3>Чисто чёрный фон и белый текст</h3><p class="note">#000 и #fff дают контраст 21:1 — слишком резко для 4 часов чтения, буквы «светятся». Графит и слегка тёплый текст читаются дольше без усталости.</p></div>
+      <div class="panel"><h3>Инвертировать рисунки фильтром</h3><p class="note"><code>filter:invert()</code> превращает синий в оранжевый и ломает смысл цветовой легенды. Либо перегенерация, либо светлая карточка с рамкой.</p></div>
+      <div class="panel"><h3>Переносить светлые акценты как есть</h3><p class="note">Старый синий #245bba на тёмном — 2,8:1, старый бирюзовый #087e82 — 3,6:1. Оба ниже порога AA для текста.</p></div>
+      <div class="panel"><h3>Веб-шрифты</h3><p class="note">Учебник офлайн. Google Fonts не загрузится; встраивать 400 КБ шрифтов в HTML можно, но Segoe UI на Windows уже хороша для кириллицы. Если захочется характерный шрифт — только локальный woff2 по OFL-лицензии (Golos Text, IBM Plex Sans).</p></div>
+    </div>
+  </section>
+
+  <footer>Контрасты посчитаны по формуле WCAG 2.1 для пар «текст — фон страницы». Макет не является сборкой учебника; это образец для правок в tools/reader.css.</footer>
+</div>
+
+<script>
+(() => {
+'use strict';
+const root=document.documentElement,btn=document.getElementById('themeBtn');
+function apply(t){if(t)root.setAttribute('data-theme',t);else root.removeAttribute('data-theme');const dark=t?t==='dark':!matchMedia('(prefers-color-scheme: light)').matches;btn.textContent=dark?'Показать светлую':'Показать тёмную';}
+let cur=null;try{cur=localStorage.getItem('dt-theme');}catch(e){}
+apply(cur);
+btn.addEventListener('click',()=>{const dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&!matchMedia('(prefers-color-scheme: light)').matches);cur=dark?'light':'dark';try{localStorage.setItem('dt-theme',cur);}catch(e){}apply(cur);});
+const k=document.getElementById('k'),kb=document.getElementById('kb'),rel=[1,0,1,1,0,0];
+function draw(){const n=+k.value,hits=rel.slice(0,n).reduce((a,b)=>a+b,0),p=hits/n,r=hits/3;kb.innerHTML=`<div><span>P@${n}</span><span class="tr"><i style="width:${p*100}%"></i></span><span class="v">${p.toFixed(2)}</span></div><div><span>R@${n}</span><span class="tr"><i style="width:${r*100}%"></i></span><span class="v">${r.toFixed(2)}</span></div>`;}
+k.addEventListener('input',draw);draw();
+})();
+</script>

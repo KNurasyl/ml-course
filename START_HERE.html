@@ -1,25 +1,95 @@
 <!doctype html>
-<html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="1cc6c87a387f1ae83fd6c611f8472a3764a3c4fc534fba0d54ab319625da0c9f"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<html lang="ru" data-theme="dark">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="course-source-sha256" content="978ac62d8a3e1ee2c03603f3c749f36990077416eadaf440a600dc87df9b854d"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
-:root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
-*{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
-.sidebar{position:fixed;inset:0 auto 0 0;width:var(--sidebar);background:var(--surface);border-right:1px solid var(--line);display:flex;flex-direction:column;z-index:40}.sidebar-head{padding:22px 18px 12px;border-bottom:1px solid var(--line);flex-shrink:0}.sidebar-scroll{overflow:auto;overscroll-behavior:contain;padding:12px 12px 24px;min-height:0;scrollbar-width:thin}.brand{display:block;text-decoration:none;color:var(--ink)}.brand-symbol{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:7px;background:var(--ink);color:white;font-size:14px;font-weight:700;margin-right:10px}.brand-name{font-size:19px;font-weight:700;letter-spacing:-.02em}.brand-caption{display:block;font-size:12px;color:var(--muted);margin-top:8px}.search{display:block;margin-top:18px}.search>span{font-size:12px;font-weight:600}.search-row{display:flex;align-items:center;gap:5px}.search input{min-width:0;width:100%;font-size:14px;line-height:1.5;border:1px solid #9dabb8;border-radius:6px;padding:10px;background:white}.search-status{font-size:12px;line-height:1.5;color:var(--muted);margin:7px 0 0}.search-clear{padding:7px!important;font-size:12px!important}.nav-group{margin:10px 0 18px}.nav-group h2{font-size:12px;color:var(--muted);letter-spacing:.025em;margin:14px 10px 6px}.nav-group ul{margin:0;padding:0;list-style:none}.nav-group a{display:flex;gap:9px;text-decoration:none;color:#354c60;font-size:13px;line-height:1.45;padding:10px;border-radius:5px}.nav-group a:hover{background:#e7edf4}.nav-group a[aria-current=page]{color:#164c9b;background:#e3ecfb;box-shadow:inset 3px 0 var(--accent);font-weight:600}.nav-marker{flex:0 0 31px;font-size:12px;color:#526474;font-variant-numeric:tabular-nums}.nav-module>summary{padding:10px;font-size:13px;line-height:1.5;font-weight:600;list-style:none;border-radius:5px}.nav-module>summary:before{content:'›';display:inline-block;width:14px}.nav-module[open]>summary:before{content:'⌄'}.nav-module[open]{padding-bottom:5px;border-bottom:1px solid var(--line)}.nav-foot{font-size:12px;line-height:1.6;color:var(--muted);padding:14px 10px;border-top:1px solid var(--line)}.menu-close{display:none}.backdrop{display:none}
-.search-results{list-style:none;margin:0;padding:0}.search-results li{border-bottom:1px solid var(--line)}.search-results a{display:block;padding:14px 8px;text-decoration:none}.search-results strong{display:block;font-size:14px;line-height:1.45}.search-results .result-meta{display:block;font-size:12px;color:var(--muted);margin:4px 0}.search-results .result-snippet{display:block;color:#354c60;font-size:13px;line-height:1.55}.search-results a:hover{background:white}.empty-search{color:var(--muted);font-size:14px;padding:8px}
-.layout{margin-left:var(--sidebar)}.topbar{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);height:66px;padding:0 32px;display:flex;gap:15px;align-items:center;justify-content:space-between}.breadcrumbs{display:flex;align-items:center;gap:9px;min-width:0;font-size:13px;line-height:1.4}.breadcrumbs a{text-decoration:none;white-space:nowrap;color:var(--muted)}.breadcrumbs span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:600px}.breadcrumbs .divider{color:#526474}.top-actions{display:flex;gap:8px}.small-button{border:1px solid #b5c3cf;border-radius:6px;background:#fff;color:#354c60;padding:8px 12px;font-size:13px;line-height:1.5;min-height:38px}.small-button:hover{background:var(--surface)}.menu-toggle{display:none}.reader{max-width:1180px;margin:0 auto;padding:42px 40px 90px}.material{margin:0;overflow-wrap:anywhere;scroll-margin-top:90px}.material-head{max-width:74ch;margin-bottom:25px}.eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.5}.material-id{color:var(--accent);font-weight:700;letter-spacing:.04em}.badge{font-size:12px;color:var(--muted)}h1{font-size:clamp(30px,3vw,42px);line-height:1.15;letter-spacing:-.035em;font-weight:700;margin:0 0 20px;max-width:24ch}.outcome{font-size:17px;line-height:1.65;color:#354c60;margin:12px 0 0}.outcome strong{color:var(--ink)}.prerequisites{font-size:13px;margin:12px 0 0;color:var(--muted);line-height:1.6}.prerequisites summary{display:inline-block;text-decoration:underline;text-underline-offset:3px;padding:4px 0}.prerequisites summary:before{content:'+ ';color:var(--accent)}.prerequisites[open] summary:before{content:'− '}.prerequisites>div{padding:12px 0}.article-layout{display:grid;grid-template-columns:minmax(0,74ch);gap:32px}.body-content{min-width:0;max-width:74ch}.body-content p{margin:0 0 20px}.body-content h2{font-size:25px;line-height:1.3;letter-spacing:-.02em;margin:42px 0 18px;scroll-margin-top:88px}.body-content>h2:first-child{margin-top:6px}.body-content h3{font-size:20px;line-height:1.4;margin:28px 0 14px}.body-content h4{font-size:18px;margin:24px 0 12px}.body-content ul,.body-content ol{padding-left:24px;margin:12px 0 24px}.body-content li{padding-left:3px;margin:7px 0}.body-content li>p{margin-bottom:7px}.body-content blockquote{border-left:3px solid var(--teal);margin:24px 0;padding:8px 22px;color:#354c60}.body-content blockquote p:last-child{margin:0}.body-content code{font-family:Consolas,'Cascadia Code',monospace;font-size:.89em;background:#f0f4f8;padding:2px 4px;border-radius:3px;overflow-wrap:anywhere}.body-content pre{position:relative;background:#142638;color:#f1f6ff;border-radius:7px;padding:20px;overflow:auto;max-width:100%;font-size:14px;line-height:1.7;margin:24px 0;tab-size:4}.body-content pre code{padding:0;background:none;color:inherit;white-space:pre;overflow-wrap:normal;font-size:inherit}.copy-code{float:right;position:sticky;right:0;top:0;margin:0 0 8px 12px;border:1px solid #8fa4b9;background:#263e56;color:white;font-size:12px;padding:4px 8px;border-radius:4px}.body-content .formula{padding:18px 22px;border-left:3px solid var(--accent);background:#f3f7fd;overflow:auto;font-size:18px;line-height:1.6;margin:24px 0}.body-content .formula code{white-space:pre-wrap;background:none;font-size:inherit;padding:0}.table-wrap{max-width:100%;overflow:auto;margin:24px 0;border:1px solid var(--line);border-radius:6px}.body-content table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.6;min-width:350px}.body-content th{text-align:left;color:#354c60;background:var(--surface);font-weight:600}.body-content th,.body-content td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}.body-content tr:last-child td{border-bottom:0}.body-content hr{border:0;border-top:1px solid var(--line);margin:32px 0}
-.lesson-outline{font-size:13px;line-height:1.5;min-width:0;order:-1}.lesson-outline details{border:1px solid var(--line);border-radius:6px}.lesson-outline summary{padding:12px 14px;font-weight:600;color:#354c60}.lesson-outline ol{margin:0;padding:0 14px 12px 30px}.lesson-outline li{padding:5px 0}.lesson-outline a{text-decoration:none;color:var(--muted)}.lesson-outline a:hover,.lesson-outline a[aria-current=location]{color:var(--accent)}.lesson-stage{margin:30px 0;padding:0 0 0 22px;border-left:3px solid var(--line)}.lesson-stage>h2{margin-top:0}.lesson-stage[data-stage=example]{border-color:#5c80b5}.lesson-stage[data-stage=practice]{border-color:var(--teal)}.lesson-stage[data-stage=task]{padding:22px;background:#f2f7fc;border-color:var(--accent);border-radius:0 8px 8px 0}.lesson-stage[data-stage=retry]{border-color:#9b6d27}.stage-label{display:block;text-transform:uppercase;font-size:11px;letter-spacing:.09em;color:var(--muted);margin-bottom:9px;font-weight:700}.hints,.answer-key{border:1px solid var(--line);border-radius:6px;background:#fff;margin:25px 0;scroll-margin-top:88px}.hints>summary,.answer-key>summary{font-size:15px;font-weight:600;padding:15px 18px;color:#354c60}.hints>div,.answer-key>div{padding:4px 18px 12px}.answer-key[open]{border-color:#7893b5}.answer-key[open]>summary{border-bottom:1px solid var(--line);background:var(--surface);margin-bottom:16px}.answer-note,.practice-note{font-size:14px;color:#354c60;line-height:1.65;margin:20px 0;padding:14px 18px;background:var(--surface);border-radius:6px}.answer-actions{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:14px;line-height:1.5;margin:8px 0 22px;padding:12px 0;border-bottom:1px solid var(--line)}.answer-actions:last-child{margin:24px 0 0;border-bottom:0;border-top:1px solid var(--line)}.source-note{font-size:12px;color:var(--muted);max-width:74ch;border-top:1px solid var(--line);margin-top:40px;padding-top:16px}.source-note code{font:12px Consolas,monospace}.reading-nav{display:flex;gap:18px;margin-top:24px;max-width:74ch}.reading-nav a{display:block;flex:1;text-decoration:none;border:1px solid var(--line);border-radius:6px;padding:16px;font-size:14px;line-height:1.5}.reading-nav a:last-child{text-align:right}.reading-nav small{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
-.figure-expand{display:block;cursor:zoom-in;text-decoration:none;margin:26px 0 0;border:1px solid var(--line);border-radius:8px;background:#fff;overflow:hidden}.figure-expand img{display:block;max-width:100%;height:auto;margin:auto}.figure-hint{display:block;font-size:13px;line-height:1.5;color:var(--muted);margin:10px 0 24px}.lesson-experiment{margin:32px 0;border-top:2px solid var(--teal);padding-top:20px}.lesson-experiment>h2{margin:0 0 10px}.lesson-experiment>p{font-size:14px;color:var(--muted)}.experiment{display:block;width:100%;height:700px;border:0;background:#fff;margin:12px 0;overflow:hidden}.experiment-link{font-size:13px}.no-script{padding:16px;background:#fff3d8}.screen-reader-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
-.home-intro{font-size:21px;line-height:1.6;max-width:38ch;color:#354c60;margin:0 0 26px}.home-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:24px 0}.primary-action{display:inline-block;border:1px solid var(--accent);background:var(--accent);color:white;font-size:16px;font-weight:600;text-decoration:none;border-radius:6px;padding:12px 20px}.primary-action:hover{background:#184998;color:#fff}.secondary-action{font-size:15px;padding:12px 8px}.home-caption{color:var(--muted);font-size:13px;max-width:60ch}.course-route{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0 38px}.route-step{display:block;border:1px solid var(--line);padding:20px;text-decoration:none;border-radius:8px;color:var(--ink);background:#fff}.route-step:hover{border-color:var(--accent);background:#f8fbff;text-decoration:none}.route-step small{display:block;font-size:12px;letter-spacing:.04em;color:var(--accent);margin-bottom:7px}.route-step strong{display:block;font-size:19px;line-height:1.4;margin-bottom:8px}.route-step span{display:block;color:var(--muted);font-size:14px;line-height:1.6}.home-content .table-wrap{margin-bottom:32px}.home-content .setup-details{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;margin:28px 0}.setup-details>summary{font-size:16px;font-weight:600}.setup-details>div{padding-top:18px}
-#figure-dialog{width:min(96vw,1400px);max-width:96vw;max-height:94dvh;border:1px solid var(--line);border-radius:8px;padding:18px;background:white;color:var(--ink)}#figure-dialog::backdrop{background:#142638cf}.figure-toolbar{display:flex;gap:12px;align-items:center;margin-bottom:16px}.figure-toolbar strong{flex:1;font-size:15px;line-height:1.5}.figure-scroll{max-height:72dvh;overflow:auto;background:var(--surface)}.figure-scroll img{display:block;width:100%;max-width:100%;height:auto}.figure-scroll img.native{width:auto;max-width:none}.figure-scroll+a{display:inline-block;font-size:13px;margin-top:12px}
+/* Theme tokens, IMPROVEMENT_PLAN.md 6.0. Dark is the default; colour literals live only in :root blocks. */
+:root{color-scheme:dark;
+  --bg:#15171c;--surface:#1b1e25;--paper:#20242c;--line:#2e333d;--line-strong:#3b4150;
+  --ink:#e7e5de;--muted:#a3a9b4;
+  --accent:#86aaf0;--accent-soft:#1f2a44;      /* links, active item, lesson ID, formulas */
+  --act:#58c4c6;--act-soft:#12302f;            /* experiments, answers, sliders, code keywords */
+  --hint:#e6b566;--hint-soft:#3a2d12;          /* hints, focus, search highlight, code strings */
+  --ok:#86d19c;--ok-soft:#173021;--warn:#f0a071;--warn-soft:#3a2416;--error:#f08a8a;  /* statuses only */
+  --mark-bg:#4a3c14;--mark-fg:#ffe7a6;--code-bg:#111318;--focus:#e6b566;
+  --sans:'Golos Text','Segoe UI',system-ui,sans-serif;--mono:'JetBrains Mono','Cascadia Code',Consolas,ui-monospace,monospace;
+  --sidebar:272px}
+/* Light: the theme chosen on <html>, or a light island inside it (Mermaid diagrams until D5). */
+:root[data-theme="light"],:root [data-theme="light"]{color-scheme:light;
+  --bg:#f6f5f1;--surface:#eeede8;--paper:#ffffff;--line:#d9d6cd;--line-strong:#c2beb3;
+  --ink:#1d2430;--muted:#5a6270;--accent:#1f55b0;--accent-soft:#e4ecfb;--act:#0b7478;--act-soft:#dff3f2;
+  --hint:#9a6410;--hint-soft:#fbefd6;--ok:#2a7a4b;--ok-soft:#e1f2e6;--warn:#a0541c;--warn-soft:#f9e6d8;--error:#b23b3b;
+  --mark-bg:#ffe3a1;--mark-fg:#1d2430;--code-bg:#f0f2f6;--focus:#a65c12}
+/* Print is always light. Same values as above: a selector list cannot share one block with @media. */
+@media print{:root{color-scheme:light;
+  --bg:#f6f5f1;--surface:#eeede8;--paper:#ffffff;--line:#d9d6cd;--line-strong:#c2beb3;
+  --ink:#1d2430;--muted:#5a6270;--accent:#1f55b0;--accent-soft:#e4ecfb;--act:#0b7478;--act-soft:#dff3f2;
+  --hint:#9a6410;--hint-soft:#fbefd6;--ok:#2a7a4b;--ok-soft:#e1f2e6;--warn:#a0541c;--warn-soft:#f9e6d8;--error:#b23b3b;
+  --mark-bg:#ffe3a1;--mark-fg:#1d2430;--code-bg:#f0f2f6;--focus:#a65c12}}
+*{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid var(--focus);outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:var(--mark-bg);color:var(--mark-fg);padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:var(--paper);padding:12px}.skip-link:focus{top:10px}
+.sidebar{position:fixed;inset:0 auto 0 0;width:var(--sidebar);background:var(--surface);border-right:1px solid var(--line);display:flex;flex-direction:column;z-index:40}.sidebar-head{padding:22px 18px 12px;border-bottom:1px solid var(--line);flex-shrink:0}.sidebar-scroll{overflow:auto;overscroll-behavior:contain;padding:12px 12px 24px;min-height:0;scrollbar-width:thin}.brand{display:block;text-decoration:none;color:var(--ink)}.brand-symbol{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:7px;background:var(--accent);color:var(--bg);font-size:14px;font-weight:700;margin-right:10px}.brand-name{font-size:19px;font-weight:700;letter-spacing:-.02em}.brand-caption{display:block;font-size:12px;color:var(--muted);margin-top:8px}.search{display:block;margin-top:18px}.search>span{font-size:12px;font-weight:600}.search-row{display:flex;align-items:center;gap:5px}.search input{min-width:0;width:100%;font-size:14px;line-height:1.5;border:1px solid var(--line-strong);border-radius:6px;padding:10px;background:var(--bg);color:var(--ink)}.search-status{font-size:12px;line-height:1.5;color:var(--muted);margin:7px 0 0}.search-clear{padding:7px!important;font-size:12px!important}.nav-group{margin:10px 0 18px}.nav-group h2{font-size:12px;color:var(--muted);letter-spacing:.025em;margin:14px 10px 6px}.nav-group ul{margin:0;padding:0;list-style:none}.nav-group a{display:flex;gap:9px;text-decoration:none;color:var(--ink);font-size:13px;line-height:1.45;padding:10px;border-radius:5px}.nav-group a:hover{background:var(--paper)}.nav-group a[aria-current=page]{color:var(--accent);background:var(--accent-soft);box-shadow:inset 3px 0 var(--accent);font-weight:600}.nav-marker{flex:0 0 31px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}.nav-module>summary{padding:10px;font-size:13px;line-height:1.5;font-weight:600;list-style:none;border-radius:5px}.nav-module>summary:before{content:'›';display:inline-block;width:14px}.nav-module[open]>summary:before{content:'⌄'}.nav-module[open]{padding-bottom:5px;border-bottom:1px solid var(--line)}.nav-foot{font-size:12px;line-height:1.6;color:var(--muted);padding:14px 10px;border-top:1px solid var(--line)}.menu-close{display:none}.backdrop{display:none}
+.search-results{list-style:none;margin:0;padding:0}.search-results li{border-bottom:1px solid var(--line)}.search-results a{display:block;padding:14px 8px;text-decoration:none}.search-results strong{display:block;font-size:14px;line-height:1.45}.search-results .result-meta{display:block;font-size:12px;color:var(--muted);margin:4px 0}.search-results .result-snippet{display:block;color:var(--muted);font-size:13px;line-height:1.55}.search-results a:hover{background:var(--paper)}.empty-search{color:var(--muted);font-size:14px;padding:8px}
+.layout{margin-left:var(--sidebar)}.topbar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);height:66px;padding:0 32px;display:flex;gap:15px;align-items:center;justify-content:space-between}.breadcrumbs{display:flex;align-items:center;gap:9px;min-width:0;font-size:13px;line-height:1.4}.breadcrumbs a{text-decoration:none;white-space:nowrap;color:var(--muted)}.breadcrumbs span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:600px}.breadcrumbs .divider{color:var(--muted)}.top-actions{display:flex;gap:8px}.small-button{border:1px solid var(--line-strong);border-radius:6px;background:var(--paper);color:var(--ink);padding:8px 12px;font-size:13px;line-height:1.5;min-height:38px}.small-button:hover{background:var(--surface)}.menu-toggle{display:none}.reader{max-width:1180px;margin:0 auto;padding:42px 40px 90px}.material{margin:0;overflow-wrap:anywhere;scroll-margin-top:90px}.material-head{max-width:74ch;margin-bottom:25px}.eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.5}.material-id{color:var(--accent);font-weight:700;letter-spacing:.04em}.badge{font-size:12px;color:var(--muted)}h1{font-size:clamp(30px,3vw,42px);line-height:1.15;letter-spacing:-.035em;font-weight:700;margin:0 0 20px;max-width:24ch}.outcome{font-size:17px;line-height:1.65;color:var(--muted);margin:12px 0 0}.outcome strong{color:var(--ink)}.prerequisites{font-size:13px;margin:12px 0 0;color:var(--muted);line-height:1.6}.prerequisites summary{display:inline-block;text-decoration:underline;text-underline-offset:3px;padding:4px 0}.prerequisites summary:before{content:'+ ';color:var(--accent)}.prerequisites[open] summary:before{content:'− '}.prerequisites>div{padding:12px 0}.article-layout{display:grid;grid-template-columns:minmax(0,74ch);gap:32px}.body-content{min-width:0;max-width:74ch}.body-content p{margin:0 0 20px}.body-content h2{font-size:25px;line-height:1.3;letter-spacing:-.02em;margin:42px 0 18px;scroll-margin-top:88px}.body-content>h2:first-child{margin-top:6px}.body-content h3{font-size:20px;line-height:1.4;margin:28px 0 14px}.body-content h4{font-size:18px;margin:24px 0 12px}.body-content ul,.body-content ol{padding-left:24px;margin:12px 0 24px}.body-content li{padding-left:3px;margin:7px 0}.body-content li>p{margin-bottom:7px}.body-content blockquote{border-left:3px solid var(--act);margin:24px 0;padding:8px 22px;color:var(--muted)}.body-content blockquote p:last-child{margin:0}.body-content code{font-family:Consolas,'Cascadia Code',monospace;font-size:.89em;background:var(--code-bg);padding:2px 4px;border-radius:3px;overflow-wrap:anywhere}.body-content pre{position:relative;background:var(--code-bg);color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:20px;overflow:auto;max-width:100%;font-size:14px;line-height:1.7;margin:24px 0;tab-size:4}.body-content pre code{padding:0;background:none;color:inherit;white-space:pre;overflow-wrap:normal;font-size:inherit}.copy-code{float:right;position:sticky;right:0;top:0;margin:0 0 8px 12px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink);font-size:12px;padding:4px 8px;border-radius:4px}.body-content .formula{padding:18px 22px;border-left:3px solid var(--accent);background:var(--code-bg);overflow:auto;font-size:18px;line-height:1.6;margin:24px 0}.body-content .formula code{white-space:pre-wrap;background:none;font-size:inherit;padding:0}.table-wrap{max-width:100%;overflow:auto;margin:24px 0;border:1px solid var(--line);border-radius:6px}.body-content table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.6;min-width:350px}.body-content th{text-align:left;color:var(--muted);background:var(--surface);font-weight:600}.body-content th,.body-content td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}.body-content tr:last-child td{border-bottom:0}.body-content hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.lesson-outline{font-size:13px;line-height:1.5;min-width:0;order:-1}.lesson-outline details{border:1px solid var(--line);border-radius:6px}.lesson-outline summary{padding:12px 14px;font-weight:600;color:var(--ink)}.lesson-outline ol{margin:0;padding:0 14px 12px 30px}.lesson-outline li{padding:5px 0}.lesson-outline a{text-decoration:none;color:var(--muted)}.lesson-outline a:hover,.lesson-outline a[aria-current=location]{color:var(--accent)}.lesson-stage{margin:30px 0;padding:0 0 0 22px;border-left:3px solid var(--line)}.lesson-stage>h2{margin-top:0}.lesson-stage[data-stage=example]{border-color:var(--accent)}.lesson-stage[data-stage=practice]{border-color:var(--act)}.lesson-stage[data-stage=task]{padding:22px;background:var(--accent-soft);border-color:var(--accent);border-radius:0 8px 8px 0}.lesson-stage[data-stage=retry]{border-color:var(--hint)}.stage-label{display:block;text-transform:uppercase;font-size:11px;letter-spacing:.09em;color:var(--muted);margin-bottom:9px;font-weight:700}.hints,.answer-key{border:1px solid var(--line);border-radius:6px;background:var(--paper);margin:25px 0;scroll-margin-top:88px}.hints>summary,.answer-key>summary{font-size:15px;font-weight:600;padding:15px 18px;color:var(--ink)}.hints>div,.answer-key>div{padding:4px 18px 12px}.answer-key[open]{border-color:var(--act)}.answer-key[open]>summary{border-bottom:1px solid var(--line);background:var(--surface);margin-bottom:16px}.answer-note,.practice-note{font-size:14px;color:var(--muted);line-height:1.65;margin:20px 0;padding:14px 18px;background:var(--surface);border-radius:6px}.answer-actions{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:14px;line-height:1.5;margin:8px 0 22px;padding:12px 0;border-bottom:1px solid var(--line)}.answer-actions:last-child{margin:24px 0 0;border-bottom:0;border-top:1px solid var(--line)}.source-note{font-size:12px;color:var(--muted);max-width:74ch;border-top:1px solid var(--line);margin-top:40px;padding-top:16px}.source-note code{font:12px Consolas,monospace}.reading-nav{display:flex;gap:18px;margin-top:24px;max-width:74ch}.reading-nav a{display:block;flex:1;text-decoration:none;border:1px solid var(--line);border-radius:6px;padding:16px;font-size:14px;line-height:1.5}.reading-nav a:last-child{text-align:right}.reading-nav small{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
+.figure-expand{display:block;cursor:zoom-in;text-decoration:none;margin:26px 0 0;border:1px solid var(--line);border-radius:8px;background:var(--paper);overflow:hidden}.figure-expand img{display:block;max-width:100%;height:auto;margin:auto}.figure-hint{display:block;font-size:13px;line-height:1.5;color:var(--muted);margin:10px 0 24px}.lesson-experiment{margin:32px 0;border-top:2px solid var(--act);padding-top:20px}.lesson-experiment>h2{margin:0 0 10px}.lesson-experiment>p{font-size:14px;color:var(--muted)}.experiment{display:block;width:100%;height:700px;border:0;background:var(--paper);margin:12px 0;overflow:hidden}.experiment-link{font-size:13px}.no-script{padding:16px;background:var(--hint-soft)}.screen-reader-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.home-intro{font-size:21px;line-height:1.6;max-width:38ch;color:var(--muted);margin:0 0 26px}.home-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:24px 0}.primary-action{display:inline-block;border:1px solid var(--accent);background:var(--accent);color:var(--bg);font-size:16px;font-weight:600;text-decoration:none;border-radius:6px;padding:12px 20px}.primary-action:hover{background:var(--accent-soft);color:var(--accent)}.secondary-action{font-size:15px;padding:12px 8px}.home-caption{color:var(--muted);font-size:13px;max-width:60ch}.course-route{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0 38px}.route-step{display:block;border:1px solid var(--line);padding:20px;text-decoration:none;border-radius:8px;color:var(--ink);background:var(--paper)}.route-step:hover{border-color:var(--accent);background:var(--accent-soft);text-decoration:none}.route-step small{display:block;font-size:12px;letter-spacing:.04em;color:var(--accent);margin-bottom:7px}.route-step strong{display:block;font-size:19px;line-height:1.4;margin-bottom:8px}.route-step span{display:block;color:var(--muted);font-size:14px;line-height:1.6}.home-content .table-wrap{margin-bottom:32px}.home-content .setup-details{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;margin:28px 0}.setup-details>summary{font-size:16px;font-weight:600}.setup-details>div{padding-top:18px}
+#figure-dialog{width:min(96vw,1400px);max-width:96vw;max-height:94dvh;border:1px solid var(--line);border-radius:8px;padding:18px;background:var(--paper);color:var(--ink)}#figure-dialog::backdrop{background:var(--bg);opacity:.81}.figure-toolbar{display:flex;gap:12px;align-items:center;margin-bottom:16px}.figure-toolbar strong{flex:1;font-size:15px;line-height:1.5}.figure-scroll{max-height:72dvh;overflow:auto;background:var(--surface)}.figure-scroll img{display:block;width:100%;max-width:100%;height:auto}.figure-scroll img.native{width:auto;max-width:none}.figure-scroll+a{display:inline-block;font-size:13px;margin-top:12px}
 @media(min-width:1280px){.article-layout.has-outline{grid-template-columns:minmax(0,74ch) 174px;gap:34px}.lesson-outline{order:2;position:sticky;top:90px;align-self:start}.lesson-outline details{border:0;border-left:1px solid var(--line);border-radius:0}.lesson-outline summary{list-style:none;pointer-events:none;padding:0 0 12px 16px;font-size:12px}.lesson-outline ol{padding:0 0 0 30px;font-size:12px;max-height:calc(100vh - 160px);overflow:auto}.lesson-outline li{padding:5px 0}}
 @media(max-width:1279px){.reader{padding:32px}.article-layout{gap:18px}.lesson-outline details:not([open]){margin-bottom:8px}.material-head{margin-bottom:18px}}
 @media(max-width:900px){:root{--sidebar:248px}.reader{padding:28px 24px}.topbar{padding:0 24px}.brand-caption{font-size:12px}.body-content{font-size:16px}}
-@media(max-width:760px){.layout{margin-left:0}.sidebar{width:min(340px,calc(100vw - 28px));transform:translateX(-101%);visibility:hidden;transition:transform .15s ease,visibility .15s}.nav-open .sidebar{transform:translateX(0);visibility:visible}.nav-open{overflow:hidden}.nav-open .backdrop{display:block;position:fixed;inset:0;border:0;background:#14263880;z-index:35}.menu-close{display:block;position:absolute;right:12px;top:19px;min-height:34px;padding:4px 9px}.menu-toggle{display:block}.topbar{height:58px;padding:0 16px;gap:8px}.breadcrumbs{font-size:12px;gap:6px;flex:1}.breadcrumbs>span:last-child{max-width:130px}.topbar .print-button{display:none}.top-actions{order:-1}.menu-toggle{font-size:12px;padding:7px 9px}.reader{padding:24px 20px 55px}.material-head{margin-bottom:18px}.eyebrow{font-size:12px;margin-bottom:9px}.badge{display:none}h1{font-size:30px;line-height:1.17;letter-spacing:-.025em;margin-bottom:14px;max-width:24ch}.outcome{font-size:16px;line-height:1.6}.prerequisites{margin-top:8px}.body-content{font-size:16px;line-height:1.75}.body-content h2{font-size:23px;margin:30px 0 16px}.body-content h3{font-size:19px}.body-content pre{font-size:13px;padding:16px}.body-content th,.body-content td{padding:10px}.lesson-stage{padding-left:15px}.lesson-stage[data-stage=task]{padding:18px 16px}.lesson-experiment{margin:28px 0;padding-top:16px}.lesson-experiment>h2{margin-top:0}.experiment{width:100%;margin:12px 0}.course-route{grid-template-columns:1fr;gap:12px}.route-step{padding:18px}.home-intro{font-size:19px}.home-actions{align-items:stretch;gap:7px}.primary-action{padding:12px 16px}.home-caption{font-size:13px}.reading-nav{flex-direction:column;gap:12px}.reading-nav a:last-child{text-align:left}.source-note{font-size:12px}.figure-toolbar{flex-wrap:wrap}.figure-toolbar strong{flex-basis:100%}.lesson-outline summary{font-size:14px;padding:11px 12px}.lesson-outline ol{font-size:14px}.body-content .formula{padding:16px;font-size:16px}.answer-actions{font-size:14px}.figure-hint{font-size:13px}}
+@media(max-width:760px){.layout{margin-left:0}.sidebar{width:min(340px,calc(100vw - 28px));transform:translateX(-101%);visibility:hidden;transition:transform .15s ease,visibility .15s}.nav-open .sidebar{transform:translateX(0);visibility:visible}.nav-open{overflow:hidden}.nav-open .backdrop{display:block;position:fixed;inset:0;border:0;background:var(--bg);opacity:.5;z-index:35}.menu-close{display:block;position:absolute;right:12px;top:19px;min-height:34px;padding:4px 9px}.menu-toggle{display:block}.topbar{height:58px;padding:0 16px;gap:8px}.breadcrumbs{font-size:12px;gap:6px;flex:1}.breadcrumbs>span:last-child{max-width:130px}.topbar .print-button{display:none}.theme-toggle{font-size:12px;padding:7px 9px}.theme-state{display:none}.top-actions{order:-1}.menu-toggle{font-size:12px;padding:7px 9px}.reader{padding:24px 20px 55px}.material-head{margin-bottom:18px}.eyebrow{font-size:12px;margin-bottom:9px}.badge{display:none}h1{font-size:30px;line-height:1.17;letter-spacing:-.025em;margin-bottom:14px;max-width:24ch}.outcome{font-size:16px;line-height:1.6}.prerequisites{margin-top:8px}.body-content{font-size:16px;line-height:1.75}.body-content h2{font-size:23px;margin:30px 0 16px}.body-content h3{font-size:19px}.body-content pre{font-size:13px;padding:16px}.body-content th,.body-content td{padding:10px}.lesson-stage{padding-left:15px}.lesson-stage[data-stage=task]{padding:18px 16px}.lesson-experiment{margin:28px 0;padding-top:16px}.lesson-experiment>h2{margin-top:0}.experiment{width:100%;margin:12px 0}.course-route{grid-template-columns:1fr;gap:12px}.route-step{padding:18px}.home-intro{font-size:19px}.home-actions{align-items:stretch;gap:7px}.primary-action{padding:12px 16px}.home-caption{font-size:13px}.reading-nav{flex-direction:column;gap:12px}.reading-nav a:last-child{text-align:left}.source-note{font-size:12px}.figure-toolbar{flex-wrap:wrap}.figure-toolbar strong{flex-basis:100%}.lesson-outline summary{font-size:14px;padding:11px 12px}.lesson-outline ol{font-size:14px}.body-content .formula{padding:16px;font-size:16px}.answer-actions{font-size:14px}.figure-hint{font-size:13px}}
 @media(max-width:360px){.reader{padding:22px 16px 45px}.breadcrumbs>a:first-child,.breadcrumbs>.divider:first-of-type{display:none}h1{font-size:28px}.primary-action{width:100%;text-align:center}.home-actions{flex-direction:column}.secondary-action{padding-left:0}.lesson-stage[data-stage=task]{padding:16px 12px}.topbar{padding:0 12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sidebar{transition:none}}
-@media print{body{font-size:11pt;background:white}.sidebar,.topbar,.reading-nav,.source-note,.backdrop,.lesson-outline,.copy-code,.skip-link,.home-actions,#figure-dialog,.figure-hint,.lesson-experiment,.experiment{display:none!important}.layout{margin:0}.reader{max-width:none;padding:0}.article-layout,.article-layout.has-outline{display:block}.body-content{max-width:none;font-size:11pt}.material-head{break-after:avoid}.body-content h2{font-size:16pt;break-after:avoid}.body-content pre{white-space:pre-wrap;background:#f3f3f3;color:black;border:1px solid #ddd;break-inside:avoid}.body-content pre code{white-space:pre-wrap}.table-wrap{overflow:visible}.body-content table{min-width:0;font-size:10pt}.answer-key:not([open]),.hints:not([open]){display:none}.lesson-stage{break-inside:avoid}a{color:#184998}.course-route{grid-template-columns:1fr 1fr}}
-.body-content .diagram{margin:24px 0}.body-content pre.mermaid{font-family:'Segoe UI',system-ui,sans-serif;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:16px;text-align:center;white-space:pre-wrap;line-height:1.5}.body-content pre.mermaid svg{max-width:100%;height:auto}.body-content pre.mermaid.diagram-unavailable{text-align:left;font-family:Consolas,'Cascadia Code',monospace;font-size:13px}
-</style></head>
+@media print{body{font-size:11pt;background:var(--paper)}.sidebar,.topbar,.reading-nav,.source-note,.backdrop,.lesson-outline,.copy-code,.skip-link,.home-actions,#figure-dialog,.figure-hint,.lesson-experiment,.experiment{display:none!important}.layout{margin:0}.reader{max-width:none;padding:0}.article-layout,.article-layout.has-outline{display:block}.body-content{max-width:none;font-size:11pt}.material-head{break-after:avoid}.body-content h2{font-size:16pt;break-after:avoid}.body-content pre{white-space:pre-wrap;background:var(--code-bg);color:var(--ink);border:1px solid var(--line);break-inside:avoid}.body-content pre code{white-space:pre-wrap}.table-wrap{overflow:visible}.body-content table{min-width:0;font-size:10pt}.answer-key:not([open]),.hints:not([open]){display:none}.lesson-stage{break-inside:avoid}a{color:var(--accent)}.course-route{grid-template-columns:1fr 1fr}}
+.body-content .diagram{margin:24px 0}.body-content pre.mermaid{font-family:'Segoe UI',system-ui,sans-serif;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:16px;text-align:center;white-space:pre-wrap;line-height:1.5}.body-content pre.mermaid svg{max-width:100%;height:auto}.body-content pre.mermaid.diagram-unavailable{text-align:left;font-family:Consolas,'Cascadia Code',monospace;font-size:13px}
+/* D1 colour map (09.11.2026): old reader.css literal -> 6.0 token. Old values are written without the hash
+   sign so that a plain grep for colour literals matches only the :root blocks above.
+   Old :root: 182b3a ink -> --ink, 526474 muted -> --muted, fff paper -> --paper, f4f7fa surface -> --surface,
+   d9e2ea line -> --line, 245bba accent -> --accent, 087e82 teal -> --act (var(--teal) renamed in 3 rules).
+   55 literals outside :root (46 hex, 8 "white", 1 "black"):
+   aa5d08      focus outline                                   -> --focus
+   ffe3a1      mark background                                 -> --mark-bg
+   182b3a      mark text                                       -> --mark-fg
+   white x8    skip link, search hit hover, figure dialog,
+               print body                                      -> --paper
+               brand symbol text, primary action text          -> --bg (brand symbol now on --accent, as in the mock-up)
+               search input background                         -> --bg (input well, as in the mock-up)
+               copy button text                                -> --ink
+   9dabb8      search input border                             -> --line-strong
+   354c60 x10  nav link, small button, outline title,
+               hint and answer titles                          -> --ink
+               search snippet, outcome, blockquote, table head,
+               answer and practice notes, home intro           -> --muted
+   e7edf4      nav link hover                                  -> --paper
+   164c9b      current nav link text                           -> --accent
+   e3ecfb      current nav link background                     -> --accent-soft
+   526474 x2   nav marker, breadcrumb divider                  -> --muted
+   fff x8      top bar                                         -> --bg
+               small button, hint and answer cards, figure card,
+               experiment frame, route card                    -> --paper
+               Mermaid block                                   -> --paper on a light island (data-theme="light", until D5)
+               primary action hover text                       -> --accent
+   b5c3cf      small button border                             -> --line-strong
+   f0f4f8      inline code                                     -> --code-bg
+   142638      code block background                           -> --code-bg
+   f1f6ff      code block text                                 -> --ink
+   8fa4b9      copy button border                              -> --line-strong
+   263e56      copy button background                          -> --paper
+   f3f7fd      formula background                              -> --code-bg
+   5c80b5      worked-example stage border                     -> --accent
+   f2f7fc      task stage background                           -> --accent-soft
+   9b6d27      retry stage border                              -> --hint
+   7893b5      open answer border                              -> --act
+   fff3d8      no-script notice                                -> --hint-soft
+   184998 x2   primary action hover background                 -> --accent-soft (hover inverts: soft fill, accent text)
+               print links                                     -> --accent
+   f8fbff      route card hover                                -> --accent-soft
+   142638cf    figure dialog backdrop                          -> --bg with opacity .81
+   14263880    mobile menu backdrop                            -> --bg with opacity .5
+   f3f3f3      print code background                           -> --code-bg
+   "black"     print code text                                 -> --ink
+   ddd         print code border                               -> --line
+   Also: body background --paper -> --bg (page level), code blocks gain a 1px --line border. */
+</style><script>try{const t=localStorage.getItem('ml-llm-course-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(_){}</script></head>
 <body><a class="skip-link" href="#main-content">К материалу</a>
 <aside class="sidebar" id="course-menu" aria-label="Оглавление курса"><div class="sidebar-head"><a class="brand" href="#HOME"><span class="brand-symbol">ML</span><span class="brand-name">ML и LLM</span><span class="brand-caption">Технический учебник · Практика</span></a><button id="menu-close" class="small-button menu-close" aria-label="Закрыть оглавление">×</button><label class="search"><span class="screen-reader-only">Найти тему</span><span class="search-row"><input id="course-search" type="search" placeholder="Найти тему…" autocomplete="off" spellcheck="false" aria-describedby="search-status"><button id="search-clear" class="small-button search-clear" type="button" aria-label="Очистить поиск" hidden>×</button></span></label><p class="search-status" id="search-status" role="status">Поиск по тексту · Ctrl K</p></div><div class="sidebar-scroll"><nav id="book-navigation" aria-label="Разделы учебника"><section class="nav-group"><h2>Начать и ориентироваться</h2><ul><li data-key="HOME"><a href="#HOME" data-material="HOME"><span class="nav-marker">01</span><span>ML и LLM: локальный самоучитель</span></a></li><li data-key="DIAGNOSTIC"><a href="#DIAGNOSTIC" data-material="DIAGNOSTIC"><span class="nav-marker">02</span><span>Входная диагностика персонального курса</span></a></li><li data-key="GLOSSARY"><a href="#GLOSSARY" data-material="GLOSSARY"><span class="nav-marker">•</span><span>Словарь курса: от модели до голосового диалога</span></a></li><li data-key="PROJECT"><a href="#PROJECT" data-material="PROJECT"><span class="nav-marker">•</span><span>Сквозной проект: голосовой тренажёр собеседований</span></a></li><li data-key="MENTOR"><a href="#MENTOR" data-material="MENTOR"><span class="nav-marker">•</span><span>Как учиться самостоятельно</span></a></li><li data-key="PROGRESS"><a href="#PROGRESS" data-material="PROGRESS"><span class="nav-marker">•</span><span>Прогресс обучения ML и LLM</span></a></li></ul></section>
 <section class="nav-group"><h2>Первые десять занятий</h2><ul><li data-key="P01"><a href="#P01" data-material="P01"><span class="nav-marker">P01</span><span>Диагностика и первая модель</span></a></li><li data-key="P02"><a href="#P02" data-material="P02"><span class="nav-marker">P02</span><span>Как измерять ошибку модели</span></a></li><li data-key="P03"><a href="#P03" data-material="P03"><span class="nav-marker">P03</span><span>Как проверять модель на новых данных</span></a></li><li data-key="P04"><a href="#P04" data-material="P04"><span class="nav-marker">P04</span><span>Векторы матрицы и формы массивов</span></a></li><li data-key="P05"><a href="#P05" data-material="P05"><span class="nav-marker">P05</span><span>Первая архитектура ML сервиса</span></a></li><li data-key="P06"><a href="#P06" data-material="P06"><span class="nav-marker">P06</span><span>Параметры контекст и внешние знания</span></a></li><li data-key="P07"><a href="#P07" data-material="P07"><span class="nav-marker">P07</span><span>Производная как скорость изменения</span></a></li><li data-key="P08"><a href="#P08" data-material="P08"><span class="nav-marker">P08</span><span>Обучение через обновление параметров</span></a></li><li data-key="P09"><a href="#P09" data-material="P09"><span class="nav-marker">P09</span><span>Воспроизводимое сравнение моделей</span></a></li><li data-key="P10"><a href="#P10" data-material="P10"><span class="nav-marker">P10</span><span>Защита эксперимента и настройка маршрута</span></a></li></ul></section>
@@ -43,7 +113,7 @@
 <section class="nav-group"><h2>Ответы и самопроверка</h2><ul><li data-key="MENTOR-KEYS"><a href="#MENTOR-KEYS" data-material="MENTOR-KEYS"><span class="nav-marker">•</span><span>Ключи решений для самопроверки</span></a></li><li data-key="M00-SOLUTIONS"><a href="#M00-SOLUTIONS" data-material="M00-SOLUTIONS"><span class="nav-marker">•</span><span>M00. Решения для самопроверки</span></a></li><li data-key="M01-SOLUTIONS"><a href="#M01-SOLUTIONS" data-material="M01-SOLUTIONS"><span class="nav-marker">•</span><span>M01. Решения для самопроверки</span></a></li><li data-key="M02-SOLUTIONS"><a href="#M02-SOLUTIONS" data-material="M02-SOLUTIONS"><span class="nav-marker">•</span><span>M02. Решения для самопроверки</span></a></li><li data-key="M03-SOLUTIONS"><a href="#M03-SOLUTIONS" data-material="M03-SOLUTIONS"><span class="nav-marker">•</span><span>M03. Решения для самопроверки</span></a></li><li data-key="M04-SOLUTIONS"><a href="#M04-SOLUTIONS" data-material="M04-SOLUTIONS"><span class="nav-marker">•</span><span>M04. Решения для самопроверки</span></a></li><li data-key="M05-SOLUTIONS"><a href="#M05-SOLUTIONS" data-material="M05-SOLUTIONS"><span class="nav-marker">•</span><span>M05. Решения для самопроверки</span></a></li><li data-key="M06-SOLUTIONS"><a href="#M06-SOLUTIONS" data-material="M06-SOLUTIONS"><span class="nav-marker">•</span><span>M06. Решения для самопроверки</span></a></li><li data-key="M07-SOLUTIONS"><a href="#M07-SOLUTIONS" data-material="M07-SOLUTIONS"><span class="nav-marker">•</span><span>M07. Решения для самопроверки</span></a></li><li data-key="M08-SOLUTIONS"><a href="#M08-SOLUTIONS" data-material="M08-SOLUTIONS"><span class="nav-marker">•</span><span>M08. Решения для самопроверки</span></a></li><li data-key="M09-SOLUTIONS"><a href="#M09-SOLUTIONS" data-material="M09-SOLUTIONS"><span class="nav-marker">•</span><span>M09. Решения для самопроверки</span></a></li><li data-key="M10-SOLUTIONS"><a href="#M10-SOLUTIONS" data-material="M10-SOLUTIONS"><span class="nav-marker">•</span><span>M10. Решения для самопроверки</span></a></li><li data-key="M11-SOLUTIONS"><a href="#M11-SOLUTIONS" data-material="M11-SOLUTIONS"><span class="nav-marker">•</span><span>M11. Решения для самопроверки</span></a></li><li data-key="M12-SOLUTIONS"><a href="#M12-SOLUTIONS" data-material="M12-SOLUTIONS"><span class="nav-marker">•</span><span>M12. Решения для самопроверки</span></a></li><li data-key="M13-SOLUTIONS"><a href="#M13-SOLUTIONS" data-material="M13-SOLUTIONS"><span class="nav-marker">•</span><span>M13. Решения для самопроверки</span></a></li><li data-key="M14-SOLUTIONS"><a href="#M14-SOLUTIONS" data-material="M14-SOLUTIONS"><span class="nav-marker">•</span><span>M14. Решения для самопроверки</span></a></li><li data-key="M15-SOLUTIONS"><a href="#M15-SOLUTIONS" data-material="M15-SOLUTIONS"><span class="nav-marker">•</span><span>M15. Решения для самопроверки</span></a></li><li data-key="M16-SOLUTIONS"><a href="#M16-SOLUTIONS" data-material="M16-SOLUTIONS"><span class="nav-marker">•</span><span>M16. Решения для самопроверки</span></a></li></ul></section>
 <section class="nav-group"><h2>Дополнительно</h2><ul><li data-key="REF-CATALOG"><a href="#REF-CATALOG" data-material="REF-CATALOG"><span class="nav-marker">•</span><span>Обучение ML и LLM инженерии с основ до голосового проекта</span></a></li><li data-key="REF-METHOD"><a href="#REF-METHOD" data-material="REF-METHOD"><span class="nav-marker">•</span><span>Методика персонального курса ML и LLM</span></a></li><li data-key="REFERENCE-PROJECT"><a href="#REFERENCE-PROJECT" data-material="REFERENCE-PROJECT"><span class="nav-marker">•</span><span>Эталон голосового тренажёра</span></a></li><li data-key="ASSESSMENT"><a href="#ASSESSMENT" data-material="ASSESSMENT"><span class="nav-marker">•</span><span>Как засчитывать самостоятельную работу</span></a></li><li data-key="CHECKPOINTS"><a href="#CHECKPOINTS" data-material="CHECKPOINTS"><span class="nav-marker">•</span><span>Контрольные точки и возврат к предпосылкам</span></a></li><li data-key="CHECKPOINT-SOLUTIONS"><a href="#CHECKPOINT-SOLUTIONS" data-material="CHECKPOINT-SOLUTIONS"><span class="nav-marker">•</span><span>Ключи контрольных точек</span></a></li><li data-key="EVALUATION-REFERENCE"><a href="#EVALUATION-REFERENCE" data-material="EVALUATION-REFERENCE"><span class="nav-marker">•</span><span>Реальный цикл улучшения обратной связи</span></a></li><li data-key="FAST-TRACK-LLM"><a href="#FAST-TRACK-LLM" data-material="FAST-TRACK-LLM"><span class="nav-marker">•</span><span>Быстрый вход в M09–M11 для тех, кто уже делал RAG</span></a></li><li data-key="CHEATSHEET"><a href="#CHEATSHEET" data-material="CHEATSHEET"><span class="nav-marker">•</span><span>Шпаргалка: карточки уроков</span></a></li><li data-key="REVIEW-SCHEDULE"><a href="#REVIEW-SCHEDULE" data-material="REVIEW-SCHEDULE"><span class="nav-marker">•</span><span>Расписание повторения</span></a></li><li data-key="PROGRESS-DASHBOARD"><a href="#PROGRESS-DASHBOARD" data-material="PROGRESS-DASHBOARD"><span class="nav-marker">•</span><span>Дашборд прогресса</span></a></li></ul></section></nav><ol class="search-results" id="search-results" aria-label="Результаты поиска"></ol><p class="empty-search" id="empty-search" hidden>Попробуй другое слово или его основу.</p><p class="nav-foot">Материалы 1.2.0 · Чтение без интернета<br><a href="#PROGRESS">Журнал самостоятельной работы</a></p></div></aside>
 <button class="backdrop" id="backdrop" aria-label="Закрыть оглавление" tabindex="-1"></button>
-<div class="layout"><header class="topbar"><nav class="breadcrumbs" id="breadcrumbs" aria-label="Текущее место"><a href="#HOME">Учебник</a></nav><div class="top-actions"><button class="small-button menu-toggle" id="menu-toggle" aria-controls="course-menu" aria-expanded="false">☰ Содержание</button><button class="small-button print-button" id="print-section">Печать</button></div></header><main class="reader" id="main-content" tabindex="-1"><noscript><p class="no-script">JavaScript выключен: все разделы показаны ниже подряд. Ссылки оглавления продолжают работать.</p></noscript><article class="material" id="HOME" data-title="ML и LLM: локальный самоучитель" data-short-title="ML и LLM. От модели к своему продукту" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">Путеводитель</span><span class="badge reference">Материал курса</span></div><h1>ML и LLM. От модели к своему продукту</h1></header><div class="article-layout"><div class="body-content home-content"><p class="home-intro">Научись объяснять, обучать и проверять модели, а затем собери голосовой тренажёр собеседований. Читай теорию, исследуй схемы, решай задачи и сравнивай свою попытку с отдельным разбором.</p><div class="home-actions"><a class="primary-action" href="#DIAGNOSTIC">Начать диагностику →</a><a class="secondary-action" href="#MENTOR">Как устроено обучение</a></div><p class="home-caption">Сначала сохрани свою попытку, затем открывай решение. Освоение проверяется новой задачей.</p><h2 id="HOME--course-route">Твой маршрут</h2><div class="course-route"><a class="route-step" href="#P01"><small>01 / ПЕРВЫЕ ШАГИ</small><strong>Модель, ошибка, обучение</strong><span>Десять занятий: от первого предсказания до своего эксперимента.</span></a><a class="route-step" href="#M00"><small>02 / ФУНДАМЕНТ · M00–M06</small><strong>Математика и ML-системы</strong><span>Данные, оптимизация, статистика и честное сравнение моделей.</span></a><a class="route-step" href="#M07"><small>03 / НЕЙРОСЕТИ · M07–M12</small><strong>От PyTorch к LLM и RAG</strong><span>Пойми вычисления, запусти модель, собери поиск и проверь качество.</span></a><a class="route-step" href="#M13"><small>04 / ПРОДУКТ · M13–M16</small><strong>Голосовой AI-интервьюер</strong><span>Эксплуатация, инструменты, голосовой диалог и защита проекта.</span></a></div>
+<div class="layout"><header class="topbar"><nav class="breadcrumbs" id="breadcrumbs" aria-label="Текущее место"><a href="#HOME">Учебник</a></nav><div class="top-actions"><button class="small-button menu-toggle" id="menu-toggle" aria-controls="course-menu" aria-expanded="false">☰ Содержание</button><button class="small-button print-button" id="print-section">Печать</button><button class="small-button theme-toggle" id="theme-toggle" type="button" hidden>Тема<span class="theme-state">: тёмная</span></button></div></header><main class="reader" id="main-content" tabindex="-1"><noscript><p class="no-script">JavaScript выключен: все разделы показаны ниже подряд. Ссылки оглавления продолжают работать.</p></noscript><article class="material" id="HOME" data-title="ML и LLM: локальный самоучитель" data-short-title="ML и LLM. От модели к своему продукту" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">Путеводитель</span><span class="badge reference">Материал курса</span></div><h1>ML и LLM. От модели к своему продукту</h1></header><div class="article-layout"><div class="body-content home-content"><p class="home-intro">Научись объяснять, обучать и проверять модели, а затем собери голосовой тренажёр собеседований. Читай теорию, исследуй схемы, решай задачи и сравнивай свою попытку с отдельным разбором.</p><div class="home-actions"><a class="primary-action" href="#DIAGNOSTIC">Начать диагностику →</a><a class="secondary-action" href="#MENTOR">Как устроено обучение</a></div><p class="home-caption">Сначала сохрани свою попытку, затем открывай решение. Освоение проверяется новой задачей.</p><h2 id="HOME--course-route">Твой маршрут</h2><div class="course-route"><a class="route-step" href="#P01"><small>01 / ПЕРВЫЕ ШАГИ</small><strong>Модель, ошибка, обучение</strong><span>Десять занятий: от первого предсказания до своего эксперимента.</span></a><a class="route-step" href="#M00"><small>02 / ФУНДАМЕНТ · M00–M06</small><strong>Математика и ML-системы</strong><span>Данные, оптимизация, статистика и честное сравнение моделей.</span></a><a class="route-step" href="#M07"><small>03 / НЕЙРОСЕТИ · M07–M12</small><strong>От PyTorch к LLM и RAG</strong><span>Пойми вычисления, запусти модель, собери поиск и проверь качество.</span></a><a class="route-step" href="#M13"><small>04 / ПРОДУКТ · M13–M16</small><strong>Голосовой AI-интервьюер</strong><span>Эксплуатация, инструменты, голосовой диалог и защита проекта.</span></a></div>
 <p><strong>10 вводных занятий · 17 модулей · 103 урока.</strong> Материалы версии 1.1.0 доступны целиком. Учебник работает локально, без аккаунта и сервера. Оформление 2.0 добавляет карту урока, поиск по фрагментам и адаптивные схемы.</p>
 <h2 id="HOME--начни-здесь">Начни здесь</h2>
 <ol>
@@ -5790,7 +5860,7 @@ assert np.max(scores)&lt;1e-20
 </section><h2 id="M05-L04--как-проверить-рассуждение">Как проверить рассуждение</h2>
 <p>В sklearn некоторые функции возвращают отрицательную потерю, чтобы больше всегда означало лучше; поэтому здесь знак меняется обратно. Не сравнивай отрицательную MSE одной модели с положительной другой. Проверь, что каждый объект попадает в validation ровно один раз для данного KFold. Затем отдельно проверь группы: библиотека не знает, что соседние строки принадлежат одному человеку, если ты это не сообщил.</p>
 <h2 id="M05-L04--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     D[&quot;Данные без отложенного test&quot;] --&gt; S[&quot;Splitter по сценарию&quot;]
     S --&gt; TR[&quot;Обучающая часть fold&quot;]
     S --&gt; VA[&quot;Validation-часть fold&quot;]
@@ -6092,7 +6162,7 @@ assert len(table) == 9
 <p>Train содержит около 67.4% положительных случаев, test — 56.25%. Это наблюдаемое изменение состава. Оно не даёт права подбирать новый порог по test. Лабораторная отдельно собирает <strong>из validation</strong> два контролируемых среза: 8 положительных/8 отрицательных и 4/12. Модель и порог заморожены. В <code>class_composition_experiment</code> сравни среднюю предсказанную вероятность, фактическую долю класса, стоимость и Brier score — средний квадрат разности вероятности и метки. Совпадение двух средних само по себе ещё не доказывает калибровку во всех диапазонах вероятности. Малые срезы служат демонстрацией сдвига состава, а не точной оценкой нового продукта. При другом распределении калибровка старой модели не гарантирована.</p>
 <p>Полный запуск сохраняет pipeline вместе с порогом и списком признаков, загружает обратно и сравнивает вероятности. Сохранить одни веса недостаточно: без медиан, масштаба и словаря категорий тот же пользователь может получить другой score.</p>
 </section><h2 id="M05-L06--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     G[&quot;Сетка: C и порог&quot;] -.-&gt;|&quot;для каждого C&quot;| PL
     TR[&quot;Train&quot;] --&gt;|&quot;fit&quot;| PL[&quot;Pipeline: медианы, масштаб, категории, веса&quot;]
     VA[&quot;Validation&quot;] --&gt;|&quot;predict_proba&quot;| PL
@@ -8563,7 +8633,7 @@ print(o.flatten().round(decimals=4))  # [14.2479,20.0000,25.7521]
 </code></pre>
 <p>Позже causal mask изменит доступные столбцы каждой строки; здесь все позиции видят все источники.</p>
 </section><h2 id="M08-L03--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     X[&quot;Состояния X: [T, d]&quot;] --&gt;|&quot;W_Q&quot;| Q[&quot;Q: [T, d_k]&quot;]
     X --&gt;|&quot;W_K&quot;| K[&quot;K: [T, d_k]&quot;]
     X --&gt;|&quot;W_V&quot;| V[&quot;V: [T, d_v]&quot;]
@@ -8933,7 +9003,7 @@ print((x+delta).tolist())
 <p>В <code>artifacts/M08/forward-trace.json</code> сохранены формы и все числа каждого этапа. Пример использует три позиции и четыре признака. Проекции Q/K/V заданы тождественными, чтобы внимание было сосредоточено на пути данных; в обучаемой модели M08/demo.py проекции настоящие обучаемые Linear. Не переноси результат тождественных проекций на любую обученную сеть.</p>
 <p>Проверь одну строку attention вручную, затем residual. Например, x₁=[1,3,5,7]. При causal mask первая позиция видит только себя, поэтому её веса [1,0,0], а attention output совпадает с нормированным x₁. Первая residual-строка примерно [−0.34164,2.55279,5.44721,8.34164]. Это проверка смысловой связи между mask, AV и суммой, а не только shapes.</p>
 </section><h2 id="M08-L07--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     X[&quot;x: [B, T, D]&quot;] --&gt; N1[&quot;LayerNorm₁&quot;]
     N1 --&gt; AT[&quot;Attention с маской: смешивает позиции&quot;]
     AT --&gt; P1((&quot;+&quot;))
@@ -9284,7 +9354,7 @@ for row in lab.summary(report):
 <li><strong>Текст похож на курс, но смысла в нём нет.</strong> plan пишет заголовки «## Разобранный пример», таблицы «| Поле | Содержание |», пути к файлам и в основном настоящие русские слова. Фразы при этом не складываются в мысль: «Индекс ускоряет вопрос по себе, но не гарантирует его». small чаще ломает слова: «приблизапуска», «Сделение». Модель выучила форму текста курса, а не его содержание.</li>
 </ul>
 </section><h2 id="M08-L08X--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     C[&quot;Текст курса: 167 файлов&quot;] --&gt; S[&quot;Разбиение по файлам: обучение, проверка, тест&quot;]
     S --&gt; B[&quot;BPE: 256 байт + 3839 слияний&quot;]
     B --&gt; G[&quot;GPT: 6 блоков, d = 352&quot;]
@@ -10034,7 +10104,7 @@ print([round(w,2) for w in reconstructed])  # [-0.3,0.0,0.3]
 </code></pre>
 <p>Это учебные параметры, не конфигурация SmolLM. Реальная лабораторная записывает parameter_count и parameter_bytes из загруженных тензоров.</p>
 </section><h2 id="M09-L04--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     P[&quot;Prompt: T токенов после шаблона&quot;] --&gt; PF[&quot;Prefill: один проход по всем T позициям&quot;]
     PF --&gt;|&quot;K, V каждого слоя&quot;| KV[(&quot;KV-cache: растёт на 1 позицию за шаг&quot;)]
     PF --&gt;|&quot;logits последней позиции&quot;| NT[&quot;Следующий токен: argmax или sampling&quot;]
@@ -10543,7 +10613,7 @@ print(round(bandwidth / 1e9, 1), 'ГБ/с;', round(bandwidth / 2.7e9, 1), 'то�
 <p>Память читается не одним числом. RSS у llama.cpp включает страницы GGUF-файла, отображённые в память (mmap): система может их выгрузить и прочитать заново. Собственная память процесса (private) у 0.5B Q4_K_M — 234 МиБ, KV-cache на 4096 токенов из разобранного примера занимает 48 из них. У 4B в простое RSS 4198 МиБ, private 2088 МиБ. Сводка памяти llama.cpp (запуск с <code>-lv 4</code>) раскладывает это так: 1305 МиБ весов в отображённом файле, 1297 МиБ — переупакованная копия весов Q4_K для быстрых ядер CPU (<code>CPU_REPACK</code>), 178 МиБ контекста и 83 МиБ рабочих буферов. У PyTorch наоборот: private 5391 МиБ больше RSS 3196 МиБ, потому что процесс зарезервировал больше памяти, чем занял. Поэтому решение «влезет ли модель» принимают по пику под нагрузкой с запасом и по сводке самого движка, а не по размеру файла.</p>
 <p>Режим размышлений Qwen3.5 выключился: поле <code>reasoning_content</code> во всех ответах 4B пустое.</p>
 </section><h2 id="M09-L07X--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     C[&quot;Клиент: Node, Python или curl&quot;] --&gt;|&quot;POST /v1/chat/completions&quot;| T[&quot;Шаблон чата из GGUF&quot;]
     G[&quot;GGUF: метаданные и квантованные тензоры&quot;] -.-&gt;|&quot;mmap при загрузке&quot;| W[&quot;Веса в памяти&quot;]
     T --&gt; K[&quot;Токенизация&quot;]
@@ -10776,7 +10846,7 @@ print(max(probs, key=probs.get), 'выбран под грамматикой')
 <p>4B прошла контракт во всех 24 случаях и без ограничения, а ответы со схемой совпали с ответами без неё слово в слово. Ей ограничение не нужно, но и не мешает. Неверные ответы 4B оценила правильно во всех восьми случаях. Частичным в пяти случаях из восьми поставила 2, одному верному — 0. Итого 18 из 24 и ни одного противоречия между отзывом и оценкой. Это одна модель на 24 синтетических ответах, а не сравнение качества — его делает T51.</p>
 <p>Время. Режимы чередуются внутри каждого случая, и медиана у 0.5B во всех режимах 1.28–1.33 с. Заметной цены у грамматики на таком коротком объекте здесь нет. В первом прогоне режимы шли блоками, и скорость генерации падала от первого блока к последнему с 23 до 12 токенов в секунду. Последним шёл повтор без всякой грамматики, так что это был нагрев процессора, а не цена ограничения. Тексты ответов в двух прогонах совпали полностью, а время — нет: 4B в первом прогоне тратила около 25 секунд на случай, во втором — 7.6–7.8.</p>
 </section><h2 id="M09-L08X--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     P[&quot;Prompt: просьба вернуть JSON&quot;] --&gt; M[&quot;Модель: оценки всех токенов&quot;]
     G[&quot;Грамматика: GBNF, JSON Schema или JSON-режим&quot;] -.-&gt;|&quot;зануляет запрещённые токены&quot;| S[&quot;Выбор токена среди разрешённых&quot;]
     M --&gt; S
@@ -11498,7 +11568,7 @@ assert sorted(score,key=score.get,reverse=True) == ['B','A','D','C']
 </code></pre>
 <p>Если релевантен C, он сохранился в объединении, но top-2 его не содержит. Reranking только этих двух кандидатов не исправит проблему.</p>
 </section><h2 id="M10-L03--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     Q[&quot;Запрос&quot;] --&gt; L[&quot;Lexical: top-k TF-IDF&quot;]
     Q --&gt; D[&quot;Dense: top-k encoder&quot;]
     L --&gt;|&quot;ранги, не scores&quot;| F[&quot;RRF: Σ 1/(c + rank), ничья по ID&quot;]
@@ -11757,7 +11827,7 @@ assert 'D' not in trace['context']
 </code></pre>
 <p>Следующий диагностический опыт — передать D как oracle context, затем исследовать критерий отбора.</p>
 </section><h2 id="M10-L05--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     S1[&quot;1. Актуальный источник есть в корпусе&quot;] --&gt;|&quot;да&quot;| S2[&quot;2. Условие сохранилось в chunk&quot;]
     S2 --&gt;|&quot;да&quot;| S3[&quot;3. Chunk в кандидатах и после reranking&quot;]
     S3 --&gt;|&quot;да&quot;| S4[&quot;4. Chunk в финальном контексте&quot;]
@@ -12434,7 +12504,7 @@ select id, embedding &lt;=&gt; $1 as distance from chunks where grp = $2 order b
 </table></div>
 <p>Таблица описывает способ запуска и возможности по официальной документации на 05.11.2026, а не скорость: Qdrant, LanceDB и Chroma в курсе не запускались, и обязательных зависимостей для них нет. Перед выбором любое хранилище проверяют тем же способом, что в лабораторной: эталон в памяти, recall@k, число строк с фильтром, план или его аналог.</p>
 </section><h2 id="M10-L08X--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     C[&quot;Фрагменты&quot;] --&gt; E[&quot;Эмбеддер X и его ревизия&quot;]
     E --&gt; S[&quot;Хранилище: id, вектор, группа, имя эмбеддера&quot;]
     Q[&quot;Запрос&quot;] --&gt; QE[&quot;Тот же эмбеддер X&quot;]
@@ -12624,7 +12694,7 @@ print(pairs_per_second, 'пар в секунду;', 40 / pairs_per_second, 'с 
 <p>Цена здесь главное ограничение. Около 5 секунд на пул из 20 фрагментов на этом процессоре — слишком медленно для интерактивного ответа. N = 5 стоит 1.2 секунды, но уже срезает потолок. Сократить время можно меньшим N, более мощным процессором или GPU, меньшей либо квантованной моделью, но каждый вариант меняет и качество и требует нового замера. В курсе эти варианты не измерялись.</p>
 <p>Оценки тоже требуют осторожности. Sigmoid от лучшего логита у четырёх вопросов без ответа не выше 0.001, у вопросов с ответом медиана 0.80, но 25 из 60 вопросов с ответом получили меньше 0.5. Порог 0.5 отказал бы в 42 % вопросов, на которые корпус отвечает. Шесть вопросов с ответом получили меньше 0.01, а самый низкий — 0.0006, ниже, чем у одного из вопросов без ответа (0.0008): даже на этом наборе нет порога, который разделил бы их без ошибок. Вопросов без ответа всего четыре, поэтому выбирать порог по этому прогону нельзя.</p>
 </section><h2 id="M10-L09X--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     Q[&quot;Запрос&quot;] --&gt; F[&quot;Первая стадия: RRF TF-IDF и BM25 или эмбеддер&quot;]
     F --&gt; P[&quot;Пул top-N: candidate Recall@N — потолок&quot;]
     X[&quot;Нужный фрагмент вне пула&quot;] -.-&gt;|&quot;вторая стадия его не увидит&quot;| P
@@ -13365,7 +13435,7 @@ assert matrix.tolist() == [[1,1],[1,1]]
 </code></pre>
 <p>Это учебный массив для арифметики. Настоящие outputs judge сохраняются лабораторной отдельно, включая невалидные.</p>
 </section><h2 id="M11-L04--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     IN[&quot;Задание, ответ, источники и рубрика — раздельно&quot;] --&gt; J[&quot;Judge: pointwise или pairwise&quot;]
     SW[&quot;Тот же случай с переставленными A и B&quot;] -.-&gt;|&quot;проверка position bias&quot;| J
     J --&gt; S[&quot;Проверка схемы: балл и основание&quot;]
@@ -13718,7 +13788,7 @@ npx --yes promptfoo@0.124.1 view
 <p>На 144 вердиктах (48 ответов × 3 проверки) JS и Python согласны. Но в настоящих ответах нет ни <code>1.0</code>, ни редких пробелов. Поэтому согласие на этом наборе не доказывает, что реализации равны: это проверяет тест на краевых строках.</p>
 <p>Матрица показывает то, что скрывает одно число. strong держит формат и узнаёт все 8 неверных ответов, но 5 из 8 частичных оценивает на 2. tiny ставит 2 за 5 из 8 неверных. promptfoo удобен для быстрой регрессии: поменял prompt, прогнал набор на обоих профилях, увидел, где стало хуже, и повторил только упавшие случаи (<code>--filter-failing</code>). Ручная разметка, сравнение по сценариям с bootstrap и правило выпуска с критическими ошибками остаются в собственном harness. promptfoo о выпуске не решает.</p>
 </section><h2 id="M11-L06--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     C[&quot;Случаи: case_id, scenario_id, одинаковый вход&quot;] --&gt; A[&quot;Версия A: raw и display&quot;]
     C --&gt; B[&quot;Версия B: raw и display&quot;]
     A --&gt; R[&quot;Разметка показанного текста: grounded, useful, critical, rater&quot;]
@@ -14003,7 +14073,7 @@ print(round(43 / 66, 3), 'доля трасс без ответа')
 </ul>
 <p>Медленный тест с <code>M11_LIVE=1</code> заново спрашивает модель и сверяет метки проверок шести контрольных трасс. В авторском прогоне он прошёл за 2 минуты 14 секунд.</p>
 </section><h2 id="M11-L07X--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     T[&quot;Трассы&quot;] --&gt; O[&quot;Открытое кодирование&quot;]
     O --&gt; X[&quot;Таксономия и порядок&quot;]
     X --&gt; N[&quot;Доли, первая ошибка, цена&quot;]
@@ -14325,7 +14395,7 @@ print({name: n / 20 for name, n in counts.items()})
 </code></pre>
 <p>Если задача содержит меняющийся номер версии API, измерь также свежесть факта. Высокая доля JSON не компенсирует устаревшее содержание.</p>
 </section><h2 id="M12-L01--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     E[&quot;Наблюдаемая ошибка: вход, ожидание, фактический ответ&quot;] --&gt; O[&quot;Тот же запрос с вручную подставленным коротким верным документом&quot;]
     O --&gt;|&quot;стало верно&quot;| R[&quot;Дефект доставки: поиск или сборка контекста&quot;]
     O --&gt;|&quot;неверно и с документом&quot;| I[&quot;Уточнить инструкцию, схему формата и рубрику&quot;]
@@ -15177,7 +15247,7 @@ assert supervised_pairs == [(13,21),(21,22),(22,2)]
 <p>Если новая задача улучшилась, а старые ответы ухудшились, замороженная база не является оправданием: на выход всё равно влияет адаптер. Защитные варианты — меньший шаг, меньше адаптируемых слоёв, смесь старых примеров, изменение rank или отказ от дообучения. Выбирай одну гипотезу по development; затем проверяй её на новом независимом наборе. Не перебирай гипотезы по одному check бесконечно.</p>
 <p>Если модель стала выдавать одинаковую команду всем, train NLL может уменьшиться на частом шаблоне. Поэтому в сохранённых случаях нужны оба класса, разные формулировки и разбор ошибок. Для русского интервью исходная английская модель и этот корпус не дают права обещать качество. Русскую адаптацию нужно рассматривать отдельным экспериментом с подходящей моделью и оцениванием.</p>
 </section><h2 id="M12-L07--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     D[&quot;Train, check и old разделены до обучения&quot;] --&gt; MK[&quot;Labels: loss только на ответе assistant&quot;]
     MK --&gt; AD[&quot;База заморожена, адаптер BA в Q и V; B = 0 на старте&quot;]
     AD --&gt; TR[&quot;24 шага: seed и learning rate заданы до просмотра check&quot;]
@@ -15375,7 +15445,7 @@ print(size, report[&quot;parity_max_abs_error&quot;], artifact[&quot;merge_max_a
 </ul>
 <p>У автора весь прогон занял около минуты.</p>
 </section><h2 id="M12-L08X--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     M[&quot;Ручной адаптер M12-L07&quot;] --&gt; C[&quot;LoraConfig: r, alpha, модули, блоки&quot;]
     C --&gt; P[&quot;Паритет: логиты совпали&quot;]
     P --&gt; R[&quot;Повтор прогона M12-L07&quot;]
@@ -15586,7 +15656,7 @@ assert [round(beta * ((a[&quot;logp_chosen&quot;] - b[&quot;logp_chosen&quot;]) 
 </ul>
 <p>Обучение DPO заняло около минуты, весь прогон вместе с SFT — около полутора минут.</p>
 </section><h2 id="M12-L09X--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     S[&quot;SFT M12-L07&quot;] --&gt; M[&quot;Слияние с базой&quot;]
     M --&gt; R[&quot;Опора без адаптера&quot;]
     P[&quot;Пары предпочтений&quot;] --&gt; T[&quot;DPOTrainer: новый LoRA, B = 0&quot;]
@@ -16503,7 +16573,7 @@ print(active['version'])  # 1.0
 </code></pre>
 <p>Этот код демонстрирует поведение внутри одного процесса. В полноценном сервисе дополнительно нужны безопасное переключение ссылок, обработка текущих запросов и проверка состояния внешних хранилищ.</p>
 </section><h2 id="M13-L05--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     K[&quot;Кандидат: манифест комплекта — код, веса, prompt, индекс&quot;] --&gt; SC[&quot;Совместимость схемы данных и индекса&quot;]
     SC --&gt; C1[&quot;Canary кандидата до переключения&quot;]
     C1 --&gt;|&quot;провал&quot;| ST[&quot;Кандидат не активируется&quot;]
@@ -16700,7 +16770,7 @@ document.querySelectorAll(&#x27;input&#x27;).forEach(el=&gt;el.addEventListener(
 <p>Воспроизводимый контракт — prediction=2x+1 и release=A. При x=7 восстановленная версия должна вернуть 15. Canary проверяет поведение, а schema — совместимость устройства артефакта. Нельзя считать успешным откатом просто изменение строки version: веса, схема и версия должны восстановиться вместе. HTTPServer здесь учебный сервер на localhost, не готовый публичный сервис.</p>
 <p><a href="course/visuals/M13-L06.html">Интерактивный опыт этого урока</a>: сначала предскажи результат, затем измени условие.</p>
 </section><h2 id="M13-L06--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     Q[&quot;Запрос пришёл&quot;] --&gt; CAP[&quot;Семафор вместимости: принят ли запрос&quot;]
     CAP --&gt;|&quot;мест нет&quot;| R503[&quot;503 queue_full: сразу, без prediction&quot;]
     CAP --&gt;|&quot;принят&quot;| W[&quot;Ожидание worker: queue_ms&quot;]
@@ -16941,7 +17011,7 @@ $env:OTEL_EXPORTER_OTLP_HEADERS = 'Authorization=Basic ' + [Convert]::ToBase64St
 </code></pre>
 <p>Langfuse принимает OTLP по HTTP в JSON и protobuf, gRPC не поддерживает. Последняя версия на 06.11.2026 — v4.76.0. Для собственного проекта такой стенд полезен, когда трасс становится больше, чем удобно читать в JSONL.</p>
 </section><h2 id="M13-L07X--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     Q[&quot;Вопрос: свой trace_id&quot;] --&gt; W[&quot;invoke_workflow&quot;]
     W --&gt; R[&quot;retrieval&quot;]
     W --&gt; C[&quot;chat: CLIENT, токены&quot;]
@@ -17735,7 +17805,7 @@ assert execute([read, read])['stop'] == 'repeated_call'
 </code></pre>
 <p>Порядок проверок является частью наблюдаемого поведения. Для теста на повтор дай достаточный бюджет, иначе первым сработает ограничение шагов.</p>
 </section><h2 id="M14-L04--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     BU[&quot;1. Бюджет шагов: finish тоже шаг&quot;] --&gt; SH[&quot;2. Форма: ровно tool и args&quot;]
     SH --&gt; FN[&quot;3. finish с текстовым answer?&quot;]
     FN --&gt;|&quot;да&quot;| FIN[&quot;finished: смысл ответа ещё проверить&quot;]
@@ -18047,7 +18117,7 @@ function draw(){const s=scenarios[$(&#x27;action&#x27;).value];$(&#x27;proposal&
 <p>Команда использует существующую Qwen2.5-0.5B-Instruct на CPU. До шести коротких генераций в двух задачах; скорость зависит от свободной RAM. Артефакт artifacts/M14-llm/report.json сохраняет сырой ответ каждого шага, разобранное действие и фактический результат исполнителя. Неверная генерация не заменяется ожидаемой. Выполнение основного безопасного сценария и попытки чужого доступа оцениваются раздельно.</p>
 <p><a href="course/visuals/M14-L06.html">Интерактивный опыт этого урока</a>: сначала предскажи результат, затем измени условие.</p>
 </section><h2 id="M14-L06--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     T[&quot;Задача и описание разрешённых инструментов&quot;] --&gt; M[&quot;Модель генерирует текст действия&quot;]
     M --&gt; J[&quot;Разбор JSON&quot;]
     J --&gt;|&quot;невалидный&quot;| IJ[&quot;stop: invalid_json, сырой текст сохранён&quot;]
@@ -18392,7 +18462,7 @@ assert statuses[&quot;allow_list&quot;][1] == &quot;denied&quot; and statuses[&q
 </ul>
 <p>Классификатор полезен как второй сигнал: пометить текст и отправить на просмотр. Как единственный входной фильтр он отбрасывал бы настоящий контекст. Ни правила, ни классификатор не заменяют ограничений после модели из основной части урока. Llama Prompt Guard 2 не сравнивали: доступ к ней выдают по заявке.</p>
 </section><h2 id="M14-L08X--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     A[&quot;Атакующий правит страницу базы&quot;] --&gt; D[&quot;Абзац с инструкцией&quot;]
     D --&gt; R[&quot;RAG находит абзац&quot;]
     R --&gt; P[&quot;Prompt: теги и экранирование&quot;]
@@ -18651,7 +18721,7 @@ assert not action.is_valid({&quot;tool&quot;: &quot;delete_document&quot;, &quot
 </ul>
 <p>У автора прогон занял меньше минуты на 0.5B и около трёх минут на 4B.</p>
 </section><h2 id="M14-L09X--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     U[&quot;Задача пользователя&quot;] --&gt; P[&quot;Планировщик: модель&quot;]
     T[&quot;tools/list: имена, описания, inputSchema&quot;] --&gt; S[&quot;Схема действия для модели&quot;]
     S --&gt; P
@@ -18874,7 +18944,7 @@ print(weak)
 </ul>
 <p>У автора прогон занял около 2 минут на 0.5B и около 6 минут на 4B.</p>
 </section><h2 id="M14-L10X--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     U[&quot;Задача пользователя&quot;] --&gt; R[&quot;Routing: модель выбирает маршрут&quot;]
     R --&gt; G[&quot;Gate: JSON Schema маршрута&quot;]
     G --&gt; T[&quot;Код вызывает один инструмент MCP&quot;]
@@ -19653,7 +19723,7 @@ assert accept_chunk(8, 8, {7})
 </code></pre>
 <p>Этот тест проверяет правило принятия. Реальная продуктовая проверка дополнительно должна подтвердить, что уже звучавший звук прекратился и очередь очищена.</p>
 </section><h2 id="M15-L04--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     L[&quot;listening: ход n&quot;] --&gt;|&quot;конец речи&quot;| TR[&quot;transcribing&quot;]
     TR --&gt;|&quot;окончательный текст&quot;| TH[&quot;thinking&quot;]
     TH --&gt;|&quot;ответ готов&quot;| SP[&quot;speaking&quot;]
@@ -19973,7 +20043,7 @@ assert frames == 1600 and frames * bytes_per_sample == 3200
 <p>AudioQueue далее получает настоящие WAV-байты как фрагменты, но не воспроизводит звук: проверяется допускающий протокол. После cancel старый уже принятый фрагмент удаляется, поздний отклоняется, новый ход принимается. Проверка слышимого воспроизведения выполняется отдельно кнопкой остановки эталонного интерфейса. Не смешивай эти два свидетельства.</p>
 <p><a href="course/visuals/M15-L06.html">Интерактивный опыт этого урока</a>: сначала предскажи результат, затем измени условие.</p>
 </section><h2 id="M15-L06--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     W[&quot;WAV: 16 кГц, mono, PCM16&quot;] --&gt; B[&quot;Блок 100 мс: 1600 отсчётов, 3200 байт&quot;]
     B --&gt; AW[&quot;AcceptWaveform: состояние распознавателя сохраняется&quot;]
     AW --&gt;|&quot;сегмент не закрыт&quot;| P[&quot;PartialResult: гипотеза может переписаться&quot;]
@@ -20200,7 +20270,7 @@ assert lab.negation_mismatch(&quot;Я писал бэкенд на NestJS и Typ
 </ul>
 <p>У автора весь прогон занял около восьми минут, из них больше половины — Whisper на четырёх наборах аудио.</p>
 </section><h2 id="M15-L07X--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     P[&quot;40 фраз, 3 группы, эталоны до прогона&quot;] --&gt; T1[&quot;SAPI, голос Irina&quot;]
     P --&gt; T2[&quot;Piper, голос Denis, 3 синтеза&quot;]
     T1 --&gt; C[&quot;WAV mono PCM16 16 кГц&quot;]
@@ -20798,7 +20868,7 @@ assert not validate_observations(raw, 'hr', answer)['valid']
 <p>Функция evaluate_answer принимает один объект модели от вызывающего кода. В baseline она сохраняет исходный отзыв без автоматического объявления правильности; в candidate возвращает проверку и публикационную политику. Загрузку весов не нужно повторять на каждом случае. История включает только предыдущие вопросы и ответы, а не прежние непроверенные оценки модели.</p>
 <p><a href="course/visuals/M16-L06.html">Интерактивный опыт этого урока</a>: сначала предскажи результат, затем измени условие.</p>
 </section><h2 id="M16-L06--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     ANS[&quot;Ответ кандидата&quot;] --&gt; SPL[&quot;Фрагменты с evidence_id&quot;]
     SPL --&gt; GEN[&quot;Модель выбирает допустимый JSON&quot;]
     GEN --&gt; L1[&quot;1. Синтаксис и схема&quot;]
@@ -21084,7 +21154,7 @@ assert (s.topic_index,s.turn,s.clarification) == (1,2,False)
 </code></pre>
 <p>Следующий обязательный шаг — запуск реального приложения по инструкции в projects/interview_trainer/README.md и прохождение обоих направлений в браузере. Не засчитывай этот шаг только по лабораторному JSON.</p>
 </section><h2 id="M16-L02--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     U[&quot;Интерфейс: session_id и turn&quot;] --&gt; A[&quot;ASR: гипотеза, можно исправить&quot;]
     A --&gt; S[&quot;Состояние: тема и уточнение&quot;]
     S --&gt; R[&quot;Источники для техники&quot;]
@@ -21630,7 +21700,7 @@ document.querySelectorAll(&#x27;input&#x27;).forEach(el=&gt;el.addEventListener(
 <p>Если сохранён accepted_turn=3 и браузер повторил turn=2, сервер возвращает текущий снимок либо конфликт с возможностью получить снимок. Он не вызывает LLM повторно. Если сбой произошёл до атомарной замены файла, остаётся старая целая версия; после замены — новая целая версия. Это свойство локального протокола, а не обещание exactly-once для любых внешних эффектов.</p>
 <p>В solutions/exercises/M16 приведён небольшой эталон переходов, а в projects/interview_trainer — рабочая исходная интеграция. В ключе M16 ниже есть отдельный законченный <a href="solutions/exercises/M16/durable_app.py">веб-адаптер с файловым сохранением</a>. Эти части нужны для проверки механизмов, но новую реализацию и защиту ты делаешь самостоятельно.</p>
 </section><h2 id="M16-L08--схема">Схема</h2>
-<figure class="diagram"><pre class="mermaid">flowchart TD
+<figure class="diagram"><pre class="mermaid" data-theme="light">flowchart TD
     P[&quot;POST: ответ и turn от клиента&quot;] --&gt; CK[&quot;Сверка turn с принятым состоянием&quot;]
     CK --&gt;|&quot;повтор принятого turn&quot;| SN[&quot;Текущий снимок: без генерации и без новой записи&quot;]
     CK --&gt;|&quot;ожидаемый turn&quot;| PR[&quot;prepare: вопрос и источники, состояние не меняется&quot;]
@@ -27017,6 +27087,18 @@ for asr in (&quot;vosk&quot;, &quot;whisper&quot;):
   document.getElementById('menu-close').addEventListener('click',()=>closeMenu(true));
   document.getElementById('backdrop').addEventListener('click',()=>closeMenu(true));
   document.getElementById('print-section').addEventListener('click',()=>window.print());
+  // Dark by default. The <head> boot script restores a saved choice before paint; storage may be
+  // unavailable on file:// or in private windows, so the switch still works without saving.
+  const themeKey='ml-llm-course-theme', themeButton=document.getElementById('theme-toggle');
+  function applyTheme(theme, save) {
+    const light=theme==='light';
+    document.documentElement.dataset.theme=light?'light':'dark';
+    themeButton.querySelector('.theme-state').textContent=light?': светлая':': тёмная';
+    themeButton.setAttribute('aria-label',light?'Тема: светлая. Включить тёмную':'Тема: тёмная. Включить светлую');
+    if(save){try{localStorage.setItem(themeKey,light?'light':'dark');}catch(_){}}
+  }
+  applyTheme(document.documentElement.dataset.theme,false);themeButton.hidden=false;
+  themeButton.addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='light'?'dark':'light',true));
   document.getElementById('search-clear').addEventListener('click',()=>{search.value='';filter();search.focus();});
   search.addEventListener('input', filter);
   window.addEventListener('hashchange', select);

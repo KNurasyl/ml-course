@@ -163,6 +163,18 @@
   document.getElementById('menu-close').addEventListener('click',()=>closeMenu(true));
   document.getElementById('backdrop').addEventListener('click',()=>closeMenu(true));
   document.getElementById('print-section').addEventListener('click',()=>window.print());
+  // Dark by default. The <head> boot script restores a saved choice before paint; storage may be
+  // unavailable on file:// or in private windows, so the switch still works without saving.
+  const themeKey='ml-llm-course-theme', themeButton=document.getElementById('theme-toggle');
+  function applyTheme(theme, save) {
+    const light=theme==='light';
+    document.documentElement.dataset.theme=light?'light':'dark';
+    themeButton.querySelector('.theme-state').textContent=light?': светлая':': тёмная';
+    themeButton.setAttribute('aria-label',light?'Тема: светлая. Включить тёмную':'Тема: тёмная. Включить светлую');
+    if(save){try{localStorage.setItem(themeKey,light?'light':'dark');}catch(_){}}
+  }
+  applyTheme(document.documentElement.dataset.theme,false);themeButton.hidden=false;
+  themeButton.addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='light'?'dark':'light',true));
   document.getElementById('search-clear').addEventListener('click',()=>{search.value='';filter();search.focus();});
   search.addEventListener('input', filter);
   window.addEventListener('hashchange', select);
