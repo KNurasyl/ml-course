@@ -1,0 +1,148 @@
+{
+  "checked": "2026-11-09",
+  "files": [
+    {
+      "family": "Golos Text",
+      "weight": 400,
+      "style": "normal",
+      "subset": "latin",
+      "file": "golos-text-latin-400-normal.woff2",
+      "bytes": 11992,
+      "sha256": "c8246f55dbddb17ceab94b8de2dbcf326dc189f3bc5a8c13d7b14ad05d7d1d81",
+      "unicode_range": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+      "package": "@fontsource/golos-text@5.3.0",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/golos-text@5.3.0/files/golos-text-latin-400-normal.woff2"
+    },
+    {
+      "family": "Golos Text",
+      "weight": 400,
+      "style": "normal",
+      "subset": "cyrillic",
+      "file": "golos-text-cyrillic-400-normal.woff2",
+      "bytes": 6960,
+      "sha256": "15a5cbadfc1aa7a541651600b757bf7b67bce4e145b3239de072db5427889605",
+      "unicode_range": "U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116",
+      "package": "@fontsource/golos-text@5.3.0",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/golos-text@5.3.0/files/golos-text-cyrillic-400-normal.woff2"
+    },
+    {
+      "family": "Golos Text",
+      "weight": 500,
+      "style": "normal",
+      "subset": "latin",
+      "file": "golos-text-latin-500-normal.woff2",
+      "bytes": 12032,
+      "sha256": "779e46588bc6f5f18918dcdf87d609a8053e1c925abd9e94d2b46b0254f36b24",
+      "unicode_range": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+      "package": "@fontsource/golos-text@5.3.0",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/golos-text@5.3.0/files/golos-text-latin-500-normal.woff2"
+    },
+    {
+      "family": "Golos Text",
+      "weight": 500,
+      "style": "normal",
+      "subset": "cyrillic",
+      "file": "golos-text-cyrillic-500-normal.woff2",
+      "bytes": 7044,
+      "sha256": "22337b726df83521c7f6b2709e4717116eb53106c6140b45d751f36910191ecc",
+      "unicode_range": "U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116",
+      "package": "@fontsource/golos-text@5.3.0",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/golos-text@5.3.0/files/golos-text-cyrillic-500-normal.woff2"
+    },
+    {
+      "family": "Golos Text",
+      "weight": 700,
+      "style": "normal",
+      "subset": "latin",
+      "file": "golos-text-latin-700-normal.woff2",
+      "bytes": 12380,
+      "sha256": "1ac7742b82900b38b483fb65691e8fb786ba16f6c5cae677aa63a128286ce853",
+      "unicode_range": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+      "package": "@fontsource/golos-text@5.3.0",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/golos-text@5.3.0/files/golos-text-latin-700-normal.woff2"
+    },
+    {
+      "family": "Golos Text",
+      "weight": 700,
+      "style": "normal",
+      "subset": "cyrillic",
+      "file": "golos-text-cyrillic-700-normal.woff2",
+      "bytes": 7108,
+      "sha256": "42db867ddf4b8b025cb2681a796c8c34633e14f77077c5c5ad950383e357a6f5",
+      "unicode_range": "U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116",
+      "package": "@fontsource/golos-text@5.3.0",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/golos-text@5.3.0/files/golos-text-cyrillic-700-normal.woff2"
+    },
+    {
+      "family": "JetBrains Mono",
+      "weight": 400,
+      "style": "normal",
+      "subset": "latin",
+      "file": "jetbrains-mono-latin-400-normal.woff2",
+      "bytes": 21168,
+      "sha256": "14425ba9c695763c1547f48a206b7aa60350a33ae23de09f0407877f3fcd89eb",
+      "unicode_range": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+      "package": "@fontsource/jetbrains-mono@5.3.0",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.3.0/files/jetbrains-mono-latin-400-normal.woff2"
+    },
+    {
+      "family": "JetBrains Mono",
+      "weight": 400,
+      "style": "normal",
+      "subset": "cyrillic",
+      "file": "jetbrains-mono-cyrillic-400-normal.woff2",
+      "bytes": 5328,
+      "sha256": "522f5827308102a9c0ea7860b5a11306043610ecf03d150ba32056a06e8c56e2",
+      "unicode_range": "U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116",
+      "package": "@fontsource/jetbrains-mono@5.3.0",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.3.0/files/jetbrains-mono-cyrillic-400-normal.woff2"
+    },
+    {
+      "family": "JetBrains Mono",
+      "weight": 600,
+      "style": "normal",
+      "subset": "latin",
+      "file": "jetbrains-mono-latin-600-normal.woff2",
+      "bytes": 21860,
+      "sha256": "400c6bfda18d5d14acad1c15d6dcb9f8e13c015e7286317e0b9a482539bef147",
+      "unicode_range": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD",
+      "package": "@fontsource/jetbrains-mono@5.3.0",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.3.0/files/jetbrains-mono-latin-600-normal.woff2"
+    },
+    {
+      "family": "JetBrains Mono",
+      "weight": 600,
+      "style": "normal",
+      "subset": "cyrillic",
+      "file": "jetbrains-mono-cyrillic-600-normal.woff2",
+      "bytes": 5384,
+      "sha256": "b450f960a0d29846370fc050b6183727d2075a2bcb1c5595c99374bf083b5a83",
+      "unicode_range": "U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116",
+      "package": "@fontsource/jetbrains-mono@5.3.0",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.3.0/files/jetbrains-mono-cyrillic-600-normal.woff2"
+    }
+  ],
+  "licenses": [
+    {
+      "family": "Golos Text",
+      "file": "OFL-golos-text.txt",
+      "license": "OFL-1.1",
+      "attribution": "Copyright 2019 The Golos Text Project Authors (https://github.com/googlefonts/golos-text)",
+      "upstream": "https://github.com/google/fonts",
+      "bytes": 4392,
+      "sha256": "54dcae300688bccf111e43c818a6ee2261d10fc8d7eb5b9c9aa2a1e9b03189c9",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/golos-text@5.3.0/LICENSE"
+    },
+    {
+      "family": "JetBrains Mono",
+      "file": "OFL-jetbrains-mono.txt",
+      "license": "OFL-1.1",
+      "attribution": "Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono) JetBrainsMono-Italic[wght].ttf: Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)",
+      "upstream": "https://github.com/google/fonts",
+      "bytes": 4524,
+      "sha256": "403581b69dac5cff4079205e01c6b467e56af449ecbd7247693ddb1baafa005b",
+      "url": "https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@5.3.0/LICENSE"
+    }
+  ],
+  "total_font_bytes": 111256
+}

@@ -18,3 +18,6 @@ quality/**/*.png -diff
 quality/reference-runs/** -text whitespace=cr-at-eol
 # Vendored third-party files are kept byte-for-byte; tests check their recorded hashes.
 tools/vendor/** -text
+# Embedded fonts and their OFL texts (CRLF upstream) likewise; tests/test_fonts.py checks the hashes.
+tools/fonts/** -text whitespace=cr-at-eol
+*.woff2 binary
