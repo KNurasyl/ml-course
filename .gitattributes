@@ -6,6 +6,7 @@ course/assets/responsive/*.svg whitespace=-blank-at-eol
 quality/evaluation/** -text whitespace=cr-at-eol
 quality/rag-hw/** -text whitespace=cr-at-eol
 quality/verification-1.1.0/** -text whitespace=cr-at-eol
+quality/verification-1.2.0/** -text whitespace=cr-at-eol
 quality/measurements-1.1.0/** -text whitespace=cr-at-eol
 quality/design-v2/** -text whitespace=cr-at-eol
 # Generated reader (rebuilt by tools/build_reader.py) and binary evidence stay in
