@@ -1,19 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="375" viewBox="0 0 760 375" role="img" aria-labelledby="title desc"><title id="title">HR и технические рубрики</title><desc id="desc">HR и технические рубрики. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="760" height="375" fill="white"/>
-<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">HR и технические рубрики</text>
-<path d="M16,101 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="79" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">HR</text>
-<text x="280" y="79" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Ясность / конкретность / аргументация</text>
-<path d="M16,155 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="133" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Технический ответ</text>
-<text x="280" y="133" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Факты / объяснение / условия</text>
-<path d="M16,209 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="187" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Критическая ошибка</text>
-<text x="280" y="187" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Не компенсируется стилем</text>
-<path d="M16,263 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="241" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Обратная связь</text>
-<text x="280" y="241" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Наблюдение → причина → следующий шаг</text>
-<path d="M16,317 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="295" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Предел оценки</text>
-<text x="280" y="295" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Ответ по рубрике, не личность человека</text>
-<text x="16" y="345" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Учебные числа и условия — в пояснении урока.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="375" viewBox="0 0 760 375" role="img" aria-labelledby="M11-L03-desktop-title M11-L03-desktop-desc"><title id="M11-L03-desktop-title">HR и технические рубрики</title><desc id="M11-L03-desktop-desc">HR и технические рубрики. Подписи и числа поясняют значения цвета.</desc><defs><marker id="M11-L03-desktop-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--act,#0b7478)"/></marker><marker id="M11-L03-desktop-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--accent,#1f55b0)"/></marker></defs>
+<text x="16" y="28" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">HR и технические рубрики</text>
+<path d="M16,101 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="79" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">HR</text>
+<text x="280" y="79" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Ясность / конкретность / аргументация</text>
+<path d="M16,155 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="133" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Технический ответ</text>
+<text x="280" y="133" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Факты / объяснение / условия</text>
+<path d="M16,209 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="187" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Критическая ошибка</text>
+<text x="280" y="187" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Не компенсируется стилем</text>
+<path d="M16,263 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="241" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Обратная связь</text>
+<text x="280" y="241" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Наблюдение → причина → следующий шаг</text>
+<path d="M16,317 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="295" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Предел оценки</text>
+<text x="280" y="295" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Ответ по рубрике, не личность человека</text>
+<text x="16" y="345" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Учебные числа и условия — в пояснении урока.</text>
 </svg>

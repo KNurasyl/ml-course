@@ -1,21 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="423" viewBox="0 0 760 423" role="img" aria-labelledby="title desc"><title id="title">Что именно оцениваем</title><desc id="desc">Что именно оцениваем. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="760" height="423" fill="white"/>
-<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">Что именно оцениваем</text>
-<path d="M16,101 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="79" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">20 запросов</text>
-<text x="280" y="79" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">15 ответов +5 отказов</text>
-<path d="M16,179 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="133" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Корректность среди</text>
-<text x="18" y="157" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">ответов</text>
-<text x="280" y="133" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">12/15 =80%</text>
-<path d="M16,233 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="211" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Покрытие</text>
-<text x="280" y="211" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">15/20 =75%</text>
-<path d="M16,311 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="265" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Корректный ответ для</text>
-<text x="18" y="289" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">запроса</text>
-<text x="280" y="265" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">12/20 =60%</text>
-<path d="M16,365 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="343" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Отказы</text>
-<text x="280" y="343" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Нужна отдельная разметка уместности</text>
-<text x="16" y="393" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Учебные числа и условия — в пояснении урока.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="423" viewBox="0 0 760 423" role="img" aria-labelledby="M11-L01-desktop-title M11-L01-desktop-desc"><title id="M11-L01-desktop-title">Что именно оцениваем</title><desc id="M11-L01-desktop-desc">Что именно оцениваем. Подписи и числа поясняют значения цвета.</desc><defs><marker id="M11-L01-desktop-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--act,#0b7478)"/></marker><marker id="M11-L01-desktop-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--accent,#1f55b0)"/></marker></defs>
+<text x="16" y="28" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">Что именно оцениваем</text>
+<path d="M16,101 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="79" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">20 запросов</text>
+<text x="280" y="79" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">15 ответов +5 отказов</text>
+<path d="M16,179 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="133" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Корректность среди</text>
+<text x="18" y="157" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">ответов</text>
+<text x="280" y="133" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">12/15 =80%</text>
+<path d="M16,233 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="211" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Покрытие</text>
+<text x="280" y="211" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">15/20 =75%</text>
+<path d="M16,311 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="265" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Корректный ответ для</text>
+<text x="18" y="289" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">запроса</text>
+<text x="280" y="265" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">12/20 =60%</text>
+<path d="M16,365 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="343" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Отказы</text>
+<text x="280" y="343" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Нужна отдельная разметка уместности</text>
+<text x="16" y="393" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Учебные числа и условия — в пояснении урока.</text>
 </svg>

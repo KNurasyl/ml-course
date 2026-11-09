@@ -1,17 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="385" viewBox="0 0 360 385" role="img" aria-labelledby="title desc"><title id="title">M15-L03 · Синтез и доставка</title><desc id="desc">M15-L03 · Синтез и доставка. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="385" fill="white"/>
-<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">M15-L03 · Синтез и доставка</text>
-<path d="M16,133 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="63" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="79" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Текст ответа</text>
-<text x="30" y="107" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Разговорная версия</text>
-<path d="M16,219 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="149" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="165" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">TTS создаёт WAV</text>
-<text x="30" y="193" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Доставка клиенту</text>
-<path d="M16,305 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="235" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="251" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Проверка turn_id</text>
-<text x="30" y="279" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Звук действительно начался</text>
-<text x="16" y="333" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Сопоставление понятий; строки</text>
-<text x="16" y="355" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">не означают поток выполнения.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="385" viewBox="0 0 360 385" role="img" aria-labelledby="M15-L03-mobile-title M15-L03-mobile-desc"><title id="M15-L03-mobile-title">M15-L03 · Синтез и доставка</title><desc id="M15-L03-mobile-desc">M15-L03 · Синтез и доставка. Подписи и числа поясняют значения цвета.</desc><defs><marker id="M15-L03-mobile-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--act,#0b7478)"/></marker><marker id="M15-L03-mobile-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--accent,#1f55b0)"/></marker></defs>
+<text x="16" y="28" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">M15-L03 · Синтез и доставка</text>
+<path d="M16,133 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="63" width="3" height="62" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="79" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Текст ответа</text>
+<text x="30" y="107" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Разговорная версия</text>
+<path d="M16,219 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="149" width="3" height="62" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="165" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">TTS создаёт WAV</text>
+<text x="30" y="193" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Доставка клиенту</text>
+<path d="M16,305 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="235" width="3" height="62" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="251" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Проверка turn_id</text>
+<text x="30" y="279" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Звук действительно начался</text>
+<text x="16" y="333" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Сопоставление понятий; строки</text>
+<text x="16" y="355" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">не означают поток выполнения.</text>
 </svg>

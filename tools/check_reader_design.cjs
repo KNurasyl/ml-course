@@ -143,10 +143,37 @@ async function run(browser, repo, options = {}) {
     await page.locator('#search-clear').click();
     check('Clear restores navigation',await page.locator('#book-navigation').isVisible());
     await page.keyboard.press('Control+k');check('Keyboard shortcut focuses search',await page.locator('#course-search').evaluate(el=>el===document.activeElement));
+    // D3: M04-L06 is an inline figure; the dialog shows a copy of the shown layout, its ids renamed.
     await go('M04-L06');await page.locator('#M04-L06 a[data-figure]').first().click();
     check('Figure zoom opens dialog',await page.locator('#figure-dialog').isVisible());
-    await page.locator('#figure-zoom').click();check('Native size control works',await page.locator('#figure-large').evaluate(el=>el.classList.contains('native')));
+    const zoomed=await page.evaluate(()=>{const box=document.getElementById('figure-large-svg'),svg=box.querySelector('svg');
+      const ids=Array.from(document.querySelectorAll('.figure-variant svg [id], #figure-large-svg [id]'),el=>el.id);
+      return{svg:!box.hidden&&!!svg,img:!document.getElementById('figure-large').hidden,labelledby:svg?.getAttribute('aria-labelledby'),ids:ids.length,duplicates:ids.length-new Set(ids).size,title:document.getElementById('figure-title').textContent};});
+    check('D3 zoom shows the inline figure with unique ids',zoomed.svg&&!zoomed.img&&zoomed.labelledby==='M04-L06-desktop-title-zoom M04-L06-desktop-desc-zoom'&&zoomed.duplicates===0&&zoomed.title.length>0,zoomed);
+    await page.locator('#figure-zoom').click();
+    const native=await page.evaluate(()=>{const svg=document.querySelector('#figure-large-svg svg');return{native:document.querySelector('.figure-scroll').classList.contains('native'),width:svg.getBoundingClientRect().width,natural:Number(svg.getAttribute('width'))};});
+    check('Native size control works',native.native&&Math.abs(native.width-native.natural)<1,native);
     await page.keyboard.press('Escape');check('Dialog closes by Escape',!await page.locator('#figure-dialog').isVisible());
+    // D3: inline figures take the page theme. Every painted colour of every layout (hidden ones too) is a figure token
+    // of the current theme; the card is --paper with no white backing; print is light while the dark theme is chosen.
+    const figurePaint=()=>page.evaluate(()=>{const style=getComputedStyle(document.documentElement);
+      const rgb=hex=>'rgb('+[1,3,5].map(i=>parseInt(hex.trim().slice(i,i+2),16)).join(', ')+')';
+      const tokens=new Map(['--ink','--muted','--accent','--act','--hint','--line','--accent-soft','--act-soft','--hint-soft','--bg','--surface'].map(name=>[rgb(style.getPropertyValue(name)),name]));
+      const issues=new Set(),used=new Set();let painted=0;
+      const note=(value,where)=>{if(value==='none')return;painted++;const name=tokens.get(value);if(name)used.add(name);else issues.add(where+' '+value);};
+      for(const el of document.querySelectorAll('.figure-variant svg *')){const tag=el.tagName.toLowerCase(),s=getComputedStyle(el);
+        if(/^(rect|path|circle|text)$/.test(tag))note(s.fill,tag+' fill');
+        if(/^(rect|path|circle)$/.test(tag))note(s.stroke,tag+' stroke');}
+      const figure=document.querySelector('#M04-L06 .figure-inline');
+      return{theme:document.documentElement.dataset.theme,figures:document.querySelectorAll('.figure-inline').length,painted,used:[...used].sort(),issues:[...issues].slice(0,10),
+        card:getComputedStyle(figure).backgroundColor,ink:getComputedStyle(figure.querySelector('.figure-desktop text')).fill,
+        layout:Array.from(figure.querySelectorAll('.figure-variant')).filter(v=>v.getClientRects().length).map(v=>v.classList[1]).join(',')};});
+    const darkFigures=await figurePaint();await page.locator('#theme-toggle').click();const lightFigures=await figurePaint();await page.locator('#theme-toggle').click();
+    check('D3 inline figures paint only with theme tokens in both themes',darkFigures.figures>=60&&darkFigures.painted>1000&&!darkFigures.issues.length&&!lightFigures.issues.length
+      &&darkFigures.theme==='dark'&&darkFigures.card==='rgb(32, 36, 44)'&&darkFigures.ink==='rgb(231, 229, 222)'&&darkFigures.layout==='figure-desktop'
+      &&lightFigures.theme==='light'&&lightFigures.card==='rgb(255, 255, 255)'&&lightFigures.ink==='rgb(29, 36, 48)',{dark:darkFigures,light:lightFigures});
+    await page.emulateMedia({media:'print'});const printedFigures=await figurePaint();await page.emulateMedia({media:'screen'});
+    check('D3 inline figures print light while the dark theme is chosen',printedFigures.theme==='dark'&&printedFigures.ink==='rgb(29, 36, 48)'&&!printedFigures.issues.length,printedFigures);
     // Contrast of the exact utility roles from the audit, composited over solid surfaces.
     const contrast=await page.evaluate(()=>{
       const lum=rgb=>{const v=rgb.slice(0,3).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4;});return .2126*v[0]+.7152*v[1]+.0722*v[2];};
@@ -167,14 +194,15 @@ async function run(browser, repo, options = {}) {
     await page.keyboard.press('Escape');check('Mobile escape restores menu button focus',await page.locator('#menu-toggle').evaluate(el=>el===document.activeElement));
     await page.locator('#M10-L06 .lesson-outline summary').click();await page.locator('#M10-L06 .lesson-outline a').filter({hasText:'Самостоятельная'}).click();await settle();
     check('D06 mobile map closes after selection',!await page.locator('#M10-L06 .lesson-outline details').evaluate(el=>el.open));await snap('assignment-mobile');
+    // D3: both layouts are inline; a container query on the figure shows the one that fits the column.
+    const shownLayout=key=>page.locator('#'+key+' a[data-figure]').first().evaluate(el=>Array.from(el.querySelectorAll('.figure-variant')).filter(v=>v.getClientRects().length).map(v=>v.classList[1]).join(','));
     await go('M04-L06');const figure=page.locator('#M04-L06 a[data-figure]').first();await figure.scrollIntoViewIfNeeded();
-    await page.locator('#M04-L06 a[data-figure] img').first().evaluate(el=>el.decode());
-    check('D03 mobile-specific figure selected',await figure.locator('img').evaluate(el=>el.currentSrc.includes('mobile')));await snap('log-figure-mobile');
+    check('D03 mobile-specific figure selected',await shownLayout('M04-L06')==='figure-mobile');await snap('log-figure-mobile');
     await page.setViewportSize({width:820,height:1000});await go('M04-L06');await page.locator('#M04-L06 a[data-figure]').first().scrollIntoViewIfNeeded();
-    await page.waitForFunction(()=>document.querySelector('#M04-L06 .figure-expand img').currentSrc.includes('mobile'));
-    check('D03 tablet selects figure by actual column width',await page.locator('#M04-L06 .figure-expand').evaluate(el=>el.clientWidth<600));await snap('log-figure-tablet');
+    const tablet={layout:await shownLayout('M04-L06'),width:await page.locator('#M04-L06 .figure-expand').evaluate(el=>el.clientWidth)};
+    check('D03 tablet selects figure by actual column width',tablet.layout==='figure-mobile'&&tablet.width<600,tablet);await snap('log-figure-tablet');
     await page.setViewportSize({width:390,height:844});
-    for(const key of ['M08-L03','M08-L07','M15-L06']){await go(key);const fig=page.locator('#'+key+' a[data-figure]').first();await fig.scrollIntoViewIfNeeded();await fig.locator('img').evaluate(el=>el.decode());await snap(key+'-figure-mobile');}
+    for(const key of ['M08-L03','M08-L07','M15-L06']){await go(key);const fig=page.locator('#'+key+' a[data-figure]').first();await fig.scrollIntoViewIfNeeded();await settle();await snap(key+'-figure-mobile');}
     // At320, walk every document (161 in 1.1.0, more since 1.2.0). Tables and code may scroll internally; the page may not.
     await page.setViewportSize({width:320,height:844});
     const ids=await page.locator('article').evaluateAll(nodes=>nodes.map(el=>el.id));const overflows=[];

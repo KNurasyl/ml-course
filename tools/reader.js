@@ -23,7 +23,10 @@
     const nodes = [title, ...article.querySelectorAll('.tool-versions > div, .body-content h2, .body-content h3, .body-content p, .body-content li, .body-content pre, .body-content td, .body-content summary')];
     nodes.forEach((node, index) => {
       if (!node || node.closest('nav') || (node.tagName === 'LI' && node.querySelector('p, li'))) return;
-      const text = node.textContent.replace(/\s+/g, ' ').trim();
+      // Inline figures (D3) carry their drawing text; search keeps to the prose and the caption.
+      let source = node;
+      if (node.querySelector('svg')) { source = node.cloneNode(true); source.querySelectorAll('svg').forEach(svg => svg.remove()); }
+      const text = source.textContent.replace(/\s+/g, ' ').trim();
       if (!text) return;
       if (!node.id) node.id = `${article.id}--fragment-${index}`;
       const answer = !!node.closest('.answer-key') || article.dataset.kind === 'answer';
@@ -86,7 +89,7 @@
   function highlight(node, terms) {
     if (!terms.length) return;
     const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
-    const texts = []; while (walker.nextNode()) if (!walker.currentNode.parentElement.closest('script, style, button')) texts.push(walker.currentNode);
+    const texts = []; while (walker.nextNode()) if (!walker.currentNode.parentElement.closest('script, style, button, svg')) texts.push(walker.currentNode);
     texts.forEach(textNode => {
       const value = textNode.textContent, lower = normalized(value), ranges = [];
       for (const term of terms) {
@@ -230,14 +233,24 @@
   document.addEventListener('click', event => {
     const figure=event.target.closest('a[data-figure]');
     if(figure){const dialog=document.getElementById('figure-dialog');if(typeof dialog.showModal==='function'){
-      event.preventDefault();const large=document.getElementById('figure-large');large.src=figure.querySelector('img').currentSrc||figure.dataset.figure;large.alt=figure.querySelector('img').alt;large.classList.remove('native');
-      document.getElementById('figure-title').textContent=large.alt;document.getElementById('figure-original').href=figure.href;document.getElementById('figure-zoom').textContent='Исходный размер';dialog.showModal();}return;}
+      event.preventDefault();const large=document.getElementById('figure-large'),box=document.getElementById('figure-large-svg'),img=figure.querySelector('img');
+      // D3: an inline figure opens as a copy of the shown layout, so it keeps the theme tokens; its ids get
+      // a suffix to stay unique in the document. Image figures (matplotlib until D4) open as before.
+      const shown=Array.from(figure.querySelectorAll('.figure-variant svg')),svg=shown.find(item=>item.getClientRects().length)||shown[0];
+      if(svg){const copy=svg.cloneNode(true),ids=new Set(Array.from(copy.querySelectorAll('[id]'),el=>el.id)),renamed=id=>ids.has(id)?id+'-zoom':id;
+        copy.querySelectorAll('[id]').forEach(el=>{el.id=renamed(el.id);});
+        copy.setAttribute('aria-labelledby',(copy.getAttribute('aria-labelledby')||'').split(' ').filter(Boolean).map(renamed).join(' '));
+        copy.querySelectorAll('[marker-end]').forEach(el=>el.setAttribute('marker-end',el.getAttribute('marker-end').replace(/url\(#([^)]+)\)/,(match,id)=>`url(#${renamed(id)})`)));
+        box.replaceChildren(copy);large.removeAttribute('src');large.alt='';}
+      else{box.replaceChildren();large.src=img.currentSrc||figure.dataset.figure;large.alt=img.alt;}
+      box.hidden=!svg;large.hidden=!!svg;large.parentElement.classList.remove('native');
+      document.getElementById('figure-title').textContent=figure.dataset.title||large.alt;document.getElementById('figure-original').href=figure.href;document.getElementById('figure-zoom').textContent='Исходный размер';dialog.showModal();}return;}
     const link=event.target.closest('a[href^="#"]');
     if(link && link.hash===location.hash && !link.closest('#search-results'))select();
     if(link?.closest('.lesson-outline') && !outlineWide.matches)link.closest('details').open=false;
   });
   document.getElementById('figure-close').addEventListener('click',()=>document.getElementById('figure-dialog').close());
-  document.getElementById('figure-zoom').addEventListener('click',event=>{const native=document.getElementById('figure-large').classList.toggle('native');event.target.textContent=native?'Уместить на экране':'Исходный размер';});
+  document.getElementById('figure-zoom').addEventListener('click',event=>{const native=document.getElementById('figure-large').parentElement.classList.toggle('native');event.target.textContent=native?'Уместить на экране':'Исходный размер';});
   // Clipboard is optional on file://; a failed copy is reported, never silently claimed.
   document.querySelectorAll('.body-content pre').forEach(pre=>{
     const code=pre.querySelector('code'); if(!code)return;

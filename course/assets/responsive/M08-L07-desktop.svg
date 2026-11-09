@@ -1,46 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="750" viewBox="0 0 760 750" role="img" aria-labelledby="title desc"><title id="title">Pre-norm Transformer: вход, операции, residual и выход</title><desc id="desc">Pre-norm Transformer: вход, операции, residual и выход. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="760" height="750" fill="white"/>
-<text x="16" y="30" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="650" text-anchor="start">Pre-norm Transformer</text>
-<text x="16" y="58" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Одна учебная attention-head</text>
-<rect x="16" y="102" width="130" height="75" rx="6" fill="#eef4fc" stroke="#245bba"/>
-<text x="30" y="133" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="start">X</text>
-<text x="30" y="159" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">[B, T, D]</text>
-<rect x="196" y="102" width="185" height="75" rx="6" fill="#edf8f7" stroke="#087e82"/>
-<text x="210" y="133" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="start">LayerNorm₁</text>
-<text x="210" y="159" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">форма сохраняется</text>
-<rect x="430" y="102" width="205" height="75" rx="6" fill="#edf8f7" stroke="#087e82"/>
-<text x="444" y="133" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="start">Causal attention</text>
-<text x="444" y="159" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">смешивает позиции</text>
-<path d="M146,139 H189" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
-<path d="M381,139 H423" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
-<path d="M635,139 H670" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
-<circle cx="700" cy="139" r="22" fill="#edf8f7"/>
-<text x="700" y="148" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="middle">+</text>
-<path d="M80,102 V79 H700 V112" fill="none" stroke="#245bba" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#blue)"/>
-<text x="475" y="72" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Residual X</text>
-<path d="M700,162 V238 H80 V278" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
-<text x="200" y="208" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Q/K/V: [B,T,D] → scores: [B,T,T] → AV: [B,T,D]</text>
-<rect x="16" y="285" width="130" height="75" rx="6" fill="#eef4fc" stroke="#245bba"/>
-<text x="30" y="316" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="start">U</text>
-<text x="30" y="342" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">[B, T, D]</text>
-<rect x="196" y="285" width="185" height="75" rx="6" fill="#edf8f7" stroke="#087e82"/>
-<text x="210" y="316" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="start">LayerNorm₂</text>
-<text x="210" y="342" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">форма сохраняется</text>
-<rect x="430" y="285" width="205" height="75" rx="6" fill="#edf8f7" stroke="#087e82"/>
-<text x="444" y="316" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="start">MLP</text>
-<text x="444" y="342" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Linear → GELU → Linear</text>
-<path d="M146,322 H189" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
-<path d="M381,322 H423" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
-<path d="M635,322 H670" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
-<circle cx="700" cy="322" r="22" fill="#edf8f7"/>
-<text x="700" y="331" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="middle">+</text>
-<path d="M80,360 V404 H700 V350" fill="none" stroke="#245bba" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#blue)"/>
-<text x="320" y="398" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Residual U</text>
-<path d="M722,322 H742 V455 H400 V486" fill="none" stroke="#087e82" stroke-width="2" marker-end="url(#arrow)"/>
-<rect x="280" y="494" width="250" height="75" rx="6" fill="#eef4fc" stroke="#245bba"/>
-<text x="294" y="525" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="start">Y = U + MLP(…)</text>
-<text x="294" y="551" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">[B, T, D]</text>
-<text x="16" y="607" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="400" text-anchor="start">MLP: [B,T,D] → [B,T,H] → [B,T,D]. Позиции не смешиваются.</text>
-<path d="M16,644 H62" fill="none" stroke="#245bba" stroke-width="2" stroke-dasharray="6 5"/>
-<text x="75" y="650" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Пунктир: прямой путь данных к сложению.</text>
-<text x="16" y="700" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="400" text-anchor="start">Y поступает в следующий блок; форма входа и выхода совпадает.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="750" viewBox="0 0 760 750" role="img" aria-labelledby="M08-L07-desktop-title M08-L07-desktop-desc"><title id="M08-L07-desktop-title">Pre-norm Transformer: вход, операции, residual и выход</title><desc id="M08-L07-desktop-desc">Pre-norm Transformer: вход, операции, residual и выход. Подписи и числа поясняют значения цвета.</desc><defs><marker id="M08-L07-desktop-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--act,#0b7478)"/></marker><marker id="M08-L07-desktop-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--accent,#1f55b0)"/></marker></defs>
+<text x="16" y="30" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="650" text-anchor="start">Pre-norm Transformer</text>
+<text x="16" y="58" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Одна учебная attention-head</text>
+<rect x="16" y="102" width="130" height="75" rx="6" style="fill:var(--accent-soft,#e4ecfb);stroke:var(--accent,#1f55b0)"/>
+<text x="30" y="133" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="start">X</text>
+<text x="30" y="159" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">[B, T, D]</text>
+<rect x="196" y="102" width="185" height="75" rx="6" style="fill:var(--act-soft,#dff3f2);stroke:var(--act,#0b7478)"/>
+<text x="210" y="133" style="fill:var(--act,#0b7478)" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="start">LayerNorm₁</text>
+<text x="210" y="159" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">форма сохраняется</text>
+<rect x="430" y="102" width="205" height="75" rx="6" style="fill:var(--act-soft,#dff3f2);stroke:var(--act,#0b7478)"/>
+<text x="444" y="133" style="fill:var(--act,#0b7478)" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="start">Causal attention</text>
+<text x="444" y="159" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">смешивает позиции</text>
+<path d="M146,139 H189" fill="none" style="stroke:var(--act,#0b7478)" stroke-width="2" marker-end="url(#M08-L07-desktop-arrow)"/>
+<path d="M381,139 H423" fill="none" style="stroke:var(--act,#0b7478)" stroke-width="2" marker-end="url(#M08-L07-desktop-arrow)"/>
+<path d="M635,139 H670" fill="none" style="stroke:var(--act,#0b7478)" stroke-width="2" marker-end="url(#M08-L07-desktop-arrow)"/>
+<circle cx="700" cy="139" r="22" style="fill:var(--act-soft,#dff3f2)"/>
+<text x="700" y="148" style="fill:var(--act,#0b7478)" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="middle">+</text>
+<path d="M80,102 V79 H700 V112" fill="none" style="stroke:var(--accent,#1f55b0)" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#M08-L07-desktop-blue)"/>
+<text x="475" y="72" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Residual X</text>
+<path d="M700,162 V238 H80 V278" fill="none" style="stroke:var(--act,#0b7478)" stroke-width="2" marker-end="url(#M08-L07-desktop-arrow)"/>
+<text x="200" y="208" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" text-anchor="start">Q/K/V: [B,T,D] → scores: [B,T,T] → AV: [B,T,D]</text>
+<rect x="16" y="285" width="130" height="75" rx="6" style="fill:var(--accent-soft,#e4ecfb);stroke:var(--accent,#1f55b0)"/>
+<text x="30" y="316" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="start">U</text>
+<text x="30" y="342" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">[B, T, D]</text>
+<rect x="196" y="285" width="185" height="75" rx="6" style="fill:var(--act-soft,#dff3f2);stroke:var(--act,#0b7478)"/>
+<text x="210" y="316" style="fill:var(--act,#0b7478)" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="start">LayerNorm₂</text>
+<text x="210" y="342" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">форма сохраняется</text>
+<rect x="430" y="285" width="205" height="75" rx="6" style="fill:var(--act-soft,#dff3f2);stroke:var(--act,#0b7478)"/>
+<text x="444" y="316" style="fill:var(--act,#0b7478)" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="start">MLP</text>
+<text x="444" y="342" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Linear → GELU → Linear</text>
+<path d="M146,322 H189" fill="none" style="stroke:var(--act,#0b7478)" stroke-width="2" marker-end="url(#M08-L07-desktop-arrow)"/>
+<path d="M381,322 H423" fill="none" style="stroke:var(--act,#0b7478)" stroke-width="2" marker-end="url(#M08-L07-desktop-arrow)"/>
+<path d="M635,322 H670" fill="none" style="stroke:var(--act,#0b7478)" stroke-width="2" marker-end="url(#M08-L07-desktop-arrow)"/>
+<circle cx="700" cy="322" r="22" style="fill:var(--act-soft,#dff3f2)"/>
+<text x="700" y="331" style="fill:var(--act,#0b7478)" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="600" text-anchor="middle">+</text>
+<path d="M80,360 V404 H700 V350" fill="none" style="stroke:var(--accent,#1f55b0)" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#M08-L07-desktop-blue)"/>
+<text x="320" y="398" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">Residual U</text>
+<path d="M722,322 H742 V455 H400 V486" fill="none" style="stroke:var(--act,#0b7478)" stroke-width="2" marker-end="url(#M08-L07-desktop-arrow)"/>
+<rect x="280" y="494" width="250" height="75" rx="6" style="fill:var(--accent-soft,#e4ecfb);stroke:var(--accent,#1f55b0)"/>
+<text x="294" y="525" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" text-anchor="start">Y = U + MLP(…)</text>
+<text x="294" y="551" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" text-anchor="start">[B, T, D]</text>
+<text x="16" y="607" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="400" text-anchor="start">MLP: [B,T,D] → [B,T,H] → [B,T,D]. Позиции не смешиваются.</text>
+<path d="M16,644 H62" fill="none" style="stroke:var(--accent,#1f55b0)" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="75" y="650" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Пунктир: прямой путь данных к сложению.</text>
+<text x="16" y="700" style="fill:var(--act,#0b7478)" font-family="Segoe UI,Arial,sans-serif" font-size="19" font-weight="400" text-anchor="start">Y поступает в следующий блок; форма входа и выхода совпадает.</text>
 </svg>

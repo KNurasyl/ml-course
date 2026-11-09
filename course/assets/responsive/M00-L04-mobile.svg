@@ -1,21 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="484" viewBox="0 0 360 484" role="img" aria-labelledby="title desc"><title id="title">Обучение и контекст меняют разные вещи</title><desc id="desc">Обучение и контекст меняют разные вещи. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="484" fill="white"/>
-<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Обучение и контекст меняют</text>
-<text x="16" y="55" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">разные вещи</text>
-<path d="M16,184 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="90" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="106" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Обучение</text>
-<text x="30" y="134" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Данные → оптимизация → новые</text>
-<text x="30" y="158" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">параметры θ</text>
-<path d="M16,294 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="200" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="216" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Контекст запроса</text>
-<text x="30" y="244" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">История + найденные тексты →</text>
-<text x="30" y="268" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">вход модели</text>
-<path d="M16,404 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="310" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="326" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Инференс</text>
-<text x="30" y="354" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Вход + фиксированные</text>
-<text x="30" y="378" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">параметры θ → ответ</text>
-<text x="16" y="432" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Запись диалога сама по себе не</text>
-<text x="16" y="454" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">выполняет шаг обучения.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="484" viewBox="0 0 360 484" role="img" aria-labelledby="M00-L04-mobile-title M00-L04-mobile-desc"><title id="M00-L04-mobile-title">Обучение и контекст меняют разные вещи</title><desc id="M00-L04-mobile-desc">Обучение и контекст меняют разные вещи. Подписи и числа поясняют значения цвета.</desc><defs><marker id="M00-L04-mobile-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--act,#0b7478)"/></marker><marker id="M00-L04-mobile-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--accent,#1f55b0)"/></marker></defs>
+<text x="16" y="28" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Обучение и контекст меняют</text>
+<text x="16" y="55" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">разные вещи</text>
+<path d="M16,184 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="90" width="3" height="86" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="106" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Обучение</text>
+<text x="30" y="134" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Данные → оптимизация → новые</text>
+<text x="30" y="158" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">параметры θ</text>
+<path d="M16,294 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="200" width="3" height="86" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="216" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Контекст запроса</text>
+<text x="30" y="244" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">История + найденные тексты →</text>
+<text x="30" y="268" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">вход модели</text>
+<path d="M16,404 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="310" width="3" height="86" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="326" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Инференс</text>
+<text x="30" y="354" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Вход + фиксированные</text>
+<text x="30" y="378" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">параметры θ → ответ</text>
+<text x="16" y="432" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Запись диалога сама по себе не</text>
+<text x="16" y="454" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">выполняет шаг обучения.</text>
 </svg>

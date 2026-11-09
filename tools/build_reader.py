@@ -41,6 +41,20 @@ def checked_file(root: Path, relative: str) -> Path:
     return candidate
 
 
+TOKEN_FALLBACK = re.compile(r"var\((--[\w-]+),#[0-9a-fA-F]{6}\)")
+PAINT_ATTRIBUTE = re.compile(r'\s(?:fill|stroke|style)="([^"]*)"')
+
+
+def inline_svg(root: Path, relative: str) -> str:
+    """A figure SVG for inlining: theme tokens only, the standalone light fallbacks dropped (D3)."""
+    svg = TOKEN_FALLBACK.sub(r"var(\1)", checked_file(root, relative).read_text(encoding="utf-8")).strip()
+    painted = [value for value in PAINT_ATTRIBUTE.findall(svg) if value != "none"]
+    if not svg.startswith("<svg ") or any("var(--" not in value or re.search(r"#[0-9a-fA-F]{3,8}|white|black|rgb", value)
+                                         for value in painted):
+        raise ValueError(f"Inline figure must take colours only from theme tokens: {relative}")
+    return svg
+
+
 def source_fingerprint(root: Path) -> str:
     """Fingerprint every canonical text, its registry and the rendering code."""
     root = root.resolve()
@@ -139,6 +153,15 @@ class CourseRenderer(mistune.HTMLRenderer):
         desktop = alternatives.get("desktop", target)
         mobile = alternatives.get("mobile")
         checked_file(self.root, unquote(desktop))
+        if alternatives.get("inline") and mobile:
+            # D3: token-coloured figures are inlined, so they take the page theme; CSS shows the layout
+            # that fits the column. The linked file stays a standalone drawing with light fallbacks.
+            url, label = escape(desktop, quote=True), escape(text, quote=True)
+            variants = "".join(f'<span class="figure-variant figure-{layout}">{inline_svg(self.root, path)}</span>'
+                               for layout, path in (("desktop", desktop), ("mobile", mobile)))
+            return (f'<a class="figure-expand figure-inline" href="{url}" target="_blank" data-figure="{url}" '
+                    f'data-title="{label}" aria-label="Увеличить рисунок: {label}">{variants}</a>'
+                    f'<span class="figure-hint">{escape(alternatives.get("caption", text))} · Открыть крупнее ↗</span>')
         picture = ''
         if mobile:
             checked_file(self.root, mobile)
@@ -479,7 +502,7 @@ def build(root: Path) -> tuple[str, int]:
 <aside class="sidebar" id="course-menu" aria-label="Оглавление курса"><div class="sidebar-head"><a class="brand" href="#HOME"><span class="brand-symbol">ML</span><span class="brand-name">ML и LLM</span><span class="brand-caption">Технический учебник · Практика</span></a><button id="menu-close" class="small-button menu-close" aria-label="Закрыть оглавление">×</button><label class="search"><span class="screen-reader-only">Найти тему</span><span class="search-row"><input id="course-search" type="search" placeholder="Найти тему…" autocomplete="off" spellcheck="false" aria-describedby="search-status"><button id="search-clear" class="small-button search-clear" type="button" aria-label="Очистить поиск" hidden>×</button></span></label><p class="search-status" id="search-status" role="status">Поиск по тексту · Ctrl K</p></div><div class="sidebar-scroll"><nav id="book-navigation" aria-label="Разделы учебника">{navigation}</nav><ol class="search-results" id="search-results" aria-label="Результаты поиска"></ol><p class="empty-search" id="empty-search" hidden>Попробуй другое слово или его основу.</p><p class="nav-foot">Материалы {VERSION} · Чтение без интернета<br><a href="#PROGRESS">Журнал самостоятельной работы</a></p></div></aside>
 <button class="backdrop" id="backdrop" aria-label="Закрыть оглавление" tabindex="-1"></button>
 <div class="layout"><header class="topbar"><nav class="breadcrumbs" id="breadcrumbs" aria-label="Текущее место"><a href="#HOME">Учебник</a></nav><div class="top-actions"><button class="small-button menu-toggle" id="menu-toggle" aria-controls="course-menu" aria-expanded="false">☰ Содержание</button><button class="small-button print-button" id="print-section">Печать</button><button class="small-button theme-toggle" id="theme-toggle" type="button" hidden>Тема<span class="theme-state">: тёмная</span></button></div></header><main class="reader" id="main-content" tabindex="-1"><noscript><p class="no-script">JavaScript выключен: все разделы показаны ниже подряд. Ссылки оглавления продолжают работать.</p></noscript>{''.join(sections)}</main></div>
-<dialog id="figure-dialog" aria-labelledby="figure-title"><div class="figure-toolbar"><strong id="figure-title">Рисунок</strong><button id="figure-zoom" class="small-button">Исходный размер</button><button id="figure-close" class="small-button">Закрыть</button></div><div class="figure-scroll"><img id="figure-large" alt=""></div><a id="figure-original" target="_blank">Открыть исходный файл отдельно</a></dialog>
+<dialog id="figure-dialog" aria-labelledby="figure-title"><div class="figure-toolbar"><strong id="figure-title">Рисунок</strong><button id="figure-zoom" class="small-button">Исходный размер</button><button id="figure-close" class="small-button">Закрыть</button></div><div class="figure-scroll"><img id="figure-large" alt=""><div id="figure-large-svg" hidden></div></div><a id="figure-original" target="_blank">Открыть исходный файл отдельно</a></dialog>
 <script>{SCRIPT}</script>
 </body></html>'''
     return html, len(sections)

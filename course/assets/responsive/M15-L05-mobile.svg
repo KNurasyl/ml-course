@@ -1,25 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="568" viewBox="0 0 360 568" role="img" aria-labelledby="title desc"><title id="title">Удаление одного слова меняет смысл</title><desc id="desc">Удаление одного слова меняет смысл. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="568" fill="white"/>
-<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Удаление одного слова</text>
-<text x="16" y="55" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">меняет смысл</text>
-<path d="M16,160 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="90" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="106" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Слово 1</text>
-<text x="30" y="134" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Эталон «я» → гипотеза «я»</text>
-<path d="M16,246 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="176" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="192" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Слово 2: удалено отрицание</text>
-<text x="30" y="220" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Эталон «не» → гипотеза ∅</text>
-<path d="M16,356 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="262" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="278" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Слово 3</text>
-<text x="30" y="306" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Эталон «использовал» →</text>
-<text x="30" y="330" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">гипотеза «использовал»</text>
-<path d="M16,466 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="372" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="388" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Слово 4</text>
-<text x="30" y="416" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Эталон «docker» → гипотеза</text>
-<text x="30" y="440" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">«docker»</text>
-<text x="16" y="494" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">WER = 1/4 = 0.25. Пропуск</text>
-<text x="16" y="516" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">отрицания — отдельная</text>
-<text x="16" y="538" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">критическая ошибка.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="568" viewBox="0 0 360 568" role="img" aria-labelledby="M15-L05-mobile-title M15-L05-mobile-desc"><title id="M15-L05-mobile-title">Удаление одного слова меняет смысл</title><desc id="M15-L05-mobile-desc">Удаление одного слова меняет смысл. Подписи и числа поясняют значения цвета.</desc><defs><marker id="M15-L05-mobile-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--act,#0b7478)"/></marker><marker id="M15-L05-mobile-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--accent,#1f55b0)"/></marker></defs>
+<text x="16" y="28" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Удаление одного слова</text>
+<text x="16" y="55" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">меняет смысл</text>
+<path d="M16,160 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="90" width="3" height="62" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="106" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Слово 1</text>
+<text x="30" y="134" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Эталон «я» → гипотеза «я»</text>
+<path d="M16,246 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="176" width="3" height="62" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="192" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Слово 2: удалено отрицание</text>
+<text x="30" y="220" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Эталон «не» → гипотеза ∅</text>
+<path d="M16,356 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="262" width="3" height="86" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="278" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Слово 3</text>
+<text x="30" y="306" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Эталон «использовал» →</text>
+<text x="30" y="330" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">гипотеза «использовал»</text>
+<path d="M16,466 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="372" width="3" height="86" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="388" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Слово 4</text>
+<text x="30" y="416" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Эталон «docker» → гипотеза</text>
+<text x="30" y="440" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">«docker»</text>
+<text x="16" y="494" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">WER = 1/4 = 0.25. Пропуск</text>
+<text x="16" y="516" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">отрицания — отдельная</text>
+<text x="16" y="538" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">критическая ошибка.</text>
 </svg>

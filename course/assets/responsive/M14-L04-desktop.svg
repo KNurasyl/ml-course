@@ -1,13 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="267" viewBox="0 0 760 267" role="img" aria-labelledby="title desc"><title id="title">M14-L04 · Ошибки и остановка</title><desc id="desc">M14-L04 · Ошибки и остановка. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="760" height="267" fill="white"/>
-<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">M14-L04 · Ошибки и остановка</text>
-<path d="M16,101 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="79" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Шаг 1: read d1</text>
-<text x="280" y="79" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Шаг 2: read d1</text>
-<path d="M16,155 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="133" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Повтор обнаружен</text>
-<text x="280" y="133" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">STOP: repeated_call</text>
-<path d="M16,209 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="187" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Лимит шагов независим</text>
-<text x="280" y="187" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Финал проверяется отдельно</text>
-<text x="16" y="237" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Сопоставление понятий; строки не означают поток выполнения.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="267" viewBox="0 0 760 267" role="img" aria-labelledby="M14-L04-desktop-title M14-L04-desktop-desc"><title id="M14-L04-desktop-title">M14-L04 · Ошибки и остановка</title><desc id="M14-L04-desktop-desc">M14-L04 · Ошибки и остановка. Подписи и числа поясняют значения цвета.</desc><defs><marker id="M14-L04-desktop-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--act,#0b7478)"/></marker><marker id="M14-L04-desktop-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--accent,#1f55b0)"/></marker></defs>
+<text x="16" y="28" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">M14-L04 · Ошибки и остановка</text>
+<path d="M16,101 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="79" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Шаг 1: read d1</text>
+<text x="280" y="79" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Шаг 2: read d1</text>
+<path d="M16,155 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="133" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Повтор обнаружен</text>
+<text x="280" y="133" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">STOP: repeated_call</text>
+<path d="M16,209 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="187" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Лимит шагов независим</text>
+<text x="280" y="187" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Финал проверяется отдельно</text>
+<text x="16" y="237" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Сопоставление понятий; строки не означают поток выполнения.</text>
 </svg>

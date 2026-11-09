@@ -1,28 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="632" viewBox="0 0 360 632" role="img" aria-labelledby="title desc"><title id="title">Лексический и векторный поиск</title><desc id="desc">Лексический и векторный поиск. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="632" fill="white"/>
-<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Лексический и векторный</text>
-<text x="16" y="55" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">поиск</text>
-<path d="M16,184 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="90" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="106" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Лексический поиск</text>
-<text x="30" y="134" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Точные термины → разреженный</text>
-<text x="30" y="158" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">TF-IDF</text>
-<path d="M16,294 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="200" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="216" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Плотный поиск</text>
-<text x="30" y="244" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Encoder / LSA → cosine</text>
-<text x="30" y="268" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">векторов</text>
-<path d="M16,380 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="310" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="326" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Разметка</text>
-<text x="30" y="354" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Релевантны A,C; найдено A,B,D</text>
-<path d="M16,466 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="396" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="412" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Recall@3</text>
-<text x="30" y="440" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">1 из2 =0,5</text>
-<path d="M16,552 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="482" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="498" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Precision@3</text>
-<text x="30" y="526" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">1 из3 ≈0,333</text>
-<text x="16" y="580" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Учебные числа и условия — в</text>
-<text x="16" y="602" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">пояснении урока.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="632" viewBox="0 0 360 632" role="img" aria-labelledby="M10-L02-mobile-title M10-L02-mobile-desc"><title id="M10-L02-mobile-title">Лексический и векторный поиск</title><desc id="M10-L02-mobile-desc">Лексический и векторный поиск. Подписи и числа поясняют значения цвета.</desc><defs><marker id="M10-L02-mobile-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--act,#0b7478)"/></marker><marker id="M10-L02-mobile-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--accent,#1f55b0)"/></marker></defs>
+<text x="16" y="28" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Лексический и векторный</text>
+<text x="16" y="55" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">поиск</text>
+<path d="M16,184 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="90" width="3" height="86" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="106" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Лексический поиск</text>
+<text x="30" y="134" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Точные термины → разреженный</text>
+<text x="30" y="158" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">TF-IDF</text>
+<path d="M16,294 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="200" width="3" height="86" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="216" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Плотный поиск</text>
+<text x="30" y="244" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Encoder / LSA → cosine</text>
+<text x="30" y="268" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">векторов</text>
+<path d="M16,380 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="310" width="3" height="62" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="326" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Разметка</text>
+<text x="30" y="354" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Релевантны A,C; найдено A,B,D</text>
+<path d="M16,466 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="396" width="3" height="62" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="412" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Recall@3</text>
+<text x="30" y="440" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">1 из2 =0,5</text>
+<path d="M16,552 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="482" width="3" height="62" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="498" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Precision@3</text>
+<text x="30" y="526" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">1 из3 ≈0,333</text>
+<text x="16" y="580" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Учебные числа и условия — в</text>
+<text x="16" y="602" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">пояснении урока.</text>
 </svg>

@@ -13,29 +13,46 @@ import xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'course/assets/responsive';OUT.mkdir(parents=True,exist_ok=True)
 NS={'s':'http://www.w3.org/2000/svg'}
-INK='#182b3a';MUTED='#526474';BLUE='#245bba';TEAL='#087e82';AMBER='#a65c12'
-LINE='#ccd6df';SOFT='#eef4fc';OP='#edf8f7';WARN='#fff3e5'
-MAP={}
+# Colours are theme tokens (6.0, D3); old literals -> tokens: ink 182b3a, muted 526474, blue 245bba -> accent,
+# teal 087e82 -> act, amber a65c12 -> hint, line ccd6df, soft eef4fc -> accent-soft, op edf8f7 -> act-soft,
+# warn fff3e5 -> hint-soft, white text on blue -> bg, empty cell f6f7f9 -> surface; the white backing rect is gone.
+# The reader inlines these SVGs so they take the page theme. A standalone file falls back to the light values,
+# read from the light token block of tools/reader.css.
+def light_tokens():
+ css=(ROOT/'tools/reader.css').read_text(encoding='utf-8')
+ block=re.search(r':root\[data-theme="light"\]\{color-scheme:light;(.*?)\}',css,re.DOTALL).group(1)
+ return dict(re.findall(r'--([\w-]+):(#[0-9a-fA-F]{6})',block))
+LIGHT=light_tokens()
+INK='ink';MUTED='muted';BLUE='accent';TEAL='act';AMBER='hint'
+LINE='line';SOFT='accent-soft';OP='act-soft';WARN='hint-soft';ON_BLUE='bg';EMPTY='surface'
+def paint(prop,token):return f'{prop}:var(--{token},{LIGHT[token]})'
+MAP={};OWN=set()
 
 class SVG:
  def __init__(self,w,h,title):
   self.w,self.h=w,h
-  self.s=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc"><title id="title">{escape(title)}</title><desc id="desc">{escape(title)}. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="{TEAL}"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="{BLUE}"/></marker></defs><rect width="{w}" height="{h}" fill="white"/>']
+  self.s=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-labelledby="title desc"><title id="title">{escape(title)}</title><desc id="desc">{escape(title)}. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="{paint("fill",TEAL)}"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="{paint("fill",BLUE)}"/></marker></defs>']
  def text(self,x,y,t,size=17,color=INK,weight=400,anchor='start'):
-  self.s.append(f'<text x="{x}" y="{y}" fill="{color}" font-family="Segoe UI,Arial,sans-serif" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}">{escape(str(t))}</text>')
+  self.s.append(f'<text x="{x}" y="{y}" style="{paint("fill",color)}" font-family="Segoe UI,Arial,sans-serif" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}">{escape(str(t))}</text>')
  def lines(self,x,y,t,n=32,size=17,color=INK,weight=400,line=24):
   strings=[]
   for para in str(t).split('\n'):strings.extend(textwrap.wrap(para,width=n,break_long_words=False,break_on_hyphens=False) or [''])
   for k,t in enumerate(strings):self.text(x,y+k*line,t,size,color,weight)
   return y+len(strings)*line
  def rect(self,x,y,w,h,fill=SOFT,stroke='none',radius=6):
-  self.s.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" fill="{fill}" stroke="{stroke}"/>')
+  style=paint('fill',fill)+('' if stroke=='none' else ';'+paint('stroke',stroke))
+  self.s.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" style="{style}"/>')
  def path(self,d,color=TEAL,width=2,arrow=False,dash=False):
-  self.s.append(f'<path d="{d}" fill="none" stroke="{color}" stroke-width="{width}"'+(' stroke-dasharray="6 5"' if dash else '')+(f' marker-end="url(#{"blue" if color==BLUE else "arrow"})"' if arrow else '')+'/>')
- def dot(self,x,y,r=4,color=AMBER):self.s.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{color}"/>')
+  self.s.append(f'<path d="{d}" fill="none" style="{paint("stroke",color)}" stroke-width="{width}"'+(' stroke-dasharray="6 5"' if dash else '')+(f' marker-end="url(#{"blue" if color==BLUE else "arrow"})"' if arrow else '')+'/>')
+ def dot(self,x,y,r=4,color=AMBER):self.s.append(f'<circle cx="{x}" cy="{y}" r="{r}" style="{paint("fill",color)}"/>')
  def save(self,name,layout):
-  target=OUT/f'{name}-{layout}.svg';target.write_text('\n'.join(self.s+['</svg>'])+'\n',encoding='utf-8',newline='\n')
-  return target.relative_to(ROOT).as_posix()
+  # Ids carry the file name: the reader inlines many SVGs into one document.
+  doc,prefix='\n'.join(self.s+['</svg>']),f'{name}-{layout}'
+  doc=doc.replace('aria-labelledby="title desc"',f'aria-labelledby="{prefix}-title {prefix}-desc"')
+  for key in ('title','desc','arrow','blue'):doc=doc.replace(f'id="{key}"',f'id="{prefix}-{key}"').replace(f'url(#{key})',f'url(#{prefix}-{key})')
+  target=OUT/f'{name}-{layout}.svg';target.write_text(doc+'\n',encoding='utf-8',newline='\n')
+  relative=target.relative_to(ROOT).as_posix();OWN.add(relative)
+  return relative
 
 def bind(name,ext,desktop,mobile,caption=''):
  MAP[f'course/assets/{name}.{ext}']={'desktop':desktop,'mobile':mobile,'caption':caption}
@@ -89,14 +106,14 @@ def attention():
     for j,a in enumerate(row):
      x=16+j*111;s.rect(x,y+34,104,46,BLUE if a>.5 else SOFT)
      s.text(x+52,y+25,f'K{j+1}',15,MUTED,anchor='middle')
-     s.text(x+52,y+64,f'{a:.3f}',18,'white' if a>.5 else INK,600,'middle')
+     s.text(x+52,y+64,f'{a:.3f}',18,ON_BLUE if a>.5 else INK,600,'middle')
     s.text(16,y+111,f'O{i+1} = {value:.3f}',21,TEAL,650)
     s.text(16,y+139,'Сумма весов = 1 (до округления)',16,MUTED)
    else:
     s.text(20,y+27,f'Q{i+1}',19,BLUE,600)
     for j,a in enumerate(row):
      x=118+j*92;s.rect(x,y,84,42,BLUE if a>.5 else SOFT)
-     s.text(x+42,y+27,f'{a:.3f}',18,'white' if a>.5 else INK,600,'middle')
+     s.text(x+42,y+27,f'{a:.3f}',18,ON_BLUE if a>.5 else INK,600,'middle')
     s.path(f'M400,{y+21} H430',arrow=True)
     s.rect(445,y,260*value/30,42,OP)
     s.text(456,y+27,f'O{i+1} = {value:.3f}',19,TEAL,600)
@@ -281,7 +298,7 @@ def lora_matrix():
    s.text(16 if mob else x-5,y-22,title,18,BLUE,600)
    for i,row in enumerate(a):
     for j,v in enumerate(row):
-     fill=SOFT if v>0 else WARN if v<0 else '#f6f7f9'
+     fill=SOFT if v>0 else WARN if v<0 else EMPTY
      s.rect(x+j*66,y+i*56,62,52,fill,LINE,2);s.text(x+j*66+31,y+i*56+34,str(v),21,INK,500,'middle')
   if mob:
    s.lines(16,385,'Каждая строка ΔW кратна B. Ранг ΔW ≤ 1.',31,17,TEAL)
@@ -299,8 +316,12 @@ def build():
  quantitative=ROOT/'metadata/quantitative-figures.json'
  if quantitative.exists():MAP.update(json.loads(quantitative.read_text(encoding='utf-8')))
  generic_pairs();special_pairs();remaining_pairs();attention();transformer();streaming();logarithms();lora_matrix()
+ # Figures drawn here take theme tokens and are inlined by the reader; matplotlib figures stay images (D4).
+ own=[key for key,value in MAP.items() if value.get('desktop') in OWN and value.get('mobile') in OWN]
+ if {value for key in own for value in (MAP[key]['desktop'],MAP[key]['mobile'])}!=OWN:raise SystemExit('Every drawn SVG must belong to one figure')
+ for key in own:MAP[key]['inline']=True
  (ROOT/'metadata/responsive-figures.json').write_text(json.dumps(MAP,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
  for path in OUT.glob('*.svg'):ET.parse(path)
- print(f'{len(MAP)} figures mapped; responsive SVGs parsed successfully')
+ print(f'{len(MAP)} figures mapped, {len(own)} inline with theme tokens; responsive SVGs parsed successfully')
 
 if __name__=='__main__':build()

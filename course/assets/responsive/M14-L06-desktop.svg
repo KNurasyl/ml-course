@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="369" viewBox="0 0 760 369" role="img" aria-labelledby="title desc"><title id="title">Разрешение действия отделено от генерации</title><desc id="desc">Разрешение действия отделено от генерации. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="760" height="369" fill="white"/>
-<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">Разрешение действия отделено от генерации</text>
-<path d="M16,101 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="79" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">LLM: предложение</text>
-<text x="280" y="79" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">JSON tool + args</text>
-<path d="M16,155 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="133" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Parser: проверка</text>
-<text x="280" y="133" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">тип, ключи, допустимые имена</text>
-<path d="M16,233 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="187" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Executor: серверный</text>
-<text x="18" y="211" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">scope</text>
-<text x="280" y="187" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">d1 разрешён / d2 отклонён</text>
-<path d="M16,311 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="265" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Observation → новый</text>
-<text x="18" y="289" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">вызов</text>
-<text x="280" y="265" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">finish, повтор или лимит</text>
-<text x="16" y="339" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Сопоставление понятий; строки не означают поток выполнения.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="369" viewBox="0 0 760 369" role="img" aria-labelledby="M14-L06-desktop-title M14-L06-desktop-desc"><title id="M14-L06-desktop-title">Разрешение действия отделено от генерации</title><desc id="M14-L06-desktop-desc">Разрешение действия отделено от генерации. Подписи и числа поясняют значения цвета.</desc><defs><marker id="M14-L06-desktop-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--act,#0b7478)"/></marker><marker id="M14-L06-desktop-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--accent,#1f55b0)"/></marker></defs>
+<text x="16" y="28" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">Разрешение действия отделено от генерации</text>
+<path d="M16,101 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="79" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">LLM: предложение</text>
+<text x="280" y="79" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">JSON tool + args</text>
+<path d="M16,155 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="133" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Parser: проверка</text>
+<text x="280" y="133" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">тип, ключи, допустимые имена</text>
+<path d="M16,233 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="187" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Executor: серверный</text>
+<text x="18" y="211" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">scope</text>
+<text x="280" y="187" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">d1 разрешён / d2 отклонён</text>
+<path d="M16,311 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="265" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Observation → новый</text>
+<text x="18" y="289" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">вызов</text>
+<text x="280" y="265" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">finish, повтор или лимит</text>
+<text x="16" y="339" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Сопоставление понятий; строки не означают поток выполнения.</text>
 </svg>

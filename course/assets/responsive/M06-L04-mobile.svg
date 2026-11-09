@@ -1,27 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="608" viewBox="0 0 360 608" role="img" aria-labelledby="title desc"><title id="title">Наблюдение и изменение качества</title><desc id="desc">Наблюдение и изменение качества. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="608" fill="white"/>
-<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Наблюдение и изменение</text>
-<text x="16" y="55" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">качества</text>
-<path d="M16,160 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="90" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="106" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Версия A: RU</text>
-<text x="30" y="134" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">18/20 = 90%</text>
-<path d="M16,246 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="176" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="192" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Версия B: RU</text>
-<text x="30" y="220" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">12/20 = 60%</text>
-<path d="M16,332 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="262" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="278" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Версия A: EN</text>
-<text x="30" y="306" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">8/10 = 80%</text>
-<path d="M16,418 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="348" width="3" height="62" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="364" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Версия B: EN</text>
-<text x="30" y="392" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">29/30 ≈ 96,7%</text>
-<path d="M16,528 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="434" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="450" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Общий показатель</text>
-<text x="30" y="478" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Смешивает качество и состав</text>
-<text x="30" y="502" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">выборки</text>
-<text x="16" y="556" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Учебные числа и условия — в</text>
-<text x="16" y="578" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">пояснении урока.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="608" viewBox="0 0 360 608" role="img" aria-labelledby="M06-L04-mobile-title M06-L04-mobile-desc"><title id="M06-L04-mobile-title">Наблюдение и изменение качества</title><desc id="M06-L04-mobile-desc">Наблюдение и изменение качества. Подписи и числа поясняют значения цвета.</desc><defs><marker id="M06-L04-mobile-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--act,#0b7478)"/></marker><marker id="M06-L04-mobile-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--accent,#1f55b0)"/></marker></defs>
+<text x="16" y="28" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Наблюдение и изменение</text>
+<text x="16" y="55" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">качества</text>
+<path d="M16,160 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="90" width="3" height="62" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="106" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Версия A: RU</text>
+<text x="30" y="134" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">18/20 = 90%</text>
+<path d="M16,246 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="176" width="3" height="62" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="192" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Версия B: RU</text>
+<text x="30" y="220" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">12/20 = 60%</text>
+<path d="M16,332 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="262" width="3" height="62" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="278" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Версия A: EN</text>
+<text x="30" y="306" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">8/10 = 80%</text>
+<path d="M16,418 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="348" width="3" height="62" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="364" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Версия B: EN</text>
+<text x="30" y="392" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">29/30 ≈ 96,7%</text>
+<path d="M16,528 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="434" width="3" height="86" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="450" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Общий показатель</text>
+<text x="30" y="478" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Смешивает качество и состав</text>
+<text x="30" y="502" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">выборки</text>
+<text x="16" y="556" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Учебные числа и условия — в</text>
+<text x="16" y="578" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">пояснении урока.</text>
 </svg>

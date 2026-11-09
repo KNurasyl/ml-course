@@ -1,17 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="363" viewBox="0 0 760 363" role="img" aria-labelledby="title desc"><title id="title">Найденный документ ≠ полный контекст</title><desc id="desc">Найденный документ ≠ полный контекст. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="760" height="363" fill="white"/>
-<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">Найденный документ ≠ полный контекст</text>
-<path d="M16,149 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="79" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Исходное утверждение</text>
-<text x="280" y="79" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Индекс ускоряет подходящие запросы, но не</text>
-<text x="280" y="103" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">гарантирует ускорения выборки большей части</text>
-<text x="280" y="127" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">таблицы.</text>
-<path d="M16,227 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="181" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Окно отрезало условие</text>
-<text x="280" y="181" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">«Индекс ускоряет подходящие запросы». Document</text>
-<text x="280" y="205" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Recall = 1, но оговорка потеряна.</text>
-<path d="M16,305 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="259" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Абзац сохранил условие</text>
-<text x="280" y="259" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">«… но не гарантирует …». Теперь проверяем</text>
-<text x="280" y="283" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">утверждение ответа.</text>
-<text x="16" y="333" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Трасса: версия → chunk → кандидаты → контекст → claim.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="363" viewBox="0 0 760 363" role="img" aria-labelledby="M10-L06-desktop-title M10-L06-desktop-desc"><title id="M10-L06-desktop-title">Найденный документ ≠ полный контекст</title><desc id="M10-L06-desktop-desc">Найденный документ ≠ полный контекст. Подписи и числа поясняют значения цвета.</desc><defs><marker id="M10-L06-desktop-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--act,#0b7478)"/></marker><marker id="M10-L06-desktop-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--accent,#1f55b0)"/></marker></defs>
+<text x="16" y="28" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">Найденный документ ≠ полный контекст</text>
+<path d="M16,149 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="79" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Исходное утверждение</text>
+<text x="280" y="79" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Индекс ускоряет подходящие запросы, но не</text>
+<text x="280" y="103" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">гарантирует ускорения выборки большей части</text>
+<text x="280" y="127" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">таблицы.</text>
+<path d="M16,227 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="181" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Окно отрезало условие</text>
+<text x="280" y="181" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">«Индекс ускоряет подходящие запросы». Document</text>
+<text x="280" y="205" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Recall = 1, но оговорка потеряна.</text>
+<path d="M16,305 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="259" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Абзац сохранил условие</text>
+<text x="280" y="259" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">«… но не гарантирует …». Теперь проверяем</text>
+<text x="280" y="283" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">утверждение ответа.</text>
+<text x="16" y="333" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Трасса: версия → chunk → кандидаты → контекст → claim.</text>
 </svg>

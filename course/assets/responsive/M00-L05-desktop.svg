@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="315" viewBox="0 0 760 315" role="img" aria-labelledby="title desc"><title id="title">Обучение передаёт сервису артефакт</title><desc id="desc">Обучение передаёт сервису артефакт. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="760" height="315" fill="white"/>
-<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">Обучение передаёт сервису артефакт</text>
-<path d="M16,125 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="79" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Подготовка</text>
-<text x="280" y="79" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Данные с метками → выбор параметров → артефакт с</text>
-<text x="280" y="103" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">версией</text>
-<path d="M16,179 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="157" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Корректный запрос</text>
-<text x="280" y="157" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">x → проверка контракта → модель → ответ + версия</text>
-<path d="M16,257 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="211" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Неверный запрос</text>
-<text x="280" y="211" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Проверка контракта → явная ошибка; модель не</text>
-<text x="280" y="235" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">вызывается</text>
-<text x="16" y="285" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Артефакт связывает обучение и обслуживание запроса.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="315" viewBox="0 0 760 315" role="img" aria-labelledby="M00-L05-desktop-title M00-L05-desktop-desc"><title id="M00-L05-desktop-title">Обучение передаёт сервису артефакт</title><desc id="M00-L05-desktop-desc">Обучение передаёт сервису артефакт. Подписи и числа поясняют значения цвета.</desc><defs><marker id="M00-L05-desktop-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--act,#0b7478)"/></marker><marker id="M00-L05-desktop-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--accent,#1f55b0)"/></marker></defs>
+<text x="16" y="28" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">Обучение передаёт сервису артефакт</text>
+<path d="M16,125 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="79" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Подготовка</text>
+<text x="280" y="79" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Данные с метками → выбор параметров → артефакт с</text>
+<text x="280" y="103" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">версией</text>
+<path d="M16,179 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="157" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Корректный запрос</text>
+<text x="280" y="157" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">x → проверка контракта → модель → ответ + версия</text>
+<path d="M16,257 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="211" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Неверный запрос</text>
+<text x="280" y="211" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Проверка контракта → явная ошибка; модель не</text>
+<text x="280" y="235" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">вызывается</text>
+<text x="16" y="285" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Артефакт связывает обучение и обслуживание запроса.</text>
 </svg>

@@ -1,19 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="393" viewBox="0 0 760 393" role="img" aria-labelledby="title desc"><title id="title">LayerNorm: нормируем признаки строки</title><desc id="desc">LayerNorm: нормируем признаки строки. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="760" height="393" fill="white"/>
-<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">LayerNorm: нормируем признаки строки</text>
-<path d="M16,125 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="79" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">x = [1, 3, 5, 7]</text>
-<text x="280" y="79" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">μ=4; variance=5 → z≈[−1.342, −0.447, 0.447,</text>
-<text x="280" y="103" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">1.342]</text>
-<path d="M16,179 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="157" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">x = [10, 10, 10, 10]</text>
-<text x="280" y="157" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">variance=0; ε&gt;0 → z=[0, 0, 0, 0]</text>
-<path d="M16,257 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="211" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Обучаемое</text>
-<text x="18" y="235" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">преобразование</text>
-<text x="280" y="211" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">y = γ · z + β по каждой координате</text>
-<path d="M16,335 H744" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<text x="18" y="289" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Residual — другая</text>
-<text x="18" y="313" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">операция</text>
-<text x="280" y="289" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">[2, −1, 3] + [0.5, 1, −2] = [2.5, 0, 1]</text>
-<text x="16" y="363" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Нормируются признаки D; позиции T не смешиваются.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="393" viewBox="0 0 760 393" role="img" aria-labelledby="M08-L06-desktop-title M08-L06-desktop-desc"><title id="M08-L06-desktop-title">LayerNorm: нормируем признаки строки</title><desc id="M08-L06-desktop-desc">LayerNorm: нормируем признаки строки. Подписи и числа поясняют значения цвета.</desc><defs><marker id="M08-L06-desktop-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--act,#0b7478)"/></marker><marker id="M08-L06-desktop-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--accent,#1f55b0)"/></marker></defs>
+<text x="16" y="28" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="650" text-anchor="start">LayerNorm: нормируем признаки строки</text>
+<path d="M16,125 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="79" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">x = [1, 3, 5, 7]</text>
+<text x="280" y="79" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">μ=4; variance=5 → z≈[−1.342, −0.447, 0.447,</text>
+<text x="280" y="103" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">1.342]</text>
+<path d="M16,179 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="157" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">x = [10, 10, 10, 10]</text>
+<text x="280" y="157" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">variance=0; ε&gt;0 → z=[0, 0, 0, 0]</text>
+<path d="M16,257 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="211" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Обучаемое</text>
+<text x="18" y="235" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">преобразование</text>
+<text x="280" y="211" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">y = γ · z + β по каждой координате</text>
+<path d="M16,335 H744" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<text x="18" y="289" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">Residual — другая</text>
+<text x="18" y="313" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">операция</text>
+<text x="280" y="289" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">[2, −1, 3] + [0.5, 1, −2] = [2.5, 0, 1]</text>
+<text x="16" y="363" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">Нормируются признаки D; позиции T не смешиваются.</text>
 </svg>

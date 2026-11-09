@@ -1,31 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="704" viewBox="0 0 360 704" role="img" aria-labelledby="title desc"><title id="title">Поздний ответ не оживляет отменённый ход</title><desc id="desc">Поздний ответ не оживляет отменённый ход. Подписи и числа поясняют значения цвета.</desc><defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#087e82"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#245bba"/></marker></defs><rect width="360" height="704" fill="white"/>
-<text x="16" y="28" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Поздний ответ не оживляет</text>
-<text x="16" y="55" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">отменённый ход</text>
-<path d="M16,184 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="90" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="106" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">t0: начат ход 11</text>
-<text x="30" y="134" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Вычисление долгое, результат</text>
-<text x="30" y="158" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">ещё не готов.</text>
-<path d="M16,294 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="200" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="216" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">t1: отменён ход 11</text>
-<text x="30" y="244" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Старые данные уже не вправе</text>
-<text x="30" y="268" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">звучать.</text>
-<path d="M16,404 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="310" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="326" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">t2: начат ход 12</text>
-<text x="30" y="354" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Вычисление 11 может</text>
-<text x="30" y="378" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">продолжаться параллельно.</text>
-<path d="M16,514 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="420" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="436" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">t3: результат 12 готов</text>
-<text x="30" y="464" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Проверка идентификатора</text>
-<text x="30" y="488" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">принимает его.</text>
-<path d="M16,624 H344" fill="none" stroke="#ccd6df" stroke-width="1"/>
-<rect x="16" y="530" width="3" height="86" rx="0" fill="#245bba" stroke="none"/>
-<text x="30" y="546" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">t4: результат 11 готов</text>
-<text x="30" y="574" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Проверка идентификатора</text>
-<text x="30" y="598" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">отклоняет его.</text>
-<text x="16" y="652" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">t0…t4 — порядок событий, не</text>
-<text x="16" y="674" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">равные интервалы времени.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="704" viewBox="0 0 360 704" role="img" aria-labelledby="M15-L04-mobile-title M15-L04-mobile-desc"><title id="M15-L04-mobile-title">Поздний ответ не оживляет отменённый ход</title><desc id="M15-L04-mobile-desc">Поздний ответ не оживляет отменённый ход. Подписи и числа поясняют значения цвета.</desc><defs><marker id="M15-L04-mobile-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--act,#0b7478)"/></marker><marker id="M15-L04-mobile-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" style="fill:var(--accent,#1f55b0)"/></marker></defs>
+<text x="16" y="28" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">Поздний ответ не оживляет</text>
+<text x="16" y="55" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="650" text-anchor="start">отменённый ход</text>
+<path d="M16,184 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="90" width="3" height="86" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="106" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">t0: начат ход 11</text>
+<text x="30" y="134" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Вычисление долгое, результат</text>
+<text x="30" y="158" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">ещё не готов.</text>
+<path d="M16,294 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="200" width="3" height="86" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="216" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">t1: отменён ход 11</text>
+<text x="30" y="244" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Старые данные уже не вправе</text>
+<text x="30" y="268" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">звучать.</text>
+<path d="M16,404 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="310" width="3" height="86" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="326" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">t2: начат ход 12</text>
+<text x="30" y="354" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Вычисление 11 может</text>
+<text x="30" y="378" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">продолжаться параллельно.</text>
+<path d="M16,514 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="420" width="3" height="86" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="436" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">t3: результат 12 готов</text>
+<text x="30" y="464" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Проверка идентификатора</text>
+<text x="30" y="488" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">принимает его.</text>
+<path d="M16,624 H344" fill="none" style="stroke:var(--line,#d9d6cd)" stroke-width="1"/>
+<rect x="16" y="530" width="3" height="86" rx="0" style="fill:var(--accent,#1f55b0)"/>
+<text x="30" y="546" style="fill:var(--accent,#1f55b0)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" text-anchor="start">t4: результат 11 готов</text>
+<text x="30" y="574" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">Проверка идентификатора</text>
+<text x="30" y="598" style="fill:var(--ink,#1d2430)" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" text-anchor="start">отклоняет его.</text>
+<text x="16" y="652" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">t0…t4 — порядок событий, не</text>
+<text x="16" y="674" style="fill:var(--muted,#5a6270)" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" text-anchor="start">равные интервалы времени.</text>
 </svg>
