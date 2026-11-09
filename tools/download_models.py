@@ -71,6 +71,20 @@ def guards():
             allow_patterns=config["allow_patterns"], ignore_patterns=config["ignore_patterns"])
         print(f"Guard classifier ready: {directory}")
 
+def speech_extra():
+    """Optional 1.2.0 extension (M15-L07X, T45): faster-whisper small (about 0.5 GB) and a CC0 Piper voice, pinned to revisions."""
+    from huggingface_hub import hf_hub_download, snapshot_download
+    for config in json.loads((ROOT / "metadata/reference-models.json").read_text(encoding="utf-8"))["speech_extra"]:
+        directory = ROOT / config["path"]
+        if config["kind"] == "asr":
+            snapshot_download(repo_id=config["repo_id"], revision=config["revision"], local_dir=directory,
+                              allow_patterns=config["allow_patterns"])
+        else:
+            for name in config["files"]:
+                hf_hub_download(repo_id=config["repo_id"], filename=name, revision=config["revision"], local_dir=directory)
+        print(f"Speech model ready: {directory}")
+
+
 def gguf():
     """Optional 1.2.0 extension (M09-L07X, T30): GGUF files for llama.cpp, pinned to a revision and checked by sha256."""
     from huggingface_hub import hf_hub_download
@@ -96,9 +110,10 @@ if __name__ == "__main__":
     parser.add_argument("--rerankers", action="store_true", help="optional M10-L03 cross-encoder, about 2.3 GB")
     parser.add_argument("--gguf", action="store_true", help="optional M09-L07X GGUF files for llama.cpp, about 3.9 GB")
     parser.add_argument("--guards", action="store_true", help="optional M14-L08X prompt-injection classifier, about 0.75 GB")
+    parser.add_argument("--speech-extra", action="store_true", help="optional M15-L07X faster-whisper small and a Piper voice, about 0.55 GB")
     args = parser.parse_args()
-    if not (args.speech or args.llm or args.embedders or args.rerankers or args.gguf or args.guards):
-        parser.error("Укажи --speech, --llm, --embedders, --rerankers, --gguf и/или --guards")
+    if not (args.speech or args.llm or args.embedders or args.rerankers or args.gguf or args.guards or args.speech_extra):
+        parser.error("Укажи --speech, --llm, --embedders, --rerankers, --gguf, --guards и/или --speech-extra")
     if args.speech:
         speech()
     if args.llm:
@@ -111,3 +126,5 @@ if __name__ == "__main__":
         gguf()
     if args.guards:
         guards()
+    if args.speech_extra:
+        speech_extra()

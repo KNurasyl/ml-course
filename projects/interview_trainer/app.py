@@ -18,6 +18,15 @@ WEB = Path(__file__).parent / "web"
 SESSIONS: dict[str, Interview] = {}
 WORK = threading.Lock()
 MODEL = LocalLLM()
+ENGINES = {"asr": transcribe_wav, "tts": synthesize_wav}
+
+
+def select_speech(asr: str = "vosk", tts: str = "sapi") -> dict:
+    """Vosk and SAPI by default; the optional second configuration of M15-L07X keeps the same WAV contract."""
+    from . import speech_alt
+    ENGINES["asr"] = {"vosk": transcribe_wav, "whisper": speech_alt.transcribe_whisper}[asr]
+    ENGINES["tts"] = {"sapi": synthesize_wav, "piper": speech_alt.synthesize_piper}[tts]
+    return ENGINES
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -100,7 +109,7 @@ class Handler(BaseHTTPRequestHandler):
                     audio = Path(directory) / "input.wav"
                     audio.write_bytes(body)
                     start = time.perf_counter()
-                    return self.send(200, {"text":transcribe_wav(audio),"seconds":time.perf_counter()-start})
+                    return self.send(200, {"text":ENGINES["asr"](audio),"seconds":time.perf_counter()-start})
             if self.path == "/start":
                 if len(SESSIONS) >= 100:
                     raise ValueError("Достигнут учебный лимит сессий: перезапусти сервер")
@@ -123,7 +132,7 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send(200, result)
             if self.path == "/tts":
                 with tempfile.TemporaryDirectory(prefix="course-tts-") as directory:
-                    output = synthesize_wav(data.get("text", ""), Path(directory) / "reply.wav")
+                    output = ENGINES["tts"](data.get("text", ""), Path(directory) / "reply.wav")
                     return self.send(200, output.read_bytes(), "audio/wav")
             self.send(404, {"error":"Не найдено"})
         except TimeoutError:
@@ -140,7 +149,10 @@ class Handler(BaseHTTPRequestHandler):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--port", type=int, default=8765)
+    parser.add_argument("--asr", choices=["vosk", "whisper"], default="vosk", help="whisper: optional faster-whisper, M15-L07X")
+    parser.add_argument("--tts", choices=["sapi", "piper"], default="sapi", help="piper: optional Piper voice, M15-L07X")
     args = parser.parse_args()
+    select_speech(args.asr, args.tts)
     server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
     server.timeout = 1
     print(f"Открой http://127.0.0.1:{args.port} ; Ctrl+C останавливает сервер", flush=True)

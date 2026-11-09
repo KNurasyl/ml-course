@@ -1010,6 +1010,13 @@
       "version": "1.1.0",
       "status": "ready"
     },
+    "M15-L07X": {
+      "id": "M15-L07X",
+      "title": "M15-L07X. Вторая конфигурация речи: faster-whisper и Piper",
+      "path": "course/lessons/M15-L07X.md",
+      "version": "1.1.0",
+      "status": "ready"
+    },
     "M16-L01": {
       "id": "M16-L01",
       "title": "M16-L01. Требования и две рубрики",
@@ -1407,6 +1414,7 @@
       "M15-L04",
       "M15-L05",
       "M15-L06",
+      "M15-L07X",
       "M16-L01",
       "M16-L06",
       "M16-L07",
@@ -2051,7 +2059,8 @@
         "M15-L03",
         "M15-L04",
         "M15-L05",
-        "M15-L06"
+        "M15-L06",
+        "M15-L07X"
       ],
       "homework_id": "M15-HW01",
       "exercise": {
@@ -4770,6 +4779,32 @@
         "practice_minutes": 135,
         "self_check_minutes": 30,
         "setup_minutes": "separate; record actual",
+        "estimate_status": "planning_hypothesis_not_measured"
+      },
+      "pilot_sessions": []
+    },
+    {
+      "id": "M15-L07X",
+      "title": "Вторая конфигурация речи: faster-whisper и Piper",
+      "version": "1.1.0",
+      "module_id": "M15",
+      "material_key": "M15-L07X",
+      "path": "course/lessons/M15-L07X.md",
+      "scope": "complete_lesson",
+      "material_status": "ready",
+      "prerequisites": [
+        "M15-L02",
+        "M15-L03",
+        "M15-L05"
+      ],
+      "outcome_ids": [
+        "M15-C17"
+      ],
+      "workload": {
+        "reading_minutes": 45,
+        "practice_minutes": 70,
+        "self_check_minutes": 35,
+        "setup_minutes": "separate; tests and report need no model; the run needs the optional faster-whisper and piper-tts packages and --speech-extra models, about 0.55 GB",
         "estimate_status": "planning_hypothesis_not_measured"
       },
       "pilot_sessions": []

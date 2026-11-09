@@ -133,5 +133,41 @@
         "onnx/*"
       ]
     }
+  ],
+  "speech_extra": [
+    {
+      "name": "faster-whisper-small",
+      "kind": "asr",
+      "repo_id": "Systran/faster-whisper-small",
+      "revision": "536b0662742c02347bc0e980a01041f333bce120",
+      "path": "models/faster-whisper-small",
+      "license": "MIT",
+      "weights_bytes": 483546902,
+      "languages": "multilingual, Russian included",
+      "compute_type": "int8",
+      "allow_patterns": [
+        "config.json",
+        "model.bin",
+        "tokenizer.json",
+        "vocabulary.txt",
+        "README.md"
+      ]
+    },
+    {
+      "name": "ru_RU-denis-medium",
+      "kind": "tts",
+      "repo_id": "rhasspy/piper-voices",
+      "revision": "e7229f7d33a10e145e109b886d661984201ac3c4",
+      "path": "models/piper",
+      "license": "voice dataset CC0 per MODEL_CARD; repository MIT",
+      "weights_bytes": 63201294,
+      "sample_rate": 22050,
+      "files": [
+        "ru/ru_RU/denis/medium/ru_RU-denis-medium.onnx",
+        "ru/ru_RU/denis/medium/ru_RU-denis-medium.onnx.json",
+        "ru/ru_RU/denis/medium/MODEL_CARD"
+      ],
+      "not_chosen": "ru_RU-irina-medium: dataset license Unknown in its MODEL_CARD; ru_RU-ruslan-medium: CC BY-NC-SA 4.0"
+    }
   ]
 }

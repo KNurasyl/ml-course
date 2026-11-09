@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" viewBox="0 0 760 560" role="img" aria-labelledby="title desc">
+<title id="title">Вторая конфигурация речи</title>
+<desc id="desc">Сверху — две конфигурации речи на одном контракте WAV mono PCM16 16 кГц: Windows SAPI с голосом Irina и Vosk small-ru, Piper с голосом Denis и faster-whisper small int8. Слева снизу — WER на 40 фразах для каждой пары голоса и распознавателя: sapi->vosk 0.174; piper->vosk 0.311; sapi->whisper 0.090; piper->whisper 0.179. Для Piper показан разброс по трём синтезам: Vosk от 0.257 до 0.311, Whisper от 0.173 до 0.193. Справа снизу — задержки: синтез фразы SAPI 0.414 с, Piper 0.086 с после загрузки голоса за 3.84 с; RTF распознавания Vosk 0.14, Whisper 0.386 на голосе SAPI.</desc>
+<rect width="760" height="560" fill="white"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#182b3a"/></marker></defs>
+<text x="16.0" y="34.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="22" text-anchor="start" font-weight="650">Вторая конфигурация речи на том же контракте</text>
+<rect x="16.0" y="52.0" width="728.0" height="172.0" rx="6" fill="#f7f9fb" stroke="#c9d1d9"/>
+<text x="30.0" y="74.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="13" text-anchor="start" font-weight="600">Голос</text>
+<text x="380.0" y="74.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="13" text-anchor="middle" font-weight="600">Контракт</text>
+<text x="730.0" y="74.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="13" text-anchor="end" font-weight="600">Распознавание</text>
+<rect x="30.0" y="86.0" width="180.0" height="44.0" rx="5" fill="white" stroke="#245bba"/>
+<text x="120.0" y="104.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="middle" font-weight="600">SAPI, голос Irina</text>
+<text x="120.0" y="120.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="middle">процесс PowerShell на вызов</text>
+<rect x="30.0" y="156.0" width="180.0" height="44.0" rx="5" fill="white" stroke="#087e82"/>
+<text x="120.0" y="174.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="middle" font-weight="600">Piper, голос Denis</text>
+<text x="120.0" y="190.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="middle">VITS в ONNX, 22 050 Гц, CC0</text>
+<rect x="290.0" y="112.0" width="180.0" height="58.0" rx="6" fill="#eef4fc" stroke="#245bba"/>
+<text x="380.0" y="136.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="middle" font-weight="600">WAV mono PCM16</text>
+<text x="380.0" y="154.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="middle">16 кГц, до 120 с</text>
+<rect x="550.0" y="86.0" width="180.0" height="44.0" rx="5" fill="white" stroke="#245bba"/>
+<text x="640.0" y="104.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="middle" font-weight="600">Vosk small-ru</text>
+<text x="640.0" y="120.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="middle">Kaldi, словарь, 88 МБ</text>
+<rect x="550.0" y="156.0" width="180.0" height="44.0" rx="5" fill="white" stroke="#087e82"/>
+<text x="640.0" y="174.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="middle" font-weight="600">faster-whisper small</text>
+<text x="640.0" y="190.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="middle">int8, 4 потока, 464 МБ</text>
+<line x1="210.0" y1="108.0" x2="288.0" y2="132.0" stroke="#182b3a" stroke-width="1.4" marker-end="url(#a)"/>
+<line x1="210.0" y1="178.0" x2="288.0" y2="152.0" stroke="#182b3a" stroke-width="1.4" marker-end="url(#a)"/>
+<text x="249.0" y="196.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="middle">→ 16 кГц</text>
+<line x1="470.0" y1="132.0" x2="548.0" y2="108.0" stroke="#182b3a" stroke-width="1.4" marker-end="url(#a)"/>
+<line x1="470.0" y1="152.0" x2="548.0" y2="178.0" stroke="#182b3a" stroke-width="1.4" marker-end="url(#a)"/>
+<text x="16.0" y="254.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="15" text-anchor="start" font-weight="600">WER мягкий на 40 фразах (280 слов)</text>
+<text x="175.0" y="282.0" fill="#245bba" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="middle" font-weight="600">Vosk</text>
+<text x="313.0" y="282.0" fill="#087e82" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="middle" font-weight="600">Whisper</text>
+<text x="100.0" y="326.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="end" font-weight="600">SAPI</text>
+<rect x="110" y="290" width="130" height="64" rx="5" fill="#a65c12" fill-opacity="0.50" stroke="#c9d1d9"/>
+<text x="175.0" y="320.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" text-anchor="middle" font-weight="650">0.174</text>
+<rect x="248" y="290" width="130" height="64" rx="5" fill="#a65c12" fill-opacity="0.26" stroke="#c9d1d9"/>
+<text x="313.0" y="320.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="16" text-anchor="middle" font-weight="650">0.090</text>
+<text x="100.0" y="398.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="end" font-weight="600">Piper</text>
+<rect x="110" y="362" width="130" height="64" rx="5" fill="#a65c12" fill-opacity="0.89" stroke="#c9d1d9"/>
+<text x="175.0" y="392.0" fill="white" font-family="Segoe UI,Arial,sans-serif" font-size="16" text-anchor="middle" font-weight="650">0.311</text>
+<text x="175.0" y="412.0" fill="white" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="middle">3 синтеза: 0.26–0.31</text>
+<rect x="248" y="362" width="130" height="64" rx="5" fill="#a65c12" fill-opacity="0.51" stroke="#c9d1d9"/>
+<text x="313.0" y="392.0" fill="white" font-family="Segoe UI,Arial,sans-serif" font-size="16" text-anchor="middle" font-weight="650">0.179</text>
+<text x="313.0" y="412.0" fill="white" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="middle">3 синтеза: 0.17–0.19</text>
+<text x="16.0" y="462.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="start">Термины (Redis, Kafka, NestJS):</text>
+<text x="16.0" y="480.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="start">Vosk 0.58, Whisper 0.35 на голосе SAPI</text>
+<text x="16.0" y="498.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="start">CER мягкий: Vosk 0.048, Whisper 0.040</text>
+<text x="16.0" y="516.0" fill="#a65c12" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="start">Синтетический голос вместо человека: без микрофона и шума</text>
+<text x="420.0" y="254.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="15" text-anchor="start" font-weight="600">Задержки на CPU</text>
+<text x="420.0" y="282.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="start">Синтез одной фразы, медиана, с</text>
+<text x="420.0" y="304.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="start">SAPI</text>
+<rect x="560.0" y="292.0" width="150.0" height="16.0" rx="0" fill="#eef1f4" stroke="none"/>
+<rect x="560.0" y="292.0" width="62.1" height="16.0" rx="0" fill="#245bba" stroke="none"/>
+<text x="716.0" y="304.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="start">0.41</text>
+<text x="420.0" y="328.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="start">Piper</text>
+<rect x="560.0" y="316.0" width="150.0" height="16.0" rx="0" fill="#eef1f4" stroke="none"/>
+<rect x="560.0" y="316.0" width="12.9" height="16.0" rx="0" fill="#087e82" stroke="none"/>
+<text x="716.0" y="328.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="start">0.09</text>
+<text x="420.0" y="350.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="start">Загрузка голоса Piper — 3.8 с, один раз</text>
+<text x="420.0" y="382.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="start">RTF распознавания, медиана</text>
+<text x="420.0" y="404.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="start">Vosk, SAPI</text>
+<rect x="560.0" y="392.0" width="150.0" height="16.0" rx="0" fill="#eef1f4" stroke="none"/>
+<rect x="560.0" y="392.0" width="21.0" height="16.0" rx="0" fill="#245bba" stroke="none"/>
+<text x="716.0" y="404.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="start">0.14</text>
+<text x="420.0" y="428.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="start">Whisper, SAPI</text>
+<rect x="560.0" y="416.0" width="150.0" height="16.0" rx="0" fill="#eef1f4" stroke="none"/>
+<rect x="560.0" y="416.0" width="57.9" height="16.0" rx="0" fill="#087e82" stroke="none"/>
+<text x="716.0" y="428.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="start">0.39</text>
+<text x="420.0" y="452.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="start">Vosk, Piper</text>
+<rect x="560.0" y="440.0" width="150.0" height="16.0" rx="0" fill="#eef1f4" stroke="none"/>
+<rect x="560.0" y="440.0" width="28.4" height="16.0" rx="0" fill="#245bba" stroke="none"/>
+<text x="716.0" y="452.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="start">0.19</text>
+<text x="420.0" y="476.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="12" text-anchor="start">Whisper, Piper</text>
+<rect x="560.0" y="464.0" width="150.0" height="16.0" rx="0" fill="#eef1f4" stroke="none"/>
+<rect x="560.0" y="464.0" width="101.0" height="16.0" rx="0" fill="#087e82" stroke="none"/>
+<text x="716.0" y="476.0" fill="#182b3a" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="start">0.67</text>
+<text x="420.0" y="498.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="start">Загрузка модели: Vosk 1.2 с, Whisper 2.6 с</text>
+<text x="420.0" y="516.0" fill="#526474" font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="start">RTF меньше 1 — быстрее, чем длится запись</text>
+</svg>

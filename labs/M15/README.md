@@ -38,3 +38,20 @@ Set-Location C:\projects\ml-llm-course
 ## Полный ключ домашней работы
 
 После собственной попытки открой [разбор M15-HW01](../../solutions/modules/M15.md). Исполняемый ключ полного опыта — [hw_reference.py](../../solutions/exercises/M15/hw_reference.py), он дополняет стартер и базовый demo.
+
+## Дополнение версии 1.2.0: вторая конфигурация речи (T45, урок M15-L07X)
+
+```powershell
+.\.venv\Scripts\python.exe labs\M15\speech_compare.py report
+.\.venv\Scripts\python.exe -m pytest -q tests\test_speech_compare.py
+.\.venv\Scripts\python.exe -m pip install -r requirements-optional.in
+.\.venv\Scripts\python.exe tools\download_models.py --speech-extra
+.\.venv\Scripts\python.exe labs\M15\speech_compare.py run
+.\.venv\Scripts\python.exe labs\M15\speech_compare.py own <папка с WAV и manifest.csv>
+```
+
+`report` и тесты работают без моделей: отчёт читает замороженный прогон из `quality/speech`. Для `run` и `own` нужны пакеты `faster-whisper` и `piper-tts` из `requirements-optional.in` и модели `--speech-extra`: faster-whisper small (464 МБ, MIT) и голос Piper ru_RU-denis-medium (61 МБ, данные CC0). Базовые Vosk и SAPI, их лабораторные и тесты не меняются.
+
+`projects/interview_trainer/speech_alt.py` — вторая конфигурация на том же контракте, что `speech.py` (WAV mono PCM16 16 кГц, до 120 с). faster-whisper распознаёт в int8 на четырёх потоках, Piper синтезирует с частотой 22 050 Гц, и звук пересчитывается в 16 кГц. `labs/M15/speech_compare.py` прогоняет 40 фраз собеседования из `data/speech/phrases-ru.json` через оба голоса и оба распознавателя. Он считает WER по строгому и мягкому эталону, CER, ошибки по группам (общие, числа, термины), расхождения в отрицаниях и задержки с отдельным холодным стартом. Синтез Piper случаен, поэтому набор синтезируется трижды. `own` повторяет распознавание на собственных записях ученика.
+
+Авторский прогон 09.11.2026 сделан на синтетическом голосе, это не замер на людях. Мягкий WER: SAPI → Vosk 0.174, SAPI → Whisper 0.090, Piper → Vosk 0.257–0.311, Piper → Whisper 0.173–0.193 (три синтеза). RTF распознавания: Vosk 0.14–0.19, Whisper 0.39–0.67. Синтез фразы: SAPI 0.41 с, Piper 0.09 с после загрузки голоса за 3.8 с. Самая трудная группа у всех — технические термины: WER от 0.35 до 0.65.

@@ -12,3 +12,7 @@ peft==0.21.2
 trl==1.17.1
 accelerate==1.15.0
 datasets==5.0.1
+# M15-L07X (T45): second speech configuration. faster-whisper on CTranslate2, MIT; piper-tts embeds espeak-ng and is
+# GPL-3.0-or-later, installed only for local use. No package of requirements.lock.txt changes. Models: --speech-extra.
+faster-whisper==1.2.1
+piper-tts==1.8.0

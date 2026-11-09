@@ -3719,6 +3719,10 @@
         {
           "id": "M15-C16",
           "description": "Передать PCM фрагментами в ASR, измерить partial/final и отменить очередь TTS с поздним фрагментом."
+        },
+        {
+          "id": "M15-C17",
+          "description": "Подключить вторую конфигурацию речи за тем же WAV-контрактом и сравнить её с базовой на одном наборе фраз по WER со строгим и мягким эталоном, CER, группам, ошибкам в отрицаниях и задержке с отдельным холодным стартом, отличая синтетический прогон от замера на людях."
         }
       ],
       "lessons": [
@@ -3863,6 +3867,35 @@
           "estimate_status": "planning_hypothesis",
           "assessment_policy": "course/assessment.md",
           "status": "materials_ready"
+        },
+        {
+          "id": "M15-L07X",
+          "title": "Вторая конфигурация речи: faster-whisper и Piper",
+          "path": "course/lessons/M15-L07X.md",
+          "prerequisites": [
+            "M15-L02",
+            "M15-L03",
+            "M15-L05"
+          ],
+          "estimated_minutes": 150,
+          "estimate_status": "planning_hypothesis",
+          "practice": "faster-whisper small int8 и Piper ru_RU-denis-medium за контрактом speech.py; 40 фраз собеседования через оба голоса и оба распознавателя, три синтеза Piper; флаги --asr и --tts в тренажёре",
+          "assessment": "Сверка таблицы прогона, разбор ошибок по группам и отрицаниям, сравнение на собственных записях",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M15-C17"
+          ],
+          "extension": "1.2.0",
+          "required": false,
+          "workload": {
+            "reading_minutes": 45,
+            "practice_minutes": 70,
+            "self_check_minutes": 35,
+            "setup_minutes": "separate; tests and report need no model; the run needs the optional faster-whisper and piper-tts packages and --speech-extra models, about 0.55 GB",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
         }
       ],
       "homework": {

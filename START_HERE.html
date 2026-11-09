@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="c7514ca9b1a8a7bb3ce7987e1351c2e143845c728b8d884ff33d86335d086258"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="15e85f92f4cad731928c9ad1c8fa8dbafede9200b6bcafe8a42106ebf0b8b84d"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -38,7 +38,7 @@
 <section class="nav-group"><details class="nav-module"><summary>M12 Обучение и адаптация моделей</summary><ul><li data-key="M12"><a href="#M12" data-material="M12"><span class="nav-marker">M12</span><span>Обучение и адаптация моделей</span></a></li><li data-key="M12-L01"><a href="#M12-L01" data-material="M12-L01"><span class="nav-marker">L01</span><span>Выбор вмешательства</span></a></li><li data-key="M12-L02"><a href="#M12-L02" data-material="M12-L02"><span class="nav-marker">L02</span><span>Данные для адаптации</span></a></li><li data-key="M12-L03"><a href="#M12-L03" data-material="M12-L03"><span class="nav-marker">L03</span><span>Малое обучение с нуля</span></a></li><li data-key="M12-L04"><a href="#M12-L04" data-material="M12-L04"><span class="nav-marker">L04</span><span>Дообучение и адаптеры</span></a></li><li data-key="M12-L05"><a href="#M12-L05" data-material="M12-L05"><span class="nav-marker">L05</span><span>Сравнение до и после</span></a></li><li data-key="M12-L06"><a href="#M12-L06" data-material="M12-L06"><span class="nav-marker">L06</span><span>Из диалога в обучающий пример: токены и маска потерь</span></a></li><li data-key="M12-L07"><a href="#M12-L07" data-material="M12-L07"><span class="nav-marker">L07</span><span>Настоящий малый SFT: адаптер, checkpoint и регрессии</span></a></li><li data-key="M12-L08X"><a href="#M12-L08X" data-material="M12-L08X"><span class="nav-marker">L08X</span><span>LoRA через PEFT</span></a></li><li data-key="M12-L09X"><a href="#M12-L09X" data-material="M12-L09X"><span class="nav-marker">L09X</span><span>DPO через TRL: предпочтения вместо целевого ответа</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M13 MLOps и LLMOps</summary><ul><li data-key="M13"><a href="#M13" data-material="M13"><span class="nav-marker">M13</span><span>MLOps и LLMOps</span></a></li><li data-key="M13-L01"><a href="#M13-L01" data-material="M13-L01"><span class="nav-marker">L01</span><span>Версия эксперимента и релиза</span></a></li><li data-key="M13-L02"><a href="#M13-L02" data-material="M13-L02"><span class="nav-marker">L02</span><span>Упаковка и контракт</span></a></li><li data-key="M13-L03"><a href="#M13-L03" data-material="M13-L03"><span class="nav-marker">L03</span><span>Регрессионные проверки</span></a></li><li data-key="M13-L04"><a href="#M13-L04" data-material="M13-L04"><span class="nav-marker">L04</span><span>Наблюдаемость и нагрузка</span></a></li><li data-key="M13-L05"><a href="#M13-L05" data-material="M13-L05"><span class="nav-marker">L05</span><span>Неудачный релиз и восстановление</span></a></li><li data-key="M13-L06"><a href="#M13-L06" data-material="M13-L06"><span class="nav-marker">L06</span><span>Очередь, дедлайн и восстановление HTTP-сервиса</span></a></li><li data-key="M13-L07X"><a href="#M13-L07X" data-material="M13-L07X"><span class="nav-marker">L07X</span><span>Трассировка LLM-конвейера</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M14 Агенты и инструменты</summary><ul><li data-key="M14"><a href="#M14" data-material="M14"><span class="nav-marker">M14</span><span>Агенты и инструменты</span></a></li><li data-key="M14-L01"><a href="#M14-L01" data-material="M14-L01"><span class="nav-marker">L01</span><span>Сценарий и агентный цикл</span></a></li><li data-key="M14-L02"><a href="#M14-L02" data-material="M14-L02"><span class="nav-marker">L02</span><span>Контракт инструмента</span></a></li><li data-key="M14-L03"><a href="#M14-L03" data-material="M14-L03"><span class="nav-marker">L03</span><span>Состояние и границы доступа</span></a></li><li data-key="M14-L04"><a href="#M14-L04" data-material="M14-L04"><span class="nav-marker">L04</span><span>Ошибки и остановка</span></a></li><li data-key="M14-L05"><a href="#M14-L05" data-material="M14-L05"><span class="nav-marker">L05</span><span>Проверка агента</span></a></li><li data-key="M14-L06"><a href="#M14-L06" data-material="M14-L06"><span class="nav-marker">L06</span><span>Модель предлагает инструмент, исполнитель проверяет</span></a></li><li data-key="M14-L08X"><a href="#M14-L08X" data-material="M14-L08X"><span class="nav-marker">L08X</span><span>Безопасность LLM-приложений</span></a></li><li data-key="M14-L09X"><a href="#M14-L09X" data-material="M14-L09X"><span class="nav-marker">L09X</span><span>MCP: свой сервер инструментов</span></a></li><li data-key="M14-L10X"><a href="#M14-L10X" data-material="M14-L10X"><span class="nav-marker">L10X</span><span>Паттерны агентов: workflow или агент</span></a></li></ul></details></section>
-<section class="nav-group"><details class="nav-module"><summary>M15 Речь и голосовой диалог</summary><ul><li data-key="M15"><a href="#M15" data-material="M15"><span class="nav-marker">M15</span><span>Речь и голосовой диалог</span></a></li><li data-key="M15-L01"><a href="#M15-L01" data-material="M15-L01"><span class="nav-marker">L01</span><span>Аудио и речь</span></a></li><li data-key="M15-L02"><a href="#M15-L02" data-material="M15-L02"><span class="nav-marker">L02</span><span>Распознавание и сегменты</span></a></li><li data-key="M15-L03"><a href="#M15-L03" data-material="M15-L03"><span class="nav-marker">L03</span><span>Синтез и доставка</span></a></li><li data-key="M15-L04"><a href="#M15-L04" data-material="M15-L04"><span class="nav-marker">L04</span><span>Поток и перебивание</span></a></li><li data-key="M15-L05"><a href="#M15-L05" data-material="M15-L05"><span class="nav-marker">L05</span><span>Речевое оценивание</span></a></li><li data-key="M15-L06"><a href="#M15-L06" data-material="M15-L06"><span class="nav-marker">L06</span><span>От WAV к частичным гипотезам и отменяемым фрагментам</span></a></li></ul></details></section>
+<section class="nav-group"><details class="nav-module"><summary>M15 Речь и голосовой диалог</summary><ul><li data-key="M15"><a href="#M15" data-material="M15"><span class="nav-marker">M15</span><span>Речь и голосовой диалог</span></a></li><li data-key="M15-L01"><a href="#M15-L01" data-material="M15-L01"><span class="nav-marker">L01</span><span>Аудио и речь</span></a></li><li data-key="M15-L02"><a href="#M15-L02" data-material="M15-L02"><span class="nav-marker">L02</span><span>Распознавание и сегменты</span></a></li><li data-key="M15-L03"><a href="#M15-L03" data-material="M15-L03"><span class="nav-marker">L03</span><span>Синтез и доставка</span></a></li><li data-key="M15-L04"><a href="#M15-L04" data-material="M15-L04"><span class="nav-marker">L04</span><span>Поток и перебивание</span></a></li><li data-key="M15-L05"><a href="#M15-L05" data-material="M15-L05"><span class="nav-marker">L05</span><span>Речевое оценивание</span></a></li><li data-key="M15-L06"><a href="#M15-L06" data-material="M15-L06"><span class="nav-marker">L06</span><span>От WAV к частичным гипотезам и отменяемым фрагментам</span></a></li><li data-key="M15-L07X"><a href="#M15-L07X" data-material="M15-L07X"><span class="nav-marker">L07X</span><span>Вторая конфигурация речи: faster-whisper и Piper</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M16 Итоговый продукт и защита</summary><ul><li data-key="M16"><a href="#M16" data-material="M16"><span class="nav-marker">M16</span><span>Итоговый продукт и защита</span></a></li><li data-key="M16-L01"><a href="#M16-L01" data-material="M16-L01"><span class="nav-marker">L01</span><span>Требования и две рубрики</span></a></li><li data-key="M16-L06"><a href="#M16-L06" data-material="M16-L06"><span class="nav-marker">L06</span><span>Обратная связь с проверяемыми основаниями</span></a></li><li data-key="M16-L07"><a href="#M16-L07" data-material="M16-L07"><span class="nav-marker">L07</span><span>Состояние интервью и ограниченные уточнения</span></a></li><li data-key="M16-L02"><a href="#M16-L02" data-material="M16-L02"><span class="nav-marker">L02</span><span>Интеграция и независимая проверка</span></a></li><li data-key="M16-L03"><a href="#M16-L03" data-material="M16-L03"><span class="nav-marker">L03</span><span>Пилот продукта</span></a></li><li data-key="M16-L04"><a href="#M16-L04" data-material="M16-L04"><span class="nav-marker">L04</span><span>Защита архитектуры и отказа</span></a></li><li data-key="M16-L05"><a href="#M16-L05" data-material="M16-L05"><span class="nav-marker">L05</span><span>Портфолио и профессиональная проверка</span></a></li><li data-key="M16-L08"><a href="#M16-L08" data-material="M16-L08"><span class="nav-marker">L08</span><span>Самостоятельная сборка и защита нового требования</span></a></li></ul></details></section>
 <section class="nav-group"><h2>Ответы и самопроверка</h2><ul><li data-key="MENTOR-KEYS"><a href="#MENTOR-KEYS" data-material="MENTOR-KEYS"><span class="nav-marker">•</span><span>Ключи решений для самопроверки</span></a></li><li data-key="M00-SOLUTIONS"><a href="#M00-SOLUTIONS" data-material="M00-SOLUTIONS"><span class="nav-marker">•</span><span>M00. Решения для самопроверки</span></a></li><li data-key="M01-SOLUTIONS"><a href="#M01-SOLUTIONS" data-material="M01-SOLUTIONS"><span class="nav-marker">•</span><span>M01. Решения для самопроверки</span></a></li><li data-key="M02-SOLUTIONS"><a href="#M02-SOLUTIONS" data-material="M02-SOLUTIONS"><span class="nav-marker">•</span><span>M02. Решения для самопроверки</span></a></li><li data-key="M03-SOLUTIONS"><a href="#M03-SOLUTIONS" data-material="M03-SOLUTIONS"><span class="nav-marker">•</span><span>M03. Решения для самопроверки</span></a></li><li data-key="M04-SOLUTIONS"><a href="#M04-SOLUTIONS" data-material="M04-SOLUTIONS"><span class="nav-marker">•</span><span>M04. Решения для самопроверки</span></a></li><li data-key="M05-SOLUTIONS"><a href="#M05-SOLUTIONS" data-material="M05-SOLUTIONS"><span class="nav-marker">•</span><span>M05. Решения для самопроверки</span></a></li><li data-key="M06-SOLUTIONS"><a href="#M06-SOLUTIONS" data-material="M06-SOLUTIONS"><span class="nav-marker">•</span><span>M06. Решения для самопроверки</span></a></li><li data-key="M07-SOLUTIONS"><a href="#M07-SOLUTIONS" data-material="M07-SOLUTIONS"><span class="nav-marker">•</span><span>M07. Решения для самопроверки</span></a></li><li data-key="M08-SOLUTIONS"><a href="#M08-SOLUTIONS" data-material="M08-SOLUTIONS"><span class="nav-marker">•</span><span>M08. Решения для самопроверки</span></a></li><li data-key="M09-SOLUTIONS"><a href="#M09-SOLUTIONS" data-material="M09-SOLUTIONS"><span class="nav-marker">•</span><span>M09. Решения для самопроверки</span></a></li><li data-key="M10-SOLUTIONS"><a href="#M10-SOLUTIONS" data-material="M10-SOLUTIONS"><span class="nav-marker">•</span><span>M10. Решения для самопроверки</span></a></li><li data-key="M11-SOLUTIONS"><a href="#M11-SOLUTIONS" data-material="M11-SOLUTIONS"><span class="nav-marker">•</span><span>M11. Решения для самопроверки</span></a></li><li data-key="M12-SOLUTIONS"><a href="#M12-SOLUTIONS" data-material="M12-SOLUTIONS"><span class="nav-marker">•</span><span>M12. Решения для самопроверки</span></a></li><li data-key="M13-SOLUTIONS"><a href="#M13-SOLUTIONS" data-material="M13-SOLUTIONS"><span class="nav-marker">•</span><span>M13. Решения для самопроверки</span></a></li><li data-key="M14-SOLUTIONS"><a href="#M14-SOLUTIONS" data-material="M14-SOLUTIONS"><span class="nav-marker">•</span><span>M14. Решения для самопроверки</span></a></li><li data-key="M15-SOLUTIONS"><a href="#M15-SOLUTIONS" data-material="M15-SOLUTIONS"><span class="nav-marker">•</span><span>M15. Решения для самопроверки</span></a></li><li data-key="M16-SOLUTIONS"><a href="#M16-SOLUTIONS" data-material="M16-SOLUTIONS"><span class="nav-marker">•</span><span>M16. Решения для самопроверки</span></a></li></ul></section>
 <section class="nav-group"><h2>Дополнительно</h2><ul><li data-key="REF-CATALOG"><a href="#REF-CATALOG" data-material="REF-CATALOG"><span class="nav-marker">•</span><span>Обучение ML и LLM инженерии с основ до голосового проекта</span></a></li><li data-key="REF-METHOD"><a href="#REF-METHOD" data-material="REF-METHOD"><span class="nav-marker">•</span><span>Методика персонального курса ML и LLM</span></a></li><li data-key="REFERENCE-PROJECT"><a href="#REFERENCE-PROJECT" data-material="REFERENCE-PROJECT"><span class="nav-marker">•</span><span>Эталон голосового тренажёра</span></a></li><li data-key="ASSESSMENT"><a href="#ASSESSMENT" data-material="ASSESSMENT"><span class="nav-marker">•</span><span>Как засчитывать самостоятельную работу</span></a></li><li data-key="CHECKPOINTS"><a href="#CHECKPOINTS" data-material="CHECKPOINTS"><span class="nav-marker">•</span><span>Контрольные точки и возврат к предпосылкам</span></a></li><li data-key="CHECKPOINT-SOLUTIONS"><a href="#CHECKPOINT-SOLUTIONS" data-material="CHECKPOINT-SOLUTIONS"><span class="nav-marker">•</span><span>Ключи контрольных точек</span></a></li><li data-key="EVALUATION-REFERENCE"><a href="#EVALUATION-REFERENCE" data-material="EVALUATION-REFERENCE"><span class="nav-marker">•</span><span>Реальный цикл улучшения обратной связи</span></a></li><li data-key="FAST-TRACK-LLM"><a href="#FAST-TRACK-LLM" data-material="FAST-TRACK-LLM"><span class="nav-marker">•</span><span>Быстрый вход в M09–M11 для тех, кто уже делал RAG</span></a></li><li data-key="CHEATSHEET"><a href="#CHEATSHEET" data-material="CHEATSHEET"><span class="nav-marker">•</span><span>Шпаргалка: карточки уроков</span></a></li><li data-key="REVIEW-SCHEDULE"><a href="#REVIEW-SCHEDULE" data-material="REVIEW-SCHEDULE"><span class="nav-marker">•</span><span>Расписание повторения</span></a></li><li data-key="PROGRESS-DASHBOARD"><a href="#PROGRESS-DASHBOARD" data-material="PROGRESS-DASHBOARD"><span class="nav-marker">•</span><span>Дашборд прогресса</span></a></li></ul></section></nav><ol class="search-results" id="search-results" aria-label="Результаты поиска"></ol><p class="empty-search" id="empty-search" hidden>Попробуй другое слово или его основу.</p><p class="nav-foot">Материалы 1.1.0 · Чтение без интернета<br><a href="#PROGRESS">Журнал самостоятельной работы</a></p></div></aside>
@@ -18711,6 +18711,7 @@ print(weak)
 <li><a href="#M15-L04">M15-L04. Поток и перебивание</a></li>
 <li><a href="#M15-L05">M15-L05. Речевое оценивание</a></li>
 <li><a href="#M15-L06">M15-L06. От WAV к частичным гипотезам и отменяемым фрагментам</a></li>
+<li><a href="#M15-L07X">M15-L07X. Вторая конфигурация речи: faster-whisper и Piper</a> — расширение 1.2.0, не входит в обязательный минимум; нужны пакеты faster-whisper и piper-tts и модели около 0.55 ГБ</li>
 </ol>
 <p>Проходи уроки по порядку. На каждый выделяй сначала чтение и восстановление схемы, затем пример и самостоятельную попытку. Начальный ориентир: уроки около 15.0 ч, домашняя работа 4–9 ч, установка и повторение учитываются отдельно. Это плановая гипотеза, а не измеренное время ученика. При математическом или техническом пробеле добавь повторение и сохрани фактическое время отдельно.</p>
 <h2 id="M15--новые-обязательные-ступени">Новые обязательные ступени</h2>
@@ -19792,7 +19793,240 @@ assert frames == 1600 and frames * bytes_per_sample == 3200
 <h2 id="M15-L06--источники-и-углубление">Источники и углубление</h2>
 <p><a href="https://github.com/alphacep/vosk-api/blob/master/python/example/test_simple.py" target="_blank" rel="noopener noreferrer" class="external-link">Официальный пример Vosk</a>, <a href="https://docs.python.org/3.11/library/wave.html" target="_blank" rel="noopener noreferrer" class="external-link">wave Python 3.11</a>. Тестовые фразы синтезированы для курса; это не оценка реальных голосов и шумов.</p>
 <p>Для углубления: <a href="https://github.com/wiseman/py-webrtcvad" target="_blank" rel="noopener noreferrer" class="external-link">py-webrtcvad</a> — детектор речевой активности WebRTC: 16-битный моно PCM с частотой 8000, 16000, 32000 или 48000 Гц, кадры по 10, 20 или 30 мс и режим агрессивности от 0 до 3 (на английском).</p>
-<div class="practice-note"><a href="#M15">Модуль и домашняя работа</a> · <a href="#M15-SOLUTIONS--m15-l06-a-b-c">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M15-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L05"><small>Предыдущий раздел</small>← M15-L05. Речевое оценивание</a><a href="#M16"><small>Следующий раздел</small>M16 Итоговый продукт и защита →</a></nav></article><article class="material" id="M16" data-title="M16 Итоговый продукт и защита" data-short-title="Итоговый продукт и защита" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Итоговый продукт и защита</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: Все предыдущие модули; есть рабочие артефакты и самостоятельные попытки.</p>
+<div class="practice-note"><a href="#M15">Модуль и домашняя работа</a> · <a href="#M15-SOLUTIONS--m15-l06-a-b-c">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M15-L06.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L05"><small>Предыдущий раздел</small>← M15-L05. Речевое оценивание</a><a href="#M15-L07X"><small>Следующий раздел</small>M15-L07X. Вторая конфигурация речи: faster-whisper и Piper →</a></nav></article><article class="material" id="M15-L07X" data-title="M15-L07X. Вторая конфигурация речи: faster-whisper и Piper" data-short-title="Вторая конфигурация речи: faster-whisper и Piper" data-kind="ready" data-module="M15"><header class="material-head"><div class="eyebrow"><span class="material-id">M15-L07X</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Вторая конфигурация речи: faster-whisper и Piper</h1><p class="outcome"><strong>После урока:</strong> собрать вторую конфигурацию речи на том же WAV-контракте, что базовая: Piper для синтеза и faster-whisper для распознавания. Затем сравнить её с Vosk и Windows SAPI на 40 фразах собеседования по WER, CER и задержке и решить, какая часть конвейера где лучше. Нужно понимать, почему прогон на синтетическом голосе ещё не говорит о качестве на живых кандидатах.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M15-L02, M15-L03, M15-L05. Тесты и отчёт работают без моделей. Прогон требует пакеты <code>faster-whisper</code> и <code>piper-tts</code> (<code>requirements-optional.in</code>) и модели из <code>tools\download_models.py --speech-extra</code>, около 0.55 ГБ. На CPU прогон занимает около восьми минут. Ориентир — 150 минут чтения, прогона и задачи; это плановая гипотеза, а не измеренное время.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M15-L07X--объяснение">Объяснение</a></li><li><a href="#M15-L07X--аналогия-второй-адаптер-за-тем-же-портом">Аналогия: второй адаптер за тем же портом</a></li><li><a href="#M15-L07X--разобранный-пример">Разобранный пример</a></li><li><a href="#M15-L07X--схема">Схема</a></li><li><a href="#M15-L07X--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M15-L07X--самостоятельная-задача-a-m15-l07x-a">Самостоятельная задача A — M15-L07X-A</a></li><li><a href="#M15-L07X--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M15-L07X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M15-L07X--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M15-L07X--карточка-урока">Карточка урока</a></li><li><a href="#M15-L07X--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Урок дополняет модуль, не входит в обязательный минимум 1.1.0.</p>
+
+
+<blockquote>
+<p><strong>Версии и дата проверки:</strong> Python 3.11.9; Vosk 0.3.45 и vosk-model-small-ru-0.22; faster-whisper 1.2.1 (CTranslate2 4.8.5), модель faster-whisper-small (ревизия 536b066) в int8; piper-tts 1.8.0 (onnxruntime 1.31.1), голос ru_RU-denis-medium; Windows System.Speech, голос Microsoft Irina Desktop · проверено 09.11.2026 · источник: <a href="https://github.com/SYSTRAN/faster-whisper" target="_blank" rel="noopener noreferrer" class="external-link">faster-whisper</a></p>
+</blockquote>
+<h2 id="M15-L07X--объяснение">Объяснение</h2>
+<h3 id="M15-L07X--две-конфигурации-на-одном-контракте">Две конфигурации на одном контракте</h3>
+<p>Базовая конфигурация M15: Windows SAPI с голосом Irina синтезирует речь, Vosk small-ru её распознаёт. Между ними контракт из <code>projects/interview_trainer/speech.py</code>: WAV mono, PCM16, 16 кГц, не длиннее 120 секунд, текст от 1 до 4000 символов. Вторая конфигурация соблюдает тот же контракт, поэтому подключается без переделки приложения:</p>
+<ul>
+<li><strong>Piper</strong> синтезирует речь моделью VITS в формате ONNX. Текст сначала переводится в фонемы через espeak-ng. Голос ru_RU-denis-medium говорит с частотой 22 050 Гц, и модуль <code>speech_alt.py</code> пересчитывает звук в 16 кГц.</li>
+<li><strong>faster-whisper</strong> — это Whisper, переписанный на CTranslate2. Модель small весит 464 МБ и загружается в int8: веса хранятся 8-битными целыми, и считает она быстрее. Используются 4 потока CPU.</li>
+</ul>
+<p>В приложении конфигурация выбирается флагами <code>--asr whisper</code> и <code>--tts piper</code>. По умолчанию остаются Vosk и SAPI, и их тесты проходят без изменений.</p>
+<h3 id="M15-L07X--чем-движки-отличаются-по-устройству">Чем движки отличаются по устройству</h3>
+<ul>
+<li><strong>Vosk</strong> — модель Kaldi с фиксированным словарём и языковой моделью, 88 МБ. Она выдаёт только слова из своего словаря, кириллицей и без цифр. Зато распознаёт поток кусками и отдаёт частичные гипотезы, как в M15-L06.</li>
+<li><strong>Whisper</strong> — Transformer «кодировщик — декодировщик», он генерирует текст токен за токеном. Пишет пунктуацию, цифры и латиницу, но обрабатывает окно до 30 секунд целиком и потоковых частичных гипотез сам не даёт. Как любой генератор, он может написать то, чего в записи не было.</li>
+<li><strong>SAPI</strong> — системный голос Windows. В проекте каждый вызов запускает отдельный процесс PowerShell, и это время входит в задержку.</li>
+<li><strong>Piper</strong> работает в процессе Python, голос загружается один раз. Модель подмешивает случайный шум, поэтому один и тот же текст каждый раз звучит немного по-разному. Две подряд синтезированные фразы «Повторный запрос не должен создавать второй заказ.» получились разной длины.</li>
+</ul>
+<h3 id="M15-L07X--как-сравнивать">Как сравнивать</h3>
+<p>Набор — 40 фраз собеседования, 280 слов, <code>data/speech/phrases-ru.json</code>. Фразы разбиты на три группы: 24 общих, 8 с числами и 8 с техническими терминами. Каждая фраза проходит через оба голоса и оба распознавателя, это 4 пары.</p>
+<p><strong>WER</strong> = (S + D + I) / N, где S — замены, D — пропуски, I — вставки слов, N — слов в эталоне. Он считается по всему набору сразу, а не как среднее по фразам. Численный пример: Whisper на голосе SAPI сделал 27 замен, 3 пропуска и 3 вставки, WER = 33 / 280 ≈ 0.118.</p>
+<p>Эталонов два вида, и оба записаны до прогона:</p>
+<ul>
+<li><strong>строгий</strong> — первый эталон, числа словами и термины латиницей;</li>
+<li><strong>мягкий</strong> — лучший из альтернатив: «200» вместо «двухсот», «редис» вместо «Redis».</li>
+</ul>
+<p><strong>CER</strong> считается так же, но по символам. Для русского языка он мягче: «изменения применятся» и «изменение применится» по WER дают две ошибки, по CER — две буквы.</p>
+<p><strong>Задержка</strong> — это RTF (время обработки, делённое на длительность аудио, как в M15-L02) и медиана секунд на фразу. Загрузка модели — холодный старт — измеряется отдельно.</p>
+<h3 id="M15-L07X--почему-синтетика-не-бенчмарк">Почему синтетика — не бенчмарк</h3>
+<p>Авторский прогон заменяет человека синтетическим голосом. Аудио чистое: нет микрофона, шума, акцента и запинок. Кроме того, голос сам влияет на результат: если Piper произносит слово неразборчиво, ошибётся любой распознаватель. Поэтому распознаватели честно сравниваются только внутри одного голоса, а строка Piper измеряет вместе и синтез, и распознавание. Качество на живых кандидатах проверяет задача A на собственных записях.</p>
+<p><strong>Лицензии.</strong> Модель Vosk — Apache-2.0, faster-whisper и веса Whisper — MIT, движок piper-tts — GPL-3.0 (он ставится необязательно, только для локального использования). У голоса Denis данные под CC0. Голос Irina в Piper не выбран: в его описании лицензия данных указана как Unknown.</p>
+<p><a class="figure-expand" href="course/assets/M15-L07X.svg" target="_blank" data-figure="course/assets/M15-L07X.svg" aria-label="Увеличить рисунок: Две конфигурации речи на одном контракте, WER по парам голоса и распознавателя и задержки"><picture><img src="course/assets/M15-L07X.svg" alt="Две конфигурации речи на одном контракте, WER по парам голоса и распознавателя и задержки" loading="lazy"></picture></a><span class="figure-hint">Две конфигурации речи на одном контракте, WER по парам голоса и распознавателя и задержки · Открыть крупнее ↗</span></p>
+<p>Сопоставь рисунок с таблицей авторского прогона: какой распознаватель точнее на каждом голосе и чем за это платит.</p>
+<h2 id="M15-L07X--аналогия-второй-адаптер-за-тем-же-портом">Аналогия: второй адаптер за тем же портом</h2>
+<p>Backend-разработчик знает архитектуру портов и адаптеров. Один интерфейс репозитория, за ним два адаптера: к PostgreSQL и к MongoDB. Перед переключением их сравнивают на записанном трафике.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Контракт WAV mono PCM16 16 кГц</td>
+  <td>Интерфейс репозитория</td>
+</tr>
+<tr>
+  <td><code>speech_alt.py</code> рядом с <code>speech.py</code></td>
+  <td>Второй адаптер того же порта</td>
+</tr>
+<tr>
+  <td>Флаги <code>--asr</code> и <code>--tts</code></td>
+  <td>Конфигурация выбора драйвера</td>
+</tr>
+<tr>
+  <td>40 фраз и WER</td>
+  <td>Регрессионный прогон на записанных запросах</td>
+</tr>
+<tr>
+  <td>RTF и холодный старт</td>
+  <td>Задержка запроса и прогрев пула соединений</td>
+</tr>
+<tr>
+  <td>Синтетический голос вместо человека</td>
+  <td>Нагрузочный тест на синтетическом трафике</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Где аналогия ломается:</strong> записанный трафик одинаков для обоих адаптеров. Здесь вход зависит от синтеза: у Piper он меняется от запуска к запуску. И ошибки не равноценны: одна вставленная частица «не» стоит одно слово WER, но переворачивает смысл ответа кандидата.</p>
+<section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M15-L07X--разобранный-пример">Разобранный пример</h2>
+<p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса. Модели для него не нужны. Пример пересчитывает WER из замен, пропусков и вставок, сравнивает строгий и мягкий эталон на числах и проверяет ошибку, меняющую смысл.</p>
+<pre><code class="language-python">import importlib.util
+import json
+from pathlib import Path
+
+spec = importlib.util.spec_from_file_location(&quot;speech_compare&quot;, &quot;labs/M15/speech_compare.py&quot;)
+lab = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(lab)
+report = json.loads(Path(&quot;quality/speech/report.json&quot;).read_text(encoding=&quot;utf-8&quot;))
+
+cell = report[&quot;cells&quot;][&quot;sapi-&gt;whisper&quot;]
+s, d, i, n = (cell[&quot;strict&quot;][k] for k in (&quot;s&quot;, &quot;d&quot;, &quot;i&quot;, &quot;words&quot;))
+assert round((s + d + i) / n, 4) == cell[&quot;strict&quot;][&quot;wer&quot;]  # WER = (S + D + I) / N over the whole set
+
+row = next(r for r in cell[&quot;rows&quot;] if r[&quot;id&quot;] == &quot;n01&quot;)
+print(row[&quot;hyp&quot;], lab.score(next(p for p in lab.phrases() if p[&quot;id&quot;] == &quot;n01&quot;), row[&quot;hyp&quot;]))
+
+t04 = {key: next(r[&quot;hyp&quot;] for r in c[&quot;rows&quot;] if r[&quot;id&quot;] == &quot;t04&quot;) for key, c in report[&quot;cells&quot;].items()}
+for key, hyp in t04.items():
+    print(f&quot;{key:15} {lab.negation_mismatch('Я писал бэкенд на NestJS и TypeScript.', hyp)!s:5} {hyp}&quot;)
+assert lab.negation_mismatch(&quot;Я писал бэкенд на NestJS и TypeScript.&quot;, t04[&quot;sapi-&gt;vosk&quot;])  # «не» was inserted
+</code></pre>
+<p>Whisper записал «Время ответа упала с 200 до 90 мс.». По строгому эталону это четыре замены: две цифры вместо слов, «мс» вместо «миллисекунд» и «упала» вместо «упало». По мягкому эталону остаются две. Правило нормализации меняет WER сильнее, чем иная смена модели, поэтому его записывают до прогона. «NestJS» на голосе SAPI оба распознавателя услышали с частицей «не», которой в эталоне не было.</p>
+<h3 id="M15-L07X--авторский-прогон-09-11-2026">Авторский прогон 09.11.2026</h3>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m pip install -r requirements-optional.in
+.\.venv\Scripts\python.exe tools\download_models.py --speech-extra
+.\.venv\Scripts\python.exe labs\M15\speech_compare.py run
+.\.venv\Scripts\python.exe labs\M15\speech_compare.py report
+</code></pre>
+<p>Голос → распознавание, мягкий эталон, 40 фраз:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Пара</th>
+  <th>WER</th>
+  <th>CER</th>
+  <th>Общие</th>
+  <th>Числа</th>
+  <th>Термины</th>
+  <th>RTF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>SAPI → Vosk</td>
+  <td>0.174</td>
+  <td>0.048</td>
+  <td>0.099</td>
+  <td>0.091</td>
+  <td>0.578</td>
+  <td>0.14</td>
+</tr>
+<tr>
+  <td>SAPI → Whisper</td>
+  <td>0.090</td>
+  <td>0.040</td>
+  <td>0.038</td>
+  <td>0.057</td>
+  <td>0.349</td>
+  <td>0.39</td>
+</tr>
+<tr>
+  <td>Piper → Vosk</td>
+  <td>0.311</td>
+  <td>0.125</td>
+  <td>0.275</td>
+  <td>0.164</td>
+  <td>0.651</td>
+  <td>0.19</td>
+</tr>
+<tr>
+  <td>Piper → Whisper</td>
+  <td>0.179</td>
+  <td>0.067</td>
+  <td>0.093</td>
+  <td>0.170</td>
+  <td>0.533</td>
+  <td>0.67</td>
+</tr>
+</tbody>
+</table></div>
+<p>Синтез одной фразы, медиана: SAPI — 0.41 с, Piper — 0.09 с. Голос Piper загружается один раз, первый вызов занимает 3.8 с. Первый вызов распознавания вместе с загрузкой модели — 1.2 с у Vosk и 2.6 с у Whisper.</p>
+<p>Что показал прогон:</p>
+<ul>
+<li><strong>Whisper точнее Vosk на обоих голосах.</strong> На голосе SAPI WER вдвое ниже: 0.090 против 0.174, на общих фразах — 0.038 против 0.099. Цена — скорость: RTF 0.39 против 0.14 при четырёх потоках против одного. Обе модели успевают быстрее, чем длится запись.</li>
+<li><strong>Речь Piper распознаётся хуже, чем речь SAPI, любым распознавателем.</strong> Синтез Piper случаен, поэтому все 40 фраз синтезированы трижды. WER Vosk на трёх синтезах — от 0.257 до 0.311, Whisper — от 0.173 до 0.193. Каждое значение выше, чем у того же распознавателя на голосе SAPI. Первый прогон, ещё без повторных синтезов, дал 0.264 и 0.169. Вывод от случайности не зависит, а вот одно число для Piper без разброса ничего не значит.</li>
+<li><strong>Piper синтезирует почти в пять раз быстрее SAPI.</strong> После загрузки голоса медиана 0.09 с на фразу против 0.41 с. Около 0.27 с из времени SAPI занимает запуск процесса PowerShell с загрузкой System.Speech: автор замерил его отдельно. 95-й процентиль у SAPI доходит до 2.4 с. Piper к тому же работает не только в Windows, а SAPI — только в ней.</li>
+<li><strong>Термины — слабое место обоих.</strong> Vosk не умеет писать латиницу: «PostgreSQL» он записал как «пост в г и рыл». Whisper пишет латиницу («TypeScript», «React»), но на группе терминов его WER всё равно 0.35. Для собеседования по backend это главный риск: ошибаются как раз в словах, которые оценивает интервьюер.</li>
+<li><strong>Нормализация решает не меньше модели.</strong> На числах строгий WER Whisper — 0.200, мягкий — 0.057: он пишет цифры. У Vosk строгий и мягкий совпадают, он пишет числа словами. Даже в общей фразе Whisper записал «за 2 спринта», и строгий эталон счёл это ошибкой.</li>
+<li><strong>CER мягче WER в 2–4 раза.</strong> Whisper на голосе Piper записал «изменение применится» вместо «изменения применятся»: по смыслу верно, но WER насчитал ошибки в формах слов. Для русского языка CER честнее показывает разборчивость, а WER — готовность текста к поиску по словам.</li>
+<li><strong>Вставленное «не».</strong> «NestJS» на голосе SAPI превратилось у Vosk в «не та», у Whisper — в «не здеший». В этой фразе смысл не перевернулся, но в ответе кандидата такая вставка перевернёт его. Отчёт отдельно считает фразы, где число «не», «нет» и «ни» не совпало с эталоном.</li>
+</ul>
+<p>У автора весь прогон занял около восьми минут, из них больше половины — Whisper на четырёх наборах аудио.</p>
+</section><h2 id="M15-L07X--схема">Схема</h2>
+<figure class="diagram"><pre class="mermaid">flowchart TD
+    P[&quot;40 фраз, 3 группы, эталоны до прогона&quot;] --&gt; T1[&quot;SAPI, голос Irina&quot;]
+    P --&gt; T2[&quot;Piper, голос Denis, 3 синтеза&quot;]
+    T1 --&gt; C[&quot;WAV mono PCM16 16 кГц&quot;]
+    T2 --&gt; C
+    C --&gt; A1[&quot;Vosk small-ru&quot;]
+    C --&gt; A2[&quot;faster-whisper small int8&quot;]
+    A1 --&gt; M[&quot;WER, CER, группы, «не», RTF&quot;]
+    A2 --&gt; M
+    classDef main fill:#e8f0fe,stroke:#245bba,stroke-width:2px,color:#182b3a
+    class P,C,M main
+</pre></figure>
+<p>Сравнение двух конфигураций на одном контракте. Фразы и правила эталонов записаны до прогона. Каждый голос синтезирует все фразы в WAV одного формата, и каждый распознаватель получает оба набора аудио. Синтез Piper повторяется трижды, потому что он случаен. Измеряются WER и CER по всему набору и по группам, расхождения в отрицаниях и задержка с отдельным холодным стартом. Выделены набор, контракт и метрики: без них сравнение движков превращается в сравнение условий.</p>
+<section class="lesson-stage" data-stage="practice"><span class="stage-label">Пробуем с поддержкой</span><h2 id="M15-L07X--практика-с-поддержкой">Практика с поддержкой</h2>
+<p><strong>Предскажи до запуска.</strong> Запиши ожидаемый вывод до запуска кода. Какой распознаватель точнее и насколько? Какая группа фраз самая трудная? Чей синтез быстрее и почему? Совпадут ли числа для Piper при повторном запуске? После запуска сравни с фактическим и объясни каждое расхождение.</p>
+<ol>
+<li>Выполни <code>.\.venv\Scripts\python.exe labs\M15\speech_compare.py report</code> и сверь таблицу с авторским прогоном.</li>
+<li>В <code>quality/speech/report.json</code> найди фразы группы <code>terms</code> для пары <code>sapi-&gt;vosk</code> и <code>sapi-&gt;whisper</code>. Какие термины распознал хотя бы один движок?</li>
+<li>Найди <code>piper_samples</code> и объясни, почему для SAPI таких выборок нет.</li>
+<li>Если модели скачаны, запусти тренажёр со второй конфигурацией: <code>.\.venv\Scripts\python.exe -m projects.interview_trainer.app --asr whisper --tts piper</code>. Сравни время ответа <code>/asr</code> в интерфейсе с базовой конфигурацией.</li>
+</ol>
+</section><section class="lesson-stage" data-stage="task"><span class="stage-label">Твоя попытка</span><h2 id="M15-L07X--самостоятельная-задача-a-m15-l07x-a">Самостоятельная задача A — M15-L07X-A</h2>
+<p>Проверь конфигурации на своём голосе. Запиши не меньше 30 фраз из <code>data/speech/phrases-ru.json</code>, по возможности из всех трёх групп. Подойдёт любой записывающий инструмент, который сохраняет WAV PCM16, частота и число каналов любые. Положи файлы в папку вместе с <code>manifest.csv</code> с колонками <code>file,id</code>. Запусти <code>.\.venv\Scripts\python.exe labs\M15\speech_compare.py own &lt;папка&gt;</code>. Сравни Vosk и Whisper на своём голосе по WER, CER и группам, найди фразы с расхождением в «не» и сопоставь всё это с синтетическим прогоном. Реши, какую конфигурацию распознавания взять в тренажёр и почему.</p>
+</section><details class="hints" id="M15-L07X--подсказки-по-очереди"><summary>Подсказки по очереди</summary><div>
+<ol>
+<li>Строка манифеста выглядит так: <code>g01.wav,g01</code>. Id берутся из файла фраз, а текст эталона лабораторная подставит сама.</li>
+<li>Запиши хотя бы одну фразу в тихой комнате и одну — с бытовым шумом, и пометь их для себя.</li>
+<li>Сводку отчёта даёт <code>lab.summary(report)</code>, где <code>report</code> — прочитанный <code>artifacts/M15/speech-own/report.json</code>.</li>
+<li>Сравнивай распознаватели только на одних и тех же записях, а синтетику и свой голос — как разные условия, а не как разные модели.</li>
+</ol>
+</div></details>
+<h2 id="M15-L07X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</h2>
+<p><strong>Критерии до попытки:</strong> обе конфигурации соблюдают один контракт WAV. Эталоны и правила нормализации записаны до прогона. WER посчитан по всему набору с разбивкой на замены, пропуски и вставки, рядом стоит CER. Холодный старт отделён от рабочей задержки. Случайный синтез повторён несколько раз. Синтетический прогон назван синтетическим. Для самостоятельного зачёта объясни без открытого кода, чем строгий эталон отличается от мягкого, и посчитай WER по числу замен, пропусков и вставок.</p>
+<p><strong>Типичные ошибки:</strong> сравнивать распознаватели на разных голосах и приписывать разницу модели; придумывать правило нормализации после того, как увидел результат; считать WER как среднее по фразам; включать загрузку модели в задержку каждой фразы; объявлять Piper лучше или хуже по одному синтезу; выдавать синтетический прогон за качество на кандидатах; не смотреть на отрицания.</p>
+<section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M15-L07X--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
+<p><strong>Повтор B:</strong> у пары Piper → Whisper по строгому эталону 44 замены, 7 пропусков и 6 вставок на 280 словах. Посчитай WER. Фраза длится 3 секунды. Сколько ждать распознавания при RTF 0.67 у Whisper и при RTF 0.19 у Vosk? Сколько добавит холодный старт, если модель загружается на первом запросе? <strong>Отложенная C:</strong> спроектируй речевую часть тренажёра для работы. Кто распознаёт частичные гипотезы для перебивания из M15-L06, кто пишет итоговую расшифровку ответа, кто озвучивает вопросы. Как ты защитишься от вставленного или потерянного «не» и как проверишь синтез на людях, а не на распознавателе. <a href="#M15-SOLUTIONS--m15-l07x-a">Ключи</a> открывай после сохранения попытки.</p>
+</section><h2 id="M15-L07X--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Вторая конфигурация подключается за тем же контрактом и сравнивается на одном наборе с эталонами, записанными до прогона. WER считается по всему набору, рядом CER и группы. Холодный старт отдельно. Случайный синтез повторяется. Синтетика — не бенчмарк на людях</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>WER = (S + D + I) / N по словам, CER — то же по символам. RTF — время обработки на секунду аудио. Холодный старт — загрузка модели на первом вызове</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>Перед сменой движка речи. Пример: на голосе SAPI Whisper дал WER 0.090 против 0.174 у Vosk при RTF 0.39 против 0.14. Piper синтезирует фразу за 0.09 с против 0.41 у SAPI, но его речь распознаётся хуже на всех трёх синтезах</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Сравнивать движки в разных условиях и подбирать нормализацию после результата</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M15-L07X--источники-и-углубление">Источники и углубление</h2>
+<p>Статья <a href="https://arxiv.org/abs/2212.04356" target="_blank" rel="noopener noreferrer" class="external-link">Robust Speech Recognition via Large-Scale Weak Supervision</a> (Radford и др., 2022) — модель Whisper. Реализация <a href="https://github.com/SYSTRAN/faster-whisper" target="_blank" rel="noopener noreferrer" class="external-link">faster-whisper</a> на CTranslate2. Движок синтеза <a href="https://github.com/OHF-Voice/piper1-gpl" target="_blank" rel="noopener noreferrer" class="external-link">Piper</a> и <a href="https://huggingface.co/rhasspy/piper-voices" target="_blank" rel="noopener noreferrer" class="external-link">голоса Piper</a>. <a href="https://alphacephei.com/vosk/models" target="_blank" rel="noopener noreferrer" class="external-link">Модели Vosk</a>. В курсе: WER и RTF — M15-L02, синтез и доставка — M15-L03, речевое оценивание — M15-L05, частичные гипотезы и перебивание — M15-L06.</p>
+<div class="practice-note"><a href="#M15">Модуль и домашняя работа</a> · <a href="#M15-SOLUTIONS--m15-l07x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M15-L07X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L06"><small>Предыдущий раздел</small>← M15-L06. От WAV к частичным гипотезам и отменяемым фрагментам</a><a href="#M16"><small>Следующий раздел</small>M16 Итоговый продукт и защита →</a></nav></article><article class="material" id="M16" data-title="M16 Итоговый продукт и защита" data-short-title="Итоговый продукт и защита" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Итоговый продукт и защита</h1></header><div class="article-layout"><div class="body-content"><p>Версия 1.1.0. Входные знания: Все предыдущие модули; есть рабочие артефакты и самостоятельные попытки.</p>
 <h2 id="M16--уроки-и-практические-ступени">Уроки и практические ступени</h2>
 <ol>
 <li><a href="#M16-L01">M16-L01. Требования и две рубрики</a></li>
@@ -19975,7 +20209,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M16.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M16.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L06"><small>Предыдущий раздел</small>← M15-L06. От WAV к частичным гипотезам и отменяемым фрагментам</a><a href="#M16-L01"><small>Следующий раздел</small>M16-L01. Требования и две рубрики →</a></nav></article><article class="material" id="M16-L01" data-title="M16-L01. Требования и две рубрики" data-short-title="Требования и две рубрики" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Требования и две рубрики</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L01--объяснение">Объяснение</a></li><li><a href="#M16-L01--аналогия-техзадание-с-двумя-независимыми-ревью">Аналогия: техзадание с двумя независимыми ревью</a></li><li><a href="#M16-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M16-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M16-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M16-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M16-L01--карточка-урока">Карточка урока</a></li><li><a href="#M16-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
+"></iframe><p><a href="course/visuals/M16.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M16.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M15-L07X"><small>Предыдущий раздел</small>← M15-L07X. Вторая конфигурация речи: faster-whisper и Piper</a><a href="#M16-L01"><small>Следующий раздел</small>M16-L01. Требования и две рубрики →</a></nav></article><article class="material" id="M16-L01" data-title="M16-L01. Требования и две рубрики" data-short-title="Требования и две рубрики" data-kind="ready" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Требования и две рубрики</h1></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M16-L01--результат-и-входные-знания">Результат и входные знания</a></li><li><a href="#M16-L01--объяснение">Объяснение</a></li><li><a href="#M16-L01--аналогия-техзадание-с-двумя-независимыми-ревью">Аналогия: техзадание с двумя независимыми ревью</a></li><li><a href="#M16-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M16-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M16-L01--самостоятельная-задача-a">Самостоятельная задача A</a></li><li><a href="#M16-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M16-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M16-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M16-L01--карточка-урока">Карточка урока</a></li><li><a href="#M16-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p>Версия материала: 1.1.0. Это самостоятельный урок: внешняя проверка наставником необязательна.</p>
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, стандартная библиотека; продукт курса — Qwen2.5-0.5B-Instruct (ревизия 7ae5576) через transformers 4.57.6 и PyTorch 2.15.0+cpu, поиск TF-IDF из scikit-learn 1.9.1, Vosk 0.3.45 и vosk-model-small-ru-0.22, Windows System.Speech с голосом Microsoft Irina Desktop · проверено 04.11.2026 · источник: <a href="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct" target="_blank" rel="noopener noreferrer" class="external-link">карточка Qwen2.5-0.5B-Instruct</a></p>
 </blockquote>
@@ -23592,7 +23826,56 @@ print(&quot;максимум вызовов модели:&quot;, 1 + REQUERIES +
 <p>A: порог 300 разделяет внутреннюю паузу 350 на два сегмента; порог 500 сохраняет одну реплику до заключительной тишины. В дискретных блоках endpoint появится на ближайшей проверенной границе, не в произвольный момент внутри блока. Очередь разрешает только C: A удалён cancel, B пришёл поздно. B: после второй отмены ранее новый ход тоже стал устаревшим; критерий всегда сравнивается с текущей эпохой. C:100 мс stereo PCM16 48kHz =4800 frames×2 канала×2 байта=19200; текущая функция должна отклонить формат. Полный потоковый эталон — labs/M15/streaming_lab.py; собственный reducer проверяется exercises/M15/check.py.</p>
 <nav class="answer-actions" aria-label="После самопроверки"><a href="#M15-L06" data-return-task="M15-L06">← Вернуться к задаче</a><a href="#M15-L06" data-return-retry="M15-L06">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M15-SOLUTIONS--m15-hw01-b-c"><summary>Ответ: M15-HW01-B-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M15" data-return-task="M15">← Вернуться к задаче</a><a href="#M15" data-return-retry="M15">Новый вариант B / C →</a></nav>
 <p>B: пять слов эталона, одно удаление <code>не</code>, WER=1/5=0.2. Число ошибок не отражает тяжесть смены смысла: ответ о безопасности повтора инвертирован. Новый настоящий ASR-результат может отличаться; сравни его с этим эталоном и отдельно отметь отрицание. C: одного turn недостаточно. Проверять session, generation и cancellation state; очистить уже накопленный звук. g1 отклоняется как устаревшая генерация; g2 после отмены также отклоняется по флагу отмены. Возобновление требует нового generation_id/явного состояния, а не повторного приёма старого фрагмента.</p>
-<nav class="answer-actions" aria-label="После самопроверки"><a href="#M15" data-return-task="M15">← Вернуться к задаче</a><a href="#M15" data-return-retry="M15">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M15.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M15"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M16-SOLUTIONS" data-title="M16. Решения для самопроверки" data-short-title="M16. Решения для самопроверки" data-kind="answer" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M16. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Версия 1.1.0. Открывай после собственной попытки. Данные реального ученика и результаты участия людей здесь не выдумываются.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M15" data-return-task="M15">← Вернуться к задаче</a><a href="#M15" data-return-retry="M15">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M15-SOLUTIONS--m15-l07x-a"><summary>Ответ: M15-L07X-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M15-L07X" data-return-task="M15-L07X">← Вернуться к задаче</a><a href="#M15-L07X" data-return-retry="M15-L07X">Новый вариант B / C →</a></nav>
+<p>Решение состоит из двух шагов. Сначала создаётся шаблон манифеста по набору фраз, затем сводка своих записей сравнивается с синтетическим прогоном. Модели для этого блока не нужны: распознавание делает команда <code>own</code>, а блок читает её отчёт. Если своих записей ещё нет, блок создаёт шаблон и останавливается.</p>
+<pre><code class="language-python">import csv
+import importlib.util
+import json
+from pathlib import Path
+
+spec = importlib.util.spec_from_file_location(&quot;speech_compare&quot;, &quot;labs/M15/speech_compare.py&quot;)
+lab = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(lab)
+
+template = Path(&quot;artifacts/M15/own-manifest-template.csv&quot;)  # one line per phrase: the file you will record
+template.parent.mkdir(parents=True, exist_ok=True)
+with template.open(&quot;w&quot;, encoding=&quot;utf-8&quot;, newline=&quot;&quot;) as handle:
+    writer = csv.writer(handle)
+    writer.writerow([&quot;file&quot;, &quot;id&quot;])
+    writer.writerows([f&quot;{p['id']}.wav&quot;, p[&quot;id&quot;]] for p in lab.phrases())
+print(&quot;шаблон манифеста:&quot;, template)
+
+own = Path(&quot;artifacts/M15/speech-own/report.json&quot;)
+if not own.exists():
+    print(&quot;своих записей ещё нет: запиши фразы и запусти speech_compare.py own &lt;папка&gt;&quot;)
+    raise SystemExit(0)
+mine = {c[&quot;cell&quot;].split(&quot;-&gt;&quot;)[1]: c for c in lab.summary(json.loads(own.read_text(encoding=&quot;utf-8&quot;)))[&quot;cells&quot;]}
+synthetic = {c[&quot;cell&quot;]: c for c in lab.summary()[&quot;cells&quot;]}
+for asr in (&quot;vosk&quot;, &quot;whisper&quot;):
+    m, s = mine[asr], synthetic[f&quot;sapi-&gt;{asr}&quot;]
+    print(f&quot;{asr:8} свой голос WER {m['lenient']:.3f} CER {m['cer_lenient']:.3f} термины {lab.fmt(m['groups']['terms']['lenient'])} &quot;
+          f&quot;«не» {m['negation_mismatches']} | синтетика WER {s['lenient']:.3f}&quot;)
+</code></pre>
+<p>Как читать результат. Своих чисел у автора нет: они зависят от голоса, микрофона и комнаты ученика, и в курс не кладутся. Вот на что смотреть:</p>
+<ul>
+<li><strong>Разница с синтетикой.</strong> На живом голосе WER обычно выше, чем на чистом синтезе. Если он вырос у обоих распознавателей, дело в условиях записи. Если только у одного — в модели.</li>
+<li><strong>Группы.</strong> Если термины и на своём голосе дают WER около половины, ни один движок не годится для дословной расшифровки технического ответа без исправления текста кандидатом.</li>
+<li><strong>Отрицания.</strong> Каждую фразу из списка <code>negation_mismatches</code> прочитай вручную: потерянное или вставленное «не» — критическая ошибка, даже когда WER мал.</li>
+<li><strong>Шум.</strong> Запись с бытовым шумом сравни с тихой. Whisper обычно устойчивее к шуму, но может дописать слова, которых не было.</li>
+</ul>
+<p>Решение для тренажёра. Если Whisper заметно точнее на своём голосе и задержка 1–2 секунды на реплику приемлема, итоговую расшифровку отдают ему. Vosk остаётся для частичных гипотез и перебивания из M15-L06: Whisper сам по себе их не выдаёт. В любом случае текст ответа показывают кандидату для исправления до оценки, как требует M15-L02.</p>
+<p>Критические ошибки: сравнивать распознаватели на разных записях; переписывать эталон под то, что услышал распознаватель; выдавать результат на нескольких фразах за качество на кандидатах; не прочитать фразы с расхождением в отрицаниях.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M15-L07X" data-return-task="M15-L07X">← Вернуться к задаче</a><a href="#M15-L07X" data-return-retry="M15-L07X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M15-SOLUTIONS--m15-l07x-b-c"><summary>Ответ: M15-L07X-B-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M15-L07X" data-return-task="M15-L07X">← Вернуться к задаче</a><a href="#M15-L07X" data-return-retry="M15-L07X">Новый вариант B / C →</a></nav>
+<p><strong>B.</strong> WER = (44 + 7 + 6) / 280 = 57 / 280 ≈ 0.204. Распознавание трёхсекундной фразы занимает 3 · 0.67 ≈ 2.0 с у Whisper и 3 · 0.19 ≈ 0.6 с у Vosk. Если модель загружается на первом запросе, этот запрос ждёт ещё 2.6 с у Whisper или 1.2 с у Vosk: так в авторском прогоне длился первый вызов вместе с загрузкой. Поэтому модель загружают при старте сервера, а не на первом запросе пользователя.</p>
+<p><strong>C.</strong> Разумная схема:</p>
+<ul>
+<li><strong>Частичные гипотезы и перебивание</strong> — Vosk: он потоковый, быстрый (RTF 0.14–0.19 в одном потоке) и уже встроен в M15-L06.</li>
+<li><strong>Итоговая расшифровка ответа</strong> — Whisper, если замер на своём голосе подтвердил выигрыш. Он запускается по завершённой реплике, задержка 1–2 секунды приемлема.</li>
+<li><strong>Озвучивание вопросов</strong> — Piper, если сервер не на Windows или важна задержка: 0.09 с на фразу против 0.41 с у SAPI. Разборчивость его голоса на людях не измерена, распознаватель — лишь заменитель слушателя.</li>
+<li><strong>Защита от ошибок в отрицаниях.</strong> Кандидат видит расшифровку и может исправить её до оценки. Фразы с «не», «нет» и «ни» отмечаются в отчёте. Оценка смысла не строится на одном слове расшифровки.</li>
+<li><strong>Проверка синтеза на людях.</strong> Несколько слушателей оценивают разборчивость и естественность по шкале MOS на одних и тех же фразах для SAPI и Piper. Результат оценивают по нескольким синтезам Piper, потому что он случаен.</li>
+</ul>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M15-L07X" data-return-task="M15-L07X">← Вернуться к задаче</a><a href="#M15-L07X" data-return-retry="M15-L07X">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M15.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M15"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M16-SOLUTIONS" data-title="M16. Решения для самопроверки" data-short-title="M16. Решения для самопроверки" data-kind="answer" data-module="M16"><header class="material-head"><div class="eyebrow"><span class="material-id">M16-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M16. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Версия 1.1.0. Открывай после собственной попытки. Данные реального ученика и результаты участия людей здесь не выдумываются.</p>
 <details class="answer-key" id="M16-SOLUTIONS--m16-l01"><summary>Ответ: M16-L01</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M16-L01" data-return-task="M16-L01">← Вернуться к задаче</a><a href="#M16-L01" data-return-retry="M16-L01">Новый вариант B / C →</a></nav>
 <p><strong>Условие:</strong> Напиши по одному ответу уровней 0,1,2 для HR-конкретности и технической проверки решения. Для каждого приведи доказательство из текста и одно следующее действие. Затем сформулируй три обязательных требования к голосовому интерфейсу и критерий их приёмки.</p>
 <p><strong>Обоснованное решение:</strong> HR:0«Я хороший разработчик»;1«Мы ускорили API»;2«Я добавил индекс по customer_id и сравнил p95 на одинаковой нагрузке; выигрыш зависел от селективности». Техническая проверка:0«Так быстрее»;1«Посмотрю время»;2«Сравню EXPLAIN и p95 до/после на одинаковых данных и проверю стоимость записи». Голос: видимое состояние записи; исправление текста до оценки; остановка актуального звука и отбрасывание позднего. Для каждого нужен наблюдаемый тест в интерфейсе, а не только наличие функции в коде.</p>
@@ -24803,6 +25086,10 @@ print(&quot;максимум вызовов модели:&quot;, 1 + REQUERIES +
 </code></pre>
 <p>В <code>core.py</code> живут темы, уточнения, проверка номера хода и поиск. <code>feedback.py</code> отделяет raw_output от разрешённого display_text. <code>llm.py</code> загружает pinned snapshot локально и ограничивает вход 1800 токенами; обычный baseline использует лимит128, JSON-вариант192, bounded choice — длину допустимой комбинации плюс EOS. <code>speech.py</code> проверяет mono PCM16 16 kHz. <code>app.py</code> соединяет этапы через HTTP; одновременно выполняется одна тяжёлая операция, второй запрос получает409. Браузер записывает поток через AudioWorklet, однако основной UI распознаёт целые реплики. Отдельная обязательная лабораторная M15-L06 показывает настоящий incremental ASR, сегментацию пауз и отменяемую очередь фрагментов; она не является автоматически включённым streaming-режимом UI.</p>
 <p>Ответы хранятся в памяти процесса. Кнопка экспорта сохраняет сессию JSON по действию пользователя; перезапуск сервера удаляет несохранённые сессии. Идентификатор текущей сессии хранится в sessionStorage вкладки; «Восстановить сессию» получает актуальное состояние после потери HTTP-ответа или обновления вкладки. Эта кнопка не восстанавливает данные после перезапуска сервера. Временные WAV удаляются после распознавания или отправки синтеза. Консоль не печатает содержание интервью. Не отправляй личные сведения, которые не нужны для учебной задачи.</p>
+<h2 id="REFERENCE-PROJECT--вторая-конфигурация-речи-расширение-1-2-0-m15-l07x">Вторая конфигурация речи (расширение 1.2.0, M15-L07X)</h2>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m projects.interview_trainer.app --asr whisper --tts piper
+</code></pre>
+<p>По умолчанию тренажёр распознаёт речь через Vosk и озвучивает через Windows SAPI. Флаги <code>--asr whisper</code> и <code>--tts piper</code> подключают вторую конфигурацию из <code>speech_alt.py</code>: faster-whisper small в int8 и голос Piper ru_RU-denis-medium. Контракт тот же: WAV mono PCM16 16 кГц, до 120 секунд. Нужны необязательные пакеты из <code>requirements-optional.in</code> и модели <code>tools\download_models.py --speech-extra</code>. Сравнение конфигураций и его границы разобраны в уроке M15-L07X: авторский замер сделан на синтетическом голосе.</p>
 <h2 id="REFERENCE-PROJECT--как-проверять-результат">Как проверять результат</h2>
 <ol>
 <li>Пройди один HR и один backend сценарий. Сохрани JSON в submissions, а время каждого хода перенеси в отчёт.</li>
@@ -25242,7 +25529,7 @@ print(&quot;максимум вызовов модели:&quot;, 1 + REQUERIES +
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 115 из 115 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 116 из 116 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -26008,6 +26295,13 @@ print(&quot;максимум вызовов модели:&quot;, 1 + REQUERIES +
 <li><strong>Смысл величин.</strong> Блок — способ доставки, а не слово: отсчётов в блоке = частота · длительность; endpoint учебного baseline — 500 мс блоков с RMS ниже 300 после речи, он чувствителен к шуму и громкости; at_ms — время в аудио, а не задержка вычисления.</li>
 <li><strong>Когда применять.</strong> При потоковом распознавании. Пример: блоки по 20 мс при 16 кГц mono PCM16 — 320 отсчётов, 640 байт; при пороге 500 мс сегмент закроется после 25 тихих блоков подряд.</li>
 <li><strong>Главная ошибка.</strong> Распознавать каждый блок как отдельный файл, записывать partial в историю как окончательные ответы или выдавать at_ms за скорость модели.</li>
+</ul>
+<h3 id="CHEATSHEET--m15-l07x-вторая-конфигурация-речи-faster-whisper-и-piper"><a href="#M15-L07X">M15-L07X. Вторая конфигурация речи: faster-whisper и Piper</a></h3>
+<ul>
+<li><strong>Правило.</strong> Вторая конфигурация подключается за тем же контрактом и сравнивается на одном наборе с эталонами, записанными до прогона. WER считается по всему набору, рядом CER и группы. Холодный старт отдельно. Случайный синтез повторяется. Синтетика — не бенчмарк на людях.</li>
+<li><strong>Смысл величин.</strong> WER = (S + D + I) / N по словам, CER — то же по символам. RTF — время обработки на секунду аудио. Холодный старт — загрузка модели на первом вызове.</li>
+<li><strong>Когда применять.</strong> Перед сменой движка речи. Пример: на голосе SAPI Whisper дал WER 0.090 против 0.174 у Vosk при RTF 0.39 против 0.14. Piper синтезирует фразу за 0.09 с против 0.41 у SAPI, но его речь распознаётся хуже на всех трёх синтезах.</li>
+<li><strong>Главная ошибка.</strong> Сравнивать движки в разных условиях и подбирать нормализацию после результата.</li>
 </ul>
 <h2 id="CHEATSHEET--m16-итоговый-продукт-и-защита">M16. Итоговый продукт и защита</h2>
 <h3 id="CHEATSHEET--m16-l01-требования-и-две-рубрики"><a href="#M16-L01">M16-L01. Требования и две рубрики</a></h3>

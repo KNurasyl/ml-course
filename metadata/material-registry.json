@@ -1237,5 +1237,12 @@
     "path": "course/lessons/M12-L09X.md",
     "version": "1.1.0",
     "status": "ready"
+  },
+  "M15-L07X": {
+    "id": "M15-L07X",
+    "title": "M15-L07X. Вторая конфигурация речи: faster-whisper и Piper",
+    "path": "course/lessons/M15-L07X.md",
+    "version": "1.1.0",
+    "status": "ready"
   }
 }
