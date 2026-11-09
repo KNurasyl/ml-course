@@ -20,7 +20,7 @@
   // Every result points to one stable block, including a block in a closed answer.
   articles.forEach(article => {
     const title = article.querySelector('h1');
-    const nodes = [title, ...article.querySelectorAll('.body-content h2, .body-content h3, .body-content p, .body-content li, .body-content pre, .body-content td, .body-content summary')];
+    const nodes = [title, ...article.querySelectorAll('.tool-versions > div, .body-content h2, .body-content h3, .body-content p, .body-content li, .body-content pre, .body-content td, .body-content summary')];
     nodes.forEach((node, index) => {
       if (!node || node.closest('nav') || (node.tagName === 'LI' && node.querySelector('p, li'))) return;
       const text = node.textContent.replace(/\s+/g, ' ').trim();
@@ -180,6 +180,9 @@
   window.addEventListener('hashchange', select);
   outlineWide.addEventListener('change',()=>document.querySelectorAll('.lesson-outline details').forEach(details=>{details.open=outlineWide.matches;}));
   narrow.addEventListener('change',()=>closeMenu());
+  // Tool-version notes stay open on wide screens and fold on phones, where theory must start in the first screen.
+  const foldVersions=()=>document.querySelectorAll('.tool-versions').forEach(details=>{details.open=!narrow.matches;});
+  foldVersions();narrow.addEventListener('change',foldVersions);
   let outlinePending=false;
   function markOutline(){
     outlinePending=false;

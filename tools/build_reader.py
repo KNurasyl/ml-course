@@ -301,6 +301,17 @@ def lesson_presentation(body: str, key: str) -> tuple[str, str, str]:
         else:
             outcome += f'<details class="prerequisites"><summary>До урока и ориентир времени</summary><div>{found.group(1)}</div></details>'
         body = body[:found.start()] + body[found.end():]
+    # The T06 tool-version note before the first section is reference data, not theory: it joins
+    # "До урока" in the head, so on a phone the first section starts in the first screen (D13).
+    # reader.js keeps it open on wide screens and folds it on narrow ones; later version notes stay.
+    versions = re.search(r'<blockquote>\s*<p><strong>Версии и дата проверки:</strong>(.*?)</p>\s*</blockquote>\s*', body, re.DOTALL)
+    first_section = body.find('<h2')
+    if versions and (first_section < 0 or versions.start() < first_section):
+        checked = re.search(r'проверено (\d{2}\.\d{2}\.\d{4})', versions.group(1))
+        summary = 'Версии и дата проверки' + (f' · {checked.group(1)}' if checked else '')
+        outcome += (f'<details class="prerequisites tool-versions" open><summary>{summary}</summary>'
+                    f'<div>{versions.group(1).strip()}</div></details>')
+        body = body[:versions.start()] + body[versions.end():]
     headings = re.findall(r'<h2\b[^>]*id="([^"]+)"[^>]*>(.*?)</h2>', body, re.S)
     outline = ''
     if headings:

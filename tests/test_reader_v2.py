@@ -286,3 +286,18 @@ console.log('target-only navigation passed');
     result = subprocess.run([node, "-"], input=harness, text=True, capture_output=True, timeout=15)
     assert result.returncode == 0, result.stderr
     assert "target-only navigation passed" in result.stdout
+
+
+def test_leading_tool_versions_move_to_lesson_head_and_later_notes_stay():
+    note = ('<blockquote>\n<p><strong>Версии и дата проверки:</strong> Python 3.11.9 · проверено 04.11.2026 · '
+            'источник: <a href="https://example.org">карточка</a></p>\n</blockquote>\n')
+    body = (note + '<h2 id="M10-L06--объяснение">Объяснение</h2>\n<p>Теория.</p>\n'
+            + note.replace('3.11.9', '3.12.0') + '<h2 id="M10-L06--источники">Источники</h2>\n')
+    lesson_body, head, outline = reader.lesson_presentation(body, "M10-L06")
+    # D13: the first section opens the body, the note is kept whole in the head under a dated summary.
+    assert lesson_body.lstrip().startswith('<h2 id="M10-L06--объяснение">')
+    assert ('<details class="prerequisites tool-versions" open><summary>Версии и дата проверки · 04.11.2026</summary>'
+            '<div>Python 3.11.9 · проверено 04.11.2026 · источник: <a href="https://example.org">карточка</a></div></details>') in head
+    # A version note inside a later section is that section's content and is not moved.
+    assert 'Python 3.12.0' in lesson_body and 'Python 3.12.0' not in head
+    assert 'Объяснение' in outline and 'Источники' in outline
