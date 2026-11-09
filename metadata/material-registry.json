@@ -1244,5 +1244,12 @@
     "path": "course/lessons/M15-L07X.md",
     "version": "1.1.0",
     "status": "ready"
+  },
+  "M08-L08X": {
+    "id": "M08-L08X",
+    "title": "M08-L08X. Языковая модель с нуля: BPE и GPT на 10 млн параметров",
+    "path": "course/lessons/M08-L08X.md",
+    "version": "1.1.0",
+    "status": "ready"
   }
 }

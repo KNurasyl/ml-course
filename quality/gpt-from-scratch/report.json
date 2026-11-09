@@ -1,0 +1,299 @@
+{
+  "task": "T60",
+  "corpus": {
+    "files": {
+      "train": 141,
+      "validation": 14,
+      "test": 12
+    },
+    "bytes": {
+      "train": 2375270,
+      "validation": 196857,
+      "test": 144669
+    },
+    "tokens": {
+      "train": 444609,
+      "validation": 38280,
+      "test": 27552
+    },
+    "commit": "57486b8"
+  },
+  "tokenizer": {
+    "vocab": 4096,
+    "merges": 3839,
+    "train_seconds": 3.1,
+    "bytes_per_token_test": 5.251,
+    "first_merges": [
+      " �",
+      "е",
+      "о",
+      "а",
+      "т",
+      "и",
+      "н",
+      "р",
+      "с",
+      "о�",
+      "л",
+      "а�",
+      "у",
+      "я",
+      " п",
+      "ы",
+      "к",
+      "ь",
+      "м",
+      "ч"
+    ],
+    "longest_tokens": [
+      " пересчитывать",
+      " обязательного",
+      " действительно",
+      " последователь",
+      " восстановление",
+      " самостоятельно",
+      " первоначальная",
+      " самостоятельную",
+      " Самостоятельная",
+      " самостоятельной",
+      " самостоятельность",
+      " последовательность"
+    ]
+  },
+  "baselines": {
+    "uniform": {
+      "loss": 8.3178,
+      "bits_per_byte": 2.2854
+    },
+    "unigram": {
+      "loss": 6.9483,
+      "bits_per_byte": 1.9091
+    },
+    "bigram": {
+      "loss": 4.8866,
+      "bits_per_byte": 1.3426
+    }
+  },
+  "compressors": {
+    "zlib": 2.1383,
+    "bz2": 1.6303,
+    "lzma": 1.8344,
+    "lzma_given_train": 1.1204
+  },
+  "train": {
+    "context": 256,
+    "batch": 16,
+    "steps": 1200,
+    "lr": 0.0006,
+    "min_lr": 6e-05,
+    "warmup": 100,
+    "weight_decay": 0.1,
+    "dropout": 0.1,
+    "clip": 1.0,
+    "seed": 42,
+    "eval_every": 100,
+    "eval_windows": 32
+  },
+  "models": {
+    "small": {
+      "config": "small",
+      "dim": 128,
+      "layers": 4,
+      "heads": 4,
+      "parameters": 1350400,
+      "best_step": 1200,
+      "best_val_loss": 4.4023,
+      "history": [
+        {
+          "step": 1,
+          "train_loss": 8.337,
+          "val_loss": 8.325,
+          "seconds": 0.9
+        },
+        {
+          "step": 100,
+          "train_loss": 6.7784,
+          "val_loss": 6.7856,
+          "seconds": 63.6
+        },
+        {
+          "step": 200,
+          "train_loss": 5.8737,
+          "val_loss": 5.7795,
+          "seconds": 126.8
+        },
+        {
+          "step": 300,
+          "train_loss": 5.3752,
+          "val_loss": 5.3342,
+          "seconds": 188.8
+        },
+        {
+          "step": 400,
+          "train_loss": 5.0853,
+          "val_loss": 5.0651,
+          "seconds": 250.7
+        },
+        {
+          "step": 500,
+          "train_loss": 4.5848,
+          "val_loss": 4.8961,
+          "seconds": 312.4
+        },
+        {
+          "step": 600,
+          "train_loss": 4.4864,
+          "val_loss": 4.7459,
+          "seconds": 373.9
+        },
+        {
+          "step": 700,
+          "train_loss": 4.6066,
+          "val_loss": 4.6481,
+          "seconds": 436.4
+        },
+        {
+          "step": 800,
+          "train_loss": 4.435,
+          "val_loss": 4.554,
+          "seconds": 498.0
+        },
+        {
+          "step": 900,
+          "train_loss": 4.4274,
+          "val_loss": 4.4982,
+          "seconds": 559.8
+        },
+        {
+          "step": 1000,
+          "train_loss": 4.2846,
+          "val_loss": 4.4577,
+          "seconds": 621.3
+        },
+        {
+          "step": 1100,
+          "train_loss": 4.1979,
+          "val_loss": 4.4218,
+          "seconds": 682.6
+        },
+        {
+          "step": 1200,
+          "train_loss": 4.2595,
+          "val_loss": 4.4023,
+          "seconds": 745.0
+        }
+      ],
+      "train_seconds": 745.0,
+      "tokens_per_second": 6597,
+      "test_loss": 4.1396,
+      "test_perplexity": 62.78,
+      "test_bits_per_byte": 1.1374,
+      "samples": {
+        "Языковая модель": "Языковая модель, а приблизапуска. Для не является дуведёт до запуска — вста и отдачный документ; при любом другом расхождений и не заменяет: совпадение формулировки с эталоном и изменить кобрыв по очереди\n\n**Ответ.** Оазать, что в",
+        "Индекс ускоряет": "Индекс ускоряет разработала. В уроке |\n| Когда применять |\n| Когда применять | Отчёт: [P, 0, 0,5%, 1, 4) — 0, 1, 10, 2.75, 1, 4,5, 1; 0, 0, 0.3",
+        "Ответ кандидата": "Ответ кандидата, формы или пришается по очереди. Сделение по шагом и объясни величины и объясни по одному в train.\n\nПроверка, а не компенсирует решение не заменяют самостоятельную практику.\n## Дополнение версии и проверь самостоятельно и углубления\n**Обоснованное решение:** M02-"
+      }
+    },
+    "plan": {
+      "config": "plan",
+      "dim": 352,
+      "layers": 6,
+      "heads": 8,
+      "parameters": 10481152,
+      "best_step": 1200,
+      "best_val_loss": 3.6291,
+      "history": [
+        {
+          "step": 1,
+          "train_loss": 8.3742,
+          "val_loss": 8.3307,
+          "seconds": 3.6
+        },
+        {
+          "step": 100,
+          "train_loss": 5.8257,
+          "val_loss": 5.8829,
+          "seconds": 226.5
+        },
+        {
+          "step": 200,
+          "train_loss": 4.9645,
+          "val_loss": 4.9508,
+          "seconds": 474.2
+        },
+        {
+          "step": 300,
+          "train_loss": 4.4168,
+          "val_loss": 4.5037,
+          "seconds": 700.8
+        },
+        {
+          "step": 400,
+          "train_loss": 4.1503,
+          "val_loss": 4.2399,
+          "seconds": 940.3
+        },
+        {
+          "step": 500,
+          "train_loss": 3.5512,
+          "val_loss": 4.0935,
+          "seconds": 1161.7
+        },
+        {
+          "step": 600,
+          "train_loss": 3.3168,
+          "val_loss": 3.9634,
+          "seconds": 1384.7
+        },
+        {
+          "step": 700,
+          "train_loss": 3.5174,
+          "val_loss": 3.8743,
+          "seconds": 1634.5
+        },
+        {
+          "step": 800,
+          "train_loss": 3.2661,
+          "val_loss": 3.7775,
+          "seconds": 1885.3
+        },
+        {
+          "step": 900,
+          "train_loss": 3.2908,
+          "val_loss": 3.729,
+          "seconds": 2130.6
+        },
+        {
+          "step": 1000,
+          "train_loss": 3.1681,
+          "val_loss": 3.6969,
+          "seconds": 2370.9
+        },
+        {
+          "step": 1100,
+          "train_loss": 2.8694,
+          "val_loss": 3.6616,
+          "seconds": 2632.5
+        },
+        {
+          "step": 1200,
+          "train_loss": 3.1161,
+          "val_loss": 3.6291,
+          "seconds": 2893.5
+        }
+      ],
+      "train_seconds": 2893.5,
+      "tokens_per_second": 1699,
+      "test_loss": 3.2546,
+      "test_perplexity": 25.91,
+      "test_bits_per_byte": 0.8942,
+      "samples": {
+        "Языковая модель": "Языковая модель по сценару и проверить вставластические ошибки.\n\n## Разобранный пример\n\nPython-блок выполняй из корня `C:\\projects/M12-HW01.md`:\n\n```python\nfrom slabs/M12/report.py`. При запуске добавь s",
+        "Индекс ускоряет": "Индекс ускоряет вопрос по себе, но не гарантирует его. Поэтому обланется по рубрике, что кандидата на вопрос кандидата.\n\n| В уроке | В уроке | В аналогии |\n| --- | --- |\n| Качествоизводная метрика | Ключ на одном печания |\n|",
+        "Ответ кандидата": "Ответ кандидата, а его с одним ключом.\n\n| Поле | Содержание |\n| --- | --- |\n| Правило | Ответ модели модели у каждого ответа — нет в контексте, игатонирование, например, параметры ищение по схеме |\n| Таблица"
+      }
+    }
+  },
+  "collected": "2026-11-09",
+  "provenance": "Run of labs/M08/gpt_from_scratch.py run on 2026-11-09, 8 CPU threads, about 61 minutes. The corpus is the course text at commit 57486b8 (byte counts checked). The compressor baselines were added after the run by compressor_baselines() on the same corpus; every other value is the run's own output."
+}

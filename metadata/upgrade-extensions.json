@@ -20,6 +20,7 @@
     "labs/M14/agent_patterns.py report",
     "labs/M12/lora_peft.py report",
     "labs/M12/dpo_trl.py report",
-    "labs/M15/speech_compare.py report"
+    "labs/M15/speech_compare.py report",
+    "labs/M08/gpt_from_scratch.py report"
   ]
 }

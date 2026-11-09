@@ -625,6 +625,13 @@
       "version": "1.1.0",
       "status": "ready"
     },
+    "M08-L08X": {
+      "id": "M08-L08X",
+      "title": "M08-L08X. Языковая модель с нуля: BPE и GPT на 10 млн параметров",
+      "path": "course/lessons/M08-L08X.md",
+      "version": "1.1.0",
+      "status": "ready"
+    },
     "M09-L01": {
       "id": "M09-L01",
       "title": "M09-L01. Сообщения и шаблон диалога",
@@ -1359,6 +1366,7 @@
       "M08-L06",
       "M08-L07",
       "M08-L05",
+      "M08-L08X",
       "M09-L01",
       "M09-L02",
       "M09-L03",
@@ -1799,7 +1807,8 @@
         "M08-L04",
         "M08-L06",
         "M08-L07",
-        "M08-L05"
+        "M08-L05",
+        "M08-L08X"
       ],
       "homework_id": "M08-HW01",
       "exercise": {
@@ -3419,6 +3428,31 @@
         "practice_minutes": 55,
         "self_check_minutes": 30,
         "setup_minutes": "separate; record actual",
+        "estimate_status": "planning_hypothesis_not_measured"
+      },
+      "pilot_sessions": []
+    },
+    {
+      "id": "M08-L08X",
+      "title": "Языковая модель с нуля: BPE и GPT на 10 млн параметров",
+      "version": "1.1.0",
+      "module_id": "M08",
+      "material_key": "M08-L08X",
+      "path": "course/lessons/M08-L08X.md",
+      "scope": "complete_lesson",
+      "material_status": "ready",
+      "prerequisites": [
+        "M08-L05",
+        "M08-L07"
+      ],
+      "outcome_ids": [
+        "M08-C18"
+      ],
+      "workload": {
+        "reading_minutes": 50,
+        "practice_minutes": 100,
+        "self_check_minutes": 30,
+        "setup_minutes": "separate; tests, report and the task need no training; the full run takes about an hour on 8 CPU threads, a short run of the small model a few minutes",
         "estimate_status": "planning_hypothesis_not_measured"
       },
       "pilot_sessions": []

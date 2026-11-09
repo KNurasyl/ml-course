@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="1aa997170811ba24b52fb0b51ce4e0a09da5b77aabe5638fb9ede8ddf0ac7812"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><meta name="course-source-sha256" content="7d922ce69aeefcfdfdc1130f83e1bf48f14583a2fb118ba2c0e6976c97579eda"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style>/* Offline textbook. Keep type, controls and diagrams legible at 320 CSS pixels. */
 .material [tabindex="-1"]:focus,.reader:focus{outline:none}
 :root{color-scheme:light;--ink:#182b3a;--muted:#526474;--paper:#fff;--surface:#f4f7fa;--line:#d9e2ea;--accent:#245bba;--teal:#087e82;--sidebar:272px}
 *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 'Segoe UI',Arial,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button,summary{cursor:pointer}button,a,input,summary,select{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #aa5d08;outline-offset:3px}button:disabled{opacity:.55;cursor:default}[hidden]{display:none!important}mark{background:#ffe3a1;color:#182b3a;padding:0 2px}.skip-link{position:fixed;top:-100px;left:20px;z-index:80;background:white;padding:12px}.skip-link:focus{top:10px}
@@ -31,7 +31,7 @@
 <section class="nav-group"><details class="nav-module"><summary>M05 Классический ML</summary><ul><li data-key="M05"><a href="#M05" data-material="M05"><span class="nav-marker">M05</span><span>Классический ML</span></a></li><li data-key="M05-L01"><a href="#M05-L01" data-material="M05-L01"><span class="nav-marker">L01</span><span>Задача и исходное решение</span></a></li><li data-key="M05-L02"><a href="#M05-L02" data-material="M05-L02"><span class="nav-marker">L02</span><span>Линейные модели</span></a></li><li data-key="M05-L03"><a href="#M05-L03" data-material="M05-L03"><span class="nav-marker">L03</span><span>Деревья и бустинг</span></a></li><li data-key="M05-L04"><a href="#M05-L04" data-material="M05-L04"><span class="nav-marker">L04</span><span>Валидация и утечки</span></a></li><li data-key="M05-L05"><a href="#M05-L05" data-material="M05-L05"><span class="nav-marker">L05</span><span>Анализ ошибок</span></a></li><li data-key="M05-L06"><a href="#M05-L06" data-material="M05-L06"><span class="nav-marker">L06</span><span>Обучить классификатор и выбрать правило решения</span></a></li><li data-key="M05-L07"><a href="#M05-L07" data-material="M05-L07"><span class="nav-marker">L07</span><span>Самостоятельный эксперимент на неоднородных данных</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M06 Проектирование ML-систем</summary><ul><li data-key="M06"><a href="#M06" data-material="M06"><span class="nav-marker">M06</span><span>Проектирование ML-систем</span></a></li><li data-key="M06-L01"><a href="#M06-L01" data-material="M06-L01"><span class="nav-marker">L01</span><span>Цель и ограничения</span></a></li><li data-key="M06-L02"><a href="#M06-L02" data-material="M06-L02"><span class="nav-marker">L02</span><span>Контуры данных и модели</span></a></li><li data-key="M06-L03"><a href="#M06-L03" data-material="M06-L03"><span class="nav-marker">L03</span><span>Batch и online</span></a></li><li data-key="M06-L04"><a href="#M06-L04" data-material="M06-L04"><span class="nav-marker">L04</span><span>Наблюдение и изменение качества</span></a></li><li data-key="M06-L05"><a href="#M06-L05" data-material="M06-L05"><span class="nav-marker">L05</span><span>Отказы и откат</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M07 Нейросети и PyTorch</summary><ul><li data-key="M07"><a href="#M07" data-material="M07"><span class="nav-marker">M07</span><span>Нейросети и PyTorch</span></a></li><li data-key="M07-L01"><a href="#M07-L01" data-material="M07-L01"><span class="nav-marker">L01</span><span>Линейный слой и нелинейность</span></a></li><li data-key="M07-L02"><a href="#M07-L02" data-material="M07-L02"><span class="nav-marker">L02</span><span>Autograd и обратный проход</span></a></li><li data-key="M07-L03"><a href="#M07-L03" data-material="M07-L03"><span class="nav-marker">L03</span><span>Цикл обучения</span></a></li><li data-key="M07-L04"><a href="#M07-L04" data-material="M07-L04"><span class="nav-marker">L04</span><span>Проверка и диагностика</span></a></li><li data-key="M07-L05"><a href="#M07-L05" data-material="M07-L05"><span class="nav-marker">L05</span><span>Сохранение и воспроизведение</span></a></li></ul></details></section>
-<section class="nav-group"><details class="nav-module"><summary>M08 NLP и Transformer</summary><ul><li data-key="M08"><a href="#M08" data-material="M08"><span class="nav-marker">M08</span><span>NLP и Transformer</span></a></li><li data-key="M08-L01"><a href="#M08-L01" data-material="M08-L01"><span class="nav-marker">L01</span><span>Текст и токены</span></a></li><li data-key="M08-L02"><a href="#M08-L02" data-material="M08-L02"><span class="nav-marker">L02</span><span>Embeddings</span></a></li><li data-key="M08-L03"><a href="#M08-L03" data-material="M08-L03"><span class="nav-marker">L03</span><span>Attention</span></a></li><li data-key="M08-L04"><a href="#M08-L04" data-material="M08-L04"><span class="nav-marker">L04</span><span>Позиции и causal mask</span></a></li><li data-key="M08-L06"><a href="#M08-L06" data-material="M08-L06"><span class="nav-marker">L06</span><span>Residual и LayerNorm: сохранить путь и выровнять масштаб</span></a></li><li data-key="M08-L07"><a href="#M08-L07" data-material="M08-L07"><span class="nav-marker">L07</span><span>Полный forward Transformer-блока</span></a></li><li data-key="M08-L05"><a href="#M08-L05" data-material="M08-L05"><span class="nav-marker">L05</span><span>Мини-языковая модель</span></a></li></ul></details></section>
+<section class="nav-group"><details class="nav-module"><summary>M08 NLP и Transformer</summary><ul><li data-key="M08"><a href="#M08" data-material="M08"><span class="nav-marker">M08</span><span>NLP и Transformer</span></a></li><li data-key="M08-L01"><a href="#M08-L01" data-material="M08-L01"><span class="nav-marker">L01</span><span>Текст и токены</span></a></li><li data-key="M08-L02"><a href="#M08-L02" data-material="M08-L02"><span class="nav-marker">L02</span><span>Embeddings</span></a></li><li data-key="M08-L03"><a href="#M08-L03" data-material="M08-L03"><span class="nav-marker">L03</span><span>Attention</span></a></li><li data-key="M08-L04"><a href="#M08-L04" data-material="M08-L04"><span class="nav-marker">L04</span><span>Позиции и causal mask</span></a></li><li data-key="M08-L06"><a href="#M08-L06" data-material="M08-L06"><span class="nav-marker">L06</span><span>Residual и LayerNorm: сохранить путь и выровнять масштаб</span></a></li><li data-key="M08-L07"><a href="#M08-L07" data-material="M08-L07"><span class="nav-marker">L07</span><span>Полный forward Transformer-блока</span></a></li><li data-key="M08-L05"><a href="#M08-L05" data-material="M08-L05"><span class="nav-marker">L05</span><span>Мини-языковая модель</span></a></li><li data-key="M08-L08X"><a href="#M08-L08X" data-material="M08-L08X"><span class="nav-marker">L08X</span><span>Языковая модель с нуля: BPE и GPT на 10 млн параметров</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M09 Применение и запуск LLM</summary><ul><li data-key="M09"><a href="#M09" data-material="M09"><span class="nav-marker">M09</span><span>Применение и запуск LLM</span></a></li><li data-key="M09-L01"><a href="#M09-L01" data-material="M09-L01"><span class="nav-marker">L01</span><span>Сообщения и шаблон диалога</span></a></li><li data-key="M09-L02"><a href="#M09-L02" data-material="M09-L02"><span class="nav-marker">L02</span><span>Контекст и история</span></a></li><li data-key="M09-L03"><a href="#M09-L03" data-material="M09-L03"><span class="nav-marker">L03</span><span>Генерация и ограничения</span></a></li><li data-key="M09-L04"><a href="#M09-L04" data-material="M09-L04"><span class="nav-marker">L04</span><span>Локальный инференс и память</span></a></li><li data-key="M09-L05"><a href="#M09-L05" data-material="M09-L05"><span class="nav-marker">L05</span><span>Контракт ответа</span></a></li><li data-key="M09-L06"><a href="#M09-L06" data-material="M09-L06"><span class="nav-marker">L06</span><span>Выбрать локальную конфигурацию по измерениям</span></a></li><li data-key="M09-L07X"><a href="#M09-L07X" data-material="M09-L07X"><span class="nav-marker">L07X</span><span>Локальный serving: llama.cpp и Ollama</span></a></li><li data-key="M09-L08X"><a href="#M09-L08X" data-material="M09-L08X"><span class="nav-marker">L08X</span><span>Структурированный ответ: JSON Schema и грамматики</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M10 RAG и поиск</summary><ul><li data-key="M10"><a href="#M10" data-material="M10"><span class="nav-marker">M10</span><span>RAG и поиск</span></a></li><li data-key="M10-L01"><a href="#M10-L01" data-material="M10-L01"><span class="nav-marker">L01</span><span>Документ и фрагмент</span></a></li><li data-key="M10-L02"><a href="#M10-L02" data-material="M10-L02"><span class="nav-marker">L02</span><span>Лексический и векторный поиск</span></a></li><li data-key="M10-L03"><a href="#M10-L03" data-material="M10-L03"><span class="nav-marker">L03</span><span>Гибридный поиск и reranking</span></a></li><li data-key="M10-L04"><a href="#M10-L04" data-material="M10-L04"><span class="nav-marker">L04</span><span>Контекст и подтверждение ответа</span></a></li><li data-key="M10-L05"><a href="#M10-L05" data-material="M10-L05"><span class="nav-marker">L05</span><span>Диагностика и обновления</span></a></li><li data-key="M10-L06"><a href="#M10-L06" data-material="M10-L06"><span class="nav-marker">L06</span><span>Диагностировать русский RAG по трассе ошибки</span></a></li><li data-key="M10-L07X"><a href="#M10-L07X" data-material="M10-L07X"><span class="nav-marker">L07X</span><span>Эмбеддеры для русского языка</span></a></li><li data-key="M10-L08X"><a href="#M10-L08X" data-material="M10-L08X"><span class="nav-marker">L08X</span><span>Векторное хранилище</span></a></li><li data-key="M10-L09X"><a href="#M10-L09X" data-material="M10-L09X"><span class="nav-marker">L09X</span><span>Кросс-энкодер для reranking</span></a></li></ul></details></section>
 <section class="nav-group"><details class="nav-module"><summary>M11 Оценивание LLM-систем</summary><ul><li data-key="M11"><a href="#M11" data-material="M11"><span class="nav-marker">M11</span><span>Оценивание LLM-систем</span></a></li><li data-key="M11-L01"><a href="#M11-L01" data-material="M11-L01"><span class="nav-marker">L01</span><span>Что именно оцениваем</span></a></li><li data-key="M11-L02"><a href="#M11-L02" data-material="M11-L02"><span class="nav-marker">L02</span><span>Набор примеров и разметка</span></a></li><li data-key="M11-L03"><a href="#M11-L03" data-material="M11-L03"><span class="nav-marker">L03</span><span>HR и технические рубрики</span></a></li><li data-key="M11-L04"><a href="#M11-L04" data-material="M11-L04"><span class="nav-marker">L04</span><span>Модель как оценщик</span></a></li><li data-key="M11-L05"><a href="#M11-L05" data-material="M11-L05"><span class="nav-marker">L05</span><span>Регрессии и отчёт</span></a></li><li data-key="M11-L06"><a href="#M11-L06" data-material="M11-L06"><span class="nav-marker">L06</span><span>От реальных ответов к парному сравнению систем</span></a></li><li data-key="M11-L07X"><a href="#M11-L07X" data-material="M11-L07X"><span class="nav-marker">L07X</span><span>Error analysis как процесс</span></a></li></ul></details></section>
@@ -7991,6 +7991,7 @@ with TemporaryDirectory(prefix='ml-course-checkpoint-') as directory:
 <li><a href="#M08-L06">M08-L06. Residual и LayerNorm: сохранить путь и выровнять масштаб</a></li>
 <li><a href="#M08-L07">M08-L07. Полный forward Transformer-блока</a></li>
 <li><a href="#M08-L05">M08-L05. Мини-языковая модель</a></li>
+<li><a href="#M08-L08X">M08-L08X. Языковая модель с нуля: BPE и GPT на 10 млн параметров</a> — расширение 1.2.0, не входит в обязательный минимум; нужен только PyTorch курса, полный прогон около часа на CPU</li>
 </ol>
 <p>После каждого урока сначала выполни самостоятельную задачу. Открой решение только после своей попытки. Проходить весь модуль за один день не требуется: при 4–5 часах в день чередуй чтение, расчёты, программирование и воспроизведение по памяти.</p>
 <h2 id="M08--лабораторная-работа">Лабораторная работа</h2>
@@ -9109,7 +9110,245 @@ print(round(math.exp(nll),4))  # 2.5198
 <li><a href="https://github.com/karpathy/nanoGPT" target="_blank" rel="noopener noreferrer" class="external-link">Andrej Karpathy: nanoGPT</a> — компактная реализация обучения GPT для сравнения с учебной моделью (на английском)</li>
 </ul>
 <p>Текст, численные примеры, задания и схемы этого урока созданы для данного курса. Источники нужны для проверки терминов и изучения исходного метода; они не заменяют самостоятельную практику.</p>
-<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l05-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L07"><small>Предыдущий раздел</small>← M08-L07. Полный forward Transformer-блока</a><a href="#M09"><small>Следующий раздел</small>M09 Применение и запуск LLM →</a></nav></article><article class="material" id="M09" data-title="M09 Применение и запуск LLM" data-short-title="Применение и запуск LLM" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Применение и запуск LLM</h1></header><div class="article-layout"><div class="body-content"><p>Модуль запускает настоящую компактную LLM на CPU и учит управлять её входом, ресурсами и ошибками. Обязательная модель SmolLM2-135M-Instruct закреплена на конкретной ревизии; скачивание, измерения и настоящее сравнение float32/int8 разделены на проверяемые этапы. Качество русскоязычного интервью не предполагается заранее.</p>
+<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l05-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L05.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L07"><small>Предыдущий раздел</small>← M08-L07. Полный forward Transformer-блока</a><a href="#M08-L08X"><small>Следующий раздел</small>M08-L08X. Языковая модель с нуля: BPE и GPT на 10 млн параметров →</a></nav></article><article class="material" id="M08-L08X" data-title="M08-L08X. Языковая модель с нуля: BPE и GPT на 10 млн параметров" data-short-title="Языковая модель с нуля: BPE и GPT на 10 млн параметров" data-kind="ready" data-module="M08"><header class="material-head"><div class="eyebrow"><span class="material-id">M08-L08X</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Языковая модель с нуля: BPE и GPT на 10 млн параметров</h1><p class="outcome"><strong>После урока:</strong> обучить свой byte-level BPE и GPT примерно на 10 млн параметров на CPU, на тексте этого курса. Затем сравнить модель с n-граммными моделями и архиватором в битах на байт и объяснить по кривым потерь, что дали масштаб модели и объём данных.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L05, M08-L07, M07. Нужны только пакеты курса: PyTorch и regex уже в lock-файле. Тесты и отчёт работают без обучения. Полный прогон занимает около часа на 8 потоках CPU, короткий — несколько минут. Ориентир — 180 минут чтения, прогона и задачи; это плановая гипотеза, а не измеренное время.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M08-L08X--объяснение">Объяснение</a></li><li><a href="#M08-L08X--аналогия-языковая-модель-как-архиватор-со-словарём">Аналогия: языковая модель как архиватор со словарём</a></li><li><a href="#M08-L08X--разобранный-пример">Разобранный пример</a></li><li><a href="#M08-L08X--схема">Схема</a></li><li><a href="#M08-L08X--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M08-L08X--самостоятельная-задача-a-m08-l08x-a">Самостоятельная задача A — M08-L08X-A</a></li><li><a href="#M08-L08X--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M08-L08X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M08-L08X--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M08-L08X--карточка-урока">Карточка урока</a></li><li><a href="#M08-L08X--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content"><p><strong>Расширение 1.2.0.</strong> Урок дополняет модуль, не входит в обязательный минимум 1.1.0.</p>
+
+
+<blockquote>
+<p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu, regex 2026.9.29; корпус — Markdown этого курса в коммите 57486b8 · проверено 09.11.2026 · источник: <a href="https://cs336.stanford.edu/" target="_blank" rel="noopener noreferrer" class="external-link">Stanford CS336: Language Modeling from Scratch</a></p>
+</blockquote>
+<h2 id="M08-L08X--объяснение">Объяснение</h2>
+<h3 id="M08-L08X--от-мини-модели-m08-l05-к-маленькой-gpt">От мини-модели M08-L05 к маленькой GPT</h3>
+<p>В M08-L05 была модель размерности 16 с одним блоком внимания, а словарём служили слова искусственного корпуса. Здесь те же идеи, но в масштабе, который уже похож на настоящий:</p>
+<ul>
+<li><strong>Токенизатор</strong> обучен на данных, а не задан списком слов: byte-level BPE, как в GPT-2.</li>
+<li><strong>Модель</strong> — GPT из шести блоков, размерность 352, 8 голов внимания, около 10.5 млн параметров. Внимание написано вручную, без готового модуля PyTorch.</li>
+<li><strong>Данные</strong> — настоящий текст: уроки, ключи, страницы модулей и инструкции лабораторных этого курса, около 2.7 МБ русского Markdown. Файлы целиком разделены по хешу пути: 85% на обучение, 7.5% на проверку, 7.5% на тест. Ни один абзац не попадает в две части.</li>
+</ul>
+<p>Всё это зафиксировано в коде до первого прогона: размеры моделей, шаги, learning rate, разбиение. Сравнение с маленькой моделью на 1.35 млн параметров тоже запланировано заранее.</p>
+<h3 id="M08-L08X--bpe-словарь-из-частот">BPE: словарь из частот</h3>
+<p>Byte-level BPE начинает с 256 токенов — всех значений байта. Поэтому любой текст на любом языке кодируется без неизвестных символов. Затем алгоритм повторяет одно действие: находит самую частую соседнюю пару токенов в обучающем тексте и добавляет её в словарь как новый токен. 3839 слияний дают словарь из 256 + 3839 + 1 = 4096 токенов; последний — разделитель документов <code>&lt;|endoftext|&gt;</code>.</p>
+<p>Перед подсчётом пар текст режется на куски регулярным выражением в стиле GPT-2: слово вместе с пробелом перед ним, число, знаки препинания, пробелы. Пары не пересекают границы кусков, поэтому токен не склеит конец одного слова с началом другого.</p>
+<p>Численный пример. Текст «low low low lower» режется на «low», « low», « low», « lower». Пары (l, o) и (o, w) встречаются по 4 раза. При равенстве выигрывает меньшая пара номеров байтов, поэтому первым слиянием становится «lo». Дальше (lo, w) встречается 4 раза, а (пробел, lo) — 3, и второе слияние — «low». Тест лабораторной проверяет ровно эти два шага.</p>
+<p>Для русского языка byte-level BPE важен вдвойне: буква кириллицы занимает два байта UTF-8. В авторском прогоне первое слияние — пробел с первым байтом кириллической буквы, следующие восемь собирают буквы «е», «о», «а», «т», «и», «н», «р», «с». Только потом появляются слоги и целые слова. Самые длинные токены — « самостоятельность» и « последовательность»: слова, частые именно в тексте курса. «Индекс ускоряет чтение.» разбилось на 6 токенов: «Ин», «декс», « ускор», «яет», « чтение», «.».</p>
+<h3 id="M08-L08X--gpt-блок-за-блоком">GPT блок за блоком</h3>
+<p>Модель повторяет схему M08-L07 шесть раз:</p>
+<ul>
+<li><strong>Вход</strong> — эмбеддинг токена плюс обучаемая позиция, контекст 256 токенов.</li>
+<li><strong>Блок</strong> — сначала LayerNorm, потом причинное внимание, остаток прибавляется к входу; затем снова LayerNorm, MLP с расширением в 4 раза и GELU, остаток. Так устроен pre-LN: путь остатка остаётся тождественным, и глубокая модель учится устойчивее.</li>
+<li><strong>Внимание</strong> — q·kᵀ/√d_head, маска запрещает смотреть в будущее, softmax, умножение на v. Тест сверяет ручную реализацию с <code>scaled_dot_product_attention</code> PyTorch.</li>
+<li><strong>Выход</strong> — LayerNorm и умножение на ту же матрицу эмбеддингов. Связанные веса экономят V·d параметров.</li>
+</ul>
+<p>Число параметров считается по формуле: V·d + T·d + L·(12d² + 13d) + 2d. Здесь V — словарь, d — размерность, T — контекст, L — число блоков. В блоке на внимание приходится 4d² + 4d, на MLP — 8d² + 5d, на два LayerNorm — 4d. Для V = 4096, d = 352, T = 256 и L = 6 выходит 1 441 792 + 90 112 + 6 · 1 491 584 + 704 = 10 481 152.</p>
+<p>Веса инициализируются нормальным распределением со стандартным отклонением 0.02. Выходные проекции внимания и MLP ещё делятся на √(2L), чтобы сумма шести блоков не раздувала масштаб.</p>
+<h3 id="M08-L08X--обучение-и-как-читать-loss">Обучение и как читать loss</h3>
+<p>Каждый шаг — 16 случайных окон по 256 токенов из обучающей части. Оптимизатор AdamW с β = (0.9, 0.95) и затуханием весов 0.1 только для матриц. Learning rate 100 шагов растёт до 6·10⁻⁴, затем по косинусу падает до 6·10⁻⁵. Норма градиента обрезается до 1. Каждые 100 шагов считается loss на 32 фиксированных окнах проверки, и на тестовых файлах оценивается лучший по проверке checkpoint. Оценка идёт с выключенным dropout. Тест режется на окна по 256 токенов без перекрытия: первые токены каждого окна предсказываются почти без контекста, поэтому число на тесте немного пессимистично.</p>
+<ul>
+<li><strong>Loss на токен</strong> — средняя кросс-энтропия в натах. До обучения модель почти равномерна, и loss близок к ln 4096 ≈ 8.32. Проверка лабораторной это подтверждает: первый замер — 8.33.</li>
+<li><strong>Перплексия</strong> — exp(loss): во сколько равновероятных вариантов модель в среднем «выбирает» следующий токен.</li>
+<li><strong>Биты на байт</strong> — loss·N_токенов / (ln 2 · N_байт). Loss на токен нельзя сравнивать между разными токенизаторами: крупный токен сложнее угадать, зато токенов меньше. Биты на байт сравнимы между любыми токенизаторами и даже с архиваторами вроде gzip.</li>
+</ul>
+<h3 id="M08-L08X--данные-решают">Данные решают</h3>
+<p>По работе Chinchilla (Hoffmann и др., 2022) вычислительно оптимальной модели нужно порядка 20 токенов данных на параметр. Модели на 10 млн параметров нужно около 200 млн токенов, а в обучающей части курса 444 609. 1200 шагов по 4096 токенов — это примерно 11 проходов по одним и тем же текстам. До прогона из этого следует прогноз: большая модель быстро выучит обучающую часть, а её loss на проверке перестанет падать раньше, чем у маленькой. Прогон проверяет этот прогноз.</p>
+<p>Настоящую модель уровня GPT-2 с нуля учат на GPU. Например, <a href="https://github.com/karpathy/nanochat" target="_blank" rel="noopener noreferrer" class="external-link">nanochat</a> обучает её примерно за два часа на узле из восьми H100. В курсе это облачная ветка, она не запускалась и не проверялась.</p>
+<p><a class="figure-expand" href="course/assets/M08-L08X.svg" target="_blank" data-figure="course/assets/M08-L08X.svg" aria-label="Увеличить рисунок: Кривые потерь двух моделей GPT на тексте курса и сравнение в битах на байт с n-граммными моделями и архиваторами"><picture><img src="course/assets/M08-L08X.svg" alt="Кривые потерь двух моделей GPT на тексте курса и сравнение в битах на байт с n-граммными моделями и архиваторами" loading="lazy"></picture></a><span class="figure-hint">Кривые потерь двух моделей GPT на тексте курса и сравнение в битах на байт с n-граммными моделями и архиваторами · Открыть крупнее ↗</span></p>
+<p>Сопоставь рисунок с таблицей авторского прогона: где кривые проверки и обучения расходятся и какая из моделей обходит архиватор, которому показали тот же текст.</p>
+<h2 id="M08-L08X--аналогия-языковая-модель-как-архиватор-со-словарём">Аналогия: языковая модель как архиватор со словарём</h2>
+<p>Backend-разработчик сжимал короткие JSON-сообщения через zstd. Обычный архиватор на маленьком сообщении почти ничего не выигрывает. Поэтому заранее обучают словарь на образцах (<code>zstd --train</code>), и новые сообщения жмутся им гораздо лучше.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>В уроке</th>
+  <th>В аналогии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>BPE-слияния на обучающей части</td>
+  <td>Словарь zstd, обученный на образцах</td>
+</tr>
+<tr>
+  <td>Модель, предсказывающая следующий токен</td>
+  <td>Модель вероятностей внутри архиватора</td>
+</tr>
+<tr>
+  <td>Биты на байт на тестовых файлах</td>
+  <td>Степень сжатия новых сообщений, бит на исходный байт</td>
+</tr>
+<tr>
+  <td>Обучающая и тестовая части по целым файлам</td>
+  <td>Образцы для словаря и сообщения, которых среди них не было</td>
+</tr>
+<tr>
+  <td>Переобучение: обучающий loss падает быстрее проверки</td>
+  <td>Словарь подогнан под образцы и хуже жмёт новое</td>
+</tr>
+</tbody>
+</table></div>
+<p>Связь не только образная. Арифметическое кодирование с вероятностями модели сжимает текст почти ровно до её loss в битах. Поэтому биты на байт модели можно прямо сравнить с архиваторами.</p>
+<p><strong>Где аналогия ломается:</strong> архиватор не считает свой словарь частью сжатого файла, и модель тоже: 10 млн параметров во float32 весят около 42 МБ, а тестовый текст — 145 КБ. Выигрыш у lzma в битах на байт не делает модель практичным архиватором. И у архиватора нет генерации: модель умеет выбирать следующий токен из своего распределения, архиватор только кодирует данный текст.</p>
+<section class="lesson-stage" data-stage="example"><span class="stage-label">Разбираем вместе</span><h2 id="M08-L08X--разобранный-пример">Разобранный пример</h2>
+<p>Python-блок выполняй из корня <code>C:\projects\ml-llm-course</code> в окружении курса. Обучение для него не нужно: он читает замороженный отчёт и токенизатор авторского прогона из <code>quality/gpt-from-scratch</code>. Пример разбирает предложение на токены, считает параметры по формуле, переводит loss в биты на байт и сверяет объём данных с правилом Chinchilla.</p>
+<pre><code class="language-python">import importlib.util
+import json
+import math
+from pathlib import Path
+
+spec = importlib.util.spec_from_file_location(&quot;gpt_from_scratch&quot;, &quot;labs/M08/gpt_from_scratch.py&quot;)
+lab = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(lab)
+report = json.loads(Path(&quot;quality/gpt-from-scratch/report.json&quot;).read_text(encoding=&quot;utf-8&quot;))
+
+bpe = lab.BPE.load(&quot;quality/gpt-from-scratch/bpe.json&quot;)  # the tokenizer of the authored run
+ids = bpe.encode(&quot;Индекс ускоряет чтение.&quot;)
+print(len(ids), [bpe.decode([i]) for i in ids])
+
+V, d, T, L = 4096, 352, 256, 6
+params = lab.count_parameters(V, d, L, T)
+print(params, f&quot;embeddings {V * d / params:.1%}&quot;, f&quot;float32 {params * 4 / 1e6:.0f} MB&quot;)
+
+plan = report[&quot;models&quot;][&quot;plan&quot;]
+tokens, nbytes = report[&quot;corpus&quot;][&quot;tokens&quot;][&quot;test&quot;], report[&quot;corpus&quot;][&quot;bytes&quot;][&quot;test&quot;]
+bpb = plan[&quot;test_loss&quot;] * tokens / (math.log(2) * nbytes)
+assert abs(bpb - plan[&quot;test_bits_per_byte&quot;]) &lt; 1e-3  # bits per byte = loss * N_tokens / (ln 2 * N_bytes)
+print(f&quot;loss {plan['test_loss']} -&gt; perplexity {math.exp(plan['test_loss']):.1f}, {bpb:.3f} bits per byte&quot;)
+
+train_tokens = report[&quot;corpus&quot;][&quot;tokens&quot;][&quot;train&quot;]
+seen = report[&quot;train&quot;][&quot;steps&quot;] * report[&quot;train&quot;][&quot;batch&quot;] * report[&quot;train&quot;][&quot;context&quot;]
+print(f&quot;Chinchilla: {20 * params / 1e6:.0f}M tokens; train split {train_tokens}; seen {seen} = {seen / train_tokens:.1f} passes&quot;)
+for row in lab.summary(report):
+    print(f&quot;{row['model']:16} {row['bits_per_byte']:.3f}&quot;)
+</code></pre>
+<p>Эмбеддинги токенов занимают 13.8% параметров большой модели, у маленькой с d = 128 — уже 38.8%. Loss 3.255 означает перплексию 25.9: модель в среднем колеблется между двумя-тремя десятками вариантов следующего токена из 4096. Правило Chinchilla просит 210 млн токенов, а у нас 444 609, то есть в 470 раз меньше. Окна выбираются случайно, и каждый токен обучающей части модель видела в среднем 11 раз. Сводка внизу — таблица авторского прогона в битах на байт.</p>
+<h3 id="M08-L08X--авторский-прогон-09-11-2026">Авторский прогон 09.11.2026</h3>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe labs\M08\gpt_from_scratch.py run
+.\.venv\Scripts\python.exe labs\M08\gpt_from_scratch.py report
+</code></pre>
+<p>Тест — 12 файлов, 144 669 байт, 27 552 токена:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Модель</th>
+  <th>Параметры</th>
+  <th>Loss на токен</th>
+  <th>Перплексия</th>
+  <th>Бит на байт</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Равномерная</td>
+  <td>—</td>
+  <td>8.318</td>
+  <td>4096</td>
+  <td>2.285</td>
+</tr>
+<tr>
+  <td>Униграмма</td>
+  <td>—</td>
+  <td>6.948</td>
+  <td>1041</td>
+  <td>1.909</td>
+</tr>
+<tr>
+  <td>Биграмма</td>
+  <td>—</td>
+  <td>4.887</td>
+  <td>132.5</td>
+  <td>1.343</td>
+</tr>
+<tr>
+  <td>GPT small</td>
+  <td>1.35 млн</td>
+  <td>4.140</td>
+  <td>62.8</td>
+  <td>1.137</td>
+</tr>
+<tr>
+  <td>GPT plan</td>
+  <td>10.48 млн</td>
+  <td>3.255</td>
+  <td>25.9</td>
+  <td>0.894</td>
+</tr>
+</tbody>
+</table></div>
+<p>Архиваторы на тех же байтах теста, бит на байт: zlib -9 — 2.138, bz2 -9 — 1.630, lzma -9e — 1.834. lzma, которому перед тестом показали обучающую часть, — 1.120.</p>
+<p>Время на 8 потоках: BPE — 3.1 с, small — 12.4 минуты (6597 токенов в секунду), plan — 48 минут (1699 токенов в секунду), весь прогон — около 61 минуты.</p>
+<p>Что показал прогон:</p>
+<ul>
+<li><strong>Обе модели используют контекст.</strong> Биграмма видит один предыдущий токен, GPT — до 256. small снижает loss относительно биграммы на 0.75 ната на токен, plan — на 1.63. В битах на байт: 1.343, 1.137, 0.894.</li>
+<li><strong>Масштаб окупился.</strong> У plan в 7.8 раза больше параметров, обучение дольше в 3.9 раза, а бит на байт на 21% меньше.</li>
+<li><strong>Честный архиватор.</strong> Сам по себе lzma даёт 1.834 бита на байт, но сравнивать с ним нечестно: курса он не видел. Если показать ему обучающую часть, он доходит до 1.120 — почти как small с 1.137. plan обходит такой lzma на 20%.</li>
+<li><strong>Прогноз о переобучении подтвердился наполовину.</strong> Разрыв между обучающим пакетом и проверкой к концу у plan около 0.58 ната, у small — около 0.15, почти вчетверо меньше. Но loss проверки у обеих моделей падал до последнего шага, и лучший checkpoint — шаг 1200. За 11 проходов большая модель ещё не начала ухудшаться на новых файлах. Где проверка остановится при более долгом обучении, этот прогон не показывает.</li>
+<li><strong>Тест оказался легче проверки.</strong> У plan loss на проверке 3.63, на тесте 3.25; у small — 4.40 и 4.14. В тест попали 12 файлов, из них четыре — короткие шаблонные страницы модулей. Это вероятная причина, но по файлам она не измерялась. Модели сравниваются только на одном и том же тесте, а абсолютное число зависит от того, какие файлы туда попали.</li>
+<li><strong>Текст похож на курс, но смысла в нём нет.</strong> plan пишет заголовки «## Разобранный пример», таблицы «| Поле | Содержание |», пути к файлам и в основном настоящие русские слова. Фразы при этом не складываются в мысль: «Индекс ускоряет вопрос по себе, но не гарантирует его». small чаще ломает слова: «приблизапуска», «Сделение». Модель выучила форму текста курса, а не его содержание.</li>
+</ul>
+</section><h2 id="M08-L08X--схема">Схема</h2>
+<figure class="diagram"><pre class="mermaid">flowchart TD
+    C[&quot;Текст курса: 167 файлов&quot;] --&gt; S[&quot;Разбиение по файлам: обучение, проверка, тест&quot;]
+    S --&gt; B[&quot;BPE: 256 байт + 3839 слияний&quot;]
+    B --&gt; G[&quot;GPT: 6 блоков, d = 352&quot;]
+    G --&gt; V[&quot;Проверка каждые 100 шагов&quot;]
+    V --&gt; K[&quot;Лучший checkpoint&quot;]
+    K --&gt; M[&quot;Тест: loss, бит на байт&quot;]
+    N[&quot;Униграмма, биграмма, архиваторы&quot;] --&gt; M
+    classDef main fill:#e8f0fe,stroke:#245bba,stroke-width:2px,color:#182b3a
+    class S,V,M main
+</pre></figure>
+<p>Путь от текста до числа на тесте. Сначала файлы целиком делятся на три части, и только потом на обучающей части учится токенизатор. Модель учится на тех же токенах, а проверка каждые 100 шагов выбирает лучший checkpoint. На тесте он оценивается один раз, рядом с n-граммными моделями и архиваторами на тех же байтах. Выделены разбиение, проверка и тест: если в них ошибиться, число на тесте ничего не значит, как бы хорошо ни была написана модель.</p>
+<section class="lesson-stage" data-stage="practice"><span class="stage-label">Пробуем с поддержкой</span><h2 id="M08-L08X--практика-с-поддержкой">Практика с поддержкой</h2>
+<p><strong>Предскажи до запуска.</strong> Запиши ожидаемый вывод до запуска кода. Какой loss на проверке будет у small после 300 шагов вместо 1200? Обойдёт ли она уже биграмму с 4.89? Сколько минут займёт прогон? После запуска сравни с фактическим и объясни каждое расхождение.</p>
+<ol>
+<li>Выполни <code>.\.venv\Scripts\python.exe labs\M08\gpt_from_scratch.py report</code> и сверь таблицу с авторским прогоном.</li>
+<li>Выполни <code>.\.venv\Scripts\python.exe labs\M08\gpt_from_scratch.py run --config small --steps 300</code>. Это несколько минут на CPU. Сравни loss проверки на шаге 300 с историей small в <code>quality/gpt-from-scratch/report.json</code>. Learning rate теперь падает за 300 шагов, а не за 1200, и корпус после правок курса немного другой, поэтому точного совпадения не будет.</li>
+<li>В замороженном отчёте найди <code>tokenizer.first_merges</code> и <code>longest_tokens</code>. Почему первые слияния — буквы, а самые длинные токены — слова «самостоятельность» и «последовательность»?</li>
+<li>Сравни <code>samples</code> двух моделей. Что plan копирует из шаблона уроков и где у неё ломается смысл?</li>
+</ol>
+</section><section class="lesson-stage" data-stage="task"><span class="stage-label">Твоя попытка</span><h2 id="M08-L08X--самостоятельная-задача-a-m08-l08x-a">Самостоятельная задача A — M08-L08X-A</h2>
+<p>Размер словаря и честная метрика. Обучи BPE на обучающей части со словарём 512, 1024, 4096 и 8192 токена. Для каждого словаря посчитай на тесте байты на токен и loss униграммы и биграммы — на токен и в битах на байт. До запуска запиши прогноз: как с ростом словаря изменятся loss на токен и биты на байт? Объясни, почему loss на токен нельзя сравнивать между словарями. Реши, какой словарь ты взял бы для GPT на 10 млн параметров, если учесть долю эмбеддингов V·d в числе параметров.</p>
+</section><details class="hints" id="M08-L08X--подсказки-по-очереди"><summary>Подсказки по очереди</summary><div>
+<ol>
+<li>Части корпуса даёт <code>lab.corpus()</code>, токенизатор — <code>lab.BPE.train(parts[&quot;train&quot;], vocab_size=V)</code>, токены — <code>bpe.encode_documents(parts[&quot;test&quot;])</code>.</li>
+<li>Байты теста — <code>sum(len(d.encode(&quot;utf-8&quot;)) for d in parts[&quot;test&quot;])</code>. n-граммные модели считает <code>lab.ngram_baselines(train_ids, test_ids, len(bpe.vocab))</code>.</li>
+<li>Биты на байт — <code>lab.bits_per_byte(loss, len(test_ids), nbytes)</code>, долю эмбеддингов даёт <code>lab.count_parameters</code>.</li>
+<li>Если биграмма с большим словарём хуже, посчитай, какая доля пар токенов теста ни разу не встретилась в обучающей части.</li>
+</ol>
+</div></details>
+<h2 id="M08-L08X--критерии-и-типичные-ошибки">Критерии и типичные ошибки</h2>
+<p><strong>Критерии до попытки:</strong> корпус разделён по целым файлам до обучения токенизатора. Токенизатор и модель видели только обучающую часть. Лучший checkpoint выбран по проверке, тест посчитан один раз. Все модели и архиваторы оценены на одних и тех же байтах. Между разными токенизаторами сравниваются биты на байт, а не loss на токен. Рядом с моделью стоят n-граммные модели и архиватор, которому показан тот же обучающий текст. Прогноз записан до прогона, и его неподтверждённая часть названа. Для самостоятельного зачёта посчитай без кода число параметров GPT по формуле для d = 128 и L = 4 и переведи loss в биты на байт.</p>
+<p><strong>Типичные ошибки:</strong> сравнивать loss на токен моделей с разными словарями; обучать токенизатор на всём тексте вместе с тестом; делить корпус по строкам или абзацам, так что куски одного урока попадают и в обучение, и в тест; выбирать checkpoint по тесту; оценивать с включённым dropout; сравнивать модель с архиватором, который не видел обучающего текста, и объявлять победу; судить о качестве по сгенерированному тексту; считать выигрыш у lzma практичным сжатием и забывать про 42 МБ весов.</p>
+<section class="lesson-stage" data-stage="retry"><span class="stage-label">Проверяем перенос</span><h2 id="M08-L08X--новая-и-отложенная-проверка">Новая и отложенная проверка</h2>
+<p><strong>Повтор B:</strong> биграмма со словарём 512 и GPT plan со словарём 4096 дали на тесте одинаковый loss — 3.255 ната на токен. В тесте 144 669 байт: это 54 897 токенов словаря 512 и 27 552 токена словаря 4096. Посчитай биты на байт обеих моделей. Какая лучше и во сколько раз? Затем посчитай по формуле число параметров small (V = 4096, d = 128, T = 256, L = 4), долю эмбеддингов токенов и число токенов данных по правилу Chinchilla. <strong>Отложенная C:</strong> что нужно, чтобы модель на 10 млн параметров была обучена по правилу Chinchilla на CPU автора? Сколько токенов и примерно сколько гигабайт русского текста нужно? Сколько часов займёт один проход при 1699 токенах в секунду? Откуда взять текст с подходящей лицензией? Сравни это с дообучением готовой модели из M12: что даст тренажёру собеседований каждый путь? <a href="#M08-SOLUTIONS--m08-l08x-a">Ключи</a> открывай после сохранения попытки.</p>
+</section><h2 id="M08-L08X--карточка-урока">Карточка урока</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Поле</th>
+  <th>Содержание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Правило</td>
+  <td>Токенизатор и модель учатся только на обучающей части, разбитой по целым файлам. Лучший checkpoint выбирается по проверке, тест считается один раз. Модели с разными токенизаторами и архиваторы сравниваются в битах на байт</td>
+</tr>
+<tr>
+  <td>Смысл величин</td>
+  <td>Loss — средняя кросс-энтропия на токен в натах, перплексия = exp(loss). Биты на байт = loss · N_токенов / (ln 2 · N_байт). Параметры GPT = V·d + T·d + L·(12d² + 13d) + 2d</td>
+</tr>
+<tr>
+  <td>Когда применять</td>
+  <td>При оценке любой языковой модели и токенизатора. Пример: GPT на 10.5 млн параметров дала 0.894 бита на байт против 1.343 у биграммы и 1.120 у lzma, которому показали тот же обучающий текст</td>
+</tr>
+<tr>
+  <td>Главная ошибка</td>
+  <td>Сравнивать loss на токен между разными токенизаторами и выбирать checkpoint по тесту</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="M08-L08X--источники-и-углубление">Источники и углубление</h2>
+<p>Курс <a href="https://cs336.stanford.edu/" target="_blank" rel="noopener noreferrer" class="external-link">Stanford CS336: Language Modeling from Scratch</a> и его <a href="https://github.com/stanford-cs336/assignment1-basics" target="_blank" rel="noopener noreferrer" class="external-link">первое задание</a>: BPE, Transformer и обучение с нуля. Статья <a href="https://arxiv.org/abs/1508.07909" target="_blank" rel="noopener noreferrer" class="external-link">Neural Machine Translation of Rare Words with Subword Units</a> (Sennrich и др., 2016) — BPE для текста. Статья <a href="https://arxiv.org/abs/2203.15556" target="_blank" rel="noopener noreferrer" class="external-link">Training Compute-Optimal Large Language Models</a> (Hoffmann и др., 2022) — правило Chinchilla. Статья <a href="https://arxiv.org/abs/2309.10668" target="_blank" rel="noopener noreferrer" class="external-link">Language Modeling Is Compression</a> (Delétang и др., 2024) — языковая модель как архиватор. Код <a href="https://github.com/karpathy/nanoGPT" target="_blank" rel="noopener noreferrer" class="external-link">nanoGPT</a> — компактный GPT, автор объявил его устаревшим; продолжение — <a href="https://github.com/karpathy/nanochat" target="_blank" rel="noopener noreferrer" class="external-link">nanochat</a>, полный путь до чат-модели на GPU. В курсе: токены — M08-L01, внимание и маска — M08-L03 и M08-L04, полный блок — M08-L07, мини-модель — M08-L05, дообучение готовых моделей — M12.</p>
+<div class="practice-note"><a href="#M08">Модуль и домашняя работа</a> · <a href="#M08-SOLUTIONS--m08-l08x-a">Решение этой задачи</a> · <a href="#MENTOR">Правила самопроверки</a></div></div></div><footer class="source-note">Исходный текст: <code>course/lessons/M08-L08X.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L05"><small>Предыдущий раздел</small>← M08-L05. Мини-языковая модель</a><a href="#M09"><small>Следующий раздел</small>M09 Применение и запуск LLM →</a></nav></article><article class="material" id="M09" data-title="M09 Применение и запуск LLM" data-short-title="Применение и запуск LLM" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09</span><span class="badge ready">Модуль и домашняя работа</span></div><h1>Применение и запуск LLM</h1></header><div class="article-layout"><div class="body-content"><p>Модуль запускает настоящую компактную LLM на CPU и учит управлять её входом, ресурсами и ошибками. Обязательная модель SmolLM2-135M-Instruct закреплена на конкретной ревизии; скачивание, измерения и настоящее сравнение float32/int8 разделены на проверяемые этапы. Качество русскоязычного интервью не предполагается заранее.</p>
 <h2 id="M09--порядок-занятий">Порядок занятий</h2>
 <ol>
 <li><a href="#M09-L01">M09-L01. Сообщения и шаблон диалога</a></li>
@@ -9256,7 +9495,7 @@ draw();
   });
 })();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe><p><a href="course/visuals/M09.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M09.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L05"><small>Предыдущий раздел</small>← M08-L05. Мини-языковая модель</a><a href="#M09-L01"><small>Следующий раздел</small>M09-L01. Сообщения и шаблон диалога →</a></nav></article><article class="material" id="M09-L01" data-title="M09-L01. Сообщения и шаблон диалога" data-short-title="Сообщения и шаблон диалога" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сообщения и шаблон диалога</h1><p class="outcome"><strong>После урока:</strong> Объяснить, почему один и тот же текст при разных шаблонах может давать разные результаты.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L01--объяснение">Объяснение</a></li><li><a href="#M09-L01--аналогия-query-builder-и-диалект-sql">Аналогия: query builder и диалект SQL</a></li><li><a href="#M09-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L01--самостоятельная-задача-a-m09-l01-a">Самостоятельная задача A — M09-L01-A</a></li><li><a href="#M09-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L01--карточка-урока">Карточка урока</a></li><li><a href="#M09-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
+"></iframe><p><a href="course/visuals/M09.html" target="_blank">Открыть демонстрацию отдельно</a></p></div></div><footer class="source-note">Исходный текст: <code>course/modules/M09.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#M08-L08X"><small>Предыдущий раздел</small>← M08-L08X. Языковая модель с нуля: BPE и GPT на 10 млн параметров</a><a href="#M09-L01"><small>Следующий раздел</small>M09-L01. Сообщения и шаблон диалога →</a></nav></article><article class="material" id="M09-L01" data-title="M09-L01. Сообщения и шаблон диалога" data-short-title="Сообщения и шаблон диалога" data-kind="ready" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-L01</span><span class="badge ready">Урок · Теория и практика</span></div><h1>Сообщения и шаблон диалога</h1><p class="outcome"><strong>После урока:</strong> Объяснить, почему один и тот же текст при разных шаблонах может давать разные результаты.</p><details class="prerequisites"><summary>До урока и ориентир времени</summary><div> M08-L04. Если термины из этих уроков не удаётся объяснить своими словами, вернись к их разобранным примерам. Ориентир времени — 120 минут чтения и практики; это первоначальная оценка, а не ограничение.</div></details></header><div class="article-layout has-outline"><aside class="lesson-outline" aria-label="Карта урока"><details><summary>В этом уроке</summary><ol><li><a href="#M09-L01--объяснение">Объяснение</a></li><li><a href="#M09-L01--аналогия-query-builder-и-диалект-sql">Аналогия: query builder и диалект SQL</a></li><li><a href="#M09-L01--разобранный-пример">Разобранный пример</a></li><li><a href="#M09-L01--практика-с-поддержкой">Практика с поддержкой</a></li><li><a href="#M09-L01--самостоятельная-задача-a-m09-l01-a">Самостоятельная задача A — M09-L01-A</a></li><li><a href="#M09-L01--подсказки-по-очереди">Подсказки по очереди</a></li><li><a href="#M09-L01--критерии-и-типичные-ошибки">Критерии и типичные ошибки</a></li><li><a href="#M09-L01--новая-и-отложенная-проверка">Новая и отложенная проверка</a></li><li><a href="#M09-L01--карточка-урока">Карточка урока</a></li><li><a href="#M09-L01--источники-и-углубление">Источники и углубление</a></li></ol></details></aside><div class="body-content">
 
 <blockquote>
 <p><strong>Версии и дата проверки:</strong> Python 3.11.9, PyTorch 2.15.0+cpu, transformers 4.57.6, huggingface-hub 0.36.2; модель SmolLM2-135M-Instruct (ревизия 12fd25f) · проверено 04.11.2026 · источник: <a href="https://huggingface.co/docs/transformers/v4.57.5/en/chat_templating" target="_blank" rel="noopener noreferrer" class="external-link">Transformers 4.57: chat templates</a></p>
@@ -22946,7 +23185,129 @@ assert not accept_result(3,2)
 <nav class="answer-actions" aria-label="После самопроверки"><a href="#M08-L05" data-return-task="M08-L05">← Вернуться к задаче</a><a href="#M08-L05" data-return-retry="M08-L05">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M08-SOLUTIONS--m08-hw01-b-и-c"><summary>Ответ: M08-HW01: B и C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M08" data-return-task="M08">← Вернуться к задаче</a><a href="#M08" data-return-retry="M08">Новый вариант B / C →</a></nav>
 <p><strong>B.</strong> Без маски каждая строка весов [1/3,1/3,1/3], выход (2+4+12)/3=6. Правильные строки [[1,0,0],[1/2,1/2,0],[1/3,1/3,1/3]], выходы [2,3,6]. Нормировка проверяет распределение вероятностей, но не допустимость его носителя: вероятность будущих ключей может быть положительной при сумме 1. Нужны оба теста: суммы и нулевая масса на запрещённых позициях, плюс изменение будущего не меняет прошлое.</p>
 <p><strong>C.</strong> Строки весов [[1,0,0],[1/2,1/2,0],[1/2,1/2,0]], выходы [2,4,4]. Loss учитывает позиции 0 и 1 (B и EOS), PAD-цель 2 исключена. Замена PAD-value не меняет ни один из этих выходов, поскольку его key запрещён. В данном коротком causal примере первые две позиции и без key mask не видят будущий PAD, но последняя query увидела бы его; в иных схемах padding/батчей это загрязнение может затронуть используемые выходы. Маска loss исключает цель из оценки, но сама не запрещает читать её вход как key/value.</p>
-<nav class="answer-actions" aria-label="После самопроверки"><a href="#M08" data-return-task="M08">← Вернуться к задаче</a><a href="#M08" data-return-retry="M08">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M08.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M08"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M09-SOLUTIONS" data-title="M09. Решения для самопроверки" data-short-title="M09. Решения для самопроверки" data-kind="answer" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M09. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Открывай после собственной попытки. Если ты изучил ключ до решения, новая задача из раздела повторения обязательна для проверки самостоятельности. Числа в учебных примерах не являются оценкой реальных кандидатов.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M08" data-return-task="M08">← Вернуться к задаче</a><a href="#M08" data-return-retry="M08">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M08-SOLUTIONS--m08-l08x-a"><summary>Ответ: M08-L08X-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M08-L08X" data-return-task="M08-L08X">← Вернуться к задаче</a><a href="#M08-L08X" data-return-retry="M08-L08X">Новый вариант B / C →</a></nav>
+<p>Блок обучает четыре токенизатора на обучающей части и считает n-граммные модели на тесте. Модель GPT для него не нужна, на CPU он идёт около 20 секунд.</p>
+<pre><code class="language-python">import importlib.util
+from collections import Counter
+from itertools import pairwise
+
+spec = importlib.util.spec_from_file_location(&quot;gpt_from_scratch&quot;, &quot;labs/M08/gpt_from_scratch.py&quot;)
+lab = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(lab)
+
+parts = lab.corpus()
+nbytes = sum(len(d.encode(&quot;utf-8&quot;)) for d in parts[&quot;test&quot;])
+print(f&quot;{'V':&gt;5} {'B/tok':&gt;6} {'uni/tok':&gt;8} {'bi/tok':&gt;7} {'uni bpb':&gt;8} {'bi bpb':&gt;7} {'unseen pairs':&gt;12} {'emb share d=352':&gt;16}&quot;)
+for vocab in (512, 1024, 4096, 8192):
+    bpe = lab.BPE.train(parts[&quot;train&quot;], vocab_size=vocab)  # the tokenizer sees the training split only
+    train_ids, test_ids = bpe.encode_documents(parts[&quot;train&quot;]), bpe.encode_documents(parts[&quot;test&quot;])
+    base = lab.ngram_baselines(train_ids, test_ids, len(bpe.vocab))
+    seen = Counter(pairwise(train_ids))
+    unseen = sum(pair not in seen for pair in pairwise(test_ids)) / (len(test_ids) - 1)
+    share = vocab * 352 / lab.count_parameters(vocab, 352, 6, 256)
+    print(f&quot;{vocab:&gt;5} {nbytes / len(test_ids):&gt;6.3f} {base['unigram']:&gt;8.3f} {base['bigram']:&gt;7.3f} &quot;
+          f&quot;{lab.bits_per_byte(base['unigram'], len(test_ids), nbytes):&gt;8.3f} {lab.bits_per_byte(base['bigram'], len(test_ids), nbytes):&gt;7.3f} &quot;
+          f&quot;{unseen:&gt;12.1%} {share:&gt;16.1%}&quot;)
+</code></pre>
+<p>Числа автора на корпусе коммита 57486b8, на котором обучались модели урока. Этот ключ и страница модуля сами входят в обучающую часть, поэтому на текущем курсе числа немного сдвинутся.</p>
+<p>Loss на токен, наты:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Словарь</th>
+  <th>Байт на токен</th>
+  <th>Униграмма</th>
+  <th>Биграмма</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>512</td>
+  <td>2.635</td>
+  <td>5.504</td>
+  <td>3.255</td>
+</tr>
+<tr>
+  <td>1024</td>
+  <td>3.492</td>
+  <td>6.184</td>
+  <td>3.607</td>
+</tr>
+<tr>
+  <td>4096</td>
+  <td>5.251</td>
+  <td>6.948</td>
+  <td>4.887</td>
+</tr>
+<tr>
+  <td>8192</td>
+  <td>6.071</td>
+  <td>7.149</td>
+  <td>5.725</td>
+</tr>
+</tbody>
+</table></div>
+<p>Биты на байт, доля пар токенов теста, которых не было в обучающей части, и доля эмбеддингов в GPT с d = 352:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Словарь</th>
+  <th>Униграмма</th>
+  <th>Биграмма</th>
+  <th>Новые пары</th>
+  <th>Эмбеддинги</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>512</td>
+  <td>3.013</td>
+  <td>1.782</td>
+  <td>0.7%</td>
+  <td>2.0%</td>
+</tr>
+<tr>
+  <td>1024</td>
+  <td>2.555</td>
+  <td>1.490</td>
+  <td>3.1%</td>
+  <td>3.8%</td>
+</tr>
+<tr>
+  <td>4096</td>
+  <td>1.909</td>
+  <td>1.343</td>
+  <td>14.7%</td>
+  <td>13.8%</td>
+</tr>
+<tr>
+  <td>8192</td>
+  <td>1.699</td>
+  <td>1.361</td>
+  <td>21.9%</td>
+  <td>24.2%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Как читать результат:</p>
+<ul>
+<li><strong>Loss на токен растёт со словарём</strong> у обеих моделей: у биграммы от 3.26 до 5.73. Токен длиннее, и угадать его труднее. Если судить по этому числу, лучший словарь — 512, и это ловушка.</li>
+<li><strong>Биты на байт показывают обратное.</strong> У биграммы 1.782, 1.490, 1.343, 1.361: минимум на 4096. Униграмма продолжает улучшаться и на 8192, с 1.909 до 1.699: ей нужны только частоты отдельных токенов.</li>
+<li><strong>Почему биграмма портится на 8192.</strong> 21.9% пар токенов теста ни разу не встретились в обучающей части, при 4096 — 14.7%. Для них модель живёт на сглаживании add-0.1, то есть почти угадывает.</li>
+<li><strong>Выбор для GPT на 10 млн.</strong> При 8192 четверть параметров уходит на таблицу эмбеддингов, а редкий токен за 444 тыс. токенов обучения встречается считанные разы и почти не учится. При 512 эмбеддинги дешёвые, но токен короче в два раза, и в окно 256 помещается вдвое меньше текста. 4096 — разумный компромисс для этого корпуса. Биграмма — только указание, а не доказательство для GPT. Проверка — обучить small с двумя словарями на одинаковое число байт, а не шагов: при меньшем словаре один шаг покрывает меньше текста.</li>
+</ul>
+<p>Критические ошибки: сравнивать словари по loss на токен; обучать токенизатор на тесте или на всём корпусе; передавать в <code>ngram_baselines</code> размер словаря без служебного токена; выбирать словарь по тесту, а потом на нём же сообщать итог.</p>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M08-L08X" data-return-task="M08-L08X">← Вернуться к задаче</a><a href="#M08-L08X" data-return-retry="M08-L08X">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M08-SOLUTIONS--m08-l08x-b-c"><summary>Ответ: M08-L08X-B-C</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M08-L08X" data-return-task="M08-L08X">← Вернуться к задаче</a><a href="#M08-L08X" data-return-retry="M08-L08X">Новый вариант B / C →</a></nav>
+<p><strong>B.</strong> Биграмма со словарём 512: 3.255 · 54 897 / (ln 2 · 144 669) = 178 690 / 100 277 ≈ 1.782 бита на байт. GPT plan: 3.255 · 27 552 / (ln 2 · 144 669) = 89 682 / 100 277 ≈ 0.894. Loss на токен одинаковый, а GPT кодирует текст вдвое плотнее: её токен вдвое длиннее. Параметры small: 4096 · 128 + 256 · 128 + 4 · (12 · 128² + 13 · 128) + 2 · 128 = 524 288 + 32 768 + 4 · 198 272 + 256 = 1 350 400. Эмбеддинги токенов — 524 288, это 38.8%. По правилу Chinchilla ей нужно 20 · 1 350 400 ≈ 27 млн токенов, в 61 раз больше обучающей части курса.</p>
+<p><strong>C.</strong> Разумный план:</p>
+<ul>
+<li><strong>Данные.</strong> 20 · 10.48 млн ≈ 210 млн токенов. При 5.25 байта на токен это около 1.1 ГБ русского текста — в 400 раз больше, чем весь курс.</li>
+<li><strong>Время.</strong> 210 млн / 1699 токенов в секунду ≈ 124 000 секунд, около 34 часов на CPU автора за один проход. Это выполнимо, но проверка, ранняя остановка и повтор при ошибке удвоят срок. На одной GPU уровня курса тот же объём обучается за часы.</li>
+<li><strong>Лицензии.</strong> Подходят только тексты с явной лицензией, например дампы русской Википедии под CC BY-SA. Для каждого источника записывают лицензию и требования к атрибуции. Чужие курсы, книги и сайты без разрешения не берут.</li>
+<li><strong>Что получится.</strong> Модель на 10 млн параметров и по правилу Chinchilla останется слабой: она научится грамотному тексту, но не знаниям и не рассуждению. GPT-2 small — это 124 млн параметров.</li>
+<li><strong>Путь для тренажёра.</strong> Дообучение готовой модели из M12 даёт знания и язык сразу, и для него нужны сотни примеров, а не гигабайты. В курсе LoRA обучается на SmolLM2-135M на CPU, а с QLoRA на видеокарте так дообучают и модели в несколько миллиардов параметров. Обучение с нуля нужно для понимания механики и стоимости, а не для продукта.</li>
+</ul>
+<nav class="answer-actions" aria-label="После самопроверки"><a href="#M08-L08X" data-return-task="M08-L08X">← Вернуться к задаче</a><a href="#M08-L08X" data-return-retry="M08-L08X">Новый вариант B / C →</a></nav></div></details></div></div><footer class="source-note">Исходный текст: <code>solutions/modules/M08.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="После самопроверки"><a href="#M08"><small>Вернуться к практике</small>Задания и новые варианты →</a></nav></article><article class="material" id="M09-SOLUTIONS" data-title="M09. Решения для самопроверки" data-short-title="M09. Решения для самопроверки" data-kind="answer" data-module="M09"><header class="material-head"><div class="eyebrow"><span class="material-id">M09-SOLUTIONS</span><span class="badge answer">После своей попытки</span></div><h1>M09. Решения для самопроверки</h1></header><div class="article-layout"><div class="body-content"><p class="answer-note">Открывай только нужную задачу после своей попытки. Остальные ответы остаются закрыты. После полного разбора выполни новый вариант.</p><p>Открывай после собственной попытки. Если ты изучил ключ до решения, новая задача из раздела повторения обязательна для проверки самостоятельности. Числа в учебных примерах не являются оценкой реальных кандидатов.</p>
 <details class="answer-key" id="M09-SOLUTIONS--m09-l01-a"><summary>Ответ: M09-L01-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M09-L01" data-return-task="M09-L01">← Вернуться к задаче</a><a href="#M09-L01" data-return-retry="M09-L01">Новый вариант B / C →</a></nav>
 <p>Корректный список: system «You are a backend interview practice assistant. Ask one clarification.»; assistant «What is a SQL transaction?»; user «It is a group of operations.» Затем apply_chat_template(...,add_generation_prompt=True). Передача одного последнего ответа теряет предмет вопроса и этап беседы, поэтому модель может объяснять другой термин или завершить интервью. Для воспроизведения нужны model_id/revision, tokenizer/template, messages, generation config, seed при sampling и версии библиотек. Одного текста результата недостаточно.</p>
 <nav class="answer-actions" aria-label="После самопроверки"><a href="#M09-L01" data-return-task="M09-L01">← Вернуться к задаче</a><a href="#M09-L01" data-return-retry="M09-L01">Новый вариант B / C →</a></nav></div></details><details class="answer-key" id="M09-SOLUTIONS--m09-l02-a"><summary>Ответ: M09-L02-A</summary><div><nav class="answer-actions" aria-label="После самопроверки"><a href="#M09-L02" data-return-task="M09-L02">← Вернуться к задаче</a><a href="#M09-L02" data-return-retry="M09-L02">Новый вариант B / C →</a></nav>
@@ -25578,7 +25939,7 @@ for asr in (&quot;vosk&quot;, &quot;whisper&quot;):
 </table></div>
 <h2 id="FAST-TRACK-LLM--почему-так">Почему так</h2>
 <p>Для того, кто тему уже знает, решение задачи полезнее изучения подробного разобранного примера (Kalyuga et al., 2001; эффект обратной экспертизы — Kalyuga et al., 2003). Домашняя работа модуля — самая полная задача, поэтому она и служит диагностикой, а рубрика показывает, какой именно пробел закрывать. Подробности и источники — в <a href="quality/research-2026-11-03.md">исследовании для версии 1.2.0</a>, раздел 4. Для тем M00–M06 тот же принцип работает через блоки «Проверь себя сначала» (<a href="#MENTOR--адаптивный-маршрут">адаптивный маршрут</a>).</p>
-</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 116 из 116 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
+</div></div><footer class="source-note">Исходный текст: <code>course/fast-track-llm.md</code> · Материалы 1.1.0 · Оформление 2.0</footer><nav class="reading-nav" aria-label="Переход между разделами"><a href="#EVALUATION-REFERENCE"><small>Предыдущий раздел</small>← Реальный цикл улучшения обратной связи</a><a href="#CHEATSHEET"><small>Следующий раздел</small>Шпаргалка: карточки уроков →</a></nav></article><article class="material" id="CHEATSHEET" data-title="Шпаргалка: карточки уроков" data-short-title="Шпаргалка: карточки уроков" data-kind="reference" data-module=""><header class="material-head"><div class="eyebrow"><span class="material-id">CHEATSHEET</span><span class="badge reference">Материал курса</span></div><h1>Шпаргалка: карточки уроков</h1></header><div class="article-layout"><div class="body-content"><p>Страница собрана <code>tools/build_cheatsheet.py</code> из разделов «Карточка урока»; вручную её не правят. Карточек: 117 из 117 уроков. Карточка помогает вспомнить правило перед отложенной проверкой, но не заменяет решение задачи: сначала попробуй восстановить правило сам, затем сверься.</p>
 <p>Те же карточки в виде пар «вопрос — ответ» сохраняются в <code>artifacts/anki-cards.csv</code> для импорта в Anki (Файл → Импорт; разделитель и столбцы указаны в заголовке файла).</p>
 <h2 id="CHEATSHEET--m00-модель-и-обучение">M00. Модель и обучение</h2>
 <h3 id="CHEATSHEET--m00-l01-от-входа-к-предсказанию"><a href="#M00-L01">M00-L01. От входа к предсказанию</a></h3>
@@ -25952,6 +26313,13 @@ for asr in (&quot;vosk&quot;, &quot;whisper&quot;):
 <li><strong>Смысл величин.</strong> Loss и perplexity зависят от токенизатора и корпуса; teacher forcing подаёт правильный префикс, свободная генерация — собственные выходы модели; unigram baseline не использует контекст.</li>
 <li><strong>Когда применять.</strong> Для оценки языковой модели. Пример: вероятности правильных токенов [0.6, 0.3, 0.1] дают NLL ≈ 1.339 и perplexity ≈ 3.82, хотя средняя вероятность ≈ 0.333.</li>
 <li><strong>Главная ошибка.</strong> Сравнивать loss моделей с разными токенизаторами или принимать удачную генерацию одной фразы за validation.</li>
+</ul>
+<h3 id="CHEATSHEET--m08-l08x-языковая-модель-с-нуля-bpe-и-gpt-на-10-млн-параметров"><a href="#M08-L08X">M08-L08X. Языковая модель с нуля: BPE и GPT на 10 млн параметров</a></h3>
+<ul>
+<li><strong>Правило.</strong> Токенизатор и модель учатся только на обучающей части, разбитой по целым файлам. Лучший checkpoint выбирается по проверке, тест считается один раз. Модели с разными токенизаторами и архиваторы сравниваются в битах на байт.</li>
+<li><strong>Смысл величин.</strong> Loss — средняя кросс-энтропия на токен в натах, перплексия = exp(loss). Биты на байт = loss · N_токенов / (ln 2 · N_байт). Параметры GPT = V·d + T·d + L·(12d² + 13d) + 2d.</li>
+<li><strong>Когда применять.</strong> При оценке любой языковой модели и токенизатора. Пример: GPT на 10.5 млн параметров дала 0.894 бита на байт против 1.343 у биграммы и 1.120 у lzma, которому показали тот же обучающий текст.</li>
+<li><strong>Главная ошибка.</strong> Сравнивать loss на токен между разными токенизаторами и выбирать checkpoint по тесту.</li>
 </ul>
 <h2 id="CHEATSHEET--m09-применение-и-запуск-llm">M09. Применение и запуск LLM</h2>
 <h3 id="CHEATSHEET--m09-l01-сообщения-и-шаблон-диалога"><a href="#M09-L01">M09-L01. Сообщения и шаблон диалога</a></h3>

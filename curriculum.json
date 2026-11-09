@@ -1748,6 +1748,10 @@
         {
           "id": "M08-C17",
           "description": "Проследить формы/числа полного блока и реализовать causal/padding attention"
+        },
+        {
+          "id": "M08-C18",
+          "description": "Обучить byte-level BPE и GPT примерно на 10 млн параметров на CPU с разбиением корпуса по целым файлам, выбрать checkpoint по проверке и сравнить модель на тесте с n-граммными моделями и архиватором в битах на байт, отличая разрыв обучения и проверки от роста loss проверки."
         }
       ],
       "lessons": [
@@ -1915,6 +1919,34 @@
             "practice_minutes": 55,
             "self_check_minutes": 30,
             "setup_minutes": "separate; record actual",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M08-L08X",
+          "title": "Языковая модель с нуля: BPE и GPT на 10 млн параметров",
+          "path": "course/lessons/M08-L08X.md",
+          "prerequisites": [
+            "M08-L05",
+            "M08-L07"
+          ],
+          "estimated_minutes": 180,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Byte-level BPE на 4096 токенов и GPT с ручным вниманием на тексте курса: small 1.35 млн и plan 10.48 млн параметров, 1200 шагов на CPU; сравнение с униграммой, биграммой и lzma в битах на байт; опыт с размером словаря",
+          "assessment": "Сверка таблицы прогона, расчёт параметров и битов на байт, объяснение кривых обучения и проверки, выбор размера словаря",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M08-C18"
+          ],
+          "extension": "1.2.0",
+          "required": false,
+          "workload": {
+            "reading_minutes": 50,
+            "practice_minutes": 100,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; tests, report and the task need no training; the full run takes about an hour on 8 CPU threads, a short run of the small model a few minutes",
             "estimate_status": "planning_hypothesis_not_measured"
           },
           "assessment_policy": "course/assessment.md"
