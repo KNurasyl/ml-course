@@ -84,14 +84,19 @@ def test_reader_offers_the_dark_copy_by_theme_and_light_in_print(tmp_path):
     (tmp_path / "metadata/responsive-figures.json").write_text(json.dumps(mapping), encoding="utf-8")
     renderer = reader.CourseRenderer(tmp_path, tmp_path / "course/lessons/M00-L01.md", "M00-L01", {})
     html = mistune.create_markdown(renderer=renderer)("![График](../assets/x.png)\n")
-    sources = re.findall(r'<source media="([^"]+)" srcset="([^"]+)" data-layout="(\w+)" data-variant="(\w+)">', html)
-    assert sources == [("screen and (max-width: 600px)", "course/assets/responsive/x-mobile-dark.svg", "mobile", "dark"),
-                       ("(max-width: 600px)", "course/assets/responsive/x-mobile.svg", "mobile", "light"),
-                       ("screen", "course/assets/responsive/x-desktop-dark.svg", "desktop", "dark")]
-    assert '<img src="course/assets/responsive/x-desktop.svg"' in html
+    # D7: two pictures, the light one loaded eagerly so that a print, which waits for no source switch, has it.
+    pictures = re.findall(r'<picture class="figure-(\w+)">(?:<source media="\(max-width: 600px\)" srcset="([^"]+)" data-layout="mobile">)?'
+                          r'<img src="([^"]+)" alt="График" loading="(\w+)"></picture>', html)
+    assert pictures == [("light", "course/assets/responsive/x-mobile.svg", "course/assets/responsive/x-desktop.svg", "eager"),
+                        ("dark", "course/assets/responsive/x-mobile-dark.svg", "course/assets/responsive/x-desktop-dark.svg", "lazy")]
+    assert 'class="figure-expand figure-themed"' in html and "data-variant" not in html
 
 
-def test_reader_switches_figure_sources_with_the_theme():
+def test_css_shows_the_picture_of_the_theme_and_prints_the_light_one():
+    css = (ROOT / "tools/reader.css").read_text(encoding="utf-8")
+    assert (".figure-themed .figure-dark{display:none}:root[data-theme=\"dark\"] .figure-themed .figure-dark{display:inline}"
+            ":root[data-theme=\"dark\"] .figure-themed .figure-light{display:none}") in css
+    printing = css[css.index("@media print{body{"):]
+    assert ".figure-themed .figure-light{display:inline!important}.figure-themed .figure-dark{display:none!important}" in printing
     script = (ROOT / "tools/reader.js").read_text(encoding="utf-8")
-    assert "document.querySelectorAll('.figure-expand').forEach(chooseFigure);" in script
-    assert "const media=!fits?'not all':source.dataset.variant==='dark'?'screen':'all';" in script
+    assert "figure.querySelectorAll('source[data-layout=\"mobile\"]')" in script and "data-variant" not in script

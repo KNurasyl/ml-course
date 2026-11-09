@@ -171,7 +171,10 @@
   menu.addEventListener('click',()=>document.body.classList.contains('nav-open')?closeMenu(true):openMenu());
   document.getElementById('menu-close').addEventListener('click',()=>closeMenu(true));
   document.getElementById('backdrop').addEventListener('click',()=>closeMenu(true));
-  document.getElementById('print-section').addEventListener('click',()=>window.print());
+  // D7: the print button first lets the shown lesson finish drawing its diagrams (at most 5 s), so they print drawn.
+  let diagramsSettled=()=>Promise.resolve();
+  document.getElementById('print-section').addEventListener('click',()=>
+    Promise.race([diagramsSettled(),new Promise(resolve=>setTimeout(resolve,5000))]).then(()=>window.print()));
   // Dark by default. The <head> boot script restores a saved choice before paint; storage may be
   // unavailable on file:// or in private windows, so the switch still works without saving.
   const themeKey='ml-llm-course-theme', themeButton=document.getElementById('theme-toggle');
@@ -182,17 +185,14 @@
     themeButton.setAttribute('aria-label',light?'Тема: светлая. Включить тёмную':'Тема: тёмная. Включить светлую');
     if(save){try{localStorage.setItem(themeKey,light?'light':'dark');}catch(_){}}
     document.querySelectorAll('iframe.experiment').forEach(sendTheme);
-    document.querySelectorAll('.figure-expand').forEach(chooseFigure);
   }
-  // D4: an image figure offers its layouts (column width) and its dark copy (page theme). A dark source is
-  // 'screen' only, so print always falls back to the light drawing. Before the first size report the layout
-  // follows the viewport, as the static media attributes do.
+  // An image figure offers a mobile layout by its column width. Its light and dark pictures (D4, D7) are
+  // picked by CSS from the page theme. Before the first size report the layout follows the viewport, as
+  // the static media attributes do.
   function chooseFigure(figure){
     const narrowColumn=figure.dataset.narrow?figure.dataset.narrow==='true':matchMedia('(max-width: 600px)').matches;
-    const dark=document.documentElement.dataset.theme!=='light';
-    figure.querySelectorAll('source').forEach(source=>{
-      const fits=(source.dataset.layout!=='mobile'||narrowColumn)&&(source.dataset.variant!=='dark'||dark);
-      const media=!fits?'not all':source.dataset.variant==='dark'?'screen':'all';
+    figure.querySelectorAll('source[data-layout="mobile"]').forEach(source=>{
+      const media=narrowColumn?'all':'not all';
       if(source.media!==media)source.media=media;
     });
   }
@@ -244,9 +244,11 @@
   document.addEventListener('click', event => {
     const figure=event.target.closest('a[data-figure]');
     if(figure){const dialog=document.getElementById('figure-dialog');if(typeof dialog.showModal==='function'){
-      event.preventDefault();const large=document.getElementById('figure-large'),box=document.getElementById('figure-large-svg'),img=figure.querySelector('img');
+      event.preventDefault();const large=document.getElementById('figure-large'),box=document.getElementById('figure-large-svg');
+      // An image figure opens the picture of the page theme: the one that is shown (D4, D7).
+      const images=Array.from(figure.querySelectorAll('img')),img=images.find(item=>item.getClientRects().length)||images[0];
       // D3: an inline figure opens as a copy of the shown layout, so it keeps the theme tokens; its ids get
-      // a suffix to stay unique in the document. Image figures (matplotlib until D4) open as before.
+      // a suffix to stay unique in the document.
       const shown=Array.from(figure.querySelectorAll('.figure-variant svg')),svg=shown.find(item=>item.getClientRects().length)||shown[0];
       if(svg){const copy=svg.cloneNode(true),ids=new Set(Array.from(copy.querySelectorAll('[id]'),el=>el.id)),renamed=id=>ids.has(id)?id+'-zoom':id;
         copy.querySelectorAll('[id]').forEach(el=>{el.id=renamed(el.id);});
@@ -268,8 +270,9 @@
     const button=document.createElement('button');button.className='copy-code';button.type='button';button.textContent='Копировать';button.ariaLabel='Копировать код';
     button.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(code.textContent);button.textContent='Скопировано';}catch{button.textContent='Выдели код вручную';}setTimeout(()=>{button.textContent='Копировать';},2400);});pre.prepend(button);
   });
-  // Mermaid is a local file loaded on the first visible diagram; hidden diagrams would get zero sizes.
-  // D5: the 'base' theme computes with real colours, so it gets the current token values; the drawn
+  // Mermaid is a local file loaded on the first diagram of a shown lesson; diagrams in hidden lessons would
+  // get zero sizes. D7: a lesson draws all its diagrams when it is opened, not when they scroll into view,
+  // so a lesson printed right away prints them drawn. D5: the 'base' theme computes with real colours, so it gets the current token values; the drawn
   // SVG's styles then name the tokens again (value -> var(--token)). A diagram drawn once follows a
   // theme switch and the always-light print without a redraw. Lesson classDef colours map onto
   // tokens as the experiment colours did in D2: blue main path, amber holdout.
@@ -304,8 +307,9 @@
       if(!entry.isIntersecting)continue;observer.unobserve(entry.target);
       // One diagram at a time: Mermaid's configuration is global and a theme switch may come between draws.
       queue=queue.then(()=>draw(entry.target)).catch(()=>entry.target.classList.add('diagram-unavailable'));
-    }},{rootMargin:'200px'});
+    }},{rootMargin:'100000px 0px'});
     diagrams.forEach(diagram=>observer.observe(diagram));
+    diagramsSettled=()=>queue;
   }
   filter();select();markOutline();
 })();

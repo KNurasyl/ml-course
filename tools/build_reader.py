@@ -198,23 +198,28 @@ class CourseRenderer(mistune.HTMLRenderer):
             return (f'<a class="figure-expand figure-inline" href="{url}" target="_blank" data-figure="{url}" '
                     f'data-title="{label}" aria-label="Увеличить рисунок: {label}">{variants}</a>'
                     f'<span class="figure-hint">{escape(alternatives.get("caption", text))} · Открыть крупнее ↗</span>')
-        # D4: an image figure has a dark copy next to it (<name>-dark.<ext>). Without JS the dark copy shows on
-        # screen, where the reader opens dark, and the light one in print; reader.js enables the sources by the
-        # page theme and the column width.
-        sources = []
+        # D4: an image figure has a dark copy next to it (<name>-dark.<ext>). D7: the light drawing and the dark
+        # copy are two pictures and CSS shows the one of the page theme, in print always the light one. A print
+        # does not wait for a <source> switch, so the light drawing loads eagerly and is ready when printed.
         if mobile:
             checked_file(self.root, mobile)
-            if mobile_dark := dark_copy(self.root, mobile):
-                sources.append(("screen and (max-width: 600px)", mobile_dark, "mobile", "dark"))
-            sources.append(("(max-width: 600px)", mobile, "mobile", "light"))
-        if desktop_dark := dark_copy(self.root, unquote(desktop)):
-            sources.append(("screen", desktop_dark, "desktop", "dark"))
-        picture = "".join(f'<source media="{media}" srcset="{escape(path, quote=True)}" data-layout="{layout}" '
-                          f'data-variant="{variant}">' for media, path, layout, variant in sources)
+        desktop_dark = dark_copy(self.root, unquote(desktop))
+        mobile_dark = dark_copy(self.root, mobile) if mobile else None
+        label = escape(text, quote=True)
+
+        def picture(desktop_path: str, mobile_path: str | None, variant: str, loading: str) -> str:
+            source = (f'<source media="(max-width: 600px)" srcset="{escape(mobile_path, quote=True)}" data-layout="mobile">'
+                      if mobile_path else "")
+            return (f'<picture class="figure-{variant}">{source}<img src="{escape(desktop_path, quote=True)}" '
+                    f'alt="{label}" loading="{loading}"></picture>')
+
+        pictures = picture(desktop, mobile, "light", "eager" if desktop_dark else "lazy")
+        if desktop_dark:
+            pictures += picture(desktop_dark, mobile_dark, "dark", "lazy")
         url = escape(desktop, quote=True)
-        return (f'<a class="figure-expand" href="{url}" target="_blank" data-figure="{url}" '
-                f'aria-label="Увеличить рисунок: {escape(text, quote=True)}">'
-                f'<picture>{picture}<img src="{url}" alt="{escape(text, quote=True)}" loading="lazy"></picture></a>'
+        themed = " figure-themed" if desktop_dark else ""
+        return (f'<a class="figure-expand{themed}" href="{url}" target="_blank" data-figure="{url}" '
+                f'aria-label="Увеличить рисунок: {label}">{pictures}</a>'
                 f'<span class="figure-hint">{escape(alternatives.get("caption", text))} · Открыть крупнее ↗</span>')
 
     def heading(self, text: str, level: int, **attrs) -> str:
