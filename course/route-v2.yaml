@@ -1,0 +1,430 @@
+# Маршрут 2.0 «LLM-инженер: от модели до сервера» (REFACTORING_PLAN_2.0.md, раздел 4, задача R02).
+# Канон уровней, уроков, миссий и статусов. Уроки не переписываются: маршрут лежит поверх них.
+# Проверяется tools/validate_course.py --require-local (_validate_route_v2) и tests/test_route_v2.py.
+#
+# Статус урока: core — урок упомянут в одном из уровней; library — в списке library.
+# Каждый урок curriculum.json и каждое вводное занятие P01-P10 имеет ровно один статус.
+# planned: Rxx — урок или материал ещё не написан; флаг снимается задачей Rxx, когда файл появляется.
+# when (только уровень 3): always — пройти; rubric_gap — открыть, если пункт рубрики M10-HW01 ниже 2;
+# as_needed — по необходимости проекта. Миссий у таких уроков нет: работу ведёт быстрый вход.
+#
+# Миссия — одно занятие на 30–45 минут (course/tutor-protocol.md). id миссии — это id задачи в
+# progress/progress.jsonl (tools/progress.py add <id>). Виды миссий:
+#   entry  — (а) вход: задача из разобранного примера на новых числах, затем разбор;
+#   own    — (б) своя работа: задача A, затем вариант B из «Новой и отложенной проверки»;
+#   lab    — (в) опыт: «предскажи до запуска» на лабораторной (lab) урока или модуля;
+#   launch — уровень 0: только запуск;
+#   project — мини-проект уровня; тьютор делит его на занятия по README проекта.
+version: 2
+created: 2026-11-18
+mission_minutes: [30, 45]
+# Модель по умолчанию для занятий выбирается по замеру железа (R06, quality/hardware/baseline.json).
+# Для тестов по-прежнему 0.5B (инвариант И9).
+session_model:
+  pending: R06
+levels:
+- level: 0
+  title: Первый запуск
+  hours: 2
+  project:
+    id: MP0
+    title: "Поднять Qwen через llama-server и отправить запрос из своего кода (Python или TS)"
+    missions: [MP0]
+    path: labs/M09/README.md
+  lessons:
+    - lesson: M09-L07X  # только запуск
+      missions:
+        - {id: M09-L07X-M0, kind: launch, file: course/lessons/M09-L07X.md, section: Разобранный пример, lab: labs/M09/llama_local.py}
+- level: 1
+  title: Модели и запуск
+  hours: 20
+  project:
+    id: MP1
+    title: "Паспорт моделей"
+    missions: [MP1]
+    path: projects/mini/MP1-model-passport/README.md
+    planned: R07
+  materials:
+    - {path: course/intuition.md, part: 1, planned: R08}
+  lessons:
+    - lesson: M09-L01  # Сообщения и шаблон диалога
+      missions:
+        - {id: M09-L01-M1, kind: entry, file: course/lessons/M09-L01.md, section: Разобранный пример}
+        - {id: M09-L01-M2, kind: own, file: course/lessons/M09-L01.md, section: Самостоятельная задача A}
+        - {id: M09-L01-M3, kind: lab, file: course/lessons/M09-L01.md, section: Практика с поддержкой, lab: labs/M09/demo.py}
+    - lesson: M09-L02  # Контекст и история
+      missions:
+        - {id: M09-L02-M1, kind: entry, file: course/lessons/M09-L02.md, section: Разобранный пример}
+        - {id: M09-L02-M2, kind: own, file: course/lessons/M09-L02.md, section: Самостоятельная задача A}
+        - {id: M09-L02-M3, kind: lab, file: course/lessons/M09-L02.md, section: Практика с поддержкой, lab: labs/M09/demo.py}
+    - lesson: M09-L03  # Генерация и ограничения
+      missions:
+        - {id: M09-L03-M1, kind: entry, file: course/lessons/M09-L03.md, section: Разобранный пример}
+        - {id: M09-L03-M2, kind: own, file: course/lessons/M09-L03.md, section: Самостоятельная задача A}
+        - {id: M09-L03-M3, kind: lab, file: course/lessons/M09-L03.md, section: Практика с поддержкой, lab: labs/M09/demo.py}
+    - lesson: M09-L04  # Локальный инференс и память
+      missions:
+        - {id: M09-L04-M1, kind: entry, file: course/lessons/M09-L04.md, section: Разобранный пример}
+        - {id: M09-L04-M2, kind: own, file: course/lessons/M09-L04.md, section: Самостоятельная задача A}
+        - {id: M09-L04-M3, kind: lab, file: course/lessons/M09-L04.md, section: Практика с поддержкой, lab: labs/M09/demo.py}
+    - lesson: M09-L05  # Контракт ответа
+      missions:
+        - {id: M09-L05-M1, kind: entry, file: course/lessons/M09-L05.md, section: Разобранный пример}
+        - {id: M09-L05-M2, kind: own, file: course/lessons/M09-L05.md, section: Самостоятельная задача A}
+        - {id: M09-L05-M3, kind: lab, file: course/lessons/M09-L05.md, section: Практика с поддержкой, lab: labs/M09/demo.py}
+    - lesson: M09-L06  # Выбрать локальную конфигурацию по измерениям
+      missions:
+        - {id: M09-L06-M1, kind: entry, file: course/lessons/M09-L06.md, section: Разобранный пример}
+        - {id: M09-L06-M2, kind: own, file: course/lessons/M09-L06.md, section: Самостоятельная задача A}
+        - {id: M09-L06-M3, kind: lab, file: course/lessons/M09-L06.md, section: Практика с поддержкой, lab: labs/M09/demo.py}
+    - lesson: M09-L07X  # Локальный serving: llama.cpp и Ollama
+      missions:
+        - {id: M09-L07X-M1, kind: entry, file: course/lessons/M09-L07X.md, section: Разобранный пример}
+        - {id: M09-L07X-M2, kind: own, file: course/lessons/M09-L07X.md, section: Самостоятельная задача A}
+        - {id: M09-L07X-M3, kind: lab, file: course/lessons/M09-L07X.md, section: Практика с поддержкой, lab: labs/M09/llama_local.py}
+    - lesson: M09-L08X  # Структурированный ответ: JSON Schema и грамматики
+      missions:
+        - {id: M09-L08X-M1, kind: entry, file: course/lessons/M09-L08X.md, section: Разобранный пример}
+        - {id: M09-L08X-M2, kind: own, file: course/lessons/M09-L08X.md, section: Самостоятельная задача A}
+        - {id: M09-L08X-M3, kind: lab, file: course/lessons/M09-L08X.md, section: Практика с поддержкой, lab: labs/M09/demo.py}
+    - lesson: M09-L09X  # Как выбрать модель
+      planned: R08
+      missions: []
+- level: 2
+  title: Оценивание
+  hours: 20
+  project:
+    id: MP2
+    title: "Набор проверок для оператора"
+    missions: [MP2]
+    path: projects/mini/MP2-eval-suite/README.md
+    planned: R07
+  lessons:
+    - lesson: M11-L01  # Что именно оцениваем
+      missions:
+        - {id: M11-L01-M1, kind: entry, file: course/lessons/M11-L01.md, section: Разобранный пример}
+        - {id: M11-L01-M2, kind: own, file: course/lessons/M11-L01.md, section: Самостоятельная задача A}
+        - {id: M11-L01-M3, kind: lab, file: course/lessons/M11-L01.md, section: Практика с поддержкой, lab: labs/M11/demo.py}
+    - lesson: M11-L02  # Набор примеров и разметка
+      missions:
+        - {id: M11-L02-M1, kind: entry, file: course/lessons/M11-L02.md, section: Разобранный пример}
+        - {id: M11-L02-M2, kind: own, file: course/lessons/M11-L02.md, section: Самостоятельная задача A}
+        - {id: M11-L02-M3, kind: lab, file: course/lessons/M11-L02.md, section: Практика с поддержкой, lab: labs/M11/demo.py}
+    - lesson: M11-L03  # HR и технические рубрики
+      missions:
+        - {id: M11-L03-M1, kind: entry, file: course/lessons/M11-L03.md, section: Разобранный пример}
+        - {id: M11-L03-M2, kind: own, file: course/lessons/M11-L03.md, section: Самостоятельная задача A}
+        - {id: M11-L03-M3, kind: lab, file: course/lessons/M11-L03.md, section: Практика с поддержкой, lab: labs/M11/demo.py}
+    - lesson: M11-L04  # Модель как оценщик
+      missions:
+        - {id: M11-L04-M1, kind: entry, file: course/lessons/M11-L04.md, section: Разобранный пример}
+        - {id: M11-L04-M2, kind: own, file: course/lessons/M11-L04.md, section: Самостоятельная задача A}
+        - {id: M11-L04-M3, kind: lab, file: course/lessons/M11-L04.md, section: Практика с поддержкой, lab: labs/M11/demo.py}
+    - lesson: M11-L05  # Регрессии и отчёт
+      missions:
+        - {id: M11-L05-M1, kind: entry, file: course/lessons/M11-L05.md, section: Разобранный пример}
+        - {id: M11-L05-M2, kind: own, file: course/lessons/M11-L05.md, section: Самостоятельная задача A}
+        - {id: M11-L05-M3, kind: lab, file: course/lessons/M11-L05.md, section: Практика с поддержкой, lab: labs/M11/demo.py}
+    - lesson: M11-L06  # От реальных ответов к парному сравнению систем
+      missions:
+        - {id: M11-L06-M1, kind: entry, file: course/lessons/M11-L06.md, section: Разобранный пример}
+        - {id: M11-L06-M2, kind: own, file: course/lessons/M11-L06.md, section: Самостоятельная задача A}
+        - {id: M11-L06-M3, kind: lab, file: course/lessons/M11-L06.md, section: Практика с поддержкой, lab: labs/M09/structured_output.py}
+    - lesson: M11-L07X  # Error analysis как процесс
+      missions:
+        - {id: M11-L07X-M1, kind: entry, file: course/lessons/M11-L07X.md, section: Разобранный пример}
+        - {id: M11-L07X-M2, kind: own, file: course/lessons/M11-L07X.md, section: Самостоятельная задача A}
+        - {id: M11-L07X-M3, kind: lab, file: course/lessons/M11-L07X.md, section: Практика с поддержкой, lab: labs/M11/demo.py}
+- level: 3
+  title: Данные компании
+  hours: 15
+  project:
+    id: MP3
+    title: "Оператор поддержки"
+    missions: [MP3]
+    path: projects/mini/MP3-support-operator/README.md
+    planned: R07
+  lessons:
+    - fast_track: M10  # быстрый вход: course/fast-track-llm.md, рубрика M10-HW01
+      missions:
+        - {id: M10-FT-M1, kind: lab, file: course/fast-track-llm.md, section: Порядок для одного модуля, lab: labs/M10/demo.py}
+        - {id: M10-HW01, kind: own, file: course/modules/M10.md, section: M10-HW01}
+    - lesson: M10-L01  # Документ и фрагмент
+      when: rubric_gap  # открывается, если пункт рубрики M10-HW01 ниже 2
+      missions: []
+    - lesson: M10-L02  # Лексический и векторный поиск
+      when: rubric_gap  # открывается, если пункт рубрики M10-HW01 ниже 2
+      missions: []
+    - lesson: M10-L03  # Гибридный поиск и reranking
+      when: rubric_gap  # открывается, если пункт рубрики M10-HW01 ниже 2
+      missions: []
+    - lesson: M10-L04  # Контекст и подтверждение ответа
+      when: rubric_gap  # открывается, если пункт рубрики M10-HW01 ниже 2
+      missions: []
+    - lesson: M10-L05  # Диагностика и обновления
+      when: rubric_gap  # открывается, если пункт рубрики M10-HW01 ниже 2
+      missions: []
+    - lesson: M10-L06  # Диагностировать русский RAG по трассе ошибки
+      when: always  # fast-track: рекомендуется в любом случае
+      missions:
+        - {id: M10-L06-M1, kind: entry, file: course/lessons/M10-L06.md, section: Разобранный пример}
+        - {id: M10-L06-M2, kind: own, file: course/lessons/M10-L06.md, section: Самостоятельная задача A}
+        - {id: M10-L06-M3, kind: lab, file: course/lessons/M10-L06.md, section: Практика с поддержкой, lab: labs/M10/demo.py}
+    - lesson: M10-L07X  # Эмбеддеры для русского языка
+      when: as_needed
+      missions: []
+    - lesson: M10-L08X  # Векторное хранилище
+      when: as_needed
+      missions: []
+    - lesson: M10-L09X  # Кросс-энкодер для reranking
+      when: as_needed
+      missions: []
+- level: 4
+  title: Агенты
+  hours: 25
+  project:
+    id: MP4
+    title: "Аналитик операционки"
+    missions: [MP4]
+    path: projects/mini/MP4-ops-analyst/README.md
+    planned: R20
+  lessons:
+    - lesson: M14-L01  # Сценарий и агентный цикл
+      missions:
+        - {id: M14-L01-M1, kind: entry, file: course/lessons/M14-L01.md, section: Разобранный пример}
+        - {id: M14-L01-M2, kind: own, file: course/lessons/M14-L01.md, section: Самостоятельная задача A}
+        - {id: M14-L01-M3, kind: lab, file: course/lessons/M14-L01.md, section: Практика с поддержкой, lab: labs/M14/demo.py}
+    - lesson: M14-L02  # Контракт инструмента
+      missions:
+        - {id: M14-L02-M1, kind: entry, file: course/lessons/M14-L02.md, section: Разобранный пример}
+        - {id: M14-L02-M2, kind: own, file: course/lessons/M14-L02.md, section: Самостоятельная задача A}
+        - {id: M14-L02-M3, kind: lab, file: course/lessons/M14-L02.md, section: Практика с поддержкой, lab: labs/M14/demo.py}
+    - lesson: M14-L03  # Состояние и границы доступа
+      missions:
+        - {id: M14-L03-M1, kind: entry, file: course/lessons/M14-L03.md, section: Разобранный пример}
+        - {id: M14-L03-M2, kind: own, file: course/lessons/M14-L03.md, section: Самостоятельная задача A}
+        - {id: M14-L03-M3, kind: lab, file: course/lessons/M14-L03.md, section: Практика с поддержкой, lab: labs/M14/demo.py}
+    - lesson: M14-L04  # Ошибки и остановка
+      missions:
+        - {id: M14-L04-M1, kind: entry, file: course/lessons/M14-L04.md, section: Разобранный пример}
+        - {id: M14-L04-M2, kind: own, file: course/lessons/M14-L04.md, section: Самостоятельная задача A}
+        - {id: M14-L04-M3, kind: lab, file: course/lessons/M14-L04.md, section: Практика с поддержкой, lab: labs/M14/demo.py}
+    - lesson: M14-L05  # Проверка агента
+      missions:
+        - {id: M14-L05-M1, kind: entry, file: course/lessons/M14-L05.md, section: Разобранный пример}
+        - {id: M14-L05-M2, kind: own, file: course/lessons/M14-L05.md, section: Самостоятельная задача A}
+        - {id: M14-L05-M3, kind: lab, file: course/lessons/M14-L05.md, section: Практика с поддержкой, lab: labs/M14/demo.py}
+    - lesson: M14-L06  # Модель предлагает инструмент, исполнитель проверяет
+      missions:
+        - {id: M14-L06-M1, kind: entry, file: course/lessons/M14-L06.md, section: Разобранный пример}
+        - {id: M14-L06-M2, kind: own, file: course/lessons/M14-L06.md, section: Самостоятельная задача A}
+        - {id: M14-L06-M3, kind: lab, file: course/lessons/M14-L06.md, section: Практика с поддержкой, lab: labs/M14/demo.py}
+    - lesson: M14-L08X  # Безопасность LLM-приложений
+      missions:
+        - {id: M14-L08X-M1, kind: entry, file: course/lessons/M14-L08X.md, section: Разобранный пример}
+        - {id: M14-L08X-M2, kind: own, file: course/lessons/M14-L08X.md, section: Самостоятельная задача A}
+        - {id: M14-L08X-M3, kind: lab, file: course/lessons/M14-L08X.md, section: Практика с поддержкой, lab: labs/M14/agency.py}
+    - lesson: M14-L09X  # MCP: свой сервер инструментов
+      missions:
+        - {id: M14-L09X-M1, kind: entry, file: course/lessons/M14-L09X.md, section: Разобранный пример}
+        - {id: M14-L09X-M2, kind: own, file: course/lessons/M14-L09X.md, section: Самостоятельная задача A}
+        - {id: M14-L09X-M3, kind: lab, file: course/lessons/M14-L09X.md, section: Практика с поддержкой, lab: labs/M14/demo.py}
+    - lesson: M14-L10X  # Паттерны агентов: workflow или агент
+      missions:
+        - {id: M14-L10X-M1, kind: entry, file: course/lessons/M14-L10X.md, section: Разобранный пример}
+        - {id: M14-L10X-M2, kind: own, file: course/lessons/M14-L10X.md, section: Самостоятельная задача A}
+        - {id: M14-L10X-M3, kind: lab, file: course/lessons/M14-L10X.md, section: Практика с поддержкой, lab: labs/M14/agent_patterns.py}
+- level: 5
+  title: Дообучение
+  hours: 25
+  project:
+    id: MP5
+    title: "Разбор обращений: дообучение против промпта"
+    missions: [MP5]
+    path: projects/mini/MP5-ticket-finetune/README.md
+    planned: R20
+  materials:
+    - {path: course/intuition.md, part: 2, planned: R21}
+  lessons:
+    - lesson: M12-L01  # Выбор вмешательства
+      missions:
+        - {id: M12-L01-M1, kind: entry, file: course/lessons/M12-L01.md, section: Разобранный пример}
+        - {id: M12-L01-M2, kind: own, file: course/lessons/M12-L01.md, section: Самостоятельная задача A}
+        - {id: M12-L01-M3, kind: lab, file: course/lessons/M12-L01.md, section: Практика с поддержкой, lab: labs/M12/demo.py}
+    - lesson: M12-L02  # Данные для адаптации
+      missions:
+        - {id: M12-L02-M1, kind: entry, file: course/lessons/M12-L02.md, section: Разобранный пример}
+        - {id: M12-L02-M2, kind: own, file: course/lessons/M12-L02.md, section: Самостоятельная задача A}
+        - {id: M12-L02-M3, kind: lab, file: course/lessons/M12-L02.md, section: Практика с поддержкой, lab: labs/M12/demo.py}
+    - lesson: M12-L04  # Дообучение и адаптеры
+      missions:
+        - {id: M12-L04-M1, kind: entry, file: course/lessons/M12-L04.md, section: Разобранный пример}
+        - {id: M12-L04-M2, kind: own, file: course/lessons/M12-L04.md, section: Самостоятельная задача A}
+        - {id: M12-L04-M3, kind: lab, file: course/lessons/M12-L04.md, section: Практика с поддержкой, lab: labs/M12/demo.py}
+    - lesson: M12-L06  # Из диалога в обучающий пример: токены и маска потерь
+      missions:
+        - {id: M12-L06-M1, kind: entry, file: course/lessons/M12-L06.md, section: Разобранный пример}
+        - {id: M12-L06-M2, kind: own, file: course/lessons/M12-L06.md, section: Самостоятельная задача A}
+        - {id: M12-L06-M3, kind: lab, file: course/lessons/M12-L06.md, section: Практика с поддержкой, lab: labs/M12/sft.py}
+    - lesson: M12-L07  # Настоящий малый SFT: адаптер, checkpoint и регрессии
+      missions:
+        - {id: M12-L07-M1, kind: entry, file: course/lessons/M12-L07.md, section: Разобранный пример}
+        - {id: M12-L07-M2, kind: own, file: course/lessons/M12-L07.md, section: Самостоятельная задача A}
+        - {id: M12-L07-M3, kind: lab, file: course/lessons/M12-L07.md, section: Практика с поддержкой, lab: labs/M12/demo.py}
+    - lesson: M12-L08X  # LoRA через PEFT
+      missions:
+        - {id: M12-L08X-M1, kind: entry, file: course/lessons/M12-L08X.md, section: Разобранный пример}
+        - {id: M12-L08X-M2, kind: own, file: course/lessons/M12-L08X.md, section: Самостоятельная задача A}
+        - {id: M12-L08X-M3, kind: lab, file: course/lessons/M12-L08X.md, section: Практика с поддержкой, lab: labs/M12/demo.py}
+    - lesson: M12-L10X  # Данные для дообучения
+      planned: R21
+      missions: []
+    - lesson: M12-L11X  # QLoRA на 4 ГБ видеопамяти
+      planned: R21
+      missions: []
+- level: 6
+  title: Сервер и железо
+  hours: 20
+  project:
+    id: MP6
+    title: "Расчёт сервера и нагрузочный тест"
+    missions: [MP6]
+    path: projects/mini/MP6-server-sizing/README.md
+    planned: R20
+  lessons:
+    - lesson: M13-L01  # Версия эксперимента и релиза
+      missions:
+        - {id: M13-L01-M1, kind: entry, file: course/lessons/M13-L01.md, section: Разобранный пример}
+        - {id: M13-L01-M2, kind: own, file: course/lessons/M13-L01.md, section: Самостоятельная задача A}
+        - {id: M13-L01-M3, kind: lab, file: course/lessons/M13-L01.md, section: Практика с поддержкой, lab: labs/M13/demo.py}
+    - lesson: M13-L02  # Упаковка и контракт
+      missions:
+        - {id: M13-L02-M1, kind: entry, file: course/lessons/M13-L02.md, section: Разобранный пример}
+        - {id: M13-L02-M2, kind: own, file: course/lessons/M13-L02.md, section: Самостоятельная задача A}
+        - {id: M13-L02-M3, kind: lab, file: course/lessons/M13-L02.md, section: Практика с поддержкой, lab: labs/M13/demo.py}
+    - lesson: M13-L03  # Регрессионные проверки
+      missions:
+        - {id: M13-L03-M1, kind: entry, file: course/lessons/M13-L03.md, section: Разобранный пример}
+        - {id: M13-L03-M2, kind: own, file: course/lessons/M13-L03.md, section: Самостоятельная задача A}
+        - {id: M13-L03-M3, kind: lab, file: course/lessons/M13-L03.md, section: Практика с поддержкой, lab: labs/M13/demo.py}
+    - lesson: M13-L04  # Наблюдаемость и нагрузка
+      missions:
+        - {id: M13-L04-M1, kind: entry, file: course/lessons/M13-L04.md, section: Разобранный пример}
+        - {id: M13-L04-M2, kind: own, file: course/lessons/M13-L04.md, section: Самостоятельная задача A}
+        - {id: M13-L04-M3, kind: lab, file: course/lessons/M13-L04.md, section: Практика с поддержкой, lab: labs/M13/demo.py}
+    - lesson: M13-L05  # Неудачный релиз и восстановление
+      missions:
+        - {id: M13-L05-M1, kind: entry, file: course/lessons/M13-L05.md, section: Разобранный пример}
+        - {id: M13-L05-M2, kind: own, file: course/lessons/M13-L05.md, section: Самостоятельная задача A}
+        - {id: M13-L05-M3, kind: lab, file: course/lessons/M13-L05.md, section: Практика с поддержкой, lab: labs/M13/demo.py}
+    - lesson: M13-L06  # Очередь, дедлайн и восстановление HTTP-сервиса
+      missions:
+        - {id: M13-L06-M1, kind: entry, file: course/lessons/M13-L06.md, section: Разобранный пример}
+        - {id: M13-L06-M2, kind: own, file: course/lessons/M13-L06.md, section: Самостоятельная задача A}
+        - {id: M13-L06-M3, kind: lab, file: course/lessons/M13-L06.md, section: Практика с поддержкой, lab: labs/M13/demo.py}
+    - lesson: M13-L07X  # Трассировка LLM-конвейера
+      missions:
+        - {id: M13-L07X-M1, kind: entry, file: course/lessons/M13-L07X.md, section: Разобранный пример}
+        - {id: M13-L07X-M2, kind: own, file: course/lessons/M13-L07X.md, section: Самостоятельная задача A}
+        - {id: M13-L07X-M3, kind: lab, file: course/lessons/M13-L07X.md, section: Практика с поддержкой, lab: labs/M13/tracing.py}
+    - lesson: M13-L08X  # Обслуживание на GPU
+      planned: R22
+      missions: []
+    - lesson: M13-L09X  # Расчёт сервера и стоимость
+      planned: R22
+      missions: []
+- level: 7
+  title: Портфолио
+  hours: 10
+  project:
+    id: MP7
+    title: "Три публичных кейса (MP3, MP4, MP5), доведённый разбор голосового тренажёра, резюме"
+    missions: [MP7]
+    path: docs/interview-trainer-writeup.md
+  materials:
+    - {path: docs/interview-trainer-writeup.md}
+  lessons: []
+
+# Уроки вне маршрута: доступны целиком, тьютор открывает их ссылкой, когда занятие упирается в пробел.
+library:
+  - P01
+  - P02
+  - P03
+  - P04
+  - P05
+  - P06
+  - P07
+  - P08
+  - P09
+  - P10
+  - M00-L01
+  - M00-L02
+  - M00-L03
+  - M00-L04
+  - M00-L05
+  - M01-L01
+  - M01-L02
+  - M01-L03
+  - M01-L04
+  - M01-L05
+  - M02-L01
+  - M02-L02
+  - M02-L03
+  - M02-L04
+  - M02-L05
+  - M03-L01
+  - M03-L02
+  - M03-L03
+  - M03-L04
+  - M03-L05
+  - M04-L06
+  - M04-L01
+  - M04-L02
+  - M04-L07
+  - M04-L03
+  - M04-L04
+  - M04-L05
+  - M04-L08
+  - M05-L01
+  - M05-L02
+  - M05-L03
+  - M05-L04
+  - M05-L05
+  - M05-L06
+  - M05-L07
+  - M06-L01
+  - M06-L02
+  - M06-L03
+  - M06-L04
+  - M06-L05
+  - M07-L01
+  - M07-L02
+  - M07-L03
+  - M07-L04
+  - M07-L05
+  - M08-L01
+  - M08-L02
+  - M08-L03
+  - M08-L04
+  - M08-L06
+  - M08-L07
+  - M08-L05
+  - M08-L08X
+  - M15-L01
+  - M15-L02
+  - M15-L03
+  - M15-L04
+  - M15-L05
+  - M15-L06
+  - M15-L07X
+  - M16-L01
+  - M16-L06
+  - M16-L07
+  - M16-L02
+  - M16-L03
+  - M16-L04
+  - M16-L05
+  - M16-L08
+  - M12-L03
+  - M12-L05
+  - M12-L09X

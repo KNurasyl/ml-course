@@ -217,6 +217,125 @@ def _validate_route(root, curriculum, errors):
             errors.append(f"Missing key section ## {check} in {key_relative}")
 
 
+ROUTE_V2 = "course/route-v2.yaml"
+MISSION_KINDS = {"entry", "own", "lab", "launch"}
+MISSION_ID = re.compile(r"(?:[MP]\d{2}(?:-L\d{2}X?)?(?:-[A-Z]+\d*)*|MP\d+(?:-[A-Z]+\d*)*)")
+
+
+def load_route_v2(root):
+    import yaml
+
+    return yaml.safe_load((root / ROUTE_V2).read_text(encoding="utf-8"))
+
+
+def _validate_route_v2(root, curriculum, errors):
+    """Route 2.0: every lesson has exactly one status (core or library) and every mission points to real text."""
+    import yaml
+
+    path = root / ROUTE_V2
+    if not path.is_file():
+        errors.append(f"Missing route 2.0: {ROUTE_V2}")
+        return
+    try:
+        route = load_route_v2(root)
+    except yaml.YAMLError as error:
+        errors.append(f"Cannot parse {ROUTE_V2}: {error}")
+        return
+    if not isinstance(route, dict) or route.get("version") != 2 or not isinstance(route.get("levels"), list):
+        errors.append(f"{ROUTE_V2} needs version 2 and a list of levels")
+        return
+    known = PILOT_IDS + [lesson["id"] for m in curriculum["modules"] for lesson in m["lessons"]]
+    modules = {m["id"] for m in curriculum["modules"]}
+    levels = route["levels"]
+    if [level.get("level") for level in levels] != list(range(len(levels))):
+        errors.append(f"{ROUTE_V2}: levels must be numbered 0, 1, 2, ... in order")
+    core, mission_ids = set(), []
+
+    def exists(relative, planned, what):
+        target = root / str(relative or "")
+        if planned:
+            if relative and target.is_file():
+                errors.append(f"{ROUTE_V2}: {what} {relative} exists, remove 'planned: {planned}'")
+        elif not relative or not target.is_file():
+            errors.append(f"{ROUTE_V2}: {what} file missing: {relative}")
+
+    def check_mission(mission, owner):
+        mid = mission.get("id")
+        mission_ids.append(mid)
+        if not isinstance(mid, str) or not MISSION_ID.fullmatch(mid):
+            errors.append(f"{ROUTE_V2}: mission id {mid!r} of {owner} is not a journal task id")
+        if mission.get("kind") not in MISSION_KINDS:
+            errors.append(f"{ROUTE_V2}: mission {mid} has unknown kind {mission.get('kind')!r}")
+        file = root / str(mission.get("file", ""))
+        if not file.is_file():
+            errors.append(f"{ROUTE_V2}: mission {mid} file missing: {mission.get('file')}")
+        else:
+            section = str(mission.get("section", ""))
+            if not section or not re.search(rf"(?m)^#+ {re.escape(section)}", file.read_text(encoding="utf-8")):
+                errors.append(f"{ROUTE_V2}: mission {mid} section not found: {mission.get('file')} § {section}")
+        if mission.get("kind") in ("lab", "launch"):
+            exists(mission.get("lab"), None, f"mission {mid} lab")
+
+    for level in levels:
+        name = f"level {level.get('level')}"
+        project = level.get("project") or {}
+        if not project.get("id") or not project.get("title"):
+            errors.append(f"{ROUTE_V2}: {name} needs a project with id and title")
+        exists(project.get("path"), project.get("planned"), f"{name} project")
+        for pid in project.get("missions") or []:
+            mission_ids.append(pid)
+            if not MISSION_ID.fullmatch(str(pid)):
+                errors.append(f"{ROUTE_V2}: project mission id {pid!r} is not a journal task id")
+        for material in level.get("materials") or []:
+            exists(material.get("path"), material.get("planned"), f"{name} material")
+        for entry in level.get("lessons") or []:
+            if "fast_track" in entry:
+                if entry["fast_track"] not in modules:
+                    errors.append(f"{ROUTE_V2}: unknown fast-track module {entry['fast_track']}")
+                for mission in entry.get("missions") or []:
+                    check_mission(mission, entry["fast_track"])
+                continue
+            lid, planned = entry.get("lesson"), entry.get("planned")
+            if planned:
+                if lid in known:
+                    errors.append(f"{ROUTE_V2}: {lid} is registered in curriculum.json, remove 'planned: {planned}'")
+                continue
+            if lid not in known:
+                errors.append(f"{ROUTE_V2}: unknown lesson {lid} in {name}")
+                continue
+            core.add(lid)
+            for mission in entry.get("missions") or []:
+                if not str(mission.get("id", "")).startswith(f"{lid}-"):
+                    errors.append(f"{ROUTE_V2}: mission {mission.get('id')} must start with {lid}-")
+                check_mission(mission, lid)
+    library = route.get("library") or []
+    for lid in sorted(set(library) - set(known)):
+        errors.append(f"{ROUTE_V2}: unknown lesson {lid} in library")
+    for lid in sorted(core & set(library)):
+        errors.append(f"{ROUTE_V2}: {lid} is both core and library")
+    for lid in sorted(set(lid for lid in library if library.count(lid) > 1)):
+        errors.append(f"{ROUTE_V2}: {lid} listed twice in library")
+    for lid in known:
+        if lid not in core and lid not in library:
+            errors.append(f"{ROUTE_V2}: {lid} has no status (core or library)")
+    for mid in sorted(set(m for m in mission_ids if mission_ids.count(m) > 1)):
+        errors.append(f"{ROUTE_V2}: duplicate mission id {mid}")
+    model = route.get("session_model")
+    if not isinstance(model, dict) or not (model.get("pending") or model.get("profile")):
+        errors.append(f"{ROUTE_V2}: session_model needs a profile or 'pending: R06'")
+
+
+def route_v2_status(root):
+    """Lesson id -> 'core' or 'library' (for builders and the tutor)."""
+    route = load_route_v2(root)
+    status = {lid: "library" for lid in route.get("library") or []}
+    for level in route["levels"]:
+        for entry in level.get("lessons") or []:
+            if entry.get("lesson") and not entry.get("planned"):
+                status[entry["lesson"]] = "core"
+    return status
+
+
 def _validate_local(root, curriculum, documents, errors, warnings):
     import mistune
 
@@ -317,6 +436,7 @@ def _validate_local(root, curriculum, documents, errors, warnings):
         errors.extend(freshness["errors"])
         warnings.extend(freshness["warnings"])
         _validate_route(root, curriculum, errors)
+        _validate_route_v2(root, curriculum, errors)
         errors.extend(lesson_template(root)["errors"])
         dashboard = root / "progress/dashboard.md"
         if dashboard.is_file() and dashboard.read_text(encoding="utf-8") != progress_dashboard(root):
