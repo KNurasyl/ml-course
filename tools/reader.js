@@ -4,6 +4,7 @@
   const articles = Array.from(document.querySelectorAll('.material'));
   const links = Array.from(document.querySelectorAll('[data-material]'));
   const byId = new Map(articles.map(article => [article.id, article]));
+  const START = byId.has('START') ? 'START' : 'HOME';
   const search = document.getElementById('course-search');
   const status = document.getElementById('search-status');
   const results = document.getElementById('search-results');
@@ -71,10 +72,10 @@
       breadcrumbs.append(a);
     };
     const divider = () => { const span = document.createElement('span'); span.textContent = '/'; span.className = 'divider'; span.ariaHidden = 'true'; breadcrumbs.append(span); };
-    addLink('Учебник', 'HOME');
+    addLink('Учебник', START);
     const module = current.dataset.module;
     if (module && module !== current.id && byId.has(module)) { divider(); addLink(module, module); }
-    if (current.id !== 'HOME') {
+    if (current.id !== START) {
       divider(); const span = document.createElement('span'); span.textContent = current.dataset.shortTitle || current.dataset.title; span.title = current.dataset.title; breadcrumbs.append(span);
     }
     document.querySelectorAll('.lesson-outline details').forEach(details => { details.open = outlineWide.matches; });
@@ -106,10 +107,10 @@
   }
   function select() {
     let fragment;
-    try { fragment = decodeURIComponent(location.hash.slice(1)); } catch (_) { fragment = 'HOME'; }
+    try { fragment = decodeURIComponent(location.hash.slice(1)); } catch (_) { fragment = START; }
     if (fragment === 'main-content') {document.getElementById('main-content').focus();return;}
-    const id = fragment.split('--')[0] || 'HOME';
-    const current = byId.get(id) || byId.get('HOME') || articles[0];
+    const id = fragment.split('--')[0] || START;
+    const current = byId.get(id) || byId.get(START) || articles[0];
     articles.forEach(article => { article.hidden = article !== current; });
     links.forEach(link => {
       if (link.dataset.material === current.id) { link.setAttribute('aria-current', 'page'); const parent = link.closest('details.nav-module'); if(parent) parent.open = true; }

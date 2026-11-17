@@ -248,6 +248,7 @@ const lesson={id:'M04-L06',dataset:{title:'Log'},hidden:false};
 const answers={id:'M04-SOLUTIONS',dataset:{title:'Answers'},hidden:true};
 const articles=[home,lesson,answers];
 const byId=new Map(articles.map(x=>[x.id,x]));
+const START=byId.has('START')?'START':'HOME';  // same rule as production reader.js (R03)
 const links=[];
 let lastMaterial='';
 const updateContext=()=>{};

@@ -448,6 +448,8 @@ def _validate_local(root, curriculum, documents, errors, warnings):
         path = local_file(name, name)
         if path:
             documents[path] = path.read_text(encoding="utf-8")
+    if (root / "MAINTAINING.md").is_file():  # Former README (R03): its links are still checked.
+        documents[root / "MAINTAINING.md"] = (root / "MAINTAINING.md").read_text(encoding="utf-8")
     book = local_file("START_HERE.html", "offline reader")
     if book:
         documents[book] = book.read_text(encoding="utf-8")

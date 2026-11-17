@@ -1,4 +1,11 @@
 {
+  "START": {
+    "id": "START",
+    "title": "Старт: LLM-инженер от модели до сервера",
+    "path": "course/START.md",
+    "version": "1.2.0",
+    "status": "ready"
+  },
   "HOME": {
     "id": "HOME",
     "title": "ML и LLM: локальный самоучитель",

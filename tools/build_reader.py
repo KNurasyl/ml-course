@@ -265,7 +265,7 @@ def lesson_order(root: Path, registry: dict) -> dict[str, list[str]]:
 def ordered_materials(registry: dict, root: Path = ROOT) -> list[str]:
     lessons = lesson_order(root, registry)
     route = [key for module in MODULE_IDS for key in [module, *lessons.get(module, [])]]
-    primary = ["HOME", "DIAGNOSTIC", *PILOT_IDS, *route, "GLOSSARY", "PROJECT", "MENTOR", "PROGRESS", "MENTOR-KEYS", *[f"{m}-SOLUTIONS" for m in MODULE_IDS]]
+    primary = ["START", "HOME", "DIAGNOSTIC", *PILOT_IDS, *route, "GLOSSARY", "PROJECT", "MENTOR", "PROGRESS", "MENTOR-KEYS", *[f"{m}-SOLUTIONS" for m in MODULE_IDS]]
     return [key for key in primary if key in registry] + [key for key in registry if key not in primary]
 
 
@@ -350,7 +350,7 @@ def display_status(key: str) -> tuple[str, str]:
 
 
 def display_id(key: str) -> str:
-    return {"HOME": "Путеводитель", "DIAGNOSTIC": "Начальная проверка", "GLOSSARY": "Справочник",
+    return {"START": "Старт", "HOME": "Путеводитель", "DIAGNOSTIC": "Начальная проверка", "GLOSSARY": "Справочник",
             "PROJECT": "Сквозной проект", "MENTOR": "Как учиться", "PROGRESS": "Запись результатов",
             "MENTOR-KEYS": "Самопроверка", "REF-CATALOG": "Дополнительные курсы",
             "REF-METHOD": "Методика обучения"}.get(key, key)
@@ -529,7 +529,8 @@ def build(root: Path) -> tuple[str, int]:
             short_title = 'ML и LLM. От модели к своему продукту'
         context = module_id if module_id in MODULE_IDS else ''
         sections.append(f'<article class="material" id="{escape(key)}" data-title="{escape(title, quote=True)}" data-short-title="{escape(short_title, quote=True)}" data-kind="{kind}" data-module="{context}"><header class="material-head"><div class="eyebrow"><span class="material-id">{escape(display_id(key))}</span><span class="badge {kind}">{label}</span></div><h1>{escape(short_title)}</h1>{intro}</header><div class="article-layout{" has-outline" if outline else ""}">{outline}<div class="body-content{" home-content" if key == "HOME" else ""}">{body}</div></div><footer class="source-note">Исходный текст: <code>{escape(item["path"])}</code> · Материалы {VERSION} · Оформление 2.0</footer>{neighbors}</article>')
-    groups = [("Начать и ориентироваться", FOUNDATION_IDS), ("Первые десять занятий", PILOT_IDS)]
+    # Route 2.0 (R03): the learner starts on START; every other material is the library.
+    groups = [("Начать", ["START"]), ("Начать и ориентироваться", FOUNDATION_IDS), ("Первые десять занятий", PILOT_IDS)]
     groups.extend((registry[m]["title"], [m, *lessons.get(m, [])]) for m in MODULE_IDS if m in registry)
     groups.append(("Ответы и самопроверка", ["MENTOR-KEYS", *[f"{m}-SOLUTIONS" for m in MODULE_IDS]]))
     known = {key for _, keys in groups for key in keys}
@@ -543,13 +544,15 @@ def build(root: Path) -> tuple[str, int]:
             content = '<details class="nav-module"><summary>' + escape(title) + '</summary>' + items + '</details>'
         else:
             content = '<h2>' + escape(title) + '</h2>' + items
+        if title == "Начать и ориентироваться" and "START" in registry:
+            nav_groups.append('<p class="nav-library" id="nav-library">Библиотека</p>')
         nav_groups.append('<section class="nav-group">' + content + '</section>')
     navigation = '\n'.join(nav_groups)
     html = f'''<!doctype html>
 <html lang="ru" data-theme="dark">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="course-source-sha256" content="{source_fingerprint(root)}"><meta name="description" content="Локальный самоучитель ML и LLM: объяснения, самостоятельные задачи, ноутбуки и самопроверка."><title>Курс ML и LLM · Локальный самоучитель</title><style id="course-fonts">{FONT_FACES}</style><style>{CSS}</style><script>{THEME_BOOT}</script></head>
 <body><a class="skip-link" href="#main-content">К материалу</a>
-<aside class="sidebar" id="course-menu" aria-label="Оглавление курса"><div class="sidebar-head"><a class="brand" href="#HOME"><span class="brand-symbol">ML</span><span class="brand-name">ML и LLM</span><span class="brand-caption">Технический учебник · Практика</span></a><button id="menu-close" class="small-button menu-close" aria-label="Закрыть оглавление">×</button><label class="search"><span class="screen-reader-only">Найти тему</span><span class="search-row"><input id="course-search" type="search" placeholder="Найти тему…" autocomplete="off" spellcheck="false" aria-describedby="search-status"><button id="search-clear" class="small-button search-clear" type="button" aria-label="Очистить поиск" hidden>×</button></span></label><p class="search-status" id="search-status" role="status">Поиск по тексту · Ctrl K</p></div><div class="sidebar-scroll"><nav id="book-navigation" aria-label="Разделы учебника">{navigation}</nav><ol class="search-results" id="search-results" aria-label="Результаты поиска"></ol><p class="empty-search" id="empty-search" hidden>Попробуй другое слово или его основу.</p><p class="nav-foot">Материалы {VERSION} · Чтение без интернета<br><a href="#PROGRESS">Журнал самостоятельной работы</a></p></div></aside>
+<aside class="sidebar" id="course-menu" aria-label="Оглавление курса"><div class="sidebar-head"><a class="brand" href="#{"START" if "START" in registry else "HOME"}"><span class="brand-symbol">ML</span><span class="brand-name">ML и LLM</span><span class="brand-caption">Технический учебник · Практика</span></a><button id="menu-close" class="small-button menu-close" aria-label="Закрыть оглавление">×</button><label class="search"><span class="screen-reader-only">Найти тему</span><span class="search-row"><input id="course-search" type="search" placeholder="Найти тему…" autocomplete="off" spellcheck="false" aria-describedby="search-status"><button id="search-clear" class="small-button search-clear" type="button" aria-label="Очистить поиск" hidden>×</button></span></label><p class="search-status" id="search-status" role="status">Поиск по тексту · Ctrl K</p></div><div class="sidebar-scroll"><nav id="book-navigation" aria-label="Разделы учебника">{navigation}</nav><ol class="search-results" id="search-results" aria-label="Результаты поиска"></ol><p class="empty-search" id="empty-search" hidden>Попробуй другое слово или его основу.</p><p class="nav-foot">Материалы {VERSION} · Чтение без интернета<br><a href="#PROGRESS">Журнал самостоятельной работы</a></p></div></aside>
 <button class="backdrop" id="backdrop" aria-label="Закрыть оглавление" tabindex="-1"></button>
 <div class="layout"><header class="topbar"><nav class="breadcrumbs" id="breadcrumbs" aria-label="Текущее место"><a href="#HOME">Учебник</a></nav><div class="top-actions"><button class="small-button menu-toggle" id="menu-toggle" aria-controls="course-menu" aria-expanded="false">☰ Содержание</button><button class="small-button print-button" id="print-section">Печать</button><button class="small-button theme-toggle" id="theme-toggle" type="button" hidden>Тема<span class="theme-state">: тёмная</span></button></div></header><main class="reader" id="main-content" tabindex="-1"><noscript><p class="no-script">JavaScript выключен: все разделы показаны ниже подряд. Ссылки оглавления продолжают работать.</p></noscript>{''.join(sections)}</main></div>
 <dialog id="figure-dialog" aria-labelledby="figure-title"><div class="figure-toolbar"><strong id="figure-title">Рисунок</strong><button id="figure-zoom" class="small-button">Исходный размер</button><button id="figure-close" class="small-button">Закрыть</button></div><div class="figure-scroll"><img id="figure-large" alt=""><div id="figure-large-svg" hidden></div></div><a id="figure-original" target="_blank">Открыть исходный файл отдельно</a></dialog>
