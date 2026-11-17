@@ -8,6 +8,7 @@ lab or opening a lesson is not an attempt.
   import                                                                 copy filled rows from progress.md
   due [--date YYYY-MM-DD]                                                reviews due, grouped into mixed sessions
   dashboard [--check]                                                    write progress/dashboard.md
+  next [--date YYYY-MM-DD] [--json]                                      tutor: overdue review or next route mission
 
 Review rule (course/review-schedule.md): after an independent attempt the next
 check comes in 1, 3, 7 and then 21 days; a supported attempt or one that needs
@@ -41,13 +42,14 @@ STATE_WORDS = (("подтвержд", "confirmed"), ("самостоят", "inde
                ("повтор", "repeat"), ("не проверено", "unchecked"))
 HELP = {"none": "без помощи", "hint1": "подсказка 1", "hint2": "подсказка 2", "hint3": "подсказка 3",
         "key": "полный ключ", "external": "внешняя помощь"}
-TASK = re.compile(r"(?P<lesson>(?P<module>[MP]\d{2})(?:-L\d{2}X?)?)(?:-[A-Z]+\d*)*|D00")
+# MP0..MP7 are the mini-projects of route 2.0 (course/route-v2.yaml).
+TASK = re.compile(r"(?P<lesson>(?P<module>[MP]\d{2}|MP\d+)(?:-L\d{2}X?)?)(?:-[A-Z]+\d*)*|D00")
 
 
 def parse_task(task: str) -> dict:
     match = TASK.fullmatch(task)
     if not match:
-        raise ValueError(f"Unknown task id {task!r}: expected e.g. M10-L03-A, M10-HW01, P01-HW01 or D00")
+        raise ValueError(f"Unknown task id {task!r}: expected e.g. M10-L03-A, M10-HW01, P01-HW01, MP1 or D00")
     module = match.group("module") or "D00"
     return {"task": task, "module": module, "lesson": match.group("lesson") or task}
 
@@ -195,6 +197,98 @@ def render_dashboard(records: list[dict]) -> str:
     return "\n".join(lines) + "\n"
 
 
+ROUTE = "course/route-v2.yaml"
+# A mission counts as passed once an attempt with real work is saved; "repeat" means do it again.
+MISSION_PASSED = {"supported", "independent", "confirmed"}
+# Only one's own work schedules a delayed check C (rule 1-3-7-21): entry, lab, launch and project
+# missions practise or explore and do not start the review clock.
+NO_REVIEW_KINDS = {"entry", "lab", "launch", "project"}
+
+
+def route_missions(root: Path = ROOT) -> list[dict]:
+    """Missions of route 2.0 in course order: lesson missions of a level, then its project."""
+    import yaml
+
+    route = yaml.safe_load((root / ROUTE).read_text(encoding="utf-8"))
+    missions = []
+    for level in route["levels"]:
+        for entry in level.get("lessons") or []:
+            if entry.get("planned"):
+                continue
+            owner = entry.get("lesson") or entry.get("fast_track")
+            for mission in entry.get("missions") or []:
+                missions.append({"level": level["level"], "level_title": level["title"], "lesson": owner, **mission})
+        project = level.get("project") or {}
+        for pid in project.get("missions") or []:
+            missions.append({"level": level["level"], "level_title": level["title"], "lesson": pid, "id": pid,
+                             "kind": "project", "file": project.get("path"), "title": project.get("title"),
+                             "planned": project.get("planned")})
+    return missions
+
+
+def review_due(records: list[dict], day: date, missions: list[dict]) -> list[dict]:
+    """Delayed checks due on or before the day, oldest first."""
+    kinds = {m["id"]: m["kind"] for m in missions}
+    own = [r for r in records if kinds.get(r["task"]) not in NO_REVIEW_KINDS]
+    last_task = {r["lesson"]: r["task"] for r in sorted(own, key=lambda r: r["date"])}
+    items = []
+    for lesson, item in schedule(own).items():
+        if not item["due"] or item["due"] > day.isoformat():
+            continue
+        lesson_level = re.fullmatch(r"[MP]\d{2}-L\d{2}X?|P\d{2}", lesson)
+        if lesson.startswith("P"):
+            file = f"course/pilot/{lesson}.md"
+        elif lesson_level:
+            file = f"course/lessons/{lesson}.md"
+        else:
+            file = f"course/modules/{lesson}.md"
+        base = lesson if "-L" in lesson or lesson.startswith("P") else re.sub(r"-[A-C]$", "", last_task[lesson])
+        items.append({"type": "review", "lesson": lesson, "task": f"{base}-C", "due": item["due"],
+                      "overdue_days": (day - date.fromisoformat(item["due"])).days, "stage": item["stage"],
+                      "file": file, "section": "Новая и отложенная проверка"})
+    return sorted(items, key=lambda i: (i["due"], i["lesson"]))
+
+
+def next_step(root: Path = ROOT, day: date | None = None) -> dict:
+    """What the tutor does now: an overdue delayed check first, otherwise the first unpassed mission."""
+    day = day or date.today()
+    records = read_log(root)
+    missions = route_missions(root)
+    passed = {r["task"] for r in records if r["state"] in MISSION_PASSED}
+    progress = {"passed": sum(1 for m in missions if m["id"] in passed), "total": len(missions)}
+    due = review_due(records, day, missions)
+    if due:
+        return {**due[0], "queue": len(due), "progress": progress}
+    for mission in missions:
+        if mission["id"] not in passed:
+            tries = sum(1 for r in records if r["task"] == mission["id"])
+            return {"type": "mission", **mission, "previous_attempts": tries, "progress": progress}
+    return {"type": "finished", "progress": progress}
+
+
+def describe(step: dict) -> str:
+    done = f"Пройдено миссий: {step['progress']['passed']} из {step['progress']['total']}."
+    if step["type"] == "review":
+        late = f", просрочена на {step['overdue_days']} дн." if step["overdue_days"] else ", срок сегодня"
+        return (f"Отложенная проверка {step['task']} (урок {step['lesson']}{late}; в очереди {step['queue']}).\n"
+                f"Источник задачи: {step['file']} § {step['section']}, вариант C.\n{done}")
+    if step["type"] == "finished":
+        return f"Все миссии маршрута пройдены. {done}"
+    where = f"{step['file']} § {step['section']}" if step.get("section") else step["file"]
+    lines = [f"Миссия {step['id']} ({step['kind']}) — уровень {step['level']} «{step['level_title']}».",
+             f"Источник: {where}."]
+    if step.get("lab"):
+        lines.append(f"Лабораторная: {step['lab']}.")
+    if step.get("title"):
+        lines.append(f"Проект: {step['title']}.")
+    if step.get("planned"):
+        lines.append(f"Материал ещё не написан (задача {step['planned']}): сообщи ученику и не придумывай проект сам.")
+    if step["previous_attempts"]:
+        lines.append(f"Прежних попыток этой миссии: {step['previous_attempts']}.")
+    lines.append(done)
+    return "\n".join(lines)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     commands = parser.add_subparsers(dest="command", required=True)
@@ -213,6 +307,9 @@ def main(argv: list[str] | None = None) -> int:
     commands.add_parser("import", help="Copy filled rows and attempt blocks from progress/progress.md")
     due = commands.add_parser("due", help="Reviews due on a date, as mixed sessions")
     due.add_argument("--date", type=date.fromisoformat, default=date.today())
+    step = commands.add_parser("next", help="Tutor: overdue delayed check or the next mission of route 2.0")
+    step.add_argument("--date", type=date.fromisoformat, default=date.today())
+    step.add_argument("--json", action="store_true")
     board = commands.add_parser("dashboard", help="Write progress/dashboard.md")
     board.add_argument("--check", action="store_true")
     args = parser.parse_args(argv)
@@ -229,6 +326,10 @@ def main(argv: list[str] | None = None) -> int:
         items = [dict(item, lesson=lesson) for lesson, item in schedule(read_log(ROOT)).items()
                  if item["due"] and item["due"] <= args.date.isoformat()]
         print(json.dumps({"date": args.date.isoformat(), "sessions": mixed_sessions(items)}, ensure_ascii=False, indent=2))
+    elif args.command == "next":
+        result = next_step(ROOT, args.date)
+        sys.stdout.reconfigure(encoding="utf-8")  # read by /study through a pipe, whatever the console code page
+        print(json.dumps(result, ensure_ascii=False, indent=2) if args.json else describe(result))
     else:
         markdown = render_dashboard(read_log(ROOT))
         target = ROOT / DASHBOARD
