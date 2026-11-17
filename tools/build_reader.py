@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import importlib.util
 from html import escape, unescape
 from hashlib import sha256
 import json
@@ -89,12 +90,22 @@ def dark_copy(root: Path, relative: str) -> str | None:
     return candidate if (root / candidate).is_file() else None
 
 
+def load_progress_map():
+    spec = importlib.util.spec_from_file_location("course_progress_map", Path(__file__).with_name("progress_map.py"))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def source_fingerprint(root: Path) -> str:
     """Fingerprint every canonical text, its registry and the rendering code."""
     root = root.resolve()
     registry = json.loads((root / "metadata/material-registry.json").read_text(encoding="utf-8"))
     paths = {item["path"] for item in registry.values()}
     paths.update({"metadata/material-registry.json", "tools/build_reader.py"})
+    # START draws the progress map (R05) from these files.
+    paths.update(p for p in ("progress/progress.jsonl", "course/route-v2.yaml", "tools/progress_map.py", "tools/progress.py")
+                 if (root / p).is_file())
     for relative in ("curriculum.json", "metadata/lesson-visuals.json", "metadata/responsive-figures.json",
                      "tools/reader.css", "tools/reader.js", "tools/fonts/fonts.json"):
         if (root / relative).is_file():
@@ -487,9 +498,17 @@ def build(root: Path) -> tuple[str, int]:
         raw = source.read_text(encoding="utf-8")
         if "chatgpt.com/space/" in raw:
             raise ValueError(f"Page dependency remains in {item['path']}")
+        map_html = None
+        if key == "START" and (root / "course/route-v2.yaml").is_file():
+            # R05: the level map is drawn from the journal; the Markdown table stays the plain-text copy.
+            progress_map = load_progress_map()
+            raw = progress_map.BLOCK.sub("PROGRESS-MAP-PLACEHOLDER", raw)
+            map_html = progress_map.html(progress_map.stats(root))
         renderer = CourseRenderer(root, source, key, path_ids)
         markdown = mistune.create_markdown(renderer=renderer, plugins=["table", "strikethrough", "task_lists"])
         body = markdown(without_repeated_title(raw, title))
+        if map_html:
+            body = body.replace("<p>PROGRESS-MAP-PLACEHOLDER</p>", map_html)
         body = re.sub(r'<p><code>([^<]+)</code></p>', r'<p class="formula"><code>\1</code></p>', body)
         body = body.replace("<table>", '<div class="table-wrap"><table>').replace("</table>", "</table></div>")
         intro, outline = '', ''

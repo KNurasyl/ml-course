@@ -7,7 +7,7 @@ lab or opening a lesson is not an attempt.
   add TASK --min 140 --self 3 --help hint2 --route full --error "..."   append an attempt
   import                                                                 copy filled rows from progress.md
   due [--date YYYY-MM-DD]                                                reviews due, grouped into mixed sessions
-  dashboard [--check]                                                    write progress/dashboard.md
+  dashboard [--check]                                                    write progress/dashboard.md and the START map
   next [--date YYYY-MM-DD] [--json]                                      tutor: overdue review or next route mission
 
 Review rule (course/review-schedule.md): after an independent attempt the next
@@ -17,6 +17,7 @@ repetition is checked again the next day without advancing the stage.
 from __future__ import annotations
 
 import argparse
+import importlib.util
 from collections import Counter, defaultdict
 from datetime import date, timedelta
 import json
@@ -338,6 +339,12 @@ def main(argv: list[str] | None = None) -> int:
                 raise SystemExit("Dashboard is stale. Run: python tools/progress.py dashboard")
         else:
             target.write_text(markdown, encoding="utf-8", newline="\n")
+            # The progress map on course/START.md comes from the same journal (R05).
+            if (ROOT / ROUTE).is_file():
+                spec = importlib.util.spec_from_file_location("course_progress_map", Path(__file__).with_name("progress_map.py"))
+                progress_map = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(progress_map)
+                progress_map.write_start(ROOT)
         print(json.dumps({"dashboard": DASHBOARD, "attempts": len(read_log(ROOT))}, ensure_ascii=False))
     return 0
 

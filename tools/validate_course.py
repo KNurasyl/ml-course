@@ -84,6 +84,13 @@ def progress_dashboard(root):
     return progress.render_dashboard(progress.read_log(root))
 
 
+def progress_map_tool():
+    spec = importlib.util.spec_from_file_location("course_progress_map", Path(__file__).with_name("progress_map.py"))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def lesson_template(root):
     spec = importlib.util.spec_from_file_location("course_lesson_template", Path(__file__).with_name("lint_lessons.py"))
     linter = importlib.util.module_from_spec(spec)
@@ -441,6 +448,9 @@ def _validate_local(root, curriculum, documents, errors, warnings):
         dashboard = root / "progress/dashboard.md"
         if dashboard.is_file() and dashboard.read_text(encoding="utf-8") != progress_dashboard(root):
             errors.append("progress/dashboard.md is stale: rebuild with python tools/progress.py dashboard")
+        if (root / "course/START.md").is_file() and (root / ROUTE_V2).is_file():
+            if not progress_map_tool().write_start(root, check=True):
+                errors.append("Progress map in course/START.md is stale: rebuild with python tools/progress.py dashboard")
         cheatsheet = root / "course/cheatsheet.md"
         if cheatsheet.is_file() and cheatsheet.read_text(encoding="utf-8") != cheatsheet_markdown(root):
             errors.append("course/cheatsheet.md is stale: rebuild with python tools/build_cheatsheet.py")
