@@ -52,7 +52,7 @@ def stats(root: Path = ROOT) -> dict:
     records = progress.read_log(root)
     route = yaml.safe_load((root / progress.ROUTE).read_text(encoding="utf-8"))
     missions = progress.route_missions(root)
-    passed = {r["task"] for r in records if r["state"] in progress.MISSION_PASSED}
+    passed = progress.mission_status(records, missions)  # "зачтено по входу" counts as passed
     levels = []
     for level in route["levels"]:
         ids = [m["id"] for m in missions if m["level"] == level["level"]]

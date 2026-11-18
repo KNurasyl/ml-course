@@ -204,6 +204,10 @@ MISSION_PASSED = {"supported", "independent", "confirmed"}
 # Only one's own work schedules a delayed check C (rule 1-3-7-21): entry, lab, launch and project
 # missions practise or explore and do not start the review clock.
 NO_REVIEW_KINDS = {"entry", "lab", "launch", "project"}
+# Skip rule: an entry mission solved on its own (--self 3 --help none) credits missions M2 and M3 of the
+# same lesson ("зачтено по входу"). The entry then starts the delayed check C, which stays mandatory.
+CREDIT_STATE, CREDIT_HELP = "independent", "none"
+CREDITED_KINDS = {"own", "lab"}
 
 
 def route_missions(root: Path = ROOT) -> list[dict]:
@@ -227,10 +231,26 @@ def route_missions(root: Path = ROOT) -> list[dict]:
     return missions
 
 
+def credits_lesson(record: dict, kinds: dict[str, str]) -> bool:
+    """An entry attempt solved on its own without help: the skip rule applies to its lesson."""
+    return kinds.get(record["task"]) == "entry" and record["state"] == CREDIT_STATE and record.get("help") == CREDIT_HELP
+
+
+def mission_status(records: list[dict], missions: list[dict]) -> dict[str, str]:
+    """Closed missions: "passed" by an own saved attempt, "credited" by the entry of the same lesson."""
+    kinds = {m["id"]: m["kind"] for m in missions}
+    status = {r["task"]: "passed" for r in records if r["state"] in MISSION_PASSED}
+    credited = {r["lesson"] for r in records if credits_lesson(r, kinds)}
+    for mission in missions:
+        if mission["lesson"] in credited and mission["kind"] in CREDITED_KINDS and mission["id"] not in status:
+            status[mission["id"]] = "credited"
+    return status
+
+
 def review_due(records: list[dict], day: date, missions: list[dict]) -> list[dict]:
     """Delayed checks due on or before the day, oldest first."""
     kinds = {m["id"]: m["kind"] for m in missions}
-    own = [r for r in records if kinds.get(r["task"]) not in NO_REVIEW_KINDS]
+    own = [r for r in records if kinds.get(r["task"]) not in NO_REVIEW_KINDS or credits_lesson(r, kinds)]
     last_task = {r["lesson"]: r["task"] for r in sorted(own, key=lambda r: r["date"])}
     items = []
     for lesson, item in schedule(own).items():
@@ -255,8 +275,9 @@ def next_step(root: Path = ROOT, day: date | None = None) -> dict:
     day = day or date.today()
     records = read_log(root)
     missions = route_missions(root)
-    passed = {r["task"] for r in records if r["state"] in MISSION_PASSED}
-    progress = {"passed": sum(1 for m in missions if m["id"] in passed), "total": len(missions)}
+    passed = mission_status(records, missions)
+    progress = {"passed": sum(1 for m in missions if m["id"] in passed),
+                "credited": sum(1 for m in missions if passed.get(m["id"]) == "credited"), "total": len(missions)}
     due = review_due(records, day, missions)
     if due:
         return {**due[0], "queue": len(due), "progress": progress}
@@ -269,6 +290,8 @@ def next_step(root: Path = ROOT, day: date | None = None) -> dict:
 
 def describe(step: dict) -> str:
     done = f"Пройдено миссий: {step['progress']['passed']} из {step['progress']['total']}."
+    if step["progress"].get("credited"):
+        done = done[:-1] + f", из них зачтено по входу: {step['progress']['credited']}."
     if step["type"] == "review":
         late = f", просрочена на {step['overdue_days']} дн." if step["overdue_days"] else ", срок сегодня"
         return (f"Отложенная проверка {step['task']} (урок {step['lesson']}{late}; в очереди {step['queue']}).\n"

@@ -28,7 +28,7 @@ def course(tmp_path):
     shutil.copy(SOURCE / "course/route-v2.yaml", tmp_path / "course/route-v2.yaml")
     shutil.copy(SOURCE / "course/START.md", tmp_path / "course/START.md")
     journal = [("M09-L07X-M0", "2026-11-18", "3"), ("MP0", "2026-11-19", "2"), ("M09-L01-M1", "2026-11-20", "1"),
-               ("M09-L01-M1", "2026-11-20", "3"), ("M09-L01-M2", "2026-11-22", "3")]
+               ("M09-L01-M1", "2026-11-20", "2"), ("M09-L01-M2", "2026-11-22", "3")]
     progress.append(tmp_path, [progress.make_record(t, date.fromisoformat(d), 40, s) for t, d, s in journal])
     return tmp_path
 
