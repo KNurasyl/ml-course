@@ -282,6 +282,11 @@ def _validate_route_v2(root, curriculum, errors):
                 errors.append(f"{ROUTE_V2}: mission {mid} section not found: {mission.get('file')} § {section}")
         if mission.get("kind") in ("lab", "launch"):
             exists(mission.get("lab"), None, f"mission {mid} lab")
+        if mission.get("command"):
+            # A launch command names a script of the course: that script must exist.
+            script = re.search(r"\S+\.py", str(mission["command"]).split("python.exe", 1)[-1])
+            if not script or not (root / script.group(0).replace(chr(92), "/")).is_file():
+                errors.append(f"{ROUTE_V2}: mission {mid} command names no existing script: {mission['command']}")
 
     for level in levels:
         name = f"level {level.get('level')}"

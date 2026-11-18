@@ -13,7 +13,7 @@
 #   entry  — (а) вход: задача из разобранного примера на новых числах, затем разбор;
 #   own    — (б) своя работа: задача A, затем вариант B из «Новой и отложенной проверки»;
 #   lab    — (в) опыт: «предскажи до запуска» на лабораторной (lab) урока или модуля;
-#   launch — уровень 0: только запуск;
+#   launch — уровень 0: только запуск; command — команда запуска, которую тьютор даёт ученику;
 #   project — мини-проект уровня; тьютор делит его на занятия по README проекта.
 version: 2
 created: 2026-11-18
@@ -44,7 +44,8 @@ levels:
   lessons:
     - lesson: M09-L07X  # только запуск
       missions:
-        - {id: M09-L07X-M0, kind: launch, file: course/lessons/M09-L07X.md, section: Разобранный пример, lab: labs/M09/llama_local.py}
+        - {id: M09-L07X-M0, kind: launch, file: course/lessons/M09-L07X.md, section: Разобранный пример, lab: labs/M09/llama_local.py,
+           command: '.\.venv\Scripts\python.exe labs\M09\llama_local.py serve --gpu'}  # session_model: runtime, gguf и server_args выше
 - level: 1
   title: Модели и запуск
   hours: 20

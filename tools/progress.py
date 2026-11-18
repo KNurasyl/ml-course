@@ -303,6 +303,8 @@ def describe(step: dict) -> str:
              f"Источник: {where}."]
     if step.get("lab"):
         lines.append(f"Лабораторная: {step['lab']}.")
+    if step.get("command"):
+        lines.append(f"Команда: {step['command']}")
     if step.get("title"):
         lines.append(f"Проект: {step['title']}.")
     if step.get("planned"):
