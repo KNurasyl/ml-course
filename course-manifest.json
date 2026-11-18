@@ -689,6 +689,13 @@
       "version": "1.2.0",
       "status": "ready"
     },
+    "M09-L09X": {
+      "id": "M09-L09X",
+      "title": "M09-L09X. Как выбрать модель: лицензия, память, русский язык, инструменты, контекст",
+      "path": "course/lessons/M09-L09X.md",
+      "version": "1.2.0",
+      "status": "ready"
+    },
     "M10-L01": {
       "id": "M10-L01",
       "title": "M10-L01. Документ и фрагмент",
@@ -1207,6 +1214,20 @@
       "version": "1.2.0",
       "status": "ready"
     },
+    "INTUITION": {
+      "id": "INTUITION",
+      "title": "Интуиция без формул",
+      "path": "course/intuition.md",
+      "version": "1.2.0",
+      "status": "ready"
+    },
+    "INTUITION-SOLUTIONS": {
+      "id": "INTUITION-SOLUTIONS",
+      "title": "Ключ к «Интуиции без формул»",
+      "path": "solutions/intuition.md",
+      "version": "1.2.0",
+      "status": "ready"
+    },
     "REF-CATALOG": {
       "id": "REF-CATALOG",
       "title": "Обучение ML и LLM инженерии с основ до голосового проекта",
@@ -1383,6 +1404,7 @@
       "M09-L06",
       "M09-L07X",
       "M09-L08X",
+      "M09-L09X",
       "M10-L01",
       "M10-L02",
       "M10-L03",
@@ -1849,7 +1871,8 @@
         "M09-L05",
         "M09-L06",
         "M09-L07X",
-        "M09-L08X"
+        "M09-L08X",
+        "M09-L09X"
       ],
       "homework_id": "M09-HW01",
       "exercise": {
@@ -3655,6 +3678,31 @@
         "practice_minutes": 80,
         "self_check_minutes": 30,
         "setup_minutes": "separate; uses the llama.cpp binary and GGUF files of M09-L07X",
+        "estimate_status": "planning_hypothesis_not_measured"
+      },
+      "pilot_sessions": []
+    },
+    {
+      "id": "M09-L09X",
+      "title": "Как выбрать модель: лицензия, память, русский язык, инструменты, контекст",
+      "version": "1.2.0",
+      "module_id": "M09",
+      "material_key": "M09-L09X",
+      "path": "course/lessons/M09-L09X.md",
+      "scope": "complete_lesson",
+      "material_status": "ready",
+      "prerequisites": [
+        "M09-L06",
+        "M09-L07X"
+      ],
+      "outcome_ids": [
+        "M09-C19"
+      ],
+      "workload": {
+        "reading_minutes": 40,
+        "practice_minutes": 50,
+        "self_check_minutes": 30,
+        "setup_minutes": "separate; uses local models of M09-L07X, no downloads",
         "estimate_status": "planning_hypothesis_not_measured"
       },
       "pilot_sessions": []

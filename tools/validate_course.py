@@ -294,6 +294,17 @@ def _validate_route_v2(root, curriculum, errors):
             if not MISSION_ID.fullmatch(str(pid)):
                 errors.append(f"{ROUTE_V2}: project mission id {pid!r} is not a journal task id")
         for material in level.get("materials") or []:
+            if material.get("part"):
+                # One file, written part by part: a part is written once its section has subsections.
+                target = root / str(material.get("path", ""))
+                text = target.read_text(encoding="utf-8") if target.is_file() else ""
+                section = re.search(rf"(?ms)^## Часть {material['part']}\b.*?(?=^## |\Z)", text)
+                written = bool(section and re.search(r"(?m)^### ", section.group(0)))
+                if material.get("planned") and written:
+                    errors.append(f"{ROUTE_V2}: {material['path']} part {material['part']} is written, remove 'planned: {material['planned']}'")
+                elif not material.get("planned") and not written:
+                    errors.append(f"{ROUTE_V2}: {name} material {material.get('path')} part {material['part']} is not written")
+                continue
             exists(material.get("path"), material.get("planned"), f"{name} material")
         for entry in level.get("lessons") or []:
             if "fast_track" in entry:

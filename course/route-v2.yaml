@@ -56,7 +56,7 @@ levels:
     missions: [MP1]
     path: projects/mini/MP1-model-passport/README.md
   materials:
-    - {path: course/intuition.md, part: 1, planned: R08}
+    - {path: course/intuition.md, part: 1}
   lessons:
     - lesson: M09-L01  # Сообщения и шаблон диалога
       missions:
@@ -99,8 +99,10 @@ levels:
         - {id: M09-L08X-M2, kind: own, file: course/lessons/M09-L08X.md, section: Самостоятельная задача A}
         - {id: M09-L08X-M3, kind: lab, file: course/lessons/M09-L08X.md, section: Практика с поддержкой, lab: labs/M09/demo.py}
     - lesson: M09-L09X  # Как выбрать модель
-      planned: R08
-      missions: []
+      missions:
+        - {id: M09-L09X-M1, kind: entry, file: course/lessons/M09-L09X.md, section: Разобранный пример}
+        - {id: M09-L09X-M2, kind: own, file: course/lessons/M09-L09X.md, section: Самостоятельная задача A}
+        - {id: M09-L09X-M3, kind: lab, file: course/lessons/M09-L09X.md, section: Практика с поддержкой, lab: labs/M09/model_card.py}
 - level: 2
   title: Оценивание
   hours: 20

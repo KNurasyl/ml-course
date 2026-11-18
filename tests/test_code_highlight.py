@@ -50,7 +50,7 @@ class Tags(HTMLParser):
 def test_every_python_example_is_highlighted_and_keeps_its_text():
     renderer = reader.CourseRenderer(ROOT, ROOT / "course/lessons/M00-L01.md", "M00-L01", {})
     python = [(relative, code) for relative, language, code in course_blocks() if language == "python"]
-    assert len(python) == 142
+    assert len(python) == 143  # +1: M09-L09X (R08)
     asserts = 0
     for relative, code in python:
         html = renderer.block_code(code, "python")
@@ -61,7 +61,7 @@ def test_every_python_example_is_highlighted_and_keeps_its_text():
         parser.feed(html)
         assert not parser.problems and not parser.stack and parser.spans, relative
         asserts += visible_text(inner).count("assert")
-    assert asserts == sum(code.count("assert") for _, code in python) == 266
+    assert asserts == sum(code.count("assert") for _, code in python) == 273  # +7: M09-L09X (R08)
 
 
 def test_token_classes():

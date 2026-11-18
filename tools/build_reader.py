@@ -276,7 +276,7 @@ def lesson_order(root: Path, registry: dict) -> dict[str, list[str]]:
 def ordered_materials(registry: dict, root: Path = ROOT) -> list[str]:
     lessons = lesson_order(root, registry)
     route = [key for module in MODULE_IDS for key in [module, *lessons.get(module, [])]]
-    primary = ["START", "HOME", "DIAGNOSTIC", *PILOT_IDS, *route, "GLOSSARY", "PROJECT", "MENTOR", "PROGRESS", "MENTOR-KEYS", *[f"{m}-SOLUTIONS" for m in MODULE_IDS]]
+    primary = ["START", "INTUITION", "HOME", "DIAGNOSTIC", *PILOT_IDS, *route, "GLOSSARY", "PROJECT", "MENTOR", "PROGRESS", "MENTOR-KEYS", *[f"{m}-SOLUTIONS" for m in MODULE_IDS]]
     return [key for key in primary if key in registry] + [key for key in registry if key not in primary]
 
 
@@ -361,7 +361,7 @@ def display_status(key: str) -> tuple[str, str]:
 
 
 def display_id(key: str) -> str:
-    return {"START": "Старт", "HOME": "Путеводитель", "DIAGNOSTIC": "Начальная проверка", "GLOSSARY": "Справочник",
+    return {"START": "Старт", "INTUITION": "Интуиция", "HOME": "Путеводитель", "DIAGNOSTIC": "Начальная проверка", "GLOSSARY": "Справочник",
             "PROJECT": "Сквозной проект", "MENTOR": "Как учиться", "PROGRESS": "Запись результатов",
             "MENTOR-KEYS": "Самопроверка", "REF-CATALOG": "Дополнительные курсы",
             "REF-METHOD": "Методика обучения"}.get(key, key)
@@ -549,9 +549,9 @@ def build(root: Path) -> tuple[str, int]:
         context = module_id if module_id in MODULE_IDS else ''
         sections.append(f'<article class="material" id="{escape(key)}" data-title="{escape(title, quote=True)}" data-short-title="{escape(short_title, quote=True)}" data-kind="{kind}" data-module="{context}"><header class="material-head"><div class="eyebrow"><span class="material-id">{escape(display_id(key))}</span><span class="badge {kind}">{label}</span></div><h1>{escape(short_title)}</h1>{intro}</header><div class="article-layout{" has-outline" if outline else ""}">{outline}<div class="body-content{" home-content" if key == "HOME" else ""}">{body}</div></div><footer class="source-note">Исходный текст: <code>{escape(item["path"])}</code> · Материалы {VERSION} · Оформление 2.0</footer>{neighbors}</article>')
     # Route 2.0 (R03): the learner starts on START; every other material is the library.
-    groups = [("Начать", ["START"]), ("Начать и ориентироваться", FOUNDATION_IDS), ("Первые десять занятий", PILOT_IDS)]
+    groups = [("Начать", ["START", "INTUITION"]), ("Начать и ориентироваться", FOUNDATION_IDS), ("Первые десять занятий", PILOT_IDS)]
     groups.extend((registry[m]["title"], [m, *lessons.get(m, [])]) for m in MODULE_IDS if m in registry)
-    groups.append(("Ответы и самопроверка", ["MENTOR-KEYS", *[f"{m}-SOLUTIONS" for m in MODULE_IDS]]))
+    groups.append(("Ответы и самопроверка", ["MENTOR-KEYS", "INTUITION-SOLUTIONS", *[f"{m}-SOLUTIONS" for m in MODULE_IDS]]))
     known = {key for _, keys in groups for key in keys}
     extras = [key for key in order if key not in known]
     if extras:

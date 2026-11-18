@@ -6,6 +6,20 @@
     "version": "1.2.0",
     "status": "ready"
   },
+  "INTUITION": {
+    "id": "INTUITION",
+    "title": "Интуиция без формул",
+    "path": "course/intuition.md",
+    "version": "1.2.0",
+    "status": "ready"
+  },
+  "INTUITION-SOLUTIONS": {
+    "id": "INTUITION-SOLUTIONS",
+    "title": "Ключ к «Интуиции без формул»",
+    "path": "solutions/intuition.md",
+    "version": "1.2.0",
+    "status": "ready"
+  },
   "HOME": {
     "id": "HOME",
     "title": "ML и LLM: локальный самоучитель",
@@ -1256,6 +1270,13 @@
     "id": "M08-L08X",
     "title": "M08-L08X. Языковая модель с нуля: BPE и GPT на 10 млн параметров",
     "path": "course/lessons/M08-L08X.md",
+    "version": "1.2.0",
+    "status": "ready"
+  },
+  "M09-L09X": {
+    "id": "M09-L09X",
+    "title": "M09-L09X. Как выбрать модель: лицензия, память, русский язык, инструменты, контекст",
+    "path": "course/lessons/M09-L09X.md",
     "version": "1.2.0",
     "status": "ready"
   }

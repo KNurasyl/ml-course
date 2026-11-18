@@ -35,7 +35,7 @@ def dark_values() -> set[str]:
 def test_every_image_figure_has_a_dark_copy_and_the_light_file_is_unchanged():
     shown = {entry[layout] for entry in MAPPING.values() if not entry.get("inline") for layout in ("desktop", "mobile")}
     shown |= {path.as_posix() for path in (Path("course/assets") / p.name for p in dark_figures.hand_drawn())}
-    assert len(shown) == 86 and set(FIGURES) == shown
+    assert len(shown) == 87 and set(FIGURES) == shown  # 86 + M09-L09X (R08)
     for light, entry in FIGURES.items():
         assert entry["dark"] == light.replace(".svg", "-dark.svg") and (ROOT / entry["dark"]).is_file(), light
         assert sha256((ROOT / light).read_bytes()).hexdigest() == entry["light_sha256"], f"light figure changed: {light}"

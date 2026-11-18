@@ -2030,6 +2030,10 @@
         {
           "id": "M09-C18",
           "description": "Получить от локальной модели объект по контракту через prompt, JSON-режим, JSON Schema, грамматику GBNF и проверку с повтором, измерить отдельно долю ответов, прошедших контракт, и долю верных оценок."
+        },
+        {
+          "id": "M09-C19",
+          "description": "Отсеять модели-кандидаты по лицензии версии, памяти (веса, KV-кэш, буферы), языку и токенизатору, вызову инструментов и контексту по карточке и файлам модели и составить план замера, который решит выбор."
         }
       ],
       "lessons": [
@@ -2225,6 +2229,34 @@
             "practice_minutes": 80,
             "self_check_minutes": 30,
             "setup_minutes": "separate; uses the llama.cpp binary and GGUF files of M09-L07X",
+            "estimate_status": "planning_hypothesis_not_measured"
+          },
+          "assessment_policy": "course/assessment.md"
+        },
+        {
+          "id": "M09-L09X",
+          "title": "Как выбрать модель: лицензия, память, русский язык, инструменты, контекст",
+          "path": "course/lessons/M09-L09X.md",
+          "prerequisites": [
+            "M09-L06",
+            "M09-L07X"
+          ],
+          "estimated_minutes": 120,
+          "estimate_status": "planning_hypothesis",
+          "practice": "Метаданные карточек и config.json локальных моделей, KV-кэш на токен, налог токенизатора на русском, заголовок GGUF (labs/M09/model_card.py)",
+          "assessment": "Воронка из пяти кандидатов с причинами выбывания и источниками, расчёт памяти шорт-листа по частям и план замера MP1",
+          "status": "materials_ready",
+          "source_of_time": "author planning, learner pilot not measured",
+          "outcome_ids": [
+            "M09-C19"
+          ],
+          "extension": "1.2.0",
+          "required": false,
+          "workload": {
+            "reading_minutes": 40,
+            "practice_minutes": 50,
+            "self_check_minutes": 30,
+            "setup_minutes": "separate; uses local models of M09-L07X, no downloads",
             "estimate_status": "planning_hypothesis_not_measured"
           },
           "assessment_policy": "course/assessment.md"

@@ -126,3 +126,16 @@ def test_mission_ids_are_unique_and_loggable(small):
     errors = route_errors(small)
     assert "course/route-v2.yaml: duplicate mission id M09-L01-M1" in errors
     assert any("project mission id 'mp-zero'" in e for e in errors)
+
+
+def test_material_parts_follow_their_sections(small):
+    (small / "course/intuition.md").write_text("# И\n\n## Часть 1. А\n\n### Тема\n\nТекст.\n\n## Часть 2. Б\n\nПишется позже.\n",
+                                               encoding="utf-8")
+    edit(small, "  lessons:\n", "  materials:\n    - {path: course/intuition.md, part: 1}\n"
+                                 "    - {path: course/intuition.md, part: 2, planned: R21}\n  lessons:\n")
+    assert route_errors(small) == []
+    edit(small, "part: 1}", "part: 1, planned: R08}")
+    edit(small, "part: 2, planned: R21}", "part: 2}")
+    errors = route_errors(small)
+    assert any("part 1 is written, remove 'planned: R08'" in e for e in errors)
+    assert any("part 2 is not written" in e for e in errors)

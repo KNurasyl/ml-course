@@ -49,7 +49,7 @@
 ```powershell
 .\.venv\Scripts\python.exe tools\progress.py add M09-L01-M2 --min 38 --self 3 --help none --error "..." --note "..."
 .\.venv\Scripts\python.exe tools\progress.py dashboard
-.\.venv\Scripts\python.exe toolsuild_reader.py
+.\.venv\Scripts\python.exe tools\build_reader.py
 ```
 
 - `--min` — фактические минуты от выдачи задачи до конца проверки. Тьютор отмечает время начала в первом сообщении миссии и не придумывает длительность.

@@ -301,6 +301,10 @@
       "dark": "course/assets/M09-L08X-dark.svg",
       "light_sha256": "8ccebdff26084c5e5adc4402fceeb07c77177306ebe293b7349e3926cf647e0e"
     },
+    "course/assets/M09-L09X.svg": {
+      "dark": "course/assets/M09-L09X-dark.svg",
+      "light_sha256": "8dd4e715a92d545df8dcdc7467c8f8c4f0bf412cc7d5f27ef44db5a01219f32a"
+    },
     "course/assets/M10-L07X.svg": {
       "dark": "course/assets/M10-L07X-dark.svg",
       "light_sha256": "43dade2aaebab6409833612d8083a5f327e53f5e61c69c918a422206b9aa874f"
