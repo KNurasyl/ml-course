@@ -18,10 +18,18 @@
 version: 2
 created: 2026-11-18
 mission_minutes: [30, 45]
-# Модель по умолчанию для занятий выбирается по замеру железа (R06, quality/hardware/baseline.json).
-# Для тестов по-прежнему 0.5B (инвариант И9).
+# Модель по умолчанию для занятий выбрана по замеру железа 18.11.2026 (R06, quality/hardware/baseline.json):
+# Qwen3.5-4B Q4_K_M целиком на GPU — около 47 токенов/с и 0,15 с до первого токена против 5,9 токенов/с на CPU;
+# при контексте 8192 занимает 2991 МиБ из 3243 свободных. 16384 не помещается с запасом. Для тестов по-прежнему 0.5B (И9).
 session_model:
-  pending: R06
+  profile: qwen3.5-4b-q4_k_m-gpu
+  gguf: qwen3.5-4b-q4_k_m
+  runtime: runtime/llama.cpp/b11803-cuda  # python tools/hardware_baseline.py fetch-cuda
+  server_args: ["-ngl", "99", "-c", "8192", "--parallel", "1"]
+  chat_template_kwargs: {enable_thinking: false}
+  # Запасной вариант на CPU (И7): та же модель на CPU — 5,9 токенов/с; для быстрых миссий — 0.5B на CPU, 42 токена/с.
+  fallback_cpu: {gguf: qwen2.5-0.5b-instruct-q4_k_m, runtime: runtime/llama.cpp/b11803, server_args: ["-ngl", "0"]}
+  evidence: quality/hardware/baseline.json
 levels:
 - level: 0
   title: Первый запуск

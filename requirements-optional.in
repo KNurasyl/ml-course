@@ -16,3 +16,9 @@ datasets==5.0.1
 # GPL-3.0-or-later, installed only for local use. No package of requirements.lock.txt changes. Models: --speech-extra.
 faster-whisper==1.2.1
 piper-tts==1.8.0
+# R06 (plan 2.0): 4-bit loading on the GPU. NOT for .venv: a separate project env .venv-gpu, so the CPU torch of the lock
+# and the tests stay unchanged (author's decision 18.11.2026). Create it with:
+#   py -3.11 -m venv .venv-gpu
+#   .\.venv-gpu\Scripts\python.exe -m pip install torch==2.15.0 --index-url https://download.pytorch.org/whl/cu132
+#   .\.venv-gpu\Scripts\python.exe -m pip install transformers==4.57.6 accelerate==1.15.0 bitsandbytes==0.50.2 huggingface-hub==0.36.2 psutil
+# torch==2.15.0+cu132  bitsandbytes==0.50.2  (listed as comments: pip install -r into .venv must not pick them up)

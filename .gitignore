@@ -1,6 +1,7 @@
 .venv/
 .venv-verify/
 .venv-full-verify/
+.venv-gpu/
 .authoring/
 artifacts/
 labs/*/output/

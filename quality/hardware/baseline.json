@@ -1,0 +1,293 @@
+{
+  "schema": 1,
+  "task": "R06",
+  "measured_on": "2026-11-18",
+  "machine": {
+    "os": "Windows 10 (10.0.26300)",
+    "cpu": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+    "cpu_physical_cores": 8,
+    "cpu_logical": 16,
+    "ram_gib": 31.8,
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+      "vram_mib": 4096,
+      "driver": "621.24"
+    }
+  },
+  "llama_cpp_release": "b11803",
+  "llama_cpp": [
+    {
+      "name": "qwen2.5-0.5b-q4_k_m-cpu",
+      "status": "measured",
+      "model": "qwen2.5-0.5b-instruct-q4_k_m",
+      "file": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+      "file_mib": 469,
+      "device": "cpu",
+      "ctx": 4096,
+      "threads": 8,
+      "server_args": [
+        "-ngl",
+        "0"
+      ],
+      "load_seconds": 1.3,
+      "ttft_ms_median": 222.9,
+      "prefill_tps_median": 243.4,
+      "decode_tps_median": 42.5,
+      "generated_tokens": 309,
+      "ram_peak_rss_mib": 546,
+      "ram_peak_private_mib": 237,
+      "vram_process_peak_mib": null,
+      "vram_card_peak_mib": 535,
+      "offload": {
+        "layers_on_gpu": null,
+        "buffers_mib": {},
+        "cuda_device_line": null
+      },
+      "sample_answer": "Индекс в базе данных - это специальное таблицное пространство, которое используется для упрощения доступа к данным. В базе данных индексы помогают ускорить поиск и обновление данных, а также уменьшают"
+    },
+    {
+      "name": "qwen2.5-0.5b-q4_k_m-gpu",
+      "status": "measured",
+      "model": "qwen2.5-0.5b-instruct-q4_k_m",
+      "file": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+      "file_mib": 469,
+      "device": "gpu",
+      "ctx": 4096,
+      "threads": 8,
+      "server_args": [
+        "-ngl",
+        "99"
+      ],
+      "load_seconds": 3.12,
+      "ttft_ms_median": 41.8,
+      "prefill_tps_median": 3110.1,
+      "decode_tps_median": 214.6,
+      "generated_tokens": 311,
+      "ram_peak_rss_mib": 843,
+      "ram_peak_private_mib": 1169,
+      "vram_process_peak_mib": null,
+      "vram_card_peak_mib": 1083,
+      "offload": {
+        "layers_on_gpu": [
+          25,
+          25
+        ],
+        "device_total_mib": 4095,
+        "device_free_before_load_mib": 3295,
+        "device_use_mib": null,
+        "projected_vs_free_mib": [
+          461,
+          3295
+        ]
+      },
+      "sample_answer": "Индекс в базе данных - это специальное устройство, которое позволяет организовать и поддерживать большое количество данных в одном месте. Это позволяет ускорить поиск и чтение данных, а также уменьшае"
+    },
+    {
+      "name": "qwen3.5-4b-q4_k_m-cpu",
+      "status": "measured",
+      "model": "qwen3.5-4b-q4_k_m",
+      "file": "Qwen3.5-4B-Q4_K_M.gguf",
+      "file_mib": 2614,
+      "device": "cpu",
+      "ctx": 4096,
+      "threads": 8,
+      "server_args": [
+        "-ngl",
+        "0"
+      ],
+      "load_seconds": 5.13,
+      "ttft_ms_median": 955.6,
+      "prefill_tps_median": 35.2,
+      "decode_tps_median": 5.9,
+      "generated_tokens": 367,
+      "ram_peak_rss_mib": 4894,
+      "ram_peak_private_mib": 2771,
+      "vram_process_peak_mib": null,
+      "vram_card_peak_mib": 532,
+      "offload": {
+        "layers_on_gpu": null,
+        "buffers_mib": {},
+        "cuda_device_line": null
+      },
+      "sample_answer": "Индекс в базе данных — это специальная структура данных, которая позволяет системе быстро находить нужные записи, не сканируя весь таблицу целиком. Он работает как указатель, ускоряя выполнение запрос"
+    },
+    {
+      "name": "qwen3.5-4b-q4_k_m-gpu",
+      "status": "measured",
+      "model": "qwen3.5-4b-q4_k_m",
+      "file": "Qwen3.5-4B-Q4_K_M.gguf",
+      "file_mib": 2614,
+      "device": "gpu",
+      "ctx": 4096,
+      "threads": 8,
+      "server_args": [
+        "-ngl",
+        "99"
+      ],
+      "load_seconds": 3.66,
+      "ttft_ms_median": 149.8,
+      "prefill_tps_median": 367.7,
+      "decode_tps_median": 46.9,
+      "generated_tokens": 367,
+      "ram_peak_rss_mib": 3813,
+      "ram_peak_private_mib": 4664,
+      "vram_process_peak_mib": null,
+      "vram_card_peak_mib": 3411,
+      "offload": {
+        "layers_on_gpu": [
+          33,
+          33
+        ],
+        "device_total_mib": 4095,
+        "device_free_before_load_mib": 3295,
+        "device_use_mib": {
+          "total": 2859,
+          "model": 2603,
+          "context": 178,
+          "compute": 78
+        },
+        "projected_vs_free_mib": [
+          2859,
+          3243
+        ]
+      },
+      "sample_answer": "Индекс в базе данных — это специальная структура данных, которая позволяет системе быстро находить нужные записи, не сканируя весь таблицу целиком. Он работает как указатель, ускоряя выполнение запрос"
+    },
+    {
+      "name": "qwen3.5-4b-q4_k_m-gpu-ctx8k",
+      "status": "measured",
+      "model": "qwen3.5-4b-q4_k_m",
+      "file": "Qwen3.5-4B-Q4_K_M.gguf",
+      "file_mib": 2614,
+      "device": "gpu",
+      "ctx": 8192,
+      "threads": 8,
+      "server_args": [
+        "-ngl",
+        "99"
+      ],
+      "load_seconds": 3.91,
+      "ttft_ms_median": 136.6,
+      "prefill_tps_median": 374.9,
+      "decode_tps_median": 47.1,
+      "generated_tokens": 367,
+      "ram_peak_rss_mib": 3827,
+      "ram_peak_private_mib": 4803,
+      "vram_process_peak_mib": null,
+      "vram_card_peak_mib": 3510,
+      "offload": {
+        "layers_on_gpu": [
+          33,
+          33
+        ],
+        "device_total_mib": 4095,
+        "device_free_before_load_mib": 3295,
+        "device_use_mib": {
+          "total": 2991,
+          "model": 2603,
+          "context": 306,
+          "compute": 82
+        },
+        "projected_vs_free_mib": [
+          2991,
+          3243
+        ]
+      },
+      "sample_answer": "Индекс в базе данных — это специальная структура данных, которая позволяет системе быстро находить нужные записи, не сканируя весь таблицу целиком. Он работает как указатель, ускоряя выполнение запрос"
+    },
+    {
+      "name": "qwen3.5-4b-q4_k_m-gpu-ctx16k",
+      "status": "measured",
+      "model": "qwen3.5-4b-q4_k_m",
+      "file": "Qwen3.5-4B-Q4_K_M.gguf",
+      "file_mib": 2614,
+      "device": "gpu",
+      "ctx": 16384,
+      "threads": 8,
+      "server_args": [
+        "-ngl",
+        "99"
+      ],
+      "load_seconds": 3.87,
+      "ttft_ms_median": 137.3,
+      "prefill_tps_median": 361.0,
+      "decode_tps_median": 47.2,
+      "generated_tokens": 367,
+      "ram_peak_rss_mib": 3860,
+      "ram_peak_private_mib": 5076,
+      "vram_process_peak_mib": null,
+      "vram_card_peak_mib": 3695,
+      "offload": {
+        "layers_on_gpu": [
+          33,
+          33
+        ],
+        "device_total_mib": 4095,
+        "device_free_before_load_mib": 3295,
+        "device_use_mib": {
+          "total": 3255,
+          "model": 2603,
+          "context": 562,
+          "compute": 90
+        },
+        "projected_vs_free_mib": [
+          3255,
+          3243
+        ]
+      },
+      "sample_answer": "Индекс в базе данных — это специальная структура данных, которая позволяет системе быстро находить нужные записи, не сканируя весь таблицу целиком. Он работает как указатель, ускоряя выполнение запрос"
+    }
+  ],
+  "method": "labs/M09/llama_serving.py prompts (6), greedy, max 64 new tokens, thinking off for Qwen3.5; medians over prompts after one warm-up; prompt cache off",
+  "torch_4bit": {
+    "status": "ok",
+    "python": "3.11.9",
+    "torch": "2.15.0+cu132",
+    "torch_cuda": "13.2",
+    "cuda_available": true,
+    "bitsandbytes": "0.50.2",
+    "transformers": "4.57.6",
+    "model": "Qwen2.5-0.5B-Instruct (models/, safetensors)",
+    "wsl": false,
+    "device": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "runs": [
+      {
+        "quantization": "float16",
+        "load_seconds": 1.89,
+        "weights_mib": 942,
+        "cuda_peak_allocated_mib": 960,
+        "generated_tokens": 32,
+        "tokens_per_second": 20.1,
+        "answer": "Индекс в базе данных - это специальное представление данных, которое позволяет быстро найти и обрабатывать данные. Он обычно представляет собой набор",
+        "linear_4bit_layers": 0
+      },
+      {
+        "quantization": "nf4",
+        "load_seconds": 1.5,
+        "weights_mib": 430,
+        "cuda_peak_allocated_mib": 520,
+        "generated_tokens": 32,
+        "tokens_per_second": 16.4,
+        "answer": "Индексы в базах данных - это специфические имена для таблиц или других объектов в базе данных. Они используются для",
+        "linear_4bit_layers": 168
+      }
+    ]
+  },
+  "hypotheses": [
+    {
+      "hypothesis": "Модель на 4 млрд параметров в Q4 целиком помещается в 4 ГБ видеопамяти с рабочим контекстом",
+      "verdict": "confirmed",
+      "evidence": "все слои на GPU; запас по памяти устройства при контексте 4096, 8192; не помещается без запаса: 16384 (свободная память считается при открытом рабочем столе Windows)"
+    },
+    {
+      "hypothesis": "4-битная загрузка (bitsandbytes) работает в Windows без WSL2",
+      "verdict": "confirmed",
+      "evidence": "bitsandbytes 0.50.2, torch 2.15.0+cu132: float16 — веса 942 МиБ, пик CUDA 960 МиБ, nf4 — веса 430 МиБ, пик CUDA 520 МиБ"
+    },
+    {
+      "hypothesis": "QLoRA на ноутбуке возможна для моделей до 1,5 млрд параметров; для 3–4 млрд — на грани",
+      "verdict": "not_tested",
+      "evidence": "R06 проверяет только 4-битную загрузку и генерацию; обучение QLoRA проверяется в M12-L11X (R21)"
+    }
+  ]
+}

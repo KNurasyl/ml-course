@@ -330,6 +330,8 @@ def _validate_route_v2(root, curriculum, errors):
     model = route.get("session_model")
     if not isinstance(model, dict) or not (model.get("pending") or model.get("profile")):
         errors.append(f"{ROUTE_V2}: session_model needs a profile or 'pending: R06'")
+    elif model.get("profile") and not (root / str(model.get("evidence", ""))).is_file():
+        errors.append(f"{ROUTE_V2}: session_model.evidence must point to the hardware report")
 
 
 def route_v2_status(root):
