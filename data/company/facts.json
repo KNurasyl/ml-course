@@ -1,0 +1,111 @@
+{
+  "address_change_hours": 24,
+  "bonus_max_share": 0.3,
+  "bonus_rate": 0.02,
+  "bonus_ttl_days": 365,
+  "cancel_before": "статуса «Передан в доставку»",
+  "delivery": {
+    "Актобе": {
+      "days": [
+        2,
+        4
+      ],
+      "free_from": 70000,
+      "pickup_points": 4,
+      "price": 3500,
+      "service_center": "Актобе, ул. Сервисная, 111"
+    },
+    "Алматы": {
+      "days": [
+        1,
+        2
+      ],
+      "free_from": 30000,
+      "pickup_points": 5,
+      "price": 0,
+      "service_center": "Алматы, ул. Сервисная, 90"
+    },
+    "Астана": {
+      "days": [
+        1,
+        2
+      ],
+      "free_from": 30000,
+      "pickup_points": 3,
+      "price": 1500,
+      "service_center": "Астана, ул. Сервисная, 14"
+    },
+    "Атырау": {
+      "days": [
+        3,
+        6
+      ],
+      "free_from": 90000,
+      "pickup_points": 1,
+      "price": 4500,
+      "service_center": "Атырау, ул. Сервисная, 97"
+    },
+    "Караганда": {
+      "days": [
+        2,
+        4
+      ],
+      "free_from": 50000,
+      "pickup_points": 4,
+      "price": 3000,
+      "service_center": "Караганда, ул. Сервисная, 83"
+    },
+    "Павлодар": {
+      "days": [
+        3,
+        6
+      ],
+      "free_from": 70000,
+      "pickup_points": 2,
+      "price": 3500,
+      "service_center": "Павлодар, ул. Сервисная, 58"
+    },
+    "Усть-Каменогорск": {
+      "days": [
+        3,
+        6
+      ],
+      "free_from": 90000,
+      "pickup_points": 1,
+      "price": 4000,
+      "service_center": "Усть-Каменогорск, ул. Сервисная, 61"
+    },
+    "Шымкент": {
+      "days": [
+        2,
+        4
+      ],
+      "free_from": 50000,
+      "pickup_points": 1,
+      "price": 2500,
+      "service_center": "Шымкент, ул. Сервисная, 60"
+    }
+  },
+  "install_days": 3,
+  "install_price": {
+    "aircon": 35000,
+    "builtin": 15000,
+    "washer": 9000
+  },
+  "installment_min": 60000,
+  "installment_months": [
+    3,
+    6,
+    12
+  ],
+  "refund_card_days": [
+    3,
+    10
+  ],
+  "refund_cash_days": 3,
+  "return_days": 14,
+  "return_days_defective": 30,
+  "support_email": "help@lampa-chainik.test",
+  "support_hours": "с 9:00 до 21:00 без выходных",
+  "support_phone": "+7 700 000 00 00 (номер вымышленный)"
+}

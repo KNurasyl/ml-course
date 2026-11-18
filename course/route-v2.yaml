@@ -55,7 +55,6 @@ levels:
     title: "Паспорт моделей"
     missions: [MP1]
     path: projects/mini/MP1-model-passport/README.md
-    planned: R07
   materials:
     - {path: course/intuition.md, part: 1, planned: R08}
   lessons:
@@ -112,7 +111,6 @@ levels:
     title: "Набор проверок для оператора"
     missions: [MP2]
     path: projects/mini/MP2-eval-suite/README.md
-    planned: R07
   lessons:
     - lesson: M11-L01  # Что именно оцениваем
       missions:
@@ -159,7 +157,6 @@ levels:
     title: "Оператор поддержки"
     missions: [MP3]
     path: projects/mini/MP3-support-operator/README.md
-    planned: R07
   lessons:
     - fast_track: M10  # быстрый вход: course/fast-track-llm.md, рубрика M10-HW01
       missions:
