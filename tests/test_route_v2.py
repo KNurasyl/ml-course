@@ -139,3 +139,24 @@ def test_material_parts_follow_their_sections(small):
     errors = route_errors(small)
     assert any("part 1 is written, remove 'planned: R08'" in e for e in errors)
     assert any("part 2 is not written" in e for e in errors)
+
+
+def test_project_sessions_are_numbered_have_results_and_a_check(small):
+    edit(small, "missions: [MP0], path: labs/M09/demo.py}",
+         "missions: [MP0], path: labs/M09/demo.py, check: labs/M09/demo.py,\n"
+         "            sessions: [{id: MP0-S1, result: Запуск}, {id: MP0-S2, result: Запрос из кода}]}")
+    assert route_errors(small) == []
+    edit(small, "check: labs/M09/demo.py,", "check: labs/M09/none.py,")
+    edit(small, "{id: MP0-S2, result: Запрос из кода}", "{id: MP0-S3, result: ''}")
+    errors = route_errors(small)
+    assert any("level 0 project check file missing: labs/M09/none.py" in e for e in errors)
+    assert any("sessions must be numbered MP0-S1, MP0-S2" in e for e in errors)
+    assert "course/route-v2.yaml: session MP0-S3 needs one result" in errors
+
+
+def test_course_projects_one_to_three_have_sessions():
+    route = validator.load_route_v2(SOURCE)
+    for level, pid in ((1, "MP1"), (2, "MP2"), (3, "MP3")):
+        project = route["levels"][level]["project"]
+        assert project["id"] == pid and project["missions"] == [pid]
+        assert len(project["sessions"]) >= 5 and (SOURCE / project["check"]).is_file()

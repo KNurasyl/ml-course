@@ -14,7 +14,9 @@
 #   own    — (б) своя работа: задача A, затем вариант B из «Новой и отложенной проверки»;
 #   lab    — (в) опыт: «предскажи до запуска» на лабораторной (lab) урока или модуля;
 #   launch — уровень 0: только запуск; command — команда запуска, которую тьютор даёт ученику;
-#   project — мини-проект уровня; тьютор делит его на занятия по README проекта.
+#   project — мини-проект уровня. Если у проекта есть sessions, он разбит на занятия <id>-S1, <id>-S2…
+#             с одним результатом (result) на занятие; сам проект (<id>) пройден, только когда его check.py
+#             зелёный — это записывает tools/progress.py check <id>, а не обычная запись add.
 version: 2
 created: 2026-11-18
 mission_minutes: [30, 45]
@@ -54,8 +56,16 @@ levels:
   project:
     id: MP1
     title: "Паспорт моделей"
-    missions: [MP1]
+    missions: [MP1]  # пройден, когда check.py зелёный: tools/progress.py check MP1
     path: projects/mini/MP1-model-passport/README.md
+    check: projects/mini/MP1-model-passport/check.py
+    sessions:  # занятия по 30–45 минут, по одному результату
+      - {id: MP1-S1, result: "системный промпт для разбора в JSON и прогон Qwen2.5-0.5B на CPU через starter.py: 20 сырых ответов и замеры в passport.json"}
+      - {id: MP1-S2, result: "прогон Qwen3.5-4B на GPU: 20 ответов, память RAM и видеопамять, время до первого токена и токены в секунду"}
+      - {id: MP1-S3, result: "третья конфигурация (ru-8b после подтверждения автора, пока — 4B на CPU с отметкой в выводе): 20 ответов и замеры"}
+      - {id: MP1-S4, result: "свой разбор JSON: доля валидного JSON и доля верных категорий против expected по каждой конфигурации"}
+      - {id: MP1-S5, result: "рубрика качества 0–2 в поле rubric, оценка каждого ответа и среднее по конфигурациям"}
+      - {id: MP1-S6, result: "вывод «какую беру и почему» от 40 слов: выбранная конфигурация и цена выбора"}
   materials:
     - {path: course/intuition.md, part: 1}
   lessons:
@@ -112,8 +122,16 @@ levels:
   project:
     id: MP2
     title: "Набор проверок для оператора"
-    missions: [MP2]
+    missions: [MP2]  # пройден, когда check.py зелёный: tools/progress.py check MP2
     path: projects/mini/MP2-eval-suite/README.md
+    check: projects/mini/MP2-eval-suite/check.py
+    sessions:  # занятия по 30–45 минут, по одному результату
+      - {id: MP2-S1, result: "20 случаев с ответом в базе: question, expected_sources, expected_facts в cases.jsonl"}
+      - {id: MP2-S2, result: "ещё 20 случаев: не меньше 8 без ответа в базе и 4–5 попыток увести оператора от инструкций — всего от 40"}
+      - {id: MP2-S3, result: "rubric.md: не меньше трёх критериев со шкалой и примером, один — «отказ, когда ответа нет»"}
+      - {id: MP2-S4, result: "ручная разметка 20 ответов оператора по рубрике в annotations.jsonl (manual)"}
+      - {id: MP2-S5, result: "автоматическая оценка тех же 20 ответов (auto), каппа Коэна и вывод note в agreement.json"}
+      - {id: MP2-S6, result: "test_regression.py: не меньше двух тестов, один — порог доли верных отказов или верных источников"}
   lessons:
     - lesson: M11-L01  # Что именно оцениваем
       missions:
@@ -158,8 +176,15 @@ levels:
   project:
     id: MP3
     title: "Оператор поддержки"
-    missions: [MP3]
+    missions: [MP3]  # пройден, когда check.py зелёный: tools/progress.py check MP3
     path: projects/mini/MP3-support-operator/README.md
+    check: projects/mini/MP3-support-operator/check.py
+    sessions:  # занятия по 30–45 минут, по одному результату
+      - {id: MP3-S1, result: "поиск по базе знаний (BM25, векторный или гибридный) и его retrieval_recall на наборе MP2"}
+      - {id: MP3-S2, result: "первая версия оператора: ответ со ссылкой [KB-xxx] и отказ, когда ответа нет; runs/baseline.jsonl на всех случаях MP2"}
+      - {id: MP3-S3, result: "свой подсчёт пяти метрик и metrics.json для baseline"}
+      - {id: MP3-S4, result: "одно улучшение оператора и runs/improved.jsonl на всех случаях MP2"}
+      - {id: MP3-S5, result: "метрики improved и changes от 20 слов: что изменено и какая метрика упала, если упала"}
   lessons:
     - fast_track: M10  # быстрый вход: course/fast-track-llm.md, рубрика M10-HW01
       missions:

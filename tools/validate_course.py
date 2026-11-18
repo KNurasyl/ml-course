@@ -298,6 +298,18 @@ def _validate_route_v2(root, curriculum, errors):
             mission_ids.append(pid)
             if not MISSION_ID.fullmatch(str(pid)):
                 errors.append(f"{ROUTE_V2}: project mission id {pid!r} is not a journal task id")
+        sessions = project.get("sessions") or []
+        if sessions:
+            # A project split into sessions is passed by its check.py (tools/progress.py check), so it needs one.
+            exists(project.get("check"), None, f"{name} project check")
+            ids = [s.get("id") for s in sessions]
+            expected = [f"{project.get('id')}-S{n}" for n in range(1, len(sessions) + 1)]
+            if ids != expected:
+                errors.append(f"{ROUTE_V2}: {name} sessions must be numbered {', '.join(expected)}, found {ids}")
+            for session in sessions:
+                mission_ids.append(session.get("id"))
+                if not str(session.get("result") or "").strip():
+                    errors.append(f"{ROUTE_V2}: session {session.get('id')} needs one result")
         for material in level.get("materials") or []:
             if material.get("part"):
                 # One file, written part by part: a part is written once its section has subsections.

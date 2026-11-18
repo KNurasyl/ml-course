@@ -148,3 +148,69 @@ def test_tutor_protocol_states_the_skip_rule():
     protocol = (SOURCE / "course/tutor-protocol.md").read_text(encoding="utf-8")
     assert "зачтено по входу" in protocol and "--self 3 --help none" in protocol
     assert "Отложенная проверка C остаётся" in protocol
+
+
+def test_mini_projects_are_split_into_sessions_with_one_result(course):
+    missions = progress.route_missions(course)
+    for pid, count in (("MP1", 6), ("MP2", 6), ("MP3", 5)):
+        ids = [m["id"] for m in missions if m["id"].startswith(pid)]
+        assert ids == [f"{pid}-S{n}" for n in range(1, count + 1)] + [pid]
+        sessions = [m for m in missions if m["id"].startswith(f"{pid}-S")]
+        assert all(m["kind"] == "project" and m["result"] for m in sessions)
+        final = next(m for m in missions if m["id"] == pid)
+        assert final["check"].startswith("projects/mini/") and final["check"].endswith("/check.py")
+    assert "check" not in next(m for m in missions if m["id"] == "MP0")
+
+
+def test_session_passes_by_a_record_project_only_by_a_green_check(course):
+    missions = progress.route_missions(course)
+    add(course, "MP1-S1", DAY, "3")
+    add(course, "MP1", DAY, "4")  # a plain record, as the old rule allowed
+    status = progress.mission_status(progress.read_log(course), missions)
+    assert status.get("MP1-S1") == "passed" and "MP1" not in status
+    red = dict(progress.make_record("MP1", DAY, 30, "3"), check="red")
+    green = dict(progress.make_record("MP1", DAY, 30, "3"), check="green")
+    assert "MP1" not in progress.mission_status([red], missions)
+    assert progress.mission_status([green], missions)["MP1"] == "passed"
+    weak = dict(progress.make_record("MP1", DAY, 30, "1"), check="green")
+    assert "MP1" not in progress.mission_status([weak], missions)
+
+
+def test_describe_shows_the_session_result_and_the_check(course):
+    missions = {m["id"]: m for m in progress.route_missions(course)}
+    step = {"type": "mission", **missions["MP1-S2"], "previous_attempts": 0, "progress": {"passed": 0, "total": 1}}
+    assert "Результат занятия: прогон Qwen3.5-4B на GPU" in progress.describe(step)
+    step = {"type": "mission", **missions["MP1"], "previous_attempts": 0, "progress": {"passed": 0, "total": 1}}
+    assert "tools/progress.py check MP1" in progress.describe(step)
+
+
+@pytest.fixture
+def checked(course, monkeypatch):
+    script = course / "projects/mini/MP1-model-passport/check.py"
+    script.parent.mkdir(parents=True)
+    monkeypatch.setattr(progress, "ROOT", course)
+    return script
+
+
+def test_add_refuses_a_project_with_check(checked):
+    with pytest.raises(SystemExit, match="progress.py check MP1"):
+        progress.main(["add", "MP1", "--min", "30", "--self", "3"])
+    assert progress.main(["add", "MP1-S1", "--min", "30", "--self", "3"]) == 0
+
+
+@pytest.mark.parametrize("code, verdict", [(0, "green"), (1, "red")])
+def test_check_command_runs_check_py_and_records_its_result(checked, capsys, code, verdict):
+    checked.write_text(f"import sys\nprint('Критериев выполнено: {5 - code} из 5.')\nsys.exit({code})\n", encoding="utf-8")
+    assert progress.main(["check", "MP1", "--min", "35", "--self", "3", "--date", "2026-11-20"]) == code
+    (record,) = progress.read_log(checked.parents[3])
+    assert (record["task"], record["check"], record["source"]) == ("MP1", verdict, "check.py")
+    assert record["note"] == f"Критериев выполнено: {5 - code} из 5."
+    assert "Критериев выполнено" in capsys.readouterr().out
+    passed = "MP1" in progress.mission_status([record], progress.route_missions(checked.parents[3]))
+    assert passed is (verdict == "green")
+
+
+def test_tutor_protocol_explains_project_sessions():
+    protocol = (SOURCE / "course/tutor-protocol.md").read_text(encoding="utf-8")
+    assert "MP1-S1" in protocol and r"tools\progress.py check MP1" in protocol
+    assert "одной записью не проходится" in protocol

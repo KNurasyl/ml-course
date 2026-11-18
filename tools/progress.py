@@ -9,6 +9,7 @@ lab or opening a lesson is not an attempt.
   due [--date YYYY-MM-DD]                                                reviews due, grouped into mixed sessions
   dashboard [--check]                                                    write progress/dashboard.md and the START map
   next [--date YYYY-MM-DD] [--json]                                      tutor: overdue review or next route mission
+  check MP1 --min 30 --self 3                                            run a mini-project's check.py and record the result
 
 Review rule (course/review-schedule.md): after an independent attempt the next
 check comes in 1, 3, 7 and then 21 days; a supported attempt or one that needs
@@ -18,9 +19,11 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
+import subprocess
 from collections import Counter, defaultdict
 from datetime import date, timedelta
 import json
+import os
 from pathlib import Path
 import re
 import sys
@@ -224,11 +227,19 @@ def route_missions(root: Path = ROOT) -> list[dict]:
             for mission in entry.get("missions") or []:
                 missions.append({"level": level["level"], "level_title": level["title"], "lesson": owner, **mission})
         project = level.get("project") or {}
+        common = {"level": level["level"], "level_title": level["title"], "kind": "project", "file": project.get("path"),
+                  "title": project.get("title"), "planned": project.get("planned")}
+        # Sessions of a mini-project: one result each, passed by an ordinary saved attempt.
+        for session in project.get("sessions") or []:
+            missions.append({**common, "lesson": session["id"], "id": session["id"], "result": session["result"]})
         for pid in project.get("missions") or []:
-            missions.append({"level": level["level"], "level_title": level["title"], "lesson": pid, "id": pid,
-                             "kind": "project", "file": project.get("path"), "title": project.get("title"),
-                             "planned": project.get("planned")})
+            missions.append({**common, "lesson": pid, "id": pid, **({"check": project["check"]} if project.get("check") else {})})
     return missions
+
+
+def check_passed(record: dict) -> bool:
+    """A project with check.py is passed only by a record of `progress.py check` with a green result."""
+    return record.get("check") == "green" and record["state"] in MISSION_PASSED
 
 
 def credits_lesson(record: dict, kinds: dict[str, str]) -> bool:
@@ -239,7 +250,9 @@ def credits_lesson(record: dict, kinds: dict[str, str]) -> bool:
 def mission_status(records: list[dict], missions: list[dict]) -> dict[str, str]:
     """Closed missions: "passed" by an own saved attempt, "credited" by the entry of the same lesson."""
     kinds = {m["id"]: m["kind"] for m in missions}
-    status = {r["task"]: "passed" for r in records if r["state"] in MISSION_PASSED}
+    checked = {m["id"] for m in missions if m.get("check")}
+    status = {r["task"]: "passed" for r in records
+              if r["state"] in MISSION_PASSED and (r["task"] not in checked or check_passed(r))}
     credited = {r["lesson"] for r in records if credits_lesson(r, kinds)}
     for mission in missions:
         if mission["lesson"] in credited and mission["kind"] in CREDITED_KINDS and mission["id"] not in status:
@@ -307,12 +320,41 @@ def describe(step: dict) -> str:
         lines.append(f"Команда: {step['command']}")
     if step.get("title"):
         lines.append(f"Проект: {step['title']}.")
+    if step.get("result"):
+        lines.append(f"Результат занятия: {step['result']}.")
+    if step.get("check"):
+        lines.append(f"Проект пройден, когда {step['check']} зелёный: tools/progress.py check {step['id']} --min … --self …")
     if step.get("planned"):
         lines.append(f"Материал ещё не написан (задача {step['planned']}): сообщи ученику и не придумывай проект сам.")
     if step["previous_attempts"]:
         lines.append(f"Прежних попыток этой миссии: {step['previous_attempts']}.")
     lines.append(done)
     return "\n".join(lines)
+
+
+def checked_projects(root: Path = ROOT) -> dict[str, str]:
+    """Mini-project id -> its check.py, for projects that route 2.0 splits into sessions."""
+    return {m["id"]: m["check"] for m in route_missions(root) if m.get("check")} if (root / ROUTE).is_file() else {}
+
+
+def run_check(root: Path, args) -> int:
+    """Run the project's check.py, print its report and append the attempt; only green passes the project."""
+    sys.stdout.reconfigure(encoding="utf-8")
+    script = checked_projects(root).get(args.task)
+    if not script:
+        raise SystemExit(f"{args.task} has no check.py in {ROUTE}")
+    env = {**os.environ, "PYTHONIOENCODING": "utf-8"}  # the report is read as UTF-8 whatever the console code page
+    done = subprocess.run([sys.executable, str(root / script)], cwd=root, capture_output=True, text=True,
+                          encoding="utf-8", errors="replace", env=env)
+    print(done.stdout.rstrip())
+    green = done.returncode == 0
+    lines = done.stdout.strip().splitlines()
+    record = make_record(args.task, args.date, args.minutes, args.state, args.help_level,
+                         note=args.note or (lines[-1] if lines else ""), source="check.py")
+    record["check"] = "green" if green else "red"
+    append(root, [record])
+    print(json.dumps(record, ensure_ascii=False))
+    return 0 if green else 1
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -336,9 +378,22 @@ def main(argv: list[str] | None = None) -> int:
     step = commands.add_parser("next", help="Tutor: overdue delayed check or the next mission of route 2.0")
     step.add_argument("--date", type=date.fromisoformat, default=date.today())
     step.add_argument("--json", action="store_true")
+    run = commands.add_parser("check", help="Run a mini-project's check.py and record the attempt with its result",
+                              add_help=False)
+    run.add_argument("task")
+    run.add_argument("--date", type=date.fromisoformat, default=date.today())
+    run.add_argument("--min", dest="minutes", type=int, required=True, help="Actual minutes of the final session")
+    run.add_argument("--self", dest="state", required=True, help="the tutor's rating after the why-questions, 1-4")
+    run.add_argument("--help-level", "--help", dest="help_level", default="none", choices=sorted(HELP))
+    run.add_argument("--note", default="")
     board = commands.add_parser("dashboard", help="Write progress/dashboard.md")
     board.add_argument("--check", action="store_true")
     args = parser.parse_args(argv)
+    if args.command == "add" and args.task in checked_projects(ROOT):
+        raise SystemExit(f"{args.task} is passed by its check.py, not by one record: "
+                         f"tools/progress.py check {args.task} --min ... --self ...")
+    if args.command == "check":
+        return run_check(ROOT, args)
     if args.command == "add":
         record = make_record(args.task, args.date, args.minutes, args.state, args.help_level, args.route,
                              args.error, args.note, args.external)
